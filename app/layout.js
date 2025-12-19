@@ -15,7 +15,7 @@ export const metadata = {
   title: "My Portfolio",
   description: "My personal portfolio website",
   icons: {
-    icon: "/images/favicon.png", // ou "/favicon.ico"
+    icon: [{ url: "/images/ascension.jpg", type: "image/jpeg" }],
   },
 };
 
