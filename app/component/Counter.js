@@ -13,19 +13,13 @@ function Counter(props) {
       <h2 className="text-2xl font-bold">{props.title}</h2>
 
       <div className="flex items-center gap-4">
-        <button
-          onClick={() => setCount((prev) => prev - 1)}
-          className="btn btn-circle btn-outline text-2xl"
-        >
+        <button onClick={() => setCount((prev) => prev - 1)} className="btn btn-circle btn-outline">
           -
         </button>
 
         <span className="text-2xl font-medium w-16 text-center">{count}</span>
 
-        <button
-          onClick={() => setCount((prev) => prev + 1)}
-          className="btn btn-circle btn-outline text-2xl"
-        >
+        <button onClick={() => setCount((prev) => prev + 1)} className="btn btn-circle btn-outline">
           +
         </button>
       </div>
