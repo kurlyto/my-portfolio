@@ -1,4 +1,6 @@
-import Link from "next/link";
+import Header from "../component/Header";
+import Footer from "../component/Footer";
+import Reveal from "../component/Reveal";
 
 export const metadata = {
   title: "Agents IA sur mesure | Nathan Knaebel",
@@ -111,44 +113,29 @@ const AGENTS = [
 
 export default function AgentsPage() {
   return (
-    <div className="min-h-screen bg-black text-white px-6 py-8">
-      <header className="w-full flex items-center justify-between gap-4 max-w-6xl mx-auto">
-        <Link
-          href="/"
-          className="text-sm font-mono opacity-70 hover:opacity-100 transition-opacity whitespace-nowrap"
-        >
-          &larr; retour
-        </Link>
-        <div className="hidden sm:block text-sm font-mono uppercase tracking-widest opacity-70 whitespace-nowrap">
-          Agents IA
-        </div>
-        <Link
-          href="/#contact"
-          className="text-sm font-mono border border-white/30 rounded px-4 py-2 hover:border-white hover:bg-white hover:text-black transition-colors whitespace-nowrap"
-        >
-          Me contacter
-        </Link>
-      </header>
+    <div className="min-h-screen bg-black text-white">
+      <Header />
 
-      <main className="mx-auto max-w-6xl pt-16 pb-24">
-        <section className="max-w-2xl">
-          <h1 className="text-3xl md:text-5xl font-bold tracking-tight">
+      <main className="mx-auto max-w-6xl px-6 pt-8 pb-24">
+        <Reveal>
+          <h1 className="text-3xl md:text-5xl font-bold tracking-tight max-w-2xl">
             Une équipe d&apos;agents IA
             <br />
             qui travaille pendant que vous dormez
           </h1>
-          <p className="mt-6 text-base md:text-lg opacity-70 leading-relaxed">
+          <p className="mt-6 text-base md:text-lg opacity-70 leading-relaxed max-w-2xl">
             Voici des exemples d&apos;agents autonomes déjà en place, chacun avec une mission
             précise : surveiller, vérifier, prospecter, résumer. Le même principe peut être
             adapté à vos propres processus, quel que soit votre secteur.
           </p>
-        </section>
+        </Reveal>
 
-        <section className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-white/10">
+        <Reveal delay={0.1} className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-white/10">
           {AGENTS.map((agent) => (
             <div
               key={agent.slug}
               className="group relative bg-black p-6 flex flex-col border-r border-b border-white/10 transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.25),0_12px_24px_-8px_rgba(255,255,255,0.08)] hover:z-10 cursor-default"
+              data-cursor-hover
             >
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 shrink-0 rounded-full border border-white/20 flex items-center justify-center text-sm font-mono opacity-70 transition-transform duration-200 ease-out group-hover:scale-110">
@@ -174,21 +161,10 @@ export default function AgentsPage() {
               </div>
             </div>
           ))}
-        </section>
-
-        <section id="contact" className="mt-24 text-center border-t border-white/10 pt-16">
-          <h2 className="text-2xl md:text-3xl font-bold">Un processus répétitif à automatiser ?</h2>
-          <p className="mt-3 opacity-70">
-            Parlons de votre cas d&apos;usage, on peut construire l&apos;agent qui va bien.
-          </p>
-          <Link
-            href="/#contact"
-            className="inline-block mt-8 text-sm font-mono border border-white/30 rounded px-6 py-3 hover:border-white hover:bg-white hover:text-black transition-colors"
-          >
-            Me contacter
-          </Link>
-        </section>
+        </Reveal>
       </main>
+
+      <Footer />
     </div>
   );
 }

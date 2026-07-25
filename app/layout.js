@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
+import CustomCursor from "./component/CustomCursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,17 +14,32 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "My Portfolio",
-  description: "My personal portfolio website",
+  title: "Nathan Knaebel",
+  description: "Une tâche que vous n'aimez pas faire ? On l'automatise.",
+  metadataBase: new URL("https://nathan-knaebel.com"),
   icons: {
     icon: [{ url: "/images/ascension.jpg", type: "image/jpeg" }],
+  },
+  openGraph: {
+    title: "Nathan Knaebel",
+    description: "Une tâche que vous n'aimez pas faire ? On l'automatise.",
+    url: "https://nathan-knaebel.com",
+    siteName: "Nathan Knaebel",
+    locale: "fr_FR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Nathan Knaebel",
+    description: "Une tâche que vous n'aimez pas faire ? On l'automatise.",
   },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-amber-700`}>
+    <html lang="fr">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white`}>
+        <CustomCursor />
         {children}
         <Analytics />
       </body>
