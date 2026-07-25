@@ -109,6 +109,46 @@ const AGENTS = [
     format: "Propositions de posts",
     channel: "Email",
   },
+  {
+    slug: "soul",
+    name: "Soul",
+    titleFr: "Recherche de sorties",
+    titleEn: "Local Discovery",
+    description:
+      "Trouve des sorties et événements par ville sur simple demande en langage naturel : \"un bar sympa ce soir\", \"un truc culturel ce week-end\".",
+    format: "Réponse conversationnelle",
+    channel: "Telegram",
+  },
+  {
+    slug: "nate",
+    name: "Nate",
+    titleFr: "Assistant personnel",
+    titleEn: "Personal Assistant",
+    description:
+      "Gère mails et agenda au quotidien : synthèse du matin, brouillons de réponses, création d'événements. N'envoie ni ne supprime jamais sans validation explicite.",
+    format: "Synthèse quotidienne + brouillons",
+    channel: "Telegram",
+  },
+  {
+    slug: "jenseng",
+    name: "Jenseng",
+    titleFr: "Idées de contenu",
+    titleEn: "Content Ideas",
+    description:
+      "Génère des propositions de publications prêtes à poster, dans le style et le ton propres à chacun. Peut aussi suggérer des réponses à des messages reçus.",
+    format: "Propositions de textes",
+    channel: "Telegram",
+  },
+  {
+    slug: "ride",
+    name: "Ride",
+    titleFr: "Comparateur de trajets",
+    titleEn: "Trip Planner",
+    description:
+      "Compare train, avion, voiture et bus pour un trajet donné, et renvoie une synthèse claire des meilleures options, prix et durées inclus.",
+    format: "Synthèse comparative",
+    channel: "Telegram",
+  },
 ];
 
 export default function AgentsPage() {
@@ -130,34 +170,26 @@ export default function AgentsPage() {
           </p>
         </Reveal>
 
-        <Reveal delay={0.1} className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-white/10">
+        <Reveal delay={0.1} className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-14 gap-y-20">
           {AGENTS.map((agent) => (
             <div
               key={agent.slug}
-              className="group relative bg-black p-6 flex flex-col border-r border-b border-white/10 transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.25),0_12px_24px_-8px_rgba(255,255,255,0.08)] hover:z-10 cursor-default"
+              className="group flex flex-col transition-transform duration-200 ease-out hover:-translate-y-1 cursor-default"
               data-cursor-hover
             >
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 shrink-0 rounded-full border border-white/20 flex items-center justify-center text-sm font-mono opacity-70 transition-transform duration-200 ease-out group-hover:scale-110">
+              <h2 className="text-lg font-bold leading-snug">{agent.titleFr}</h2>
+              <p className="text-xs font-mono opacity-40 mt-0.5">{agent.titleEn}</p>
+
+              <div className="mt-4 flex items-start gap-3">
+                <div className="w-11 h-11 shrink-0 rounded-full border border-white/20 flex items-center justify-center text-sm font-mono opacity-70 transition-transform duration-200 ease-out group-hover:scale-110">
                   {agent.name.charAt(0)}
                 </div>
-                <span className="text-xs font-mono uppercase tracking-widest opacity-40">
-                  {agent.name}
-                </span>
-              </div>
-
-              <h2 className="mt-4 text-lg font-bold leading-snug transition-transform duration-200 ease-out group-hover:translate-x-0.5">
-                {agent.titleFr}
-              </h2>
-              <p className="text-xs font-mono opacity-50 mt-0.5">{agent.titleEn}</p>
-
-              <p className="mt-3 text-sm opacity-70 leading-relaxed flex-1">
-                {agent.description}
-              </p>
-
-              <div className="mt-5 pt-4 border-t border-white/10 flex flex-col gap-1 text-xs font-mono opacity-50">
-                <span>format : {agent.format.toLowerCase()}</span>
-                <span>canal : {agent.channel.toLowerCase()}</span>
+                <div>
+                  <span className="text-xs font-mono uppercase tracking-widest opacity-40">
+                    {agent.name}
+                  </span>
+                  <p className="mt-1 text-sm opacity-70 leading-relaxed">{agent.description}</p>
+                </div>
               </div>
             </div>
           ))}
