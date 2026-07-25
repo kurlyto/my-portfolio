@@ -31,7 +31,7 @@ export default function TestimonialCarousel() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <div className="border border-white/10 p-10 min-h-[180px] flex flex-col justify-center">
+      <div className="border border-black/10 p-10 min-h-[180px] flex flex-col justify-center">
         <AnimatePresence mode="wait">
           <motion.div
             key={index}
@@ -44,7 +44,7 @@ export default function TestimonialCarousel() {
               [Témoignage à venir — {current.role}]
             </p>
             <div className="mt-6 flex items-center gap-3">
-              <div className="w-9 h-9 shrink-0 rounded-full border border-white/20 flex items-center justify-center text-xs font-mono opacity-70">
+              <div className="w-9 h-9 shrink-0 rounded-full border border-black/20 flex items-center justify-center text-xs font-mono opacity-70">
                 {current.role.charAt(0)}
               </div>
               <div className="text-xs font-mono uppercase tracking-widest opacity-50">
@@ -63,7 +63,7 @@ export default function TestimonialCarousel() {
             aria-label={`Voir le témoignage ${t.role}`}
             onClick={() => setIndex(i)}
             className={`w-1.5 h-1.5 rounded-full transition-colors ${
-              i === index ? "bg-white" : "bg-white/20"
+              i === index ? "bg-black" : "bg-black/20"
             }`}
           />
         ))}

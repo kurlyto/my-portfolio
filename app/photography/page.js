@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function PhotographyPage() {
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col">
+    <div className="min-h-screen bg-white text-black flex flex-col">
       <Header />
       <main className="flex-1 flex items-center justify-center px-6 text-center">
         <div>

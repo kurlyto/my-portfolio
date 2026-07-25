@@ -36,18 +36,16 @@
 ## Color
 - **Approach:** Restreinte a l'extreme — noir/blanc/gris uniquement, zero accent
   colore (contrainte explicite du produit).
-- **Primary:** #000000 (fond)
-- **Secondary:** #f5f5f5 (texte principal, "blanc casse" pas blanc pur pour reduire
-  le contraste agressif en plage de lecture longue)
-- **Neutrals:**
-  - Gray 1 (texte secondaire): #a0a0a0
-  - Gray 2 (texte tertiaire / meta): #6b6b6b
-  - Gray 3 (surfaces hover): #1a1a1a
-  - Border: rgba(255,255,255,0.12), border hover: rgba(255,255,255,0.35)
+- **Primary:** #ffffff (fond) — revu le 26/07 : le fond noir evoquait trop un style
+  "Vercel/dark mode generique", le produit passe en light-only pour un rendu plus
+  "papier", sobre et distinct.
+- **Secondary:** #000000 (texte principal)
+- **Neutrals:** memes valeurs d'opacite qu'avant, appliquees sur noir au lieu de
+  blanc (ex: `border-black/10`, `bg-black/[0.03]`, `text-black/60`).
 - **Semantic:** Non applicable — pas de formulaires/alertes dans ce scope (le champ
   de capture de besoin est reporte a une iteration ulterieure).
-- **Dark mode:** Le site est nativement dark-only (noir de base). Pas de mode clair
-  prevu — coherent avec la direction "brutalement minimal".
+- **Dark mode:** Le site est nativement light-only (blanc de base). Pas de mode
+  sombre prevu.
 
 ## Spacing
 - **Base unit:** 8px
@@ -142,3 +140,8 @@
 | 2026-07-25 | Pas de pinning de section (scroll-jack) | Prioriser legerete/vitesse de livraison ; whileInView + parallax leger suffisent pour l'effet recherche |
 | 2026-07-25 | Champ de capture de besoin sur le hero reporte | Complexite (backend email ou LLM) hors scope de cette iteration ; a traiter separement |
 | 2026-07-25 | Hero final : "Une tache que vous n'aimez pas faire ? On l'automatise." / "Des tonnes de cas d'usages. Quel est le votre ?" | Positionne le site comme vitrine de cas d'usage d'automatisation plutot que CV personnel classique |
+| 2026-07-26 | Retrait du curseur personnalise | Feedback utilisateur direct |
+| 2026-07-26 | Cards Agents et Projects sans bordures, plus espacees, titre en avant | Le format grille dense en bordures faisait "tableau" plutot que vitrine visuelle |
+| 2026-07-26 | Ajout de 4 agents perso (Soul, Nate, Jenseng, Ride) a la grille | Missions reprises telles quelles depuis le VPS (mission.md de chaque bot) |
+| 2026-07-26 | Avatars prevus en full body vertical (2:3) a gauche du texte, generes par l'utilisateur via IA externe | Remplace le rond+initiale, l'utilisateur genere les images lui-meme (prompts fournis) |
+| 2026-07-26 | Inversion complete noir->blanc (fond blanc, texte noir) | Le fond noir evoquait trop un style "Vercel/dark mode" generique, feedback utilisateur direct |

@@ -21,12 +21,12 @@ function NavDropdown({ label, items }) {
       </button>
       {open && (
         <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 z-20">
-          <div className="flex flex-col bg-black border border-white/30 min-w-[160px]">
+          <div className="flex flex-col bg-white border border-black/30 min-w-[160px]">
             {items.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="px-4 py-2.5 text-xs normal-case tracking-normal text-white/60 hover:text-white hover:bg-white/5 transition-colors"
+                className="px-4 py-2.5 text-xs normal-case tracking-normal text-black/60 hover:text-black hover:bg-black/5 transition-colors"
               >
                 {item.label}
               </Link>
@@ -64,7 +64,7 @@ export default function Header() {
 
       <a
         href="mailto:nathan.knaebel@gmail.com"
-        className="text-sm font-mono border border-white/30 rounded px-4 py-2 whitespace-nowrap transition-all duration-150 ease-out hover:border-white hover:bg-white hover:text-black hover:-translate-y-0.5"
+        className="text-sm font-mono border border-black/30 rounded px-4 py-2 whitespace-nowrap transition-all duration-150 ease-out hover:border-black hover:bg-black hover:text-white hover:-translate-y-0.5"
       >
         Contact
       </a>

@@ -153,7 +153,7 @@ const AGENTS = [
 
 export default function AgentsPage() {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-white text-black">
       <Header />
 
       <main className="mx-auto max-w-6xl px-6 pt-8 pb-24">
@@ -180,8 +180,8 @@ export default function AgentsPage() {
               <h2 className="text-lg font-bold leading-snug">{agent.titleFr}</h2>
               <p className="text-xs font-mono opacity-40 mt-0.5">{agent.titleEn}</p>
 
-              <div className="mt-4 flex items-start gap-3">
-                <div className="w-11 h-11 shrink-0 rounded-full border border-white/20 flex items-center justify-center text-sm font-mono opacity-70 transition-transform duration-200 ease-out group-hover:scale-110">
+              <div className="mt-4 flex items-start gap-4">
+                <div className="w-20 aspect-[2/3] shrink-0 rounded border border-black/15 bg-black/[0.03] flex items-center justify-center text-xs font-mono opacity-30 transition-transform duration-200 ease-out group-hover:scale-105">
                   {agent.name.charAt(0)}
                 </div>
                 <div>

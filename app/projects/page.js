@@ -65,7 +65,7 @@ const PROJECTS = [
 
 export default function ProjectsPage() {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-white text-black">
       <Header />
 
       <main className="mx-auto max-w-5xl px-6 pt-8 pb-24">
@@ -86,7 +86,7 @@ export default function ProjectsPage() {
             {TECH_STACK.map((tech) => (
               <li
                 key={tech}
-                className="text-xs font-mono border border-white/20 rounded px-3 py-1 opacity-70 transition-all duration-150 ease-out hover:opacity-100 hover:-translate-y-0.5 hover:border-white/50 cursor-default"
+                className="text-xs font-mono border border-black/20 rounded px-3 py-1 opacity-70 transition-all duration-150 ease-out hover:opacity-100 hover:-translate-y-0.5 hover:border-black/50 cursor-default"
               >
                 {tech}
               </li>
@@ -97,11 +97,11 @@ export default function ProjectsPage() {
         <Reveal delay={0.1} className="mt-20">
           <h2 className="text-2xl md:text-3xl font-bold">Ce que j&apos;ai construit</h2>
 
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-white/10">
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-14 gap-y-20">
             {PROJECTS.map((project) => (
               <div
                 key={project.name}
-                className="group relative bg-black p-6 flex flex-col border-r border-b border-white/10 transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.25),0_12px_24px_-8px_rgba(255,255,255,0.08)] hover:z-10 cursor-default"
+                className="group flex flex-col transition-transform duration-200 ease-out hover:-translate-y-1 cursor-default"
                 data-cursor-hover
               >
                 <div className="flex items-center justify-between gap-3">
@@ -111,19 +111,19 @@ export default function ProjectsPage() {
                   <span
                     className={`shrink-0 text-xs font-mono uppercase tracking-wide px-2 py-0.5 rounded border ${
                       project.status === "public"
-                        ? "border-white/30 opacity-70"
-                        : "border-white/10 opacity-40"
+                        ? "border-black/30 opacity-70"
+                        : "border-black/10 opacity-40"
                     }`}
                   >
                     {project.status === "public" ? "public" : "privé"}
                   </span>
                 </div>
 
-                <p className="mt-3 text-sm opacity-70 leading-relaxed flex-1">
+                <p className="mt-3 text-sm opacity-70 leading-relaxed">
                   {project.description}
                 </p>
 
-                <div className="mt-5 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono opacity-50">
+                <div className="mt-4 flex items-center justify-between text-xs font-mono opacity-50">
                   <span>{project.years}</span>
                   {project.link && (
                     <a
