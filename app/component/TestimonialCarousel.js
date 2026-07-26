@@ -26,12 +26,11 @@ export default function TestimonialCarousel() {
   const current = TESTIMONIALS[index];
 
   return (
-    <section
-      className="max-w-3xl mx-auto px-6 py-16"
+    <div
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <div className="border border-black/10 p-10 min-h-[180px] flex flex-col justify-center">
+      <div className="border border-black/10 p-8 md:p-10 min-h-[180px] flex flex-col justify-center">
         <AnimatePresence mode="wait">
           <motion.div
             key={index}
@@ -68,6 +67,6 @@ export default function TestimonialCarousel() {
           />
         ))}
       </div>
-    </section>
+    </div>
   );
 }
