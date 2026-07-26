@@ -17,7 +17,7 @@ const AGENTS_WITH_PHOTO = new Set([
   "lea",
   "soul",
   "nate",
-  "jenseng",
+  "jensen",
 ]);
 
 function Avatar({ agent, className }) {

@@ -82,7 +82,7 @@ function ContactIcons({ compact = false }) {
           rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
           aria-label={label}
           data-cursor-hover
-          className={`flex items-center justify-center rounded-full border border-[#ff6b35]/40 text-[#ff6b35] opacity-80 hover:opacity-100 hover:border-[#ff6b35] hover:-translate-y-0.5 transition-all duration-150 ease-out ${
+          className={`flex items-center justify-center rounded-full bg-[#ff6b35] text-white hover:bg-[#e2531f] hover:-translate-y-0.5 hover:shadow-lg transition-all duration-150 ease-out ${
             compact ? "w-10 h-10" : "w-9 h-9"
           }`}
         >

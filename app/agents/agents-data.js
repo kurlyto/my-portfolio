@@ -4,11 +4,11 @@ export const AGENTS = [
     name: "Camille",
     title: "Secrétaire",
     shortDescription:
-      "Camille prend en charge les mails et l'agenda au quotidien : elle fait la synthèse de la semaine, répond aux questions courantes et garde tout organisé, en langage naturel.",
+      "Camille gère tes mails et ton agenda comme une vraie assistante. Elle fait le point sur ta semaine, répond aux questions courantes et garde tout bien rangé.",
     longDescription:
-      "Camille prend en charge les mails et l'agenda au quotidien : elle fait la synthèse de la semaine, répond aux questions courantes et garde tout organisé, en langage naturel.",
+      "Camille gère tes mails et ton agenda comme une vraie assistante. Elle fait le point sur ta semaine, répond aux questions courantes et garde tout bien rangé.",
     useCase:
-      "Vous demandez simplement \"qu'est-ce qui m'attend cette semaine ?\" et Camille répond avec un résumé clair de vos rendez-vous et tâches en cours.",
+      "Tu lui demandes simplement \"qu'est-ce qui m'attend cette semaine ?\" et Camille répond avec un résumé clair de tes rendez-vous et tâches en cours.",
     tools: ["Gmail", "Google Calendar", "Google Sheets", "Telegram"],
     format: "Synthèse quotidienne",
     channel: "Telegram",
@@ -18,11 +18,11 @@ export const AGENTS = [
     name: "Ousmane",
     title: "Prospection",
     shortDescription:
-      "Ousmane recherche de nouvelles entreprises correspondant à votre client idéal, extrait leurs coordonnées, et alimente votre liste de prospects automatiquement, jour après jour.",
+      "Ousmane part chaque jour à la chasse aux nouveaux clients. Il repère les entreprises qui collent à ton profil idéal, récupère leurs coordonnées et remplit ta liste de prospects tout seul.",
     longDescription:
-      "Ousmane recherche de nouvelles entreprises correspondant à votre client idéal, extrait leurs coordonnées, et alimente votre liste de prospects automatiquement, jour après jour.",
+      "Ousmane part chaque jour à la chasse aux nouveaux clients. Il repère les entreprises qui collent à ton profil idéal, récupère leurs coordonnées et remplit ta liste de prospects tout seul.",
     useCase:
-      "Plutôt que de chercher des prospects à la main, vous retrouvez chaque matin une nouvelle liste de contacts qualifiés, prête à démarcher.",
+      "Plutôt que de chercher des prospects à la main, tu retrouves chaque matin une nouvelle liste de contacts qualifiés, prête à démarcher.",
     tools: ["Google Sheets", "Recherche web"],
     format: "Liste de prospects",
     channel: "Google Sheets",
@@ -32,11 +32,11 @@ export const AGENTS = [
     name: "Kylian",
     title: "Pilotage",
     shortDescription:
-      "Kylian analyse en continu les chiffres qui comptent pour votre activité : ventes, délais, taux de conversion, trafic. Il détecte les tendances et propose des pistes concrètes d'amélioration.",
+      "Kylian garde un œil sur les chiffres qui comptent pour toi : ventes, délais, taux de conversion, trafic. Il repère les tendances avant tout le monde et propose de vraies pistes d'amélioration.",
     longDescription:
-      "Kylian analyse en continu les chiffres qui comptent pour votre activité : ventes, délais, taux de conversion, trafic. Il détecte les tendances et propose des pistes concrètes d'amélioration.",
+      "Kylian garde un œil sur les chiffres qui comptent pour toi : ventes, délais, taux de conversion, trafic. Il repère les tendances avant tout le monde et propose de vraies pistes d'amélioration.",
     useCase:
-      "Une baisse de conversion sur une semaine ? Kylian la détecte et propose une hypothèse sur la cause, avant que vous ne l'ayez remarqué.",
+      "Une baisse de conversion sur une semaine ? Kylian la détecte et propose une hypothèse sur la cause, avant que tu ne l'aies remarqué.",
     tools: ["Base de données", "Google Analytics", "Gmail"],
     format: "Tableau de bord + rapport",
     channel: "Gmail",
@@ -46,12 +46,12 @@ export const AGENTS = [
     name: "Lea",
     title: "Réseaux",
     shortDescription:
-      "Lea propose chaque semaine des idées de publications pour vos réseaux, rédigées et prêtes à relire. Vous gardez toujours la main : elle prépare, vous validez.",
+      "Lea te propose chaque semaine des idées de posts pour tes réseaux, rédigées et prêtes à relire. Tu gardes toujours la main : elle prépare, tu valides.",
     longDescription:
-      "Lea propose chaque semaine des idées de publications pour vos réseaux, rédigées et prêtes à relire. Vous gardez toujours la main : elle prépare, vous validez.",
+      "Lea te propose chaque semaine des idées de posts pour tes réseaux, rédigées et prêtes à relire. Tu gardes toujours la main : elle prépare, tu valides.",
     useCase:
-      "Chaque lundi, vous recevez 5 propositions de posts déjà rédigées, il ne reste qu'à choisir et publier.",
-    tools: ["LinkedIn", "Gmail"],
+      "Chaque lundi, tu reçois 5 propositions de posts déjà rédigées, il ne reste qu'à choisir et publier.",
+    tools: ["LinkedIn", "Canva", "Gmail"],
     format: "Propositions de posts",
     channel: "Gmail",
   },
@@ -60,11 +60,11 @@ export const AGENTS = [
     name: "Mike",
     title: "Nouveautés",
     shortDescription:
-      "Mike résume chaque jour ce qui a été ajouté ou amélioré, en traduisant le tout en langage clair et utile, sans jargon technique.",
+      "Mike te résume chaque jour ce qui a bougé sur le produit, dans un langage clair, sans jargon technique.",
     longDescription:
-      "Mike résume chaque jour ce qui a été ajouté ou amélioré, en traduisant le tout en langage clair et utile, sans jargon technique.",
+      "Mike te résume chaque jour ce qui a bougé sur le produit, dans un langage clair, sans jargon technique.",
     useCase:
-      "Plutôt que de lire les journaux de code, vous recevez chaque jour un résumé compréhensible de ce qui a changé et pourquoi ça vous concerne.",
+      "Plutôt que de lire les journaux de code, tu reçois chaque jour un résumé compréhensible de ce qui a changé et pourquoi ça te concerne.",
     tools: ["Code source", "Gmail"],
     format: "Résumé quotidien",
     channel: "Gmail",
@@ -74,11 +74,11 @@ export const AGENTS = [
     name: "Hugo",
     title: "Veille",
     shortDescription:
-      "Hugo suit en continu ce qui se passe dans votre secteur : nouveaux concurrents, changements de réglementation, tendances du marché. Il synthétise l'essentiel sans que vous ayez à chercher.",
+      "Hugo scrute en continu ce qui bouge dans ton secteur : nouveaux concurrents, changements de réglementation, tendances du marché. Il te sort l'essentiel sans que tu aies à chercher.",
     longDescription:
-      "Hugo suit en continu ce qui se passe dans votre secteur : nouveaux concurrents, changements de réglementation, tendances du marché. Il synthétise l'essentiel sans que vous ayez à chercher.",
+      "Hugo scrute en continu ce qui bouge dans ton secteur : nouveaux concurrents, changements de réglementation, tendances du marché. Il te sort l'essentiel sans que tu aies à chercher.",
     useCase:
-      "Un concurrent sort une nouveauté ou une loi change dans votre domaine ? Hugo vous en informe le jour même, avec le contexte utile.",
+      "Un concurrent sort une nouveauté ou une loi change dans ton domaine ? Hugo te prévient le jour même, avec le contexte utile.",
     tools: ["Recherche web", "Gmail"],
     format: "Synthèse de veille",
     channel: "Gmail",
@@ -88,9 +88,9 @@ export const AGENTS = [
     name: "Marcel",
     title: "Surveillance",
     shortDescription:
-      "Marcel garde un œil permanent sur la santé technique de votre infrastructure : charge, espace disque, sauvegardes, certificats de sécurité. Il prévient avant que le problème ne devienne visible pour vos clients.",
+      "Marcel veille sur la santé de ton infrastructure : charge, espace disque, sauvegardes, certificats de sécurité. Il te prévient avant que le problème devienne visible pour tes clients.",
     longDescription:
-      "Marcel garde un œil permanent sur la santé technique de votre infrastructure : charge, espace disque, sauvegardes, certificats de sécurité. Il prévient avant que le problème ne devienne visible pour vos clients.",
+      "Marcel veille sur la santé de ton infrastructure : charge, espace disque, sauvegardes, certificats de sécurité. Il te prévient avant que le problème devienne visible pour tes clients.",
     useCase:
       "Un disque qui se remplit dangereusement ? Marcel alerte par email plusieurs heures avant que le service ne tombe en panne.",
     tools: ["Serveurs (VPS)", "Gmail", "Sauvegardes automatiques"],
@@ -102,11 +102,11 @@ export const AGENTS = [
     name: "Ride",
     title: "Voyages",
     shortDescription:
-      "Ride compare train, avion, voiture et bus pour un trajet donné, et renvoie une synthèse claire des meilleures options, avec prix et durées.",
+      "Ride compare train, avion, voiture et bus pour un trajet donné, et te sort une synthèse claire des meilleures options, prix et durées inclus.",
     longDescription:
-      "Ride compare train, avion, voiture et bus pour un trajet donné, et renvoie une synthèse claire des meilleures options, avec prix et durées.",
+      "Ride compare train, avion, voiture et bus pour un trajet donné, et te sort une synthèse claire des meilleures options, prix et durées inclus.",
     useCase:
-      "Vous indiquez juste le départ et l'arrivée, Ride renvoie un comparatif complet des options possibles, sans avoir à ouvrir dix sites différents.",
+      "Tu indiques juste le départ et l'arrivée, Ride renvoie un comparatif complet des options possibles, sans avoir à ouvrir dix sites différents.",
     tools: ["Telegram", "SNCF", "Comparateurs de vols"],
     format: "Synthèse comparative",
     channel: "Telegram",
@@ -116,11 +116,11 @@ export const AGENTS = [
     name: "Soul",
     title: "Sorties",
     shortDescription:
-      "Soul trouve des sorties et événements par ville sur simple demande, en langage naturel, sans menu ni formulaire à remplir.",
+      "Soul connaît ta ville comme sa poche. Il est au courant de tous les bons plans, sait où trouver les informations, même les soirées et évènements bien discrets.",
     longDescription:
-      "Soul trouve des sorties et événements par ville sur simple demande, en langage naturel, sans menu ni formulaire à remplir.",
+      "Soul connaît ta ville comme sa poche. Il est au courant de tous les bons plans, sait où trouver les informations, même les soirées et évènements bien discrets.",
     useCase:
-      "Vous écrivez \"un bar sympa ce soir\" ou \"un truc culturel ce week-end\", Soul répond avec des propositions concrètes et à jour.",
+      "Tu écris \"un bar sympa ce soir\" ou \"un truc culturel ce week-end\", Soul répond avec des propositions concrètes et à jour.",
     tools: ["Telegram", "Recherche web"],
     format: "Réponse conversationnelle",
     channel: "Telegram",
@@ -130,26 +130,26 @@ export const AGENTS = [
     name: "Nate",
     title: "Boîte mail",
     shortDescription:
-      "Nate lit et résume les mails, prépare des brouillons de réponses, et gère l'agenda. Il n'envoie et ne supprime jamais rien sans validation explicite, pour garder le contrôle total.",
+      "Nate lit et résume tes mails, prépare des brouillons de réponses, et gère ton agenda. Il n'envoie et ne supprime jamais rien sans ton feu vert.",
     longDescription:
-      "Nate lit et résume les mails, prépare des brouillons de réponses, et gère l'agenda. Il n'envoie et ne supprime jamais rien sans validation explicite, pour garder le contrôle total.",
+      "Nate lit et résume tes mails, prépare des brouillons de réponses, et gère ton agenda. Il n'envoie et ne supprime jamais rien sans ton feu vert.",
     useCase:
-      "Le matin, vous recevez un résumé de ce qui est arrivé pendant la nuit, avec les mails importants déjà triés du reste.",
+      "Le matin, tu reçois un résumé de ce qui est arrivé pendant la nuit, avec les mails importants déjà triés du reste.",
     tools: ["Gmail", "Google Calendar", "Telegram"],
     format: "Synthèse quotidienne + brouillons",
     channel: "Telegram",
   },
   {
-    slug: "jenseng",
-    name: "Jenseng",
+    slug: "jensen",
+    name: "Jensen",
     title: "Contenu",
     shortDescription:
-      "Jenseng propose des publications prêtes à poster, écrites dans le ton et le style propres à chacun. Il peut aussi suggérer des réponses à des messages reçus.",
+      "Jensen te propose des publications prêtes à poster, écrites dans ton ton et ton style. Il peut aussi te suggérer des réponses à des messages reçus.",
     longDescription:
-      "Jenseng propose des publications prêtes à poster, écrites dans le ton et le style propres à chacun. Il peut aussi suggérer des réponses à des messages reçus.",
+      "Jensen te propose des publications prêtes à poster, écrites dans ton ton et ton style. Il peut aussi te suggérer des réponses à des messages reçus.",
     useCase:
-      "Vous demandez \"5 idées de posts sur l'actualité de mon secteur\" et Jenseng les rédige directement, prêtes à copier-coller.",
-    tools: ["Telegram", "Recherche web"],
+      "Tu demandes \"5 idées de posts sur l'actualité de mon secteur\" et Jensen les rédige directement, prêtes à copier-coller.",
+    tools: ["X", "Telegram", "Recherche web"],
     format: "Propositions de textes",
     channel: "Telegram",
   },
@@ -158,9 +158,9 @@ export const AGENTS = [
     name: "Didier",
     title: "Supervision",
     shortDescription:
-      "Didier supervise l'ensemble des agents : il agrège leurs rapports, repère si l'un d'eux a rencontré un problème, et sert de point d'entrée unique pour savoir où en sont toutes les tâches automatisées.",
+      "Didier supervise toute l'équipe d'agents : il agrège leurs rapports, repère si l'un d'eux a rencontré un problème, et devient ton point d'entrée unique pour savoir où en sont toutes les tâches automatisées.",
     longDescription:
-      "Didier supervise l'ensemble des agents : il agrège leurs rapports, repère si l'un d'eux a rencontré un problème, et sert de point d'entrée unique pour savoir où en sont toutes les tâches automatisées.",
+      "Didier supervise toute l'équipe d'agents : il agrège leurs rapports, repère si l'un d'eux a rencontré un problème, et devient ton point d'entrée unique pour savoir où en sont toutes les tâches automatisées.",
     useCase:
       "Chaque matin, il fait le point sur ce qui a tourné dans la nuit et signale immédiatement ce qui a échoué, sans attendre qu'on le lui demande.",
     tools: ["Gmail"],
@@ -172,9 +172,9 @@ export const AGENTS = [
     name: "Simone",
     title: "Débogage",
     shortDescription:
-      "Simone analyse les erreurs qui surviennent en production, lit le code pour remonter jusqu'à la cause réelle, et rédige un correctif prêt à être validé par un humain.",
+      "Simone traque les erreurs qui surviennent en production, lit le code pour remonter jusqu'à la vraie cause, et rédige un correctif prêt à être validé.",
     longDescription:
-      "Simone analyse les erreurs qui surviennent en production, lit le code pour remonter jusqu'à la cause réelle, et rédige un correctif prêt à être validé par un humain.",
+      "Simone traque les erreurs qui surviennent en production, lit le code pour remonter jusqu'à la vraie cause, et rédige un correctif prêt à être validé.",
     useCase:
       "Un client signale un bug ? Simone a déjà identifié la ligne de code fautive et propose une correction avant même qu'un développeur ne s'en occupe.",
     tools: ["Logs serveur", "Code source", "Gmail"],
@@ -186,9 +186,9 @@ export const AGENTS = [
     name: "Jo",
     title: "Relecture",
     shortDescription:
-      "Jo vérifie chaque document généré avant son envoi : structure, champs obligatoires, cohérence des montants. Une relecture automatique qui ne dort jamais et ne laisse rien passer.",
+      "Jo relit chaque document avant son envoi : structure, champs obligatoires, cohérence des montants. Une relecture qui ne dort jamais et ne laisse rien passer.",
     longDescription:
-      "Jo vérifie chaque document généré avant son envoi : structure, champs obligatoires, cohérence des montants. Une relecture automatique qui ne dort jamais et ne laisse rien passer.",
+      "Jo relit chaque document avant son envoi : structure, champs obligatoires, cohérence des montants. Une relecture qui ne dort jamais et ne laisse rien passer.",
     useCase:
       "Un document mal rempli qui aurait pu partir à un client ? Jo l'intercepte avant l'envoi et prévient de l'erreur à corriger.",
     tools: ["Documents PDF", "Gmail"],

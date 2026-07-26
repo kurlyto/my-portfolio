@@ -142,6 +142,22 @@ export function AgendaIcon(props) {
   );
 }
 
+export function CanvaIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.34 15.297c-.06.09-.153.15-.27.15-.06 0-.12-.015-.18-.045-1.14-.63-2.4-1.29-3.63-1.29-1.71 0-2.94 1.14-2.94 2.79 0 .3.03.585.09.855-1.83-.6-3.06-2.31-3.06-4.32 0-2.505 2.01-4.545 4.53-4.545 1.245 0 2.325.48 3.135 1.29a.375.375 0 01.015.525l-.735.75a.36.36 0 01-.51.015 2.775 2.775 0 00-1.905-.75c-1.53 0-2.775 1.29-2.775 2.865 0 .27.045.525.105.765.315-1.185 1.44-2.055 2.775-2.055 1.02 0 1.92.42 2.55 1.11.735-.66 1.2-1.62 1.2-2.685 0-1.98-1.62-3.6-3.6-3.6-1.11 0-2.115.51-2.775 1.32a.36.36 0 01-.51.045l-.75-.66a.375.375 0 01-.03-.54C7.83 6.15 9.375 5.4 11.1 5.4c2.985 0 5.4 2.415 5.4 5.4 0 1.605-.705 3.045-1.83 4.035.42.135.855.24 1.29.36.18.045.285.24.24.42-.03.09-.09.165-.165.21z" />
+    </svg>
+  );
+}
+
+export function XIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  );
+}
+
 export const TOOL_ICONS = {
   Gmail: GmailIcon,
   Telegram: TelegramIcon,
@@ -149,6 +165,8 @@ export const TOOL_ICONS = {
   "Google Calendar": GoogleCalendarIcon,
   "Google Analytics": GoogleAnalyticsIcon,
   LinkedIn: LinkedInIcon,
+  Canva: CanvaIcon,
+  X: XIcon,
   "Code source": CodeIcon,
   "Logs serveur": CodeIcon,
   "Serveurs (VPS)": ServerIcon,
