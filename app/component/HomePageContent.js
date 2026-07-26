@@ -17,7 +17,7 @@ export default function HomePageContent() {
 
       <WorkGateway />
       <HowItWorks />
-      <Footer />
+      <Footer showHomeLink={false} />
     </div>
   );
 }

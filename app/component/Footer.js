@@ -19,12 +19,12 @@ const CONTACTS = [
   },
   {
     label: "GitHub",
-    href: "https://github.com/nknaebel",
+    href: "https://github.com/kurlyto",
     Icon: GitHubIcon,
   },
 ];
 
-export default function Footer() {
+export default function Footer({ showHomeLink = true }) {
   return (
     <footer className="bg-black text-white text-center px-6 py-20">
       <h2 className="text-3xl md:text-4xl font-bold">Me contacter</h2>
@@ -43,12 +43,14 @@ export default function Footer() {
           </a>
         ))}
       </div>
-      <Link
-        href="/"
-        className="inline-block mt-12 text-xs font-mono opacity-50 hover:opacity-100 hover:text-[#ff6b35] transition-colors"
-      >
-        &larr; retour a l&apos;accueil
-      </Link>
+      {showHomeLink && (
+        <Link
+          href="/"
+          className="inline-block mt-12 text-xs font-mono opacity-50 hover:opacity-100 hover:text-[#ff6b35] transition-colors"
+        >
+          &larr; retour à l&apos;accueil
+        </Link>
+      )}
     </footer>
   );
 }

@@ -2,6 +2,14 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { WhatsAppIcon, LinkedInIcon, GitHubIcon, MailIcon } from "./icons";
+
+const CONTACTS = [
+  { label: "Email", href: "mailto:nathan.knaebel@gmail.com", Icon: MailIcon },
+  { label: "WhatsApp", href: "https://wa.me/33622164758", Icon: WhatsAppIcon },
+  { label: "LinkedIn", href: "https://linkedin.com/in/nathanknaebel", Icon: LinkedInIcon },
+  { label: "GitHub", href: "https://github.com/kurlyto", Icon: GitHubIcon },
+];
 
 function NavDropdown({ label, items, dark }) {
   const [open, setOpen] = useState(false);
@@ -72,16 +80,21 @@ export default function Header({ dark = false }) {
         />
       </nav>
 
-      <a
-        href="mailto:nathan.knaebel@gmail.com"
-        className={`text-sm font-mono border rounded px-4 py-2 whitespace-nowrap transition-all duration-150 ease-out hover:-translate-y-0.5 ${
-          dark
-            ? "border-white/30 hover:border-white hover:bg-white hover:text-black"
-            : "border-black/30 hover:border-black hover:bg-black hover:text-white"
-        }`}
-      >
-        Contact
-      </a>
+      <div className="flex items-center gap-3">
+        {CONTACTS.map(({ label, href, Icon }) => (
+          <a
+            key={label}
+            href={href}
+            target={href.startsWith("mailto:") ? undefined : "_blank"}
+            rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+            aria-label={label}
+            data-cursor-hover
+            className="w-9 h-9 flex items-center justify-center rounded-full border border-[#ff6b35]/40 text-[#ff6b35] opacity-80 hover:opacity-100 hover:border-[#ff6b35] hover:-translate-y-0.5 transition-all duration-150 ease-out"
+          >
+            <Icon className="w-4 h-4" />
+          </a>
+        ))}
+      </div>
     </header>
   );
 }

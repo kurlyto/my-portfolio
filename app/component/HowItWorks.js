@@ -77,9 +77,20 @@ export default function HowItWorks() {
           })}
         </div>
 
-        <p className="mt-20 pt-8 border-t border-black/10 text-base italic opacity-50">
-          Une automatisation livrée. La suivante peut commencer.
-        </p>
+        <div className="mt-20 pt-8 border-t border-black/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-8">
+          <p className="text-base italic opacity-50">
+            Une automatisation livrée. La suivante peut commencer.
+          </p>
+          <a
+            href={ELON_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-cursor-hover
+            className="inline-block shrink-0 text-sm font-mono font-semibold rounded px-6 py-3 whitespace-nowrap transition-all duration-150 ease-out bg-[#ff6b35] text-white hover:bg-[#e2531f] hover:-translate-y-0.5 hover:shadow-lg"
+          >
+            Commencer
+          </a>
+        </div>
       </Reveal>
     </section>
   );
