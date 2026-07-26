@@ -1,0 +1,31 @@
+services:
+  my-portfolio:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: my-portfolio
+    restart: unless-stopped
+    env_file:
+      - .env.production
+    ports:
+      - "127.0.0.1:3102:3000"
+    volumes:
+      - chat-data:/app/data
+      # Binaire claude natif (hote) + comptes deja connectes, jamais reinstalles/relogges ici,
+      # meme patron que my-agents/Elon (canal Telegram) et my-agents/nate.
+      - /root/.local:/root/.local:ro
+      - /root/.claude:/claude-accounts/nathan/.claude
+      - /root/.claude.json:/claude-accounts/nathan/.claude.json
+      - /root/.claude-accounts/admin-mdd:/claude-accounts/admin-mdd
+      # Dossier Elon (mission.md, data/plans/) : meme agent, meme etat que le canal Telegram.
+      - /data/nathan/my-agents/Elon:/data/nathan/my-agents/Elon
+    mem_limit: 1g
+    cpus: 1.0
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  chat-data:

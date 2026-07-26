@@ -6,9 +6,8 @@ import { useEffect, useState } from "react";
 const TITLE = "Une tâche que vous n'aimez pas faire ?\nOn l'automatise.";
 const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const TOTAL_FRAMES = 18;
-const ELON_URL = "https://t.me/Elon_Master_Bot";
 
-export default function ScrambleHero() {
+export default function ScrambleHero({ onOpenChat }) {
   const [displayText, setDisplayText] = useState(TITLE);
 
   useEffect(() => {
@@ -52,10 +51,9 @@ export default function ScrambleHero() {
       >
         Des tonnes de cas d&apos;usages. Quel est le vôtre ?
       </motion.p>
-      <motion.a
-        href={ELON_URL}
-        target="_blank"
-        rel="noopener noreferrer"
+      <motion.button
+        type="button"
+        onClick={onOpenChat}
         data-cursor-hover
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
@@ -63,7 +61,7 @@ export default function ScrambleHero() {
         className="inline-block mt-8 text-sm font-mono font-semibold rounded px-6 py-3 whitespace-nowrap transition-all duration-150 ease-out bg-[#ff6b35] text-white hover:bg-[#e2531f] hover:-translate-y-0.5 hover:shadow-lg"
       >
         J&apos;ai une idée en tête !
-      </motion.a>
+      </motion.button>
     </div>
   );
 }
