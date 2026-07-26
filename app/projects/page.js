@@ -26,6 +26,7 @@ const PROJECTS = [
     status: "public",
     description: "Une variante du poker japonais développée avant l'ère de l'IA.",
     years: "2023",
+    link: "https://poker.nathan-knaebel.com",
   },
   {
     name: "Featuring",
