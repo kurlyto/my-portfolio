@@ -29,58 +29,58 @@ const STEPS = [
 
 export default function HowItWorks() {
   return (
-    <Reveal className="max-w-5xl mx-auto px-6 py-24 border-t border-black/10">
-      <span className="text-xs font-mono uppercase tracking-widest opacity-50">
-        Comment ça marche
-      </span>
-      <h2 className="mt-3 text-2xl md:text-4xl font-bold tracking-tight max-w-2xl">
-        Décrivez votre besoin. On construit la solution.
-      </h2>
+    <section className="bg-[#fafafa]">
+      <Reveal className="max-w-5xl mx-auto px-6 py-28 md:py-36">
+        <span className="text-xs font-mono uppercase tracking-widest text-[#ff6b35]">
+          Comment ça marche
+        </span>
+        <h2 className="mt-3 text-3xl md:text-5xl font-bold tracking-tight max-w-2xl">
+          Décrivez votre besoin. On construit la solution.
+        </h2>
 
-      <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-8">
-        {STEPS.map((step) => {
-          const Wrapper = step.link ? "a" : "div";
-          const wrapperProps = step.link
-            ? {
-                href: step.link,
-                target: "_blank",
-                rel: "noopener noreferrer",
-                "data-cursor-hover": true,
-                className: "group block",
-              }
-            : { className: "group" };
+        <div className="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-14 sm:gap-8">
+          {STEPS.map((step) => {
+            const Wrapper = step.link ? "a" : "div";
+            const wrapperProps = step.link
+              ? {
+                  href: step.link,
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                  "data-cursor-hover": true,
+                  className: "group block",
+                }
+              : { className: "group" };
 
-          return (
-            <Wrapper key={step.number} {...wrapperProps}>
-              <div className="flex items-center gap-3">
-                <span className="w-8 h-8 shrink-0 rounded-full border border-black/20 flex items-center justify-center text-xs font-mono">
+            return (
+              <Wrapper key={step.number} {...wrapperProps}>
+                <span className="block text-5xl font-bold text-[#ff6b35] leading-none">
                   {step.number}
                 </span>
-                <span className="text-xs font-mono uppercase tracking-widest opacity-50">
+                <span className="mt-4 block text-xs font-mono uppercase tracking-widest opacity-50">
                   {step.who}
                 </span>
-              </div>
-              <h3
-                className={`mt-4 text-lg font-bold leading-snug transition-colors ${
-                  step.link ? "group-hover:text-[#ff6b35]" : ""
-                }`}
-              >
-                {step.title}
-                {step.link && (
-                  <span className="ml-1 inline-block transition-transform group-hover:translate-x-0.5">
-                    &rarr;
-                  </span>
-                )}
-              </h3>
-              <p className="mt-2 text-sm opacity-70 leading-relaxed">{step.description}</p>
-            </Wrapper>
-          );
-        })}
-      </div>
+                <h3
+                  className={`mt-2 text-xl font-bold leading-snug transition-colors ${
+                    step.link ? "group-hover:text-[#ff6b35]" : ""
+                  }`}
+                >
+                  {step.title}
+                  {step.link && (
+                    <span className="ml-1 inline-block transition-transform group-hover:translate-x-0.5">
+                      &rarr;
+                    </span>
+                  )}
+                </h3>
+                <p className="mt-3 text-sm opacity-70 leading-relaxed">{step.description}</p>
+              </Wrapper>
+            );
+          })}
+        </div>
 
-      <p className="mt-16 pt-8 border-t border-black/10 text-sm italic opacity-50">
-        Une automatisation livrée. La suivante peut commencer.
-      </p>
-    </Reveal>
+        <p className="mt-20 pt-8 border-t border-black/10 text-base italic opacity-50">
+          Une automatisation livrée. La suivante peut commencer.
+        </p>
+      </Reveal>
+    </section>
   );
 }

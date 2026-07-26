@@ -26,9 +26,9 @@ const CONTACTS = [
 
 export default function Footer() {
   return (
-    <footer className="mt-24 border-t border-black/10 pt-16 pb-16 text-center max-w-6xl mx-auto px-6">
-      <h2 className="text-2xl md:text-3xl font-bold">Me contacter</h2>
-      <div className="mt-8 flex items-center justify-center gap-6">
+    <footer className="bg-black text-white text-center px-6 py-20">
+      <h2 className="text-3xl md:text-4xl font-bold">Me contacter</h2>
+      <div className="mt-10 flex items-center justify-center gap-6">
         {CONTACTS.map(({ label, href, Icon }) => (
           <a
             key={label}
@@ -37,7 +37,7 @@ export default function Footer() {
             rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
             aria-label={label}
             data-cursor-hover
-            className="w-11 h-11 flex items-center justify-center rounded-full border border-black/20 opacity-70 hover:opacity-100 hover:border-black/60 hover:-translate-y-0.5 transition-all duration-150 ease-out"
+            className="w-12 h-12 flex items-center justify-center rounded-full border border-white/20 opacity-80 hover:opacity-100 hover:border-[#ff6b35] hover:text-[#ff6b35] hover:-translate-y-0.5 transition-all duration-150 ease-out"
           >
             <Icon className="w-5 h-5" />
           </a>
@@ -45,7 +45,7 @@ export default function Footer() {
       </div>
       <Link
         href="/"
-        className="inline-block mt-10 text-xs font-mono opacity-50 hover:opacity-100 transition-opacity"
+        className="inline-block mt-12 text-xs font-mono opacity-50 hover:opacity-100 hover:text-[#ff6b35] transition-colors"
       >
         &larr; retour a l&apos;accueil
       </Link>

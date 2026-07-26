@@ -12,11 +12,13 @@ export const metadata = {
 export default function AgentsPage() {
   return (
     <div className="min-h-screen bg-white text-black">
-      <Header />
-
-      <main className="mx-auto max-w-6xl px-6 pt-8 pb-24">
-        <Reveal>
-          <h1 className="text-3xl md:text-5xl font-bold tracking-tight max-w-2xl">
+      <div className="bg-black text-white">
+        <Header dark />
+        <div className="max-w-6xl mx-auto px-6 pt-6 pb-20">
+          <span className="text-xs font-mono uppercase tracking-widest text-[#ff6b35]">
+            Work
+          </span>
+          <h1 className="mt-3 text-3xl md:text-5xl font-bold tracking-tight max-w-2xl">
             Une équipe d&apos;agents IA
             <br />
             qui travaille pendant que vous dormez
@@ -26,9 +28,11 @@ export default function AgentsPage() {
             précise : surveiller, vérifier, prospecter, résumer. Le même principe peut être
             adapté à vos propres processus, quel que soit votre secteur.
           </p>
-        </Reveal>
+        </div>
+      </div>
 
-        <Reveal delay={0.1} className="mt-20">
+      <main className="mx-auto max-w-6xl px-6 pt-16 pb-24">
+        <Reveal>
           <AgentsExplorer />
         </Reveal>
       </main>

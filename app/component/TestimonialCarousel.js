@@ -34,7 +34,7 @@ export default function TestimonialCarousel() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <div className="border border-black/10 p-8 md:p-10 min-h-[180px] flex flex-col justify-center">
+      <div className="bg-black text-white p-8 md:p-12 min-h-[260px] flex flex-col justify-center">
         <AnimatePresence mode="wait">
           <motion.div
             key={index}
@@ -43,14 +43,15 @@ export default function TestimonialCarousel() {
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
           >
-            <p className="text-lg md:text-xl leading-relaxed opacity-90">
-              [Témoignage à venir — {current.role}]
+            <span className="text-4xl text-[#ff6b35] leading-none">&ldquo;</span>
+            <p className="mt-2 text-xl md:text-2xl leading-snug font-medium">
+              Témoignage à venir — {current.role}
             </p>
-            <div className="mt-6 flex items-center gap-3">
-              <div className="w-9 h-9 shrink-0 rounded-full border border-black/20 flex items-center justify-center text-xs font-mono opacity-70">
+            <div className="mt-8 flex items-center gap-3">
+              <div className="w-10 h-10 shrink-0 rounded-full bg-[#ff6b35] flex items-center justify-center text-xs font-mono font-bold text-white">
                 {current.role.charAt(0)}
               </div>
-              <div className="text-xs font-mono uppercase tracking-widest opacity-50">
+              <div className="text-xs font-mono uppercase tracking-widest opacity-60">
                 {current.role} — {current.useCase}
               </div>
             </div>
@@ -66,7 +67,7 @@ export default function TestimonialCarousel() {
             aria-label={`Voir le témoignage ${t.role}`}
             onClick={() => setIndex(i)}
             className={`w-1.5 h-1.5 rounded-full transition-colors ${
-              i === index ? "bg-black" : "bg-black/20"
+              i === index ? "bg-[#ff6b35]" : "bg-black/20"
             }`}
           />
         ))}

@@ -66,11 +66,13 @@ const PROJECTS = [
 export default function ProjectsPage() {
   return (
     <div className="min-h-screen bg-white text-black">
-      <Header />
-
-      <main className="mx-auto max-w-5xl px-6 pt-8 pb-24">
-        <Reveal>
-          <h1 className="text-3xl md:text-5xl font-bold tracking-tight">
+      <div className="bg-black text-white">
+        <Header dark />
+        <div className="max-w-5xl mx-auto px-6 pt-6 pb-20">
+          <span className="text-xs font-mono uppercase tracking-widest text-[#ff6b35]">
+            Work
+          </span>
+          <h1 className="mt-3 text-3xl md:text-5xl font-bold tracking-tight">
             Ingénieur industriel &amp; logiciel
             <br />
             Chef de projet
@@ -86,15 +88,17 @@ export default function ProjectsPage() {
             {TECH_STACK.map((tech) => (
               <li
                 key={tech}
-                className="text-xs font-mono border border-black/20 rounded px-3 py-1 opacity-70 transition-all duration-150 ease-out hover:opacity-100 hover:-translate-y-0.5 hover:border-black/50 cursor-default"
+                className="text-xs font-mono border border-white/20 rounded px-3 py-1 opacity-70 transition-all duration-150 ease-out hover:opacity-100 hover:-translate-y-0.5 hover:border-white/50 cursor-default"
               >
                 {tech}
               </li>
             ))}
           </ul>
-        </Reveal>
+        </div>
+      </div>
 
-        <Reveal delay={0.1} className="mt-20">
+      <main className="mx-auto max-w-5xl px-6 pt-16 pb-24">
+        <Reveal>
           <h2 className="text-2xl md:text-3xl font-bold">Ce que j&apos;ai construit</h2>
 
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-14 gap-y-20">
