@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 import { AGENTS } from "./agents-data";
+import ToolStack from "./ToolStack";
 
 const AGENTS_WITH_PHOTO = new Set([
   "didier",
@@ -43,22 +44,24 @@ function Avatar({ agent, className }) {
   );
 }
 
-function AgentChip({ agent, active, onClick }) {
+function AgentAvatarChip({ agent, active, onClick }) {
   return (
     <button
       type="button"
       onClick={onClick}
       data-cursor-hover
-      className={`flex items-center gap-2 shrink-0 rounded-full border px-3 py-1.5 text-xs font-mono transition-all duration-150 ease-out ${
-        active
-          ? "border-black bg-black text-white"
-          : "border-black/20 opacity-60 hover:opacity-100 hover:border-black/50"
-      }`}
+      className={`flex flex-col items-center gap-1.5 shrink-0 w-16 group ${
+        active ? "" : "opacity-50 hover:opacity-100"
+      } transition-opacity duration-150 ease-out`}
     >
-      <span className="w-5 h-5 rounded-full border border-current flex items-center justify-center text-[10px]">
-        {agent.name.charAt(0)}
-      </span>
-      {agent.title}
+      <span className="text-[10px] font-mono uppercase tracking-widest">{agent.name}</span>
+      <Avatar
+        agent={agent}
+        className={`w-12 aspect-[2/3] text-xs transition-all duration-150 ease-out ${
+          active ? "ring-2 ring-black ring-offset-2" : ""
+        }`}
+      />
+      <span className="text-[10px] font-mono text-center leading-tight">{agent.title}</span>
     </button>
   );
 }
@@ -75,25 +78,17 @@ function AgentDetail({ agent }) {
     >
       <Avatar agent={agent} className="w-28 aspect-[2/3] text-lg mx-auto sm:mx-0" />
       <div>
-        <span className="text-xs font-mono uppercase tracking-widest opacity-40">
-          {agent.name}
-        </span>
+        <div className="flex items-center gap-3">
+          <span className="text-xs font-mono uppercase tracking-widest opacity-40">
+            {agent.name}
+          </span>
+          <ToolStack tools={agent.tools} size="w-7 h-7" />
+        </div>
         <h3 className="mt-1 text-2xl font-bold leading-snug">{agent.title}</h3>
         <p className="mt-4 text-base opacity-80 leading-relaxed">{agent.longDescription}</p>
 
         <div className="mt-5 border-l-2 border-black/10 pl-4">
           <p className="text-sm italic opacity-70 leading-relaxed">{agent.useCase}</p>
-        </div>
-
-        <div className="mt-6 flex flex-wrap gap-2">
-          {agent.tools.map((tool) => (
-            <span
-              key={tool}
-              className="text-xs font-mono border border-black/20 rounded px-2.5 py-1 opacity-70"
-            >
-              {tool}
-            </span>
-          ))}
         </div>
 
         <div className="mt-6 pt-4 border-t border-black/10 flex flex-col gap-1 text-xs font-mono opacity-50">
@@ -112,25 +107,26 @@ function DesktopExplorer() {
   if (focused) {
     return (
       <div>
-        <div className="flex flex-wrap gap-2 pb-6 mb-8 border-b border-black/10">
-          {AGENTS.map((agent) => (
-            <AgentChip
-              key={agent.slug}
-              agent={agent}
-              active={agent.slug === focusedSlug}
-              onClick={() => setFocusedSlug(agent.slug)}
-            />
-          ))}
+        <div className="flex items-start justify-between gap-6 pb-6 mb-8 border-b border-black/10">
+          <div className="flex gap-4 overflow-x-auto pb-1">
+            {AGENTS.map((agent) => (
+              <AgentAvatarChip
+                key={agent.slug}
+                agent={agent}
+                active={agent.slug === focusedSlug}
+                onClick={() => setFocusedSlug(agent.slug)}
+              />
+            ))}
+          </div>
+          <button
+            type="button"
+            onClick={() => setFocusedSlug(null)}
+            data-cursor-hover
+            className="shrink-0 text-xs font-mono border border-black/20 rounded px-4 py-2 whitespace-nowrap transition-all duration-150 ease-out hover:border-black hover:bg-black hover:text-white"
+          >
+            Vue globale
+          </button>
         </div>
-
-        <button
-          type="button"
-          onClick={() => setFocusedSlug(null)}
-          data-cursor-hover
-          className="mb-6 text-xs font-mono opacity-50 hover:opacity-100 transition-opacity"
-        >
-          &larr; retour a la grille
-        </button>
 
         <AnimatePresence mode="wait">
           <AgentDetail agent={focused} />
@@ -157,10 +153,13 @@ function DesktopExplorer() {
               className="w-20 aspect-[2/3] text-sm transition-transform duration-200 ease-out group-hover:scale-105"
             />
             <div>
-              <span className="text-xs font-mono uppercase tracking-widest opacity-40">
-                {agent.name}
-              </span>
-              <p className="mt-1 text-sm opacity-70 leading-relaxed">{agent.shortDescription}</p>
+              <div className="flex items-center gap-3">
+                <span className="text-xs font-mono uppercase tracking-widest opacity-40">
+                  {agent.name}
+                </span>
+                <ToolStack tools={agent.tools} size="w-6 h-6" />
+              </div>
+              <p className="mt-2 text-sm opacity-70 leading-relaxed">{agent.shortDescription}</p>
               <span className="mt-2 inline-block text-xs font-mono underline opacity-60 group-hover:opacity-100">
                 En savoir plus
               </span>
@@ -207,9 +206,12 @@ function MobileExplorer() {
           <div className="mt-4 flex items-start gap-4">
             <Avatar agent={agent} className="w-16 aspect-[2/3] text-sm" />
             <div>
-              <span className="text-xs font-mono uppercase tracking-widest opacity-40">
-                {agent.name}
-              </span>
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-mono uppercase tracking-widest opacity-40">
+                  {agent.name}
+                </span>
+                <ToolStack tools={agent.tools} size="w-5 h-5" />
+              </div>
               <p className="mt-1 text-sm opacity-70 leading-relaxed">{agent.shortDescription}</p>
             </div>
           </div>
@@ -234,16 +236,6 @@ function MobileExplorer() {
                 <p className="mt-3 text-sm italic opacity-70 leading-relaxed border-l-2 border-black/10 pl-3">
                   {agent.useCase}
                 </p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {agent.tools.map((tool) => (
-                    <span
-                      key={tool}
-                      className="text-xs font-mono border border-black/20 rounded px-2.5 py-1 opacity-70"
-                    >
-                      {tool}
-                    </span>
-                  ))}
-                </div>
               </div>
             </motion.div>
           )}
