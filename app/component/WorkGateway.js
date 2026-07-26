@@ -20,14 +20,14 @@ const ENTRIES = [
 
 export default function WorkGateway() {
   return (
-    <Reveal className="max-w-5xl mx-auto px-6 py-16">
-      <div className="grid grid-cols-1 sm:grid-cols-2 border-t border-l border-black/10">
+    <Reveal className="max-w-5xl mx-auto px-6 py-24">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 sm:gap-16">
         {ENTRIES.map((entry) => (
           <Link
             key={entry.href}
             href={entry.href}
             data-cursor-hover
-            className="group relative bg-white p-8 flex flex-col border-r border-b border-black/10 transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-[0_0_0_1px_rgba(0,0,0,0.25),0_12px_24px_-8px_rgba(0,0,0,0.08)] hover:z-10"
+            className="group flex flex-col transition-transform duration-200 ease-out hover:-translate-y-1"
           >
             <span className="text-xs font-mono uppercase tracking-widest opacity-50">
               {entry.label}
@@ -36,7 +36,7 @@ export default function WorkGateway() {
               {entry.title}
             </h3>
             <p className="mt-3 text-sm opacity-70 leading-relaxed">{entry.description}</p>
-            <span className="mt-6 text-xs font-mono opacity-50 group-hover:opacity-100 transition-opacity">
+            <span className="mt-6 text-xs font-mono opacity-50 group-hover:opacity-100 group-hover:text-[#ff6b35] transition-colors">
               &rarr;
             </span>
           </Link>

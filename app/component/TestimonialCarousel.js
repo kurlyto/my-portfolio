@@ -7,6 +7,10 @@ const TESTIMONIALS = [
   { role: "Notaire", useCase: "Vérification de dossiers" },
   { role: "Garagiste", useCase: "Prise de rendez-vous" },
   { role: "Avocat", useCase: "Recherche documentaire (RAG)" },
+  { role: "Comptable", useCase: "Relance des factures impayées" },
+  { role: "Agence immobilière", useCase: "Standard téléphonique 24/7" },
+  { role: "Consultant indépendant", useCase: "Prospection commerciale" },
+  { role: "Commerçant", useCase: "Gestion des réseaux sociaux" },
 ];
 
 const AUTOPLAY_MS = 4500;

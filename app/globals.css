@@ -7,6 +7,8 @@ html {
 @theme inline {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-accent: #ff6b35;
+  --color-accent-dark: #e2531f;
 }
 
 a {
