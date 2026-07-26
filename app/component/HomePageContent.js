@@ -17,7 +17,11 @@ export default function HomePageContent() {
     <div className="bg-white text-black">
       <Header />
 
-      <section className="max-w-6xl mx-auto px-6 pt-16 pb-28 md:pt-24 md:pb-36 w-full grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-12 lg:gap-16 items-stretch">
+      <section
+        className={`max-w-6xl mx-auto px-6 pt-16 pb-28 md:pt-24 md:pb-36 w-full grid grid-cols-1 gap-12 lg:gap-16 items-stretch transition-[grid-template-columns] duration-300 ${
+          chatOpen ? "lg:grid-cols-[2fr_3fr]" : "lg:grid-cols-[3fr_2fr]"
+        }`}
+      >
         <ScrambleHero onOpenChat={() => setChatOpen(true)} />
         <div className="hidden lg:block">
           <AnimatePresence mode="wait">

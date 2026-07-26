@@ -1,4 +1,5 @@
 import Reveal from "./Reveal";
+import CallButton from "./CallButton";
 
 const ELON_URL = "https://t.me/Elon_Master_Bot";
 
@@ -77,19 +78,19 @@ export default function HowItWorks() {
           })}
         </div>
 
-        <div className="mt-20 pt-8 border-t border-black/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-8">
-          <p className="text-base italic opacity-50">
-            Une automatisation livrée. La suivante peut commencer.
-          </p>
+        <div className="mt-20 flex flex-col items-center gap-6">
           <a
             href={ELON_URL}
             target="_blank"
             rel="noopener noreferrer"
             data-cursor-hover
-            className="inline-block shrink-0 text-sm font-mono font-semibold rounded px-6 py-3 whitespace-nowrap transition-all duration-150 ease-out bg-[#ff6b35] text-white hover:bg-[#e2531f] hover:-translate-y-0.5 hover:shadow-lg"
+            className="inline-block text-lg font-mono font-semibold rounded px-10 py-5 whitespace-nowrap transition-all duration-150 ease-out bg-[#ff6b35] text-white hover:bg-[#e2531f] hover:-translate-y-0.5 hover:shadow-lg"
           >
             Commencer
           </a>
+          <CallButton className="inline-flex items-center gap-2 text-sm font-mono opacity-60 hover:opacity-100 hover:text-[#ff6b35] transition-colors">
+            &rarr; ou passer un appel
+          </CallButton>
         </div>
       </Reveal>
     </section>

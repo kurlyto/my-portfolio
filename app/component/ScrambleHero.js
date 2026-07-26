@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import CallButton from "./CallButton";
 
 const TITLE = "Une tâche que vous n'aimez pas faire ?\nOn l'automatise.";
 const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -51,17 +52,24 @@ export default function ScrambleHero({ onOpenChat }) {
       >
         Des tonnes de cas d&apos;usages. Quel est le vôtre ?
       </motion.p>
-      <motion.button
-        type="button"
-        onClick={onOpenChat}
-        data-cursor-hover
+      <motion.div
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.1, duration: 0.5, ease: "easeOut" }}
-        className="inline-block mt-8 text-sm font-mono font-semibold rounded px-6 py-3 whitespace-nowrap transition-all duration-150 ease-out bg-[#ff6b35] text-white hover:bg-[#e2531f] hover:-translate-y-0.5 hover:shadow-lg"
+        className="mt-8 flex flex-wrap items-center gap-4"
       >
-        J&apos;ai une idée en tête !
-      </motion.button>
+        <button
+          type="button"
+          onClick={onOpenChat}
+          data-cursor-hover
+          className="inline-block text-sm font-mono font-semibold rounded px-6 py-3 whitespace-nowrap transition-all duration-150 ease-out bg-[#ff6b35] text-white hover:bg-[#e2531f] hover:-translate-y-0.5 hover:shadow-lg"
+        >
+          J&apos;ai une idée en tête !
+        </button>
+        <CallButton className="inline-flex items-center gap-2 text-sm font-mono opacity-60 hover:opacity-100 hover:text-[#ff6b35] transition-colors">
+          ou passer un appel &rarr;
+        </CallButton>
+      </motion.div>
     </div>
   );
 }

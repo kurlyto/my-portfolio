@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 const ACCENT = "#ff6b35";
+const GREETING =
+  "Salut, je suis Elon. Décris-moi la tâche que tu veux automatiser, et je t'aide à cadrer le besoin.";
 
 function splitButtons(reply) {
   const marker = "---BOUTONS---";
@@ -19,13 +21,23 @@ function splitButtons(reply) {
   return { text, buttons: buttons.length ? buttons : null };
 }
 
-function Avatar() {
+function Avatar({ size = "w-7 h-7", pulse = false }) {
   return (
-    <div
-      className="w-7 h-7 rounded-full flex items-center justify-center shrink-0 text-[11px] font-mono font-bold text-white"
-      style={{ background: ACCENT }}
-    >
-      E
+    <div className="relative shrink-0">
+      {pulse && (
+        <motion.span
+          className={`absolute inset-0 rounded-full ${size}`}
+          style={{ background: ACCENT }}
+          animate={{ opacity: [0.6, 0, 0.6], scale: [1, 1.6, 1] }}
+          transition={{ duration: 1.8, repeat: Infinity, ease: "easeOut" }}
+        />
+      )}
+      <div
+        className={`relative rounded-full flex items-center justify-center text-[11px] font-mono font-bold text-white ${size}`}
+        style={{ background: ACCENT }}
+      >
+        E
+      </div>
     </div>
   );
 }
@@ -174,16 +186,7 @@ function ChatBody({ threadId, messages, streamingText, error, sendMessage }) {
   return (
     <>
       <div ref={scrollRef} className="flex-1 overflow-y-auto px-4 py-4 flex flex-col gap-4">
-        {messages.length === 0 && streamingText === null && (
-          <div className="h-full flex flex-col items-center justify-center text-center gap-2 px-6">
-            <p className="text-[14px] text-black/60">
-              Décris-moi la tâche que tu veux automatiser.
-            </p>
-            <p className="text-[12px] font-mono text-black/30">
-              Elon cadre ton besoin en quelques questions.
-            </p>
-          </div>
-        )}
+        <MessageBubble role="ASSISTANT" text={GREETING} streaming={false} onQuickReply={sendMessage} />
 
         {messages.map((m, i) => (
           <MessageBubble
@@ -220,7 +223,7 @@ function ChatBody({ threadId, messages, streamingText, error, sendMessage }) {
           onChange={(e) => setInput(e.target.value)}
           placeholder="Écris ton message…"
           disabled={!threadId || streamingText !== null}
-          className="flex-1 text-[14px] bg-transparent outline-none placeholder:text-black/30 disabled:opacity-40"
+          className="flex-1 text-[15px] bg-transparent outline-none placeholder:text-black/30 disabled:opacity-40"
         />
         <button
           type="submit"
@@ -240,9 +243,9 @@ function ChatHeader({ onClose, closeLabel }) {
   return (
     <div className="flex items-center justify-between px-4 py-3 border-b border-black/10 shrink-0">
       <div className="flex items-center gap-2">
-        <Avatar />
+        <Avatar pulse />
         <div>
-          <p className="text-[13px] font-semibold leading-tight">Elon</p>
+          <p className="text-[14px] font-semibold leading-tight">Elon</p>
           <p className="text-[11px] font-mono uppercase tracking-wider text-black/40 leading-tight">
             Agent créateur d&apos;agents
           </p>
@@ -272,6 +275,7 @@ export default function ChatPanel({ onClose, fullScreen = false }) {
         exit={{ opacity: 0, x: 24 }}
         transition={{ duration: 0.2, ease: "easeOut" }}
         className="fixed inset-0 z-50 bg-white flex flex-col"
+        style={{ boxShadow: `inset 0 0 0 2px ${ACCENT}` }}
       >
         <ChatHeader onClose={onClose} closeLabel="← retour" />
         <ChatBody {...chat} />
@@ -285,7 +289,11 @@ export default function ChatPanel({ onClose, fullScreen = false }) {
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.98 }}
       transition={{ duration: 0.25, ease: "easeOut" }}
-      className="flex flex-col h-full min-h-[420px] border border-black/10 rounded bg-white overflow-hidden"
+      className="flex flex-col h-full min-h-[560px] rounded bg-white overflow-hidden"
+      style={{
+        border: `2px solid ${ACCENT}`,
+        boxShadow: `0 0 0 4px ${ACCENT}1a, 0 20px 40px -12px ${ACCENT}33`,
+      }}
     >
       <ChatHeader onClose={onClose} closeLabel="×" />
       <ChatBody {...chat} />

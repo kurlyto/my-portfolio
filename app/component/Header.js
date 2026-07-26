@@ -56,12 +56,12 @@ function NavDropdown({ label, items, dark }) {
 
 export default function Header({ dark = false }) {
   return (
-    <header className="w-full flex items-center justify-between gap-6 max-w-6xl mx-auto px-6 py-8">
+    <header className="relative w-full flex items-center justify-between gap-6 max-w-6xl mx-auto px-6 py-8">
       <Link href="/" className="text-sm font-mono opacity-80 hover:opacity-100 transition-opacity">
         NK
       </Link>
 
-      <nav className="flex items-center gap-10 text-sm font-mono uppercase tracking-widest">
+      <nav className="absolute left-1/2 -translate-x-1/2 flex items-center gap-10 text-base font-mono uppercase tracking-widest">
         <NavDropdown
           label="Work"
           dark={dark}

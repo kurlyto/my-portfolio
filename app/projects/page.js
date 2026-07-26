@@ -1,6 +1,22 @@
 import Header from "../component/Header";
 import Footer from "../component/Footer";
 import Reveal from "../component/Reveal";
+import {
+  NextJsIcon,
+  ReactIcon,
+  TypeScriptIcon,
+  PythonIcon,
+  NodeJsIcon,
+  TailwindIcon,
+  ViteIcon,
+  SocketIoIcon,
+  SupabaseIcon,
+  ExpressIcon,
+  GovApiIcon,
+  PrismaIcon,
+  PostgresIcon,
+  TelegramIcon,
+} from "../component/tech-icons";
 
 export const metadata = {
   title: "Projects | Nathan Knaebel",
@@ -27,6 +43,13 @@ const PROJECTS = [
     description: "Une variante du poker japonais développée avant l'ère de l'IA.",
     years: "2023",
     link: "https://poker.nathan-knaebel.com",
+    tech: [
+      { icon: ReactIcon, label: "React" },
+      { icon: TypeScriptIcon, label: "TypeScript" },
+      { icon: ViteIcon, label: "Vite" },
+      { icon: SocketIoIcon, label: "Socket.io" },
+      { icon: TailwindIcon, label: "Tailwind CSS" },
+    ],
   },
   {
     name: "Featuring",
@@ -34,25 +57,55 @@ const PROJECTS = [
     description:
       "Avec qui cet acteur a-t-il joué ? Enchaînez les bonnes réponses dans un ping-pong culturel.",
     years: "2023",
+    tech: [
+      { icon: PythonIcon, label: "Python" },
+      { icon: NodeJsIcon, label: "Node.js" },
+    ],
   },
   {
     name: "AI or Not",
     status: "public",
     description: "La photo est-elle générée par IA, ou est-elle réelle ?",
     years: "2023",
+    tech: [
+      { icon: NextJsIcon, label: "Next.js" },
+      { icon: ReactIcon, label: "React" },
+      { icon: SupabaseIcon, label: "Supabase" },
+      { icon: TailwindIcon, label: "Tailwind CSS" },
+    ],
   },
   {
-    name: "Fichage Notariat & Succession",
+    name: "Fichage Notariat",
     status: "prive",
     description:
-      "Deux outils pour études notariales : vérification de l'intégrité et de la solvabilité des clients, et génération automatique de courriers de successions.",
+      "Vérification de l'intégrité et de la solvabilité des clients pour études notariales, via croisement de sources publiques (BODACC, registre des entreprises).",
     years: "2023 - 2024",
+    tech: [
+      { icon: NodeJsIcon, label: "Node.js" },
+      { icon: ExpressIcon, label: "Express" },
+      { icon: GovApiIcon, label: "API gouv.fr" },
+    ],
+  },
+  {
+    name: "Courrier de succession",
+    status: "prive",
+    description: "Génération automatique de courriers de successions pour études notariales.",
+    years: "2023 - 2024",
+    tech: [
+      { icon: NextJsIcon, label: "Next.js" },
+      { icon: TypeScriptIcon, label: "TypeScript" },
+      { icon: TailwindIcon, label: "Tailwind CSS" },
+    ],
   },
   {
     name: "Insider Bot",
     status: "public",
     description: "Alerte automatique sur les mouvements d'insiders des marchés de prédiction.",
     years: "2025",
+    tech: [
+      { icon: PythonIcon, label: "Python" },
+      { icon: TelegramIcon, label: "Telegram" },
+    ],
   },
   {
     name: "Mon Devis Dentaire",
@@ -61,6 +114,12 @@ const PROJECTS = [
       "Plateforme SaaS visant à fluidifier la signature des devis pour les cabinets dentaires. Explications des actes par IA, relances automatiques, prise de rendez-vous et solutions de paiement intégrées.",
     years: "2025 - 2026",
     link: "https://mondevisdentaire.fr",
+    tech: [
+      { icon: NextJsIcon, label: "Next.js" },
+      { icon: TypeScriptIcon, label: "TypeScript" },
+      { icon: PrismaIcon, label: "Prisma" },
+      { icon: PostgresIcon, label: "PostgreSQL" },
+    ],
   },
 ];
 
@@ -127,6 +186,16 @@ export default function ProjectsPage() {
                 <p className="mt-3 text-sm opacity-70 leading-relaxed">
                   {project.description}
                 </p>
+
+                {project.tech && (
+                  <ul className="mt-4 flex flex-wrap items-center gap-3">
+                    {project.tech.map(({ icon: Icon, label }) => (
+                      <li key={label} title={label} className="opacity-50 transition-opacity duration-150 hover:opacity-100">
+                        <Icon className="h-4 w-4" />
+                      </li>
+                    ))}
+                  </ul>
+                )}
 
                 <div className="mt-4 flex items-center justify-between text-xs font-mono opacity-50">
                   <span>{project.years}</span>

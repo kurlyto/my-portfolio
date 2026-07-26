@@ -1,10 +1,39 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 import { useState } from "react";
 import { AGENTS } from "./agents-data";
 
+const AGENTS_WITH_PHOTO = new Set([
+  "didier",
+  "marcel",
+  "simone",
+  "hugo",
+  "kylian",
+  "camille",
+  "mike",
+  "lea",
+  "soul",
+  "nate",
+  "jenseng",
+]);
+
 function Avatar({ agent, className }) {
+  if (AGENTS_WITH_PHOTO.has(agent.slug)) {
+    return (
+      <div className={`relative shrink-0 rounded overflow-hidden ${className}`}>
+        <Image
+          src={`/images/agents/${agent.slug}.png`}
+          alt={agent.name}
+          fill
+          sizes="200px"
+          className="object-cover"
+        />
+      </div>
+    );
+  }
+
   return (
     <div
       className={`shrink-0 rounded border border-black/15 bg-black/[0.03] flex items-center justify-center font-mono opacity-30 ${className}`}
