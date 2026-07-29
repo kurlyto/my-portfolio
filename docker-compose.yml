@@ -17,8 +17,8 @@ services:
       - /root/.claude:/claude-accounts/nathan/.claude
       - /root/.claude.json:/claude-accounts/nathan/.claude.json
       - /root/.claude-accounts/admin-mdd:/claude-accounts/admin-mdd
-      # Dossier Elon (mission.md, data/plans/) : meme agent, meme etat que le canal Telegram.
-      - /data/nathan/my-agents/Elon:/data/nathan/my-agents/Elon
+      # Dossier nate (mission.md, data/plans/) : meme agent, meme etat que le canal Telegram.
+      - /data/nathan/my-agents/nate:/data/nathan/my-agents/nate
     mem_limit: 1g
     cpus: 1.0
     logging:

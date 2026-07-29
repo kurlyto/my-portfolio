@@ -1,5 +1,5 @@
-// Meme format que Elon/mission.md : le message se termine par un bloc
-// ---BOUTONS--- suivi d'une option par ligne (voir Elon/telegram-bot/src/index.js
+// Meme format que nate/mission.md : le message se termine par un bloc
+// ---BOUTONS--- suivi d'une option par ligne (voir nate/telegram-bot/src/index.js
 // pour la version Telegram equivalente, meme marqueur, meme limite de 6).
 const MARKER = "---BOUTONS---";
 
@@ -13,7 +13,7 @@ export function splitButtons(reply) {
     .split("\n")
     .map((l) => l.trim())
     .filter(Boolean)
-    .slice(0, 6);
+    .slice(0, 12);
 
   return { text, buttons: buttons.length ? buttons : null };
 }

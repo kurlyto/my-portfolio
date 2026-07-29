@@ -1,16 +1,16 @@
 import Reveal from "./Reveal";
 import CallButton from "./CallButton";
 
-const ELON_URL = "https://t.me/Elon_Master_Bot";
+const NATE_URL = "https://t.me/AssistantNate_bot";
 
 const STEPS = [
   {
     number: "01",
     who: "Vous",
-    title: "Décrivez votre besoin à Elon",
+    title: "Décrivez votre besoin à Nate",
     description:
       "Dites-nous ce qui vous prend du temps, en langage courant. Pas de cahier des charges à préparer.",
-    link: ELON_URL,
+    link: NATE_URL,
   },
   {
     number: "02",
@@ -80,7 +80,7 @@ export default function HowItWorks() {
 
         <div className="mt-20 flex flex-col items-center gap-6">
           <a
-            href={ELON_URL}
+            href={NATE_URL}
             target="_blank"
             rel="noopener noreferrer"
             data-cursor-hover
