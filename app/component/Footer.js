@@ -1,12 +1,8 @@
 import Link from "next/link";
-import { WhatsAppIcon, LinkedInIcon, GitHubIcon, MailIcon } from "./icons";
+import { WhatsAppIcon, LinkedInIcon, GitHubIcon } from "./icons";
+import EmailButton from "./EmailButton";
 
 const CONTACTS = [
-  {
-    label: "Email",
-    href: "mailto:nathan.knaebel@gmail.com",
-    Icon: MailIcon,
-  },
   {
     label: "WhatsApp",
     href: "https://wa.me/33622164758",
@@ -24,20 +20,28 @@ const CONTACTS = [
   },
 ];
 
+const CONTACT_BUTTON_CLASS =
+  "w-12 h-12 flex items-center justify-center rounded-full border border-white/20 opacity-80 hover:opacity-100 hover:border-[#ff6b35] hover:text-[#ff6b35] hover:-translate-y-0.5 transition-all duration-150 ease-out";
+
 export default function Footer({ showHomeLink = true }) {
   return (
     <footer className="bg-black text-white text-center px-6 py-20">
       <h2 className="text-3xl md:text-4xl font-bold">Me contacter</h2>
       <div className="mt-10 flex items-center justify-center gap-6">
+        <EmailButton
+          className={CONTACT_BUTTON_CLASS}
+          iconClassName="w-5 h-5"
+          dark
+        />
         {CONTACTS.map(({ label, href, Icon }) => (
           <a
             key={label}
             href={href}
-            target={href.startsWith("mailto:") ? undefined : "_blank"}
-            rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label={label}
             data-cursor-hover
-            className="w-12 h-12 flex items-center justify-center rounded-full border border-white/20 opacity-80 hover:opacity-100 hover:border-[#ff6b35] hover:text-[#ff6b35] hover:-translate-y-0.5 transition-all duration-150 ease-out"
+            className={CONTACT_BUTTON_CLASS}
           >
             <Icon className="w-5 h-5" />
           </a>

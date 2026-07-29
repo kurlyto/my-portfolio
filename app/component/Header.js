@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { WhatsAppIcon, LinkedInIcon, GitHubIcon, MailIcon } from "./icons";
+import { WhatsAppIcon, LinkedInIcon, GitHubIcon } from "./icons";
+import EmailButton from "./EmailButton";
 
 const CONTACTS = [
-  { label: "Email", href: "mailto:nathan.knaebel@gmail.com", Icon: MailIcon },
   { label: "WhatsApp", href: "https://wa.me/33622164758", Icon: WhatsAppIcon },
   { label: "LinkedIn", href: "https://linkedin.com/in/nathanknaebel", Icon: LinkedInIcon },
   { label: "GitHub", href: "https://github.com/kurlyto", Icon: GitHubIcon },
@@ -71,22 +71,26 @@ function NavDropdown({ label, items, dark }) {
   );
 }
 
-function ContactIcons({ compact = false }) {
+function ContactIcons({ compact = false, dark = false }) {
+  const buttonClass = `flex items-center justify-center rounded-full bg-[#ff6b35] text-white hover:bg-[#e2531f] hover:-translate-y-0.5 hover:shadow-lg transition-all duration-150 ease-out ${
+    compact ? "w-10 h-10" : "w-9 h-9"
+  }`;
+  const iconClass = compact ? "w-[18px] h-[18px]" : "w-4 h-4";
+
   return (
-    <div className={`flex items-center ${compact ? "gap-3" : "gap-3"}`}>
+    <div className="flex items-center gap-3">
+      <EmailButton className={buttonClass} iconClassName={iconClass} dark={dark} />
       {CONTACTS.map(({ label, href, Icon }) => (
         <a
           key={label}
           href={href}
-          target={href.startsWith("mailto:") ? undefined : "_blank"}
-          rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+          target="_blank"
+          rel="noopener noreferrer"
           aria-label={label}
           data-cursor-hover
-          className={`flex items-center justify-center rounded-full bg-[#ff6b35] text-white hover:bg-[#e2531f] hover:-translate-y-0.5 hover:shadow-lg transition-all duration-150 ease-out ${
-            compact ? "w-10 h-10" : "w-9 h-9"
-          }`}
+          className={buttonClass}
         >
-          <Icon className={compact ? "w-[18px] h-[18px]" : "w-4 h-4"} />
+          <Icon className={iconClass} />
         </a>
       ))}
     </div>
@@ -149,7 +153,7 @@ function MobileMenu({ dark }) {
           </nav>
 
           <div className="px-6 py-10 flex justify-center">
-            <ContactIcons compact />
+            <ContactIcons compact dark={dark} />
           </div>
         </div>
       )}
@@ -171,7 +175,7 @@ export default function Header({ dark = false }) {
       </nav>
 
       <div className="hidden sm:block">
-        <ContactIcons />
+        <ContactIcons dark={dark} />
       </div>
 
       <MobileMenu dark={dark} />
