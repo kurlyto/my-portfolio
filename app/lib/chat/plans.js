@@ -9,7 +9,7 @@
 import * as fs from "node:fs";
 import * as path from "node:path";
 
-const LEADS_DIR = "/data/nathan/my-agents/nate/data/leads";
+const LEADS_DIR = "/data/nathan/my-agents/Nate/data/leads";
 
 /** Nombre de leads actuellement sur disque. 0 si le dossier n existe pas. */
 export function countPlans() {

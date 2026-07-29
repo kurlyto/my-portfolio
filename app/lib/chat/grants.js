@@ -12,7 +12,7 @@ import * as fs from "node:fs";
 import * as path from "node:path";
 import { releaseCode } from "./codes";
 
-const GRANTS_DIR = "/data/nathan/my-agents/nate/data/grants";
+const GRANTS_DIR = "/data/nathan/my-agents/Nate/data/grants";
 
 /**
  * Applique les autorisations en attente. Appelee au fil de l eau (a chaque

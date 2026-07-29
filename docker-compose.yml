@@ -12,13 +12,13 @@ services:
     volumes:
       - chat-data:/app/data
       # Binaire claude natif (hote) + comptes deja connectes, jamais reinstalles/relogges ici,
-      # meme patron que my-agents/Elon (canal Telegram) et my-agents/nate.
+      # meme patron que my-agents/Elon (canal Telegram) et my-agents/Nate.
       - /root/.local:/root/.local:ro
       - /root/.claude:/claude-accounts/nathan/.claude
       - /root/.claude.json:/claude-accounts/nathan/.claude.json
       - /root/.claude-accounts/admin-mdd:/claude-accounts/admin-mdd
       # Dossier nate (mission.md, data/plans/) : meme agent, meme etat que le canal Telegram.
-      - /data/nathan/my-agents/nate:/data/nathan/my-agents/nate
+      - /data/nathan/my-agents/Nate:/data/nathan/my-agents/Nate
     mem_limit: 1g
     cpus: 1.0
     logging:

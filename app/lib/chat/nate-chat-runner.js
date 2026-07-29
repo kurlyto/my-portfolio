@@ -1,8 +1,8 @@
-// Meme agent Nate que le bot Telegram (my-agents/nate), second canal d'entree.
+// Meme agent Nate que le bot Telegram (my-agents/Nate), second canal d'entree.
 // ATTENTION : ce fichier a longtemps pointe sur my-agents/Elon, qui depuis le
 // swap d'identite du 26/07/2026 contient l'assistant PERSO de Nathan (Gmail/
 // Calendar) et non le funnel commercial. Les visiteurs du site tombaient donc
-// sur le mauvais agent. Le funnel vit dans my-agents/nate/mission.md.
+// sur le mauvais agent. Le funnel vit dans my-agents/Nate/mission.md.
 // Difference cle avec nate/telegram-bot/src/chat-runner.js : ici on streame la
 // reponse token par token (--output-format stream-json --include-partial-messages)
 // au lieu d'attendre le JSON complet, via un callback onTextDelta appele a
@@ -14,7 +14,7 @@ import * as readline from "node:readline";
 import crypto from "node:crypto";
 
 const CLAUDE_BIN = "/root/.local/bin/claude";
-const AGENT_DIR = "/data/nathan/my-agents/nate";
+const AGENT_DIR = "/data/nathan/my-agents/Nate";
 const RUN_TIMEOUT_MS = 180_000;
 const HARD_PATH =
   "/root/.local/bin:/usr/local/bin:/usr/bin:/bin";
