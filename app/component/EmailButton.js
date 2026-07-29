@@ -129,7 +129,7 @@ export default function EmailButton({ className, iconClassName, dark = false }) 
               target={native ? undefined : "_blank"}
               rel={native ? undefined : "noopener noreferrer"}
               onClick={() => setOpen(false)}
-              className={`block px-4 py-2.5 text-xs normal-case tracking-normal transition-colors ${itemTone}`}
+              className={`block px-4 py-2.5 font-mono text-xs normal-case tracking-normal transition-colors ${itemTone}`}
             >
               {label}
             </a>
@@ -138,7 +138,7 @@ export default function EmailButton({ className, iconClassName, dark = false }) 
             type="button"
             role="menuitem"
             onClick={copyEmail}
-            className={`block w-full text-left px-4 py-2.5 text-xs normal-case tracking-normal border-t transition-colors ${itemTone} ${
+            className={`block w-full text-left px-4 py-2.5 font-mono text-xs normal-case tracking-normal border-t transition-colors ${itemTone} ${
               dark ? "border-white/15" : "border-black/15"
             }`}
           >
