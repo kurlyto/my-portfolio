@@ -84,8 +84,8 @@ export default function ScrambleHero({ onOpenChat }) {
           Passer un appel &rarr;
         </CallButton>
         <p className="w-full text-xs font-mono opacity-50">
-          Gratuit, sans engagement - on cadre votre besoin, vous repartez avec
-          une réponse claire.
+          On cadre gratuitement votre besoin : vous repartez avec une réponse
+          claire.
         </p>
       </motion.div>
 

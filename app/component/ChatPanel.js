@@ -555,14 +555,22 @@ function ChatHeader({ onClose, closeLabel, progress = 5 }) {
           </button>
         </div>
       </div>
-      <div className="h-[3px] w-full bg-black/[0.06] overflow-hidden">
-        <motion.div
-          className="h-full"
-          style={{ background: ACCENT }}
-          animate={{ width: `${progress}%` }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        />
-      </div>
+      <ProgressBar progress={progress} />
+    </div>
+  );
+}
+
+// Meme barre en haut et en bas du panneau : elle encadre la conversation et
+// reste visible sans avoir a remonter.
+function ProgressBar({ progress }) {
+  return (
+    <div className="h-[7px] w-full bg-black/[0.06] overflow-hidden shrink-0">
+      <motion.div
+        className="h-full"
+        style={{ background: ACCENT }}
+        animate={{ width: `${progress}%` }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      />
     </div>
   );
 }
@@ -582,6 +590,7 @@ export default function ChatPanel({ onClose, fullScreen = false }) {
       >
         <ChatHeader onClose={onClose} closeLabel="← retour" progress={chat.progress} />
         <ChatBody {...chat} />
+        <ProgressBar progress={chat.progress} />
       </motion.div>
     );
   }
@@ -604,6 +613,7 @@ export default function ChatPanel({ onClose, fullScreen = false }) {
     >
       <ChatHeader onClose={onClose} closeLabel="×" progress={chat.progress} />
       <ChatBody {...chat} />
+      <ProgressBar progress={chat.progress} />
     </motion.div>
   );
 }
