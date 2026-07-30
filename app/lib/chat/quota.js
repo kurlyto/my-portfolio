@@ -36,6 +36,15 @@ db.exec(`
   );
 `);
 
+// La table existe deja en production sans cette colonne : CREATE TABLE IF NOT
+// EXISTS ne l'ajouterait jamais. On la migre explicitement, en ignorant l'erreur
+// si elle est deja la (SQLite n'a pas de ADD COLUMN IF NOT EXISTS).
+try {
+  db.exec(`ALTER TABLE ip_usage ADD COLUMN voiceNotes INTEGER NOT NULL DEFAULT 0`);
+} catch {
+  // Colonne deja presente : rien a faire.
+}
+
 export const IDENTITY_DAILY_LIMIT = 30;
 export const AUDIT_DAILY_LIMIT = 5;
 
@@ -93,6 +102,27 @@ export function canStartAudit(ip) {
 
 export function recordAudit(ip) {
   bump(ip, "audits");
+}
+
+/**
+ * Transcriptions vocales. Chaque envoi appelle Whisper chez Groq : c'est une
+ * surface d'abus distincte du chat (on peut envoyer de l'audio sans jamais
+ * ecrire un mot), donc son propre compteur.
+ */
+export const VOICE_DAILY_LIMIT = 20;
+
+export const VOICE_LIMIT_MESSAGE =
+  "Tu as envoye beaucoup de messages vocaux aujourd'hui. Ecris-moi ton besoin, ou reviens demain.";
+
+export function canTranscribe(ip) {
+  const row = db
+    .prepare(`SELECT voiceNotes FROM ip_usage WHERE ip = ? AND day = ?`)
+    .get(ip, today());
+  return (row?.voiceNotes ?? 0) < VOICE_DAILY_LIMIT;
+}
+
+export function recordTranscription(ip) {
+  bump(ip, "voiceNotes");
 }
 
 export function usageSnapshot(ip) {

@@ -465,8 +465,17 @@ function ChatHeader({ onClose, closeLabel }) {
   );
 }
 
-export default function ChatPanel({ onClose, fullScreen = false }) {
+export default function ChatPanel({ onClose, fullScreen = false, initialMessage = null }) {
   const chat = useNateChat();
+  const sentRef = useRef(false);
+
+  // Message dicte au vocal : on l'envoie des que le thread est pret, une seule
+  // fois (le panneau se remonte au passage desktop/mobile).
+  useEffect(() => {
+    if (!initialMessage || sentRef.current || !chat.threadId || chat.restoring) return;
+    sentRef.current = true;
+    chat.sendMessage(initialMessage);
+  }, [initialMessage, chat.threadId, chat.restoring]);
 
   if (fullScreen) {
     return (
