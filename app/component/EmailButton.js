@@ -1,7 +1,13 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { MailIcon } from "./icons";
+import {
+  MailIcon,
+  GmailIcon,
+  OutlookIcon,
+  CopyIcon,
+  CheckIcon,
+} from "./icons";
 
 export const EMAIL = "nathan.knaebel@gmail.com";
 
@@ -15,17 +21,20 @@ const WEBMAILS = [
     href: `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
       EMAIL
     )}&su=${encodeURIComponent(SUBJECT)}`,
+    Icon: GmailIcon,
   },
   {
     label: "Outlook",
     href: `https://outlook.live.com/mail/0/deeplink/compose?to=${encodeURIComponent(
       EMAIL
     )}&subject=${encodeURIComponent(SUBJECT)}`,
+    Icon: OutlookIcon,
   },
   {
     label: "Application mail",
     href: MAILTO,
     native: true,
+    Icon: MailIcon,
   },
 ];
 
@@ -119,9 +128,9 @@ export default function EmailButton({ className, iconClassName, dark = false }) 
       {open && (
         <div
           role="menu"
-          className={`absolute top-full right-0 mt-3 z-30 min-w-[190px] border ${panelTone}`}
+          className={`absolute top-full right-0 mt-3 z-30 min-w-[205px] border ${panelTone}`}
         >
-          {WEBMAILS.map(({ label, href, native }) => (
+          {WEBMAILS.map(({ label, href, native, Icon }) => (
             <a
               key={label}
               href={href}
@@ -129,8 +138,9 @@ export default function EmailButton({ className, iconClassName, dark = false }) 
               target={native ? undefined : "_blank"}
               rel={native ? undefined : "noopener noreferrer"}
               onClick={() => setOpen(false)}
-              className={`block px-4 py-2.5 font-mono text-xs normal-case tracking-normal transition-colors ${itemTone}`}
+              className={`flex items-center gap-2.5 px-4 py-2.5 font-mono text-xs normal-case tracking-normal transition-colors ${itemTone}`}
             >
+              <Icon className="w-3.5 h-3.5 shrink-0" />
               {label}
             </a>
           ))}
@@ -138,10 +148,15 @@ export default function EmailButton({ className, iconClassName, dark = false }) 
             type="button"
             role="menuitem"
             onClick={copyEmail}
-            className={`block w-full text-left px-4 py-2.5 font-mono text-xs normal-case tracking-normal border-t transition-colors ${itemTone} ${
+            className={`flex w-full items-center gap-2.5 text-left px-4 py-2.5 font-mono text-xs normal-case tracking-normal border-t transition-colors ${itemTone} ${
               dark ? "border-white/15" : "border-black/15"
             }`}
           >
+            {copied ? (
+              <CheckIcon className="w-3.5 h-3.5 shrink-0" />
+            ) : (
+              <CopyIcon className="w-3.5 h-3.5 shrink-0" />
+            )}
             {copied ? "Copié !" : "Copier l'adresse"}
           </button>
         </div>

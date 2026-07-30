@@ -29,3 +29,60 @@ export function MailIcon(props) {
     </svg>
   );
 }
+
+export function CopyIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <path d="M9 2h9a2 2 0 0 1 2 2v11h-2V4H9zM5 6h9a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2zm0 2v12h9V8z" />
+    </svg>
+  );
+}
+
+export function CheckIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <path d="M9.55 17.6 4 12.05l1.4-1.4 4.15 4.15L18.6 5.6 20 7z" />
+    </svg>
+  );
+}
+
+// Logos officiels : couleurs de marque codees en dur, jamais currentColor.
+export function GmailIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" {...props}>
+      <path
+        fill="#4285F4"
+        d="M1.636 22h3.273V13.09L0 9.27v11.09C0 21.27.73 22 1.636 22z"
+      />
+      <path
+        fill="#34A853"
+        d="M19.09 22h3.274c.904 0 1.636-.73 1.636-1.64V9.27l-4.91 3.82z"
+      />
+      <path
+        fill="#FBBC04"
+        d="M19.09 3.64v9.45L24 9.27V4.46c0-2.02-2.31-3.18-3.93-1.96z"
+      />
+      <path fill="#EA4335" d="M4.91 13.09V3.64L12 8.96l7.09-5.32v9.45L12 18.41z" />
+      <path
+        fill="#C5221F"
+        d="M0 4.46v4.81l4.91 3.82V3.64L3.93 2.5C2.31 1.28 0 2.44 0 4.46z"
+      />
+    </svg>
+  );
+}
+
+export function OutlookIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" {...props}>
+      <path fill="#0364B8" d="M24 7.5v9c0 .41-.34.75-.75.75H13.5v-4.5h3v-2h-3v-1.5h3v-2h-3v-2h9.75c.41 0 .75.34.75.75z" />
+      <path fill="#0A2767" d="M16.5 7.75h3.75v2H16.5zm0 3.5h3.75v2H16.5zm0 3.5h3.75v2H16.5z" />
+      <path fill="#28A8EA" d="M13.5 2.25 24 4.5v2.25H13.5z" />
+      <path fill="#0078D4" d="M13.5 17.25H24v2.25L13.5 21.75z" />
+      <path fill="#1490DF" d="M14 1.5 0 4v16l14 2.5z" />
+      <path
+        fill="#fff"
+        d="M7 7.9c-2.2 0-3.7 1.9-3.7 4.35S4.8 16.6 7 16.6s3.7-1.9 3.7-4.35S9.2 7.9 7 7.9zm0 2.05c1.05 0 1.7.93 1.7 2.3s-.65 2.3-1.7 2.3-1.7-.93-1.7-2.3.65-2.3 1.7-2.3z"
+      />
+    </svg>
+  );
+}
