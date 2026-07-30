@@ -269,6 +269,9 @@ function useNateChat() {
   const [error, setError] = useState(null);
   const [awaitingVerification, setAwaitingVerification] = useState(false);
   const [restoring, setRestoring] = useState(true);
+  // 5 des l'ouverture, avant tout message : la barre doit donner le signal
+  // "ca a deja commence" plutot que partir de zero.
+  const [progress, setProgress] = useState(5);
   const initRef = useRef(false);
   const pollRef = useRef(null);
 
@@ -402,6 +405,12 @@ function useNateChat() {
           } else if (event === "done") {
             finalText = data.text;
             finalAction = data.action ?? null;
+            if (typeof data.progress === "number") {
+              // Ne recule jamais visuellement : un palier plus bas ici viendrait
+              // d'une branche de secours (quota, attente verification) plutot
+              // que d'un vrai retour en arriere du visiteur dans le funnel.
+              setProgress((p) => Math.max(p, data.progress));
+            }
           } else if (event === "error") {
             setError(data.message);
           }
@@ -424,7 +433,7 @@ function useNateChat() {
     }
   }
 
-  return { threadId, messages, streamingText, error, sendMessage, awaitingVerification, restoring };
+  return { threadId, messages, streamingText, error, sendMessage, awaitingVerification, restoring, progress };
 }
 
 function ChatBody({ threadId, messages, streamingText, error, sendMessage, awaitingVerification, restoring }) {
@@ -509,55 +518,56 @@ function ChatBody({ threadId, messages, streamingText, error, sendMessage, await
   );
 }
 
-function ChatHeader({ onClose, closeLabel }) {
+function ChatHeader({ onClose, closeLabel, progress = 5 }) {
   return (
-    <div className="flex items-center justify-between px-4 py-3 border-b border-black/10 shrink-0">
-      <div className="flex items-center gap-2">
-        <Avatar pulse />
-        <div>
-          <p className="text-[14px] font-semibold leading-tight">Nate</p>
-          <p className="text-[11px] font-mono uppercase tracking-wider text-black/40 leading-tight">
-            Votre conseiller gratuit
-          </p>
+    <div className="flex flex-col border-b border-black/10 shrink-0">
+      <div className="flex items-center justify-between px-4 py-3">
+        <div className="flex items-center gap-2">
+          <Avatar pulse />
+          <div>
+            <p className="text-[14px] font-semibold leading-tight">Nate</p>
+            <p className="text-[11px] font-mono uppercase tracking-wider text-black/40 leading-tight">
+              Votre conseiller gratuit
+            </p>
+          </div>
+        </div>
+        <div className="flex items-center gap-3">
+          <a
+            href={TELEGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-cursor-hover
+            className="inline-flex items-center gap-1.5 text-[12px] font-mono text-black/50 hover:text-black transition-colors duration-150"
+          >
+            <TelegramToolIcon className="w-4 h-4 shrink-0" />
+            <span className="hidden sm:inline">Parler avec Nate dans Telegram</span>
+            <span className="sm:hidden">Ouvrir dans Telegram</span>
+          </a>
+          <button
+            type="button"
+            onClick={onClose}
+            data-cursor-hover
+            className="flex items-center gap-1 text-black/50 hover:text-black transition-colors duration-150 text-[13px] font-mono"
+            aria-label="Fermer le chat"
+          >
+            {closeLabel}
+          </button>
         </div>
       </div>
-      <div className="flex items-center gap-3">
-        <a
-          href={TELEGRAM_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          data-cursor-hover
-          className="inline-flex items-center gap-1.5 text-[12px] font-mono text-black/50 hover:text-black transition-colors duration-150"
-        >
-          <TelegramToolIcon className="w-4 h-4 shrink-0" />
-          <span className="hidden sm:inline">Parler avec Nate dans Telegram</span>
-          <span className="sm:hidden">Ouvrir dans Telegram</span>
-        </a>
-        <button
-          type="button"
-          onClick={onClose}
-          data-cursor-hover
-          className="flex items-center gap-1 text-black/50 hover:text-black transition-colors duration-150 text-[13px] font-mono"
-          aria-label="Fermer le chat"
-        >
-          {closeLabel}
-        </button>
+      <div className="h-[3px] w-full bg-black/[0.06] overflow-hidden">
+        <motion.div
+          className="h-full"
+          style={{ background: ACCENT }}
+          animate={{ width: `${progress}%` }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        />
       </div>
     </div>
   );
 }
 
-export default function ChatPanel({ onClose, fullScreen = false, initialMessage = null }) {
+export default function ChatPanel({ onClose, fullScreen = false }) {
   const chat = useNateChat();
-  const sentRef = useRef(false);
-
-  // Message dicte au vocal : on l'envoie des que le thread est pret, une seule
-  // fois (le panneau se remonte au passage desktop/mobile).
-  useEffect(() => {
-    if (!initialMessage || sentRef.current || !chat.threadId || chat.restoring) return;
-    sentRef.current = true;
-    chat.sendMessage(initialMessage);
-  }, [initialMessage, chat.threadId, chat.restoring]);
 
   if (fullScreen) {
     return (
@@ -569,7 +579,7 @@ export default function ChatPanel({ onClose, fullScreen = false, initialMessage 
         className="fixed inset-0 z-50 bg-white flex flex-col"
         style={{ boxShadow: `inset 0 0 0 2px ${ACCENT}` }}
       >
-        <ChatHeader onClose={onClose} closeLabel="← retour" />
+        <ChatHeader onClose={onClose} closeLabel="← retour" progress={chat.progress} />
         <ChatBody {...chat} />
       </motion.div>
     );
@@ -581,13 +591,17 @@ export default function ChatPanel({ onClose, fullScreen = false, initialMessage 
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.98 }}
       transition={{ duration: 0.25, ease: "easeOut" }}
-      className="flex flex-col h-full min-h-[560px] max-h-[calc(100vh-8rem)] rounded bg-white overflow-hidden"
+      // min-h en vh plutot qu'un plancher fixe de 560px : sur un portable en
+      // 1366x768, 560px + le padding du hero faisaient deborder le chat sous la
+      // ligne de flottaison. Le plancher suit desormais la hauteur reelle de
+      // l'ecran, avec un minimum absolu pour rester utilisable.
+      className="flex flex-col h-full min-h-[min(560px,60vh)] max-h-[calc(100vh-6.5rem)] rounded bg-white overflow-hidden"
       style={{
         border: `2px solid ${ACCENT}`,
         boxShadow: `0 0 0 4px ${ACCENT}1a, 0 20px 40px -12px ${ACCENT}33`,
       }}
     >
-      <ChatHeader onClose={onClose} closeLabel="×" />
+      <ChatHeader onClose={onClose} closeLabel="×" progress={chat.progress} />
       <ChatBody {...chat} />
     </motion.div>
   );

@@ -55,6 +55,17 @@ export default function Footer({ showHomeLink = true }) {
           &larr; retour à l&apos;accueil
         </Link>
       )}
+      {/* Liens legaux : obligatoires des lors que le site collecte des donnees
+          personnelles (prenom, email, conversations via l'assistant). */}
+      <div className="mt-10 flex items-center justify-center gap-5 text-[11px] font-mono opacity-40">
+        <Link href="/mentions-legales" className="hover:opacity-100 hover:text-[#ff6b35] transition-colors">
+          Mentions légales
+        </Link>
+        <span aria-hidden>·</span>
+        <Link href="/confidentialite" className="hover:opacity-100 hover:text-[#ff6b35] transition-colors">
+          Confidentialité
+        </Link>
+      </div>
     </footer>
   );
 }

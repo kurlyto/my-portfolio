@@ -12,6 +12,32 @@ import VoiceRecorder from "./VoiceRecorder";
 import HowItWorks from "./HowItWorks";
 import Footer from "./Footer";
 
+// Bandeau d'offre en haut de page. Refermable : une banniere qu'on ne peut pas
+// fermer irrite le visiteur qui revient. Le choix n'est pas persiste
+// volontairement (pas de localStorage) : l'offre reste visible d'une visite a
+// l'autre, elle disparait seulement pour la session en cours.
+function OfferBanner() {
+  const [closed, setClosed] = useState(false);
+  if (closed) return null;
+
+  return (
+    <div className="relative bg-[#ff6b35] text-white">
+      <div className="max-w-7xl mx-auto px-6 py-2.5 pr-12 text-center text-[13px] font-mono tracking-wide">
+        <span className="font-bold uppercase">1 agent acheté, 1 agent offert</span>
+        <span className="hidden sm:inline opacity-85"> — offre valable pour un second agent, une fois par client.</span>
+      </div>
+      <button
+        type="button"
+        onClick={() => setClosed(true)}
+        aria-label="Fermer le bandeau"
+        className="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors text-[16px] leading-none"
+      >
+        ×
+      </button>
+    </div>
+  );
+}
+
 function MicGlyph(props) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
@@ -49,12 +75,16 @@ export default function HomePageContent() {
 
   return (
     <div className="bg-white text-black">
+      <OfferBanner />
       <Header />
 
       <section
         // Colonne gauche a largeur fixe : le hero garde exactement la meme
         // place que le chat soit ouvert ou non, seule la colonne droite change.
-        className="max-w-7xl mx-auto px-6 pt-16 pb-16 md:pt-24 md:pb-20 w-full grid grid-cols-1 lg:grid-cols-[minmax(0,620px)_1fr] gap-12 lg:gap-14 items-stretch"
+        // pt-24 -> pt-14 en desktop : le chat ouvert (colonne droite) depassait
+        // sous la ligne de flottaison sur les ecrans courts (1366x768). On
+        // remonte l'ensemble du hero pour que le panneau tienne en entier.
+        className="max-w-7xl mx-auto px-6 pt-16 pb-16 md:pt-14 md:pb-20 w-full grid grid-cols-1 lg:grid-cols-[minmax(0,620px)_1fr] gap-12 lg:gap-14 items-stretch"
       >
         <ScrambleHero onOpenChat={() => setChatOpen(true)} />
         <div className="hidden lg:block lg:sticky lg:top-6 lg:self-start">

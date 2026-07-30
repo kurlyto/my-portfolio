@@ -95,7 +95,10 @@ export default function TestimonialCarousel() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <div className="relative bg-[#faf8f5] text-black rounded-3xl border border-black/[0.07] shadow-[0_20px_50px_-20px_rgba(0,0,0,0.18)] p-8 md:p-10 min-h-[340px] flex flex-col overflow-hidden">
+      {/* Contour orange (accent de la marque) plutot qu'un liseré noir a 7%
+          quasi invisible : le bloc temoignage doit ressortir du fond blanc,
+          c'est la preuve sociale a cote du hero. */}
+      <div className="relative bg-[#faf8f5] text-black rounded-3xl border-2 border-[#ff6b35]/35 shadow-[0_20px_50px_-20px_rgba(255,107,53,0.25)] p-8 md:p-10 min-h-[340px] flex flex-col overflow-hidden">
         {/* Guillemet en filigrane : donne du caractere a la carte sans
             concurrencer le texte. */}
         <span

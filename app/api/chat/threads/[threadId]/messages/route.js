@@ -41,11 +41,14 @@ export const maxDuration = 200;
 // confondus). Sans ce garde, un prospect pourrait aller au bout du cadrage sans
 // jamais laisser son email : le lead serait perdu alors meme qu on a paye tous
 // les appels modele.
-// Regle a 30 (~15 echanges) et non 18 : en test le 30/07, un cadrage sain et
-// detaille atteignait 20 messages sans que Nate ait encore demande l identite -
-// il l aurait fait de lui-meme peu apres. Un seuil trop bas coupe la
-// conversation en plein milieu, ce qui est exactement ce qu on veut eviter.
-const FORCE_IDENTITY_AFTER = 30;
+// Regle a 22 (~11 echanges). Historique du reglage : 18 coupait un cadrage sain
+// en plein milieu ; 30 laissait Nate enchainer 18 messages sans jamais demander
+// l identite (constate le 30/07 sur le parcours "coiffeuse a domicile"), soit
+// autant de tours ou le prospect peut fermer la page et ou le lead est perdu.
+// 22 laisse la place a un cadrage confortable tout en rattrapant avant que ca
+// devienne couteux. La consigne de mission.md reste le mecanisme principal ;
+// ceci n est qu un filet.
+const FORCE_IDENTITY_AFTER = 22;
 
 // Quand le filet se declenche, la bascule vers le prompt d identite (isole du
 // funnel) produit un "Salut ! C'est quoi ton prenom ?" incongru apres 10
@@ -85,6 +88,33 @@ function verifyBaseUrl() {
   const url = process.env.CHAT_VERIFY_BASE_URL;
   if (!url) throw new Error("CHAT_VERIFY_BASE_URL manquant dans l'environnement");
   return url;
+}
+
+// Progression affichee dans le header du chat (barre "% du projet compris").
+// Par paliers nets plutot qu'un pourcentage continu : ca evite d'indexer la
+// barre sur un marqueur que Nate devrait ecrire lui-meme (fragile, on ne veut
+// pas complexifier mission.md), tout se deduit de signaux deja en base.
+// planJustWritten ecrase tout le reste et saute a 100 : Nathan veut que la
+// barre reflete "le livrable existe", meme si des questions facultatives de
+// fin de parcours n'ont pas eu de reponse et qu'un calcul par messages
+// donnerait un palier plus bas.
+function computeProgress({ messageCount, identityRequested, unlocked, planJustWritten }) {
+  if (planJustWritten) return 100;
+
+  if (unlocked) {
+    if (messageCount >= 9) return 90;
+    if (messageCount >= 7) return 80;
+    if (messageCount >= 5) return 70;
+    return 60;
+  }
+
+  if (identityRequested) return 45;
+
+  if (messageCount >= 7) return 40;
+  if (messageCount >= 5) return 35;
+  if (messageCount >= 3) return 25;
+  if (messageCount >= 2) return 15;
+  return 5;
 }
 
 // Parse le bloc ---IDENTITE--- termine par Nate une fois prénom+email obtenus
@@ -133,7 +163,7 @@ export async function POST(request, { params }) {
         if (!isThreadUnlocked(threadId) && trimmed === "Voir les agents existants") {
           addMessage(threadId, "USER", trimmed);
           addMessage(threadId, "ASSISTANT", AGENTS_CATALOG);
-          send("done", { text: AGENTS_CATALOG });
+          send("done", { text: AGENTS_CATALOG, progress: 5 });
           return;
         }
 
@@ -169,14 +199,14 @@ export async function POST(request, { params }) {
                 resendText = "L'envoi a encore échoué de mon côté, réessaie dans un instant.";
               }
               addMessage(threadId, "ASSISTANT", resendText);
-              send("done", { text: resendText });
+              send("done", { text: resendText, progress: 45 });
               return;
             }
 
             addMessage(threadId, "USER", trimmed);
             const waitText = `Il me manque juste ta confirmation : clique sur le lien que je t'ai envoyé à ${pending.email} et on reprend tout de suite là où on en était. Pense à vérifier tes spams. Si tu n'as rien reçu, dis-moi "renvoyer le lien".`;
             addMessage(threadId, "ASSISTANT", waitText);
-            send("done", { text: waitText });
+            send("done", { text: waitText, progress: 45 });
             return;
           }
 
@@ -187,7 +217,7 @@ export async function POST(request, { params }) {
           if (!canSpendIdentityTurn(ip)) {
             addMessage(threadId, "USER", trimmed);
             addMessage(threadId, "ASSISTANT", IDENTITY_LIMIT_MESSAGE);
-            send("done", { text: IDENTITY_LIMIT_MESSAGE });
+            send("done", { text: IDENTITY_LIMIT_MESSAGE, progress: 5 });
             return;
           }
           recordIdentityTurn(ip);
@@ -207,7 +237,7 @@ export async function POST(request, { params }) {
             markIdentityRequested(threadId);
             addMessage(threadId, "USER", trimmed);
             addMessage(threadId, "ASSISTANT", FORCED_IDENTITY_INTRO);
-            send("done", { text: FORCED_IDENTITY_INTRO });
+            send("done", { text: FORCED_IDENTITY_INTRO, progress: 45 });
             return;
           }
 
@@ -225,7 +255,7 @@ export async function POST(request, { params }) {
         if (!canStartAudit(ip)) {
           addMessage(threadId, "USER", trimmed);
           addMessage(threadId, "ASSISTANT", AUDIT_LIMIT_MESSAGE);
-          send("done", { text: AUDIT_LIMIT_MESSAGE });
+          send("done", { text: AUDIT_LIMIT_MESSAGE, progress: 60 });
           return;
         }
 
@@ -284,7 +314,7 @@ async function handleIdentityTurn({ threadId, trimmed, thread, send }) {
   addMessage(threadId, "ASSISTANT", replyText || result.reply);
 
   if (!identity) {
-    send("done", { text: replyText || result.reply });
+    send("done", { text: replyText || result.reply, progress: 45 });
     return;
   }
 
@@ -301,13 +331,13 @@ async function handleIdentityTurn({ threadId, trimmed, thread, send }) {
     console.error("Envoi email de verification echoue:", err);
     const errText = "L'envoi de l'email a échoué, réessaie dans un instant.";
     addMessage(threadId, "ASSISTANT", errText);
-    send("done", { text: errText });
+    send("done", { text: errText, progress: 45 });
     return;
   }
 
   const confirmText = `Je t'ai envoyé un lien à ${identity.email}. Clique dessus pour continuer (valable 30 minutes) — pense à vérifier tes spams si tu ne le vois pas.`;
   addMessage(threadId, "ASSISTANT", confirmText);
-  send("done", { text: confirmText });
+  send("done", { text: confirmText, progress: 45 });
 }
 
 // Un code gratuit ressemble a NATE-XXXX-XXXX. On le detecte dans le message du
@@ -447,7 +477,8 @@ async function handleFunnelTurn({ threadId, trimmed, thread, send, ip }) {
     markIdentityRequested(threadId);
   }
 
-  if (countPlans() > leadsBefore) {
+  const planJustWritten = countPlans() > leadsBefore;
+  if (planJustWritten) {
     recordAudit(ip);
   }
 
@@ -457,7 +488,14 @@ async function handleFunnelTurn({ threadId, trimmed, thread, send, ip }) {
     markAnnounced(announcedCode);
   }
 
-  send("done", { text, action: buildAction(action, threadId) });
+  const progress = computeProgress({
+    messageCount: countMessages(threadId),
+    identityRequested: isIdentityRequested(threadId),
+    unlocked: isThreadUnlocked(threadId),
+    planJustWritten,
+  });
+
+  send("done", { text, action: buildAction(action, threadId), progress });
 }
 
 // Traduit le marqueur detecte en bouton concret. Renvoie null si l action est
