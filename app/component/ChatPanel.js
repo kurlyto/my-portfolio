@@ -522,7 +522,7 @@ function ChatHeader({ onClose, closeLabel, progress = 5 }) {
   return (
     <div className="flex flex-col border-b border-black/10 shrink-0">
       <div className="flex items-center justify-between px-4 py-3">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3.5">
           <Avatar pulse />
           <div>
             <p className="text-[14px] font-semibold leading-tight">Nate</p>
@@ -537,7 +537,7 @@ function ChatHeader({ onClose, closeLabel, progress = 5 }) {
             target="_blank"
             rel="noopener noreferrer"
             data-cursor-hover
-            className="inline-flex items-center gap-1.5 text-[12px] font-mono text-black/50 hover:text-black transition-colors duration-150"
+            className="inline-flex items-center gap-1.5 text-[12px] font-mono text-black hover:text-[#ff6b35] transition-colors duration-150"
           >
             <TelegramToolIcon className="w-4 h-4 shrink-0" />
             <span className="hidden sm:inline">Parler avec Nate dans Telegram</span>
@@ -547,7 +547,13 @@ function ChatHeader({ onClose, closeLabel, progress = 5 }) {
             type="button"
             onClick={onClose}
             data-cursor-hover
-            className="flex items-center gap-1 text-black/50 hover:text-black transition-colors duration-150 text-[13px] font-mono"
+            // La croix est une pastille cliquable large ; le "retour" du plein
+            // ecran mobile reste un libelle texte.
+            className={
+              closeLabel === "×"
+                ? "flex items-center justify-center shrink-0 w-8 h-8 -mr-1 rounded-full text-[22px] leading-none text-black/45 hover:text-black hover:bg-black/[0.06] transition-colors duration-150 font-mono"
+                : "flex items-center gap-1 text-black/50 hover:text-black transition-colors duration-150 text-[13px] font-mono"
+            }
             aria-label="Fermer le chat"
           >
             {closeLabel}

@@ -48,7 +48,9 @@ function AgentCard({ agent }) {
           )}
         </div>
         <div className="min-w-0">
-          <p className="text-2xl font-bold leading-tight text-[#ff6b35]">{label}</p>
+          <p className="font-display text-[1.55rem] font-bold leading-tight tracking-tight text-[#ff6b35]">
+            {label}
+          </p>
           <p className="text-[12px] font-mono uppercase tracking-widest opacity-50 mt-1">
             {agent.name}
           </p>
@@ -66,6 +68,13 @@ const HIDDEN_FROM_SHOWCASE = new Set(["jo", "didier"]);
 // Vitesse de croisiere du defilement, en pixels par seconde.
 const SPEED_PX_PER_SEC = 26;
 
+// Amplitude verticale du glissement, en pixels de part et d'autre.
+const MAX_LIFT = 22;
+
+function clampLift(v) {
+  return Math.max(-MAX_LIFT, Math.min(MAX_LIFT, v));
+}
+
 export default function AgentMarquee() {
   const shown = AGENTS.filter((a) => !HIDDEN_FROM_SHOWCASE.has(a.slug));
   const doubled = [...shown, ...shown];
@@ -73,9 +82,9 @@ export default function AgentMarquee() {
   const viewportRef = useRef(null);
   const trackRef = useRef(null);
   const offsetRef = useRef(0);
-  const pausedRef = useRef(false);
   const dragRef = useRef(null);
   const movedRef = useRef(false);
+  const liftRef = useRef(0);
   const [dragging, setDragging] = useState(false);
 
   // Defilement pilote en JS plutot qu'en CSS : c'est la seule facon de laisser
@@ -105,11 +114,17 @@ export default function AgentMarquee() {
       const dt = (now - last) / 1000;
       last = now;
 
-      if (!pausedRef.current && !dragRef.current && !reduce) {
+      if (!dragRef.current && !reduce) {
         offsetRef.current -= SPEED_PX_PER_SEC * dt;
         normalize();
       }
-      track.style.transform = `translate3d(${offsetRef.current}px,0,0)`;
+      // Hors glissement, le decalage vertical revient a zero : la bande se
+      // remet d'aplomb toute seule quand on lache.
+      if (!dragRef.current && liftRef.current !== 0) {
+        liftRef.current *= 0.88;
+        if (Math.abs(liftRef.current) < 0.4) liftRef.current = 0;
+      }
+      track.style.transform = `translate3d(${offsetRef.current}px,${liftRef.current}px,0)`;
       raf = requestAnimationFrame(frame);
     }
 
@@ -118,7 +133,12 @@ export default function AgentMarquee() {
   }, []);
 
   function onPointerDown(e) {
-    dragRef.current = { startX: e.clientX, startOffset: offsetRef.current };
+    dragRef.current = {
+      startX: e.clientX,
+      startY: e.clientY,
+      startOffset: offsetRef.current,
+      startLift: liftRef.current,
+    };
     setDragging(true);
     e.currentTarget.setPointerCapture?.(e.pointerId);
   }
@@ -127,8 +147,12 @@ export default function AgentMarquee() {
     const drag = dragRef.current;
     if (!drag) return;
     const dx = e.clientX - drag.startX;
-    if (Math.abs(dx) > 4) drag.moved = true;
+    const dy = e.clientY - drag.startY;
+    if (Math.abs(dx) > 4 || Math.abs(dy) > 4) drag.moved = true;
     offsetRef.current = drag.startOffset + dx;
+    // Le vertical suit le doigt de facon amortie et bornee : c'est un effet de
+    // matiere, pas un vrai defilement (il n'y a rien a voir au-dessus).
+    liftRef.current = clampLift(drag.startLift + dy * 0.35);
   }
 
   // Un glissement ne doit pas ouvrir la carte : on annule le clic seulement
@@ -164,15 +188,9 @@ export default function AgentMarquee() {
         </p>
       </div>
 
-      <div
-        className="relative mt-14"
-        onMouseEnter={() => {
-          pausedRef.current = true;
-        }}
-        onMouseLeave={() => {
-          pausedRef.current = false;
-        }}
-      >
+      {/* Le survol ne met plus la bande en pause : seul un glissement reel
+          reprend la main sur le defilement. */}
+      <div className="relative mt-14">
         <div className="pointer-events-none absolute inset-y-0 left-0 w-16 md:w-40 z-10 bg-gradient-to-r from-black to-transparent" />
         <div className="pointer-events-none absolute inset-y-0 right-0 w-16 md:w-40 z-10 bg-gradient-to-l from-black to-transparent" />
 
@@ -183,9 +201,12 @@ export default function AgentMarquee() {
           onPointerUp={endDrag}
           onPointerCancel={endDrag}
           onClickCapture={onClickCapture}
-          // touch-action: pan-y laisse le scroll vertical de la page intact
-          // pendant qu'on capte le glissement horizontal.
-          className={`overflow-hidden touch-pan-y select-none ${
+          // pan-y conserve : le scroll vertical de la page reste prioritaire au
+          // doigt. Le leger decalage vertical est un bonus a la souris, pas un
+          // geste qui doit voler le scroll sur mobile.
+          // overflow-x seul + padding vertical : en overflow-hidden, la bordure
+          // haute des cartes et leur translation au survol etaient rognees.
+          className={`overflow-x-hidden py-3 touch-pan-y select-none ${
             dragging ? "cursor-grabbing" : "cursor-grab"
           }`}
         >
