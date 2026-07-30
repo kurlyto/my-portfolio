@@ -52,7 +52,7 @@ function VoicePitch({ onResult }) {
     <div className="mt-5 flex flex-col items-center gap-2">
       <VoiceRecorder
         onResult={onResult}
-        className="inline-flex items-center gap-2.5 rounded-full border-2 border-black px-6 py-3.5 text-[13px] font-mono font-bold uppercase tracking-wide transition-all duration-150 ease-out hover:bg-black hover:text-white hover:-translate-y-0.5"
+        className="inline-flex items-center gap-2.5 rounded-full bg-[#ff6b35] text-white px-7 py-3.5 text-[13px] font-mono font-bold uppercase tracking-wide transition-all duration-150 ease-out hover:bg-[#e2531f] hover:-translate-y-0.5"
       >
         <MicGlyph className="w-4 h-4" />
         J&apos;explique mon besoin
