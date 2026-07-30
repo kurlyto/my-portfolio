@@ -50,7 +50,7 @@ export default function ScrambleHero({ onOpenChat }) {
 
   return (
     <div className="min-w-0">
-      <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight leading-[1.1] whitespace-pre-line">
+      <h1 className="font-display text-4xl md:text-[3.4rem] font-black tracking-tight leading-[1.08] whitespace-pre-line">
         {displayText}
       </h1>
       <motion.p
@@ -78,7 +78,7 @@ export default function ScrambleHero({ onOpenChat }) {
         >
           Je clarifie mon besoin gratuitement
         </motion.button>
-        <CallButton className="inline-flex items-center gap-2 text-[13px] md:text-sm font-mono font-semibold rounded px-5 py-4 border-2 border-black text-black whitespace-nowrap transition-all duration-150 ease-out hover:bg-black hover:text-white hover:-translate-y-0.5">
+        <CallButton className="inline-flex items-center gap-2 text-[13px] md:text-sm font-mono font-bold uppercase tracking-wide rounded px-5 py-4 bg-black text-white whitespace-nowrap transition-all duration-150 ease-out hover:bg-[#333333] hover:-translate-y-0.5">
           Passer un appel &rarr;
         </CallButton>
         <p className="w-full text-xs font-mono opacity-50">

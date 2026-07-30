@@ -1,10 +1,18 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Fraunces, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 
-const geistSans = Geist({
+const inter = Inter({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+});
+
+// Serif arrondi reserve aux titres : rechauffe la page sans nuire a la
+// lisibilite du texte courant, qui reste en Inter.
+const fraunces = Fraunces({
+  variable: "--font-display",
+  subsets: ["latin"],
+  axes: ["SOFT", "WONK"],
 });
 
 const geistMono = Geist_Mono({
@@ -37,7 +45,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-black`}>
+      <body className={`${inter.variable} ${fraunces.variable} ${geistMono.variable} antialiased bg-white text-black`}>
         {children}
         <Analytics />
       </body>

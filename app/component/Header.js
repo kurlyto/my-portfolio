@@ -7,7 +7,7 @@ import EmailButton from "./EmailButton";
 
 const CONTACTS = [
   { label: "WhatsApp", href: "https://wa.me/33622164758", Icon: WhatsAppIcon },
-  { label: "LinkedIn", href: "https://linkedin.com/in/nathanknaebel", Icon: LinkedInIcon },
+  { label: "LinkedIn", href: "https://linkedin.com/in/nathan-knaebel", Icon: LinkedInIcon },
   { label: "GitHub", href: "https://github.com/kurlyto", Icon: GitHubIcon },
 ];
 

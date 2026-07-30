@@ -35,7 +35,7 @@ export default function HowItWorks() {
         <span className="text-xs font-mono uppercase tracking-widest text-[#ff6b35]">
           Comment ça marche
         </span>
-        <h2 className="mt-3 text-3xl md:text-5xl font-bold tracking-tight max-w-2xl">
+        <h2 className="font-display mt-3 text-3xl md:text-5xl font-bold tracking-tight max-w-2xl">
           Décrivez votre besoin. On construit la solution.
         </h2>
 

@@ -10,7 +10,7 @@ const CONTACTS = [
   },
   {
     label: "LinkedIn",
-    href: "https://linkedin.com/in/nathanknaebel",
+    href: "https://linkedin.com/in/nathan-knaebel",
     Icon: LinkedInIcon,
   },
   {
@@ -26,7 +26,7 @@ const CONTACT_BUTTON_CLASS =
 export default function Footer({ showHomeLink = true }) {
   return (
     <footer className="bg-black text-white text-center px-6 py-20">
-      <h2 className="text-3xl md:text-4xl font-bold">Me contacter</h2>
+      <h2 className="font-display text-3xl md:text-4xl font-bold">Me contacter</h2>
       <div className="mt-10 flex items-center justify-center gap-6">
         <EmailButton
           className={CONTACT_BUTTON_CLASS}

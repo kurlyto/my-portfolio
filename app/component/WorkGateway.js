@@ -25,7 +25,7 @@ export default function WorkGateway() {
         <span className="text-xs font-mono uppercase tracking-widest text-[#ff6b35]">
           Explorer
         </span>
-        <h2 className="mt-3 text-3xl md:text-5xl font-bold tracking-tight max-w-xl">
+        <h2 className="font-display mt-3 text-3xl md:text-5xl font-bold tracking-tight max-w-xl">
           Deux façons de voir ce que je fais.
         </h2>
 

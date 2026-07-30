@@ -19,9 +19,9 @@ export default function HomePageContent() {
       <Header />
 
       <section
-        className={`max-w-6xl mx-auto px-6 pt-16 pb-16 md:pt-24 md:pb-20 w-full grid grid-cols-1 gap-12 lg:gap-16 items-stretch transition-[grid-template-columns] duration-300 ${
-          chatOpen ? "lg:grid-cols-[2fr_3fr]" : "lg:grid-cols-[3fr_2fr]"
-        }`}
+        // Colonne gauche a largeur fixe : le hero garde exactement la meme
+        // place que le chat soit ouvert ou non, seule la colonne droite change.
+        className="max-w-7xl mx-auto px-6 pt-16 pb-16 md:pt-24 md:pb-20 w-full grid grid-cols-1 lg:grid-cols-[minmax(0,620px)_1fr] gap-12 lg:gap-14 items-stretch"
       >
         <ScrambleHero onOpenChat={() => setChatOpen(true)} />
         <div className="hidden lg:block lg:sticky lg:top-6 lg:self-start">

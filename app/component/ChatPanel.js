@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { TelegramToolIcon } from "./tool-icons";
 
 const ACCENT = "#ff6b35";
 
@@ -434,7 +435,7 @@ function ChatHeader({ onClose, closeLabel }) {
         <div>
           <p className="text-[14px] font-semibold leading-tight">Nate</p>
           <p className="text-[11px] font-mono uppercase tracking-wider text-black/40 leading-tight">
-            Votre agent conseil - gratuit
+            Votre conseiller gratuit
           </p>
         </div>
       </div>
@@ -444,9 +445,11 @@ function ChatHeader({ onClose, closeLabel }) {
           target="_blank"
           rel="noopener noreferrer"
           data-cursor-hover
-          className="hidden sm:inline text-[12px] font-mono text-black/50 hover:text-black transition-colors duration-150"
+          className="inline-flex items-center gap-1.5 text-[12px] font-mono text-black/50 hover:text-black transition-colors duration-150"
         >
-          Parler avec Nate dans Telegram
+          <TelegramToolIcon className="w-4 h-4 shrink-0" />
+          <span className="hidden sm:inline">Parler avec Nate dans Telegram</span>
+          <span className="sm:hidden">Ouvrir dans Telegram</span>
         </a>
         <button
           type="button"

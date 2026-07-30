@@ -58,7 +58,7 @@ export default function ToolStrip() {
   return (
     <div className="mt-12 min-w-0 overflow-hidden">
       <p className="text-[11px] font-mono uppercase tracking-widest opacity-40">
-        Connectable a vos outils
+        Connectable à vos outils
       </p>
 
       <div

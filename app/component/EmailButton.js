@@ -42,7 +42,18 @@ export default function EmailButton({ className, iconClassName, dark = false }) 
   const [open, setOpen] = useState(false);
   const [copied, setCopied] = useState(false);
   const [isTouch, setIsTouch] = useState(false);
+  const [dropUp, setDropUp] = useState(false);
   const containerRef = useRef(null);
+
+  // Le bouton du footer est en bas de page : ouvert vers le bas, le menu sort
+  // de l'ecran. On mesure la place disponible au moment de l'ouverture.
+  function toggle() {
+    if (!open && containerRef.current) {
+      const { bottom } = containerRef.current.getBoundingClientRect();
+      setDropUp(window.innerHeight - bottom < 220);
+    }
+    setOpen((v) => !v);
+  }
 
   // Sur tactile, mailto: ouvre le sélecteur d'applis natif du téléphone : on
   // laisse l'OS faire le choix plutôt que d'afficher notre menu de webmails.
@@ -115,7 +126,7 @@ export default function EmailButton({ className, iconClassName, dark = false }) 
     <div className="relative" ref={containerRef}>
       <button
         type="button"
-        onClick={() => setOpen((v) => !v)}
+        onClick={toggle}
         aria-label="Email"
         aria-haspopup="menu"
         aria-expanded={open}
@@ -128,7 +139,9 @@ export default function EmailButton({ className, iconClassName, dark = false }) 
       {open && (
         <div
           role="menu"
-          className={`absolute top-full right-0 mt-3 z-30 min-w-[205px] border ${panelTone}`}
+          className={`absolute right-0 z-30 min-w-[205px] border ${panelTone} ${
+            dropUp ? "bottom-full mb-3" : "top-full mt-3"
+          }`}
         >
           {WEBMAILS.map(({ label, href, native, Icon }) => (
             <a
