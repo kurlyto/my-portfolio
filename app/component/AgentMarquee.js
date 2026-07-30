@@ -20,6 +20,7 @@ const AGENTS_WITH_PHOTO = new Set([
   "nate",
   "jensen",
   "ousmane",
+  "ride",
 ]);
 
 function AgentCard({ agent }) {
@@ -67,11 +68,19 @@ function AgentCard({ agent }) {
   );
 }
 
-// Agents internes, sans interet pour un visiteur qui decouvre l'offre.
-const HIDDEN_FROM_SHOWCASE = new Set(["jo", "didier"]);
+// Agents ecartes de la vitrine : internes (jo, didier), trop abstrait pour un
+// visiteur (marcel/surveillance), ou deja incarne ailleurs sur la page (nate
+// est le cadreur de besoin, present dans le chat).
+const HIDDEN_FROM_SHOWCASE = new Set(["jo", "didier", "marcel", "nate"]);
+
+// Agents absents de agents-data.js (catalogue /agents) mais montres en
+// vitrine : ils illustrent une demande frequente.
+const EXTRA_AGENTS = [
+  { slug: "alexis", name: "Alexis", title: "Comptabilité" },
+];
 
 // Vitesse de croisiere du defilement, en pixels par seconde.
-const SPEED_PX_PER_SEC = 26;
+const SPEED_PX_PER_SEC = 29;
 
 // Amplitude verticale du glissement, en pixels de part et d'autre.
 const MAX_LIFT = 22;
@@ -85,7 +94,10 @@ function clampLift(v) {
 }
 
 export default function AgentMarquee() {
-  const shown = AGENTS.filter((a) => !HIDDEN_FROM_SHOWCASE.has(a.slug));
+  const shown = [
+    ...AGENTS.filter((a) => !HIDDEN_FROM_SHOWCASE.has(a.slug)),
+    ...EXTRA_AGENTS,
+  ];
   const doubled = [...shown, ...shown];
 
   const viewportRef = useRef(null);
@@ -229,7 +241,7 @@ export default function AgentMarquee() {
       <div className="sm:hidden mt-10 relative">
         <div className="flex snap-x snap-mandatory overflow-x-auto gap-4 px-6 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {shown.map((agent) => (
-            <div key={agent.slug} className="snap-center shrink-0">
+            <div key={agent.slug} className="snap-center shrink-0 flex">
               <AgentCard agent={agent} />
             </div>
           ))}
