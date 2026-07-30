@@ -22,6 +22,13 @@ a {
   text-decoration: inherit;
 }
 
+/* Un <button> affiche la fleche par defaut la ou un <a> affiche la main :
+   cote a cote, deux CTA identiques se comportaient differemment. */
+button:not(:disabled),
+[role="button"]:not(:disabled) {
+  cursor: pointer;
+}
+
 /* Defilement continu des cartes d'agents. La piste contient deux copies de la
    liste : -50% ramene donc exactement au point de depart, sans saut visible. */
 @keyframes marquee {
