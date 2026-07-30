@@ -116,6 +116,39 @@ export function createPendingVerification(threadId, firstName, email, intent) {
   return token;
 }
 
+// Depuis le 30/07/2026, le funnel (mission.md) tourne AVANT la verification :
+// Nate cadre le besoin en mode anonyme, puis reclame l'identite lui-meme via le
+// marqueur ---IDENTITE--- une fois la faisabilite confirmee. Ce drapeau retient
+// qu'il l'a fait, pour router les messages suivants vers la collecte.
+// Avant ce changement, le code imposait la collecte des le 1er message et
+// mission.md n'etait jamais charge pour un visiteur non verifie.
+db.exec(`
+  CREATE TABLE IF NOT EXISTS identity_requested (
+    threadId TEXT PRIMARY KEY,
+    requestedAt TEXT NOT NULL DEFAULT (datetime('now'))
+  );
+`);
+
+export function isIdentityRequested(threadId) {
+  return !!db
+    .prepare(`SELECT 1 FROM identity_requested WHERE threadId = ?`)
+    .get(threadId);
+}
+
+export function markIdentityRequested(threadId) {
+  db.prepare(
+    `INSERT INTO identity_requested (threadId) VALUES (?)
+     ON CONFLICT(threadId) DO NOTHING`,
+  ).run(threadId);
+}
+
+/** Nombre de messages deja echanges sur le thread (filet de securite anti-oubli). */
+export function countMessages(threadId) {
+  return (
+    db.prepare(`SELECT COUNT(*) AS n FROM messages WHERE threadId = ?`).get(threadId)?.n ?? 0
+  );
+}
+
 /**
  * Lecture seule de la verification en attente d'un thread (ne consomme rien).
  * Sert a savoir qu'un lien a deja ete envoye et qu'on attend le clic : sans ca,

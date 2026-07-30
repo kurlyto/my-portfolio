@@ -12,6 +12,9 @@ import {
   setIdentitySession,
   clearIdentitySession,
   getUnlockedProfile,
+  isIdentityRequested,
+  markIdentityRequested,
+  countMessages,
 } from "@/app/lib/chat/db";
 import { splitActionMarkers, paymentLinkFor, NATHAN_PHONE, NATHAN_PHONE_DISPLAY } from "@/app/lib/chat/payment";
 import {
@@ -33,19 +36,46 @@ import { sendVerificationEmail } from "@/app/lib/chat/mailer";
 
 export const maxDuration = 200;
 
+// Filet de securite : si Nate oublie d ecrire ---IDENTITE---, on force la
+// collecte au-dela de ce nombre de messages sur le thread (user + assistant
+// confondus). Sans ce garde, un prospect pourrait aller au bout du cadrage sans
+// jamais laisser son email : le lead serait perdu alors meme qu on a paye tous
+// les appels modele.
+// Regle a 30 (~15 echanges) et non 18 : en test le 30/07, un cadrage sain et
+// detaille atteignait 20 messages sans que Nate ait encore demande l identite -
+// il l aurait fait de lui-meme peu apres. Un seuil trop bas coupe la
+// conversation en plein milieu, ce qui est exactement ce qu on veut eviter.
+const FORCE_IDENTITY_AFTER = 30;
+
+// Quand le filet se declenche, la bascule vers le prompt d identite (isole du
+// funnel) produit un "Salut ! C'est quoi ton prenom ?" incongru apres 10
+// echanges de cadrage. On annonce donc la transition nous-memes, une seule
+// fois, sans appeler le modele.
+const FORCED_IDENTITY_INTRO =
+  "On a bien avancé sur ton projet. Avant d'aller plus loin et de te préparer ton dossier, " +
+  "j'ai besoin de savoir à qui je parle : quel est ton prénom ?";
+
 // Verrou anti-concurrence par thread : un visiteur ne peut avoir qu'une
 // requete en vol a la fois sur son propre thread (memoire process, comme
 // l'openspace admin devis_dentaire).
 const busyThreads = new Set();
 
+// Catalogue des agents deja construits. Le bloc ---AGENTS--- est rendu par le
+// front (ChatPanel) comme une liste de cartes portrait + nom + role, au lieu
+// d'un pave de texte : sur le canal web on peut se le permettre, contrairement
+// a Telegram. Format d'une ligne : slug|Nom|Role
+// Le slug doit correspondre a public/images/agents/<slug>.png ; si le fichier
+// manque, la carte retombe sur l'initiale plutot que d'afficher une image
+// cassee.
 const AGENTS_CATALOG =
-  "Voici les agents qu'on a déjà créés :\n\n" +
-  "Camille — assistante générale : gère emails, agenda, documents et administratif, peut piloter les autres agents depuis une seule conversation.\n\n" +
-  "Ousmane — prospection : trouve des leads qualifiés, relance les indécis, place les rendez-vous acceptés directement dans ton agenda.\n\n" +
-  "Hugo — veille et référencement : surveille ton secteur et tes concurrents, t'aide sur le SEO de ton site (audit, propositions d'articles).\n\n" +
-  "Léa — contenu et stratégie : construit ta stratégie de contenu, rédige des posts, propose un calendrier éditorial et des outils adaptés.\n\n" +
-  "Un de ces agents te parle, ou tu préfères qu'on cadre ton propre besoin ?\n\n" +
-  "---BOUTONS---\nJ'ai une idée en tête\nJe n'ai pas encore d'idée";
+  "Voici les agents qu'on a déjà créés. Un de ces profils te parle, " +
+  "ou tu préfères qu'on cadre ton propre besoin ?\n" +
+  "---AGENTS---\n" +
+  "camille|Camille|Emails, agenda, documents. Pilote les autres agents.\n" +
+  "ousmane|Ousmane|Trouve des clients, relance, place les rendez-vous.\n" +
+  "hugo|Hugo|Veille sur ton secteur et référencement de ton site.\n" +
+  "lea|Léa|Rédige tes posts et construit ta stratégie de contenu.\n" +
+  "---BOUTONS---\nJ'ai une idée en tête\nAide-moi à cadrer mon besoin";
 
 function sseEvent(event, data) {
   return `event: ${event}\ndata: ${JSON.stringify(data)}\n\n`;
@@ -150,9 +180,9 @@ export async function POST(request, { params }) {
             return;
           }
 
-          // Quota anti-abus : la collecte d identite est la seule partie
-          // ouverte a un inconnu, donc la plus exposee. Au-dela de la limite
-          // on repond un texte fixe, sans appeler le modele (aucun token
+          // Quota anti-abus : tout ce qui precede la verification est ouvert a
+          // un inconnu, donc c est la surface exposee. Au-dela de la limite on
+          // repond un texte fixe, sans appeler le modele (aucun token
           // consomme) - c est tout l interet de bloquer ici.
           if (!canSpendIdentityTurn(ip)) {
             addMessage(threadId, "USER", trimmed);
@@ -161,7 +191,32 @@ export async function POST(request, { params }) {
             return;
           }
           recordIdentityTurn(ip);
-          await handleIdentityTurn({ threadId, trimmed, thread, send });
+
+          // Depuis le 30/07/2026 : le funnel tourne AVANT la verification.
+          // Nate cadre le besoin en mode anonyme (mission.md) et reclame
+          // l identite lui-meme via le marqueur ---IDENTITE--- une fois la
+          // faisabilite confirmee. On ne bascule sur la collecte que la.
+          // Filet de securite : s il oublie le marqueur, on force la collecte
+          // au-dela de FORCE_IDENTITY_AFTER messages, sinon un prospect
+          // pourrait aller au bout du cadrage sans jamais laisser d email.
+          // Filet de securite : Nate n a pas ecrit ---IDENTITE--- alors que la
+          // conversation s eternise. On annonce la transition en reliant au
+          // cadrage deja fait, plutot que de basculer sans prevenir sur un
+          // prompt isole qui redemarrerait par un "Salut !" incongru.
+          if (!isIdentityRequested(threadId) && countMessages(threadId) >= FORCE_IDENTITY_AFTER) {
+            markIdentityRequested(threadId);
+            addMessage(threadId, "USER", trimmed);
+            addMessage(threadId, "ASSISTANT", FORCED_IDENTITY_INTRO);
+            send("done", { text: FORCED_IDENTITY_INTRO });
+            return;
+          }
+
+          if (isIdentityRequested(threadId)) {
+            await handleIdentityTurn({ threadId, trimmed, thread, send });
+            return;
+          }
+
+          await handleFunnelTurn({ threadId, trimmed, thread, send, ip });
           return;
         }
 
@@ -195,7 +250,7 @@ export async function POST(request, { params }) {
   });
 }
 
-async function handleIdentityTurn({ threadId, trimmed, send }) {
+async function handleIdentityTurn({ threadId, trimmed, thread, send }) {
   addMessage(threadId, "USER", trimmed);
 
   const existingSessionId = getIdentitySession(threadId);
@@ -207,12 +262,23 @@ async function handleIdentityTurn({ threadId, trimmed, send }) {
     message: trimmed,
     isFirstTurn,
     historyReplay: null,
+    // Sans ce preferredAccount, la collecte repartait toujours du compte par
+    // defaut : quand celui-ci est en quota (429), la bascule interne repartait
+    // du meme compte et echouait, alors que le funnel, lui, avait deja bascule.
+    // Symptome : "Une erreur est survenue" au moment de donner son email.
+    // Constate le 30/07/2026, compte principal en limite hebdomadaire.
+    preferredAccount: thread?.account,
     systemPrompt: IDENTITY_SYSTEM_PROMPT,
     allowedTools: "",
     onTextDelta: (text) => send("delta", { text }),
   });
 
   setIdentitySession(threadId, result.newSessionId ?? sessionId);
+  // Retient le compte qui a effectivement repondu, pour que le tour suivant
+  // (et le retour au funnel) reparte du bon.
+  if (result.usedAccount && result.usedAccount !== thread?.account) {
+    touchThread(threadId, thread?.sessionId ?? null, result.usedAccount);
+  }
 
   const { text: replyText, identity } = parseIdentityBlock(result.reply);
   addMessage(threadId, "ASSISTANT", replyText || result.reply);
@@ -363,8 +429,23 @@ async function handleFunnelTurn({ threadId, trimmed, thread, send, ip }) {
   // du texte affiche et convertis en bouton d action sous la bulle. On stocke
   // le texte nettoye en base pour que l historique ne contienne pas les
   // marqueurs bruts (sinon le replay les re-injecterait au tour suivant).
-  const { text, action } = splitActionMarkers(result.reply);
+  const { text: cleanedText, action } = splitActionMarkers(result.reply);
+
+  // ---IDENTITE--- : Nate a cadre le besoin, confirme la faisabilite, et
+  // reclame maintenant prenom + email (etape 0.5 de mission.md). On retire le
+  // marqueur du texte affiche ET stocke (sinon le replay le re-injecterait au
+  // tour suivant et Nate croirait devoir le redemander), et on bascule le
+  // thread en mode collecte pour les messages suivants.
+  const wantsIdentity = /^\s*---IDENTITE---\s*$/m.test(cleanedText);
+  const text = wantsIdentity
+    ? cleanedText.replace(/^\s*---IDENTITE---\s*$/m, "").trimEnd()
+    : cleanedText;
+
   addMessage(threadId, "ASSISTANT", text);
+
+  if (wantsIdentity && !isThreadUnlocked(threadId)) {
+    markIdentityRequested(threadId);
+  }
 
   if (countPlans() > leadsBefore) {
     recordAudit(ip);

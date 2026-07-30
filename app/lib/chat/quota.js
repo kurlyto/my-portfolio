@@ -7,6 +7,11 @@
 // 1. Tours AVANT verification email (IDENTITY_DAILY_LIMIT) : c'est la partie
 //    reellement exposee, un inconnu peut l'atteindre sans rien prouver. C'est
 //    la principale surface d'abus.
+//    /!\ L'unite est le TOUR DE CONVERSATION, pas le prospect. Le parcours
+//    demande l'identite APRES avoir compris le metier, les difficultes et le
+//    besoin (~8-12 tours), et non des l'entree : un plafond trop bas coupe le
+//    prospect en plein cadrage, avant meme la demande d'email — on perd alors
+//    et l'email et le besoin, apres avoir paye tous les appels modele.
 // 2. Audits termines (AUDIT_DAILY_LIMIT) : un audit complet est long (funnel
 //    entier), donc cher. Meme verifie, on ne laisse pas une IP en enchainer
 //    un nombre illimite.
@@ -45,8 +50,14 @@ try {
   // Colonne deja presente : rien a faire.
 }
 
-export const IDENTITY_DAILY_LIMIT = 30;
-export const AUDIT_DAILY_LIMIT = 5;
+// 60 tours anonymes = environ 5 prospects qui vont au bout du cadrage avant
+// verification (~12 tours chacun). Au-dela, ce n'est plus un prospect qui
+// hesite : quelqu'un exploite le canal gratuit.
+// /!\ Ne PAS confondre avec un nombre de prospects : l'unite est le TOUR de
+// conversation. Descendre ce chiffre a 5 couperait le premier prospect en plein
+// cadrage, avant meme que Nate lui ait demande son email.
+export const IDENTITY_DAILY_LIMIT = 60;
+export const AUDIT_DAILY_LIMIT = 3;
 
 export const IDENTITY_LIMIT_MESSAGE =
   "Je ne peux pas progresser sans la validation de ton adresse email. " +

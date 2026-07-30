@@ -57,7 +57,7 @@ function Avatar({ size = "w-7 h-7", pulse = false }) {
           "N"
         ) : (
           <img
-            src="/images/agents/nate.png"
+            src="/images/agents/nate-sm.webp"
             alt="Nate"
             onError={() => setFailed(true)}
             className="w-full h-full object-cover"
@@ -66,6 +66,71 @@ function Avatar({ size = "w-7 h-7", pulse = false }) {
       </div>
     </div>
   );
+}
+
+// Carte d'un agent du catalogue : portrait + nom + role, sur une ligne.
+// Repli sur l'initiale si le portrait ne charge pas, meme principe qu'Avatar.
+function AgentCard({ slug, name, role }) {
+  const [failed, setFailed] = useState(false);
+
+  return (
+    <div className="flex items-center gap-2.5 py-1.5">
+      <div
+        className="relative w-9 h-9 shrink-0 rounded-full overflow-hidden flex items-center justify-center text-[12px] font-mono font-bold text-white"
+        style={{ background: ACCENT }}
+      >
+        {failed ? (
+          name.charAt(0)
+        ) : (
+          <img
+            // Vignette 96px generee avec sharp (voir -sm.webp) : les portraits
+            // d'origine font ~1 Mo chacun, soit 4 Mo pour afficher 4 pastilles
+            // de 44px. La version optimisee pese ~1,3 Ko.
+            src={`/images/agents/${slug}-sm.webp`}
+            alt={name}
+            loading="lazy"
+            onError={() => setFailed(true)}
+            className="w-full h-full object-cover"
+          />
+        )}
+      </div>
+      <div className="min-w-0">
+        <div className="text-[13px] font-semibold leading-tight">{name}</div>
+        <div className="text-[12px] text-black/55 leading-snug">{role}</div>
+      </div>
+    </div>
+  );
+}
+
+// Le bloc ---AGENTS--- porte une ligne par agent : "slug|Nom|Role".
+// Meme principe que ---BOUTONS--- : un marqueur en fin de message, retire du
+// texte affiche et rendu comme un composant a part.
+function splitAgents(reply) {
+  const marker = "---AGENTS---";
+  const idx = reply.indexOf(marker);
+  if (idx === -1) return { text: reply, agents: null };
+
+  const text = reply.slice(0, idx).trimEnd();
+  const rest = reply.slice(idx + marker.length);
+
+  // Le bloc s'arrete au marqueur suivant s'il y en a un (ex: ---BOUTONS---),
+  // pour que les deux puissent coexister dans le meme message.
+  const nextMarker = rest.indexOf("---");
+  const block = nextMarker === -1 ? rest : rest.slice(0, nextMarker);
+  const tail = nextMarker === -1 ? "" : rest.slice(nextMarker);
+
+  const agents = block
+    .split("\n")
+    .map((l) => l.trim())
+    .filter(Boolean)
+    .map((l) => {
+      const [slug, name, ...roleParts] = l.split("|").map((p) => p.trim());
+      return slug && name ? { slug, name, role: roleParts.join(" | ") } : null;
+    })
+    .filter(Boolean)
+    .slice(0, 8);
+
+  return { text: text + (tail ? `\n${tail}` : ""), agents: agents.length ? agents : null };
 }
 
 function TypingDots() {
@@ -104,7 +169,14 @@ function ActionLink({ action }) {
 
 function MessageBubble({ role, text, streaming, onQuickReply, disableButtons, action }) {
   const isUser = role === "USER";
-  const { text: body, buttons } = isUser ? { text, buttons: null } : splitButtons(text);
+  // Ordre important : on extrait d'abord les agents (qui peuvent preceder un
+  // bloc ---BOUTONS---), puis les boutons dans ce qu'il reste.
+  const { text: withoutAgents, agents } = isUser
+    ? { text, agents: null }
+    : splitAgents(text);
+  const { text: body, buttons } = isUser
+    ? { text, buttons: null }
+    : splitButtons(withoutAgents);
 
   return (
     <motion.div
@@ -123,6 +195,16 @@ function MessageBubble({ role, text, streaming, onQuickReply, disableButtons, ac
         >
           {body}
           {streaming && !body && <TypingDots />}
+          {agents && !streaming && (
+            // whitespace-normal : la bulle est en whitespace-pre-line (pour
+            // respecter les sauts de ligne du texte), ce qui ferait aussi
+            // s'afficher ceux du JSX entre les cartes et les aererait a l'exces.
+            <div className="mt-3 whitespace-normal divide-y divide-black/[0.06]">
+              {agents.map((a) => (
+                <AgentCard key={a.slug} slug={a.slug} name={a.name} role={a.role} />
+              ))}
+            </div>
+          )}
         </div>
         {action && !streaming && <ActionLink action={action} />}
         {buttons && !streaming && (
