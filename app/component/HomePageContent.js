@@ -7,6 +7,8 @@ import ScrambleHero from "./ScrambleHero";
 import WorkGateway from "./WorkGateway";
 import TestimonialCarousel from "./TestimonialCarousel";
 import ChatPanel from "./ChatPanel";
+import ToolStrip from "./ToolStrip";
+import AgentMarquee from "./AgentMarquee";
 import HowItWorks from "./HowItWorks";
 import Footer from "./Footer";
 
@@ -18,12 +20,12 @@ export default function HomePageContent() {
       <Header />
 
       <section
-        className={`max-w-6xl mx-auto px-6 pt-16 pb-28 md:pt-24 md:pb-36 w-full grid grid-cols-1 gap-12 lg:gap-16 items-stretch transition-[grid-template-columns] duration-300 ${
+        className={`max-w-6xl mx-auto px-6 pt-16 pb-16 md:pt-24 md:pb-20 w-full grid grid-cols-1 gap-12 lg:gap-16 items-stretch transition-[grid-template-columns] duration-300 ${
           chatOpen ? "lg:grid-cols-[2fr_3fr]" : "lg:grid-cols-[3fr_2fr]"
         }`}
       >
         <ScrambleHero onOpenChat={() => setChatOpen(true)} />
-        <div className="hidden lg:block">
+        <div className="hidden lg:block lg:sticky lg:top-6 lg:self-start">
           <AnimatePresence mode="wait">
             {chatOpen ? (
               <ChatPanel key="chat" onClose={() => setChatOpen(false)} />
@@ -45,6 +47,8 @@ export default function HomePageContent() {
         )}
       </AnimatePresence>
 
+      <ToolStrip />
+      <AgentMarquee />
       <WorkGateway />
       <HowItWorks />
       <Footer showHomeLink={false} />

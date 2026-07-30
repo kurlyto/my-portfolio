@@ -34,6 +34,10 @@ function splitButtons(reply) {
 }
 
 function Avatar({ size = "w-7 h-7", pulse = false }) {
+  // Repli sur l'initiale si le portrait ne charge pas : l'avatar reste lisible
+  // plutot que d'afficher une image cassee.
+  const [failed, setFailed] = useState(false);
+
   return (
     <div className="relative shrink-0">
       {pulse && (
@@ -45,10 +49,19 @@ function Avatar({ size = "w-7 h-7", pulse = false }) {
         />
       )}
       <div
-        className={`relative rounded-full flex items-center justify-center text-[11px] font-mono font-bold text-white ${size}`}
+        className={`relative rounded-full overflow-hidden flex items-center justify-center text-[11px] font-mono font-bold text-white ${size}`}
         style={{ background: ACCENT }}
       >
-        N
+        {failed ? (
+          "N"
+        ) : (
+          <img
+            src="/images/agents/nate.png"
+            alt="Nate"
+            onError={() => setFailed(true)}
+            className="w-full h-full object-cover"
+          />
+        )}
       </div>
     </div>
   );
@@ -335,8 +348,13 @@ function ChatBody({ threadId, messages, streamingText, error, sendMessage, await
   const [input, setInput] = useState("");
   const scrollRef = useRef(null);
 
+  // scrollTop plutot que scrollIntoView : on defile le conteneur des messages
+  // sans jamais toucher au scroll de la page, sinon chaque reponse tire le
+  // visiteur vers le bas de la landing.
   useEffect(() => {
-    scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
+    const el = scrollRef.current;
+    if (!el) return;
+    el.scrollTop = el.scrollHeight;
   }, [messages, streamingText]);
 
   return (
@@ -416,7 +434,7 @@ function ChatHeader({ onClose, closeLabel }) {
         <div>
           <p className="text-[14px] font-semibold leading-tight">Nate</p>
           <p className="text-[11px] font-mono uppercase tracking-wider text-black/40 leading-tight">
-            Agent créateur d&apos;agents
+            Votre agent conseil - gratuit
           </p>
         </div>
       </div>
@@ -469,7 +487,7 @@ export default function ChatPanel({ onClose, fullScreen = false }) {
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.98 }}
       transition={{ duration: 0.25, ease: "easeOut" }}
-      className="flex flex-col h-full min-h-[560px] rounded bg-white overflow-hidden"
+      className="flex flex-col h-full min-h-[560px] max-h-[calc(100vh-8rem)] rounded bg-white overflow-hidden"
       style={{
         border: `2px solid ${ACCENT}`,
         boxShadow: `0 0 0 4px ${ACCENT}1a, 0 20px 40px -12px ${ACCENT}33`,

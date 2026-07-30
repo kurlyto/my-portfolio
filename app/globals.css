@@ -15,3 +15,33 @@ a {
   color: inherit;
   text-decoration: inherit;
 }
+
+/* Defilement continu des cartes d'agents. La piste contient deux copies de la
+   liste : -50% ramene donc exactement au point de depart, sans saut visible. */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-reverse {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  [style*="marquee"] {
+    animation: none !important;
+  }
+}
