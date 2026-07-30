@@ -72,7 +72,7 @@ function NavDropdown({ label, items, dark }) {
 }
 
 function ContactIcons({ compact = false, dark = false }) {
-  const buttonClass = `flex items-center justify-center rounded-full bg-[#ff6b35] text-white hover:bg-[#e2531f] hover:-translate-y-0.5 hover:shadow-lg transition-all duration-150 ease-out ${
+  const buttonClass = `flex items-center justify-center rounded-full bg-[#ff6b35] text-black hover:bg-[#e2531f] hover:-translate-y-0.5 hover:shadow-lg transition-all duration-150 ease-out ${
     compact ? "w-10 h-10" : "w-9 h-9"
   }`;
   const iconClass = compact ? "w-[18px] h-[18px]" : "w-4 h-4";
