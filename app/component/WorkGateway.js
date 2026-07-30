@@ -20,7 +20,7 @@ const ENTRIES = [
 
 export default function WorkGateway() {
   return (
-    <section className="bg-black text-white">
+    <section className="bg-white text-black border-t border-black/10">
       <Reveal className="max-w-5xl mx-auto px-6 py-28 md:py-36">
         <span className="text-xs font-mono uppercase tracking-widest text-[#ff6b35]">
           Explorer

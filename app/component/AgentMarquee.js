@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AGENTS } from "../agents/agents-data";
 import { AGENT_PITCHES } from "./agent-pitches";
 
@@ -60,9 +60,94 @@ function AgentCard({ agent }) {
   );
 }
 
+// Agents internes, sans interet pour un visiteur qui decouvre l'offre.
+const HIDDEN_FROM_SHOWCASE = new Set(["jo", "didier"]);
+
+// Vitesse de croisiere du defilement, en pixels par seconde.
+const SPEED_PX_PER_SEC = 26;
+
 export default function AgentMarquee() {
-  const [paused, setPaused] = useState(false);
-  const doubled = [...AGENTS, ...AGENTS];
+  const shown = AGENTS.filter((a) => !HIDDEN_FROM_SHOWCASE.has(a.slug));
+  const doubled = [...shown, ...shown];
+
+  const viewportRef = useRef(null);
+  const trackRef = useRef(null);
+  const offsetRef = useRef(0);
+  const pausedRef = useRef(false);
+  const dragRef = useRef(null);
+  const movedRef = useRef(false);
+  const [dragging, setDragging] = useState(false);
+
+  // Defilement pilote en JS plutot qu'en CSS : c'est la seule facon de laisser
+  // le visiteur prendre la main a la souris ou au doigt, puis de reprendre le
+  // mouvement la ou il l'a laisse.
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return undefined;
+
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let raf;
+    let last = performance.now();
+
+    // La piste contient deux copies de la liste : on boucle sur sa demi-largeur.
+    function half() {
+      return track.scrollWidth / 2;
+    }
+
+    function normalize() {
+      const h = half();
+      if (h <= 0) return;
+      if (offsetRef.current <= -h) offsetRef.current += h;
+      if (offsetRef.current > 0) offsetRef.current -= h;
+    }
+
+    function frame(now) {
+      const dt = (now - last) / 1000;
+      last = now;
+
+      if (!pausedRef.current && !dragRef.current && !reduce) {
+        offsetRef.current -= SPEED_PX_PER_SEC * dt;
+        normalize();
+      }
+      track.style.transform = `translate3d(${offsetRef.current}px,0,0)`;
+      raf = requestAnimationFrame(frame);
+    }
+
+    raf = requestAnimationFrame(frame);
+    return () => cancelAnimationFrame(raf);
+  }, []);
+
+  function onPointerDown(e) {
+    dragRef.current = { startX: e.clientX, startOffset: offsetRef.current };
+    setDragging(true);
+    e.currentTarget.setPointerCapture?.(e.pointerId);
+  }
+
+  function onPointerMove(e) {
+    const drag = dragRef.current;
+    if (!drag) return;
+    const dx = e.clientX - drag.startX;
+    if (Math.abs(dx) > 4) drag.moved = true;
+    offsetRef.current = drag.startOffset + dx;
+  }
+
+  // Un glissement ne doit pas ouvrir la carte : on annule le clic seulement
+  // si le pointeur a reellement bouge, pour ne pas casser le clic simple.
+  function onClickCapture(e) {
+    if (movedRef.current) {
+      e.preventDefault();
+      e.stopPropagation();
+      movedRef.current = false;
+    }
+  }
+
+  function endDrag(e) {
+    if (!dragRef.current) return;
+    movedRef.current = Boolean(dragRef.current.moved);
+    dragRef.current = null;
+    setDragging(false);
+    e.currentTarget.releasePointerCapture?.(e.pointerId);
+  }
 
   return (
     <section className="bg-black text-white py-20 md:py-24 overflow-hidden">
@@ -81,20 +166,30 @@ export default function AgentMarquee() {
 
       <div
         className="relative mt-14"
-        onMouseEnter={() => setPaused(true)}
-        onMouseLeave={() => setPaused(false)}
+        onMouseEnter={() => {
+          pausedRef.current = true;
+        }}
+        onMouseLeave={() => {
+          pausedRef.current = false;
+        }}
       >
         <div className="pointer-events-none absolute inset-y-0 left-0 w-16 md:w-40 z-10 bg-gradient-to-r from-black to-transparent" />
         <div className="pointer-events-none absolute inset-y-0 right-0 w-16 md:w-40 z-10 bg-gradient-to-l from-black to-transparent" />
 
-        <div className="overflow-hidden">
-          <div
-            className="flex items-stretch gap-5 w-max"
-            style={{
-              animation: "marquee 140s linear infinite",
-              animationPlayState: paused ? "paused" : "running",
-            }}
-          >
+        <div
+          ref={viewportRef}
+          onPointerDown={onPointerDown}
+          onPointerMove={onPointerMove}
+          onPointerUp={endDrag}
+          onPointerCancel={endDrag}
+          onClickCapture={onClickCapture}
+          // touch-action: pan-y laisse le scroll vertical de la page intact
+          // pendant qu'on capte le glissement horizontal.
+          className={`overflow-hidden touch-pan-y select-none ${
+            dragging ? "cursor-grabbing" : "cursor-grab"
+          }`}
+        >
+          <div ref={trackRef} className="flex items-stretch gap-5 w-max will-change-transform">
             {doubled.map((agent, i) => (
               <AgentCard key={`${agent.slug}-${i}`} agent={agent} />
             ))}

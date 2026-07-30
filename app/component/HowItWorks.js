@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Reveal from "./Reveal";
 import CallButton from "./CallButton";
 
@@ -40,7 +43,7 @@ export default function HowItWorks() {
         </h2>
 
         <div className="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-14 sm:gap-8">
-          {STEPS.map((step) => {
+          {STEPS.map((step, i) => {
             const Wrapper = step.link ? "a" : "div";
             const wrapperProps = step.link
               ? {
@@ -53,27 +56,35 @@ export default function HowItWorks() {
               : { className: "group" };
 
             return (
-              <Wrapper key={step.number} {...wrapperProps}>
-                <span className="block text-5xl font-bold text-[#ff6b35] leading-none">
-                  {step.number}
-                </span>
-                <span className="mt-4 block text-xs font-mono uppercase tracking-widest opacity-50">
-                  {step.who}
-                </span>
-                <h3
-                  className={`mt-2 text-xl font-bold leading-snug transition-colors ${
-                    step.link ? "group-hover:text-[#ff6b35]" : ""
-                  }`}
-                >
-                  {step.title}
-                  {step.link && (
-                    <span className="ml-1 inline-block transition-transform group-hover:translate-x-0.5">
-                      &rarr;
-                    </span>
-                  )}
-                </h3>
-                <p className="mt-3 text-sm opacity-70 leading-relaxed">{step.description}</p>
-              </Wrapper>
+              <motion.div
+                key={step.number}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{ delay: i * 0.5, duration: 0.55, ease: "easeOut" }}
+              >
+                <Wrapper {...wrapperProps}>
+                  <span className="block text-6xl font-bold text-[#ff6b35] leading-none">
+                    {step.number}
+                  </span>
+                  <span className="mt-4 block text-xs font-mono uppercase tracking-widest opacity-50">
+                    {step.who}
+                  </span>
+                  <h3
+                    className={`font-display mt-2 text-2xl md:text-[1.7rem] font-bold leading-snug transition-colors ${
+                      step.link ? "group-hover:text-[#ff6b35]" : ""
+                    }`}
+                  >
+                    {step.title}
+                    {step.link && (
+                      <span className="ml-1 inline-block transition-transform group-hover:translate-x-0.5">
+                        &rarr;
+                      </span>
+                    )}
+                  </h3>
+                  <p className="mt-3 text-[15px] opacity-70 leading-relaxed">{step.description}</p>
+                </Wrapper>
+              </motion.div>
             );
           })}
         </div>

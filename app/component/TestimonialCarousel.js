@@ -62,13 +62,13 @@ function Identity({ item }) {
   const sub = [item.location, item.useCase].filter(Boolean).join(" - ");
 
   return (
-    <div className="mt-auto pt-7 flex items-center gap-3 border-t border-black/10">
-      <div className="mt-6 w-11 h-11 shrink-0 rounded-full bg-[#ff6b35] flex items-center justify-center text-sm font-mono font-bold text-white">
+    <div className="mt-auto pt-5 flex items-center gap-2.5 border-t border-black/10">
+      <div className="mt-4 w-8 h-8 shrink-0 rounded-full bg-[#ff6b35] flex items-center justify-center text-[11px] font-mono font-bold text-white">
         {badge}
       </div>
-      <div className="mt-6 min-w-0">
-        <p className="text-sm font-semibold leading-tight">{line}</p>
-        <p className="text-[11px] font-mono uppercase tracking-widest opacity-45 leading-tight mt-1">
+      <div className="mt-4 min-w-0">
+        <p className="text-[13px] font-semibold leading-tight">{line}</p>
+        <p className="text-[10px] font-mono uppercase tracking-wider opacity-40 leading-tight mt-0.5">
           {sub}
         </p>
       </div>
