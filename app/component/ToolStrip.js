@@ -13,36 +13,62 @@ import {
   OutlookToolIcon,
   StripeIcon,
   LinkedInToolIcon,
-  XIcon,
   InstagramIcon,
   ShopifyIcon,
-  HubspotIcon,
+  ExcelIcon,
+  TeamsIcon,
+  ZoomIcon,
+  PayPalIcon,
+  PipedriveIcon,
+  QontoIcon,
+  PennylaneIcon,
+  SageIcon,
+  MetaIcon,
+  GoogleBusinessIcon,
+  WordPressIcon,
 } from "./tool-icons";
 
+// Melange volontaire d'outils grand public et d'outils de gestion : la bande
+// doit parler autant a un artisan qu'a une PME.
 const TOOLS = [
   { name: "Gmail", Icon: GmailToolIcon },
   { name: "Google Agenda", Icon: GoogleCalendarIcon },
-  { name: "Sheets", Icon: SheetsIcon },
-  { name: "Drive", Icon: DriveIcon },
-  { name: "Notion", Icon: NotionIcon },
-  { name: "Slack", Icon: SlackIcon },
+  { name: "Google Sheets", Icon: SheetsIcon },
+  { name: "Google Drive", Icon: DriveIcon },
+  { name: "Outlook", Icon: OutlookToolIcon },
+  { name: "Excel", Icon: ExcelIcon },
+  { name: "Microsoft Teams", Icon: TeamsIcon },
   { name: "WhatsApp", Icon: WhatsAppToolIcon },
   { name: "Telegram", Icon: TelegramToolIcon },
-  { name: "Outlook", Icon: OutlookToolIcon },
+  { name: "Zoom", Icon: ZoomIcon },
+  { name: "Qonto", Icon: QontoIcon },
+  { name: "Pennylane", Icon: PennylaneIcon },
+  { name: "Sage", Icon: SageIcon },
   { name: "Stripe", Icon: StripeIcon },
-  { name: "LinkedIn", Icon: LinkedInToolIcon },
-  { name: "X", Icon: XIcon },
+  { name: "PayPal", Icon: PayPalIcon },
+  { name: "Pipedrive", Icon: PipedriveIcon },
+  { name: "Meta Business", Icon: MetaIcon },
+  { name: "Fiche Google", Icon: GoogleBusinessIcon },
   { name: "Instagram", Icon: InstagramIcon },
+  { name: "LinkedIn", Icon: LinkedInToolIcon },
   { name: "Shopify", Icon: ShopifyIcon },
-  { name: "HubSpot", Icon: HubspotIcon },
+  { name: "WordPress", Icon: WordPressIcon },
+  { name: "Notion", Icon: NotionIcon },
+  { name: "Slack", Icon: SlackIcon },
 ];
 
-function Chip({ tool }) {
+// Logo seul, sans pastille : le nom reste accessible au survol et aux lecteurs
+// d'ecran, mais n'encombre pas la bande.
+function Logo({ tool }) {
   const { Icon } = tool;
   return (
-    <div className="shrink-0 flex items-center gap-2 rounded-full border border-black/10 bg-white px-3 py-2 transition-all duration-200 hover:border-[#ff6b35]/50 hover:-translate-y-0.5 hover:shadow-sm">
-      <Icon className="w-4 h-4 shrink-0" />
-      <span className="text-[12px] font-mono whitespace-nowrap">{tool.name}</span>
+    <div
+      title={tool.name}
+      aria-label={tool.name}
+      role="img"
+      className="shrink-0 grayscale-0 opacity-90 transition-all duration-200 hover:opacity-100 hover:-translate-y-0.5"
+    >
+      <Icon className="w-10 h-10 md:w-11 md:h-11" />
     </div>
   );
 }
@@ -66,18 +92,19 @@ export default function ToolStrip() {
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-20 z-10 bg-gradient-to-l from-white via-white/80 to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-10 z-10 bg-gradient-to-r from-white to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-14 z-10 bg-gradient-to-l from-white to-transparent" />
 
         <div className="overflow-hidden">
           <div
-            className="flex gap-2.5 w-max"
+            className="flex items-center gap-7 w-max"
             style={{
-              animation: "marquee 52s linear infinite",
+              animation: "marquee 80s linear infinite",
               animationPlayState: paused ? "paused" : "running",
             }}
           >
             {doubled.map((tool, i) => (
-              <Chip key={`${tool.name}-${i}`} tool={tool} />
+              <Logo key={`${tool.name}-${i}`} tool={tool} />
             ))}
           </div>
         </div>
