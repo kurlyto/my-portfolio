@@ -15,8 +15,8 @@ const NAV_SECTIONS = [
   {
     label: "Work",
     items: [
-      { href: "/projects", label: "Projects" },
       { href: "/agents", label: "Agents" },
+      { href: "/projects", label: "Projects" },
     ],
   },
   {

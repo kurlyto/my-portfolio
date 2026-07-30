@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import CallButton from "./CallButton";
+import ToolStrip from "./ToolStrip";
 
 const TITLE = "Des agents sur-mesure\nqui bossent pour vous.";
 const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -48,7 +49,7 @@ export default function ScrambleHero({ onOpenChat }) {
   }, []);
 
   return (
-    <div>
+    <div className="min-w-0">
       <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight leading-[1.1] whitespace-pre-line">
         {displayText}
       </h1>
@@ -58,9 +59,8 @@ export default function ScrambleHero({ onOpenChat }) {
         transition={{ delay: 0.9, duration: 0.5, ease: "easeOut" }}
         className="mt-6 text-lg md:text-xl opacity-70 max-w-xl"
       >
-        Mails, relances, devis, veille, comptabilité, réseaux sociaux : je
-        conçois l&apos;agent qui s&apos;occupe de ce que vous ne voulez plus
-        faire, connecté à vos outils.
+        Mails, agenda, prospection, comptabilité, réseaux sociaux : je conçois
+        l&apos;agent qui s&apos;occupe de ce que vous ne voulez plus faire.
       </motion.p>
       <motion.div
         initial={{ opacity: 0, y: 12 }}
@@ -74,17 +74,25 @@ export default function ScrambleHero({ onOpenChat }) {
           data-cursor-hover
           animate={{ boxShadow: PULSE_SHADOWS }}
           transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
-          className="inline-block text-sm md:text-base font-mono font-bold rounded px-7 py-4 uppercase tracking-wide transition-transform duration-150 ease-out bg-[#ff6b35] text-white hover:bg-[#e2531f] hover:-translate-y-0.5"
+          className="inline-block text-[13px] md:text-sm font-mono font-bold rounded px-6 py-4 uppercase tracking-wide transition-transform duration-150 ease-out bg-[#ff6b35] text-white hover:bg-[#e2531f] hover:-translate-y-0.5"
         >
-          Je clarifie mon besoin en 10 min
+          Je clarifie mon besoin gratuitement
         </motion.button>
-        <CallButton className="inline-flex items-center gap-2 text-sm font-mono opacity-60 hover:opacity-100 hover:text-[#ff6b35] transition-colors">
-          ou passer un appel &rarr;
+        <CallButton className="inline-flex items-center gap-2 text-[13px] md:text-sm font-mono font-semibold rounded px-5 py-4 border-2 border-black text-black whitespace-nowrap transition-all duration-150 ease-out hover:bg-black hover:text-white hover:-translate-y-0.5">
+          Passer un appel &rarr;
         </CallButton>
         <p className="w-full text-xs font-mono opacity-50">
           Gratuit, sans engagement - on cadre votre besoin, vous repartez avec
           une réponse claire.
         </p>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.3, duration: 0.5, ease: "easeOut" }}
+      >
+        <ToolStrip />
       </motion.div>
     </div>
   );

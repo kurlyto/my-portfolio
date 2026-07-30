@@ -58,17 +58,18 @@ const AUTOPLAY_MS = 6000;
 
 function Identity({ item }) {
   const badge = item.initials ?? item.role.charAt(0);
-  const line = [item.name, item.location].filter(Boolean).join(" - ");
+  const line = item.name ?? item.role;
+  const sub = [item.location, item.useCase].filter(Boolean).join(" - ");
 
   return (
-    <div className="mt-8 flex items-center gap-3">
-      <div className="w-10 h-10 shrink-0 rounded-full bg-[#ff6b35] flex items-center justify-center text-xs font-mono font-bold text-white">
+    <div className="mt-auto pt-8 flex items-center gap-3 border-t border-white/10">
+      <div className="mt-6 w-11 h-11 shrink-0 rounded-full bg-[#ff6b35] flex items-center justify-center text-sm font-mono font-bold text-white">
         {badge}
       </div>
-      <div className="min-w-0">
-        {line && <p className="text-sm font-semibold leading-tight">{line}</p>}
-        <p className="text-xs font-mono uppercase tracking-widest opacity-60 leading-tight mt-0.5">
-          {item.role} - {item.useCase}
+      <div className="mt-6 min-w-0">
+        <p className="text-sm font-semibold leading-tight">{line}</p>
+        <p className="text-[11px] font-mono uppercase tracking-widest opacity-50 leading-tight mt-1">
+          {sub}
         </p>
       </div>
     </div>
@@ -94,33 +95,42 @@ export default function TestimonialCarousel() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <div className="bg-black text-white p-8 md:p-12 min-h-[300px] flex flex-col justify-center">
+      <div className="relative bg-black text-white rounded-lg p-8 md:p-10 min-h-[340px] flex flex-col overflow-hidden">
+        {/* Guillemet en filigrane : donne du caractere a la carte sans
+            concurrencer le texte. */}
+        <span
+          aria-hidden
+          className="absolute -top-8 right-4 text-[160px] leading-none font-serif text-white/[0.06] select-none"
+        >
+          &rdquo;
+        </span>
+
         <AnimatePresence mode="wait">
-          <motion.div
+          <motion.blockquote
             key={index}
-            initial={{ opacity: 0, y: 8 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.35, ease: "easeOut" }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            className="relative flex flex-col flex-1"
           >
-            <span className="text-4xl text-[#ff6b35] leading-none">&ldquo;</span>
-            <p className="mt-2 text-lg md:text-xl leading-snug font-medium text-balance">
+            <p className="text-xl md:text-2xl leading-snug font-medium text-balance">
               {current.quote}
             </p>
             <Identity item={current} />
-          </motion.div>
+          </motion.blockquote>
         </AnimatePresence>
       </div>
 
-      <div className="mt-4 flex justify-center gap-2">
+      <div className="mt-5 flex justify-center gap-1.5">
         {TESTIMONIALS.map((t, i) => (
           <button
             key={t.role + i}
             type="button"
             aria-label={`Voir le temoignage ${i + 1}`}
             onClick={() => setIndex(i)}
-            className={`w-1.5 h-1.5 rounded-full transition-colors ${
-              i === index ? "bg-[#ff6b35]" : "bg-black/20"
+            className={`h-0.5 rounded-full transition-all duration-300 ${
+              i === index ? "w-7 bg-[#ff6b35]" : "w-3 bg-black/15 hover:bg-black/30"
             }`}
           />
         ))}

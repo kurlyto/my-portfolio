@@ -7,7 +7,6 @@ import ScrambleHero from "./ScrambleHero";
 import WorkGateway from "./WorkGateway";
 import TestimonialCarousel from "./TestimonialCarousel";
 import ChatPanel from "./ChatPanel";
-import ToolStrip from "./ToolStrip";
 import AgentMarquee from "./AgentMarquee";
 import HowItWorks from "./HowItWorks";
 import Footer from "./Footer";
@@ -47,10 +46,9 @@ export default function HomePageContent() {
         )}
       </AnimatePresence>
 
-      <ToolStrip />
       <AgentMarquee />
-      <WorkGateway />
       <HowItWorks />
+      <WorkGateway />
       <Footer showHomeLink={false} />
     </div>
   );

@@ -40,36 +40,37 @@ const TOOLS = [
 function Chip({ tool }) {
   const { Icon } = tool;
   return (
-    <div className="shrink-0 flex items-center gap-2.5 rounded-full border border-black/10 bg-white px-4 py-2.5 transition-all duration-200 hover:border-[#ff6b35]/50 hover:-translate-y-0.5 hover:shadow-sm">
-      <Icon className="w-5 h-5 shrink-0" />
-      <span className="text-[13px] font-mono whitespace-nowrap">{tool.name}</span>
+    <div className="shrink-0 flex items-center gap-2 rounded-full border border-black/10 bg-white px-3 py-2 transition-all duration-200 hover:border-[#ff6b35]/50 hover:-translate-y-0.5 hover:shadow-sm">
+      <Icon className="w-4 h-4 shrink-0" />
+      <span className="text-[12px] font-mono whitespace-nowrap">{tool.name}</span>
     </div>
   );
 }
 
+// Bandeau compact place sous le texte du hero. Largeur limitee a la colonne
+// gauche : le fondu de droite marque la coupure sans bord net.
 export default function ToolStrip() {
   const [paused, setPaused] = useState(false);
   const doubled = [...TOOLS, ...TOOLS];
 
+  // min-w-0 + overflow-hidden : sans ca, la piste en w-max impose sa largeur
+  // totale a la colonne de grille parente et ecrase la colonne voisine.
   return (
-    <section className="border-y border-black/10 bg-[#fafafa] py-10 overflow-hidden">
-      <p className="text-center text-xs font-mono uppercase tracking-widest opacity-40">
+    <div className="mt-12 min-w-0 overflow-hidden">
+      <p className="text-[11px] font-mono uppercase tracking-widest opacity-40">
         Connectable a vos outils
       </p>
 
       <div
-        className="relative mt-6"
+        className="relative mt-4"
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
-        {/* Degrades lateraux : les chips entrent et sortent en fondu au lieu
-            d'etre coupees net au bord de l'ecran. */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-16 md:w-32 z-10 bg-gradient-to-r from-[#fafafa] to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-16 md:w-32 z-10 bg-gradient-to-l from-[#fafafa] to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-20 z-10 bg-gradient-to-l from-white via-white/80 to-transparent" />
 
         <div className="overflow-hidden">
           <div
-            className="flex gap-3 w-max"
+            className="flex gap-2.5 w-max"
             style={{
               animation: "marquee 52s linear infinite",
               animationPlayState: paused ? "paused" : "running",
@@ -81,10 +82,6 @@ export default function ToolStrip() {
           </div>
         </div>
       </div>
-
-      <p className="mt-6 text-center text-xs font-mono opacity-40">
-        et tout outil disposant d&apos;une API
-      </p>
-    </section>
+    </div>
   );
 }
