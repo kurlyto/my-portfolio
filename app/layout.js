@@ -13,6 +13,9 @@ const fraunces = Fraunces({
   variable: "--font-display",
   subsets: ["latin"],
   axes: ["SOFT", "WONK"],
+  // Sans la variante italique chargee, le navigateur incline artificiellement
+  // les glyphes au lieu d'utiliser le vrai dessin de la fonte.
+  style: ["normal", "italic"],
 });
 
 const geistMono = Geist_Mono({

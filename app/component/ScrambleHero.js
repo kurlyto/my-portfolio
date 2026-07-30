@@ -57,7 +57,9 @@ export default function ScrambleHero({ onOpenChat }) {
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.9, duration: 0.5, ease: "easeOut" }}
-        className="mt-6 text-lg md:text-xl opacity-70 max-w-xl"
+        // Serif en graisse legere et italique : discret a cote du titre en
+        // gras, mais moins plat qu'un sans-serif standard.
+        className="font-display mt-6 text-lg md:text-xl font-light italic leading-relaxed opacity-75 max-w-xl"
       >
         Mails, agenda, prospection, comptabilité, réseaux sociaux : je conçois
         l&apos;agent qui s&apos;occupe de ce que vous ne voulez plus faire.

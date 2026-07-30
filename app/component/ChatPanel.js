@@ -539,24 +539,19 @@ function ChatHeader({ onClose, closeLabel, progress = 5 }) {
             data-cursor-hover
             className="inline-flex items-center gap-1.5 text-[12px] font-mono text-black hover:text-[#ff6b35] transition-colors duration-150"
           >
-            <TelegramToolIcon className="w-4 h-4 shrink-0" />
+            {/* Sur mobile, l'icone seule : le libelle entier serrait la croix
+                et deformait l'en-tete. */}
+            <TelegramToolIcon className="w-5 h-5 sm:w-4 sm:h-4 shrink-0" />
             <span className="hidden sm:inline">Parler avec Nate dans Telegram</span>
-            <span className="sm:hidden">Ouvrir dans Telegram</span>
           </a>
           <button
             type="button"
             onClick={onClose}
             data-cursor-hover
-            // La croix est une pastille cliquable large ; le "retour" du plein
-            // ecran mobile reste un libelle texte.
-            className={
-              closeLabel === "×"
-                ? "flex items-center justify-center shrink-0 w-8 h-8 -mr-1 rounded-full text-[22px] leading-none text-black/45 hover:text-black hover:bg-black/[0.06] transition-colors duration-150 font-mono"
-                : "flex items-center gap-1 text-black/50 hover:text-black transition-colors duration-150 text-[13px] font-mono"
-            }
+            className="flex items-center justify-center shrink-0 w-9 h-9 -mr-1 rounded-full text-[24px] leading-none text-black/45 hover:text-black hover:bg-black/[0.06] transition-colors duration-150 font-mono"
             aria-label="Fermer le chat"
           >
-            {closeLabel}
+            &times;
           </button>
         </div>
       </div>
