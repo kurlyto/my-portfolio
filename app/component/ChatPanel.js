@@ -321,13 +321,7 @@ function useNateChat() {
       }
 
       try {
-        const res = await fetch("/api/chat/threads", { method: "POST" });
-        const data = await res.json();
-        if (!res.ok || !data.threadId) throw new Error(data.error ?? "no_thread");
-        setThreadId(data.threadId);
-        storeThreadId(data.threadId);
-      } catch {
-        setError("Impossible d'ouvrir la discussion.");
+        await createFreshThread();
       } finally {
         setRestoring(false);
       }
@@ -335,6 +329,29 @@ function useNateChat() {
 
     start();
   }, []);
+
+  // Cree un thread neuf cote serveur et reinitialise tout le state local qui
+  // lui est attache. Utilisee au montage ET quand le visiteur clique
+  // "Repartir sur un nouveau projet" : dans ce dernier cas le composant reste
+  // monte (pas de remount, donc pas de reset gratuit des useState), il faut
+  // donc explicitement remettre chaque morceau de state a sa valeur de depart
+  // ici - progress y compris, sinon le Math.max de setProgress l'empeche de
+  // redescendre a 5.
+  async function createFreshThread() {
+    try {
+      const res = await fetch("/api/chat/threads", { method: "POST" });
+      const data = await res.json();
+      if (!res.ok || !data.threadId) throw new Error(data.error ?? "no_thread");
+      setThreadId(data.threadId);
+      storeThreadId(data.threadId);
+      setMessages([]);
+      setError(null);
+      setAwaitingVerification(false);
+      setProgress(5);
+    } catch {
+      setError("Impossible d'ouvrir la discussion.");
+    }
+  }
 
   // Après l'envoi d'un lien de vérification, on poll périodiquement le
   // statut du thread : dès que le visiteur a cliqué le lien reçu par email
@@ -364,6 +381,18 @@ function useNateChat() {
   async function sendMessage(text) {
     const trimmed = text.trim();
     if (!trimmed || !threadId || streamingText !== null) return;
+
+    // Bouton propose par resume/route.js (RESUME_BUTTONS_AFTER_AUDIT /
+    // RESUME_BUTTONS_MID_FUNNEL) : c'est du texte libre envoye a Nate comme
+    // n'importe quel autre message, le serveur ne le traite pas a part et
+    // continue donc sur le MEME thread. Sans cette interception, le fil, ses
+    // messages et sa progression restaient donc ceux de l'ancien projet. On
+    // l'intercepte cote client pour repartir sur un thread reellement neuf.
+    if (trimmed === "Repartir sur un nouveau projet") {
+      clearStoredThreadId();
+      await createFreshThread();
+      return;
+    }
 
     setMessages((m) => [...m, { role: "USER", content: trimmed }]);
     setError(null);
