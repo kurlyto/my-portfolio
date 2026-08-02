@@ -115,39 +115,58 @@ export async function getStats({ days = 30 } = {}) {
   }
   if (sites.length === 0) throw new Error("Aucun site configure dans UMAMI_SITES");
 
-  // Periode courante + periode precedente de meme longueur, pour calculer
-  // l'evolution affichee dans les tuiles.
   const endAt = Date.now();
   const startAt = endAt - days * 24 * 60 * 60 * 1000;
-  const prevStartAt = startAt - days * 24 * 60 * 60 * 1000;
 
   const axis = buildDateAxis(startAt, endAt);
   const qs = (from, to) =>
     `startAt=${from}&endAt=${to}&unit=day&timezone=Europe%2FParis`;
 
+  // `compare=prev` fait calculer la periode precedente par Umami lui-meme :
+  // il renvoie un bloc `comparison`, ce qui evite une requete de plus par
+  // projet pour l'evolution.
+  const statsQs = (from, to) => `${qs(from, to)}&compare=prev`;
+
   const series = await Promise.all(
     sites.map(async (site) => {
       try {
-        const [current, previous] = await Promise.all([
+        // Deux sources volontairement combinees :
+        //
+        // - /stats donne les TOTAUX exacts sur la periode, avec la definition
+        //   d'Umami : visiteurs = count(distinct session_id), visites =
+        //   count(distinct visit_id). Une meme personne qui revient le
+        //   lendemain compte 1 visiteur et 2 visites.
+        // - /pageviews donne les series journalieres, mais seulement pour les
+        //   pages vues et les sessions. Aucun endpoint ne renvoie la serie
+        //   journaliere des visites.
+        //
+        // On ne somme donc JAMAIS une serie journaliere pour afficher un
+        // total de visiteurs : additionner les uniques de chaque jour
+        // recompte la meme personne a chaque retour et gonfle le chiffre
+        // (sur MDD : 655 par sommation contre 489 reels).
+        const [current, stats] = await Promise.all([
           umamiGet(`/api/websites/${site.websiteId}/pageviews?${qs(startAt, endAt)}`),
-          umamiGet(`/api/websites/${site.websiteId}/pageviews?${qs(prevStartAt, startAt)}`),
+          umamiGet(`/api/websites/${site.websiteId}/stats?${statsQs(startAt, endAt)}`),
         ]);
 
-        const visitors = alignToAxis(current.sessions, axis);
+        const daily = alignToAxis(current.sessions, axis);
         const pageviews = alignToAxis(current.pageviews, axis);
-        const previousVisitors = (previous.sessions ?? []).reduce(
-          (sum, p) => sum + Number(p.y ?? 0),
-          0,
-        );
+        const previous = stats.comparison ?? {};
 
         return {
           key: site.key ?? site.websiteId,
           label: site.label,
-          visitors,
+          // Series journalieres (la forme des courbes).
+          visitors: daily,
+          visits: daily,
           pageviews,
-          totalVisitors: visitors.reduce((a, b) => a + b, 0),
-          totalPageviews: pageviews.reduce((a, b) => a + b, 0),
-          previousVisitors,
+          // Totaux exacts sur la periode (les chiffres qu'on affiche).
+          totalVisitors: Number(stats.visitors ?? 0),
+          totalVisits: Number(stats.visits ?? 0),
+          totalPageviews: Number(stats.pageviews ?? 0),
+          previousVisitors: Number(previous.visitors ?? 0),
+          previousVisits: Number(previous.visits ?? 0),
+          previousPageviews: Number(previous.pageviews ?? 0),
           failed: false,
         };
       } catch {
@@ -156,10 +175,14 @@ export async function getStats({ days = 30 } = {}) {
           key: site.key ?? site.websiteId,
           label: site.label,
           visitors: zeros,
+          visits: zeros,
           pageviews: zeros,
           totalVisitors: 0,
+          totalVisits: 0,
           totalPageviews: 0,
           previousVisitors: 0,
+          previousVisits: 0,
+          previousPageviews: 0,
           failed: true,
         };
       }

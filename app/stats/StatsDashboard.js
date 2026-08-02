@@ -9,10 +9,27 @@ const RANGES = [
   { days: 90, label: "90 jours" },
 ];
 
+// Definitions d'Umami (getWebsiteSessionStats.ts) :
+//   visiteurs uniques = count(distinct session_id)
+//   visites           = count(distinct visit_id)
+// Une personne qui revient plus tard compte 1 visiteur mais 2 visites.
 const METRICS = [
-  { key: "visitors", label: "Visiteurs" },
-  { key: "pageviews", label: "Pages vues" },
+  { key: "visitors", label: "Visiteurs uniques", noun: "visiteurs uniques" },
+  { key: "visits", label: "Visites", noun: "visites" },
+  { key: "pageviews", label: "Pages vues", noun: "pages vues" },
 ];
+
+const TOTAL_FIELD = {
+  visitors: "totalVisitors",
+  visits: "totalVisits",
+  pageviews: "totalPageviews",
+};
+
+const PREVIOUS_FIELD = {
+  visitors: "previousVisitors",
+  visits: "previousVisits",
+  pageviews: "previousPageviews",
+};
 
 function compact(n) {
   if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1).replace(".0", "")}M`;
@@ -45,22 +62,23 @@ export function StatsDashboard() {
     load(days);
   }, [days, load]);
 
-  const totalCurrent =
-    data?.series.reduce((sum, s) => sum + (metric === "visitors" ? s.totalVisitors : s.totalPageviews), 0) ?? 0;
-  const totalPrevious = data?.series.reduce((sum, s) => sum + s.previousVisitors, 0) ?? 0;
+  // Les totaux viennent de /stats (comptage exact sur la periode), jamais
+  // d'une somme des series journalieres : additionner les visiteurs uniques
+  // de chaque jour recompte la meme personne a chaque retour.
+  const totalCurrent = data?.series.reduce((sum, s) => sum + s[TOTAL_FIELD[metric]], 0) ?? 0;
+  const totalPrevious = data?.series.reduce((sum, s) => sum + s[PREVIOUS_FIELD[metric]], 0) ?? 0;
 
-  // L'evolution n'a de sens que sur les visiteurs : previousVisitors est la
-  // seule serie de reference qu'on demande a Umami pour la periode d'avant.
-  //
-  // Seuil volontaire : sous 30 visiteurs sur la periode precedente, le
-  // pourcentage devient absurde (passer de 5 a 26 affiche "+420%" et donne
-  // l'illusion d'une explosion d'audience). Tant qu'un projet vient d'etre
-  // instrumente, mieux vaut ne rien afficher qu'un chiffre trompeur.
+  // Seuil volontaire : sous 30 sur la periode precedente, le pourcentage
+  // devient absurde (passer de 5 a 26 affiche "+420%" et donne l'illusion
+  // d'une explosion d'audience). Tant qu'un projet vient d'etre instrumente,
+  // mieux vaut ne rien afficher qu'un chiffre trompeur.
   const MIN_BASE_FOR_DELTA = 30;
   const delta =
-    metric === "visitors" && totalPrevious >= MIN_BASE_FOR_DELTA
+    totalPrevious >= MIN_BASE_FOR_DELTA
       ? Math.round(((totalCurrent - totalPrevious) / totalPrevious) * 100)
       : null;
+
+  const metricNoun = METRICS.find((m) => m.key === metric)?.noun ?? "";
 
   const failed = data?.series.filter((s) => s.failed) ?? [];
 
@@ -115,7 +133,7 @@ export function StatsDashboard() {
           <div className="mb-6 flex flex-wrap items-baseline gap-x-4 gap-y-1">
             <span className="text-5xl font-semibold tracking-tight viz-text-primary">{compact(totalCurrent)}</span>
             <span className="text-sm viz-text-muted">
-              {metric === "visitors" ? "visiteurs" : "pages vues"} sur {days} jours
+              {metricNoun} sur {days} jours
             </span>
             {delta !== null && (
               <span className={`text-sm font-medium ${delta >= 0 ? "viz-delta-up" : "viz-delta-down"}`}>
@@ -132,6 +150,17 @@ export function StatsDashboard() {
           >
             <VisitorsChart axis={data.axis} series={data.series} metric={metric} />
           </div>
+
+          {/* Umami n'expose pas de serie journaliere des visites : la courbe
+              est la meme que celle des visiteurs uniques, seul le total
+              change. Le dire plutot que laisser croire a deux courbes
+              differentes. */}
+          {metric === "visits" && (
+            <p className="mt-3 text-xs viz-text-muted">
+              Le total est le nombre exact de visites. La courbe, elle, montre les visiteurs
+              uniques par jour : Umami ne publie pas de detail journalier des visites.
+            </p>
+          )}
 
           {failed.length > 0 && (
             <p className="mt-3 text-xs viz-text-muted">
@@ -152,11 +181,12 @@ export function StatsDashboard() {
               Voir le tableau
             </summary>
             <div className="mt-3 overflow-x-auto">
-              <table className="w-full min-w-[420px] border-collapse text-sm">
+              <table className="w-full min-w-[520px] border-collapse text-sm">
                 <thead>
                   <tr className="viz-table-head border-b text-left">
                     <th className="py-2 pr-4 font-medium">Projet</th>
-                    <th className="py-2 pr-4 text-right font-medium">Visiteurs</th>
+                    <th className="py-2 pr-4 text-right font-medium">Visiteurs uniques</th>
+                    <th className="py-2 pr-4 text-right font-medium">Visites</th>
                     <th className="py-2 text-right font-medium">Pages vues</th>
                   </tr>
                 </thead>
@@ -166,6 +196,9 @@ export function StatsDashboard() {
                       <td className="py-2 pr-4">{s.label}</td>
                       <td className="py-2 pr-4 text-right tabular-nums">
                         {s.totalVisitors.toLocaleString("fr-FR")}
+                      </td>
+                      <td className="py-2 pr-4 text-right tabular-nums">
+                        {s.totalVisits.toLocaleString("fr-FR")}
                       </td>
                       <td className="py-2 text-right tabular-nums">
                         {s.totalPageviews.toLocaleString("fr-FR")}

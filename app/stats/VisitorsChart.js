@@ -17,6 +17,14 @@ const SERIES_COLORS = [
   { light: "#4a3aa7", dark: "#9085e9" }, // violet
 ];
 
+// Les totaux affiches dans la legende viennent de /stats (comptage exact sur
+// la periode), pas d'une sommation de la serie journaliere.
+const TOTAL_FIELD = {
+  visitors: "totalVisitors",
+  visits: "totalVisits",
+  pageviews: "totalPageviews",
+};
+
 const PAD = { top: 16, right: 16, bottom: 28, left: 44 };
 const VIEW_W = 900;
 const VIEW_H = 340;
@@ -230,7 +238,7 @@ export function VisitorsChart({ axis, series, metric }) {
                 />
                 <span className="viz-legend-label">{s.label}</span>
                 <span className="viz-legend-value tabular-nums">
-                  {(metric === "visitors" ? s.totalVisitors : s.totalPageviews).toLocaleString("fr-FR")}
+                  {(s[TOTAL_FIELD[metric]] ?? 0).toLocaleString("fr-FR")}
                 </span>
                 {s.failed && (
                   <span className="viz-legend-warn" title="Donnees indisponibles pour ce projet">
