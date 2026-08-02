@@ -1,3 +1,4 @@
+import Script from "next/script";
 import { Inter, Fraunces, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
@@ -51,6 +52,14 @@ export default function RootLayout({ children }) {
       <body className={`${inter.variable} ${fraunces.variable} ${geistMono.variable} antialiased bg-white text-black`}>
         {children}
         <Analytics />
+        {/* Umami (self-hosted). data-domains limite la collecte au domaine de
+            prod : le dev en localhost ne pollue pas les stats. */}
+        <Script
+          strategy="afterInteractive"
+          src="https://analytics.mondevisdentaire.fr/script.js"
+          data-website-id="7bb33ae8-88f3-4a00-9813-3a126a89e754"
+          data-domains="nathan-knaebel.com"
+        />
       </body>
     </html>
   );

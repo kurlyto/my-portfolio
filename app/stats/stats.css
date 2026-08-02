@@ -1,0 +1,199 @@
+/* Charte dataviz : les roles sont declares une fois ici, le graphique n'ecrit
+   jamais de hex en dur. Les valeurs sombres sont declarees sous les deux
+   portees (media query pour le reglage OS, data-theme pour un bascule
+   explicite) pour que le choix du lecteur gagne dans les deux sens. */
+
+.viz-root,
+.viz-page {
+  color-scheme: light;
+
+  --surface-1: #fcfcfb;
+  --text-primary: #0b0b0b;
+  --text-secondary: #52514e;
+  --text-muted: #898781;
+  --gridline: #e1e0d9;
+  --hairline: rgba(11, 11, 11, 0.1);
+
+  --series-1: #2a78d6;
+  --series-2: #eb6834;
+  --series-3: #1baf7a;
+  --series-4: #eda100;
+  --series-5: #e87ba4;
+  --series-6: #008300;
+  --series-7: #4a3aa7;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) .viz-root,
+  :root:where(:not([data-theme="light"])) .viz-page {
+    color-scheme: dark;
+
+    --surface-1: #1a1a19;
+    --text-primary: #ffffff;
+    --text-secondary: #c3c2b7;
+    --text-muted: #898781;
+    --gridline: #2c2c2a;
+    --hairline: rgba(255, 255, 255, 0.1);
+
+    --series-1: #3987e5;
+    --series-2: #d95926;
+    --series-3: #199e70;
+    --series-4: #c98500;
+    --series-5: #d55181;
+    --series-6: #008300;
+    --series-7: #9085e9;
+  }
+}
+
+:root[data-theme="dark"] .viz-root,
+:root[data-theme="dark"] .viz-page {
+  color-scheme: dark;
+
+  --surface-1: #1a1a19;
+  --text-primary: #ffffff;
+  --text-secondary: #c3c2b7;
+  --text-muted: #898781;
+  --gridline: #2c2c2a;
+  --hairline: rgba(255, 255, 255, 0.1);
+
+  --series-1: #3987e5;
+  --series-2: #d95926;
+  --series-3: #199e70;
+  --series-4: #c98500;
+  --series-5: #d55181;
+  --series-6: #008300;
+  --series-7: #9085e9;
+}
+
+/* Grille et axes : une hairline pleine, jamais pointillee, toujours en retrait
+   par rapport aux donnees. */
+.viz-grid {
+  stroke: var(--gridline);
+}
+
+.viz-crosshair {
+  stroke: var(--text-muted);
+}
+
+/* Le texte ne porte jamais la couleur d'une serie : l'identite vient du trait
+   colore a cote, pas du label lui-meme. */
+.viz-tick {
+  fill: var(--text-muted);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+
+.viz-dot {
+  stroke: var(--surface-1);
+}
+
+.viz-tooltip {
+  background: var(--surface-1);
+  border-color: var(--hairline);
+  color: var(--text-secondary);
+}
+
+.viz-tooltip-date {
+  color: var(--text-secondary);
+}
+
+/* La valeur mene, le nom de la serie suit : le lecteur a deja la serie sous
+   le curseur, c'est le nombre qu'il vient chercher. */
+.viz-tooltip-value {
+  color: var(--text-primary);
+}
+
+.viz-tooltip-label {
+  color: var(--text-secondary);
+}
+
+.viz-legend-label {
+  color: var(--text-secondary);
+}
+
+.viz-legend-value {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.viz-legend-warn {
+  color: #d03b3b;
+  font-weight: 700;
+}
+
+.viz-surface {
+  background: var(--surface-1);
+  border: 1px solid var(--hairline);
+}
+
+.viz-text-primary {
+  color: var(--text-primary);
+}
+
+.viz-text-secondary {
+  color: var(--text-secondary);
+}
+
+.viz-text-muted {
+  color: var(--text-muted);
+}
+
+.viz-delta-up {
+  color: #006300;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) .viz-delta-up {
+    color: #0ca30c;
+  }
+}
+
+:root[data-theme="dark"] .viz-delta-up {
+  color: #0ca30c;
+}
+
+.viz-delta-down {
+  color: #d03b3b;
+}
+
+/* Les controles suivent les memes variables que le graphique : la variante
+   `dark:` de Tailwind ne reagit qu'a la media query, pas a data-theme, donc
+   un bascule manuel de theme laisserait les boutons illisibles. */
+.viz-controls {
+  border-color: var(--hairline);
+}
+
+.viz-control {
+  color: var(--text-secondary);
+}
+
+.viz-control:hover {
+  background: color-mix(in srgb, var(--text-primary) 8%, transparent);
+}
+
+.viz-control[aria-pressed="true"] {
+  background: var(--text-primary);
+  color: var(--surface-1);
+}
+
+.viz-control[aria-pressed="true"]:hover {
+  background: var(--text-primary);
+}
+
+.viz-summary {
+  color: var(--text-muted);
+}
+
+.viz-summary:hover {
+  color: var(--text-primary);
+}
+
+.viz-table-head {
+  border-color: var(--hairline);
+  color: var(--text-primary);
+}
+
+.viz-table-row {
+  border-color: var(--hairline);
+  color: var(--text-secondary);
+}
