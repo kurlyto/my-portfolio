@@ -22,40 +22,14 @@ import {
 // frontiere Server -> Client Component en tant que reference de fonction
 // (Next.js le refuse). La liste des projets vit donc ici, cote client,
 // plutot que dans page.js.
+// Ordre = importance editoriale (les projets phares en premier), pas
+// chronologie : c'est le haut de la liste qui est vu sur telephone, ou une
+// carte occupe tout l'ecran.
 const PROJECTS = [
   {
-    name: "Agents IA sur-mesure",
+    name: "Featuring Club",
     description:
-      "Une équipe d'agents IA employés (Camille, Ousmane, Kylian, Lea...) qui gèrent mails, agenda, prospection, réseaux et pilotage à la place du client, disponibles sur Telegram.",
-    years: "2026",
-    link: "/agents",
-    cover: "from-zinc-800 to-zinc-900",
-    coverImage: "/images/cover-agents.png",
-    tech: [
-      { icon: NodeJsIcon, label: "Node.js" },
-      { icon: PythonIcon, label: "Python" },
-      { icon: TelegramIcon, label: "Telegram" },
-    ],
-  },
-  {
-    name: "Variante de Poker Japonais",
-    description: "Une variante du poker japonais développée avant l'ère de l'IA.",
-    years: "2023",
-    link: "https://poker.nathan-knaebel.com",
-    cover: "from-emerald-800 to-emerald-950",
-    coverImage: "/images/cover-poker.png",
-    tech: [
-      { icon: ReactIcon, label: "React" },
-      { icon: TypeScriptIcon, label: "TypeScript" },
-      { icon: ViteIcon, label: "Vite" },
-      { icon: SocketIoIcon, label: "Socket.io" },
-      { icon: TailwindIcon, label: "Tailwind CSS" },
-    ],
-  },
-  {
-    name: "Featuring",
-    description:
-      "Avec qui cet acteur a-t-il joué ? Enchaînez les bonnes réponses dans un ping-pong culturel.",
+      "Ces joueurs ont-ils été coéquipiers ? Avec qui cet acteur a-t-il joué ? Enchaînez les bonnes réponses dans un ping-pong culturel !",
     years: "2023",
     link: "https://featuring.club",
     cover: "from-zinc-100 to-zinc-200",
@@ -67,14 +41,60 @@ const PROJECTS = [
     ],
   },
   {
+    name: "Mon Devis Dentaire",
+    description:
+      "Plateforme SaaS visant à fluidifier la signature des devis pour les cabinets dentaires. Explications des actes par IA, relances automatiques, prise de rendez-vous et solutions de paiement intégrées.",
+    years: "2025 - 2026",
+    link: "https://mondevisdentaire.fr",
+    cover: "from-slate-50 to-slate-100",
+    coverImage: "/images/cover-mdd.png",
+    coverImageFit: "contain",
+    tech: [
+      { icon: NextJsIcon, label: "Next.js" },
+      { icon: TypeScriptIcon, label: "TypeScript" },
+      { icon: PrismaIcon, label: "Prisma" },
+      { icon: PostgresIcon, label: "PostgreSQL" },
+    ],
+  },
+  {
+    name: "Agents IA sur-mesure",
+    description:
+      "Un employé qui fait ce que vous n'avez pas envie de faire, et qui ne dort jamais. Mails, agenda, prospection, réseaux, relances : il s'en occupe pendant que vous gérez le reste. Vous lui parlez sur Telegram, comme à un collègue.",
+    years: "2026",
+    link: "/",
+    cover: "from-zinc-800 to-zinc-900",
+    coverImage: "/images/cover-agents.png",
+    tech: [
+      { icon: NodeJsIcon, label: "Node.js" },
+      { icon: PythonIcon, label: "Python" },
+      { icon: TelegramIcon, label: "Telegram" },
+    ],
+  },
+  {
     name: "AI or Not",
-    description: "La photo est-elle générée par IA, ou est-elle réelle ?",
+    description:
+      "La photo est-elle générée par IA, ou est-elle réelle ? Saurez-vous faire la différence ?",
     years: "2023",
     cover: "from-sky-600 to-indigo-900",
     tech: [
       { icon: NextJsIcon, label: "Next.js" },
       { icon: ReactIcon, label: "React" },
       { icon: SupabaseIcon, label: "Supabase" },
+      { icon: TailwindIcon, label: "Tailwind CSS" },
+    ],
+  },
+  {
+    name: "Variante de Poker Japonais",
+    description: "Une variante du poker japonais en 1 contre 1.",
+    years: "2023",
+    link: "https://poker.nathan-knaebel.com",
+    cover: "from-emerald-800 to-emerald-950",
+    coverImage: "/images/cover-poker.png",
+    tech: [
+      { icon: ReactIcon, label: "React" },
+      { icon: TypeScriptIcon, label: "TypeScript" },
+      { icon: ViteIcon, label: "Vite" },
+      { icon: SocketIoIcon, label: "Socket.io" },
       { icon: TailwindIcon, label: "Tailwind CSS" },
     ],
   },
@@ -115,27 +135,27 @@ const PROJECTS = [
     ],
   },
   {
-    name: "Mon Devis Dentaire",
-    description:
-      "Plateforme SaaS visant à fluidifier la signature des devis pour les cabinets dentaires. Explications des actes par IA, relances automatiques, prise de rendez-vous et solutions de paiement intégrées.",
-    years: "2025 - 2026",
-    link: "https://mondevisdentaire.fr",
-    cover: "from-slate-50 to-slate-100",
-    coverImage: "/images/cover-mdd.png",
-    coverImageFit: "contain",
-    tech: [
-      { icon: NextJsIcon, label: "Next.js" },
-      { icon: TypeScriptIcon, label: "TypeScript" },
-      { icon: PrismaIcon, label: "Prisma" },
-      { icon: PostgresIcon, label: "PostgreSQL" },
-    ],
-  },
-  {
     name: "Photographies",
-    description: "Une sélection de mes photographies, avec une direction artistique qui lui est propre.",
+    description:
+      "Une sélection de mes photographies, avec une direction artistique qui lui est propre.",
     years: "2026",
+    status: "En construction",
     link: "/photography",
     cover: "from-neutral-700 to-neutral-950",
+  },
+  {
+    name: "Fetamap",
+    description: "Une carte pour retrouver les meilleures adresses, sélectionnées à la main.",
+    years: "2026",
+    status: "En construction",
+    cover: "from-teal-700 to-teal-950",
+  },
+  {
+    name: "Fetafrance",
+    description: "Le meilleur de la France, adresse par adresse, région par région.",
+    years: "2026",
+    status: "En construction",
+    cover: "from-indigo-700 to-indigo-950",
   },
 ];
 
@@ -147,7 +167,7 @@ function CoverPlaceholder({ project }) {
   const FirstIcon = project.tech?.[0]?.icon;
   return (
     <div
-      className={`relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br ${project.cover}`}
+      className={`relative flex min-h-0 flex-1 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br sm:aspect-[4/3] sm:flex-none ${project.cover}`}
     >
       {project.coverImage ? (
         <img
@@ -157,20 +177,40 @@ function CoverPlaceholder({ project }) {
             project.coverImageFit === "contain" ? "object-contain p-4" : "object-cover"
           }`}
         />
+      ) : FirstIcon ? (
+        <FirstIcon className="h-14 w-14 text-white/25" />
       ) : (
-        FirstIcon && <FirstIcon className="h-14 w-14 text-white/25" />
+        // Sans capture ni stack (projets encore en construction), un degrade nu
+        // occupe tout l'ecran sur mobile et fait "carte vide" : l'initiale
+        // donne un point d'accroche visuel.
+        <span className="font-display text-7xl font-bold text-white/15">
+          {project.name.charAt(0)}
+        </span>
       )}
-      <span className="absolute right-3 top-3 rounded-full bg-black/20 px-2.5 py-1 text-[11px] font-mono text-white/70 backdrop-blur-sm">
-        {project.years}
-      </span>
+      <div className="absolute right-3 top-3 flex items-center gap-1.5">
+        {project.status && (
+          <span className="rounded-full bg-black/30 px-2.5 py-1 text-[11px] font-mono text-white/85 backdrop-blur-sm">
+            {project.status}
+          </span>
+        )}
+        <span className="rounded-full bg-black/20 px-2.5 py-1 text-[11px] font-mono text-white/70 backdrop-blur-sm">
+          {project.years}
+        </span>
+      </div>
     </div>
   );
 }
 
 // Carte epuree type "bewide" : image en haut, titre, description legere.
-// Hauteur fixe (h-[520px]) pour que toutes les cartes s'alignent pile, quelle
-// que soit la longueur du texte : la description est tronquee a 3 lignes
-// (line-clamp) et tools/bouton sont ancres tout en bas via mt-auto.
+//
+// Desktop/tablette : hauteur fixe (h-[520px]) pour que toutes les cartes
+// s'alignent pile, quelle que soit la longueur du texte.
+//
+// Mobile : la carte occupe tout l'ecran. La hauteur vient de `100dvh` (unite
+// *dynamique*) et non `100vh` : sur telephone, `vh` se fige sur la hauteur
+// barre d'URL *deployee*, ce qui deborderait de l'ecran une fois la barre
+// retractee. Le `snap-card` externe est la boite plein ecran qui sert de point
+// d'arret ; la carte visible est ancree dedans avec une marge de respiration.
 function ProjectCard({ project, index }) {
   const isExternal = project.link?.startsWith("http");
 
@@ -180,20 +220,24 @@ function ProjectCard({ project, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: false, margin: "-60px" }}
       transition={{ duration: 0.5, ease: "easeOut", delay: (index % 3) * 0.08 }}
-      className="group flex h-[520px] flex-col rounded-3xl border border-black/[0.06] bg-white p-5 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_12px_28px_-16px_rgba(0,0,0,0.12)] transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-[0_1px_2px_rgba(0,0,0,0.05),0_24px_40px_-20px_rgba(0,0,0,0.18)]"
+      className="group flex h-[calc(100dvh-2rem)] flex-col rounded-3xl border border-black/[0.06] bg-white p-5 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_12px_28px_-16px_rgba(0,0,0,0.12)] transition-all duration-300 ease-out sm:h-[520px] hover:-translate-y-1.5 hover:shadow-[0_1px_2px_rgba(0,0,0,0.05),0_24px_40px_-20px_rgba(0,0,0,0.18)]"
     >
       <CoverPlaceholder project={project} />
 
-      <div className="flex flex-1 flex-col px-2 pb-1 pt-6">
+      <div className="flex shrink-0 flex-col px-2 pb-1 pt-5 sm:flex-1 sm:pt-6">
         <h3 className="text-2xl font-bold leading-snug tracking-tight">
           {project.name}
         </h3>
 
-        <p className="mt-3 text-[15px] opacity-60 leading-relaxed line-clamp-3">
+        {/* Sur mobile la carte fait tout l'ecran : la description s'affiche en
+            entier et c'est la couverture (flex-1) qui cede la place. Le
+            line-clamp ne sert qu'a partir de sm, ou la hauteur est figee a
+            520px et ou les cartes doivent s'aligner entre elles. */}
+        <p className="mt-3 text-[15px] opacity-60 leading-relaxed sm:line-clamp-3">
           {project.description}
         </p>
 
-        <div className="mt-auto flex items-end justify-between gap-3 pt-6">
+        <div className="mt-5 flex items-end justify-between gap-3 sm:mt-auto sm:pt-6">
           {project.tech && (
             <ul className="flex items-center gap-2.5">
               {project.tech.map(({ icon: Icon, label }) => (
@@ -224,14 +268,25 @@ function ProjectCard({ project, index }) {
   );
 }
 
-// Desktop/tablette : grille, plusieurs cartes par ligne. Mobile : une colonne,
-// defilement vertical natif de la page (pas de scroll horizontal ni de snap
-// agressif qui faisait "sauter" plusieurs cartes d'un coup au swipe).
+// Desktop/tablette : grille classique, plusieurs cartes par ligne, rien ne change.
+//
+// Mobile : une carte = un ecran. Chaque carte est enveloppee dans une boite
+// plein ecran (`snap-card`) qui sert de point d'arret au scroll guide defini
+// dans globals.css. La grille passe en `gap-0` : l'espace entre deux cartes
+// vient de la boite plein ecran elle-meme, un gap en plus decalerait le
+// centrage. `-mx-6` annule le padding lateral de <main> pour que la boite
+// fasse vraiment toute la largeur de l'ecran, `px-4` redonne ensuite une
+// marge propre autour de la carte.
 export default function ProjectCards() {
   return (
-    <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-10">
+    <div className="snap-page mt-10 grid grid-cols-1 gap-0 sm:mt-10 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-10">
       {PROJECTS.map((project, index) => (
-        <ProjectCard key={project.name} project={project} index={index} />
+        <div
+          key={project.name}
+          className="snap-card -mx-6 flex h-dvh items-center px-4 sm:mx-0 sm:block sm:h-auto sm:px-0"
+        >
+          <ProjectCard project={project} index={index} />
+        </div>
       ))}
     </div>
   );

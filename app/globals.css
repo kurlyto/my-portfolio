@@ -55,9 +55,47 @@ button:not(:disabled),
   }
 }
 
+/* Page "Mes projets" sur telephone : une carte = un ecran, et le scroll est
+   guide (un geste vers le bas amene la carte suivante pile centree).
+
+   Le snap est porte par le scroller de la PAGE, pas par un conteneur imbrique :
+   un conteneur imbrique piegerait le scroll et empecherait la barre d'URL du
+   navigateur de se retracter. `scroll-snap-type: y mandatory` sur <html> laisse
+   donc le defilement natif intact, il ne fait que decider ou il s'arrete.
+
+   `scroll-behavior: smooth` (defini plus haut pour les ancres) doit etre neutralise
+   ici : il entre en conflit avec l'animation de snap du navigateur et produisait
+   le saut de plusieurs cartes d'un coup au swipe. */
+@media (max-width: 639px) {
+  html:has(.snap-page) {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: auto;
+  }
+
+  /* `always` interdit au navigateur d'ignorer un point d'arret quand le geste est
+     rapide : c'est ce qui rend le defilement "rigide", une carte a la fois. */
+  .snap-page .snap-card {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
+
+  /* Le header et le pied de page restent des arrets valides, sinon le snap
+     rendrait le haut et le bas de la page inatteignables. */
+  .snap-page .snap-edge {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  /* Un defilement impose est desagreable, voire nauseeux, pour qui demande
+     moins d'animation : on rend la page a son scroll libre. */
+  html:has(.snap-page) {
+    scroll-snap-type: none;
   }
 
   [style*="marquee"] {
