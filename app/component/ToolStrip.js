@@ -89,8 +89,10 @@ export default function ToolStrip() {
   // min-w-0 + overflow-hidden : sans ca, la piste en w-max impose sa largeur
   // totale a la colonne de grille parente et ecrase la colonne voisine.
   return (
-    <div className="mt-12 min-w-0 overflow-x-hidden">
-      <p className="text-[11px] font-mono uppercase tracking-widest opacity-40">
+    <div className="mt-8 md:mt-12 min-w-0 overflow-x-hidden">
+      {/* relative + z-20 : le label passe au-dessus du fondu de gauche de la
+          piste, qui sinon vient manger ses premieres lettres. */}
+      <p className="relative z-20 text-[11px] font-mono uppercase tracking-widest opacity-40">
         Connectable à vos outils
       </p>
 

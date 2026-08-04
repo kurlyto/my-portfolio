@@ -150,6 +150,21 @@ function MobileMenu({ dark }) {
                 </div>
               </div>
             ))}
+
+            <div>
+              <span className="text-xs font-mono uppercase tracking-widest opacity-40">
+                Infos
+              </span>
+              <div className="mt-3 flex flex-col gap-4">
+                <Link
+                  href="/#faq"
+                  onClick={() => setOpen(false)}
+                  className="text-3xl font-bold tracking-tight"
+                >
+                  FAQ
+                </Link>
+              </div>
+            </div>
           </nav>
 
           <div className="px-6 py-10 flex justify-center">
@@ -172,6 +187,15 @@ export default function Header({ dark = false }) {
         {NAV_SECTIONS.map((section) => (
           <NavDropdown key={section.label} label={section.label} dark={dark} items={section.items} />
         ))}
+        {/* La FAQ est une section de la home, pas une page : lien ancre plutot
+            qu'une entree de dropdown. */}
+        <Link
+          href="/#faq"
+          data-cursor-hover
+          className="whitespace-nowrap opacity-80 hover:opacity-100 transition-opacity"
+        >
+          FAQ
+        </Link>
       </nav>
 
       <div className="hidden sm:block">

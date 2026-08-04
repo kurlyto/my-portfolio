@@ -604,8 +604,20 @@ function ProgressBar({ progress }) {
   );
 }
 
-export default function ChatPanel({ onClose, fullScreen = false }) {
+export default function ChatPanel({ onClose, fullScreen = false, initialMessage = null }) {
   const chat = useNateChat();
+
+  // Vocal transcrit avant l'ouverture du chat : on l'envoie comme premier
+  // message des que le thread est pret. Le ref evite le double envoi quand le
+  // composant re-rend (StrictMode en dev, ou changement de state du chat).
+  const { threadId, restoring, sendMessage } = chat;
+  const sentInitialRef = useRef(false);
+  useEffect(() => {
+    if (sentInitialRef.current) return;
+    if (!initialMessage || !threadId || restoring) return;
+    sentInitialRef.current = true;
+    sendMessage(initialMessage);
+  }, [initialMessage, threadId, restoring, sendMessage]);
 
   if (fullScreen) {
     return (

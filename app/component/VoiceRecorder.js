@@ -29,7 +29,7 @@ function MicIcon(props) {
  * recoit le texte : c'est l'appelant qui decide quoi en faire (ici, ouvrir le
  * chat et l'envoyer a Nate).
  */
-export default function VoiceRecorder({ onResult, className, children }) {
+export default function VoiceRecorder({ onResult, className, children, motionProps }) {
   const [state, setState] = useState("idle"); // idle | recording | sending | error
   const [seconds, setSeconds] = useState(0);
   const [error, setError] = useState(null);
@@ -142,9 +142,18 @@ export default function VoiceRecorder({ onResult, className, children }) {
 
   return (
     <>
-      <button type="button" onClick={start} data-cursor-hover className={className}>
+      {/* motion.button systematiquement : le halo pulse du CTA principal est
+          passe par `motionProps`, les autres appels n'en fournissent pas et se
+          comportent comme un bouton normal. */}
+      <motion.button
+        type="button"
+        onClick={start}
+        data-cursor-hover
+        className={className}
+        {...motionProps}
+      >
         {children}
-      </button>
+      </motion.button>
 
       {open && (
         <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/50 px-6">

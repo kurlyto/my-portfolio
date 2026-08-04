@@ -4,11 +4,10 @@ import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import Header from "./Header";
 import ScrambleHero from "./ScrambleHero";
-import WorkGateway from "./WorkGateway";
+import Faq from "./Faq";
 import TestimonialCarousel from "./TestimonialCarousel";
 import ChatPanel from "./ChatPanel";
 import AgentMarquee from "./AgentMarquee";
-import VoiceRecorder from "./VoiceRecorder";
 import HowItWorks from "./HowItWorks";
 import Footer from "./Footer";
 
@@ -23,8 +22,8 @@ function OfferBanner() {
   return (
     <div className="relative bg-[#ff6b35] text-white">
       <div className="max-w-7xl mx-auto px-6 py-2.5 pr-12 text-center text-[13px] font-mono tracking-wide">
-        <span className="font-bold uppercase">1 agent acheté, 1 agent offert</span>
-        <span className="hidden sm:inline opacity-85"> — offre valable pour un second agent, une fois par client.</span>
+        <span className="font-bold uppercase">1 mois d&apos;essai 100% gratuit</span>
+        <span className="hidden sm:inline opacity-85"> - testez votre agent personnel sans aucun engagement d&apos;achat.</span>
       </div>
       <button
         type="button"
@@ -34,32 +33,6 @@ function OfferBanner() {
       >
         ×
       </button>
-    </div>
-  );
-}
-
-function MicGlyph(props) {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
-      <path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3" />
-      <path d="M19 11a1 1 0 0 0-2 0 5 5 0 0 1-10 0 1 1 0 0 0-2 0 7 7 0 0 0 6 6.92V20H8a1 1 0 0 0 0 2h8a1 1 0 0 0 0-2h-3v-2.08A7 7 0 0 0 19 11" />
-    </svg>
-  );
-}
-
-function VoicePitch({ onResult }) {
-  return (
-    <div className="mt-5 flex flex-col items-center gap-2">
-      <VoiceRecorder
-        onResult={onResult}
-        className="inline-flex items-center gap-2.5 rounded-full bg-[#ff6b35] text-white px-7 py-3.5 text-[13px] font-mono font-bold uppercase tracking-wide transition-all duration-150 ease-out hover:bg-[#e2531f] hover:-translate-y-0.5"
-      >
-        <MicGlyph className="w-4 h-4" />
-        J&apos;explique mon besoin
-      </VoiceRecorder>
-      <p className="text-[11px] font-mono opacity-40">
-        Parlez, Nate vous repond
-      </p>
     </div>
   );
 }
@@ -84,9 +57,20 @@ export default function HomePageContent() {
         // pt-24 -> pt-14 en desktop : le chat ouvert (colonne droite) depassait
         // sous la ligne de flottaison sur les ecrans courts (1366x768). On
         // remonte l'ensemble du hero pour que le panneau tienne en entier.
-        className="max-w-7xl mx-auto px-6 pt-16 pb-16 md:pt-14 md:pb-20 w-full grid grid-cols-1 lg:grid-cols-[minmax(0,620px)_1fr] gap-12 lg:gap-14 items-stretch"
+        // Mobile : le hero occupe la hauteur utile restante (100dvh moins le
+        // header et le bandeau) et centre son contenu, pour que titre +
+        // sous-titre + CTA soient visibles d'un coup d'oeil sans scroll, quelle
+        // que soit la taille de l'ecran. dvh et non vh : sur iOS/Android la
+        // barre d'URL retractable fausse vh et coupait le bas du CTA.
+        className="max-w-7xl mx-auto px-6 pt-8 pb-8 lg:pb-20 lg:pt-14 w-full grid grid-cols-1 lg:grid-cols-[minmax(0,620px)_1fr] gap-12 lg:gap-14 items-stretch lg:min-h-0 content-start lg:content-stretch"
       >
-        <ScrambleHero onOpenChat={() => setChatOpen(true)} />
+        <ScrambleHero
+          onOpenChat={() => setChatOpen(true)}
+          onVoiceResult={openChatWithVoice}
+        />
+        {/* Le carrousel reste en colonne droite sur desktop uniquement. Sur
+            mobile il devient une section a part entiere (voir plus bas) pour
+            que le hero tienne seul dans le premier ecran. */}
         <div className="hidden lg:block lg:sticky lg:top-6 lg:self-start">
           <AnimatePresence mode="wait">
             {chatOpen ? (
@@ -98,16 +82,18 @@ export default function HomePageContent() {
             ) : (
               <div key="testimonials">
                 <TestimonialCarousel />
-                <VoicePitch onResult={openChatWithVoice} />
               </div>
             )}
           </AnimatePresence>
         </div>
-        <div className="lg:hidden">
-          <TestimonialCarousel />
-          <VoicePitch onResult={openChatWithVoice} />
-        </div>
       </section>
+
+      {/* Temoignages avant la grille d'agents : ils servent d'amorce concrete
+          ("ah, on peut faire ca"), pas de preuve sociale. Le visiteur doit y
+          reconnaitre sa propre situation avant de parcourir le catalogue. */}
+      <div className="lg:hidden px-6 pb-16">
+        <TestimonialCarousel />
+      </div>
 
       <AnimatePresence>
         {chatOpen && (
@@ -123,7 +109,7 @@ export default function HomePageContent() {
 
       <AgentMarquee />
       <HowItWorks />
-      <WorkGateway />
+      <Faq />
       <Footer showHomeLink={false} />
     </div>
   );

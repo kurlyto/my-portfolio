@@ -224,10 +224,11 @@ export default function AgentMarquee() {
     <section className="bg-black text-white py-20 md:py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <span className="text-xs font-mono uppercase tracking-widest text-[#ff6b35]">
-          Cas d&apos;usage
+          Problèmes
         </span>
         <h2 className="font-display mt-3 text-3xl md:text-5xl font-bold tracking-tight max-w-2xl text-balance">
-          Des milliers de cas d&apos;usage. Quel est le vôtre ?
+          Il y a des milliers de problèmes à résoudre en entreprise. Quel est le
+          vôtre ?
         </h2>
         <p className="mt-4 text-sm md:text-base opacity-60 max-w-xl">
           Voici des agents déjà construits. Le vôtre sera différent : il sera

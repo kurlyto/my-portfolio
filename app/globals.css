@@ -12,6 +12,12 @@ html {
   --color-accent-dark: #e2531f;
 }
 
+/* Le hero mobile se decide sur la HAUTEUR disponible, pas sur la largeur :
+   deux telephones de meme largeur n'ont pas la meme place utile une fois la
+   barre d'URL et le bandeau d'offre deduits. `tall:` n'affiche les elements
+   secondaires (bande d'outils) que si l'ecran est assez haut pour eux. */
+@custom-variant tall (@media (min-height: 720px));
+
 /* :where() garde une specificite nulle : les utilitaires Tailwind de couleur
    (text-white, text-black...) l'emportent au lieu d'etre ecrases. */
 a:where(:not([class*="text-"])) {
