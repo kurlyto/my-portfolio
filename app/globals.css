@@ -56,33 +56,31 @@ button:not(:disabled),
 }
 
 /* Page "Mes projets" sur telephone : une carte = un ecran, et le scroll est
-   guide (un geste vers le bas amene la carte suivante pile centree).
+   guide (un geste vers le bas amene la carte suivante bien centree).
 
    Le snap est porte par le scroller de la PAGE, pas par un conteneur imbrique :
    un conteneur imbrique piegerait le scroll et empecherait la barre d'URL du
-   navigateur de se retracter. `scroll-snap-type: y mandatory` sur <html> laisse
-   donc le defilement natif intact, il ne fait que decider ou il s'arrete.
+   navigateur de se retracter.
 
-   `scroll-behavior: smooth` (defini plus haut pour les ancres) doit etre neutralise
-   ici : il entre en conflit avec l'animation de snap du navigateur et produisait
-   le saut de plusieurs cartes d'un coup au swipe. */
+   `proximity` et non `mandatory` : la page contient ~980px de hero et ~500px de
+   pied de page qui ne sont PAS des cartes. En `mandatory`, le navigateur refuse
+   de s'arreter dans ces zones et ramene de force vers une carte - c'est ce qui
+   produisait les sauts d'ecran incontrolables au doigt. En `proximity`, il
+   n'accroche que si on s'arrete pres d'une carte, et laisse le hero et le
+   footer defiler normalement.
+
+   `scroll-behavior: smooth` (defini plus haut pour les ancres) est neutralise
+   ici : il entre en conflit avec l'animation de snap du navigateur. */
 @media (max-width: 639px) {
   html:has(.snap-page) {
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
     scroll-behavior: auto;
   }
 
-  /* `always` interdit au navigateur d'ignorer un point d'arret quand le geste est
-     rapide : c'est ce qui rend le defilement "rigide", une carte a la fois. */
+  /* `always` interdit au navigateur d'ignorer un point d'arret quand le geste
+     est rapide : c'est ce qui empeche de sauter plusieurs cartes d'un coup. */
   .snap-page .snap-card {
     scroll-snap-align: center;
-    scroll-snap-stop: always;
-  }
-
-  /* Le header et le pied de page restent des arrets valides, sinon le snap
-     rendrait le haut et le bas de la page inatteignables. */
-  .snap-page .snap-edge {
-    scroll-snap-align: start;
     scroll-snap-stop: always;
   }
 }

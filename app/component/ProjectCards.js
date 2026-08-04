@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
   NextJsIcon,
@@ -170,11 +171,16 @@ function CoverPlaceholder({ project }) {
       className={`relative flex min-h-0 flex-1 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br sm:aspect-[4/3] sm:flex-none ${project.cover}`}
     >
       {project.coverImage ? (
+        // `object-cover` recadre pour remplir : acceptable dans le cadre 4/3 du
+        // desktop, desastreux sur mobile ou la carte plein ecran rend la zone
+        // bien plus haute que large (une image 4/3 y perdait ~60% de sa largeur,
+        // d'ou le logo Insider Bot coupe). Sur telephone on affiche donc toujours
+        // l'image entiere, et c'est le degrade qui comble autour.
         <img
           src={project.coverImage}
           alt=""
-          className={`h-full w-full ${
-            project.coverImageFit === "contain" ? "object-contain p-4" : "object-cover"
+          className={`h-full w-full object-contain p-4 ${
+            project.coverImageFit === "contain" ? "sm:object-contain" : "sm:p-0 sm:object-cover"
           }`}
         />
       ) : FirstIcon ? (
@@ -201,6 +207,27 @@ function CoverPlaceholder({ project }) {
   );
 }
 
+// Meme point de bascule que le `sm:` de Tailwind et que le media query du
+// scroll guide dans globals.css. Demarre a `false` : le rendu serveur ne
+// connait pas la taille de l'ecran, et partir de `false` donne le meme HTML
+// des deux cotes (pas d'erreur d'hydratation).
+function useIsPhone() {
+  const [isPhone, setIsPhone] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 639px)");
+    const sync = () => setIsPhone(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
+
+  return isPhone;
+}
+
+const CARD_CLASS =
+  "group flex h-[calc(100dvh-2rem)] flex-col rounded-3xl border border-black/[0.06] bg-white p-5 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_12px_28px_-16px_rgba(0,0,0,0.12)] transition-all duration-300 ease-out sm:h-[520px] hover:-translate-y-1.5 hover:shadow-[0_1px_2px_rgba(0,0,0,0.05),0_24px_40px_-20px_rgba(0,0,0,0.18)]";
+
 // Carte epuree type "bewide" : image en haut, titre, description legere.
 //
 // Desktop/tablette : hauteur fixe (h-[520px]) pour que toutes les cartes
@@ -213,15 +240,19 @@ function CoverPlaceholder({ project }) {
 // d'arret ; la carte visible est ancree dedans avec une marge de respiration.
 function ProjectCard({ project, index }) {
   const isExternal = project.link?.startsWith("http");
+  const isPhone = useIsPhone();
 
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 32 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false, margin: "-60px" }}
-      transition={{ duration: 0.5, ease: "easeOut", delay: (index % 3) * 0.08 }}
-      className="group flex h-[calc(100dvh-2rem)] flex-col rounded-3xl border border-black/[0.06] bg-white p-5 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_12px_28px_-16px_rgba(0,0,0,0.12)] transition-all duration-300 ease-out sm:h-[520px] hover:-translate-y-1.5 hover:shadow-[0_1px_2px_rgba(0,0,0,0.05),0_24px_40px_-20px_rgba(0,0,0,0.18)]"
-    >
+  // Sur telephone la carte ne bouge pas : une animation qui translate la carte
+  // pendant que le navigateur essaie de la caler sur son point d'ancrage fait
+  // vibrer le scroll et provoque des sauts. Une carte plein ecran n'a de toute
+  // facon pas besoin d'apparaitre en fondu, elle occupe deja tout l'espace.
+  //
+  // On rend un <div> nu (et non un motion.div fige) : framer-motion conserve
+  // l'etat d'animation du premier rendu, et la largeur n'etant connue qu'apres
+  // celui-ci, la carte restait bloquee a opacity:0. Sortir du composant motion
+  // supprime le probleme a la racine.
+  const body = (
+    <>
       <CoverPlaceholder project={project} />
 
       <div className="flex shrink-0 flex-col px-2 pb-1 pt-5 sm:flex-1 sm:pt-6">
@@ -264,6 +295,22 @@ function ProjectCard({ project, index }) {
           )}
         </div>
       </div>
+    </>
+  );
+
+  if (isPhone) {
+    return <div className={CARD_CLASS}>{body}</div>;
+  }
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 32 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.5, ease: "easeOut", delay: (index % 3) * 0.08 }}
+      className={CARD_CLASS}
+    >
+      {body}
     </motion.div>
   );
 }

@@ -24,7 +24,7 @@ const TECH_STACK = [
 export default function ProjectsPage() {
   return (
     <div className="min-h-screen bg-white text-black">
-      <div className="snap-edge bg-black text-white min-h-screen flex flex-col">
+      <div className="bg-black text-white min-h-screen flex flex-col">
         <Header dark />
         <div className="flex-1 flex flex-col justify-center max-w-7xl mx-auto px-6 py-6">
           <span className="text-xs font-mono uppercase tracking-widest text-[#ff6b35]">
@@ -57,17 +57,13 @@ export default function ProjectsPage() {
 
       <main className="mx-auto max-w-7xl px-6 pt-16 pb-24">
         <Reveal>
-          <h2 className="snap-edge text-2xl md:text-3xl font-bold">
-            Ce que j&apos;ai construit
-          </h2>
+          <h2 className="text-2xl md:text-3xl font-bold">Ce que j&apos;ai construit</h2>
         </Reveal>
 
         <ProjectCards />
       </main>
 
-      <div className="snap-edge">
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 }
