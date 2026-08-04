@@ -3,6 +3,17 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { TelegramToolIcon } from "./tool-icons";
+import MailProviderLinks from "./mail-provider-links";
+import VoiceRecorder from "./VoiceRecorder";
+
+function MicGlyph(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3" />
+      <path d="M19 11a1 1 0 0 0-2 0 5 5 0 0 1-10 0 1 1 0 0 0-2 0 7 7 0 0 0 6 6.92V20H8a1 1 0 0 0 0 2h8a1 1 0 0 0 0-2h-3v-2.08A7 7 0 0 0 19 11" />
+    </svg>
+  );
+}
 
 const ACCENT = "#ff6b35";
 
@@ -16,7 +27,7 @@ const TELEGRAM_URL = "https://t.me/AssistantNate_bot";
 // app/api/chat/threads/[threadId]/messages/route.js.
 const GREETING =
   "Bienvenue ! As-tu déjà une idée précise en tête, tu veux qu'on t'aide à en trouver une, ou tu préfères d'abord voir les agents qu'on a déjà créés ?\n\n" +
-  "---BOUTONS---\nJ'ai une idée en tête\nJe n'ai pas encore d'idée\nVoir les agents existants";
+  "---BOUTONS---\nJ'ai une idée en tête\nAide-moi à cadrer mon besoin\nVoir les agents existants";
 
 const UNLOCKED_RESUME_TEXT = "C'est confirmé, merci ! On reprend juste où on en était.";
 
@@ -167,6 +178,23 @@ function ActionLink({ action }) {
   );
 }
 
+// Le bloc ---WEBMAIL--- porte l'adresse du visiteur sur la ligne suivante.
+// Meme principe que ---BOUTONS--- : retire du texte affiche, rendu a part.
+function splitWebmail(reply) {
+  const marker = "---WEBMAIL---";
+  const idx = reply.indexOf(marker);
+  if (idx === -1) return { text: reply, mailTo: null };
+
+  const text = reply.slice(0, idx).trimEnd();
+  const rest = reply.slice(idx + marker.length);
+  const nextMarker = rest.indexOf("---");
+  const block = nextMarker === -1 ? rest : rest.slice(0, nextMarker);
+  const tail = nextMarker === -1 ? "" : rest.slice(nextMarker);
+
+  const mailTo = block.split("\n").map((l) => l.trim()).filter(Boolean)[0] ?? null;
+  return { text: text + (tail ? `\n${tail}` : ""), mailTo };
+}
+
 function MessageBubble({ role, text, streaming, onQuickReply, disableButtons, action }) {
   const isUser = role === "USER";
   // Ordre important : on extrait d'abord les agents (qui peuvent preceder un
@@ -174,9 +202,12 @@ function MessageBubble({ role, text, streaming, onQuickReply, disableButtons, ac
   const { text: withoutAgents, agents } = isUser
     ? { text, agents: null }
     : splitAgents(text);
+  const { text: withoutWebmail, mailTo } = isUser
+    ? { text: withoutAgents, mailTo: null }
+    : splitWebmail(withoutAgents);
   const { text: body, buttons } = isUser
     ? { text, buttons: null }
-    : splitButtons(withoutAgents);
+    : splitButtons(withoutWebmail);
 
   return (
     <motion.div
@@ -206,6 +237,7 @@ function MessageBubble({ role, text, streaming, onQuickReply, disableButtons, ac
             </div>
           )}
         </div>
+        {mailTo && !streaming && <MailProviderLinks email={mailTo} />}
         {action && !streaming && <ActionLink action={action} />}
         {buttons && !streaming && (
           <div className="flex flex-wrap gap-2">
@@ -234,6 +266,26 @@ function MessageBubble({ role, text, streaming, onQuickReply, disableButtons, ac
 // threads, messages et unlocked_threads vivent en base - il manquait juste de
 // quoi retrouver le fil.
 const THREAD_STORAGE_KEY = "nate-chat-thread-id";
+
+// Identifiant de navigateur, distinct du thread : il survit a un "nouveau
+// projet". Sert a retenir qu'une personne a deja verifie son email, pour ne pas
+// le lui redemander a chaque nouveau projet (cf. known_visitors dans db.js).
+const VISITOR_STORAGE_KEY = "nate-chat-visitor-id";
+
+function getVisitorId() {
+  try {
+    let id = window.localStorage.getItem(VISITOR_STORAGE_KEY);
+    if (!id) {
+      id = crypto.randomUUID();
+      window.localStorage.setItem(VISITOR_STORAGE_KEY, id);
+    }
+    return id;
+  } catch {
+    // localStorage indisponible : on reste anonyme, le parcours fonctionne
+    // normalement, la personne redonnera simplement son email.
+    return null;
+  }
+}
 
 function loadStoredThreadId() {
   try {
@@ -269,6 +321,10 @@ function useNateChat() {
   const [error, setError] = useState(null);
   const [awaitingVerification, setAwaitingVerification] = useState(false);
   const [restoring, setRestoring] = useState(true);
+  // Vrai quand le fil a ete recharge depuis le serveur (le visiteur revient sur
+  // une conversation existante) : dans ce cas on n'affiche jamais le message
+  // d'accueil, il apparaitrait au-dessus d'echanges deja avances.
+  const [restoredThread, setRestoredThread] = useState(false);
   // 5 des l'ouverture, avant tout message : la barre doit donner le signal
   // "ca a deja commence" plutot que partir de zero.
   const [progress, setProgress] = useState(5);
@@ -294,6 +350,10 @@ function useNateChat() {
             setThreadId(stored);
             setMessages(restored);
             setRestoring(false);
+            // Un fil vide cote serveur (thread cree mais jamais utilise) doit
+            // garder son message d'accueil : on ne marque "restaure" que s'il
+            // contient reellement des echanges.
+            if (restored.length > 0) setRestoredThread(true);
             // Message de reprise redige par Nate : sans lui, le visiteur qui
             // revient retombe au milieu de sa conversation sans savoir ou il en
             // est. C'est un vrai resume de son projet (le modele a vu tout le
@@ -339,7 +399,13 @@ function useNateChat() {
   // redescendre a 5.
   async function createFreshThread() {
     try {
-      const res = await fetch("/api/chat/threads", { method: "POST" });
+      const res = await fetch("/api/chat/threads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        // Le serveur deverrouille directement le thread si ce visiteur a deja
+        // verifie son email lors d'un projet precedent.
+        body: JSON.stringify({ visitorId: getVisitorId() }),
+      });
       const data = await res.json();
       if (!res.ok || !data.threadId) throw new Error(data.error ?? "no_thread");
       setThreadId(data.threadId);
@@ -348,6 +414,7 @@ function useNateChat() {
       setError(null);
       setAwaitingVerification(false);
       setProgress(5);
+      setRestoredThread(false);
     } catch {
       setError("Impossible d'ouvrir la discussion.");
     }
@@ -402,7 +469,7 @@ function useNateChat() {
       const res = await fetch(`/api/chat/threads/${threadId}/messages`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: trimmed }),
+        body: JSON.stringify({ message: trimmed, visitorId: getVisitorId() }),
       });
 
       if (!res.ok || !res.body) throw new Error("request_failed");
@@ -462,10 +529,21 @@ function useNateChat() {
     }
   }
 
-  return { threadId, messages, streamingText, error, sendMessage, awaitingVerification, restoring, progress };
+  return {
+    threadId,
+    messages,
+    streamingText,
+    error,
+    sendMessage,
+    awaitingVerification,
+    restoring,
+    progress,
+    createFreshThread,
+    restoredThread,
+  };
 }
 
-function ChatBody({ threadId, messages, streamingText, error, sendMessage, awaitingVerification, restoring }) {
+function ChatBody({ threadId, messages, streamingText, error, sendMessage, awaitingVerification, restoring, restoredThread }) {
   const [input, setInput] = useState("");
   const scrollRef = useRef(null);
 
@@ -481,11 +559,21 @@ function ChatBody({ threadId, messages, streamingText, error, sendMessage, await
   return (
     <>
       <div ref={scrollRef} className="flex-1 overflow-y-auto px-4 py-4 flex flex-col gap-4">
-        {/* Message d'accueil reserve aux nouvelles discussions : sur un fil
-            restaure, le visiteur verrait "Bienvenue ! As-tu deja une idee ?"
-            au-dessus d'une conversation deja bien avancee. */}
-        {!restoring && messages.length === 0 && (
-          <MessageBubble role="ASSISTANT" text={GREETING} streaming={false} onQuickReply={sendMessage} disableButtons={false} />
+        {/* Message d'accueil affiche tant que la discussion demarre, ET
+            CONSERVE une fois le premier message envoye : avant, il etait
+            conditionne a `messages.length === 0`, donc il disparaissait des le
+            premier clic et le fil perdait son debut. Ses boutons se grisent
+            comme ceux de n'importe quel message anterieur.
+            Toujours masque sur un fil restaure : le visiteur verrait
+            "Bienvenue !" au-dessus d'une conversation deja avancee. */}
+        {!restoring && !restoredThread && (
+          <MessageBubble
+            role="ASSISTANT"
+            text={GREETING}
+            streaming={false}
+            onQuickReply={sendMessage}
+            disableButtons={messages.length > 0}
+          />
         )}
 
         {messages.map((m, i) => (
@@ -533,6 +621,16 @@ function ChatBody({ threadId, messages, streamingText, error, sendMessage, await
           disabled={!threadId || streamingText !== null}
           className="flex-1 text-[15px] bg-transparent outline-none placeholder:text-black/30 disabled:opacity-40"
         />
+        {/* Dictee vocale : le texte transcrit atterrit dans le champ plutot que
+            d'etre envoye directement, pour que la personne puisse le relire et
+            le corriger. La transcription se trompe parfois sur un nom propre ou
+            un chiffre, et un message parti trop vite ne se rattrape pas. */}
+        <VoiceRecorder
+          onResult={(text) => setInput((current) => (current ? `${current} ${text}` : text))}
+          className="shrink-0 w-9 h-9 flex items-center justify-center rounded-full bg-[#ff6b35] text-white transition-all duration-150 ease-out hover:-translate-y-0.5"
+        >
+          <MicGlyph className="w-4 h-4" />
+        </VoiceRecorder>
         <button
           type="submit"
           disabled={!threadId || streamingText !== null || !input.trim()}
@@ -606,18 +704,19 @@ function ProgressBar({ progress }) {
 
 export default function ChatPanel({ onClose, fullScreen = false, initialMessage = null }) {
   const chat = useNateChat();
+  const sentInitialRef = useRef(null);
 
-  // Vocal transcrit avant l'ouverture du chat : on l'envoie comme premier
-  // message des que le thread est pret. Le ref evite le double envoi quand le
-  // composant re-rend (StrictMode en dev, ou changement de state du chat).
-  const { threadId, restoring, sendMessage } = chat;
-  const sentInitialRef = useRef(false);
+  // Message issu du vocal ("Expliquez votre besoin") : il arrive apres le
+  // montage du panneau, une fois la transcription terminee. Sans ce useEffect
+  // la prop etait recue mais jamais lue - le vocal etait transcrit puis jete.
+  // On attend que le thread soit pret, et on garde une trace du texte deja
+  // envoye pour ne pas le renvoyer a chaque re-rendu.
   useEffect(() => {
-    if (sentInitialRef.current) return;
-    if (!initialMessage || !threadId || restoring) return;
-    sentInitialRef.current = true;
-    sendMessage(initialMessage);
-  }, [initialMessage, threadId, restoring, sendMessage]);
+    if (!initialMessage || !chat.threadId || chat.restoring) return;
+    if (sentInitialRef.current === initialMessage) return;
+    sentInitialRef.current = initialMessage;
+    chat.sendMessage(initialMessage);
+  }, [initialMessage, chat.threadId, chat.restoring]);
 
   if (fullScreen) {
     return (

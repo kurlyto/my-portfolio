@@ -78,7 +78,13 @@ const AGENTS_CATALOG =
   "ousmane|Ousmane|Trouve des clients, relance, place les rendez-vous.\n" +
   "hugo|Hugo|Veille sur ton secteur et référencement de ton site.\n" +
   "lea|Léa|Rédige tes posts et construit ta stratégie de contenu.\n" +
-  "---BOUTONS---\nJ'ai une idée en tête\nAide-moi à cadrer mon besoin";
+  "kylian|Kylian|Surveille tes chiffres et t'alerte quand ça décroche.\n" +
+  "alexis|Alexis|Classe tes factures et prépare tes déclarations.\n" +
+  // Les libellés des 6 premiers boutons doivent rester "Camille", "Ousmane"...
+  // a l'identique : mission.md s'appuie dessus pour reconnaitre qu'un visiteur
+  // s'interesse a un agent precis et lui presenter sa fiche detaillee.
+  "---BOUTONS---\nCamille\nOusmane\nHugo\nLéa\nKylian\nAlexis\n" +
+  "J'ai une idée en tête\nAide-moi à cadrer mon besoin";
 
 function sseEvent(event, data) {
   return `event: ${event}\ndata: ${JSON.stringify(data)}\n\n`;
@@ -133,7 +139,9 @@ function parseIdentityBlock(reply) {
 
 export async function POST(request, { params }) {
   const { threadId } = await params;
-  const { message } = await request.json();
+  // visitorId : identifiant navigateur transmis par le chat, pour retenir la
+  // personne au-dela de ce thread (voir known_visitors dans db.js).
+  const { message, visitorId } = await request.json();
 
   if (typeof message !== "string" || !message.trim()) {
     return NextResponse.json({ error: "Message vide." }, { status: 400 });
@@ -193,7 +201,11 @@ export async function POST(request, { params }) {
                   firstName: pending.firstName,
                   verifyUrl: `${verifyBaseUrl()}/api/chat/verify?token=${newToken}`,
                 });
-                resendText = `C'est reparti, je viens de te renvoyer le lien à ${pending.email}. Pense à regarder dans tes spams.`;
+                resendText =
+                  `C'est reparti, je viens de te renvoyer le lien à ${pending.email}. ` +
+                  `Pense à regarder dans tes spams.
+---WEBMAIL---
+${pending.email}`;
               } catch (err) {
                 console.error("Renvoi email de verification echoue:", err);
                 resendText = "L'envoi a encore échoué de mon côté, réessaie dans un instant.";
@@ -204,7 +216,13 @@ export async function POST(request, { params }) {
             }
 
             addMessage(threadId, "USER", trimmed);
-            const waitText = `Il me manque juste ta confirmation : clique sur le lien que je t'ai envoyé à ${pending.email} et on reprend tout de suite là où on en était. Pense à vérifier tes spams. Si tu n'as rien reçu, dis-moi "renvoyer le lien".`;
+            const waitText =
+              `Il me manque juste ta confirmation : clique sur le lien que je t'ai envoyé à ` +
+              `${pending.email} et on reprend tout de suite là où on en était. Pense à vérifier ` +
+              `tes spams. Si tu n'as rien reçu, dis-moi "renvoyer le lien".
+` +
+              `---WEBMAIL---
+${pending.email}`;
             addMessage(threadId, "ASSISTANT", waitText);
             send("done", { text: waitText, progress: 45 });
             return;
@@ -242,7 +260,7 @@ export async function POST(request, { params }) {
           }
 
           if (isIdentityRequested(threadId)) {
-            await handleIdentityTurn({ threadId, trimmed, thread, send });
+            await handleIdentityTurn({ threadId, trimmed, thread, send, visitorId });
             return;
           }
 
@@ -280,7 +298,7 @@ export async function POST(request, { params }) {
   });
 }
 
-async function handleIdentityTurn({ threadId, trimmed, thread, send }) {
+async function handleIdentityTurn({ threadId, trimmed, thread, send, visitorId }) {
   addMessage(threadId, "USER", trimmed);
 
   const existingSessionId = getIdentitySession(threadId);
@@ -318,7 +336,13 @@ async function handleIdentityTurn({ threadId, trimmed, thread, send }) {
     return;
   }
 
-  const token = createPendingVerification(threadId, identity.firstName, identity.email, null);
+  const token = createPendingVerification(
+    threadId,
+    identity.firstName,
+    identity.email,
+    null,
+    visitorId,
+  );
   clearIdentitySession(threadId);
 
   try {
@@ -335,7 +359,14 @@ async function handleIdentityTurn({ threadId, trimmed, thread, send }) {
     return;
   }
 
-  const confirmText = `Je t'ai envoyé un lien à ${identity.email}. Clique dessus pour continuer (valable 30 minutes) — pense à vérifier tes spams si tu ne le vois pas.`;
+  // Le marqueur ---WEBMAIL--- fait afficher au front un raccourci vers la
+  // messagerie du visiteur. Ouvrir sa boite est la seule action qui lui reste a
+  // faire, et c'est le moment le plus fragile du parcours : autant lui epargner
+  // de changer d'onglet a la main.
+  const confirmText =
+    `Je t'ai envoyé un lien à ${identity.email}. Clique dessus pour continuer ` +
+    `(valable 30 minutes) — pense à vérifier tes spams si tu ne le vois pas.\n` +
+    `---WEBMAIL---\n${identity.email}`;
   addMessage(threadId, "ASSISTANT", confirmText);
   send("done", { text: confirmText, progress: 45 });
 }
@@ -426,7 +457,20 @@ function buildTurnFacts({ threadId, trimmed }) {
 async function handleFunnelTurn({ threadId, trimmed, thread, send, ip }) {
   const isFirstTurn = !thread.sessionId;
   const sessionId = thread.sessionId ?? crypto.randomUUID();
-  const historyReplay = isFirstTurn ? null : getRecentHistory(threadId);
+
+  // Pas de replay d'historique sur le chemin nominal : --resume conserve deja
+  // toute la conversation cote CLI (verifie le 30/07 - sans aucun replay, Nate
+  // restitue le prenom et le metier donnes deux tours plus tot).
+  // Le renvoyer etait donc redondant ET couteux : ce bloc change a chaque tour
+  // (les 12 derniers messages), il decalait le prefixe et invalidait le cache
+  // a chaque appel. Signature observee : cacheR bloque a une valeur constante
+  // (15 479) pendant que cacheW grimpait a 25-45k/tour, soit ~0,10 USD/tour au
+  // lieu de ~0,01.
+  // Il reste transmis en fallbackHistoryReplay, pour les seuls cas ou la
+  // session CLI est reellement perdue (bascule de compte sur 429, fichier de
+  // session introuvable) : la, il n'y a plus rien a reprendre et le replay est
+  // la seule facon de ne pas repartir de zero.
+  const historyReplay = null;
 
   // Un audit compte comme "termine" quand Nate a effectivement ecrit son lead
   // sur disque pendant ce tour, pas quand il annonce avoir fini (le modele

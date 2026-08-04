@@ -99,20 +99,21 @@ export function getUnlockedProfile(threadId) {
   );
 }
 
-export function createPendingVerification(threadId, firstName, email, intent) {
+export function createPendingVerification(threadId, firstName, email, intent, visitorId) {
   const token = crypto.randomBytes(24).toString("hex");
   const expiresAt = new Date(Date.now() + 30 * 60 * 1000).toISOString();
   db.prepare(
-    `INSERT INTO pending_verifications (threadId, firstName, email, intent, token, expiresAt)
-     VALUES (?, ?, ?, ?, ?, ?)
+    `INSERT INTO pending_verifications (threadId, firstName, email, intent, token, expiresAt, visitorId)
+     VALUES (?, ?, ?, ?, ?, ?, ?)
      ON CONFLICT(threadId) DO UPDATE SET
        firstName = excluded.firstName,
        email = excluded.email,
        intent = excluded.intent,
        token = excluded.token,
        createdAt = datetime('now'),
-       expiresAt = excluded.expiresAt`,
-  ).run(threadId, firstName, email, intent ?? null, token, expiresAt);
+       expiresAt = excluded.expiresAt,
+       visitorId = excluded.visitorId`,
+  ).run(threadId, firstName, email, intent ?? null, token, expiresAt, visitorId ?? null);
   return token;
 }
 
@@ -128,6 +129,57 @@ db.exec(`
     requestedAt TEXT NOT NULL DEFAULT (datetime('now'))
   );
 `);
+
+// Personnes deja verifiees, independamment du thread. `unlocked_threads` lie la
+// verification a UNE conversation : un client qui repart sur un nouveau projet
+// redonnait donc son email a chaque fois. Cette table garde le lien avec la
+// personne (cle = navigateur, via le meme identifiant que le thread stocke en
+// localStorage), pour pouvoir re-deverrouiller un thread neuf sans reverifier.
+db.exec(`
+  CREATE TABLE IF NOT EXISTS known_visitors (
+    visitorId TEXT PRIMARY KEY,
+    firstName TEXT NOT NULL,
+    email TEXT NOT NULL,
+    verifiedAt TEXT NOT NULL DEFAULT (datetime('now'))
+  );
+`);
+
+// Le lien de verification s'ouvre dans un AUTRE onglet, qui n'a pas acces au
+// localStorage du chat : le visitorId doit donc voyager avec le token. On
+// l'ajoute a la table des verifications en attente.
+try {
+  db.exec(`ALTER TABLE pending_verifications ADD COLUMN visitorId TEXT`);
+} catch {
+  // Colonne deja presente : rien a faire.
+}
+
+export function rememberVisitor(visitorId, firstName, email) {
+  if (!visitorId) return;
+  db.prepare(
+    `INSERT INTO known_visitors (visitorId, firstName, email) VALUES (?, ?, ?)
+     ON CONFLICT(visitorId) DO UPDATE SET
+       firstName = excluded.firstName,
+       email = excluded.email,
+       verifiedAt = datetime('now')`,
+  ).run(visitorId, firstName, email);
+}
+
+export function getKnownVisitor(visitorId) {
+  if (!visitorId) return null;
+  return (
+    db
+      .prepare(`SELECT firstName, email FROM known_visitors WHERE visitorId = ?`)
+      .get(visitorId) ?? null
+  );
+}
+
+/** Deverrouille un thread neuf pour une personne deja verifiee. */
+export function unlockThreadFor(threadId, firstName, email) {
+  db.prepare(
+    `INSERT INTO unlocked_threads (threadId, firstName, email) VALUES (?, ?, ?)
+     ON CONFLICT(threadId) DO UPDATE SET firstName = excluded.firstName, email = excluded.email`,
+  ).run(threadId, firstName, email);
+}
 
 export function isIdentityRequested(threadId) {
   return !!db
