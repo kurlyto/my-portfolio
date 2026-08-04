@@ -69,9 +69,12 @@ export default function ScrambleHero({ onOpenChat, onVoiceResult }) {
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.9, duration: 0.5, ease: "easeOut" }}
-        // Serif en graisse legere et italique : discret a cote du titre en
-        // gras, mais moins plat qu'un sans-serif standard.
-        className="font-display mt-4 sm:mt-6 text-[15px] sm:text-lg md:text-xl font-light italic leading-snug sm:leading-relaxed opacity-75 max-w-xl text-balance"
+        // Serif en italique, mais en graisse normale et sans voile
+        // d'opacite : en `font-light` a 75 % la promesse principale du site
+        // passait pour une legende secondaire alors que c'est la phrase qui
+        // explique ce qu'on vend. Elle doit se lire d'emblee, juste en dessous
+        // du titre.
+        className="font-display mt-4 sm:mt-6 text-[17px] sm:text-xl md:text-[1.35rem] font-normal italic leading-snug sm:leading-relaxed text-black/90 max-w-xl text-balance"
       >
         Mails, devis, comptabilité, agenda : je déploie un agent sur-mesure qui
         gère votre business.
@@ -87,8 +90,13 @@ export default function ScrambleHero({ onOpenChat, onVoiceResult }) {
         transition={{ delay: 1.1, duration: 0.5, ease: "easeOut" }}
         className="mt-6 sm:mt-8"
       >
+        {/* La phrase d'exemple et le repli "je prefere ecrire" vivent
+            desormais dans la pop-up d'enregistrement : c'est en parlant qu'on
+            cherche quoi dire, et c'est la aussi qu'on se ravise. Le hero garde
+            une seule action, ce qui le raccourcit d'autant sur mobile. */}
         <VoiceRecorder
           onResult={onVoiceResult}
+          onPreferWriting={onOpenChat}
           motionProps={{
             animate: { boxShadow: PULSE_SHADOWS },
             transition: { duration: 2.4, repeat: Infinity, ease: "easeInOut" },
@@ -99,24 +107,9 @@ export default function ScrambleHero({ onOpenChat, onVoiceResult }) {
           J&apos;explique mon besoin
         </VoiceRecorder>
 
-        <p className="mt-3 text-[12px] sm:text-[13px] opacity-55 leading-snug max-w-md">
-          Dites par exemple : «&nbsp;Je souhaite déléguer ma prospection&nbsp;»
-          ou «&nbsp;J&apos;ai besoin d&apos;aide sur ma comptabilité&nbsp;».
+        <p className="mt-4 text-[13px] sm:text-sm font-mono font-bold text-[#ff6b35]">
+          1 mois offert, sans engagement
         </p>
-
-        <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
-          <button
-            type="button"
-            onClick={onOpenChat}
-            data-cursor-hover
-            className="text-[12px] sm:text-[13px] font-mono underline underline-offset-4 opacity-60 hover:opacity-100 hover:text-[#ff6b35] transition-colors"
-          >
-            Je préfère écrire &rarr;
-          </button>
-          <p className="text-[12px] sm:text-[13px] font-mono font-bold text-[#ff6b35]">
-            1 mois offert, sans engagement
-          </p>
-        </div>
       </motion.div>
 
       {/* La bande d'outils est un bonus : elle ne doit jamais pousser le CTA

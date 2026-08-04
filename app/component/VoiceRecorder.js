@@ -29,7 +29,7 @@ function MicIcon(props) {
  * recoit le texte : c'est l'appelant qui decide quoi en faire (ici, ouvrir le
  * chat et l'envoyer a Nate).
  */
-export default function VoiceRecorder({ onResult, className, children, motionProps }) {
+export default function VoiceRecorder({ onResult, className, children, motionProps, onPreferWriting }) {
   const [state, setState] = useState("idle"); // idle | recording | sending | error
   const [seconds, setSeconds] = useState(0);
   const [error, setError] = useState(null);
@@ -182,6 +182,15 @@ export default function VoiceRecorder({ onResult, className, children, motionPro
                   {formatTime(seconds)}
                 </p>
 
+                {/* La phrase d'exemple est ici plutot que sous le bouton du
+                    hero : c'est pendant qu'on parle qu'on cherche quoi dire,
+                    pas avant de cliquer. */}
+                <p className="mt-4 text-[13px] leading-snug opacity-60">
+                  Dites par exemple : «&nbsp;Je souhaite déléguer ma
+                  prospection&nbsp;» ou «&nbsp;J&apos;ai besoin d&apos;aide sur
+                  ma comptabilité&nbsp;».
+                </p>
+
                 {/* Onde purement decorative : rend l'attente vivante sans
                     pretendre representer le vrai niveau sonore. */}
                 <div className="mt-6 flex items-end justify-center gap-1 h-10">
@@ -201,7 +210,7 @@ export default function VoiceRecorder({ onResult, className, children, motionPro
                   ))}
                 </div>
 
-                <div className="mt-8 flex items-center justify-center gap-3">
+                <div className="mt-6 flex items-center justify-center gap-3">
                   <button
                     type="button"
                     onClick={cancel}
@@ -220,6 +229,23 @@ export default function VoiceRecorder({ onResult, className, children, motionPro
                     Envoyer
                   </button>
                 </div>
+
+                {/* Repli pour qui ouvre le micro puis se ravise (lieu bruyant,
+                    pas envie de parler) : on coupe l'enregistrement avant de
+                    basculer sur le chat, sinon le micro resterait actif. */}
+                {onPreferWriting && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      cancel();
+                      onPreferWriting();
+                    }}
+                    data-cursor-hover
+                    className="mt-5 text-[13px] font-mono underline underline-offset-4 opacity-60 hover:opacity-100 hover:text-[#ff6b35] transition-colors"
+                  >
+                    Je préfère écrire &rarr;
+                  </button>
+                )}
               </>
             )}
 
