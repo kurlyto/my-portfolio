@@ -62,7 +62,11 @@ export default function ScrambleHero({ onOpenChat, onVoiceResult }) {
       {/* Taille fluide plutot que deux paliers : entre 320px et 430px de large,
           un 4xl fixe faisait passer le titre de 2 a 4 lignes et poussait le CTA
           hors de l'ecran. Le clamp suit la largeur reelle du viewport. */}
-      <h1 className="font-display text-[clamp(1.9rem,8.2vw,2.6rem)] md:text-[3.4rem] font-black tracking-tight leading-[1.06] md:leading-[1.08] whitespace-pre-line text-balance">
+      {/* Sur un ecran court (< 720px de haut), le titre et le sous-titre sont
+          reduits d'un cran : avec deux CTA empiles, la taille pleine poussait le
+          second bouton sous la ligne de flottaison sur les petits modeles
+          (320x568). Au-dela, rien ne change. */}
+      <h1 className="font-display text-[clamp(1.65rem,7.4vw,2.2rem)] tall:text-[clamp(1.9rem,8.2vw,2.6rem)] md:text-[3.4rem] font-black tracking-tight leading-[1.06] md:leading-[1.08] whitespace-pre-line text-balance">
         {displayText}
       </h1>
       <motion.p
@@ -74,7 +78,7 @@ export default function ScrambleHero({ onOpenChat, onVoiceResult }) {
         // passait pour une legende secondaire alors que c'est la phrase qui
         // explique ce qu'on vend. Elle doit se lire d'emblee, juste en dessous
         // du titre.
-        className="font-display mt-4 sm:mt-6 text-[17px] sm:text-xl md:text-[1.35rem] font-normal italic leading-snug sm:leading-relaxed text-black/90 max-w-xl text-balance"
+        className="font-display mt-3 tall:mt-4 sm:mt-6 text-[15px] tall:text-[17px] sm:text-xl md:text-[1.35rem] font-normal italic leading-snug sm:leading-relaxed text-black/90 max-w-xl text-balance"
       >
         Mails, devis, comptabilité, agenda : je déploie un agent sur-mesure qui
         gère votre business comme un employé.
@@ -94,18 +98,36 @@ export default function ScrambleHero({ onOpenChat, onVoiceResult }) {
             desormais dans la pop-up d'enregistrement : c'est en parlant qu'on
             cherche quoi dire, et c'est la aussi qu'on se ravise. Le hero garde
             une seule action, ce qui le raccourcit d'autant sur mobile. */}
-        <VoiceRecorder
-          onResult={onVoiceResult}
-          onPreferWriting={onOpenChat}
-          motionProps={{
-            animate: { boxShadow: PULSE_SHADOWS },
-            transition: { duration: 2.4, repeat: Infinity, ease: "easeInOut" },
-          }}
-          className="inline-flex items-center gap-2.5 rounded-full bg-[#ff6b35] text-white px-6 sm:px-7 py-3.5 sm:py-4 text-[13px] md:text-sm font-mono font-bold uppercase tracking-wide transition-colors duration-150 ease-out hover:bg-[#e2531f]"
-        >
-          <MicGlyph className="w-4 h-4 shrink-0" />
-          J&apos;explique mon besoin
-        </VoiceRecorder>
+        {/* Deux portes vers la meme conversation, mais chacune assumee : le
+            vocal pour qui prefere parler, l'ecrit pour qui prefere taper.
+            Empilees plutot que cote a cote : sur mobile deux boutons sur une
+            ligne donnent deux cibles trop etroites. */}
+        <div className="flex flex-col items-start gap-3">
+          <VoiceRecorder
+            onResult={onVoiceResult}
+            onPreferWriting={onOpenChat}
+            motionProps={{
+              animate: { boxShadow: PULSE_SHADOWS },
+              transition: { duration: 2.4, repeat: Infinity, ease: "easeInOut" },
+            }}
+            className="inline-flex items-center gap-2.5 rounded-full bg-[#ff6b35] text-white px-6 sm:px-7 py-3.5 sm:py-4 text-[13px] md:text-sm font-mono font-bold uppercase tracking-wide transition-colors duration-150 ease-out hover:bg-[#e2531f]"
+          >
+            <MicGlyph className="w-4 h-4 shrink-0" />
+            J&apos;explique mon besoin
+          </VoiceRecorder>
+
+          {/* Contour plutot que plein : deux aplats orange l'un sous l'autre se
+              disputeraient l'oeil, alors que le vocal reste l'action mise en
+              avant. */}
+          <button
+            type="button"
+            onClick={onOpenChat}
+            data-cursor-hover
+            className="inline-flex items-center gap-2 rounded-full border-2 border-[#ff6b35] text-[#ff6b35] px-6 sm:px-7 py-3 sm:py-3.5 text-[13px] md:text-sm font-mono font-bold uppercase tracking-wide transition-colors duration-150 ease-out hover:bg-[#ff6b35] hover:text-white"
+          >
+            Créer mon agent gratuitement
+          </button>
+        </div>
 
         <p className="mt-4 text-[13px] sm:text-sm font-mono font-bold text-[#ff6b35]">
           Testez votre agent pendant 1 mois gratuitement sans engagement

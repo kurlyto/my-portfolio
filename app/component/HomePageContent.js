@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Header from "./Header";
 import ScrambleHero from "./ScrambleHero";
@@ -169,6 +169,25 @@ export default function HomePageContent() {
 
   return (
     <div className="bg-white text-black">
+      {/* Voile leger quand le chat est ouvert en desktop : il assombrit la page
+          derriere le panneau pour ramener l'oeil dessus, sans masquer le
+          contenu ni empecher de cliquer ailleurs (pointer-events-none). Un clic
+          reste possible sur le reste de la page, le voile n'est pas une modale.
+          Inutile en mobile : le chat y est deja en plein ecran. */}
+      <AnimatePresence>
+        {chatOpen && (
+          <motion.div
+            key="chat-spotlight"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            aria-hidden="true"
+            className="hidden lg:block pointer-events-none fixed inset-0 z-30 bg-black/20"
+          />
+        )}
+      </AnimatePresence>
+
       <OfferBanner />
       <Header />
 
@@ -187,7 +206,13 @@ export default function HomePageContent() {
         {/* Le carrousel reste en colonne droite sur desktop uniquement. Sur
             mobile il devient une section a part entiere (voir plus bas) pour
             que le hero tienne seul dans le premier ecran. */}
-        <div className="hidden lg:block lg:sticky lg:top-6 lg:self-start">
+        {/* z-40 quand le chat est ouvert : le panneau doit passer au-dessus du
+            voile (z-30), sinon il serait assombri avec le reste. */}
+        <div
+          className={`hidden lg:block lg:sticky lg:top-6 lg:self-start ${
+            chatOpen ? "relative z-40" : ""
+          }`}
+        >
           <AnimatePresence mode="wait">
             {chatOpen ? (
               <ChatPanel
