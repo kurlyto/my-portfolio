@@ -682,22 +682,57 @@ function ChatHeader({ onClose, closeLabel, progress = 5 }) {
           </button>
         </div>
       </div>
-      <ProgressBar progress={progress} />
+      <ProgressBar progress={progress} bare />
     </div>
   );
 }
 
-// Meme barre en haut et en bas du panneau : elle encadre la conversation et
-// reste visible sans avoir a remonter.
-function ProgressBar({ progress }) {
+// Deux variantes de la meme barre :
+//   - `bare` (en-tete) : un simple filet, il encadre la conversation par le
+//     haut sans repeter le chiffre affiche en bas.
+//   - avec libelle (pied) : assez haute pour porter "Votre besoin est cadre a
+//     X %". Un pourcentage nu n'apprend rien - le visiteur ne sait pas de quoi
+//     il est le pourcentage. La phrase dit ce qui progresse.
+function ProgressBar({ progress, bare = false }) {
+  const value = Math.round(progress);
+
+  if (bare) {
+    return (
+      <div className="h-[5px] w-full bg-black/[0.06] overflow-hidden shrink-0">
+        <motion.div
+          className="h-full"
+          style={{ background: ACCENT }}
+          animate={{ width: `${value}%` }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        />
+      </div>
+    );
+  }
+
   return (
-    <div className="h-[7px] w-full bg-black/[0.06] overflow-hidden shrink-0">
+    <div
+      className="relative h-[26px] w-full bg-black/[0.06] overflow-hidden shrink-0"
+      role="progressbar"
+      aria-valuenow={value}
+      aria-valuemin={0}
+      aria-valuemax={100}
+      aria-label="Avancement du cadrage de votre besoin"
+    >
       <motion.div
         className="h-full"
         style={{ background: ACCENT }}
-        animate={{ width: `${progress}%` }}
+        animate={{ width: `${value}%` }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       />
+      {/* Libelle en surimpression plutot qu'a l'interieur de la portion
+          remplie : au demarrage (5 %) le texte ne tiendrait pas dedans. Il est
+          donc centre sur toute la largeur et doit rester lisible a la fois sur
+          le gris du fond et sur l'orange du remplissage - d'ou le texte noir
+          (contraste suffisant sur les deux) plutot qu'un mix-blend, qui rendait
+          un gris delave sur le fond clair. */}
+      <span className="pointer-events-none absolute inset-0 flex items-center justify-center text-[11px] font-mono font-bold uppercase tracking-wider text-black/75">
+        Votre besoin est cadré à {value} %
+      </span>
     </div>
   );
 }
