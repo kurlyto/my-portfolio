@@ -77,7 +77,7 @@ export default function ScrambleHero({ onOpenChat, onVoiceResult }) {
         className="font-display mt-4 sm:mt-6 text-[17px] sm:text-xl md:text-[1.35rem] font-normal italic leading-snug sm:leading-relaxed text-black/90 max-w-xl text-balance"
       >
         Mails, devis, comptabilité, agenda : je déploie un agent sur-mesure qui
-        gère votre business.
+        gère votre business comme un employé.
       </motion.p>
 
       {/* CTA unique : le micro EST l'action principale. L'ancien couple
@@ -108,7 +108,7 @@ export default function ScrambleHero({ onOpenChat, onVoiceResult }) {
         </VoiceRecorder>
 
         <p className="mt-4 text-[13px] sm:text-sm font-mono font-bold text-[#ff6b35]">
-          1 mois offert, sans engagement
+          Testez votre agent pendant 1 mois gratuitement sans engagement
         </p>
       </motion.div>
 

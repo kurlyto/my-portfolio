@@ -226,7 +226,13 @@ export default function AgentMarquee() {
         <span className="text-xs font-mono uppercase tracking-widest text-[#ff6b35]">
           Problèmes
         </span>
-        <h2 className="font-display mt-3 text-3xl md:text-5xl font-bold tracking-tight max-w-2xl text-balance">
+        {/* max-w-2xl (672px) retire : ce titre est plus long que l'ancien
+            ("Des milliers de cas d'usage") et se repliait des le desktop alors
+            que la colonne fait 1280px. Il court desormais sur toute la largeur
+            disponible et ne se replie qu'une fois celle-ci reellement remplie.
+            text-balance retire aussi : il equilibrait la longueur des lignes,
+            donc renvoyait a la ligne avant meme d'avoir rempli l'espace. */}
+        <h2 className="font-display mt-3 text-3xl md:text-5xl font-bold tracking-tight">
           Il y a des milliers de problèmes à résoudre en entreprise. Quel est le
           vôtre ?
         </h2>

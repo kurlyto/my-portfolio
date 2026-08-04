@@ -93,7 +93,7 @@ export default function ToolStrip() {
       {/* relative + z-20 : le label passe au-dessus du fondu de gauche de la
           piste, qui sinon vient manger ses premieres lettres. */}
       <p className="relative z-20 text-[11px] font-mono uppercase tracking-widest opacity-40">
-        Connectable à vos outils
+        Connectez votre agent à tous vos logiciels
       </p>
 
       {/* Le survol ne met plus la bande en pause : le defilement continu est
