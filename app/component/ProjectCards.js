@@ -57,7 +57,7 @@ const PROJECTS = [
     description:
       "Avec qui cet acteur a-t-il joué ? Enchaînez les bonnes réponses dans un ping-pong culturel.",
     years: "2023",
-    link: "https://featuring.nathan-knaebel.com",
+    link: "https://featuring.club",
     cover: "from-zinc-100 to-zinc-200",
     coverImage: "/images/cover-featuring.png",
     coverImageFit: "contain",
