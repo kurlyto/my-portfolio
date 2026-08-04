@@ -43,11 +43,21 @@ export class NateChatError extends Error {
   // ne sert a rien, il faut repartir d une session neuve en rejouant
   // l historique. Constate le 30/07/2026 apres le passage de nate/ a Nate/ :
   // toutes les conversations anterieures repondaient "Une erreur est survenue".
-  constructor(message, kind, stderr, quotaExceeded = false, sessionLost = false) {
+  // Deux notions distinctes, a ne pas confondre :
+  //   accountUnusable : ce COMPTE ne peut pas repondre (quota 429, abonnement
+  //     Claude Code desactive cote organisation, session OAuth expiree). Seul
+  //     rattrapage utile : rejouer sur l'autre compte.
+  //   quotaExceeded : specifiquement un 429. Sert uniquement a choisir le
+  //     message affiche au visiteur ("tres sollicite" plutot que generique).
+  // Avant le 04/08/2026 un seul champ portait les deux roles, et la bascule ne
+  // se declenchait donc que sur 429 : un compte desactive remontait "Une erreur
+  // est survenue" au visiteur alors que l'autre compte repondait normalement.
+  constructor(message, kind, stderr, accountUnusable = false, sessionLost = false, quotaExceeded = false) {
     super(message);
     this.name = "NateChatError";
     this.kind = kind;
     this.stderr = stderr;
+    this.accountUnusable = accountUnusable;
     this.quotaExceeded = quotaExceeded;
     this.sessionLost = sessionLost;
   }
@@ -233,13 +243,28 @@ function runOnceStreaming({ sessionId, message, isFirstTurn, historyReplay, home
 
       if (finalResult?.is_error || sessionLost) {
         const quotaExceeded = finalResult?.api_error_status === 429;
+        // Pannes propres AU COMPTE et non a la requete : abonnement Claude Code
+        // desactive cote organisation, session OAuth expiree, credentials
+        // absentes. Comme le quota, elles se rattrapent en basculant sur
+        // l'autre compte - contrairement a une vraie erreur applicative, que
+        // rejouer ailleurs ne ferait que reproduire.
+        // Constate le 04/08/2026 : le compte nathan a renvoye "organization has
+        // disabled Claude subscription access" (pas un 429), la bascule ne s'est
+        // donc pas declenchee et les visiteurs ont vu "Une erreur est survenue"
+        // alors que le compte admin-mdd repondait normalement.
+        const accountUnusable =
+          quotaExceeded ||
+          /disabled Claude subscription access|Not logged in|Please run \/login|OAuth token has expired|Invalid API key|authentication_error/i.test(
+            `${finalResult?.result ?? ""}\n${stderr}`,
+          );
         reject(
           new NateChatError(
             finalResult?.result || "Nate a renvoye une erreur.",
             "exit",
             stderr.slice(0, 2000),
-            quotaExceeded,
+            accountUnusable,
             sessionLost,
+            quotaExceeded,
           ),
         );
         return;
@@ -310,7 +335,7 @@ export async function runNateChatStreaming({
       return { ...result, usedAccount: preferredAccount, newSessionId: freshId };
     }
 
-    if (!(err instanceof NateChatError) || !err.quotaExceeded) throw err;
+    if (!(err instanceof NateChatError) || !err.accountUnusable) throw err;
 
     const fallbackAccount = preferredAccount === "nathan" ? "admin" : "nathan";
     const fallbackHome = ACCOUNT_HOMES[fallbackAccount];
