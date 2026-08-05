@@ -33,6 +33,12 @@ const PREVIOUS_FIELD = {
   pageviews: "previousPageviews",
 };
 
+// Les series changent lentement (agregation au jour) : une minute suffit.
+const REFRESH_MS = 60 * 1000;
+// Umami compte les actifs sur une fenetre glissante de 5 min ; 15 s donne un
+// compteur qui reagit sans marteler le serveur.
+const ACTIVE_REFRESH_MS = 15 * 1000;
+
 function compact(n) {
   if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1).replace(".0", "")}M`;
   if (n >= 10_000) return `${(n / 1000).toFixed(1).replace(".0", "")}K`;
@@ -45,24 +51,76 @@ export function StatsDashboard() {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [active, setActive] = useState(null);
+  const [lastUpdate, setLastUpdate] = useState(null);
 
-  const load = useCallback(async (range) => {
-    setLoading(true);
+  // `silent` distingue le rafraichissement automatique du changement de
+  // periode : un refresh de fond ne doit ni griser le graphique ni afficher
+  // une erreur passagere par-dessus des chiffres encore valables.
+  const load = useCallback(async (range, { silent = false } = {}) => {
+    if (!silent) setLoading(true);
     try {
       const res = await fetch(`/api/stats?days=${range}`);
       if (!res.ok) throw new Error((await res.json())?.error ?? "Erreur inconnue");
       setData(await res.json());
       setError(null);
+      setLastUpdate(Date.now());
     } catch (err) {
-      setError(err.message);
+      if (!silent) setError(err.message);
     } finally {
-      setLoading(false);
+      if (!silent) setLoading(false);
     }
   }, []);
 
   useEffect(() => {
     load(days);
   }, [days, load]);
+
+  // Rafraichissement automatique des series, en arriere-plan.
+  //
+  // Suspendu quand l'onglet est masque : inutile d'interroger Umami toutes
+  // les minutes pour un onglet que personne ne regarde, et au retour on
+  // recharge immediatement plutot que d'afficher des chiffres figes.
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (!document.hidden) load(days, { silent: true });
+    }, REFRESH_MS);
+
+    const onVisible = () => {
+      if (!document.hidden) load(days, { silent: true });
+    };
+    document.addEventListener("visibilitychange", onVisible);
+
+    return () => {
+      clearInterval(timer);
+      document.removeEventListener("visibilitychange", onVisible);
+    };
+  }, [days, load]);
+
+  // Compteur temps reel, sur son propre rythme : il doit rester vivant meme
+  // entre deux rafraichissements des courbes.
+  useEffect(() => {
+    let cancelled = false;
+
+    const fetchActive = async () => {
+      if (document.hidden) return;
+      try {
+        const res = await fetch("/api/stats/active");
+        if (!res.ok) return;
+        const json = await res.json();
+        if (!cancelled) setActive(json);
+      } catch {
+        // Silencieux : le compteur est un bonus, pas une donnee critique.
+      }
+    };
+
+    fetchActive();
+    const timer = setInterval(fetchActive, ACTIVE_REFRESH_MS);
+    return () => {
+      cancelled = true;
+      clearInterval(timer);
+    };
+  }, []);
 
   // Les totaux viennent de /stats (comptage exact sur la periode), jamais
   // d'une somme des series journalieres : additionner les visiteurs uniques
@@ -87,7 +145,18 @@ export function StatsDashboard() {
   return (
     <div className="viz-page mx-auto w-full max-w-5xl px-5 py-10 sm:py-14">
       <header className="mb-8">
-        <p className="viz-mono viz-text-muted text-[11px]">Analytics</p>
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+          <p className="viz-mono viz-text-muted text-[11px]">Analytics</p>
+          {active && active.total > 0 && (
+            <span
+              className="viz-mono viz-live text-[11px] font-bold"
+              title={active.byProject.map((p) => `${p.label} : ${p.active}`).join(" - ")}
+            >
+              <span aria-hidden className="viz-live-dot" />
+              {active.total} en ligne
+            </span>
+          )}
+        </div>
         <h1 className="mt-2 font-display text-4xl font-bold leading-[1.05] sm:text-5xl viz-text-primary">
           Audience
         </h1>
@@ -178,6 +247,17 @@ export function StatsDashboard() {
           {data.stale && (
             <p className="mt-4 text-[13px] viz-text-muted">
               Umami est injoignable : chiffres issus du dernier cache.
+            </p>
+          )}
+
+          {lastUpdate && (
+            <p className="viz-mono mt-4 text-[10px] viz-text-muted">
+              Mis a jour a{" "}
+              {new Date(lastUpdate).toLocaleTimeString("fr-FR", {
+                hour: "2-digit",
+                minute: "2-digit",
+              })}
+              {" - actualisation automatique"}
             </p>
           )}
 

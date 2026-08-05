@@ -191,3 +191,34 @@ export async function getStats({ days = 30 } = {}) {
 
   return { axis, series, days };
 }
+
+/**
+ * Visiteurs actifs a l'instant, par projet.
+ *
+ * Umami compte les sessions distinctes des 5 dernieres minutes
+ * (getActiveVisitors.ts). Volontairement separe de getStats() : ce chiffre se
+ * rafraichit toutes les 15 s alors que les series journalieres n'ont pas
+ * besoin de bouger si vite.
+ */
+export async function getActiveVisitors() {
+  const sites = getSites();
+  if (sites.length === 0) return { total: 0, byProject: [] };
+
+  const byProject = await Promise.all(
+    sites.map(async (site) => {
+      try {
+        const res = await umamiGet(`/api/websites/${site.websiteId}/active`);
+        return { key: site.key ?? site.websiteId, label: site.label, active: Number(res?.visitors ?? 0) };
+      } catch {
+        // Un projet injoignable ne doit pas faire disparaitre le compteur
+        // global : il compte simplement pour zero.
+        return { key: site.key ?? site.websiteId, label: site.label, active: 0 };
+      }
+    }),
+  );
+
+  return {
+    total: byProject.reduce((sum, p) => sum + p.active, 0),
+    byProject: byProject.filter((p) => p.active > 0),
+  };
+}

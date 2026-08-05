@@ -2,10 +2,11 @@ import { cookies } from "next/headers";
 import { getStats } from "@/app/lib/stats/umami";
 import { isValidSession, STATS_COOKIE_NAME } from "@/app/lib/stats/auth";
 
-// Umami est interroge au plus une fois par periode toutes les 5 minutes :
-// changer de periode dans l'UI ne doit pas relancer 7 requetes a chaque clic.
+// Cale sur le rafraichissement automatique de la page (60 s) : assez court
+// pour que les chiffres suivent, assez long pour que changer de periode dans
+// l'UI ne relance pas 7 requetes a chaque clic.
 const cache = new Map();
-const CACHE_TTL_MS = 5 * 60 * 1000;
+const CACHE_TTL_MS = 60 * 1000;
 
 const ALLOWED_DAYS = [7, 30, 90];
 

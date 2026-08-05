@@ -132,6 +132,41 @@
   letter-spacing: 0.08em;
 }
 
+/* Compteur temps reel. Le vert est celui du "delta positif", pas une couleur
+   de serie : il ne peut donc pas etre confondu avec un projet du graphique. */
+.viz-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  color: #006300;
+}
+
+.viz-live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: #0ca30c;
+  animation: viz-pulse 2s ease-in-out infinite;
+}
+
+@keyframes viz-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+
+/* Un point qui clignote en permanence est penible pour qui est sensible au
+   mouvement : la pastille reste alors simplement allumee. */
+@media (prefers-reduced-motion: reduce) {
+  .viz-live-dot {
+    animation: none;
+  }
+}
+
 /* Les filtres reprennent le bouton pilule du portfolio : bordure noire fine,
    remplissage orange a la selection. */
 .viz-controls {
