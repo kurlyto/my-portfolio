@@ -83,24 +83,45 @@ function Logo({ tool }) {
 
 // Bandeau compact place sous le texte du hero. Largeur limitee a la colonne
 // gauche : le fondu de droite marque la coupure sans bord net.
-export default function ToolStrip() {
+/**
+ * `fullWidth` : la bande occupe toute la largeur de la fenetre au lieu d'etre
+ * confinee a sa colonne. Utilise en desktop, ou la bande est sortie de la
+ * grille du hero et posee en pleine largeur sous les deux colonnes - un
+ * defilement sur 1440px raconte bien mieux "connectable a tout" que le meme
+ * sur 620px.
+ */
+export default function ToolStrip({ fullWidth = false }) {
   const doubled = [...TOOLS, ...TOOLS];
 
   // min-w-0 + overflow-hidden : sans ca, la piste en w-max impose sa largeur
   // totale a la colonne de grille parente et ecrase la colonne voisine.
   return (
-    <div className="mt-8 md:mt-12 min-w-0 overflow-x-hidden">
+    <div className={`min-w-0 overflow-x-hidden ${fullWidth ? "" : "mt-8 md:mt-12"}`}>
       {/* relative + z-20 : le label passe au-dessus du fondu de gauche de la
           piste, qui sinon vient manger ses premieres lettres. */}
-      <p className="relative z-20 text-[11px] font-mono uppercase tracking-widest opacity-40">
+      <p
+        className={`relative z-20 text-[11px] font-mono uppercase tracking-widest opacity-40 ${
+          fullWidth ? "max-w-7xl mx-auto px-6" : ""
+        }`}
+      >
         Connectez votre agent à tous vos logiciels
       </p>
 
       {/* Le survol ne met plus la bande en pause : le defilement continu est
           l'effet recherche, et la bulle suit le logo. */}
       <div className="relative -mt-4">
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-10 z-10 bg-gradient-to-r from-white to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-14 z-10 bg-gradient-to-l from-white to-transparent" />
+        {/* Fondus plus larges en pleine largeur : sur 1440px, 40px de degrade
+            se voient comme une coupure nette au lieu d'un fondu. */}
+        <div
+          className={`pointer-events-none absolute inset-y-0 left-0 z-10 bg-gradient-to-r from-white to-transparent ${
+            fullWidth ? "w-24 md:w-40" : "w-10"
+          }`}
+        />
+        <div
+          className={`pointer-events-none absolute inset-y-0 right-0 z-10 bg-gradient-to-l from-white to-transparent ${
+            fullWidth ? "w-24 md:w-40" : "w-14"
+          }`}
+        />
 
         {/* overflow-x seul : la bulle depasse vers le haut et ne doit pas etre
             rognee, mais la piste doit rester coupee horizontalement. Le pt-10

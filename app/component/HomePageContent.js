@@ -198,7 +198,9 @@ export default function HomePageContent() {
         // pt-24 -> pt-14 en desktop : le chat ouvert (colonne droite) depassait
         // sous la ligne de flottaison sur les ecrans courts (1366x768). On
         // remonte l'ensemble du hero pour que le panneau tienne en entier.
-        className="max-w-7xl mx-auto px-6 pt-8 pb-8 lg:pb-20 lg:pt-14 w-full grid grid-cols-1 lg:grid-cols-[minmax(0,620px)_1fr] gap-12 lg:gap-14 items-stretch lg:min-h-0 content-start lg:content-stretch"
+        // lg:pb-10 et non pb-20 : la bande d'outils pleine largeur suit
+        // immediatement en desktop, elle apporte sa propre respiration.
+        className="max-w-7xl mx-auto px-6 pt-8 pb-8 lg:pb-10 lg:pt-14 w-full grid grid-cols-1 lg:grid-cols-[minmax(0,620px)_1fr] gap-12 lg:gap-14 items-stretch lg:min-h-0 content-start lg:content-stretch"
       >
         <ScrambleHero
           onOpenChat={() => setChatOpen(true)}
@@ -225,21 +227,33 @@ export default function HomePageContent() {
                 initialMessage={voiceMessage}
               />
             ) : (
-              // La bande d'outils accompagne les temoignages et disparait donc
-              // avec eux quand le chat s'ouvre : le panneau doit rester seul
-              // dans sa colonne, sans element concurrent sous lui.
-              // min-w-0 obligatoire : ToolStrip contient une piste en `w-max`
-              // qui, sans ce garde-fou, impose sa largeur totale a la colonne
-              // de grille et ecrase la colonne voisine (le hero se retrouve sur
-              // un mot par ligne).
               <div key="testimonials" className="min-w-0">
                 <TestimonialCarousel />
-                <ToolStrip />
               </div>
             )}
           </AnimatePresence>
         </div>
       </section>
+
+      {/* Bande d'outils pleine largeur, hors de la grille du hero : un
+          defilement sur toute la fenetre raconte mieux "connectable a tout"
+          qu'un defilement confine a une colonne de 620px. Elle s'efface quand
+          le chat s'ouvre, pour que le panneau reste l'unique point d'attention.
+          Reservee au desktop : en mobile la bande vit dans le hero. */}
+      <AnimatePresence>
+        {!chatOpen && (
+          <motion.div
+            key="toolstrip-desktop"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="hidden lg:block pb-16"
+          >
+            <ToolStrip fullWidth />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Temoignages avant la grille d'agents : ils servent d'amorce concrete
           ("ah, on peut faire ca"), pas de preuve sociale. Le visiteur doit y
