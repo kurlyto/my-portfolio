@@ -6,6 +6,7 @@ import Header from "./Header";
 import ScrambleHero from "./ScrambleHero";
 import Faq from "./Faq";
 import TestimonialCarousel from "./TestimonialCarousel";
+import ToolStrip from "./ToolStrip";
 import ChatPanel from "./ChatPanel";
 import AgentMarquee from "./AgentMarquee";
 import HowItWorks from "./HowItWorks";
@@ -208,8 +209,11 @@ export default function HomePageContent() {
             que le hero tienne seul dans le premier ecran. */}
         {/* z-40 quand le chat est ouvert : le panneau doit passer au-dessus du
             voile (z-30), sinon il serait assombri avec le reste. */}
+        {/* min-w-0 sur la colonne elle-meme : la piste d'outils en `w-max`
+            (ToolStrip) gonfle sinon cette piste de grille, qui ecrase alors la
+            colonne du hero jusqu'a un mot par ligne. */}
         <div
-          className={`hidden lg:block lg:sticky lg:top-6 lg:self-start ${
+          className={`hidden lg:block lg:sticky lg:top-6 lg:self-start min-w-0 ${
             chatOpen ? "relative z-40" : ""
           }`}
         >
@@ -221,8 +225,16 @@ export default function HomePageContent() {
                 initialMessage={voiceMessage}
               />
             ) : (
-              <div key="testimonials">
+              // La bande d'outils accompagne les temoignages et disparait donc
+              // avec eux quand le chat s'ouvre : le panneau doit rester seul
+              // dans sa colonne, sans element concurrent sous lui.
+              // min-w-0 obligatoire : ToolStrip contient une piste en `w-max`
+              // qui, sans ce garde-fou, impose sa largeur totale a la colonne
+              // de grille et ecrase la colonne voisine (le hero se retrouve sur
+              // un mot par ligne).
+              <div key="testimonials" className="min-w-0">
                 <TestimonialCarousel />
+                <ToolStrip />
               </div>
             )}
           </AnimatePresence>

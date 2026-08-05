@@ -100,9 +100,9 @@ export default function ScrambleHero({ onOpenChat, onVoiceResult }) {
             une seule action, ce qui le raccourcit d'autant sur mobile. */}
         {/* Deux portes vers la meme conversation, mais chacune assumee : le
             vocal pour qui prefere parler, l'ecrit pour qui prefere taper.
-            Empilees plutot que cote a cote : sur mobile deux boutons sur une
-            ligne donnent deux cibles trop etroites. */}
-        <div className="flex flex-col items-start gap-3">
+            Empilees en mobile (deux boutons sur une ligne y donneraient des
+            cibles trop etroites), cote a cote des lg ou la largeur le permet. */}
+        <div className="flex flex-col items-start gap-3 lg:flex-row lg:items-center lg:gap-4">
           <VoiceRecorder
             onResult={onVoiceResult}
             onPreferWriting={onOpenChat}
@@ -135,14 +135,20 @@ export default function ScrambleHero({ onOpenChat, onVoiceResult }) {
       </motion.div>
 
       {/* La bande d'outils est un bonus : elle ne doit jamais pousser le CTA
-          sous la ligne de flottaison. Masquee seulement sur les ecrans vraiment
-          courts (<640px de haut, type iPhone SE paysage ou vieux petits
-          modeles), ou le hero a deja consomme toute la hauteur utile. */}
+          sous la ligne de flottaison. Masquee sur les ecrans vraiment courts
+          (< 720px de haut), ou le hero a deja consomme toute la hauteur utile.
+          En desktop (lg+) elle vit sous le carrousel de temoignages, en colonne
+          droite : cette colonne a de la place libre sous les temoignages, alors
+          que la colonne gauche est deja chargee (titre, sous-titre, 2 CTA). */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.3, duration: 0.5, ease: "easeOut" }}
-        className="hidden tall:block lg:block"
+        // `lg:hidden` ne suffit pas a annuler `tall:block` : les deux variantes
+        // ont la meme specificite et `tall` est declaree apres dans le CSS
+        // genere, donc elle l'emporte. On borne donc explicitement la variante
+        // `tall` aux ecrans < lg avec max-lg.
+        className="hidden tall:max-lg:block"
       >
         <ToolStrip />
       </motion.div>

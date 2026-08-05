@@ -233,8 +233,8 @@ export default function AgentMarquee() {
             text-balance retire aussi : il equilibrait la longueur des lignes,
             donc renvoyait a la ligne avant meme d'avoir rempli l'espace. */}
         <h2 className="font-display mt-3 text-3xl md:text-5xl font-bold tracking-tight">
-          Il y a des milliers de problèmes à résoudre en entreprise. Quel est le
-          vôtre ?
+          Des centaines de problèmes à résoudre en entreprise. Trouvons le
+          vôtre.
         </h2>
         <p className="mt-4 text-sm md:text-base opacity-60 max-w-xl">
           Voici des agents déjà construits. Le vôtre sera différent : il sera
