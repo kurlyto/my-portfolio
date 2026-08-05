@@ -2,20 +2,10 @@
 
 import { useId, useMemo, useRef, useState } from "react";
 
-// Palette categorielle validee (charte dataviz) : ordre fixe, jamais cycle.
-// Les 7 emplacements passent tous les controles (bande de clarte, plancher de
-// chroma, separation daltonisme, plancher vision normale) en clair ET en
-// sombre. L'ordre n'est pas cosmetique : c'est lui qui garantit la separation
-// des couleurs voisines. Ne pas reordonner sans rejouer le validateur.
-const SERIES_COLORS = [
-  { light: "#2a78d6", dark: "#3987e5" }, // bleu
-  { light: "#eb6834", dark: "#d95926" }, // orange
-  { light: "#1baf7a", dark: "#199e70" }, // aqua
-  { light: "#eda100", dark: "#c98500" }, // jaune
-  { light: "#e87ba4", dark: "#d55181" }, // magenta
-  { light: "#008300", dark: "#008300" }, // vert
-  { light: "#4a3aa7", dark: "#9085e9" }, // violet
-];
+// Les couleurs vivent dans stats.css (--series-1..7). L'orange de la charte
+// du site occupe le slot 1 (MDD). L'ordre n'est pas cosmetique : c'est lui
+// qui garantit la separation des teintes voisines pour les daltoniens.
+// Verifie par scripts/validate_palette.js (skill dataviz) sur fond blanc.
 
 // Les totaux affiches dans la legende viennent de /stats (comptage exact sur
 // la periode), pas d'une sommation de la serie journaliere.
@@ -43,6 +33,12 @@ function formatDay(iso) {
   const [, month, day] = iso.split("-");
   return `${day}/${month}`;
 }
+
+const METRIC_NOUN = {
+  visitors: "visiteurs uniques",
+  visits: "visites",
+  pageviews: "pages vues",
+};
 
 export function VisitorsChart({ axis, series, metric }) {
   const clipId = useId();
@@ -98,7 +94,7 @@ export function VisitorsChart({ axis, series, metric }) {
           viewBox={`0 0 ${VIEW_W} ${VIEW_H}`}
           className="w-full h-auto touch-none"
           role="img"
-          aria-label={`Evolution du nombre de ${metric === "visitors" ? "visiteurs" : "pages vues"} par projet`}
+          aria-label={`Evolution du nombre de ${METRIC_NOUN[metric] ?? ""} par projet`}
           onPointerMove={handleMove}
           onPointerLeave={() => setHoverIndex(null)}
         >
@@ -146,7 +142,6 @@ export function VisitorsChart({ axis, series, metric }) {
           <g clipPath={`url(#${clipId})`}>
             {series.map((s, i) => {
               if (hidden.has(s.key)) return null;
-              const color = SERIES_COLORS[i % SERIES_COLORS.length];
               return (
                 <path
                   key={s.key}
@@ -156,7 +151,6 @@ export function VisitorsChart({ axis, series, metric }) {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  style={{ "--c-light": color.light, "--c-dark": color.dark }}
                 />
               );
             })}
@@ -182,7 +176,7 @@ export function VisitorsChart({ axis, series, metric }) {
 
         {hoverIndex !== null && visible.length > 0 && (
           <div
-            className="pointer-events-none absolute z-10 min-w-[168px] rounded-lg border px-3 py-2 text-xs shadow-lg viz-tooltip"
+            className="pointer-events-none absolute z-10 min-w-[168px] px-3 py-2 text-xs viz-tooltip"
             style={{
               left: `${(xAt(hoverIndex) / VIEW_W) * 100}%`,
               top: 0,
@@ -227,8 +221,8 @@ export function VisitorsChart({ axis, series, metric }) {
                 type="button"
                 onClick={() => toggle(s.key)}
                 aria-pressed={!isHidden}
-                className={`flex items-center gap-2 rounded-md px-2 py-1 text-sm transition-opacity hover:bg-black/5 dark:hover:bg-white/10 ${
-                  isHidden ? "opacity-40" : ""
+                className={`flex items-center gap-2 px-2 py-1 text-sm transition-opacity hover:bg-black/5 ${
+                  isHidden ? "opacity-35" : ""
                 }`}
               >
                 <span
@@ -253,5 +247,3 @@ export function VisitorsChart({ axis, series, metric }) {
     </div>
   );
 }
-
-export { SERIES_COLORS };

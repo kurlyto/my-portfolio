@@ -38,8 +38,9 @@ export function LoginForm() {
 
   return (
     <div className="mx-auto flex min-h-[70vh] w-full max-w-sm flex-col justify-center px-5">
-      <h1 className="text-xl font-semibold tracking-tight">Audience</h1>
-      <p className="mt-1 text-sm text-neutral-500">Page privee.</p>
+      <p className="font-mono text-[11px] uppercase tracking-[0.08em] text-black/50">Analytics</p>
+      <h1 className="mt-2 font-display text-4xl font-bold leading-none">Audience</h1>
+      <p className="mt-3 text-[15px] text-black/60">Page privee.</p>
 
       <form onSubmit={handleSubmit} className="mt-6">
         <label htmlFor="stats-password" className="sr-only">
@@ -53,15 +54,16 @@ export function LoginForm() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Mot de passe"
-          className="w-full rounded-lg border border-black/15 bg-white px-3 py-2 text-sm outline-none focus:border-black/40 dark:border-white/20 dark:bg-neutral-900 dark:focus:border-white/50"
+          className="w-full border border-black/20 bg-white px-4 py-3 text-[15px] outline-none transition-colors focus:border-[#ff6b35]"
         />
 
-        {error && <p className="mt-2 text-sm text-red-600 dark:text-red-400">{error}</p>}
+        {error && <p className="mt-2 font-mono text-[11px] uppercase tracking-wide text-[#d03b3b]">{error}</p>}
 
         <button
           type="submit"
           disabled={pending || password.length === 0}
-          className="mt-3 w-full rounded-lg bg-black px-3 py-2 text-sm font-medium text-white transition-opacity disabled:opacity-40 dark:bg-white dark:text-black"
+          className="mt-3 w-full rounded-full px-4 py-3 font-mono text-[13px] font-bold uppercase tracking-wide text-white transition-all duration-150 hover:-translate-y-0.5 disabled:translate-y-0 disabled:opacity-40"
+          style={{ background: "#ff6b35" }}
         >
           {pending ? "Verification..." : "Entrer"}
         </button>

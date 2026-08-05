@@ -13,10 +13,12 @@ const RANGES = [
 //   visiteurs uniques = count(distinct session_id)
 //   visites           = count(distinct visit_id)
 // Une personne qui revient plus tard compte 1 visiteur mais 2 visites.
+// `short` evite que "Visiteurs uniques" passe sur deux lignes et deforme la
+// pilule sur les petits ecrans.
 const METRICS = [
-  { key: "visitors", label: "Visiteurs uniques", noun: "visiteurs uniques" },
-  { key: "visits", label: "Visites", noun: "visites" },
-  { key: "pageviews", label: "Pages vues", noun: "pages vues" },
+  { key: "visitors", label: "Visiteurs uniques", short: "Uniques", noun: "visiteurs uniques" },
+  { key: "visits", label: "Visites", short: "Visites", noun: "visites" },
+  { key: "pageviews", label: "Pages vues", short: "Pages", noun: "pages vues" },
 ];
 
 const TOTAL_FIELD = {
@@ -85,69 +87,75 @@ export function StatsDashboard() {
   return (
     <div className="viz-page mx-auto w-full max-w-5xl px-5 py-10 sm:py-14">
       <header className="mb-8">
-        <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl viz-text-primary">Audience</h1>
-        <p className="mt-1 text-sm viz-text-muted">Tous les projets, sur un meme graphique.</p>
+        <p className="viz-mono viz-text-muted text-[11px]">Analytics</p>
+        <h1 className="mt-2 font-display text-4xl font-bold leading-[1.05] sm:text-5xl viz-text-primary">
+          Audience
+        </h1>
+        <p className="mt-3 max-w-md text-[15px] leading-relaxed viz-text-secondary">
+          Tous mes projets, sur un meme graphique.
+        </p>
       </header>
 
       {/* Les filtres scopent tout ce qui est en dessous : une seule rangee,
           au-dessus du contenu, jamais dans la carte du graphique. */}
-      <div className="mb-6 flex flex-wrap items-center gap-2">
-        <div className="viz-controls inline-flex rounded-lg border p-0.5">
+      <div className="mb-8 flex flex-wrap items-center gap-2">
+        <div className="viz-controls inline-flex rounded-full border p-0.5">
           {RANGES.map((r) => (
             <button
               key={r.days}
               type="button"
               onClick={() => setDays(r.days)}
               aria-pressed={days === r.days}
-              className="viz-control rounded-md px-3 py-1.5 text-sm transition-colors"
+              className="viz-control rounded-full px-4 py-2 transition-colors"
             >
               {r.label}
             </button>
           ))}
         </div>
 
-        <div className="viz-controls inline-flex rounded-lg border p-0.5">
+        <div className="viz-controls inline-flex rounded-full border p-0.5">
           {METRICS.map((m) => (
             <button
               key={m.key}
               type="button"
               onClick={() => setMetric(m.key)}
               aria-pressed={metric === m.key}
-              className="viz-control rounded-md px-3 py-1.5 text-sm transition-colors"
+              className="viz-control whitespace-nowrap rounded-full px-4 py-2 transition-colors"
             >
-              {m.label}
+              <span className="sm:hidden">{m.short}</span>
+              <span className="hidden sm:inline">{m.label}</span>
             </button>
           ))}
         </div>
       </div>
 
       {error && (
-        <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800 dark:border-red-900/50 dark:bg-red-950/30 dark:text-red-200">
-          {error}
-        </div>
+        <div className="border border-[#d03b3b] px-4 py-3 text-sm text-[#d03b3b]">{error}</div>
       )}
 
       {data && (
         <>
-          {/* Un seul chiffre-heros par vue. */}
+          {/* Un seul chiffre-heros par vue, dans la serif display du site. */}
           <div className="mb-6 flex flex-wrap items-baseline gap-x-4 gap-y-1">
-            <span className="text-5xl font-semibold tracking-tight viz-text-primary">{compact(totalCurrent)}</span>
-            <span className="text-sm viz-text-muted">
-              {metricNoun} sur {days} jours
+            <span className="font-display text-6xl font-bold leading-none viz-text-primary sm:text-7xl">
+              {compact(totalCurrent)}
+            </span>
+            <span className="viz-mono text-[11px] viz-text-muted">
+              {metricNoun} / {days} jours
             </span>
             {delta !== null && (
-              <span className={`text-sm font-medium ${delta >= 0 ? "viz-delta-up" : "viz-delta-down"}`}>
+              <span
+                className={`viz-mono text-[11px] font-bold ${delta >= 0 ? "viz-delta-up" : "viz-delta-down"}`}
+              >
                 {delta >= 0 ? "+" : ""}
-                {delta}% vs {days} jours precedents
+                {delta}% vs periode precedente
               </span>
             )}
           </div>
 
           {/* Pendant un rechargement, le graphique garde son rendu precedent en
               opacite reduite : pas de skeleton, pas de saut de mise en page. */}
-          <div
-            className={`rounded-xl p-4 transition-opacity sm:p-5 viz-surface ${loading ? "opacity-60" : ""}`}
-          >
+          <div className={`p-4 transition-opacity sm:p-6 viz-surface ${loading ? "opacity-60" : ""}`}>
             <VisitorsChart axis={data.axis} series={data.series} metric={metric} />
           </div>
 
@@ -156,19 +164,19 @@ export function StatsDashboard() {
               change. Le dire plutot que laisser croire a deux courbes
               differentes. */}
           {metric === "visits" && (
-            <p className="mt-3 text-xs viz-text-muted">
+            <p className="mt-4 max-w-2xl text-[13px] leading-relaxed viz-text-muted">
               Le total est le nombre exact de visites. La courbe, elle, montre les visiteurs
               uniques par jour : Umami ne publie pas de detail journalier des visites.
             </p>
           )}
 
           {failed.length > 0 && (
-            <p className="mt-3 text-xs viz-text-muted">
+            <p className="mt-4 text-[13px] viz-text-muted">
               Donnees indisponibles pour : {failed.map((s) => s.label).join(", ")}.
             </p>
           )}
           {data.stale && (
-            <p className="mt-3 text-xs viz-text-muted">
+            <p className="mt-4 text-[13px] viz-text-muted">
               Umami est injoignable : chiffres issus du dernier cache.
             </p>
           )}
@@ -177,7 +185,7 @@ export function StatsDashboard() {
               survol (regle de secours imposee par le contraste de certaines
               teintes claires en mode clair). */}
           <details className="mt-6">
-            <summary className="viz-summary cursor-pointer text-sm">
+            <summary className="viz-summary cursor-pointer">
               Voir le tableau
             </summary>
             <div className="mt-3 overflow-x-auto">
@@ -212,7 +220,7 @@ export function StatsDashboard() {
         </>
       )}
 
-      {!data && !error && <div className="h-64 animate-pulse rounded-xl bg-black/5 dark:bg-white/5" />}
+      {!data && !error && <div className="h-64 animate-pulse bg-black/5" />}
     </div>
   );
 }
