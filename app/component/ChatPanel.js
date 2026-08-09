@@ -354,13 +354,44 @@ function useNateChat() {
             // garder son message d'accueil : on ne marque "restaure" que s'il
             // contient reellement des echanges.
             if (restored.length > 0) setRestoredThread(true);
+
+            // Le visiteur attendait son lien de verification quand il a quitte
+            // la page (il est typiquement parti lire ses mails). awaitingVerification
+            // est un state React, donc perdu au remontage : sans ce rattrapage le
+            // poll ne repart jamais, et Nate reste muet apres la validation - le
+            // meme silence que celui qu'on corrige, par un autre chemin.
+            // On remet donc le thread en attente plutot que de servir un resume
+            // de retour, que la reprise post-validation doublonnerait.
+            const last = restored[restored.length - 1];
+            let verifiedResume = false;
+            if (last?.role === "ASSISTANT" && last.content?.includes("Je t'ai envoyé un lien à")) {
+              try {
+                const st = await fetch(`/api/chat/threads/${stored}/status`);
+                const stData = st.ok ? await st.json() : null;
+                if (stData && !stData.unlocked) {
+                  setAwaitingVerification(true);
+                  return;
+                }
+                // Deja deverrouille : la validation a eu lieu page fermee. Le
+                // dernier mot du fil reste "je t'ai envoye un lien", donc c'est
+                // bien une reprise d'apres-validation, pas un simple retour.
+                verifiedResume = !!stData?.unlocked;
+              } catch {
+                // Statut indisponible : on continue sur le resume de retour.
+              }
+            }
+
             // Message de reprise redige par Nate : sans lui, le visiteur qui
             // revient retombe au milieu de sa conversation sans savoir ou il en
             // est. C'est un vrai resume de son projet (le modele a vu tout le
             // cadrage), pas une reprise de ses mots bruts. Non bloquant : le fil
             // est deja affiche, le message arrive quelques secondes apres.
             if (restored.length > 0) {
-              fetch(`/api/chat/threads/${stored}/resume`, { method: "POST" })
+              fetch(`/api/chat/threads/${stored}/resume`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(verifiedResume ? { reason: "verified" } : {}),
+              })
                 .then((r) => (r.ok ? r.json() : null))
                 .then((d) => {
                   if (d?.text) setMessages((m) => [...m, { role: "ASSISTANT", content: d.text }]);
@@ -434,7 +465,35 @@ function useNateChat() {
         if (data.unlocked) {
           clearInterval(pollRef.current);
           setAwaitingVerification(false);
-          setMessages((m) => [...m, { role: "ASSISTANT", content: UNLOCKED_RESUME_TEXT }]);
+
+          // On demande a Nate de reprendre lui-meme la main plutot que
+          // d'afficher un texte fige. Un simple "on reprend ou on en etait"
+          // ecrit en dur laissait la conversation morte : le visiteur voyait la
+          // confirmation, puis plus rien, et devait relancer Nate a la main
+          // alors que c'est lui qui doit poser la question suivante.
+          //
+          // L'attente affichee pendant l'appel (~quelques secondes) evite le
+          // silence qui faisait justement croire que le fil etait bloque.
+          setStreamingText("");
+          try {
+            const r = await fetch(`/api/chat/threads/${threadId}/resume`, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ reason: "verified" }),
+            });
+            const d = r.ok ? await r.json() : null;
+            setMessages((m) => [
+              ...m,
+              { role: "ASSISTANT", content: d?.text?.trim() || UNLOCKED_RESUME_TEXT },
+            ]);
+          } catch {
+            // Reprise indisponible (reseau, quota) : on retombe sur le message
+            // fixe. Le visiteur garde une confirmation visible et peut relancer
+            // lui-meme - degrade, mais jamais bloquant.
+            setMessages((m) => [...m, { role: "ASSISTANT", content: UNLOCKED_RESUME_TEXT }]);
+          } finally {
+            setStreamingText(null);
+          }
         }
       } catch {
         // Erreur réseau ponctuelle : on retente au prochain tick, pas la peine

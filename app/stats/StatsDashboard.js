@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { VisitorsChart } from "./VisitorsChart";
+import { ClaudeUsageBar } from "./ClaudeUsageBar";
 
 const RANGES = [
   { days: 7, label: "7 jours" },
@@ -160,10 +161,9 @@ export function StatsDashboard() {
         <h1 className="mt-2 font-display text-4xl font-bold leading-[1.05] sm:text-5xl viz-text-primary">
           Audience
         </h1>
-        <p className="mt-3 max-w-md text-[15px] leading-relaxed viz-text-secondary">
-          Tous mes projets, sur un meme graphique.
-        </p>
       </header>
+
+      <ClaudeUsageBar />
 
       {/* Les filtres scopent tout ce qui est en dessous : une seule rangee,
           au-dessus du contenu, jamais dans la carte du graphique. */}

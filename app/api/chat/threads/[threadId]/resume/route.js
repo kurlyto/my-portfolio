@@ -36,12 +36,30 @@ const RESUME_BASE =
 // projet" : on lui remet donc explicitement la marche a suivre.
 const RESUME_BUTTONS_AFTER_AUDIT =
   "\n\nSon audit est DEJA termine et son plan est ecrit : ne recommence surtout pas le cadrage. " +
-  "Termine par ce bloc exact :\n\n---BOUTONS---\nJe veux lancer le projet\nJ'ai un code gratuit\n" +
+  "Termine par ce bloc exact :\n\n---BOUTONS---\nJe veux lancer le projet\n" +
+  "Je veux essayer pendant un mois\nJ'ai un code gratuit\n" +
   "J'ai une autre question\nRepartir sur un nouveau projet";
 
 const RESUME_BUTTONS_MID_FUNNEL =
   "\n\nSon cadrage n'est PAS termine : il reste des questions a lui poser. Termine par ce bloc " +
   "exact :\n\n---BOUTONS---\nOn reprend\nRepartir sur un nouveau projet";
+
+// Reprise apres validation du lien email, et non apres un simple retour sur la
+// page. Deux differences avec RESUME_BASE, qui viennent du meme constat : ici le
+// visiteur n'a rien "quitte", il a fait ce qu'on lui demandait et il attend que
+// ca reparte. Lui repondre "dis-moi comment tu veux continuer" lui remet la
+// charge sur les epaules alors que c'est a Nate de jouer.
+//   - on enchaine sur la question suivante du cadrage au lieu de demander la
+//     permission de continuer ;
+//   - pas de bouton "On reprend" : il n'y a plus rien a relancer.
+const RESUME_VERIFIED =
+  "[CONTEXTE SYSTEME, non ecrit par le visiteur] Le visiteur vient de valider son adresse email en " +
+  "cliquant le lien recu : son acces est confirme. Reprends la main toi-meme, immediatement. " +
+  "En une phrase courte, confirme que c'est bon et rappelle en quelques mots le projet sur lequel " +
+  "vous travailliez, puis ENCHAINE DIRECTEMENT sur la prochaine question de ton cadrage. " +
+  "Ne lui demande pas s'il veut continuer, ne lui demande pas par quoi commencer : c'est toi qui " +
+  "poses la question suivante. Ne redemande jamais son prenom ni son email, et ne repose aucune " +
+  "question a laquelle il a deja repondu dans le fil.";
 
 export async function POST(request, { params }) {
   const { threadId } = await params;
@@ -56,9 +74,27 @@ export async function POST(request, { params }) {
     return NextResponse.json({ error: "Rien a reprendre." }, { status: 400 });
   }
 
-  const previous = lastResumeAt.get(threadId);
-  if (previous && Date.now() - previous < RESUME_COOLDOWN_MS) {
-    return NextResponse.json({ error: "Resume deja servi recemment." }, { status: 429 });
+  // "verified" = appel declenche par la validation du lien email (voir le poll
+  // de ChatPanel), pas par un retour sur la page.
+  let reason = null;
+  try {
+    reason = (await request.json())?.reason ?? null;
+  } catch {
+    // Corps absent ou illisible : c'est un resume de retour classique.
+  }
+  const isVerified = reason === "verified";
+
+  // La validation d'email est un evenement unique et voulu, declenche par le
+  // visiteur lui-meme : le cooldown anti-F5 n'a pas de sens ici. Le laisser
+  // s'appliquer reproduirait exactement le bug qu'on corrige (Nate reste muet
+  // apres la confirmation) pour quiconque a rafraichi la page dans les 10
+  // minutes precedentes - donc pendant l'attente du mail, le cas le plus
+  // frequent. Le quota par IP ci-dessous reste applique.
+  if (!isVerified) {
+    const previous = lastResumeAt.get(threadId);
+    if (previous && Date.now() - previous < RESUME_COOLDOWN_MS) {
+      return NextResponse.json({ error: "Resume deja servi recemment." }, { status: 429 });
+    }
   }
 
   const ip = clientIp(request);
@@ -82,8 +118,12 @@ export async function POST(request, { params }) {
     // interpretation du fil par le modele : c est ce qui decide si on lui
     // remet le bouton de reglement ou si on reprend le cadrage.
     const completed = hasCompletedAudit(profile?.email);
+    // Un audit deja termine garde ses boutons d'action meme en sortie de
+    // verification : la marche a suivre (regler, code gratuit...) prime alors
+    // sur la reprise du cadrage, qui n'a plus lieu d'etre.
+    const base = isVerified && !completed ? RESUME_VERIFIED : RESUME_BASE;
     const instruction =
-      RESUME_BASE + (completed ? RESUME_BUTTONS_AFTER_AUDIT : RESUME_BUTTONS_MID_FUNNEL);
+      base + (completed ? RESUME_BUTTONS_AFTER_AUDIT : isVerified ? "" : RESUME_BUTTONS_MID_FUNNEL);
 
     // Session neuve volontairement : on ne veut pas polluer la session du
     // funnel avec ce tour d'accueil, et l'historique rejoue suffit a Nate pour
