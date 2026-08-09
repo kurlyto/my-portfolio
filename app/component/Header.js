@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { WhatsAppIcon, LinkedInIcon, GitHubIcon } from "./icons";
@@ -116,8 +117,9 @@ function MobileMenu({ dark }) {
       {open && (
         <div className={`fixed inset-0 z-50 flex flex-col ${dark ? "bg-black text-white" : "bg-white text-black"}`}>
           <div className="flex items-center justify-between px-4 py-6">
-            <Link href="/" className="text-sm font-mono opacity-80" onClick={() => setOpen(false)}>
-              NK
+            <Link href="/" className="flex items-center gap-2 opacity-80" onClick={() => setOpen(false)}>
+              <Image src="/images/logo-nk.png" alt="" width={28} height={28} className="rounded-md" />
+              <span className="text-sm font-mono">Votre Agent IA</span>
             </Link>
             <button
               type="button"
@@ -179,8 +181,12 @@ function MobileMenu({ dark }) {
 export default function Header({ dark = false }) {
   return (
     <header className="relative w-full flex items-center justify-between gap-6 max-w-6xl mx-auto px-6 py-8">
-      <Link href="/" className="text-sm font-mono opacity-80 hover:opacity-100 transition-opacity">
-        NK
+      <Link
+        href="/"
+        className="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity"
+      >
+        <Image src="/images/logo-nk.png" alt="" width={32} height={32} className="rounded-md" priority />
+        <span className="text-sm font-mono">Votre Agent IA</span>
       </Link>
 
       <nav className="hidden sm:flex sm:absolute sm:left-1/2 sm:-translate-x-1/2 items-center gap-10 text-base font-mono uppercase tracking-widest">
