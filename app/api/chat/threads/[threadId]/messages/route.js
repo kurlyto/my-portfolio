@@ -426,7 +426,9 @@ function buildTurnFacts({ threadId, trimmed }) {
       );
       writeLead({
         kind: "code_redeemed",
-        firstName: result.firstName,
+        // Prenom de la SESSION en cours, pas celui fige sur le code a sa
+        // creation (qui peut dater d une conversation precedente).
+        firstName: profile?.firstName ?? null,
         email: result.email,
         freeCode: result.code,
         threadId,

@@ -69,14 +69,26 @@ export function normalizeCode(raw) {
 }
 
 /**
- * Cree (ou recupere) le code d un prospect. Idempotent par email : si la
- * personne recommence une conversation avec la meme adresse, elle garde le
- * meme code plutot que d en accumuler un par thread.
+ * Cree le code d un prospect, UN PAR CONVERSATION (thread).
+ *
+ * Avant le 09/08/2026 cette fonction etait idempotente PAR EMAIL : la meme
+ * adresse recevait a vie le meme code. Deux effets indesirables constates en
+ * test reel - un nouveau projet de la meme personne heritait du code (et du
+ * prenom) d un projet precedent, et il devenait impossible de rejouer le
+ * parcours pour tester un plan independamment.
+ *
+ * L idempotence par email n etait de toute facon pas le garde-fou anti-abus :
+ * un code n est JAMAIS montre au visiteur tant que Nathan ne l a pas libere
+ * (releaseCode, via Elon). C est le release qui protege, pas l unicite.
+ * Idempotent par THREAD malgre tout : deux appels dans la meme conversation
+ * (ex. double clic sur le lien de verification) ne creent pas deux codes.
  */
 export function ensureCodeFor({ email, firstName, threadId }) {
-  const existing = db
-    .prepare(`SELECT * FROM free_codes WHERE email = ? ORDER BY createdAt ASC LIMIT 1`)
-    .get(email);
+  const existing = threadId
+    ? db
+        .prepare(`SELECT * FROM free_codes WHERE threadId = ? ORDER BY createdAt ASC LIMIT 1`)
+        .get(threadId)
+    : null;
   if (existing) return existing;
 
   // Collision quasi impossible (30^8), mais la PRIMARY KEY la rendrait fatale :
@@ -110,7 +122,11 @@ export function redeemCode({ rawCode, email }) {
   if (row.email !== email) return { ok: false, reason: "wrong_email" };
 
   db.prepare(`UPDATE free_codes SET usedAt = datetime('now') WHERE code = ?`).run(code);
-  return { ok: true, code: row.code, firstName: row.firstName, email: row.email };
+  // `firstName` n est volontairement PAS renvoye : il est fige a la creation du
+  // code et peut etre perime (un visiteur qui redonne un autre prenom plus
+  // tard). L appelant s adresse au visiteur avec le prenom de la SESSION en
+  // cours, jamais avec celui-ci. La colonne reste ecrite pour l historique.
+  return { ok: true, code: row.code, email: row.email };
 }
 
 export function getCodeByEmail(email) {

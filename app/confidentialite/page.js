@@ -8,7 +8,7 @@ export const metadata = {
   robots: { index: true, follow: true },
 };
 
-const MAJ = "30 juillet 2026";
+const MAJ = "9 août 2026";
 
 function Section({ title, children }) {
   return (
@@ -145,6 +145,51 @@ export default function ConfidentialitePage() {
           <p>
             À la fin du contrat, l&apos;agent est arrêté et son code archivé. Vous pouvez demander
             l&apos;export de vos données à tout moment, y compris après la résiliation.
+          </p>
+        </Section>
+
+        <Section title="Connexion à votre compte Google (Gmail, Sheets, Drive)">
+          <p>
+            Si votre agent doit travailler avec vos outils Google, vous l&apos;autorisez vous-même
+            via l&apos;écran de connexion officiel de Google. Aucun mot de passe ne m&apos;est
+            transmis : Google délivre une autorisation révocable, que vous pouvez retirer à tout
+            moment depuis{" "}
+            <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer">
+              les accès de votre compte Google
+            </a>
+            .
+          </p>
+          <p>
+            Seules les autorisations réellement nécessaires au fonctionnement de votre agent sont
+            demandées, et elles vous sont annoncées avant que vous cliquiez. Selon ce que fait votre
+            agent, il peut s&apos;agir de lire vos emails, de préparer des brouillons, ou
+            d&apos;écrire dans une feuille de calcul de suivi.
+          </p>
+          <p>
+            Ce qui est conservé : uniquement l&apos;autorisation délivrée par Google, stockée
+            chiffrée sur le serveur. Le contenu de vos emails et de vos documents est lu au moment
+            où votre agent en a besoin, puis n&apos;est pas conservé — sauf si votre agent a
+            explicitement pour mission d&apos;en garder une trace, auquel cas cela vous est dit lors
+            du cadrage.
+          </p>
+          <p>
+            L&apos;autorisation est supprimée dans les 30 jours suivant la fin du contrat, ou
+            immédiatement sur simple demande de votre part.
+          </p>
+          <p>
+            <strong>Usage limité :</strong> l&apos;utilisation des données reçues des API Google
+            respecte la{" "}
+            <a
+              href="https://developers.google.com/terms/api-services-user-data-policy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Google API Services User Data Policy
+            </a>
+            , y compris ses exigences d&apos;usage limité. Ces données ne sont ni vendues, ni
+            transmises à des tiers, ni utilisées à des fins publicitaires, ni utilisées pour
+            entraîner des modèles d&apos;intelligence artificielle. Elles servent uniquement à
+            fournir les fonctionnalités que vous avez demandées à votre agent.
           </p>
         </Section>
 

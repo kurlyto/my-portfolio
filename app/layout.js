@@ -25,24 +25,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Nathan Knaebel",
-  description: "Une tâche que vous n'aimez pas faire ? On l'automatise.",
+  title: "Votre Agent IA sur-mesure - déléguez ce que vous n'aimez pas faire",
+  description: "Un agent IA clé en main qui connaît votre business et vous assiste 24h/24. Mails, prospection, administratif : il s'occupe de tout. Audit gratuit.",
   metadataBase: new URL("https://nathan-knaebel.com"),
   icons: {
     icon: [{ url: "/images/ascension.jpg", type: "image/jpeg" }],
   },
   openGraph: {
-    title: "Nathan Knaebel",
-    description: "Une tâche que vous n'aimez pas faire ? On l'automatise.",
+    title: "Votre Agent IA sur-mesure - déléguez ce que vous n'aimez pas faire",
+    description: "Un agent IA clé en main qui connaît votre business et vous assiste 24h/24. Mails, prospection, administratif : il s'occupe de tout. Audit gratuit.",
     url: "https://nathan-knaebel.com",
-    siteName: "Nathan Knaebel",
+    siteName: "Votre Agent IA",
     locale: "fr_FR",
     type: "website",
   },
   twitter: {
     card: "summary",
-    title: "Nathan Knaebel",
-    description: "Une tâche que vous n'aimez pas faire ? On l'automatise.",
+    title: "Votre Agent IA sur-mesure - déléguez ce que vous n'aimez pas faire",
+    description: "Un agent IA clé en main qui connaît votre business et vous assiste 24h/24. Mails, prospection, administratif : il s'occupe de tout. Audit gratuit.",
   },
 };
 

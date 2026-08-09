@@ -17,8 +17,12 @@ services:
       - /root/.claude:/claude-accounts/nathan/.claude
       - /root/.claude.json:/claude-accounts/nathan/.claude.json
       - /root/.claude-accounts/admin-mdd:/claude-accounts/admin-mdd
+      - /root/.claude-accounts/ben-mdd:/claude-accounts/ben-mdd
       # Dossier nate (mission.md, data/plans/) : meme agent, meme etat que le canal Telegram.
       - /data/nathan/my-agents/Nate:/data/nathan/my-agents/Nate
+      # Regles d etancheite partagees par tout le parc (lecture seule) : Nate est
+      # le seul canal public, il ne doit pas tourner sans elles.
+      - /data/nathan/my-agents/shared:/data/nathan/my-agents/shared:ro
     mem_limit: 1g
     cpus: 1.0
     logging:
