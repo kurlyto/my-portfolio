@@ -118,7 +118,7 @@ function MobileMenu({ dark }) {
         <div className={`fixed inset-0 z-50 flex flex-col ${dark ? "bg-black text-white" : "bg-white text-black"}`}>
           <div className="flex items-center justify-between px-4 py-6">
             <Link href="/" className="flex items-center gap-2 opacity-80" onClick={() => setOpen(false)}>
-              <Image src="/images/logo-nk.png" alt="" width={28} height={28} className="rounded-md" />
+              <Image src="/images/logo-nk.png" alt="" width={28} height={28} className="rounded-md" unoptimized />
               <span className="text-sm font-mono">Votre Agent IA</span>
             </Link>
             <button
@@ -185,7 +185,7 @@ export default function Header({ dark = false }) {
         href="/"
         className="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity"
       >
-        <Image src="/images/logo-nk.png" alt="" width={32} height={32} className="rounded-md" priority />
+        <Image src="/images/logo-nk.png" alt="" width={32} height={32} className="rounded-md" priority unoptimized />
         <span className="text-sm font-mono">Votre Agent IA</span>
       </Link>
 
