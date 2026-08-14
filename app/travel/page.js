@@ -2,8 +2,13 @@ import Header from "../component/Header";
 import Footer from "../component/Footer";
 
 export const metadata = {
-  title: "Travel | Nathan Knaebel",
+  title: "Travel",
   description: "Carnet de voyage — a venir.",
+  alternates: { canonical: "https://nathan-knaebel.com/travel" },
+  // Page vide ("a venir") : hors index tant qu'il n'y a pas de contenu. Une
+  // page sans substance indexee tire la qualite percue du domaine vers le bas.
+  // A repasser en index des que le carnet est publie.
+  robots: { index: false, follow: true },
 };
 
 export default function TravelPage() {

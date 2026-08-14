@@ -4,8 +4,9 @@ import Reveal from "../component/Reveal";
 import ProjectCards from "../component/ProjectCards";
 
 export const metadata = {
-  title: "Projects | Nathan Knaebel",
+  title: "Projets",
   description: "Ce que j'ai construit : jeux, outils metier, SaaS.",
+  alternates: { canonical: "https://nathan-knaebel.com/projects" },
 };
 
 const TECH_STACK = [
@@ -28,7 +29,7 @@ export default function ProjectsPage() {
         <Header dark />
         <div className="flex-1 flex flex-col justify-center max-w-7xl mx-auto px-6 py-6">
           <span className="text-xs font-mono uppercase tracking-widest text-[#ff6b35]">
-            Work
+            Projets
           </span>
           <h1 className="mt-3 text-3xl md:text-5xl font-bold tracking-tight">
             Ingénieur industriel &amp; logiciel
@@ -37,9 +38,9 @@ export default function ProjectsPage() {
           </h1>
           <p className="mt-6 max-w-2xl text-base md:text-lg opacity-70 leading-relaxed">
             J&apos;ai travaillé durant 6 ans sur des optimisations de processus industriels avant
-            d&apos;allouer plus de temps à ce qui me plaît énormément : développer et concevoir
-            des projets et applications pour répondre à des besoins d&apos;utilisateurs (et pour
-            mon plaisir personnel !).
+            d&apos;allouer plus de temps à ce qui me plaît énormément : concevoir et développer des
+            applications qui répondent à de vrais besoins. Elles sont toutes réunies ci-dessous —
+            n&apos;hésitez pas à les parcourir et à les essayer.
           </p>
 
           <ul className="mt-8 flex flex-wrap gap-2">

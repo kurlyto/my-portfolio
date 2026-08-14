@@ -24,25 +24,53 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const SITE_URL = "https://nathan-knaebel.com";
+const SITE_NAME = "Votre Agent IA";
+const SITE_DESCRIPTION =
+  "Un agent IA clé en main qui connaît votre business et vous assiste 24h/24. Mails, prospection, administratif : il s'occupe de tout. Audit gratuit.";
+
 export const metadata = {
-  title: "Votre Agent IA",
-  description: "Un agent IA clé en main qui connaît votre business et vous assiste 24h/24. Mails, prospection, administratif : il s'occupe de tout. Audit gratuit.",
-  metadataBase: new URL("https://nathan-knaebel.com"),
+  // `default` s'applique aux pages sans titre propre ; `template` habille
+  // celles qui en declarent un, sans avoir a repeter le nom du site partout.
+  title: {
+    default: SITE_NAME,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  metadataBase: new URL(SITE_URL),
+  // Canonical de la home seulement. Chaque page qui n'est pas la home DOIT
+  // declarer le sien : sans ca, Next fait heriter celui-ci et Google recoit
+  // "cette page est un doublon de l'accueil" sur tout le site.
+  alternates: {
+    canonical: SITE_URL,
+  },
   icons: {
-    icon: [{ url: "/images/ascension.jpg", type: "image/jpeg" }],
+    icon: [{ url: "/images/logo-nk.png", type: "image/png" }],
+    apple: [{ url: "/images/logo-nk.png" }],
   },
   openGraph: {
-    title: "Votre Agent IA",
-    description: "Un agent IA clé en main qui connaît votre business et vous assiste 24h/24. Mails, prospection, administratif : il s'occupe de tout. Audit gratuit.",
-    url: "https://nathan-knaebel.com",
-    siteName: "Votre Agent IA",
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    siteName: SITE_NAME,
     locale: "fr_FR",
     type: "website",
+    images: [
+      {
+        url: "/images/logo-nk.png",
+        width: 1024,
+        height: 1024,
+        alt: SITE_NAME,
+      },
+    ],
   },
   twitter: {
+    // summary_large_image demande un visuel en 1.91:1 ; le logo est carre,
+    // donc on reste sur la carte compacte qui l'affiche sans le rogner.
     card: "summary",
-    title: "Votre Agent IA",
-    description: "Un agent IA clé en main qui connaît votre business et vous assiste 24h/24. Mails, prospection, administratif : il s'occupe de tout. Audit gratuit.",
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    images: ["/images/logo-nk.png"],
   },
 };
 

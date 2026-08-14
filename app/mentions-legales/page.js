@@ -3,8 +3,9 @@ import Header from "../component/Header";
 import Footer from "../component/Footer";
 
 export const metadata = {
-  title: "Mentions légales — Nathan Knaebel",
+  title: "Mentions légales",
   description: "Éditeur, hébergeur et informations légales du site nathan-knaebel.com.",
+  alternates: { canonical: "https://nathan-knaebel.com/mentions-legales" },
   robots: { index: true, follow: true },
 };
 

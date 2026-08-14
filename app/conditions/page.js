@@ -3,9 +3,10 @@ import Header from "../component/Header";
 import Footer from "../component/Footer";
 
 export const metadata = {
-  title: "Conditions d'utilisation — Nathan Knaebel",
+  title: "Conditions d'utilisation",
   description:
     "Conditions d'utilisation du service de conception et d'hébergement d'agents automatisés sur mesure.",
+  alternates: { canonical: "https://nathan-knaebel.com/conditions" },
   robots: { index: true, follow: true },
 };
 

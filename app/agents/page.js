@@ -4,9 +4,10 @@ import Reveal from "../component/Reveal";
 import AgentsExplorer from "./AgentsExplorer";
 
 export const metadata = {
-  title: "Agents IA sur mesure | Nathan Knaebel",
+  title: "Agents IA sur mesure",
   description:
     "Des agents IA autonomes qui prennent en charge des tâches réelles de votre entreprise : support, qualité, veille, prospection, reporting.",
+  alternates: { canonical: "https://nathan-knaebel.com/agents" },
 };
 
 export default function AgentsPage() {

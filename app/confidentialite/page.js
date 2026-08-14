@@ -2,9 +2,10 @@ import Header from "../component/Header";
 import Footer from "../component/Footer";
 
 export const metadata = {
-  title: "Politique de confidentialité — Nathan Knaebel",
+  title: "Politique de confidentialité",
   description:
     "Comment sont collectées, utilisées et conservées les données personnelles sur nathan-knaebel.com.",
+  alternates: { canonical: "https://nathan-knaebel.com/confidentialite" },
   robots: { index: true, follow: true },
 };
 

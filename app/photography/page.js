@@ -2,8 +2,12 @@ import Header from "../component/Header";
 import Footer from "../component/Footer";
 
 export const metadata = {
-  title: "Photography | Nathan Knaebel",
+  title: "Photography",
   description: "Photographies — a venir.",
+  alternates: { canonical: "https://nathan-knaebel.com/photography" },
+  // Page vide ("a venir") : hors index tant qu'il n'y a pas de contenu.
+  // A repasser en index des que les photos sont publiees.
+  robots: { index: false, follow: true },
 };
 
 export default function PhotographyPage() {
