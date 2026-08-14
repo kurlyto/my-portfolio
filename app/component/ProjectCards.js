@@ -251,9 +251,28 @@ function ProjectCard({ project, index }) {
   // l'etat d'animation du premier rendu, et la largeur n'etant connue qu'apres
   // celui-ci, la carte restait bloquee a opacity:0. Sortir du composant motion
   // supprime le probleme a la racine.
+  // La couverture est le plus gros element de la carte : en faire un lien donne
+  // une cible bien plus large que le seul bouton "Decouvrir". Les projets sans
+  // `link` (pas encore publies) gardent une couverture inerte, sans curseur ni
+  // survol, pour ne pas promettre un clic qui ne mene nulle part.
+  const cover = project.link ? (
+    <a
+      href={project.link}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
+      aria-label={`Découvrir ${project.name}`}
+      data-cursor-hover
+      className="flex min-h-0 flex-1 flex-col sm:flex-none"
+    >
+      <CoverPlaceholder project={project} />
+    </a>
+  ) : (
+    <CoverPlaceholder project={project} />
+  );
+
   const body = (
     <>
-      <CoverPlaceholder project={project} />
+      {cover}
 
       <div className="flex shrink-0 flex-col px-2 pb-1 pt-5 sm:flex-1 sm:pt-6">
         <h3 className="text-2xl font-bold leading-snug tracking-tight">

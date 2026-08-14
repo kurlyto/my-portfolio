@@ -17,17 +17,17 @@ const STEPS = [
   },
   {
     number: "02",
-    who: "Ensemble",
-    title: "On cadre ce qui manque",
+    who: "Nous",
+    title: "On construit votre agent",
     description:
-      "Si des informations manquent pour construire la solution, on vous les demande directement.",
+      "On conçoit, on teste et on ajuste votre agent jusqu'à ce qu'il fasse exactement le travail attendu.",
   },
   {
     number: "03",
-    who: "Nous",
-    title: "On construit, on teste, on ajuste",
+    who: "Vous",
+    title: "Vous lui parlez, il travaille",
     description:
-      "Votre système est mis en place puis ajusté jusqu'à ce qu'il fonctionne exactement comme prévu.",
+      "Vous échangez avec votre agent comme avec un nouvel employé : vous lui confiez des tâches, il les exécute.",
   },
 ];
 

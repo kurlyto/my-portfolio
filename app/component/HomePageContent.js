@@ -22,7 +22,9 @@ function OfferBanner() {
 
   return (
     <div className="relative bg-[#ff6b35] text-white">
-      <div className="max-w-7xl mx-auto px-6 py-2.5 pr-12 text-center text-[13px] font-mono tracking-wide">
+      {/* py-1.5 et non py-2.5 : chaque pixel pris ici est pris au hero, qui doit
+          tenir en entier dans le premier ecran. */}
+      <div className="max-w-7xl mx-auto px-6 py-1.5 pr-12 text-center text-[13px] font-mono tracking-wide">
         <span className="font-bold uppercase">1 mois d&apos;essai 100% gratuit</span>
         <span className="hidden sm:inline opacity-85"> - testez votre agent personnel sans aucun engagement d&apos;achat.</span>
       </div>
@@ -190,7 +192,7 @@ export default function HomePageContent() {
       </AnimatePresence>
 
       <OfferBanner />
-      <Header />
+      <Header compactY />
 
       <section
         // Colonne gauche a largeur fixe : le hero garde exactement la meme
@@ -200,7 +202,10 @@ export default function HomePageContent() {
         // remonte l'ensemble du hero pour que le panneau tienne en entier.
         // lg:pb-10 et non pb-20 : la bande d'outils pleine largeur suit
         // immediatement en desktop, elle apporte sa propre respiration.
-        className="max-w-7xl mx-auto px-6 pt-8 pb-8 lg:pb-10 lg:pt-14 w-full grid grid-cols-1 lg:grid-cols-[minmax(0,620px)_1fr] gap-12 lg:gap-14 items-stretch lg:min-h-0 content-start lg:content-stretch"
+        // pt reduit encore (pt-14 -> pt-6 en desktop) : le bandeau d'offre reste
+        // en haut de page, donc c'est ici que se recupere la hauteur qui
+        // manquait pour que le hero tienne entier au chargement.
+        className="max-w-7xl mx-auto px-6 pt-3 pb-8 lg:pb-10 lg:pt-6 w-full grid grid-cols-1 lg:grid-cols-[minmax(0,620px)_1fr] gap-12 lg:gap-14 items-stretch lg:min-h-0 content-start lg:content-stretch"
       >
         <ScrambleHero
           onOpenChat={() => setChatOpen(true)}
