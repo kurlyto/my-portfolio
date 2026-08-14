@@ -297,22 +297,35 @@ export function XIcon(props) {
   );
 }
 
-export function InstagramIcon(props) {
+// `gradientId` est passable en prop : la bande d'outils rend la liste deux fois
+// pour boucler le defilement, donc deux <radialGradient> de meme id coexistent
+// dans le document. Le navigateur resout alors `url(#...)` sur le premier pour
+// les deux logos, et demonter cette instance-la vide le degrade de l'autre.
+// L'appelant qui duplique l'icone doit donc lui donner un id distinct.
+export function InstagramIcon({ gradientId = "ig-grad", ...props }) {
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <defs>
-        <radialGradient id="ig-grad" cx="0.3" cy="1" r="1.2">
+        <radialGradient id={gradientId} cx="0.3" cy="1" r="1.2">
           <stop offset="0" stopColor="#FFD776" />
           <stop offset="0.35" stopColor="#F5643B" />
           <stop offset="0.7" stopColor="#D92E7F" />
           <stop offset="1" stopColor="#8A3AB9" />
         </radialGradient>
       </defs>
-      <rect width="24" height="24" rx="6" fill="url(#ig-grad)" />
+      <rect width="24" height="24" rx="6" fill={`url(#${gradientId})`} />
+      {/* Trois traces, comme le vrai logo : le contour arrondi de l'appareil,
+          l'objectif, puis le point du flash. Il manquait le contour, donc le
+          logo se lisait comme une pastille orange avec un simple anneau. */}
       <path
         fill="#fff"
-        d="M12 7.2a4.8 4.8 0 1 0 0 9.6 4.8 4.8 0 0 0 0-9.6m0 7.92a3.12 3.12 0 1 1 0-6.24 3.12 3.12 0 0 1 0 6.24M17.05 5.8a1.15 1.15 0 1 0 0 2.3 1.15 1.15 0 0 0 0-2.3"
+        d="M12 4.62c2.4 0 2.69.01 3.64.05.88.04 1.35.19 1.67.31.42.16.72.36 1.03.67.31.31.51.61.67 1.03.12.32.27.79.31 1.67.04.95.05 1.24.05 3.65s-.01 2.7-.05 3.65c-.04.88-.19 1.35-.31 1.67-.16.42-.36.72-.67 1.03-.31.31-.61.51-1.03.67-.32.12-.79.27-1.67.31-.95.04-1.24.05-3.64.05s-2.69-.01-3.64-.05c-.88-.04-1.35-.19-1.67-.31a2.8 2.8 0 0 1-1.03-.67 2.8 2.8 0 0 1-.67-1.03c-.12-.32-.27-.79-.31-1.67-.04-.95-.05-1.24-.05-3.65s.01-2.7.05-3.65c.04-.88.19-1.35.31-1.67.16-.42.36-.72.67-1.03.31-.31.61-.51 1.03-.67.32-.12.79-.27 1.67-.31.95-.04 1.24-.05 3.64-.05m0-1.62c-2.44 0-2.75.01-3.71.05-.96.05-1.61.2-2.19.42-.6.23-1.1.54-1.61 1.05-.51.51-.82 1.01-1.05 1.61-.22.58-.37 1.23-.42 2.19C3 9.28 3 9.59 3 12.03s.01 2.75.05 3.71c.05.96.2 1.61.42 2.19.23.6.54 1.1 1.05 1.61.51.51 1.01.82 1.61 1.05.58.22 1.23.37 2.19.42.96.04 1.27.05 3.71.05s2.75-.01 3.71-.05c.96-.05 1.61-.2 2.19-.42.6-.23 1.1-.54 1.61-1.05.51-.51.82-1.01 1.05-1.61.22-.58.37-1.23.42-2.19.04-.96.05-1.27.05-3.71s-.01-2.75-.05-3.71c-.05-.96-.2-1.61-.42-2.19a4.4 4.4 0 0 0-1.05-1.61 4.4 4.4 0 0 0-1.61-1.05c-.58-.22-1.23-.37-2.19-.42C14.78 3.01 14.47 3 12.03 3z"
       />
+      <path
+        fill="#fff"
+        d="M12 7.38a4.62 4.62 0 1 0 0 9.24 4.62 4.62 0 0 0 0-9.24m0 7.62a3 3 0 1 1 0-6 3 3 0 0 1 0 6"
+      />
+      <circle fill="#fff" cx="16.81" cy="7.19" r="1.08" />
     </svg>
   );
 }

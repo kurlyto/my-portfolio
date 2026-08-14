@@ -1,5 +1,6 @@
 "use client";
 
+import { useId } from "react";
 import {
   GmailToolIcon,
   GoogleCalendarIcon,
@@ -61,7 +62,16 @@ const TOOLS = [
 // Pas d'attribut title : l'infobulle native met une seconde a apparaitre et
 // suit le curseur, ce qui est illisible sur un logo qui defile. La bulle est
 // ancree au logo et se deplace donc avec lui.
-function Logo({ tool }) {
+// `idPrefix` rend uniques les <defs> des icones a degrade (Instagram). Deux
+// niveaux de duplication existent et doivent TOUS deux etre couverts :
+//   1. la piste double la liste pour boucler le defilement ;
+//   2. la home monte deux ToolStrip a la fois — celle du hero (masquee en
+//      desktop par `hidden`) et celle en pleine largeur.
+// Un id partage se resout sur le PREMIER element du document, ici celui de la
+// piste masquee : un degrade appartenant a un SVG en display:none n'est pas
+// peint, donc les logos visibles s'affichaient vides. D'ou le prefixe par
+// instance (useId) en plus du suffixe par copie.
+function Logo({ tool, idPrefix, copy }) {
   const { Icon } = tool;
   return (
     <div className="group relative shrink-0">
@@ -70,7 +80,12 @@ function Logo({ tool }) {
         role="img"
         className="opacity-90 transition-all duration-200 group-hover:opacity-100 group-hover:-translate-y-0.5"
       >
-        <Icon className="w-10 h-10 md:w-11 md:h-11" />
+        {/* Le nom est normalise : plusieurs outils ont un espace ("Google
+            Agenda"), interdit dans un id reference par `url(#...)`. */}
+        <Icon
+          className="w-10 h-10 md:w-11 md:h-11"
+          gradientId={`${idPrefix}-${tool.name.replace(/\W/g, "")}-${copy}`}
+        />
       </div>
 
       <span className="pointer-events-none absolute -top-1 left-1/2 z-20 -translate-x-1/2 -translate-y-full whitespace-nowrap rounded-md bg-black px-2.5 py-1.5 text-[11px] font-mono text-white opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100">
@@ -92,6 +107,11 @@ function Logo({ tool }) {
  */
 export default function ToolStrip({ fullWidth = false }) {
   const doubled = [...TOOLS, ...TOOLS];
+  // useId : identifiant stable entre le rendu serveur et le client (un
+  // compteur ou Math.random casserait l'hydratation). Les ":" qu'il contient
+  // sont retires : ils sont valides dans un id HTML mais cassent la reference
+  // `url(#...)` cote SVG, ou ils seraient lus comme un selecteur.
+  const idPrefix = `tools${useId().replace(/:/g, "")}`;
 
   // min-w-0 + overflow-hidden : sans ca, la piste en w-max impose sa largeur
   // totale a la colonne de grille parente et ecrase la colonne voisine.
@@ -134,7 +154,12 @@ export default function ToolStrip({ fullWidth = false }) {
             }}
           >
             {doubled.map((tool, i) => (
-              <Logo key={`${tool.name}-${i}`} tool={tool} />
+              <Logo
+                key={`${tool.name}-${i}`}
+                tool={tool}
+                idPrefix={idPrefix}
+                copy={i < TOOLS.length ? "a" : "b"}
+              />
             ))}
           </div>
         </div>
