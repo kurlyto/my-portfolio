@@ -3,9 +3,22 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
-// Cas clients reels. `name`, `initials` et `location` restent a remplir avec
-// les vraies identites : tant qu'ils sont vides, la carte affiche le metier et
-// le secteur plutot qu'un faux nom.
+// Cas clients reels.
+//
+// POUR AJOUTER UNE VRAIE IDENTITE, remplir les quatre champs laisses a `null`
+// sur l'entree concernee — le composant sait deja les afficher, il n'y a aucun
+// code a retoucher :
+//
+//   name:     "Julie Vermeulen"          // prenom + nom
+//   jobTitle: "Gerante"                  // poste, affiche avant la ville
+//   location: "Lille"                    // ville (facultatif)
+//   photo:    "/testimonials/julie.jpg"  // fichier depose dans public/testimonials/
+//                                        // carre, 200x200 minimum (rendu en 44px)
+//   initials: "JV"                       // repli si `photo` est absent
+//
+// Tant qu'ils valent `null`, la carte affiche le metier et le secteur plutot
+// qu'un faux nom : ne PAS inventer d'identites, DESIGN.md l'interdit
+// explicitement (aucune citation ne doit se faire passer pour un client reel).
 const TESTIMONIALS = [
   {
     quote:
@@ -13,8 +26,10 @@ const TESTIMONIALS = [
     role: "Foodtruck",
     useCase: "Prospection événementielle",
     name: null,
+    jobTitle: null,
     initials: null,
     location: null,
+    photo: null,
   },
   {
     quote:
@@ -22,8 +37,10 @@ const TESTIMONIALS = [
     role: "En recherche d'emploi",
     useCase: "Candidatures ciblées",
     name: null,
+    jobTitle: null,
     initials: null,
     location: null,
+    photo: null,
   },
   {
     quote:
@@ -31,8 +48,10 @@ const TESTIMONIALS = [
     role: "Entrepreneur",
     useCase: "Comptabilité surveillée",
     name: null,
+    jobTitle: null,
     initials: null,
     location: null,
+    photo: null,
   },
   {
     quote:
@@ -40,8 +59,10 @@ const TESTIMONIALS = [
     role: "Indépendant",
     useCase: "Assistant par messages vocaux",
     name: null,
+    jobTitle: null,
     initials: null,
     location: null,
+    photo: null,
   },
   {
     quote:
@@ -49,8 +70,10 @@ const TESTIMONIALS = [
     role: "Créateur",
     useCase: "Stratégie de contenu",
     name: null,
+    jobTitle: null,
     initials: null,
     location: null,
+    photo: null,
   },
   {
     quote:
@@ -58,8 +81,10 @@ const TESTIMONIALS = [
     role: "Groupe de musique",
     useCase: "Recherche de dates",
     name: null,
+    jobTitle: null,
     initials: null,
     location: null,
+    photo: null,
   },
 ];
 
@@ -73,19 +98,38 @@ function ArrowIcon(props) {
   );
 }
 
+// Le bloc d'identite portait un nom en 13px et une ligne secondaire en 10px :
+// illisible a cote d'une citation en 1.6rem, alors que c'est justement ce qui
+// donne du poids au temoignage. Nom en 16/17px, ligne secondaire en 12px, et
+// pastille agrandie en consequence pour rester a l'echelle du texte.
+//
+// `photo` affiche un vrai visage des qu'il est renseigne ; sans photo on
+// retombe sur la pastille a initiales, donc rien ne casse tant que les
+// identites ne sont pas remplies.
 function Identity({ item }) {
   const badge = item.initials ?? item.role.charAt(0);
   const line = item.name ?? item.role;
-  const sub = [item.location, item.useCase].filter(Boolean).join(" - ");
+  const sub = [item.jobTitle, item.location, item.useCase].filter(Boolean).join(" - ");
 
   return (
-    <div className="mt-auto pt-5 flex items-center gap-2.5 border-t border-black/10">
-      <div className="mt-4 w-8 h-8 shrink-0 rounded-full bg-[#ff6b35] flex items-center justify-center text-[11px] font-mono font-bold text-white">
-        {badge}
-      </div>
+    <div className="mt-auto pt-5 flex items-center gap-3 border-t border-black/10">
+      {item.photo ? (
+        // eslint-disable-next-line @next/next/no-img-element -- photos servies
+        // depuis /public a taille fixe : next/image n'apporte rien ici et
+        // impose une config de domaines pour un avatar de 44px.
+        <img
+          src={item.photo}
+          alt=""
+          className="mt-4 w-11 h-11 shrink-0 rounded-full object-cover border border-black/10"
+        />
+      ) : (
+        <div className="mt-4 w-11 h-11 shrink-0 rounded-full bg-[#ff6b35] flex items-center justify-center text-[13px] font-mono font-bold text-white">
+          {badge}
+        </div>
+      )}
       <div className="mt-4 min-w-0">
-        <p className="text-[13px] font-semibold leading-tight">{line}</p>
-        <p className="text-[10px] font-mono uppercase tracking-wider opacity-40 leading-tight mt-0.5">
+        <p className="text-[16px] md:text-[17px] font-semibold leading-tight">{line}</p>
+        <p className="text-[12px] font-mono uppercase tracking-wider opacity-55 leading-tight mt-1">
           {sub}
         </p>
       </div>
