@@ -136,6 +136,10 @@ function readMemoryFile(name) {
 }
 
 function buildStableContext() {
+  // soul.md : identite et voix de l'agent, separees de la mecanique (patron
+  // Hermes adopte le 13/08/2026, brique 1.5). Injecte en PREMIER, avant la
+  // mission. Ne contient jamais d'operationnel.
+  const soul = safeRead(path.join(AGENT_DIR, 'doctrine', 'soul.md'));
   const mission =
     safeRead(path.join(AGENT_DIR, 'doctrine', 'mission.md')) ||
     safeRead(path.join(AGENT_DIR, 'mission.md'));
@@ -148,16 +152,25 @@ function buildStableContext() {
   const memory = readMemoryFile('memory.md');
   // Catalogue d outils : fichier separe de mission.md car il vit a un autre
   // rythme (il bouge quand un outil apparait, pas quand on revoit le funnel) et
-  // parce qu Aston doit lire le meme referentiel. Charge en entier : Nate n a
-  // pas de quoi aller le chercher tout seul au bon moment, et depuis le fix du
-  // cache (28/07) le cout marginal d un bloc stable est negligeable.
-  const outils = safeRead(path.join(AGENT_DIR, 'outils.md'));
+  // parce qu Aston doit lire le meme referentiel.
+  //
+  // N EST PLUS CHARGE EN ENTIER (14/08/2026). Le commentaire precedent disait
+  // "Nate n a pas de quoi aller le chercher tout seul" : c est devenu faux.
+  // Ce canal a `Read` dans ses ALLOWED_TOOLS, et sa mission lui dit
+  // explicitement d aller lire outils.md des qu un outil precis est evoque.
+  // Il etait donc injecte 29 Ko a CHAQUE message pour un fichier que l agent
+  // sait ouvrir a la demande - le canal Telegram, lui, ne l a jamais charge.
+  // Ne remets pas ce chargement : ajoute plutot la consigne de lecture si elle
+  // manque (disclosure progressive, brique 8.4).
 
   return [
     "Tu es Nate, l'agent createur d'agents.",
     "Ce canal est le chat web integre au site vitrine nathan-knaebel.com (PAS Telegram) : le visiteur te parle directement depuis une fenetre de discussion sur la page, pas via l'app Telegram.",
     NEUTRAL_IDENTITY_RULE,
     "Quand tu produis le document final, ecris-le avec l'outil Write dans le dossier data/plans/ (nom de fichier : plan-<slug-court>.md). Ne colle JAMAIS le contenu complet du plan dans ta reponse : le visiteur est un prospect, pas un client ayant paye. Annonce simplement que tu as tout ce qu'il faut, comme decrit dans ta mission.",
+    "",
+    "--- QUI TU ES (soul.md : ta voix, ta posture) ---",
+    soul,
     "",
     "--- TA MISSION ---",
     mission,
@@ -171,8 +184,9 @@ function buildStableContext() {
     "--- TA MEMOIRE (tours precedents) ---",
     memory,
     "",
-    "--- LES OUTILS QUE TU PEUX MOBILISER ---",
-    outils,
+    "--- LE CATALOGUE D'OUTILS ---",
+    "Il vit dans outils.md (meme dossier que ta mission). Des qu'un outil, un service ou",
+    "un connecteur precis est evoque, ouvre-le avec Read avant de repondre sur ce sujet.",
   ].join("\n");
 }
 
