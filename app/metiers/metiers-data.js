@@ -214,6 +214,36 @@ export const METIERS = [
       "Envoie mes factures sur mon outil de compta.",
     ],
   },
+  // Deux profils hors metier, en fin de liste : ils elargissent la cible
+  // au-dela des pros sans se melanger aux metiers.
+  {
+    slug: "chercheur-emploi",
+    emoji: "\u{1F3AF}",
+    badge: "Chercheur d'emploi",
+    title: "Chercheur d'emploi",
+    demandes: [
+      "Surveille les offres qui correspondent à mon profil et envoie-les-moi chaque matin.",
+      "Adapte mon CV et ma lettre de motivation à cette offre.",
+      "Relance les recruteurs sans réponse depuis plus d'une semaine.",
+      "Tiens à jour le tableau de mes candidatures : envoyées, relancées, entretiens.",
+      "Prépare-moi à cet entretien : questions probables et infos clés sur l'entreprise.",
+      "Fais un point sur mes mails et dis-moi si un recruteur a répondu.",
+    ],
+  },
+  {
+    slug: "vie-personnelle",
+    emoji: "\u{1F9D8}",
+    badge: "Vie personnelle",
+    title: "Vie personnelle",
+    demandes: [
+      "Fais le tri dans mes mails perso et désabonne-moi des newsletters que je n'ouvre jamais.",
+      "Prends-moi un rendez-vous chez le médecin et ajoute-le à mon agenda.",
+      "Surveille mes abonnements et préviens-moi avant chaque renouvellement.",
+      "Compare les offres pour mon assurance et mon forfait, dis-moi si je peux payer moins cher.",
+      "Prépare l'itinéraire et le budget de mon prochain week-end, avec 3 options.",
+      "Rappelle-moi les anniversaires à venir et prépare un petit message pour chacun.",
+    ],
+  },
 ];
 
 export function getMetier(slug) {
