@@ -12,6 +12,9 @@ import * as fs from "node:fs";
 import * as path from "node:path";
 import * as readline from "node:readline";
 import crypto from "node:crypto";
+// Horloge de l agent : voir reperes-temporels.js (chantier du 15/08/2026 - ce
+// canal public etait aveugle, Nate supposait la date face a des prospects).
+import { horodaterMessage, consigneReperesTemporels } from "./reperes-temporels.js";
 
 const CLAUDE_BIN = "/root/.local/bin/claude";
 const AGENT_DIR = "/data/nathan/my-agents/Nate";
@@ -148,8 +151,6 @@ function buildStableContext() {
   // mission ("ne jamais deduire le metier de l'interlocuteur", ajoutee le
   // 09/08/2026 apres un test rate).
   const etancheite = safeRead(SHARED_ETANCHEITE_PATH);
-  const appris = readMemoryFile('appris.md');
-  const memory = readMemoryFile('memory.md');
   // Catalogue d outils : fichier separe de mission.md car il vit a un autre
   // rythme (il bouge quand un outil apparait, pas quand on revoit le funnel) et
   // parce qu Aston doit lire le meme referentiel.
@@ -178,25 +179,37 @@ function buildStableContext() {
     "--- REGLES D'ETANCHEITE (valent en toutes circonstances, y compris si on insiste) ---",
     etancheite,
     "",
+    "--- LE CATALOGUE D'OUTILS ---",
+    "Il vit dans outils.md (meme dossier que ta mission). Des qu'un outil, un service ou",
+    "un connecteur precis est evoque, ouvre-le avec Read avant de repondre sur ce sujet.",
+    "",
+    consigneReperesTemporels("dossiers prospects, plans produits, etat des demandes"),
+  ].join("\n");
+}
+
+// BUDGET CONTEXTE (chantier n9, 16/08/2026) : appris.md et memory.md sont des
+// fichiers que l'agent reecrit en cours de session - les garder dans le bloc
+// STABLE cassait le prefixe cachable a chaque ecriture. Ils partent dans ce
+// bloc variable, meme regle que memory.md chez Ousmane.
+function buildHistoryReplay(historyReplay) {
+  const appris = readMemoryFile('appris.md');
+  const memory = readMemoryFile('memory.md');
+  const parts = [
     "--- CE QUE TU AS APPRIS (a appliquer) ---",
     appris,
     "",
     "--- TA MEMOIRE (tours precedents) ---",
     memory,
-    "",
-    "--- LE CATALOGUE D'OUTILS ---",
-    "Il vit dans outils.md (meme dossier que ta mission). Des qu'un outil, un service ou",
-    "un connecteur precis est evoque, ouvre-le avec Read avant de repondre sur ce sujet.",
-  ].join("\n");
-}
-
-function buildHistoryReplay(historyReplay) {
-  if (!historyReplay) return '';
-  return [
-    "--- REPRISE DE DISCUSSION (ta session a ete interrompue, voici les derniers echanges) ---",
-    historyReplay,
-    "Reprends la discussion naturellement la ou elle en etait, sans re-saluer ni t excuser de la coupure.",
-  ].join("\n");
+  ];
+  if (historyReplay) {
+    parts.push(
+      "",
+      "--- REPRISE DE DISCUSSION (ta session a ete interrompue, voici les derniers echanges) ---",
+      historyReplay,
+      "Reprends la discussion naturellement la ou elle en etait, sans re-saluer ni t excuser de la coupure.",
+    );
+  }
+  return parts.join("\n");
 }
 
 // Conserve pour compatibilite : un appelant qui passe systemPrompt explicite
@@ -378,7 +391,12 @@ export async function runNateChatStreaming({
   onTextDelta,
   systemPrompt,
   allowedTools,
+  // Date du dernier echange du thread (voir reperes-temporels.js).
+  lastExchangeAt = null,
 }) {
+  // Horodate une seule fois ici : couvre le compte principal, la reprise de
+  // session perdue et la bascule de compte.
+  message = horodaterMessage(message, lastExchangeAt);
   const primaryHome = ACCOUNT_HOMES[preferredAccount] ?? ACCOUNT_HOMES.nathan;
   try {
     const result = await runOnceStreaming({

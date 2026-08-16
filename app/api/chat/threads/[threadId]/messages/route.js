@@ -495,6 +495,7 @@ async function handleFunnelTurn({ threadId, trimmed, thread, send, ip }) {
     historyReplay,
     preferredAccount: thread.account,
     fallbackHistoryReplay: getRecentHistory(threadId),
+    lastExchangeAt: thread.lastMessageAt ?? null,
     onTextDelta: (text) => send("delta", { text }),
   });
 
