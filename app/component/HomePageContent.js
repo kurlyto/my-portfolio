@@ -9,6 +9,7 @@ import TestimonialCarousel from "./TestimonialCarousel";
 import ToolStrip from "./ToolStrip";
 import ChatPanel from "./ChatPanel";
 import AgentMarquee from "./AgentMarquee";
+import MetierBadges from "./MetierBadges";
 import HowItWorks from "./HowItWorks";
 import Footer from "./Footer";
 
@@ -283,6 +284,10 @@ export default function HomePageContent() {
         <ResetConfirm onKeep={keepAndSendVoice} onRestart={restartWithVoice} />
       )}
 
+      {/* Entre le hero et la vitrine d'agents : le visiteur se reconnait
+          d'abord dans son metier (badge -> flyer partageable), puis decouvre
+          qui fait le travail. */}
+      <MetierBadges />
       <AgentMarquee />
       <HowItWorks />
       {/* La FAQ remplace la section "Explorer" (WorkGateway) : en fin de page,

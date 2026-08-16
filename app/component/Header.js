@@ -12,11 +12,13 @@ const CONTACTS = [
   { label: "GitHub", href: "https://github.com/kurlyto", Icon: GitHubIcon },
 ];
 
-// Nav a plat : trois liens directs, pas de dropdown. La FAQ est une section de
-// la home, d'ou l'ancre plutot qu'une page.
+// Nav a plat : trois liens directs, pas de dropdown. Metiers et FAQ sont des
+// sections de la home, d'ou les ancres plutot que des pages. "Projets" est
+// sorti de la nav (la page /projects existe toujours) : les flyers metiers
+// parlent mieux aux visiteurs que le portfolio technique.
 const NAV_LINKS = [
+  { href: "/#metiers", label: "Métiers" },
   { href: "/agents", label: "Agents" },
-  { href: "/projects", label: "Projets" },
   { href: "/#faq", label: "FAQ" },
 ];
 

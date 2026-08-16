@@ -61,9 +61,9 @@ function FaqItem({ item, isOpen, onToggle, index }) {
 
 export default function Faq() {
   // Une seule reponse ouverte a la fois : la liste reste lisible et on evite
-  // que la page ne s'allonge d'un coup. La premiere est ouverte au chargement
-  // pour montrer que ca se deplie.
-  const [openIndex, setOpenIndex] = useState(0);
+  // que la page ne s'allonge d'un coup. Toutes fermees au chargement (demande
+  // Nathan 16/08) : la premiere ouverte d'office alourdissait la section.
+  const [openIndex, setOpenIndex] = useState(-1);
 
   return (
     <section id="faq" className="bg-white text-black border-t border-black/10 scroll-mt-20">
