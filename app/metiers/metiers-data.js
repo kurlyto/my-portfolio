@@ -12,6 +12,8 @@
 export const METIERS = [
   {
     slug: "restaurateur",
+    nateMessage:
+      "Je suis restaurateur et j'ai consulté les possibilités pour un agent pour mon métier, je suis intéressé.",
     emoji: "\u{1F37D}\u{FE0F}",
     badge: "Restaurateur",
     title: "Restaurateur / Food truck",
@@ -25,6 +27,8 @@ export const METIERS = [
   },
   {
     slug: "musicien",
+    nateMessage:
+      "Je suis musicien et j'ai consulté les possibilités pour un agent pour mon métier, je suis intéressé.",
     emoji: "\u{1F3B5}",
     badge: "Musicien",
     title: "Musicien / Prof de musique",
@@ -38,6 +42,8 @@ export const METIERS = [
   },
   {
     slug: "agent-immobilier",
+    nateMessage:
+      "Je suis agent immobilier et j'ai consulté les possibilités pour un agent pour mon métier, je suis intéressé.",
     emoji: "\u{1F3E0}",
     badge: "Agent immobilier",
     title: "Agent immobilier",
@@ -51,6 +57,8 @@ export const METIERS = [
   },
   {
     slug: "notaire",
+    nateMessage:
+      "Je suis notaire et j'ai consulté les possibilités pour un agent pour mon métier, je suis intéressé.",
     emoji: "\u{2696}\u{FE0F}",
     badge: "Notaire",
     title: "Notaire",
@@ -64,6 +72,8 @@ export const METIERS = [
   },
   {
     slug: "epicerie",
+    nateMessage:
+      "Je tiens une épicerie et j'ai consulté les possibilités pour un agent pour mon métier, je suis intéressé.",
     emoji: "\u{1F6D2}",
     badge: "Épicerie",
     title: "Commerce de proximité / Épicerie",
@@ -77,6 +87,8 @@ export const METIERS = [
   },
   {
     slug: "electricien",
+    nateMessage:
+      "Je suis électricien et j'ai consulté les possibilités pour un agent pour mon métier, je suis intéressé.",
     emoji: "\u{26A1}",
     badge: "Électricien",
     title: "Électricien",
@@ -90,6 +102,8 @@ export const METIERS = [
   },
   {
     slug: "plombier",
+    nateMessage:
+      "Je suis plombier et j'ai consulté les possibilités pour un agent pour mon métier, je suis intéressé.",
     emoji: "\u{1F527}",
     badge: "Plombier",
     title: "Plombier",
@@ -103,6 +117,8 @@ export const METIERS = [
   },
   {
     slug: "coiffeur",
+    nateMessage:
+      "Je suis coiffeur et j'ai consulté les possibilités pour un agent pour mon métier, je suis intéressé.",
     emoji: "\u{1F487}",
     badge: "Coiffeur",
     title: "Coiffeur / Institut de beauté",
@@ -116,6 +132,8 @@ export const METIERS = [
   },
   {
     slug: "avocat",
+    nateMessage:
+      "Je suis avocat et j'ai consulté les possibilités pour un agent pour mon métier, je suis intéressé.",
     emoji: "\u{1F468}\u{200D}\u{2696}\u{FE0F}",
     badge: "Avocat",
     title: "Avocat",
@@ -129,6 +147,8 @@ export const METIERS = [
   },
   {
     slug: "expert-comptable",
+    nateMessage:
+      "Je suis expert-comptable et j'ai consulté les possibilités pour un agent pour mon métier, je suis intéressé.",
     emoji: "\u{1F4CA}",
     badge: "Expert-comptable",
     title: "Expert-comptable",
@@ -142,6 +162,8 @@ export const METIERS = [
   },
   {
     slug: "kine",
+    nateMessage:
+      "Je suis kiné et j'ai consulté les possibilités pour un agent pour mon métier, je suis intéressé.",
     emoji: "\u{1F9D1}\u{200D}\u{2695}\u{FE0F}",
     badge: "Kiné / Ostéo",
     title: "Kinésithérapeute / Ostéopathe",
@@ -155,6 +177,8 @@ export const METIERS = [
   },
   {
     slug: "architecte-interieur",
+    nateMessage:
+      "Je suis architecte d'intérieur et j'ai consulté les possibilités pour un agent pour mon métier, je suis intéressé.",
     emoji: "\u{1F3A8}",
     badge: "Architecte d'intérieur",
     title: "Architecte d'intérieur",
@@ -168,6 +192,8 @@ export const METIERS = [
   },
   {
     slug: "consultant",
+    nateMessage:
+      "Je suis consultant et j'ai consulté les possibilités pour un agent pour mon métier, je suis intéressé.",
     emoji: "\u{1F4BC}",
     badge: "Consultant",
     title: "Consultant / Coach indépendant",
@@ -181,6 +207,8 @@ export const METIERS = [
   },
   {
     slug: "photographe",
+    nateMessage:
+      "Je suis photographe et j'ai consulté les possibilités pour un agent pour mon métier, je suis intéressé.",
     emoji: "\u{1F4F7}",
     badge: "Photographe",
     title: "Photographe",
@@ -194,6 +222,8 @@ export const METIERS = [
   },
   {
     slug: "garagiste",
+    nateMessage:
+      "Je suis garagiste et j'ai consulté les possibilités pour un agent pour mon métier, je suis intéressé.",
     emoji: "\u{1F697}",
     badge: "Garagiste",
     title: "Garagiste / Mécanicien auto",
@@ -209,6 +239,8 @@ export const METIERS = [
   // au-dela des pros sans se melanger aux metiers.
   {
     slug: "chercheur-emploi",
+    nateMessage:
+      "Je suis en recherche d'emploi et j'ai consulté les possibilités d'un agent pour m'aider, je suis intéressé.",
     emoji: "\u{1F3AF}",
     badge: "Chercheur d'emploi",
     title: "Chercheur d'emploi",
@@ -222,6 +254,8 @@ export const METIERS = [
   },
   {
     slug: "vie-personnelle",
+    nateMessage:
+      "J'ai consulté les possibilités d'un agent pour ma vie personnelle, je suis intéressé.",
     emoji: "\u{1F9D8}",
     badge: "Vie personnelle",
     title: "Vie personnelle",

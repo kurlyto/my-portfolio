@@ -183,6 +183,18 @@ function buildStableContext() {
     "Il vit dans outils.md (meme dossier que ta mission). Des qu'un outil, un service ou",
     "un connecteur precis est evoque, ouvre-le avec Read avant de repondre sur ce sujet.",
     "",
+    // Meme patron que outils.md : fiche lue a la demande, jamais injectee en
+    // entier (disclosure progressive, brique 8.4). Le declencheur est net -
+    // un message qui ressemble au texte pre-redige du bouton "En parler a
+    // Nate" signifie que le visiteur arrive d'un flyer metier.
+    "--- LES FLYERS METIERS DU SITE ---",
+    "La page d'accueil montre des flyers par metier (5 demandes concretes chacun) et le",
+    "bouton \"En parler a Nate\" de ces flyers ouvre ce chat avec un message pre-redige",
+    "(\"Je suis <metier> et j'ai consulte les possibilites pour un agent pour mon metier,",
+    "je suis interesse.\"). Des qu'un visiteur ecrit ce genre de phrase, ou des qu'un",
+    "metier precis est evoque, ouvre doctrine/flyers-metiers.md avec Read : tu y verras",
+    "exactement les exemples qu'il a sous les yeux, et comment rebondir dessus.",
+    "",
     consigneReperesTemporels("dossiers prospects, plans produits, etat des demandes"),
   ].join("\n");
 }
@@ -439,7 +451,12 @@ export async function runNateChatStreaming({
       sessionId: freshSessionId,
       message,
       isFirstTurn: true,
-      historyReplay: isFirstTurn ? historyReplay : fallbackHistoryReplay,
+      // Comptes de REPLI : le meilleur replay disponible, jamais un choix
+      // binaire sur isFirstTurn (reecrit par le renouvellement de session,
+      // et vide sur un vrai premier tour) - sans ca, une bascule apres
+      // renouvellement repartait SANS historique (amnesie vecue le
+      // 17/08/2026 sur Ousmane).
+      historyReplay: historyReplay ?? fallbackHistoryReplay,
       home: fallbackHome,
       onTextDelta,
       systemPrompt,

@@ -1,14 +1,13 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import Reveal from "./Reveal";
 import MetierFlyer from "./MetierFlyer";
 import FlyerShareButton from "./FlyerShareButton";
 import { METIERS } from "../metiers/metiers-data";
 
-function FlyerModal({ metier, onClose }) {
+function FlyerModal({ metier, onClose, onTalkToNate }) {
   // Echap ferme la modale, comme le clic sur le fond.
   useEffect(() => {
     function onKey(e) {
@@ -64,13 +63,19 @@ function FlyerModal({ metier, onClose }) {
 
           <div className="mt-4 flex flex-col items-center justify-center gap-2.5 sm:flex-row sm:gap-3">
             <FlyerShareButton metier={metier} />
-            <Link
-              href={`/metiers/${metier.slug}`}
+            {/* Ouvre le chat Nate avec un message pre-redige au nom du metier :
+                le visiteur n'a rien a ecrire, la conversation demarre qualifiee. */}
+            <button
+              type="button"
               data-cursor-hover
+              onClick={() => {
+                onClose();
+                onTalkToNate?.(metier.nateMessage);
+              }}
               className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/60 px-6 py-2.5 text-[12px] sm:text-[13px] font-mono font-bold uppercase tracking-wide text-white transition-colors duration-150 ease-out hover:border-white hover:bg-white hover:text-black"
             >
-              Ouvrir la page
-            </Link>
+              En parler à Nate
+            </button>
           </div>
         </motion.div>
       </div>
@@ -79,15 +84,14 @@ function FlyerModal({ metier, onClose }) {
 }
 
 // Section "Metiers" de la home : un badge par metier, le clic ouvre le flyer
-// en modale. Chaque flyer a aussi sa page partageable (/metiers/[slug]),
-// accessible depuis la modale.
-export default function MetierBadges() {
+// en modale. Chaque flyer a aussi sa page partageable (/metiers/[slug]) via le
+// bouton de partage. `onTalkToNate(message)` remonte au parent (la home), qui
+// ouvre le chat Nate avec le message pre-redige.
+export default function MetierBadges({ onTalkToNate }) {
   const [active, setActive] = useState(null);
 
-  // scroll-mt-20 : cible de l'ancre /#metiers (header + CTA du hero), le
-  // titre doit arriver sous le header sticky, pas coupe derriere.
   return (
-    <section id="metiers" className="bg-white text-black border-t border-black/10 scroll-mt-20">
+    <section id="metiers" className="bg-white text-black border-t border-black/10">
       {/* min-h-[100svh] : la section occupe un ecran entier, desktop comme
           mobile (svh = hauteur reellement visible, barre d'adresse deduite).
           justify-center la centre verticalement ; si le contenu depasse sur un
@@ -121,7 +125,13 @@ export default function MetierBadges() {
       </Reveal>
 
       <AnimatePresence>
-        {active && <FlyerModal metier={active} onClose={() => setActive(null)} />}
+        {active && (
+          <FlyerModal
+            metier={active}
+            onClose={() => setActive(null)}
+            onTalkToNate={onTalkToNate}
+          />
+        )}
       </AnimatePresence>
     </section>
   );
