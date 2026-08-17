@@ -92,11 +92,6 @@ function AgentDetail({ agent }) {
         <div className="mt-5 border-l-2 border-black/10 pl-4">
           <p className="text-sm italic opacity-70 leading-relaxed">{agent.useCase}</p>
         </div>
-
-        <div className="mt-6 pt-4 border-t border-black/10 flex flex-col gap-1 text-xs font-mono opacity-50">
-          <span>format : {agent.format.toLowerCase()}</span>
-          <span>canal : {agent.channel.toLowerCase()}</span>
-        </div>
       </div>
     </motion.div>
   );

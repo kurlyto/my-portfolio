@@ -68,10 +68,11 @@ function AgentCard({ agent }) {
   );
 }
 
-// Agents ecartes de la vitrine : internes (jo, didier), trop abstrait pour un
-// visiteur (marcel/surveillance), ou deja incarne ailleurs sur la page (nate
-// est le cadreur de besoin, present dans le chat).
-const HIDDEN_FROM_SHOWCASE = new Set(["jo", "didier", "marcel", "nate"]);
+// Agents ecartes de la vitrine : trop abstrait pour un visiteur
+// (marcel/surveillance), ou deja incarne ailleurs sur la page (nate est le
+// cadreur de besoin, present dans le chat). Jo et Didier, eux, sont sortis du
+// catalogue agents-data.js (17/08), plus besoin de les filtrer ici.
+const HIDDEN_FROM_SHOWCASE = new Set(["marcel", "nate"]);
 
 // Agents absents de agents-data.js (catalogue /agents) mais montres en
 // vitrine : ils illustrent une demande frequente.

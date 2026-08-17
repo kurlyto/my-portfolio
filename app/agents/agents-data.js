@@ -154,20 +154,6 @@ export const AGENTS = [
     channel: "Telegram",
   },
   {
-    slug: "didier",
-    name: "Didier",
-    title: "Supervision",
-    shortDescription:
-      "Didier supervise toute l'équipe d'agents : il agrège leurs rapports, repère si l'un d'eux a rencontré un problème, et devient votre point d'entrée unique pour savoir où en sont toutes les tâches automatisées.",
-    longDescription:
-      "Didier supervise toute l'équipe d'agents : il agrège leurs rapports, repère si l'un d'eux a rencontré un problème, et devient votre point d'entrée unique pour savoir où en sont toutes les tâches automatisées.",
-    useCase:
-      "Chaque matin, il fait le point sur ce qui a tourné dans la nuit et signale immédiatement ce qui a échoué, sans attendre qu'on le lui demande.",
-    tools: ["Gmail"],
-    format: "Rapport de supervision",
-    channel: "Gmail",
-  },
-  {
     slug: "simone",
     name: "Simone",
     title: "Débogage",
@@ -179,20 +165,6 @@ export const AGENTS = [
       "Un client signale un bug ? Simone a déjà identifié la ligne de code fautive et propose une correction avant même qu'un développeur ne s'en occupe.",
     tools: ["Logs serveur", "Code source", "Gmail"],
     format: "Rapport de diagnostic",
-    channel: "Gmail",
-  },
-  {
-    slug: "jo",
-    name: "Jo",
-    title: "Relecture",
-    shortDescription:
-      "Jo relit chaque document avant son envoi : structure, champs obligatoires, cohérence des montants. Une relecture qui ne dort jamais et ne laisse rien passer.",
-    longDescription:
-      "Jo relit chaque document avant son envoi : structure, champs obligatoires, cohérence des montants. Une relecture qui ne dort jamais et ne laisse rien passer.",
-    useCase:
-      "Un document mal rempli qui aurait pu partir à un client ? Jo l'intercepte avant l'envoi et prévient de l'erreur à corriger.",
-    tools: ["Documents PDF", "Gmail"],
-    format: "Alerte + document annoté",
     channel: "Gmail",
   },
 ];
