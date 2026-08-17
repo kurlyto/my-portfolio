@@ -39,7 +39,7 @@ function FlyerModal({ metier, onClose }) {
       aria-modal="true"
       aria-label={`Flyer ${metier.title}`}
     >
-      <div className="flex min-h-full items-center justify-center px-4 py-8 sm:py-12">
+      <div className="flex min-h-full items-center justify-center px-4 py-4 sm:py-6">
         <motion.div
           initial={{ opacity: 0, y: 24, scale: 0.98 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -48,7 +48,7 @@ function FlyerModal({ metier, onClose }) {
           className="w-full max-w-lg"
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="mb-2 flex justify-end">
+          <div className="mb-1.5 flex justify-end">
             <button
               type="button"
               onClick={onClose}
@@ -85,8 +85,12 @@ export default function MetierBadges() {
   const [active, setActive] = useState(null);
 
   return (
-    <section id="metiers" className="bg-white text-black border-t border-black/10 scroll-mt-20">
-      <Reveal className="max-w-5xl mx-auto px-6 py-16 md:py-24 text-center">
+    <section id="metiers" className="bg-white text-black border-t border-black/10">
+      {/* min-h-[100svh] : la section occupe un ecran entier, desktop comme
+          mobile (svh = hauteur reellement visible, barre d'adresse deduite).
+          justify-center la centre verticalement ; si le contenu depasse sur un
+          tres petit ecran, min-h laisse la section grandir. */}
+      <Reveal className="min-h-[100svh] max-w-5xl mx-auto px-6 py-12 flex flex-col justify-center text-center">
         <span className="text-xs font-mono uppercase tracking-widest text-[#ff6b35]">
           Métiers
         </span>
@@ -94,7 +98,7 @@ export default function MetierBadges() {
           Et pour votre métier, ça donne quoi ?
         </h2>
         <p className="mt-4 text-[15px] md:text-base opacity-70 max-w-2xl mx-auto leading-relaxed">
-          Choisissez votre métier : 6 demandes concrètes, à confier à votre agent
+          Choisissez votre métier : 5 demandes concrètes, à confier à votre agent
           dès demain.
         </p>
 
