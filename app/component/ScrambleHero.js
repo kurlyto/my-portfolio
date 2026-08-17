@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import ToolStrip from "./ToolStrip";
-import VoiceRecorder from "./VoiceRecorder";
 
 const TITLE = "Un coup de baguette magique\npour votre business.";
 const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -17,16 +16,15 @@ const PULSE_SHADOWS = [
   "0 0 0 0 rgba(255,107,53,0)",
 ];
 
-function MicGlyph(props) {
+function ChatGlyph(props) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
-      <path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3" />
-      <path d="M19 11a1 1 0 0 0-2 0 5 5 0 0 1-10 0 1 1 0 0 0-2 0 7 7 0 0 0 6 6.92V20H8a1 1 0 0 0 0 2h8a1 1 0 0 0 0-2h-3v-2.08A7 7 0 0 0 19 11" />
+      <path d="M12 3C6.9 3 3 6.5 3 11c0 2.2 1 4.2 2.6 5.6-.2 1-.7 2.1-1.5 3 -.2.2 0 .6.3.6 1.9-.1 3.5-.8 4.6-1.5 .9.2 1.9.4 3 .4 5.1 0 9-3.5 9-8s-3.9-8-9-8z" />
     </svg>
   );
 }
 
-export default function ScrambleHero({ onOpenChat, onVoiceResult }) {
+export default function ScrambleHero({ onOpenChat }) {
   const [displayText, setDisplayText] = useState(TITLE);
 
   useEffect(() => {
@@ -84,49 +82,45 @@ export default function ScrambleHero({ onOpenChat, onVoiceResult }) {
         gère votre business comme un employé.
       </motion.p>
 
-      {/* CTA unique : le micro EST l'action principale. L'ancien couple
-          "je clarifie mon besoin" + "j'explique mon besoin" proposait deux
-          portes vers la meme conversation, ce qui faisait hesiter au lieu de
-          faire cliquer. L'ecrit devient un repli discret. */}
+      {/* Deux CTA, deux intentions distinctes. L'ancien couple vocal + ecrit
+          ouvrait la MEME conversation par deux portes, ce qui faisait hesiter
+          au lieu de faire cliquer. Desormais : expliquer son besoin (le chat,
+          ou l'on peut ecrire comme dicter via le micro de la barre) ou se
+          reconnaitre d'abord dans son metier (ancre vers la section metiers). */}
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.1, duration: 0.5, ease: "easeOut" }}
         className="mt-6 sm:mt-8"
       >
-        {/* La phrase d'exemple et le repli "je prefere ecrire" vivent
-            desormais dans la pop-up d'enregistrement : c'est en parlant qu'on
-            cherche quoi dire, et c'est la aussi qu'on se ravise. Le hero garde
-            une seule action, ce qui le raccourcit d'autant sur mobile. */}
-        {/* Deux portes vers la meme conversation, mais chacune assumee : le
-            vocal pour qui prefere parler, l'ecrit pour qui prefere taper.
-            Empilees en mobile (deux boutons sur une ligne y donneraient des
+        {/* Empiles en mobile (deux boutons sur une ligne y donneraient des
             cibles trop etroites), cote a cote des lg ou la largeur le permet. */}
         <div className="flex flex-col items-start gap-3 lg:flex-row lg:items-center lg:gap-4">
-          <VoiceRecorder
-            onResult={onVoiceResult}
-            onPreferWriting={onOpenChat}
-            motionProps={{
-              animate: { boxShadow: PULSE_SHADOWS },
-              transition: { duration: 2.4, repeat: Infinity, ease: "easeInOut" },
-            }}
-            className="inline-flex items-center gap-2.5 rounded-full bg-[#ff6b35] text-white px-6 sm:px-7 py-3.5 sm:py-4 text-[13px] md:text-sm font-mono font-bold uppercase tracking-wide transition-colors duration-150 ease-out hover:bg-[#e2531f]"
-          >
-            <MicGlyph className="w-4 h-4 shrink-0" />
-            J&apos;explique mon besoin
-          </VoiceRecorder>
-
-          {/* Contour plutot que plein : deux aplats orange l'un sous l'autre se
-              disputeraient l'oeil, alors que le vocal reste l'action mise en
-              avant. */}
-          <button
+          <motion.button
             type="button"
             onClick={onOpenChat}
             data-cursor-hover
+            animate={{ boxShadow: PULSE_SHADOWS }}
+            transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+            className="inline-flex items-center gap-2.5 rounded-full bg-[#ff6b35] text-white px-6 sm:px-7 py-3.5 sm:py-4 text-[13px] md:text-sm font-mono font-bold uppercase tracking-wide transition-colors duration-150 ease-out hover:bg-[#e2531f]"
+          >
+            <ChatGlyph className="w-4 h-4 shrink-0" />
+            J&apos;explique mon besoin
+          </motion.button>
+
+          {/* Contour plutot que plein : deux aplats orange l'un a cote de
+              l'autre se disputeraient l'oeil, alors qu'expliquer son besoin
+              reste l'action mise en avant. Une ancre et non un bouton : elle
+              descend a la section metiers (scroll-behavior: smooth global).
+              Fragment nu et non /#metiers : le hero ne vit que sur la home,
+              et un href commencant par / declenche no-html-link-for-pages. */}
+          <a
+            href="#metiers"
+            data-cursor-hover
             className="inline-flex items-center gap-2 rounded-full border-2 border-[#ff6b35] text-[#ff6b35] px-6 sm:px-7 py-3 sm:py-3.5 text-[13px] md:text-sm font-mono font-bold uppercase tracking-wide transition-colors duration-150 ease-out hover:bg-[#ff6b35] hover:text-white"
           >
-            Créer mon agent gratuitement
-          </button>
+            Quel agent pour mon métier ?
+          </a>
         </div>
 
         <p className="mt-4 text-[13px] sm:text-sm font-mono font-bold text-[#ff6b35]">

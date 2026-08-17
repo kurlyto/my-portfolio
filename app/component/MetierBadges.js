@@ -84,8 +84,10 @@ function FlyerModal({ metier, onClose }) {
 export default function MetierBadges() {
   const [active, setActive] = useState(null);
 
+  // scroll-mt-20 : cible de l'ancre /#metiers (header + CTA du hero), le
+  // titre doit arriver sous le header sticky, pas coupe derriere.
   return (
-    <section id="metiers" className="bg-white text-black border-t border-black/10">
+    <section id="metiers" className="bg-white text-black border-t border-black/10 scroll-mt-20">
       {/* min-h-[100svh] : la section occupe un ecran entier, desktop comme
           mobile (svh = hauteur reellement visible, barre d'adresse deduite).
           justify-center la centre verticalement ; si le contenu depasse sur un

@@ -41,41 +41,6 @@ function OfferBanner() {
   );
 }
 
-// Demande de confirmation avant d'ecraser un cadrage en cours. Le bouton vocal
-// demarre une NOUVELLE conversation : si un projet est deja en cours, l'envoyer
-// sans prevenir ferait perdre le fil au visiteur sans qu'il comprenne pourquoi.
-function ResetConfirm({ onKeep, onRestart }) {
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center px-6 bg-black/40">
-      <div className="w-full max-w-sm bg-white rounded p-6 text-center">
-        <p className="text-[15px] leading-relaxed">
-          Tu as déjà un projet en cours avec Nate. Tu veux repartir de zéro sur un nouveau
-          besoin, ou continuer celui-là ?
-        </p>
-        <div className="mt-5 flex flex-col gap-2">
-          <button
-            type="button"
-            onClick={onRestart}
-            className="w-full rounded px-4 py-2.5 text-[13px] font-mono font-bold uppercase tracking-wide text-white transition-all duration-150 hover:-translate-y-0.5"
-            style={{ background: "#ff6b35" }}
-          >
-            Repartir de zéro
-          </button>
-          <button
-            type="button"
-            onClick={onKeep}
-            className="w-full rounded border border-black/15 px-4 py-2.5 text-[13px] font-mono transition-colors hover:border-black/40"
-          >
-            Continuer mon projet
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-const THREAD_STORAGE_KEY = "nate-chat-thread-id";
-
 export default function HomePageContent() {
   const [chatOpen, setChatOpen] = useState(false);
 
@@ -129,48 +94,6 @@ export default function HomePageContent() {
     return () => chan.close();
   }, []);
 
-  const [voiceMessage, setVoiceMessage] = useState(null);
-  const [pendingVoice, setPendingVoice] = useState(null);
-
-  function openChatWithVoice(text) {
-    // Un projet est deja en cours : on demande avant d'ecraser.
-    let hasThread = false;
-    try {
-      hasThread = !!window.localStorage.getItem(THREAD_STORAGE_KEY);
-    } catch {
-      // localStorage indisponible : on considere qu'il n'y a rien a ecraser.
-    }
-
-    if (hasThread) {
-      setPendingVoice(text);
-      return;
-    }
-
-    setVoiceMessage(text);
-    setChatOpen(true);
-  }
-
-  // "Repartir de zero" : on purge le thread stocke, le chat en ouvrira un neuf
-  // au montage. L'identite (prenom + email) est conservee cote serveur via le
-  // visitorId, la personne n'a donc pas a se reverifier.
-  function restartWithVoice() {
-    try {
-      window.localStorage.removeItem(THREAD_STORAGE_KEY);
-    } catch {
-      // Rien a faire de plus.
-    }
-    setVoiceMessage(pendingVoice);
-    setPendingVoice(null);
-    setChatOpen(true);
-  }
-
-  // "Continuer mon projet" : on garde le fil et on envoie le vocal dedans.
-  function keepAndSendVoice() {
-    setVoiceMessage(pendingVoice);
-    setPendingVoice(null);
-    setChatOpen(true);
-  }
-
   return (
     <div className="bg-white text-black">
       {/* Voile leger quand le chat est ouvert en desktop : il assombrit la page
@@ -208,10 +131,7 @@ export default function HomePageContent() {
         // manquait pour que le hero tienne entier au chargement.
         className="max-w-7xl mx-auto px-6 pt-3 pb-8 lg:pb-10 lg:pt-6 w-full grid grid-cols-1 lg:grid-cols-[minmax(0,620px)_1fr] gap-12 lg:gap-14 items-stretch lg:min-h-0 content-start lg:content-stretch"
       >
-        <ScrambleHero
-          onOpenChat={() => setChatOpen(true)}
-          onVoiceResult={openChatWithVoice}
-        />
+        <ScrambleHero onOpenChat={() => setChatOpen(true)} />
         {/* Le carrousel reste en colonne droite sur desktop uniquement. Sur
             mobile il devient une section a part entiere (voir plus bas) pour
             que le hero tienne seul dans le premier ecran. */}
@@ -227,11 +147,7 @@ export default function HomePageContent() {
         >
           <AnimatePresence mode="wait">
             {chatOpen ? (
-              <ChatPanel
-                key="chat"
-                onClose={() => setChatOpen(false)}
-                initialMessage={voiceMessage}
-              />
+              <ChatPanel key="chat" onClose={() => setChatOpen(false)} />
             ) : (
               <div key="testimonials" className="min-w-0">
                 <TestimonialCarousel />
@@ -271,18 +187,10 @@ export default function HomePageContent() {
       <AnimatePresence>
         {chatOpen && (
           <div className="lg:hidden">
-            <ChatPanel
-              fullScreen
-              onClose={() => setChatOpen(false)}
-              initialMessage={voiceMessage}
-            />
+            <ChatPanel fullScreen onClose={() => setChatOpen(false)} />
           </div>
         )}
       </AnimatePresence>
-
-      {pendingVoice && (
-        <ResetConfirm onKeep={keepAndSendVoice} onRestart={restartWithVoice} />
-      )}
 
       {/* Entre le hero et la vitrine d'agents : le visiteur se reconnait
           d'abord dans son metier (badge -> flyer partageable), puis decouvre
