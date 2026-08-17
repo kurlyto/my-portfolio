@@ -24,12 +24,26 @@ function MicIcon(props) {
   );
 }
 
+function StopIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <rect x="6" y="6" width="12" height="12" rx="2" />
+    </svg>
+  );
+}
+
 /**
- * Bouton + overlay d'enregistrement. Une fois le vocal transcrit, `onResult`
- * recoit le texte : c'est l'appelant qui decide quoi en faire (ici, ouvrir le
- * chat et l'envoyer a Nate).
+ * Bouton + retour visuel d'enregistrement. Une fois le vocal transcrit,
+ * `onResult` recoit le texte : c'est l'appelant qui decide quoi en faire.
+ *
+ * Deux variantes :
+ *   - "overlay" (defaut) : modale plein ecran avec minuteur et onde. Adaptee
+ *     au CTA du hero, ou le vocal EST l'action principale.
+ *   - "inline" : tout se passe sur le bouton lui-meme (halo pulse, minuteur en
+ *     pastille au-dessus). Adaptee a la barre de chat, ou une modale au milieu
+ *     de l'ecran couperait la conversation en cours.
  */
-export default function VoiceRecorder({ onResult, className, children, motionProps, onPreferWriting }) {
+export default function VoiceRecorder({ onResult, className, children, motionProps, onPreferWriting, variant = "overlay" }) {
   const [state, setState] = useState("idle"); // idle | recording | sending | error
   const [seconds, setSeconds] = useState(0);
   const [error, setError] = useState(null);
@@ -139,6 +153,92 @@ export default function VoiceRecorder({ onResult, className, children, motionPro
   }
 
   const open = state === "recording" || state === "sending" || state === "error";
+  const inline = variant === "inline";
+
+  // En inline, une erreur n'a pas de modale a fermer : elle s'affiche en
+  // pastille au-dessus du bouton puis disparait toute seule.
+  useEffect(() => {
+    if (!inline || state !== "error") return undefined;
+    const id = setTimeout(() => setState("idle"), 5000);
+    return () => clearTimeout(id);
+  }, [inline, state]);
+
+  if (inline) {
+    const recording = state === "recording";
+    const sending = state === "sending";
+
+    return (
+      <div className="relative shrink-0">
+        {/* Pastille d'etat au-dessus du bouton : minuteur pendant
+            l'enregistrement, transcription, ou message d'erreur. */}
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: 4 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.15, ease: "easeOut" }}
+            aria-live="polite"
+            className="absolute bottom-full right-0 mb-2 z-10 flex items-center gap-2 rounded-full bg-white border border-black/10 shadow-lg px-3 py-1.5 text-[11px] font-mono whitespace-nowrap"
+          >
+            {recording && (
+              <>
+                <motion.span
+                  className="w-2 h-2 rounded-full bg-red-500"
+                  animate={{ opacity: [1, 0.25, 1] }}
+                  transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
+                />
+                <span className="tabular-nums font-bold">{formatTime(seconds)}</span>
+                <button
+                  type="button"
+                  onClick={cancel}
+                  data-cursor-hover
+                  className="opacity-50 hover:opacity-100 transition-opacity"
+                >
+                  Annuler
+                </button>
+              </>
+            )}
+            {sending && <span className="opacity-60">Transcription…</span>}
+            {state === "error" && <span className="text-red-600">{error}</span>}
+          </motion.div>
+        )}
+
+        {/* Halo qui pulse autour du bouton pendant l'enregistrement. */}
+        {recording && (
+          <motion.span
+            className="absolute inset-0 rounded-full bg-red-500"
+            animate={{ opacity: [0.5, 0, 0.5], scale: [1, 1.7, 1] }}
+            transition={{ duration: 1.4, repeat: Infinity, ease: "easeOut" }}
+          />
+        )}
+
+        <motion.button
+          type="button"
+          onClick={recording ? stop : state === "error" ? () => setState("idle") : start}
+          disabled={sending}
+          data-cursor-hover
+          aria-label={recording ? "Arreter l'enregistrement et transcrire" : "Enregistrer un message vocal"}
+          className={className}
+          // Le style gagne sur la classe bg-* passee par l'appelant : le bouton
+          // vire au rouge pendant l'enregistrement sans imposer sa couleur de
+          // repos.
+          style={recording ? { background: "#ef4444" } : undefined}
+          {...motionProps}
+        >
+          {recording ? (
+            <StopIcon className="w-4 h-4" />
+          ) : sending ? (
+            <motion.span
+              className="w-4 h-4 rounded-full border-2 border-white/40 border-t-white"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
+            />
+          ) : (
+            children
+          )}
+        </motion.button>
+      </div>
+    );
+  }
 
   return (
     <>

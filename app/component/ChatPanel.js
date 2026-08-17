@@ -605,6 +605,27 @@ function useNateChat() {
 function ChatBody({ threadId, messages, streamingText, error, sendMessage, awaitingVerification, restoring, restoredThread }) {
   const [input, setInput] = useState("");
   const scrollRef = useRef(null);
+  const inputRef = useRef(null);
+
+  // La zone de saisie grandit avec le texte (jusqu'a ~5 lignes) puis scrolle :
+  // un textarea a hauteur fixe cacherait les premieres lignes d'un message long.
+  function autoGrow() {
+    const el = inputRef.current;
+    if (!el) return;
+    el.style.height = "auto";
+    el.style.height = `${Math.min(el.scrollHeight, 120)}px`;
+  }
+
+  function submit() {
+    if (!input.trim()) return;
+    sendMessage(input);
+    setInput("");
+    // Repasse la zone a une ligne une fois le message parti.
+    requestAnimationFrame(() => {
+      const el = inputRef.current;
+      if (el) el.style.height = "auto";
+    });
+  }
 
   // scrollTop plutot que scrollIntoView : on defile le conteneur des messages
   // sans jamais toucher au scroll de la page, sinon chaque reponse tire le
@@ -667,25 +688,44 @@ function ChatBody({ threadId, messages, streamingText, error, sendMessage, await
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          sendMessage(input);
-          setInput("");
+          submit();
         }}
-        className="flex items-center gap-2 px-4 py-3 border-t border-black/10 shrink-0"
+        // items-end : quand le textarea grandit, les boutons restent ancres en
+        // bas de la barre au lieu de flotter au milieu.
+        className="flex items-end gap-2 px-4 py-3 border-t border-black/10 shrink-0"
       >
-        <input
-          type="text"
+        {/* textarea plutot qu'input : Entree envoie, Maj+Entree va a la ligne.
+            Un input mono-ligne interdisait tout saut de ligne dans le message. */}
+        <textarea
+          ref={inputRef}
+          rows={1}
           value={input}
-          onChange={(e) => setInput(e.target.value)}
+          onChange={(e) => {
+            setInput(e.target.value);
+            autoGrow();
+          }}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" && !e.shiftKey) {
+              e.preventDefault();
+              submit();
+            }
+          }}
           placeholder="Écris ton message…"
           disabled={!threadId || streamingText !== null}
-          className="flex-1 text-[15px] bg-transparent outline-none placeholder:text-black/30 disabled:opacity-40"
+          className="flex-1 text-[15px] leading-snug bg-transparent outline-none resize-none py-2 max-h-[120px] placeholder:text-black/30 disabled:opacity-40"
         />
         {/* Dictee vocale : le texte transcrit atterrit dans le champ plutot que
             d'etre envoye directement, pour que la personne puisse le relire et
             le corriger. La transcription se trompe parfois sur un nom propre ou
-            un chiffre, et un message parti trop vite ne se rattrape pas. */}
+            un chiffre, et un message parti trop vite ne se rattrape pas.
+            Variante inline : l'animation d'enregistrement se joue sur le bouton
+            lui-meme, sans modale au milieu de la conversation. */}
         <VoiceRecorder
-          onResult={(text) => setInput((current) => (current ? `${current} ${text}` : text))}
+          variant="inline"
+          onResult={(text) => {
+            setInput((current) => (current ? `${current} ${text}` : text));
+            requestAnimationFrame(autoGrow);
+          }}
           className="shrink-0 w-9 h-9 flex items-center justify-center rounded-full bg-[#ff6b35] text-white transition-all duration-150 ease-out hover:-translate-y-0.5"
         >
           <MicGlyph className="w-4 h-4" />
