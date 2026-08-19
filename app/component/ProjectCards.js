@@ -77,6 +77,7 @@ const PROJECTS = [
       "La photo est-elle générée par IA, ou est-elle réelle ? Saurez-vous faire la différence ?",
     years: "2023",
     cover: "from-sky-600 to-indigo-900",
+    coverImage: "/images/cover-aiornot.png",
     tech: [
       { icon: NextJsIcon, label: "Next.js" },
       { icon: ReactIcon, label: "React" },

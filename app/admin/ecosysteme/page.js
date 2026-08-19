@@ -2,7 +2,13 @@ import { ComparisonTable } from "./ComparisonTable";
 import { Section, Sources, Pending } from "./Section";
 import { Freshness } from "./Freshness";
 import { Faq } from "./Faq";
-import { PROVIDERS, PROVIDER_COLUMNS, PROVIDER_SOURCES } from "../data/providers";
+import {
+  PROVIDERS,
+  PROVIDER_COLUMNS,
+  PROVIDER_SOURCES,
+  HDS_VERDICT,
+  SOVEREIGNTY_CONTEXT,
+} from "../data/providers";
 import {
   LOCAL_MODELS,
   LOCAL_MODEL_COLUMNS,
@@ -39,14 +45,25 @@ export default function EcosystemePage() {
         title="Modèles, localisation, conformité"
         note="L'hébergement de l'agent et le fournisseur du modèle sont deux maillons distincts. Un serveur français certifié HDS ne protège rien si le modèle appelé est hors UE. La colonne « droit applicable » prime sur la localisation des serveurs : une filiale européenne d'un éditeur américain reste soumise au droit américain."
       >
-        {PROVIDERS.length > 0 ? (
-          <>
-            <ComparisonTable columns={PROVIDER_COLUMNS} rows={PROVIDERS} />
-            <Sources items={PROVIDER_SOURCES} />
-          </>
-        ) : (
-          <Pending what="tarifs, localisation des serveurs et périmètre HDS des fournisseurs d'inférence" />
-        )}
+        <ComparisonTable columns={PROVIDER_COLUMNS} rows={PROVIDERS} />
+        <Sources items={PROVIDER_SOURCES} />
+      </Section>
+
+      <Section label="Santé" title="Ce que le HDS autorise réellement">
+        <div className="eco-verdict">
+          <p className="eco-verdict-title">{HDS_VERDICT.title}</p>
+          <p className="eco-verdict-body mt-2">{HDS_VERDICT.body}</p>
+          <ul className="eco-checklist mt-4">
+            {HDS_VERDICT.checks.map((c) => (
+              <li key={c}>{c}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="eco-verdict mt-4">
+          <p className="eco-verdict-title">{SOVEREIGNTY_CONTEXT.title}</p>
+          <p className="eco-verdict-body mt-2">{SOVEREIGNTY_CONTEXT.body}</p>
+        </div>
       </Section>
 
       <Section
