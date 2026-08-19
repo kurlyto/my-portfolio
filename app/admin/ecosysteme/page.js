@@ -52,7 +52,6 @@ export default function EcosystemePage() {
         <ComparisonTable
           columns={GATEWAY_COLUMNS}
           rows={GATEWAYS}
-          getRowKey={(r) => r.name}
         />
         <Sources items={GATEWAY_SOURCES} />
       </Section>

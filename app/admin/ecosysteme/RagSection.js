@@ -59,7 +59,6 @@ export function RagSection() {
         <ComparisonTable
           columns={BUILD_COLUMNS}
           rows={RAG_BUILD_VS_BUY}
-          getRowKey={(r) => r.name}
         />
       </Section>
 
@@ -71,7 +70,6 @@ export function RagSection() {
         <ComparisonTable
           columns={HARDWARE_COLUMNS}
           rows={RAG_HARDWARE}
-          getRowKey={(r) => r.name}
         />
       </Section>
     </>

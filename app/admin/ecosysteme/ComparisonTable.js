@@ -8,7 +8,9 @@ import { ProviderLogo } from "./ProviderLogo";
 //
 // Rendu volontairement dumb : toute la donnee vient de data/, la mise en
 // forme d'une valeur se decide ici et nulle part ailleurs.
-export function ComparisonTable({ columns, rows, getRowKey }) {
+// rowKey est le NOM d'un champ, pas une fonction : une page serveur ne peut
+// pas passer de fonction a un composant client.
+export function ComparisonTable({ columns, rows, rowKey = "name" }) {
   return (
     <div className="eco-scroll">
       <table className="eco-table">
@@ -23,7 +25,7 @@ export function ComparisonTable({ columns, rows, getRowKey }) {
         </thead>
         <tbody>
           {rows.map((row, i) => (
-            <tr key={getRowKey ? getRowKey(row, i) : i}>
+            <tr key={row[rowKey] ?? i}>
               {columns.map((col) => (
                 <td key={col.key}>
                   {col.key === "name" && row.domain !== undefined ? (
