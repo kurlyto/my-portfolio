@@ -33,4 +33,8 @@ export const CLIENT_QUESTIONS = [
     q: "Combien ça coûte par rapport à une API classique ?",
     a: "Une API se paie à l'usage, sans investissement initial. Une machine locale demande un achat puis coûte l'électricité. Le seuil de bascule dépend du volume réel de tokens traités chaque mois : les ordres de grandeur figurent dans le tableau matériel.",
   },
+  {
+    q: "Vous pouvez indexer mes 20 000 dossiers ?",
+    a: "Pas avec un outil clé en main, et il vaut mieux le dire avant qu'après. Les quatre outils du marché plafonnent entre 8 000 et 12 000 pages : au-delà, ils ne plantent pas, ils ramènent des passages hors sujet et inventent davantage. 20 000 dossiers de 5 pages font 100 000 pages, soit 4 à 12 fois ce plafond. C'est un projet d'intégration avec recherche hybride et réordonnancement, précédé d'un pilote sur 1 000 à 2 000 dossiers pour mesurer la qualité des réponses sur de vraies questions.",
+  },
 ];

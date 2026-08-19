@@ -26,10 +26,3 @@ export function Sources({ items }) {
     </p>
   );
 }
-
-// Une section dont les données ne sont pas encore vérifiées affiche ce
-// message plutôt qu'un tableau vide : on doit voir au premier coup d'oeil
-// qu'il manque quelque chose, sans croire que la liste est complète.
-export function Pending({ what }) {
-  return <p className="eco-pending">Vérification en cours : {what}.</p>;
-}

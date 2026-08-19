@@ -1,5 +1,5 @@
 import { ComparisonTable } from "./ComparisonTable";
-import { Section, Sources, Pending } from "./Section";
+import { Section, Sources } from "./Section";
 import { Freshness } from "./Freshness";
 import { Faq } from "./Faq";
 import {
@@ -19,13 +19,35 @@ import {
   HARDWARE_SOURCES,
 } from "../data/hardware";
 import { GATEWAYS, GATEWAY_COLUMNS, GATEWAY_SOURCES } from "../data/gateways";
-import { RAG_TOOLS, RAG_TOOL_COLUMNS, RAG_SOURCES } from "../data/rag";
+import {
+  RAG_TOOLS,
+  RAG_TOOL_COLUMNS,
+  RAG_SOURCES,
+  RAG_SCALE,
+  RAG_LICENSE_WARNING,
+} from "../data/rag";
 import { CLIENT_QUESTIONS } from "../data/questions";
 
 export const metadata = {
   title: "Écosystème IA",
   robots: { index: false, follow: false },
 };
+
+function Verdict({ title, body, checks }) {
+  return (
+    <div className="eco-verdict">
+      <p className="eco-verdict-title">{title}</p>
+      <p className="eco-verdict-body mt-2">{body}</p>
+      {checks && (
+        <ul className="eco-checklist mt-4">
+          {checks.map((c) => (
+            <li key={c}>{c}</li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
 
 export default function EcosystemePage() {
   return (
@@ -50,51 +72,35 @@ export default function EcosystemePage() {
       </Section>
 
       <Section label="Santé" title="Ce que le HDS autorise réellement">
-        <div className="eco-verdict">
-          <p className="eco-verdict-title">{HDS_VERDICT.title}</p>
-          <p className="eco-verdict-body mt-2">{HDS_VERDICT.body}</p>
-          <ul className="eco-checklist mt-4">
-            {HDS_VERDICT.checks.map((c) => (
-              <li key={c}>{c}</li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="eco-verdict mt-4">
-          <p className="eco-verdict-title">{SOVEREIGNTY_CONTEXT.title}</p>
-          <p className="eco-verdict-body mt-2">{SOVEREIGNTY_CONTEXT.body}</p>
+        <Verdict {...HDS_VERDICT} />
+        <div className="mt-4">
+          <Verdict {...SOVEREIGNTY_CONTEXT} />
         </div>
       </Section>
 
       <Section
         label="Matériel"
         title="Modèles exécutables localement"
-        note="Modèles à poids ouverts, téléchargeables et exécutables sans connexion. La nationalité de l'éditeur n'a pas d'incidence sur la confidentialité dès lors que le calcul se fait sur une machine maîtrisée."
+        note="En Q4_K_M, compter environ 0,6 Go par milliard de paramètres, plus 2 à 8 Go de cache de contexte. Pour un modèle MoE, ce sont les paramètres totaux qui doivent tenir en mémoire, pas les paramètres actifs."
       >
-        {LOCAL_MODELS.length > 0 ? (
-          <ComparisonTable columns={LOCAL_MODEL_COLUMNS} rows={LOCAL_MODELS} />
-        ) : (
-          <Pending what="tailles, mémoire requise et licences des modèles à poids ouverts" />
-        )}
+        <ComparisonTable columns={LOCAL_MODEL_COLUMNS} rows={LOCAL_MODELS} />
       </Section>
 
-      <Section label="Matériel" title="Machines et coûts">
-        {HARDWARE.length > 0 ? (
-          <ComparisonTable columns={HARDWARE_COLUMNS} rows={HARDWARE} />
-        ) : (
-          <Pending what="prix 2026, vitesses réelles et seuils de bascule achat / API" />
-        )}
+      <Section
+        label="Matériel"
+        title="Machines et coûts"
+        note="Repère de lecture : un humain lit à environ 10 tokens par seconde. 10 tok/s suit la lecture, 30 tok/s est confortable, 5 tok/s est pénible. La vitesse dépend de la bande passante mémoire, pas de la puissance de calcul."
+      >
+        <ComparisonTable columns={HARDWARE_COLUMNS} rows={HARDWARE} />
       </Section>
 
-      <Section label="Matériel" title="Logiciels d'exécution">
-        {RUNTIMES.length > 0 ? (
-          <>
-            <ComparisonTable columns={RUNTIME_COLUMNS} rows={RUNTIMES} />
-            <Sources items={HARDWARE_SOURCES} />
-          </>
-        ) : (
-          <Pending what="comparatif Ollama, vLLM, LM Studio et llama.cpp" />
-        )}
+      <Section
+        label="Matériel"
+        title="Logiciels d'exécution"
+        note="Deux familles à ne pas confondre : les runtimes de poste optimisent un utilisateur sur une machine, les runtimes de serveur optimisent plusieurs utilisateurs sur du matériel partagé. vLLM est mauvais sur un portable, Ollama est mauvais en production multi-utilisateurs."
+      >
+        <ComparisonTable columns={RUNTIME_COLUMNS} rows={RUNTIMES} />
+        <Sources items={HARDWARE_SOURCES} />
       </Section>
 
       <Section
@@ -106,19 +112,15 @@ export default function EcosystemePage() {
         <Sources items={GATEWAY_SOURCES} />
       </Section>
 
-      <Section
-        label="RAG"
-        title="Outils de recherche documentaire"
-        note="Pour faire répondre un modèle sur les documents d'un client sans qu'ils sortent de son infrastructure."
-      >
-        {RAG_TOOLS.length > 0 ? (
-          <>
-            <ComparisonTable columns={RAG_TOOL_COLUMNS} rows={RAG_TOOLS} />
-            <Sources items={RAG_SOURCES} />
-          </>
-        ) : (
-          <Pending what="licences, OCR, gestion des droits et limites des outils RAG" />
-        )}
+      <Section label="RAG" title="Outils de recherche documentaire">
+        <ComparisonTable columns={RAG_TOOL_COLUMNS} rows={RAG_TOOLS} />
+        <div className="mt-5">
+          <Verdict {...RAG_SCALE} />
+        </div>
+        <div className="mt-4">
+          <Verdict {...RAG_LICENSE_WARNING} />
+        </div>
+        <Sources items={RAG_SOURCES} />
       </Section>
 
       <Section label="Objections" title="Questions fréquentes des clients">
