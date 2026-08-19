@@ -1,13 +1,16 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Reveal from "./Reveal";
 import MetierFlyer from "./MetierFlyer";
 import FlyerShareButton from "./FlyerShareButton";
 import { METIERS } from "../metiers/metiers-data";
 
 function FlyerModal({ metier, onClose, onTalkToNate }) {
+  // Le bouton de partage rasterise cette carte pour en faire l'image envoyee.
+  const flyerRef = useRef(null);
+
   // Echap ferme la modale, comme le clic sur le fond.
   useEffect(() => {
     function onKey(e) {
@@ -59,10 +62,12 @@ function FlyerModal({ metier, onClose, onTalkToNate }) {
             </button>
           </div>
 
-          <MetierFlyer metier={metier} />
+          <div ref={flyerRef}>
+            <MetierFlyer metier={metier} />
+          </div>
 
           <div className="mt-4 flex flex-col items-center justify-center gap-2.5 sm:flex-row sm:gap-3">
-            <FlyerShareButton metier={metier} />
+            <FlyerShareButton metier={metier} flyerRef={flyerRef} />
             {/* Ouvre le chat Nate avec un message pre-redige au nom du metier :
                 le visiteur n'a rien a ecrire, la conversation demarre qualifiee. */}
             <button
