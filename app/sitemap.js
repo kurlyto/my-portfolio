@@ -1,7 +1,7 @@
 // Sitemap genere a partir des routes reelles du site.
 //
 // Volontairement absents :
-// - /stats          : deja en noindex (tableau de bord d'audience prive)
+// - /admin          : deja en noindex (espace prive)
 // - /page_*         : brouillons laisses dans app/, servis en 200 mais doublons
 //                     de /photography et de la home. Ils portent un noindex.
 // - /travel,        : pages "a venir", sans contenu, donc en noindex. Les

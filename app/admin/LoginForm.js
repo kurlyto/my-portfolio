@@ -38,8 +38,8 @@ export function LoginForm() {
 
   return (
     <div className="mx-auto flex min-h-[70vh] w-full max-w-sm flex-col justify-center px-5">
-      <p className="font-mono text-[11px] uppercase tracking-[0.08em] text-black/50">Analytics</p>
-      <h1 className="mt-2 font-display text-4xl font-bold leading-none">Audience</h1>
+      <p className="font-mono text-[11px] uppercase tracking-[0.08em] text-black/50">Espace prive</p>
+      <h1 className="mt-2 font-display text-4xl font-bold leading-none">Tableau de bord</h1>
       <p className="mt-3 text-[15px] text-black/60">Page privee.</p>
 
       <form onSubmit={handleSubmit} className="mt-6">

@@ -1,0 +1,534 @@
+/* Charte dataviz appliquee au style du portfolio : fond blanc franc, orange
+   #ff6b35 en accent, mono majuscule pour les libellés, bordures nettes
+   plutot que des ombres.
+
+   Les 7 couleurs de series restent celles validees par le validateur
+   (bande de clarte, chroma, separation daltonisme, contraste) : l'orange de
+   la charte prend le slot 1 (MDD, le projet principal). L'ORDRE des couleurs
+   est le mecanisme de securite daltonisme, pas un choix esthetique - ne pas
+   reordonner sans rejouer scripts/validate_palette.js. */
+
+.viz-root,
+.viz-page {
+  color-scheme: light;
+
+  --surface-1: #ffffff;
+  --text-primary: #0b0b0b;
+  --text-secondary: #52514e;
+  --text-muted: #898781;
+  --gridline: #ececec;
+  --hairline: rgba(11, 11, 11, 0.15);
+  --accent: #ff6b35;
+
+  --series-1: #ff6b35;
+  --series-2: #2a78d6;
+  --series-3: #1baf7a;
+  --series-4: #4a3aa7;
+  --series-5: #eda100;
+  --series-6: #e87ba4;
+  --series-7: #008300;
+}
+
+/* Le portfolio est un site clair assume (fond blanc, pas de bascule de theme).
+   On ne suit donc PAS prefers-color-scheme ici : la page /stats resterait
+   incoherente avec le reste du site, qui lui reste blanc en mode sombre. */
+
+.viz-grid {
+  stroke: var(--gridline);
+}
+
+.viz-crosshair {
+  stroke: var(--text-muted);
+}
+
+/* Le texte ne porte jamais la couleur d'une serie : l'identite vient du trait
+   colore a cote, pas du label lui-meme. */
+.viz-tick {
+  fill: var(--text-muted);
+  font-size: 10px;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+}
+
+.viz-dot {
+  stroke: var(--surface-1);
+}
+
+.viz-tooltip {
+  background: var(--surface-1);
+  border: 1px solid var(--text-primary);
+  border-radius: 0;
+  color: var(--text-secondary);
+}
+
+.viz-tooltip-date {
+  color: var(--text-primary);
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 10px;
+}
+
+/* La valeur mene, le nom de la serie suit : le lecteur a deja la serie sous
+   le curseur, c'est le nombre qu'il vient chercher. */
+.viz-tooltip-value {
+  color: var(--text-primary);
+}
+
+.viz-tooltip-label {
+  color: var(--text-secondary);
+}
+
+.viz-legend-label {
+  color: var(--text-secondary);
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.viz-legend-value {
+  color: var(--text-primary);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.viz-legend-warn {
+  color: #d03b3b;
+  font-weight: 700;
+}
+
+/* Cadre net facon carte du portfolio : bordure franche, angles droits. */
+.viz-surface {
+  background: var(--surface-1);
+  border: 1px solid var(--hairline);
+}
+
+.viz-text-primary {
+  color: var(--text-primary);
+}
+
+.viz-text-secondary {
+  color: var(--text-secondary);
+}
+
+.viz-text-muted {
+  color: var(--text-muted);
+}
+
+.viz-delta-up {
+  color: #006300;
+}
+
+.viz-delta-down {
+  color: #d03b3b;
+}
+
+/* Libelles en mono majuscule, comme les boutons et surtitres du site. */
+.viz-mono {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Compteur temps reel. Le vert est celui du "delta positif", pas une couleur
+   de serie : il ne peut donc pas etre confondu avec un projet du graphique. */
+.viz-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  color: #006300;
+}
+
+.viz-live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: #0ca30c;
+  animation: viz-pulse 2s ease-in-out infinite;
+}
+
+@keyframes viz-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+
+/* Un point qui clignote en permanence est penible pour qui est sensible au
+   mouvement : la pastille reste alors simplement allumee. */
+@media (prefers-reduced-motion: reduce) {
+  .viz-live-dot {
+    animation: none;
+  }
+}
+
+/* Les filtres reprennent le bouton pilule du portfolio : bordure noire fine,
+   remplissage orange a la selection. */
+.viz-controls {
+  border-color: var(--hairline);
+}
+
+.viz-control {
+  color: var(--text-secondary);
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.viz-control:hover {
+  color: var(--text-primary);
+}
+
+.viz-control[aria-pressed="true"] {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.viz-summary {
+  color: var(--text-muted);
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.viz-summary:hover {
+  color: var(--accent);
+}
+
+.viz-table-head {
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.viz-table-row {
+  border-color: var(--hairline);
+  color: var(--text-secondary);
+}
+
+/* ---------------------------------------------------------------------------
+   Tableau comparatif de l'ecosysteme IA (/stats/ecosysteme)
+   --------------------------------------------------------------------------- */
+
+/* Le tableau est large : l'en-tete colle en haut et la premiere colonne
+   colle a gauche, sinon on perd le nom du modele des qu'on scrolle. */
+.eco-scroll {
+  overflow: auto;
+  max-height: 70vh;
+  border: 1px solid var(--hairline);
+  background: var(--surface-1);
+}
+
+.eco-table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 13px;
+}
+
+.eco-table th,
+.eco-table td {
+  padding: 10px 14px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--hairline);
+  /* La couleur de fond doit etre animee ET opaque : les cellules collantes
+     passent sous les autres si le fond est transparent. */
+  background: var(--surface-1);
+  transition: background-color 120ms ease-out;
+}
+
+.eco-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  border-bottom: 1px solid var(--text-primary);
+  color: var(--text-primary);
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.eco-table tbody td:first-child,
+.eco-table thead th:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  border-right: 1px solid var(--hairline);
+}
+
+.eco-table thead th:first-child {
+  z-index: 4;
+}
+
+.eco-table tbody td {
+  color: var(--text-secondary);
+}
+
+.eco-table tbody td:first-child {
+  color: var(--text-primary);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Survol : la LIGNE s'eclaire doucement pour suivre la lecture horizontale,
+   et la cellule sous le curseur d'un cran de plus. Deux niveaux, parce que
+   dans un tableau large on veut savoir a la fois "quelle ligne" et
+   "quelle case". Teinte de l'accent, tres diluee : ca guide l'oeil sans
+   colorer l'information. */
+.eco-table tbody tr:hover td {
+  background: rgba(255, 107, 53, 0.05);
+}
+
+.eco-table tbody td:hover {
+  background: rgba(255, 107, 53, 0.14);
+  color: var(--text-primary);
+}
+
+/* Pastille de verdict (vert / orange / rouge). La couleur ne porte jamais
+   l'information seule : le texte de la pastille suffit a la lire. */
+.eco-badge {
+  display: inline-block;
+  padding: 2px 7px;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.eco-badge-good {
+  color: #006300;
+}
+
+.eco-badge-warn {
+  color: #a35a00;
+}
+
+.eco-badge-bad {
+  color: #d03b3b;
+}
+
+.eco-badge-neutral {
+  color: var(--text-muted);
+}
+
+/* Carte de reponse a une question client ("j'ai des donnees medicales"). */
+.eco-card {
+  border: 1px solid var(--hairline);
+  background: var(--surface-1);
+  padding: 18px;
+  transition:
+    border-color 150ms ease-out,
+    transform 150ms ease-out;
+}
+
+.eco-card:hover {
+  border-color: var(--text-primary);
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eco-card:hover {
+    transform: none;
+  }
+}
+
+.eco-card-q {
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.eco-card-a {
+  color: var(--text-secondary);
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+
+/* Filtres du tableau : meme pilule que les controles d'audience. */
+.eco-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.eco-note {
+  color: var(--text-muted);
+  font-size: 12.5px;
+  line-height: 1.6;
+}
+
+.eco-source {
+  color: var(--text-muted);
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.eco-source a {
+  color: var(--text-muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.eco-source a:hover {
+  color: var(--accent);
+}
+
+/* Logo de fournisseur : 16px, cale sur la ligne de base du nom. Le repli
+   (initiale dans un carre) occupe exactement la meme boite pour qu'une
+   image manquante ne decale pas la colonne. */
+.eco-logo {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+  object-fit: contain;
+  border-radius: 3px;
+}
+
+.eco-logo-fallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--text-primary);
+  color: var(--surface-1);
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.eco-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Etapes numerotees (fonctionnement du RAG). */
+.eco-step {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 14px;
+  align-items: start;
+  border: 1px solid var(--hairline);
+  background: var(--surface-1);
+  padding: 16px 18px;
+  transition: border-color 150ms ease-out;
+}
+
+.eco-step:hover {
+  border-color: var(--text-primary);
+}
+
+.eco-step-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--accent);
+  color: #ffffff;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.eco-step-title {
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.eco-step-when {
+  color: var(--text-muted);
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.eco-step-what {
+  color: var(--text-secondary);
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+
+.eco-step-cost {
+  color: var(--text-muted);
+  font-size: 12.5px;
+  line-height: 1.55;
+}
+
+/* Encadre d'avertissement : bordure accent a gauche, jamais un aplat rouge
+   qui ferait "erreur" alors que c'est un point de vigilance. */
+.eco-warning {
+  border: 1px solid var(--hairline);
+  border-left: 3px solid var(--accent);
+  background: var(--surface-1);
+  padding: 16px 18px;
+}
+
+/* Titre de section, memes codes que les surtitres du site. */
+.eco-section-label {
+  color: var(--text-muted);
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.eco-section-title {
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.eco-lead {
+  color: var(--text-secondary);
+  font-size: 14.5px;
+  line-height: 1.65;
+}
+
+/* Bandeau de fraicheur des donnees. Discret tant que la page est a jour,
+   il passe en accent des que le delai est depasse : c'est la seule chose
+   qui empeche de montrer un tarif perime a un client. */
+.eco-freshness {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+  border: 1px solid var(--hairline);
+  background: var(--surface-1);
+  padding: 10px 14px;
+  color: var(--text-muted);
+  font-size: 12.5px;
+  line-height: 1.55;
+}
+
+.eco-freshness-stale {
+  border-left: 3px solid var(--accent);
+  color: var(--text-secondary);
+}

@@ -2,7 +2,6 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { VisitorsChart } from "./VisitorsChart";
-import { ClaudeUsageBar } from "./ClaudeUsageBar";
 
 const RANGES = [
   { days: 7, label: "7 jours" },
@@ -144,7 +143,7 @@ export function StatsDashboard() {
   const failed = data?.series.filter((s) => s.failed) ?? [];
 
   return (
-    <div className="viz-page mx-auto w-full max-w-5xl px-5 py-10 sm:py-14">
+    <>
       <header className="mb-8">
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
           <p className="viz-mono viz-text-muted text-[11px]">Analytics</p>
@@ -162,8 +161,6 @@ export function StatsDashboard() {
           Audience
         </h1>
       </header>
-
-      <ClaudeUsageBar />
 
       {/* Les filtres scopent tout ce qui est en dessous : une seule rangee,
           au-dessus du contenu, jamais dans la carte du graphique. */}
@@ -301,6 +298,6 @@ export function StatsDashboard() {
       )}
 
       {!data && !error && <div className="h-64 animate-pulse bg-black/5" />}
-    </div>
+    </>
   );
 }
