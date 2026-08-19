@@ -705,6 +705,17 @@
   cursor: pointer;
 }
 
+/* Aucun fournisseur ne passe les filtres : dire quoi faire, pas seulement
+   qu'il n'y a rien. */
+.eco-empty {
+  border: 1px dashed var(--hairline);
+  padding: 20px;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
 /* Verdict par ligne. Une barre à gauche plutôt qu'un aplat : la couleur
    reste lisible sans écraser le texte des cellules, et le survol continue
    de fonctionner par-dessus. */

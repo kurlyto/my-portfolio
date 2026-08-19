@@ -5,59 +5,75 @@ import { ComparisonTable } from "./ComparisonTable";
 import { CRITERIA } from "../data/criteria";
 
 // Filtre du tableau des fournisseurs : on coche les contraintes du client,
-// chaque ligne devient compatible ou exclue avec son motif.
+// les lignes incompatibles disparaissent.
 //
 // Composant client obligatoire : les règles d'exclusion sont des fonctions,
 // et une page serveur ne peut pas passer de fonction à un composant client.
 // Elles sont donc importées ici, pas reçues en props.
 //
-// Aucun tri, aucune ligne masquée : voir qu'un fournisseur est exclu et
-// pourquoi vaut mieux que de le faire disparaître. C'est ce qui se dit en
-// rendez-vous.
+// Les exclus sont masqués par défaut (lecture face au client) mais restent
+// affichables avec leur motif : en préparation, savoir POURQUOI un
+// fournisseur est écarté est ce qui permet de répondre à « et Claude, on
+// ne peut pas ? ».
 export function ProviderMatcher({ columns, rows }) {
   const [active, setActive] = useState([]);
+  const [showExcluded, setShowExcluded] = useState(false);
 
   const toggle = (id) =>
     setActive((prev) => (prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]));
 
-  const evaluated = useMemo(() => {
+  const { visible, excludedCount } = useMemo(() => {
     const selected = CRITERIA.filter((c) => active.includes(c.id));
 
-    return rows.map((row) => {
-      const reasons = selected.map((c) => c.excludes(row)).filter(Boolean);
-      return { ...row, _status: selected.length === 0 ? null : reasons.length ? "ko" : "ok", _reasons: reasons };
-    });
-  }, [rows, active]);
+    if (selected.length === 0) {
+      return { visible: rows, excludedCount: 0 };
+    }
 
-  const okCount = evaluated.filter((r) => r._status === "ok").length;
+    const evaluated = rows.map((row) => {
+      const reasons = selected.map((c) => c.excludes(row)).filter(Boolean);
+      return { ...row, _status: reasons.length ? "ko" : "ok", _reasons: reasons };
+    });
+
+    const kept = showExcluded ? evaluated : evaluated.filter((r) => r._status === "ok");
+    return { visible: kept, excludedCount: evaluated.filter((r) => r._status === "ko").length };
+  }, [rows, active, showExcluded]);
+
+  const okCount = rows.length - excludedCount;
+  const filtering = active.length > 0;
 
   return (
     <>
       <div className="eco-filters-block">
         <p className="eco-filters-title">Contraintes du client</p>
         <div className="eco-filters mt-3">
-          {CRITERIA.map((c) => {
-            const on = active.includes(c.id);
-            return (
-              <button
-                key={c.id}
-                type="button"
-                onClick={() => toggle(c.id)}
-                aria-pressed={on}
-                title={c.hint}
-                className="eco-filter"
-              >
-                {c.label}
-              </button>
-            );
-          })}
+          {CRITERIA.map((c) => (
+            <button
+              key={c.id}
+              type="button"
+              onClick={() => toggle(c.id)}
+              aria-pressed={active.includes(c.id)}
+              title={c.hint}
+              className="eco-filter"
+            >
+              {c.label}
+            </button>
+          ))}
         </div>
 
-        {active.length > 0 && (
+        {filtering && (
           <p className="eco-filters-result mt-3">
             <strong>{okCount}</strong> fournisseur{okCount > 1 ? "s" : ""} compatible
             {okCount > 1 ? "s" : ""} sur {rows.length}
-            {okCount === 0 && " : aucune option ne satisfait toutes ces contraintes simultanément."}
+            {okCount === 0 && " : aucune option ne satisfait toutes ces contraintes."}
+            {excludedCount > 0 && (
+              <button
+                type="button"
+                onClick={() => setShowExcluded((v) => !v)}
+                className="eco-filters-reset"
+              >
+                {showExcluded ? "Masquer les exclus" : `Voir les ${excludedCount} exclus`}
+              </button>
+            )}
             <button type="button" onClick={() => setActive([])} className="eco-filters-reset">
               Tout effacer
             </button>
@@ -65,7 +81,19 @@ export function ProviderMatcher({ columns, rows }) {
         )}
       </div>
 
-      <ComparisonTable columns={columns} rows={evaluated} statusKey="_status" reasonsKey="_reasons" />
+      {visible.length > 0 ? (
+        <ComparisonTable
+          columns={columns}
+          rows={visible}
+          statusKey={filtering && showExcluded ? "_status" : undefined}
+          reasonsKey={filtering && showExcluded ? "_reasons" : undefined}
+        />
+      ) : (
+        <p className="eco-empty">
+          Aucun fournisseur ne satisfait ces contraintes simultanément. Retirez un critère, ou
+          orientez le client vers un modèle à poids ouverts auto-hébergé.
+        </p>
+      )}
     </>
   );
 }
