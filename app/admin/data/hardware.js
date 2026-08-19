@@ -214,13 +214,17 @@ export const HARDWARE = [
     target: "Démonstration et test. Ne rien vendre au-delà de 8B",
   },
   {
-    name: "Serveur CPU seul (12 vCPU / 30 Go)",
-    price: "50-150 €/mois en VPS",
+    // Notre propre serveur, vérifié en SSH le 19/08/2026 : Ryzen 5 PRO 3600,
+    // 12 threads, 30 Go de RAM, AUCUN GPU exploitable (le contrôleur ASPEED
+    // est la puce d'affichage de la carte mère, pas une carte de calcul).
+    name: "Notre Dedibox HDS",
+    ours: true,
+    price: "Déjà payée",
     maxModel: "8 à 14B. La vitesse limite, pas la RAM",
     speed:
       "4 à 15 tok/s mesurés sur 7B. Pour un 24B : 1,5 à 4 tok/s attendus, non vérifié. CPU 10 à 30× plus lent que GPU",
     users: "1, et encore",
-    target: "Traitements de nuit uniquement. À déconseiller pour du dialogue interactif",
+    target: "Ryzen 5 PRO 3600, 30 Go, sans GPU. Traitements de nuit et indexation. À déconseiller pour du dialogue interactif",
   },
   {
     name: "Location GPU Scaleway (France)",

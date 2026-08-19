@@ -305,9 +305,15 @@
   color: var(--text-secondary);
 }
 
+/* Pas de nowrap : la première colonne porte aussi le badge de verdict et
+   les motifs d'exclusion, qui sont des phrases et doivent se replier. */
 .eco-table tbody td:first-child {
   color: var(--text-primary);
   font-weight: 600;
+}
+
+/* Le nom du fournisseur, lui, reste sur une ligne. */
+.eco-name {
   white-space: nowrap;
 }
 
@@ -631,15 +637,37 @@
   letter-spacing: 0.06em;
 }
 
-/* Filtres de compatibilité : on coche les contraintes du client. */
+/* Barre de contraintes : reste visible pendant qu'on parcourt le tableau,
+   sinon il faut remonter pour changer un critère. Fond opaque obligatoire,
+   sinon les lignes défilent en transparence derrière. */
+.eco-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--surface-1);
+  padding-top: 8px;
+  margin-bottom: 20px;
+}
+
 .eco-filters-block {
   border: 1px solid var(--hairline);
   background: var(--surface-1);
-  padding: 16px 18px;
-  margin-bottom: 16px;
+  padding: 14px 16px;
+  display: grid;
+  gap: 12px;
+}
+
+/* Libellé et pastilles sur une même ligne : la barre reste compacte, ce qui
+   compte quand elle est collante. */
+.eco-filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 12px;
 }
 
 .eco-filters-title {
+  flex: 0 0 80px;
   color: var(--text-muted);
   font-family: var(--font-geist-mono), ui-monospace, monospace;
   font-size: 10px;
@@ -651,7 +679,7 @@
 .eco-filters {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
 }
 
 .eco-filter {
@@ -705,6 +733,108 @@
   cursor: pointer;
 }
 
+/* Montage recommandé : la réponse à « qu'est-ce que je propose », juste
+   sous les filtres. C'est ce qu'on lit en premier, le tableau ne sert
+   qu'à justifier. */
+.eco-setup {
+  border: 1px solid var(--text-primary);
+  background: var(--surface-1);
+  padding: 20px 22px;
+  margin-bottom: 24px;
+}
+
+.eco-setup-label {
+  color: var(--accent);
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.eco-setup-title {
+  margin-top: 4px;
+  color: var(--text-primary);
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.eco-setup-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px 24px;
+  margin-top: 16px;
+}
+
+.eco-setup-grid dt {
+  color: var(--text-muted);
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 9.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.eco-setup-grid dd {
+  margin-top: 3px;
+  color: var(--text-primary);
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.eco-setup-why {
+  display: block;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.eco-setup-caveats {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--hairline);
+  display: grid;
+  gap: 6px;
+  list-style: none;
+}
+
+.eco-setup-caveats li {
+  position: relative;
+  padding-left: 16px;
+  color: var(--text-secondary);
+  font-size: 12.5px;
+  line-height: 1.55;
+}
+
+.eco-setup-caveats li::before {
+  content: "!";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Ligne mise en évidence : notre propre serveur dans le tableau matériel.
+   Repère utile, ce n'est ni un verdict ni une recommandation. */
+.eco-table tbody tr.eco-row-ours td {
+  background: rgba(255, 107, 53, 0.06);
+}
+
+.eco-table tbody tr.eco-row-ours td:first-child {
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+
+.eco-ours-tag {
+  display: block;
+  margin-top: 5px;
+  color: var(--accent);
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
 /* Aucun fournisseur ne passe les filtres : dire quoi faire, pas seulement
    qu'il n'y a rien. */
 .eco-empty {
@@ -731,8 +861,11 @@
   color: var(--text-muted);
 }
 
+/* display:block et width:fit-content : en inline-block le badge se plaçait
+   à la suite du nom et paraissait déborder sur la cellule voisine. */
 .eco-verdict-tag {
-  display: inline-block;
+  display: block;
+  width: fit-content;
   margin-top: 6px;
   padding: 1px 6px;
   border: 1px solid currentColor;
@@ -760,11 +893,15 @@
   list-style: none;
 }
 
+/* Les motifs sont des phrases entières : ils doivent se replier dans la
+   largeur de la cellule, jamais déborder sur la colonne voisine. */
 .eco-reasons li {
   position: relative;
   color: #a33;
   font-size: 11px;
   line-height: 1.4;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .eco-reasons li::before {

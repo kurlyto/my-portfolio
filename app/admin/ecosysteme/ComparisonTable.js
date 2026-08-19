@@ -43,16 +43,23 @@ export function ComparisonTable({ columns, rows, rowKey = "name", statusKey, rea
             const status = statusKey ? row[statusKey] : null;
             const reasons = reasonsKey ? (row[reasonsKey] ?? []) : [];
 
+            // `ours` met en évidence notre propre serveur dans le tableau
+            // matériel : c'est un repère, pas un verdict de filtre.
+            const rowClass = row.ours ? "eco-row-ours" : status ? `eco-row-${status}` : undefined;
+
             return (
-              <tr key={row[rowKey] ?? i} className={status ? `eco-row-${status}` : undefined}>
+              <tr key={row[rowKey] ?? i} className={rowClass}>
                 {columns.map((col) => (
                   <td key={col.key}>
-                    {col.key === "name" && row.domain !== undefined ? (
+                    {col.key === "name" ? (
                       <>
                         <span className="eco-name">
-                          <ProviderLogo domain={row.domain} name={row.name} />
+                          {row.domain !== undefined && (
+                            <ProviderLogo domain={row.domain} name={row.name} />
+                          )}
                           <span>{row.name}</span>
                         </span>
+                        {row.ours && <span className="eco-ours-tag">Notre serveur</span>}
                         {status && (
                           <span className={`eco-verdict-tag eco-verdict-tag-${status}`}>
                             {status === "ok" ? "Compatible" : "Exclu"}
