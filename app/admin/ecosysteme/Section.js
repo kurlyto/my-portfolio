@@ -1,7 +1,9 @@
 // Bloc de section : surtitre mono, titre, note factuelle optionnelle.
-export function Section({ label, title, note, children }) {
+// L'id sert d'ancre au sommaire ; scroll-margin-top évite que le titre
+// passe sous l'en-tête collant du tableau précédent.
+export function Section({ id, label, title, note, children }) {
   return (
-    <section className="mt-16 first:mt-0">
+    <section id={id} className="eco-section mt-16 first:mt-0">
       {label && <p className="eco-section-label">{label}</p>}
       <h2 className="eco-section-title mt-1.5">{title}</h2>
       {note && <p className="eco-note mt-2 max-w-3xl">{note}</p>}

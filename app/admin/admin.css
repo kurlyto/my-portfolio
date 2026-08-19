@@ -625,12 +625,76 @@
   letter-spacing: 0.06em;
 }
 
-/* FAQ en accordéon natif (details/summary), sans JavaScript. */
+/* Sommaire des tableaux. Ancres natives, aucun JavaScript. */
+.eco-toc {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1px;
+  background: var(--hairline);
+  border: 1px solid var(--hairline);
+}
+
+.eco-toc-item {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 12px 14px;
+  background: var(--surface-1);
+  text-decoration: none;
+  transition:
+    background-color 120ms ease-out,
+    color 120ms ease-out;
+}
+
+.eco-toc-item:hover {
+  background: rgba(255, 107, 53, 0.08);
+}
+
+.eco-toc-num {
+  color: var(--accent);
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.eco-toc-label {
+  flex: 1;
+  color: var(--text-primary);
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.eco-toc-count {
+  color: var(--text-muted);
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+/* L'en-tête de tableau colle en haut : sans cette marge, un saut d'ancre
+   place le titre de section juste dessous et le cache. */
+.eco-section {
+  scroll-margin-top: 24px;
+}
+
+/* FAQ en accordéon natif (details/summary), sans JavaScript.
+   Même largeur que les tableaux : la page alterne sinon entre du pleine
+   largeur et une colonne étroite, ce qui se voit. */
 .eco-faq {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding: 0 24px;
+}
+
+/* La bordure est portée par les items, pas par le conteneur : sur un bloc
+   pleine fenêtre avec padding, un border-top irait d'un bord à l'autre et
+   dépasserait le texte. */
+.eco-faq-item {
   border-top: 1px solid var(--hairline);
 }
 
-.eco-faq-item {
+.eco-faq-item:last-child {
   border-bottom: 1px solid var(--hairline);
 }
 
@@ -675,9 +739,10 @@
   transform: rotate(-135deg);
 }
 
+/* Pas de max-width ici : la réponse occupe toute la largeur du composant.
+   Une colonne de texte à 70ch laissait la moitié droite vide. */
 .eco-faq-answer {
   padding: 0 0 18px;
-  max-width: 70ch;
   color: var(--text-secondary);
   font-size: 14.5px;
   line-height: 1.65;
