@@ -151,14 +151,15 @@ const PROJECTS = [
   },
   {
     name: "Fetamap",
-    description: "Une carte pour retrouver les meilleures adresses, sélectionnées à la main.",
+    description:
+      "Crée la carte de tes aventures passées en 5 minutes, et exporte-la sur ton site en un composant réutilisable ou commande une affiche pour chez toi !",
     years: "2026",
     status: "En construction",
     cover: "from-teal-700 to-teal-950",
   },
   {
     name: "Fetafrance",
-    description: "Le meilleur de la France, adresse par adresse, région par région.",
+    description: "Quelle proportion de la France as-tu réellement visitée ?",
     years: "2026",
     status: "En construction",
     cover: "from-indigo-700 to-indigo-950",
