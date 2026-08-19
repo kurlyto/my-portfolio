@@ -1,148 +1,132 @@
-// Comparatif des passerelles de messagerie utilisables comme interface d'un
-// agent. Verifie le 18/08/2026 sur les sources primaires (docs officielles
-// Hermes Agent, CGU Signal, doc tarifaire Meta, doc Telegram).
+// Passerelles de messagerie utilisables comme interface d'un agent.
+// Vérifié le 18/08/2026 sur sources primaires (docs Hermes Agent, CGU
+// Signal, doc tarifaire Meta, doc Telegram).
 //
-// LE PIEGE A RETENIR, valable pour TOUTES les lignes : un bot est une
-// extremite de la conversation. Le chiffrement de bout en bout protege le
-// message pendant le transport ; l'agent doit dechiffrer pour comprendre.
-// Le contenu est donc TOUJOURS en clair sur le serveur qui heberge l'agent.
-// "Signal chiffre" ne rend donc rien prive vis-a-vis de l'hebergeur de l'agent.
+// Point valable pour TOUTES les lignes : un bot est une extrémité de la
+// conversation, donc le contenu est toujours en clair sur le serveur qui
+// héberge l'agent. Le chiffrement de bout en bout protège contre
+// l'opérateur de la messagerie, jamais contre l'hébergeur de l'agent.
 
 export const GATEWAY_COLUMNS = [
   { key: "name", label: "Passerelle" },
-  { key: "how", label: "Branchement" },
-  { key: "difficulty", label: "Difficulte" },
-  { key: "e2ee", label: "Chiffrement bout en bout" },
-  { key: "operatorSees", label: "Ce que voit l'operateur" },
-  { key: "selfHost", label: "Auto-hebergeable" },
-  { key: "cost", label: "Cout" },
+  { key: "api", label: "API" },
+  { key: "difficulty", label: "Difficulté" },
+  { key: "e2ee", label: "Chiffrement E2E" },
+  { key: "operatorSees", label: "Ce que voit l'opérateur" },
+  { key: "selfHost", label: "Auto-hébergeable" },
+  { key: "cost", label: "Coût" },
+  { key: "proUse", label: "Usage commercial" },
   { key: "comfort", label: "Confort client" },
-  { key: "verdict", label: "Verdict" },
 ];
 
 export const GATEWAYS = [
   {
     name: "Telegram",
     domain: "telegram.org",
-    how: "API bot officielle (@BotFather)",
-    difficulty: "Tres simple",
+    api: "Bot API officielle",
+    difficulty: "Faible",
     e2ee: { label: "Non", tone: "bad" },
-    operatorSees:
-      "Tout le contenu. Les echanges avec un bot sont des cloud chats, jamais chiffres de bout en bout. Numero de telephone, horaires, IP.",
+    operatorSees: "Contenu intégral, numéro de téléphone, horaires, IP",
     selfHost: { label: "Non", tone: "bad" },
     cost: "Gratuit",
-    comfort: "Excellent",
-    verdict:
-      "Le meilleur rapport effort/resultat pour demarrer. A exclure pour toute donnee sensible.",
-    tone: "warn",
+    proUse: { label: "Autorisé", tone: "good" },
+    comfort: "Élevé",
   },
   {
     name: "WhatsApp",
     domain: "whatsapp.com",
-    how: "Cloud API officielle (Meta)",
-    difficulty: "Moyen",
+    api: "Cloud API officielle (Meta)",
+    difficulty: "Moyenne",
     e2ee: { label: "Non via API", tone: "bad" },
-    operatorSees:
-      "Tout le contenu. WhatsApp grand public est chiffre, mais via l'API Business les messages transitent en clair chez Meta.",
+    operatorSees: "Contenu intégral, numéro, métadonnées",
     selfHost: { label: "Non", tone: "bad" },
-    cost: "Payant au message (varie par pays)",
-    comfort: "Excellent",
-    verdict:
-      "Le plus confortable pour un client, mais Meta lit tout et la facture court au message.",
-    tone: "warn",
+    cost: "Par message, variable selon pays",
+    proUse: { label: "Autorisé, vérif. entreprise", tone: "warn" },
+    comfort: "Élevé",
   },
   {
     name: "Matrix / Element",
     domain: "element.io",
-    how: "API officielle, serveur Synapse ou Conduit",
-    difficulty: "Exigeant",
-    e2ee: { label: "Oui, si impose", tone: "good" },
-    operatorSees:
-      "Rien, si vous heberez le serveur : l'operateur, c'est vous. Les metadonnees fuient en federation, sauf a la fermer.",
+    api: "Officielle (mautrix)",
+    difficulty: "Élevée",
+    e2ee: { label: "Oui, si imposé", tone: "good" },
+    operatorSees: "Rien si serveur auto-hébergé. Métadonnées en fédération.",
     selfHost: { label: "Oui, total", tone: "good" },
     cost: "Gratuit hors serveur",
+    proUse: { label: "Autorisé", tone: "good" },
     comfort: "Faible",
-    verdict:
-      "Le seul reellement souverain. La bonne reponse pour donnees sensibles, au prix d'un serveur a exploiter.",
-    tone: "good",
   },
   {
     name: "Signal",
     domain: "signal.org",
-    how: "signal-cli, non officiel",
-    difficulty: "Exigeant",
+    api: "signal-cli, non officielle",
+    difficulty: "Élevée",
     e2ee: { label: "Oui", tone: "good" },
-    operatorSees:
-      "Quasi rien : Signal est la reference en metadonnees minimales. Mais un numero de telephone dedie est necessaire.",
-    selfHost: { label: "Partiel", tone: "warn" },
+    operatorSees: "Métadonnées minimales. Numéro dédié obligatoire.",
+    selfHost: { label: "Partiel (le pont)", tone: "warn" },
     cost: "Gratuit",
+    proUse: { label: "CGU restrictives", tone: "bad" },
     comfort: "Moyen",
-    verdict:
-      "Excellent en usage personnel. Deconseille pour un produit vendu : les CGU interdisent comptes automatises et revente du service, et signal-cli n'est pas officiel.",
-    tone: "bad",
   },
   {
     name: "Slack",
     domain: "slack.com",
-    how: "API officielle",
-    difficulty: "Simple",
+    api: "Officielle",
+    difficulty: "Faible",
     e2ee: { label: "Non", tone: "bad" },
-    operatorSees:
-      "Tout le contenu. Les administrateurs du workspace peuvent acceder aux messages prives, y compris ceux du bot.",
+    operatorSees: "Contenu intégral. Admins du workspace inclus.",
     selfHost: { label: "Non", tone: "bad" },
-    cost: "Gratuit a payant",
+    cost: "Gratuit à payant",
+    proUse: { label: "Autorisé", tone: "good" },
     comfort: "Moyen",
-    verdict: "Pertinent seulement si le client vit deja dedans.",
-    tone: "neutral",
   },
   {
     name: "Google Chat",
     domain: "google.com",
-    how: "API officielle",
-    difficulty: "Moyen",
+    api: "Officielle",
+    difficulty: "Moyenne",
     e2ee: { label: "Non", tone: "bad" },
-    operatorSees: "Tout le contenu. Chiffrement en transit et au repos uniquement.",
+    operatorSees: "Contenu intégral",
     selfHost: { label: "Non", tone: "bad" },
     cost: "Inclus Workspace",
+    proUse: { label: "Autorisé", tone: "good" },
     comfort: "Moyen",
-    verdict: "Meme logique que Slack : utile si le client est deja sur Workspace.",
-    tone: "neutral",
   },
   {
     name: "SMS",
     domain: "twilio.com",
-    how: "Twilio, Brevo",
-    difficulty: "Simple",
+    api: "Twilio, Brevo",
+    difficulty: "Faible",
     e2ee: { label: "Non", tone: "bad" },
-    operatorSees:
-      "Tout le contenu, cote operateurs telecom et prestataire d'envoi. Interceptable.",
+    operatorSees: "Contenu intégral, opérateurs télécom inclus",
     selfHost: { label: "Non", tone: "bad" },
-    cost: "Payant au message",
-    comfort: "Excellent",
-    verdict:
-      "Imbattable en accessibilite : aucun compte, aucune application. A reserver au non sensible et au court.",
-    tone: "neutral",
+    cost: "Par message",
+    proUse: { label: "Autorisé", tone: "good" },
+    comfort: "Élevé, sans application",
   },
   {
     name: "Email",
     domain: "gmail.com",
-    how: "SMTP / IMAP",
-    difficulty: "Simple",
+    api: "SMTP / IMAP",
+    difficulty: "Faible",
     e2ee: { label: "Non en pratique", tone: "bad" },
-    operatorSees:
-      "Tout le contenu chez l'hebergeur mail. Le chiffrement PGP existe mais reste inutilisable par un client non technique.",
+    operatorSees: "Contenu intégral chez l'hébergeur mail",
     selfHost: { label: "Oui", tone: "good" },
-    cost: "Quasi gratuit",
-    comfort: "Excellent",
-    verdict:
-      "Sous-estime : universel, asynchrone, bien adapte a un agent qui met du temps a repondre.",
-    tone: "neutral",
+    cost: "Quasi nul",
+    proUse: { label: "Autorisé", tone: "good" },
+    comfort: "Élevé",
   },
 ];
 
 export const GATEWAY_SOURCES = [
-  { label: "Hermes Agent - passerelle", url: "https://hermes-agent.nousresearch.com/docs/user-guide/messaging/" },
+  {
+    label: "Hermes Agent - messagerie",
+    url: "https://hermes-agent.nousresearch.com/docs/user-guide/messaging/",
+  },
   { label: "CGU Signal", url: "https://signal.org/legal/" },
-  { label: "Tarifs WhatsApp Business (Meta)", url: "https://developers.facebook.com/docs/whatsapp/pricing/" },
+  {
+    label: "Tarifs WhatsApp Business",
+    url: "https://developers.facebook.com/docs/whatsapp/pricing/",
+  },
   { label: "Telegram - chiffrement", url: "https://core.telegram.org/api/end-to-end" },
 ];

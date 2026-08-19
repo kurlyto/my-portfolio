@@ -1,12 +1,10 @@
-// Bloc de section de la page ecosysteme : surtitre mono, titre, chapeau.
-// Le chapeau porte le "pourquoi c'est la" - la page sert aussi de support
-// en rendez-vous client, une section sans explication n'aide personne.
-export function Section({ label, title, lead, children }) {
+// Bloc de section : surtitre mono, titre, note factuelle optionnelle.
+export function Section({ label, title, note, children }) {
   return (
-    <section className="mt-14 first:mt-0">
+    <section className="mt-16 first:mt-0">
       {label && <p className="eco-section-label">{label}</p>}
       <h2 className="eco-section-title mt-1.5">{title}</h2>
-      {lead && <p className="eco-lead mt-3 max-w-3xl">{lead}</p>}
+      {note && <p className="eco-note mt-2 max-w-3xl">{note}</p>}
       <div className="mt-5">{children}</div>
     </section>
   );
@@ -27,4 +25,11 @@ export function Sources({ items }) {
       ))}
     </p>
   );
+}
+
+// Une section dont les données ne sont pas encore vérifiées affiche ce
+// message plutôt qu'un tableau vide : on doit voir au premier coup d'oeil
+// qu'il manque quelque chose, sans croire que la liste est complète.
+export function Pending({ what }) {
+  return <p className="eco-pending">Vérification en cours : {what}.</p>;
 }

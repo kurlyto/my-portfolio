@@ -223,9 +223,20 @@
 
 /* Le tableau est large : l'en-tete colle en haut et la premiere colonne
    colle a gauche, sinon on perd le nom du modele des qu'on scrolle. */
+/* Les tableaux sortent de la colonne de texte et occupent toute la largeur
+   de l'ecran : ils ont trop de colonnes pour tenir dans 1024px, et scroller
+   horizontalement pour lire une comparaison est le defaut a eviter ici.
+   La technique : marge negative de la moitie de la difference entre la
+   largeur du viewport et celle du conteneur. */
 .eco-scroll {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding: 0 24px;
   overflow: auto;
-  max-height: 70vh;
+  max-height: 78vh;
+}
+
+.eco-scroll > table {
   border: 1px solid var(--hairline);
   background: var(--surface-1);
 }
@@ -531,4 +542,80 @@
 .eco-freshness-stale {
   border-left: 3px solid var(--accent);
   color: var(--text-secondary);
+}
+
+/* Section dont les données ne sont pas encore vérifiées. Visible sans être
+   alarmante : il manque une donnée, ce n'est pas une erreur. */
+.eco-pending {
+  border: 1px dashed var(--hairline);
+  padding: 14px 16px;
+  color: var(--text-muted);
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* FAQ en accordéon natif (details/summary), sans JavaScript. */
+.eco-faq {
+  border-top: 1px solid var(--hairline);
+}
+
+.eco-faq-item {
+  border-bottom: 1px solid var(--hairline);
+}
+
+.eco-faq-item > summary {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0;
+  cursor: pointer;
+  color: var(--text-primary);
+  font-size: 15.5px;
+  font-weight: 600;
+  line-height: 1.4;
+  list-style: none;
+  transition: color 120ms ease-out;
+}
+
+.eco-faq-item > summary::-webkit-details-marker {
+  display: none;
+}
+
+.eco-faq-item > summary:hover {
+  color: var(--accent);
+}
+
+/* Le chevron pivote à l'ouverture : c'est le seul indicateur d'état, il doit
+   rester visible sans survol. */
+.eco-faq-item > summary::after {
+  content: "";
+  flex: 0 0 8px;
+  width: 8px;
+  height: 8px;
+  margin-top: 4px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 180ms ease-out;
+}
+
+.eco-faq-item[open] > summary::after {
+  transform: rotate(-135deg);
+}
+
+.eco-faq-answer {
+  padding: 0 0 18px;
+  max-width: 70ch;
+  color: var(--text-secondary);
+  font-size: 14.5px;
+  line-height: 1.65;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eco-faq-item > summary::after {
+    transition: none;
+  }
 }
