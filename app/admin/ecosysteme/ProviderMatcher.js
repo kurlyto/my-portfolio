@@ -2,10 +2,11 @@
 
 import { useMemo, useState } from "react";
 import { ComparisonTable } from "./ComparisonTable";
-import { CRITERIA, USAGE_LEVELS, CHANNEL_CRITERIA } from "../data/criteria";
+import { CRITERIA, CRITERIA_GROUPS, USAGE_LEVELS, CHANNEL_CRITERIA } from "../data/criteria";
 import { recommend } from "../data/recommend";
+import { GATEWAYS } from "../data/gateways";
 
-// Barre de contraintes collante + montage recommandé + tableau filtré.
+// Barre de contraintes par famille + montage recommandé + tableau filtré.
 //
 // Composant client obligatoire : les règles d'exclusion sont des fonctions,
 // et une page serveur ne peut pas en passer à un composant client. Elles
@@ -13,11 +14,14 @@ import { recommend } from "../data/recommend";
 export function ProviderMatcher({ columns, rows }) {
   const [active, setActive] = useState([]);
   const [usage, setUsage] = useState("medium");
-  const [channel, setChannel] = useState(null);
+  const [channels, setChannels] = useState([]);
   const [showExcluded, setShowExcluded] = useState(false);
 
-  const toggle = (id) =>
-    setActive((prev) => (prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]));
+  const toggle = (setter) => (id) =>
+    setter((prev) => (prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]));
+
+  const toggleCriterion = toggle(setActive);
+  const toggleChannel = toggle(setChannels);
 
   const { visible, excludedCount } = useMemo(() => {
     const selected = CRITERIA.filter((c) => active.includes(c.id));
@@ -34,9 +38,17 @@ export function ProviderMatcher({ columns, rows }) {
     };
   }, [rows, active, showExcluded]);
 
+  // Passerelles encore compatibles : même mécanique, sur les critères de
+  // messagerie. Affichée dans le montage, pas dans un tableau séparé.
+  const okChannels = useMemo(() => {
+    const selected = CHANNEL_CRITERIA.filter((c) => channels.includes(c.id));
+    if (selected.length === 0) return null;
+    return GATEWAYS.filter((g) => selected.every((c) => c.excludes(g) === null)).map((g) => g.name);
+  }, [channels]);
+
   const setup = useMemo(
-    () => recommend({ criteria: active, usage, channel }),
-    [active, usage, channel]
+    () => recommend({ criteria: active, usage, channel: channels[0] ?? null }),
+    [active, usage, channels]
   );
 
   const okCount = rows.length - excludedCount;
@@ -47,7 +59,9 @@ export function ProviderMatcher({ columns, rows }) {
       <div className="eco-sticky">
         <div className="eco-filters-block">
           <div className="eco-filter-group">
-            <span className="eco-filters-title">Usage</span>
+            <span className="eco-filters-title" title="Dimensionne le montage, pas la conformité">
+              Usage
+            </span>
             <div className="eco-filters">
               {USAGE_LEVELS.map((u) => (
                 <button
@@ -64,15 +78,39 @@ export function ProviderMatcher({ columns, rows }) {
             </div>
           </div>
 
+          {CRITERIA_GROUPS.map((group) => (
+            <div key={group.id} className="eco-filter-group">
+              <span className="eco-filters-title" title={group.hint}>
+                {group.label}
+              </span>
+              <div className="eco-filters">
+                {group.criteria.map((c) => (
+                  <button
+                    key={c.id}
+                    type="button"
+                    onClick={() => toggleCriterion(c.id)}
+                    aria-pressed={active.includes(c.id)}
+                    title={c.hint}
+                    className="eco-filter"
+                  >
+                    {c.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+          ))}
+
           <div className="eco-filter-group">
-            <span className="eco-filters-title">Contraintes</span>
+            <span className="eco-filters-title" title="Filtre les passerelles, pas les modèles">
+              Messagerie
+            </span>
             <div className="eco-filters">
-              {CRITERIA.map((c) => (
+              {CHANNEL_CRITERIA.map((c) => (
                 <button
                   key={c.id}
                   type="button"
-                  onClick={() => toggle(c.id)}
-                  aria-pressed={active.includes(c.id)}
+                  onClick={() => toggleChannel(c.id)}
+                  aria-pressed={channels.includes(c.id)}
                   title={c.hint}
                   className="eco-filter"
                 >
@@ -82,25 +120,7 @@ export function ProviderMatcher({ columns, rows }) {
             </div>
           </div>
 
-          <div className="eco-filter-group">
-            <span className="eco-filters-title">Canal</span>
-            <div className="eco-filters">
-              {CHANNEL_CRITERIA.map((c) => (
-                <button
-                  key={c.id}
-                  type="button"
-                  onClick={() => setChannel((prev) => (prev === c.id ? null : c.id))}
-                  aria-pressed={channel === c.id}
-                  title={c.why}
-                  className="eco-filter"
-                >
-                  {c.label}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {(filtering || channel) && (
+          {(filtering || channels.length > 0) && (
             <p className="eco-filters-result">
               <strong>{okCount}</strong> fournisseur{okCount > 1 ? "s" : ""} sur {rows.length}
               {excludedCount > 0 && (
@@ -116,7 +136,7 @@ export function ProviderMatcher({ columns, rows }) {
                 type="button"
                 onClick={() => {
                   setActive([]);
-                  setChannel(null);
+                  setChannels([]);
                 }}
                 className="eco-filters-reset"
               >
@@ -144,10 +164,31 @@ export function ProviderMatcher({ columns, rows }) {
             <dd>{setup.runtime}</dd>
           </div>
           <div>
-            <dt>Canal</dt>
+            <dt>Machine</dt>
             <dd>
-              {setup.channel}
-              <span className="eco-setup-why"> {setup.channelWhy}</span>
+              {setup.machines.map((m) => (
+                <span key={m.name} className="eco-setup-machine">
+                  {m.name}
+                  <span className="eco-setup-why">{m.why}</span>
+                </span>
+              ))}
+            </dd>
+          </div>
+          <div>
+            <dt>Messagerie</dt>
+            <dd>
+              {okChannels ? (
+                okChannels.length > 0 ? (
+                  okChannels.join(", ")
+                ) : (
+                  "Aucune passerelle ne satisfait ces critères"
+                )
+              ) : (
+                setup.channel
+              )}
+              <span className="eco-setup-why">
+                {okChannels ? "Passerelles compatibles" : setup.channelWhy}
+              </span>
             </dd>
           </div>
           <div>

@@ -1,17 +1,14 @@
 // Moteur de recommandation : à partir des contraintes cochées, propose un
-// montage complet (hébergement, modèle, canal) plutôt qu'une liste de
-// fournisseurs compatibles.
+// montage complet (hébergement, modèle, machine, canal, coût).
 //
-// Principe : Nathan est l'intégrateur. La question n'est jamais « le client
+// Principe : nous sommes l'intégrateur. La question n'est jamais « le client
 // sait-il gérer un serveur » mais « où tourne le modèle, et qu'est-ce qui
-// sort de l'infrastructure ». Trois hébergements possibles :
-//   - notre Dedibox (déjà payée, HDS, mais SANS GPU)
-//   - une machine chez le client (achat, pour la protection totale)
-//   - un GPU loué en France (quand le local est requis et qu'il faut du débit)
+// sort de l'infrastructure ».
 //
-// La contrainte structurante est le GPU : notre serveur n'en a pas, donc
-// tout montage « rien ne sort » en usage interactif demande du matériel en
-// plus. C'est le point qui coûte de l'argent, il doit être dit.
+// Les MACHINES ne sont pas un filtre mais une conséquence : personne ne
+// choisit un RTX 4090, c'est ce qui reste quand on a exigé du local et un
+// certain volume. La fonction renvoie donc la liste des machines encore
+// possibles, calculée à partir des autres contraintes.
 
 import { CAPABILITIES } from "./criteria";
 
@@ -22,120 +19,172 @@ const MATRIX = {
 };
 const MAIL = { channel: "Email ou SMS", channelWhy: "Aucune application à installer" };
 
+// Machines retenues selon le lieu d'exécution et le volume. Les prix
+// viennent du tableau matériel, vérifiés le 19/08/2026.
+function machinesFor({ where, usage }) {
+  if (where === "api") {
+    return [
+      {
+        name: CAPABILITIES.server.label,
+        why: "L'agent seul y tourne : le calcul est fait par l'API, aucune machine supplémentaire",
+      },
+    ];
+  }
+
+  if (where === "client") {
+    if (usage === "heavy") {
+      return [
+        { name: "PC RTX 5090 32 Go", why: "Environ 4 300 EUR la carte, 5 à 12 utilisateurs" },
+        { name: "Station GPU professionnelle", why: "Au-delà de 15 personnes, sur devis" },
+      ];
+    }
+    if (usage === "light") {
+      return [
+        { name: "Mac Studio M4 Max 32 Go", why: "2 199 EUR, silencieux, aucune carte à gérer" },
+        { name: "PC RTX 4090 24 Go", why: "Environ 3 390 EUR la carte, plus de marge" },
+      ];
+    }
+    return [
+      { name: "PC RTX 4090 24 Go", why: "Environ 3 390 EUR la carte, 3 à 8 utilisateurs" },
+      { name: "Mac Apple Silicon 64 Go", why: "3 500 à 4 000 EUR, jusqu'à 3 personnes" },
+    ];
+  }
+
+  // Exécution chez nous. La Dedibox n'a pas de GPU : elle ne convient qu'à
+  // un usage ponctuel ou à du traitement de nuit.
+  if (usage === "light") {
+    return [
+      {
+        name: `${CAPABILITIES.server.label}, telle quelle`,
+        why: "Déjà payée. 4 à 15 tokens par seconde : acceptable en usage ponctuel",
+      },
+      { name: "GPU loué en France", why: "Environ 500 à 575 EUR par mois si la lenteur gêne" },
+    ];
+  }
+
+  return [
+    {
+      name: "GPU loué en France (Scaleway ou OVHcloud L4)",
+      why: "Environ 500 à 575 EUR par mois, à répartir entre plusieurs clients",
+    },
+    {
+      name: `${CAPABILITIES.server.label}, pour les traitements de nuit`,
+      why: "Sans GPU : indexation et traitement par lots seulement, pas de dialogue",
+    },
+  ];
+}
+
 export function recommend({ criteria = [], usage = "medium", channel = null }) {
   const has = (id) => criteria.includes(id);
 
-  const mustStayInternal = has("fullyLocal") || has("clientHardware");
-  const health = has("health");
-  const sovereign = has("noUsChina") || has("france");
-  const budget = has("under10");
+  const clientHardware = has("bizClientHardware");
+  const mustStayInternal = has("modelNoExit") || clientHardware;
+  const health = has("bizHealth");
+  const secret = has("bizSecret");
+  const sovereign =
+    has("modelNoUs") || has("modelNoEditorUsCn") || has("hostNoUs") || has("modelNoChina");
+  const budget = has("budgetUnder10");
 
-  // Le canal explicitement demandé prime ; sinon il découle de la
-  // sensibilité des données.
+  const where = clientHardware ? "client" : mustStayInternal || health ? "ours" : "api";
+
   const chan =
-    channel === "chanConfidential"
+    channel === "chanSelfHost" || channel === "chanE2ee"
       ? MATRIX
       : channel === "chanNoApp"
         ? MAIL
-        : channel === "chanSimple"
+        : channel === "chanEasy" || channel === "chanFree"
           ? TELEGRAM
           : mustStayInternal || health
             ? MATRIX
             : TELEGRAM;
 
-  // Cas 1 : le matériel doit être chez le client.
-  if (has("clientHardware")) {
-    const machine =
-      usage === "heavy"
-        ? "PC RTX 5090 32 Go, environ 4 300 EUR la carte"
-        : usage === "light"
-          ? "Mac Studio M4 Max 32 Go, 2 199 EUR"
-          : "PC RTX 4090 24 Go, environ 3 390 EUR la carte";
+  const machines = machinesFor({ where, usage });
+
+  if (clientHardware) {
     return {
-      title: "Machine chez le client, rien ne sort de ses locaux",
-      hosting: machine,
+      title: "Machine chez le client, rien ne quitte ses locaux",
+      hosting: "Aucun hébergement de notre côté pour le modèle",
       model: "Mistral Small 3.2 24B, Apache 2.0, éditeur français",
       runtime: usage === "heavy" ? "vLLM" : "Ollama",
+      machines,
       ...chan,
       cost: "Achat unique du matériel, puis prestation. Aucun abonnement au token.",
       caveats: [
-        "Un modèle 24B local reste en deçà des grands modèles en ligne sur le raisonnement complexe.",
-        "Maintenance et pannes à distance à prévoir dans le contrat.",
+        "Un modèle 24B local reste en deçà des grands modèles en ligne sur le raisonnement complexe et la rédaction longue.",
+        "Maintenance, mises à jour et pannes à distance sont à prévoir dans le contrat.",
       ],
     };
   }
 
-  // Cas 2 : rien ne doit sortir de notre infrastructure.
   if (mustStayInternal) {
-    if (!CAPABILITIES.server.gpu && usage !== "light") {
-      return {
-        title: "Modèle auto-hébergé, mais notre serveur n'a pas de GPU",
-        hosting: "GPU loué en France : Scaleway L4 environ 575 EUR/mois, ou OVHcloud L4 environ 500 EUR/mois",
-        model: "Mistral Small 3.2 24B, Apache 2.0",
-        runtime: usage === "heavy" ? "vLLM" : "Ollama",
-        ...chan,
-        cost: "Environ 500 à 600 EUR par mois de GPU, à répartir entre plusieurs clients.",
-        caveats: [
-          `Notre Dedibox (${CAPABILITIES.server.detail}) tient 4 à 15 tokens par seconde : suffisant pour du traitement de nuit, pas pour du dialogue.`,
-          "Un GPU loué n'est rentable qu'à partir de plusieurs clients, ou d'un client qui le finance.",
-        ],
-      };
-    }
+    const noGpuAndBusy = !CAPABILITIES.server.gpu && usage !== "light";
     return {
-      title: "Modèle auto-hébergé sur notre Dedibox",
+      title: noGpuAndBusy
+        ? "Modèle auto-hébergé : un GPU est nécessaire"
+        : "Modèle auto-hébergé sur notre Dedibox",
       hosting: `${CAPABILITIES.server.label} (${CAPABILITIES.server.detail})`,
-      model: "Ministral 3 8B, Apache 2.0, éditeur français",
-      runtime: "Ollama",
+      model: noGpuAndBusy
+        ? "Mistral Small 3.2 24B, Apache 2.0"
+        : "Ministral 3 8B, Apache 2.0, éditeur français",
+      runtime: usage === "heavy" ? "vLLM" : "Ollama",
+      machines,
       ...chan,
-      cost: "Aucun coût supplémentaire : le serveur est déjà payé.",
-      caveats: [
-        "4 à 15 tokens par seconde sans GPU : acceptable pour un usage occasionnel, pénible en conversation soutenue.",
-        "Passer à un GPU loué dès que le client se plaint de la lenteur.",
-      ],
+      cost: noGpuAndBusy
+        ? "Environ 500 à 575 EUR par mois de GPU loué, à répartir entre plusieurs clients."
+        : "Aucun coût supplémentaire : le serveur est déjà payé.",
+      caveats: noGpuAndBusy
+        ? [
+            "Notre Dedibox n'a pas de GPU : 4 à 15 tokens par seconde, soit du traitement de nuit, pas du dialogue.",
+            "Un GPU loué n'est rentable qu'à partir de plusieurs clients, ou d'un client qui le finance.",
+          ]
+        : [
+            "4 à 15 tokens par seconde sans GPU : acceptable en usage ponctuel, pénible en conversation soutenue.",
+            "Passer à un GPU loué dès que le client se plaint de la lenteur.",
+          ],
     };
   }
 
-  // Cas 3 : données de santé, sans exigence de local strict.
   if (health) {
     return {
       title: "Architecture HDS : modèle ouvert sur notre infrastructure certifiée",
       hosting: `${CAPABILITIES.server.label}, sous contrat HDS signé`,
       model: "Mistral, poids ouverts Apache 2.0, déployé par nos soins",
-      runtime: "Ollama, ou GPU loué si le débit ne suffit pas",
+      runtime: "Ollama, ou vLLM sur GPU loué si le débit ne suffit pas",
+      machines,
       ...chan,
-      cost: "Serveur déjà payé. GPU loué en supplément si nécessaire.",
+      cost: "Serveur déjà payé. GPU loué en supplément si le volume l'exige.",
       caveats: [
-        "Aucune API d'inférence prête à l'emploi n'est dans un périmètre HDS : l'appel à Claude ou GPT depuis un serveur HDS ferait sortir la donnée du périmètre.",
+        "Aucune API d'inférence prête à l'emploi n'est sous périmètre HDS : appeler Claude ou GPT depuis un serveur HDS ferait sortir la donnée du périmètre.",
         "Vérifier le contrat HDS de la Dedibox : la certification ne se transmet pas en louant une machine.",
       ],
     };
   }
 
-  // Cas 4 : souveraineté sans donnée de santé.
-  if (sovereign) {
+  if (sovereign || secret) {
     return {
       title: "API française, agent hébergé chez nous",
-      hosting: `${CAPABILITIES.server.label}`,
+      hosting: CAPABILITIES.server.label,
       model: "Mistral, API La Plateforme, droit français",
-      runtime: "Appel API, rien à administrer",
+      runtime: "Appel API, aucune machine à administrer",
+      machines,
       ...chan,
-      cost: "Environ 1 à 3 EUR par mois d'API pour un usage quotidien.",
+      cost: "Environ 1 à 3 EUR par mois pour un usage quotidien.",
       caveats: ["Confirmer par écrit la politique de rétention de Mistral avant de s'engager."],
     };
   }
 
-  // Cas 5 : aucune contrainte forte. Le montage par défaut.
   const model = budget
     ? "Claude Haiku 4.5, environ 6 EUR par mois"
     : usage === "heavy"
       ? "Claude Sonnet 5, environ 19 EUR par mois"
-      : "Claude Sonnet 5 ou Mistral selon le budget";
+      : "Claude Sonnet 5, ou Mistral si le budget prime";
 
   return {
-    title: "Montage standard : hébergé chez nous, API au compteur",
-    hosting: `${CAPABILITIES.server.label}`,
+    title: "Montage standard : hébergé chez nous, modèle en API",
+    hosting: CAPABILITIES.server.label,
     model,
-    runtime: "Appel API, rien à administrer",
+    runtime: "Appel API, aucune machine à administrer",
+    machines,
     ...chan,
     cost: budget ? "Moins de 10 EUR par mois." : "Entre 6 et 32 EUR par mois selon le modèle.",
     caveats: [

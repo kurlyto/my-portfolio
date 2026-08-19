@@ -787,6 +787,17 @@
   display: block;
   color: var(--text-muted);
   font-size: 12px;
+  line-height: 1.45;
+}
+
+/* Plusieurs machines possibles : elles s'empilent, la première est celle
+   que l'on propose par défaut. */
+.eco-setup-machine {
+  display: block;
+}
+
+.eco-setup-machine + .eco-setup-machine {
+  margin-top: 8px;
 }
 
 .eco-setup-caveats {
