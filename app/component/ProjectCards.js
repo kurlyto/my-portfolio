@@ -65,6 +65,10 @@ const PROJECTS = [
     link: "/",
     cover: "from-zinc-800 to-zinc-900",
     coverImage: "/images/cover-agents.png",
+    // Logo NK sur fond transparent : comme FeatuRing et MDD, il doit rester
+    // ENTIER. Sans ce drapeau le desktop passe en object-cover et rogne le
+    // logo dans le cadre 4/3 (meme piege que le logo Insider Bot coupe).
+    coverImageFit: "contain",
     tech: [
       { icon: NodeJsIcon, label: "Node.js" },
       { icon: PythonIcon, label: "Python" },
