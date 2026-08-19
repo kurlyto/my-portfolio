@@ -10,14 +10,14 @@
 // 10 tok/s suit la lecture, 30 tok/s est confortable, 5 tok/s est pénible.
 
 export const LOCAL_MODEL_COLUMNS = [
-  { key: "name", label: "Modèle" },
-  { key: "editor", label: "Éditeur" },
-  { key: "country", label: "Pays" },
-  { key: "sizes", label: "Tailles" },
-  { key: "ram", label: "RAM / VRAM (Q4_K_M)" },
-  { key: "license", label: "Licence" },
-  { key: "commercial", label: "Usage commercial" },
-  { key: "level", label: "Niveau" },
+  { key: "name", label: "Modèle", width: "14%" },
+  { key: "editor", label: "Éditeur", width: "9%" },
+  { key: "country", label: "Pays", width: "8%" },
+  { key: "sizes", label: "Tailles", width: "15%" },
+  { key: "ram", label: "RAM / VRAM (Q4_K_M)", width: "16%" },
+  { key: "license", label: "Licence", width: "11%" },
+  { key: "commercial", label: "Usage commercial", width: "12%" },
+  { key: "level", label: "Niveau", width: "15%" },
 ];
 
 export const LOCAL_MODELS = [
@@ -156,12 +156,12 @@ export const LOCAL_MODELS = [
 ];
 
 export const HARDWARE_COLUMNS = [
-  { key: "name", label: "Configuration" },
-  { key: "price", label: "Prix 2026" },
-  { key: "maxModel", label: "Modèle maximum" },
-  { key: "speed", label: "Vitesse mesurée" },
-  { key: "users", label: "Utilisateurs" },
-  { key: "target", label: "Pour qui" },
+  { key: "name", label: "Configuration", width: "16%" },
+  { key: "price", label: "Prix 2026", width: "17%" },
+  { key: "maxModel", label: "Modèle maximum", width: "16%" },
+  { key: "speed", label: "Vitesse mesurée", width: "23%" },
+  { key: "users", label: "Utilisateurs", width: "9%" },
+  { key: "target", label: "Pour qui", width: "19%" },
 ];
 
 export const HARDWARE = [
@@ -249,12 +249,12 @@ export const HARDWARE = [
 ];
 
 export const RUNTIME_COLUMNS = [
-  { key: "name", label: "Logiciel" },
-  { key: "usage", label: "Usage" },
-  { key: "install", label: "Installation" },
-  { key: "openaiApi", label: "API OpenAI" },
-  { key: "license", label: "Licence" },
-  { key: "notes", label: "Points forts et limites" },
+  { key: "name", label: "Logiciel", width: "10%" },
+  { key: "usage", label: "Usage", width: "16%" },
+  { key: "install", label: "Installation", width: "16%" },
+  { key: "openaiApi", label: "API OpenAI", width: "11%" },
+  { key: "license", label: "Licence", width: "12%" },
+  { key: "notes", label: "Points forts et limites", width: "35%" },
 ];
 
 export const RUNTIMES = [

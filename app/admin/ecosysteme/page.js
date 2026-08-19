@@ -2,13 +2,7 @@ import { ComparisonTable } from "./ComparisonTable";
 import { Section, Sources } from "./Section";
 import { Freshness } from "./Freshness";
 import { Faq } from "./Faq";
-import {
-  PROVIDERS,
-  PROVIDER_COLUMNS,
-  PROVIDER_SOURCES,
-  HDS_VERDICT,
-  SOVEREIGNTY_CONTEXT,
-} from "../data/providers";
+import { PROVIDERS, PROVIDER_COLUMNS, PROVIDER_SOURCES } from "../data/providers";
 import {
   LOCAL_MODELS,
   LOCAL_MODEL_COLUMNS,
@@ -69,13 +63,6 @@ export default function EcosystemePage() {
       >
         <ComparisonTable columns={PROVIDER_COLUMNS} rows={PROVIDERS} />
         <Sources items={PROVIDER_SOURCES} />
-      </Section>
-
-      <Section label="Santé" title="Ce que le HDS autorise réellement">
-        <Verdict {...HDS_VERDICT} />
-        <div className="mt-4">
-          <Verdict {...SOVEREIGNTY_CONTEXT} />
-        </div>
       </Section>
 
       <Section

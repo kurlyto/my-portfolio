@@ -8,15 +8,15 @@
 // l'opérateur de la messagerie, jamais contre l'hébergeur de l'agent.
 
 export const GATEWAY_COLUMNS = [
-  { key: "name", label: "Passerelle" },
-  { key: "api", label: "API" },
-  { key: "difficulty", label: "Difficulté" },
-  { key: "e2ee", label: "Chiffrement E2E" },
-  { key: "operatorSees", label: "Ce que voit l'opérateur" },
-  { key: "selfHost", label: "Auto-hébergeable" },
-  { key: "cost", label: "Coût" },
-  { key: "proUse", label: "Usage commercial" },
-  { key: "comfort", label: "Confort client" },
+  { key: "name", label: "Passerelle", width: "12%" },
+  { key: "api", label: "API", width: "14%" },
+  { key: "difficulty", label: "Difficulté", width: "8%" },
+  { key: "e2ee", label: "Chiffrement E2E", width: "10%" },
+  { key: "operatorSees", label: "Ce que voit l'opérateur", width: "22%" },
+  { key: "selfHost", label: "Auto-hébergeable", width: "9%" },
+  { key: "cost", label: "Coût", width: "11%" },
+  { key: "proUse", label: "Usage commercial", width: "9%" },
+  { key: "comfort", label: "Confort", width: "10%" },
 ];
 
 export const GATEWAYS = [
@@ -41,7 +41,7 @@ export const GATEWAYS = [
     operatorSees: "Contenu intégral, numéro, métadonnées",
     selfHost: { label: "Non", tone: "bad" },
     cost: "Par message, variable selon pays",
-    proUse: { label: "Autorisé, vérif. entreprise", tone: "warn" },
+    proUse: { label: "Vérif. entreprise", tone: "warn" },
     comfort: "Élevé",
   },
   {
@@ -51,7 +51,7 @@ export const GATEWAYS = [
     difficulty: "Élevée",
     e2ee: { label: "Oui, si imposé", tone: "good" },
     operatorSees: "Rien si serveur auto-hébergé. Métadonnées en fédération.",
-    selfHost: { label: "Oui, total", tone: "good" },
+    selfHost: { label: "Oui", tone: "good" },
     cost: "Gratuit hors serveur",
     proUse: { label: "Autorisé", tone: "good" },
     comfort: "Faible",
@@ -63,7 +63,7 @@ export const GATEWAYS = [
     difficulty: "Élevée",
     e2ee: { label: "Oui", tone: "good" },
     operatorSees: "Métadonnées minimales. Numéro dédié obligatoire.",
-    selfHost: { label: "Partiel (le pont)", tone: "warn" },
+    selfHost: { label: "Partiel", tone: "warn" },
     cost: "Gratuit",
     proUse: { label: "CGU restrictives", tone: "bad" },
     comfort: "Moyen",
