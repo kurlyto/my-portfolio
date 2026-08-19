@@ -528,11 +528,17 @@
   letter-spacing: 0.08em;
 }
 
+/* Titre de section : grand, centré, seul repère entre deux tableaux.
+   La page est une succession de TITRE / TABLEAU / SOURCES, sans texte
+   intercalaire, donc le titre doit tenir ce rôle à lui seul. */
 .eco-section-title {
   color: var(--text-primary);
+  font-family: var(--font-display), Georgia, serif;
   font-weight: 700;
-  font-size: 22px;
-  line-height: 1.2;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-align: center;
 }
 
 .eco-lead {
@@ -625,6 +631,137 @@
   letter-spacing: 0.06em;
 }
 
+/* Filtres de compatibilité : on coche les contraintes du client. */
+.eco-filters-block {
+  border: 1px solid var(--hairline);
+  background: var(--surface-1);
+  padding: 16px 18px;
+  margin-bottom: 16px;
+}
+
+.eco-filters-title {
+  color: var(--text-muted);
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.eco-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.eco-filter {
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  padding: 7px 14px;
+  background: var(--surface-1);
+  color: var(--text-secondary);
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 120ms ease-out,
+    border-color 120ms ease-out,
+    color 120ms ease-out;
+}
+
+.eco-filter:hover {
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+}
+
+.eco-filter[aria-pressed="true"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+.eco-filters-result {
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.eco-filters-result strong {
+  color: var(--text-primary);
+}
+
+.eco-filters-reset {
+  margin-left: 10px;
+  border: 0;
+  background: none;
+  padding: 0;
+  color: var(--accent);
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+
+/* Verdict par ligne. Une barre à gauche plutôt qu'un aplat : la couleur
+   reste lisible sans écraser le texte des cellules, et le survol continue
+   de fonctionner par-dessus. */
+.eco-table tbody tr.eco-row-ok td:first-child {
+  box-shadow: inset 3px 0 0 #1baf7a;
+}
+
+.eco-table tbody tr.eco-row-ko td:first-child {
+  box-shadow: inset 3px 0 0 #d03b3b;
+}
+
+.eco-table tbody tr.eco-row-ko td {
+  color: var(--text-muted);
+}
+
+.eco-verdict-tag {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 1px 6px;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.eco-verdict-tag-ok {
+  color: #006300;
+}
+
+.eco-verdict-tag-ko {
+  color: #d03b3b;
+}
+
+/* Motif d'exclusion : c'est ce qui se dit à voix haute en rendez-vous, donc
+   il est écrit, pas seulement signalé par une couleur. */
+.eco-reasons {
+  margin-top: 6px;
+  padding-left: 12px;
+  list-style: none;
+}
+
+.eco-reasons li {
+  position: relative;
+  color: #a33;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.eco-reasons li::before {
+  content: "-";
+  position: absolute;
+  left: -10px;
+}
+
 /* Sommaire des tableaux. Ancres natives, aucun JavaScript. */
 .eco-toc {
   display: grid;
@@ -676,6 +813,13 @@
    place le titre de section juste dessous et le cache. */
 .eco-section {
   scroll-margin-top: 24px;
+  /* Respiration entre deux blocs TITRE / TABLEAU / SOURCES : c'est le seul
+     séparateur, il n'y a plus de texte d'introduction. */
+  margin-top: 88px;
+}
+
+.eco-section:first-of-type {
+  margin-top: 0;
 }
 
 /* FAQ en accordéon natif (details/summary), sans JavaScript.

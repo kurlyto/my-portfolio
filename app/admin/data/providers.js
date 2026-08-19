@@ -9,20 +9,31 @@
 // fait sortir la donnée du périmètre. C'est l'erreur classique.
 //
 // Prix en USD par million de tokens, tarif standard hors cache et hors batch.
+//
+// La colonne « coût / mois » traduit ce tarif en facture mensuelle, seule
+// grandeur qui parle à un client : personne ne raisonne en tokens.
+// Hypothèse retenue, à annoncer telle quelle : un indépendant qui utilise
+// son agent tous les jours ouvrés, environ 40 échanges par jour, 4 000
+// tokens en entrée (question + extraits de documents) et 800 en sortie,
+// soit 3,5 M de tokens en entrée et 0,7 M en sortie par mois. Conversion
+// à 0,92 EUR pour 1 USD.
+// Un usage plus lourd (traitement de masse, agent qui tourne en continu)
+// change l'ordre de grandeur : recalculer plutôt que citer ces chiffres.
 
 // Les largeurs sont obligatoires : le tableau est en table-layout fixe.
 // Elles totalisent 100 %. Les colonnes à badge sont volontairement étroites,
 // les colonnes de phrase prennent le reste.
 export const PROVIDER_COLUMNS = [
   { key: "name", label: "Fournisseur", width: "11%" },
-  { key: "models", label: "Modèles", width: "15%" },
+  { key: "models", label: "Modèles", width: "13%" },
   { key: "location", label: "Serveurs", width: "13%" },
   { key: "jurisdiction", label: "Droit", width: "9%" },
   { key: "training", label: "Entraînement", width: "11%" },
   { key: "retention", label: "Rétention", width: "8%" },
   { key: "health", label: "Santé FR", width: "9%" },
   { key: "openWeights", label: "Poids ouverts", width: "11%" },
-  { key: "price", label: "Prix / M tokens", width: "13%" },
+  { key: "price", label: "Prix / M tokens", width: "11%" },
+  { key: "monthly", label: "Coût / mois", width: "10%" },
 ];
 
 export const PROVIDERS = [
@@ -37,6 +48,7 @@ export const PROVIDERS = [
     health: { label: "Si auto-hébergé", tone: "warn" },
     openWeights: "Large 3, Small 4, Ministral 3 : Apache 2.0. Medium 3.5 : Modified MIT",
     price: "Large 3 : 0,50 / 1,50 · Small 4 : 0,15 / 0,60 · Ministral 3 8B : 0,15 / 0,15",
+    monthly: "~1 à 3 EUR",
   },
   {
     name: "Scaleway",
@@ -49,6 +61,7 @@ export const PROVIDERS = [
     health: { label: "Hors HDS", tone: "bad" },
     openWeights: "Modèles ouverts",
     price: "Non vérifié",
+    monthly: "Non vérifié",
   },
   {
     name: "OVHcloud",
@@ -61,6 +74,7 @@ export const PROVIDERS = [
     health: { label: "Hors HDS", tone: "bad" },
     openWeights: "Modèles ouverts",
     price: "Non affiché au détail. Offre batch ~moitié prix",
+    monthly: "Non vérifié",
   },
   {
     name: "NumSpot / Docaposte",
@@ -73,6 +87,7 @@ export const PROVIDERS = [
     health: { label: "PaaS oui, IA n.v.", tone: "warn" },
     openWeights: "Selon modèle déployé",
     price: "Sur devis",
+    monthly: "Sur devis",
   },
   {
     name: "Anthropic",
@@ -85,6 +100,7 @@ export const PROVIDERS = [
     health: { label: "Non", tone: "bad" },
     openWeights: "Non",
     price: "Opus 5 : 5 / 25 · Sonnet 5 : 3 / 15 · Haiku 4.5 : 1 / 5 · Fable 5 : 10 / 50",
+    monthly: "6 à 32 EUR selon modèle",
   },
   {
     name: "OpenAI",
@@ -98,6 +114,7 @@ export const PROVIDERS = [
     openWeights: "Non",
     price:
       "sol : 5 / 30 · terra : 2 / 12 · luna : 0,20 / 1,20. Uplift +10 % sur endpoints régionaux",
+    monthly: "1 à 35 EUR selon modèle",
   },
   {
     name: "Google",
@@ -110,6 +127,7 @@ export const PROVIDERS = [
     health: { label: "Non", tone: "bad" },
     openWeights: "Non (Gemma est distinct)",
     price: "3.7 Flash : 0,75 / 3,75 jusqu'au 31/12/2026, puis 1,50 / 7,50 · 3.5 Flash : 1,50 / 9,00",
+    monthly: "5 à 11 EUR",
   },
   {
     name: "Microsoft Azure",
@@ -122,6 +140,7 @@ export const PROVIDERS = [
     health: { label: "Infra oui, IA n.v.", tone: "warn" },
     openWeights: "Non",
     price: "Aligné OpenAI, non vérifié au détail",
+    monthly: "Aligné OpenAI",
   },
   {
     name: "Meta (Llama)",
@@ -134,6 +153,7 @@ export const PROVIDERS = [
     health: { label: "Si auto-hébergé", tone: "good" },
     openWeights: "Llama 4 Community License, restrictions d'usage, pas Apache 2.0",
     price: "Coût GPU",
+    monthly: "Coût machine, pas d'abonnement",
   },
   {
     name: "Alibaba (Qwen)",
@@ -146,6 +166,7 @@ export const PROVIDERS = [
     health: { label: "Si auto-hébergé", tone: "warn" },
     openWeights: "Apache 2.0 sur la plupart des modèles",
     price: "Coût GPU en auto-hébergé",
+    monthly: "Coût machine, pas d'abonnement",
   },
   {
     name: "DeepSeek",
@@ -158,6 +179,7 @@ export const PROVIDERS = [
     health: { label: "Non", tone: "bad" },
     openWeights: "Oui, licence exacte non vérifiée",
     price: "V4 Flash ~0,14 / 0,28, source agrégateur non vérifiée",
+    monthly: "<1 EUR, non vérifié",
   },
   {
     name: "xAI",
@@ -170,6 +192,7 @@ export const PROVIDERS = [
     health: { label: "Non", tone: "bad" },
     openWeights: "Non",
     price: "~0,20 / 0,50, source agrégateur non vérifiée",
+    monthly: "~1 EUR, non vérifié",
   },
   {
     name: "Cohere",
@@ -182,6 +205,7 @@ export const PROVIDERS = [
     health: { label: "Non", tone: "bad" },
     openWeights: "Poids de recherche CC-BY-NC, non vérifié",
     price: "~2,50 / 10, source agrégateur non vérifiée",
+    monthly: "~15 EUR, non vérifié",
   },
 ];
 

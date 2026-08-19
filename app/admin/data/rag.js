@@ -81,12 +81,6 @@ export const RAG_SCALE = {
   ],
 };
 
-// Piège de licence qui vise directement un revendeur.
-export const RAG_LICENSE_WARNING = {
-  title: "Open WebUI ne peut pas être revendu en marque blanche",
-  body: "Open WebUI est passé de BSD-3 à une licence maison en avril 2025. Elle interdit explicitement de retirer ou modifier son logo, le co-branding, et le white-label pour revente ou offre SaaS. Exception : les déploiements de 50 utilisateurs ou moins sur 30 jours peuvent retirer la marque, ce qui couvre un indépendant. Pour une offre revendue sous votre marque, AnythingLLM et Onyx Community, tous deux en MIT, sont les choix sûrs.",
-};
-
 export const RAG_SOURCES = [
   {
     label: "Banc d'essai 5 047 pages",
