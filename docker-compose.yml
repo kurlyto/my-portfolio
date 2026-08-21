@@ -23,7 +23,13 @@ services:
       # Regles d etancheite partagees par tout le parc (lecture seule) : Nate est
       # le seul canal public, il ne doit pas tourner sans elles.
       - /data/nathan/my-agents/shared:/data/nathan/my-agents/shared:ro
-    mem_limit: 1g
+    # 2 Go minimum depuis le 19/08/2026 (regle de parc) : ce conteneur porte
+    # le chat web de Nate, qui lance des process claude. Un agent Claude lance
+    # des sous-process par conception (bascule de compte, mesure de pression,
+    # delegation). A moins de 2 Go le conteneur est tue par le noyau et l'echec
+    # remonte en "claude a termine avec le code null" - illisible. Incident reel
+    # sur Luffy ce jour-la.
+    mem_limit: 2g
     cpus: 1.0
     logging:
       driver: json-file
