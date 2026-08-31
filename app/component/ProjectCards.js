@@ -165,15 +165,14 @@ const PROJECTS = [
   {
     name: "Fetamap",
     description:
-      "Reconstituez la carte de tous vos voyages : chaque pays où vous êtes allé se colore, année par année. Votre parcours du monde en un coup d'œil.",
+      "Crée la carte de tes aventures passées en 5 minutes, et exporte-la sur ton site en un composant réutilisable ou commande une affiche pour chez toi !",
     years: "2026",
     status: "En construction",
     cover: "from-teal-700 to-teal-950",
   },
   {
     name: "Fetafrance",
-    description:
-      "Quelle part de la France avez-vous vue ? Cochez les départements et les villes visités, et découvrez le pourcentage du territoire parcouru. Gratuit, sans compte.",
+    description: "Quelle proportion de la France as-tu réellement visitée ?",
     years: "2026",
     status: "En construction",
     cover: "from-indigo-700 to-indigo-950",
