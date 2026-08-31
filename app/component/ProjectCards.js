@@ -44,7 +44,7 @@ const PROJECTS = [
   {
     name: "Mon Devis Dentaire",
     description:
-      "Plateforme SaaS visant à fluidifier la signature des devis pour les cabinets dentaires. Explications des actes par IA, relances automatiques, prise de rendez-vous et solutions de paiement intégrées.",
+      "Plateforme SaaS qui fluidifie la signature des devis pour les cabinets dentaires. L'IA explique chaque acte au patient en langage clair, des relances automatiques suivent les devis en attente, et le cabinet gère prise de rendez-vous et paiement en ligne, le tout branché sur son logiciel métier.",
     years: "2025 - 2026",
     link: "https://mondevisdentaire.fr",
     cover: "from-slate-50 to-slate-100",
@@ -58,9 +58,22 @@ const PROJECTS = [
     ],
   },
   {
+    name: "AIOS",
+    description:
+      "Mon deuxième cerveau, qui tourne en continu sur mon serveur : mails, agenda, bourse, veille, prospection, mémoire. Je lui parle à la voix ou par écrit comme à un collègue, il agit sur mes vrais outils et apprend de mes corrections d'une session à l'autre pour ne jamais refaire deux fois la même erreur.",
+    years: "2026",
+    cover: "from-zinc-800 to-zinc-900",
+    coverImage: "/images/cover-aios.png",
+    // Icone renard sur fond sombre plein cadre : comme MDD et Agents IA
+    // sur-mesure, elle doit rester ENTIERE (contain), sinon object-cover
+    // rogne les oreilles dans le cadre 4/3.
+    coverImageFit: "contain",
+    tech: [{ icon: NodeJsIcon, label: "Node.js" }],
+  },
+  {
     name: "Agents IA sur-mesure",
     description:
-      "Un employé qui fait ce que vous n'avez pas envie de faire, et qui ne dort jamais. Mails, agenda, prospection, réseaux, relances : il s'en occupe pendant que vous gérez le reste. Vous lui parlez sur Telegram, comme à un collègue.",
+      "Un employé qui fait ce que vous n'avez pas envie de faire, et qui ne dort jamais. Mails, agenda, prospection, réseaux sociaux, relances clients : il s'en occupe seul pendant que vous gérez le reste. Vous lui parlez sur Telegram comme à un collègue, et il se façonne sur mesure autour de votre métier.",
     years: "2026",
     link: "/",
     cover: "from-zinc-800 to-zinc-900",
@@ -80,6 +93,7 @@ const PROJECTS = [
     description:
       "La photo est-elle générée par IA, ou est-elle réelle ? Saurez-vous faire la différence ?",
     years: "2023",
+    link: "https://ai-or-not.nathan-knaebel.com",
     cover: "from-sky-600 to-indigo-900",
     coverImage: "/images/cover-aiornot.png",
     tech: [
@@ -146,19 +160,20 @@ const PROJECTS = [
       "Une sélection de mes photographies, avec une direction artistique qui lui est propre.",
     years: "2026",
     status: "En construction",
-    link: "/photography",
     cover: "from-neutral-700 to-neutral-950",
   },
   {
     name: "Fetamap",
-    description: "Une carte pour retrouver les meilleures adresses, sélectionnées à la main.",
+    description:
+      "Reconstituez la carte de tous vos voyages : chaque pays où vous êtes allé se colore, année par année. Votre parcours du monde en un coup d'œil.",
     years: "2026",
     status: "En construction",
     cover: "from-teal-700 to-teal-950",
   },
   {
     name: "Fetafrance",
-    description: "Le meilleur de la France, adresse par adresse, région par région.",
+    description:
+      "Quelle part de la France avez-vous vue ? Cochez les départements et les villes visités, et découvrez le pourcentage du territoire parcouru. Gratuit, sans compte.",
     years: "2026",
     status: "En construction",
     cover: "from-indigo-700 to-indigo-950",
@@ -231,7 +246,7 @@ function useIsPhone() {
 }
 
 const CARD_CLASS =
-  "group flex h-[calc(100dvh-2rem)] flex-col rounded-3xl border border-black/[0.06] bg-white p-5 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_12px_28px_-16px_rgba(0,0,0,0.12)] transition-all duration-300 ease-out sm:h-[520px] hover:-translate-y-1.5 hover:shadow-[0_1px_2px_rgba(0,0,0,0.05),0_24px_40px_-20px_rgba(0,0,0,0.18)]";
+  "group flex h-[calc(100dvh-2rem)] flex-col rounded-3xl border border-black/[0.06] bg-white p-5 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_12px_28px_-16px_rgba(0,0,0,0.12)] transition-all duration-300 ease-out sm:h-[560px] hover:-translate-y-1.5 hover:shadow-[0_1px_2px_rgba(0,0,0,0.05),0_24px_40px_-20px_rgba(0,0,0,0.18)]";
 
 // Carte epuree type "bewide" : image en haut, titre, description legere.
 //
@@ -284,11 +299,12 @@ function ProjectCard({ project, index }) {
           {project.name}
         </h3>
 
-        {/* Sur mobile la carte fait tout l'ecran : la description s'affiche en
-            entier et c'est la couverture (flex-1) qui cede la place. Le
-            line-clamp ne sert qu'a partir de sm, ou la hauteur est figee a
-            520px et ou les cartes doivent s'aligner entre elles. */}
-        <p className="mt-3 text-[15px] opacity-60 leading-relaxed sm:line-clamp-3">
+        {/* La description est bornee des le mobile (line-clamp-4) pour qu'une
+            carte tienne TOUJOURS dans l'ecran, meme sur un petit telephone : une
+            description longue ne doit jamais deborder ni pousser la couverture
+            hors de la carte. A partir de sm, hauteur figee a 520px, clamp-3 pour
+            aligner les cartes entre elles. */}
+        <p className="mt-3 text-[15px] opacity-60 leading-relaxed line-clamp-4 sm:line-clamp-5">
           {project.description}
         </p>
 
@@ -328,10 +344,20 @@ function ProjectCard({ project, index }) {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 32 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.5, ease: "easeOut", delay: (index % 3) * 0.08 }}
+      initial={{ opacity: 0, y: 64, scale: 0.94 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      // margin plus genereuse (-15%) : l'animation se declenche des que la carte
+      // approche du bas de l'ecran, elle est donc franchement VISIBLE au scroll
+      // plutot que deja finie quand on arrive dessus.
+      viewport={{ once: true, margin: "-15% 0px -15% 0px" }}
+      // Cascade par colonne (index % 3) + ressort doux : les cartes montent en
+      // se posant plutot qu'en glissant a plat, ce qui donne de la vie a
+      // l'apparition sans ralentir la lecture.
+      transition={{
+        duration: 0.7,
+        ease: [0.16, 1, 0.3, 1],
+        delay: (index % 3) * 0.12,
+      }}
       className={CARD_CLASS}
     >
       {body}
@@ -350,7 +376,7 @@ function ProjectCard({ project, index }) {
 // marge propre autour de la carte.
 export default function ProjectCards() {
   return (
-    <div className="snap-page mt-10 grid grid-cols-1 gap-0 sm:mt-10 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-10">
+    <div className="snap-page mt-10 grid grid-cols-1 gap-0 max-sm:mt-0 sm:mt-10 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-10">
       {PROJECTS.map((project, index) => (
         <div
           key={project.name}

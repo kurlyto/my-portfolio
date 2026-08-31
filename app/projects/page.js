@@ -1,70 +1,50 @@
-import Header from "../component/Header";
 import Footer from "../component/Footer";
-import Reveal from "../component/Reveal";
 import ProjectCards from "../component/ProjectCards";
+import ProjectsNav from "../component/ProjectsNav";
+import ProjectsHero from "../component/ProjectsHero";
+import TechMarquee from "../component/TechMarquee";
 
 export const metadata = {
-  title: "Projets",
-  description: "Ce que j'ai construit : jeux, outils metier, SaaS.",
+  title: "Projets — Nathan Knaebel",
+  description: "Ce que j'ai construit : SaaS, jeux, agents IA, outils metier, cartes.",
   alternates: { canonical: "https://nathan-knaebel.com/projects" },
 };
 
-const TECH_STACK = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "TypeScript",
-  "Python",
-  "Next.js",
-  "Node.js",
-  "Prisma",
-  "Linux",
-  "Git",
-];
-
+// Page volontairement DETACHEE du site d'agents : sa propre nav (ProjectsNav),
+// pas le Header "Votre Agent IA" / Metiers / Agents / FAQ. C'est un portfolio
+// qui se tient seul.
 export default function ProjectsPage() {
   return (
-    <div className="min-h-screen bg-white text-black">
-      <div className="bg-black text-white min-h-screen flex flex-col">
-        <Header dark />
-        <div className="flex-1 flex flex-col justify-center max-w-7xl mx-auto px-6 py-6">
-          <span className="text-xs font-mono uppercase tracking-widest text-[#ff6b35]">
-            Projets
-          </span>
-          <h1 className="mt-3 text-3xl md:text-5xl font-bold tracking-tight">
-            Ingénieur industriel &amp; logiciel
-            <br />
-            Chef de projet
-          </h1>
-          <p className="mt-6 max-w-2xl text-base md:text-lg opacity-70 leading-relaxed">
-            J&apos;ai travaillé durant 6 ans sur des optimisations de processus industriels avant
-            d&apos;allouer plus de temps à ce qui me plaît énormément : concevoir et développer des
-            applications qui répondent à de vrais besoins. Elles sont toutes réunies ci-dessous —
-            n&apos;hésitez pas à les parcourir et à les essayer.
-          </p>
+    <div className="min-h-screen bg-black text-white">
+      <ProjectsNav />
 
-          <ul className="mt-8 flex flex-wrap gap-2">
-            {TECH_STACK.map((tech) => (
-              <li
-                key={tech}
-                className="text-xs font-mono border border-white/20 rounded px-3 py-1 opacity-70 transition-all duration-150 ease-out hover:opacity-100 hover:-translate-y-0.5 hover:border-white/50 cursor-default"
-              >
-                {tech}
-              </li>
-            ))}
-          </ul>
+      <ProjectsHero />
+
+      <TechMarquee />
+
+      {/* Section blanche PLEINE LARGEUR (plus de boite blanche flottante au
+          milieu du noir) : le blanc va bord a bord, seul le contenu reste
+          contraint a max-w-7xl. Un degrade doux fait la jointure avec le noir
+          du bandeau techs au-dessus. */}
+      {/* Sur telephone, pt/pb sont annules : chaque carte est un ecran plein, pas
+          de marge parasite qui decalerait le snap. Le px-6 reste (les cartes le
+          neutralisent avec -mx-6 pour aller bord a bord). */}
+      <main className="bg-white text-black">
+        <div className="mx-auto max-w-7xl px-6 pt-16 pb-24 max-sm:pt-0 max-sm:pb-0">
+          {/* Pas de titre : la grille parle d'elle-meme. On garde juste l'ancre
+              invisible pour que le lien "Mes projets" de la nav descende ici. */}
+          <span id="projets" className="block scroll-mt-24" aria-hidden />
+
+          <ProjectCards />
         </div>
-      </div>
-
-      <main className="mx-auto max-w-7xl px-6 pt-16 pb-24">
-        <Reveal>
-          <h2 className="text-2xl md:text-3xl font-bold">Ce que j&apos;ai construit</h2>
-        </Reveal>
-
-        <ProjectCards />
       </main>
 
-      <Footer />
+      {/* Pas de lien "retour a l'accueil" : la page est autonome, elle ne renvoie
+          pas vers le site d'agents. Sur mobile, dernier ecran net du deck
+          (snap-screen) pour que le geste depuis la derniere carte s'y pose. */}
+      <div className="snap-screen max-sm:flex max-sm:min-h-[100dvh] max-sm:flex-col max-sm:justify-end">
+        <Footer showHomeLink={false} />
+      </div>
     </div>
   );
 }

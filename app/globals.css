@@ -55,32 +55,37 @@ button:not(:disabled),
   }
 }
 
-/* Page "Mes projets" sur telephone : une carte = un ecran, et le scroll est
-   guide (un geste vers le bas amene la carte suivante bien centree).
+/* Page "Mes projets" sur telephone : la page entiere devient un jeu de cartes
+   plein ecran (comme un carrousel vertical). Un geste vers le bas = l'ecran
+   suivant, net, jamais deux d'un coup.
 
    Le snap est porte par le scroller de la PAGE, pas par un conteneur imbrique :
    un conteneur imbrique piegerait le scroll et empecherait la barre d'URL du
    navigateur de se retracter.
 
-   `proximity` et non `mandatory` : la page contient ~980px de hero et ~500px de
-   pied de page qui ne sont PAS des cartes. En `mandatory`, le navigateur refuse
-   de s'arreter dans ces zones et ramene de force vers une carte - c'est ce qui
-   produisait les sauts d'ecran incontrolables au doigt. En `proximity`, il
-   n'accroche que si on s'arrete pres d'une carte, et laisse le hero et le
-   footer defiler normalement.
+   `mandatory` (et non `proximity`) : proximity ne colle QUE si on s'arrete pres
+   d'une carte, d'ou le "magnet mou" qui laissait sauter ou glisser plusieurs
+   cartes. Pour que mandatory soit propre, il ne doit pas rester de grande zone
+   "non-carte" ou le navigateur ramenerait de force : c'est pourquoi CHAQUE
+   section de la page mobile (hero, bandeau techs, chaque carte, pied de page)
+   est un ecran plein a part entiere (classe `snap-screen` / `snap-card`, hauteur
+   100dvh). Toute la page est ainsi partitionnee en points d'arret nets, sans
+   trou : un geste, un ecran.
 
    `scroll-behavior: smooth` (defini plus haut pour les ancres) est neutralise
    ici : il entre en conflit avec l'animation de snap du navigateur. */
 @media (max-width: 639px) {
   html:has(.snap-page) {
-    scroll-snap-type: y proximity;
+    scroll-snap-type: y mandatory;
     scroll-behavior: auto;
   }
 
-  /* `always` interdit au navigateur d'ignorer un point d'arret quand le geste
-     est rapide : c'est ce qui empeche de sauter plusieurs cartes d'un coup. */
-  .snap-page .snap-card {
-    scroll-snap-align: center;
+  /* `start` aligne le haut de chaque ecran sous le header colle ; `always`
+     interdit au navigateur d'ignorer un point d'arret quand le geste est rapide :
+     c'est ce qui empeche de sauter plusieurs ecrans d'un coup. */
+  .snap-page .snap-card,
+  .snap-screen {
+    scroll-snap-align: start;
     scroll-snap-stop: always;
   }
 }

@@ -30,7 +30,22 @@ function buildJsonLd() {
         url: SITE_URL,
         image: `${SITE_URL}/images/logo-nk.png`,
         jobTitle: "Concepteur d'agents IA",
-        sameAs: ["https://github.com/kurlyto"],
+        sameAs: [
+          "https://github.com/kurlyto",
+          "https://linkedin.com/in/nathan-knaebel",
+        ],
+        knowsAbout: [
+          "Agents IA autonomes",
+          "Automatisation de taches metier",
+          "Claude (Anthropic)",
+          "SaaS",
+        ],
+        worksFor: {
+          "@type": "Organization",
+          "@id": "https://mondevisdentaire.fr/#organization",
+          name: "Mon Devis Dentaire",
+          url: "https://mondevisdentaire.fr",
+        },
       },
       {
         "@type": "Service",

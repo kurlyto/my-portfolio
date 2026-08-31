@@ -19,13 +19,18 @@ const PAD = { top: 16, right: 16, bottom: 28, left: 44 };
 const VIEW_W = 900;
 const VIEW_H = 340;
 
-function niceTicks(max) {
-  if (max <= 0) return [0, 1];
-  const rough = max / 4;
+function niceTicks(peak) {
+  if (peak <= 0) return [0, 1];
+  const rough = peak / 4;
   const magnitude = 10 ** Math.floor(Math.log10(rough));
   const step = [1, 2, 2.5, 5, 10].map((m) => m * magnitude).find((s) => s >= rough) ?? magnitude * 10;
+  // Le sommet de l'axe doit TOUJOURS couvrir le pic : on arrondit au pas
+  // superieur. Sans ca, le dernier tick pouvait tomber sous le pic (ex : pic
+  // 105, pas 50 -> sommet 100) et la courbe sortait par le haut, rognee par le
+  // clip du graphe.
+  const top = Math.ceil(peak / step) * step;
   const ticks = [];
-  for (let v = 0; v <= max + step / 2; v += step) ticks.push(Math.round(v));
+  for (let v = 0; v <= top + step / 2; v += step) ticks.push(Math.round(v));
   return ticks;
 }
 
