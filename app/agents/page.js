@@ -1,44 +1,100 @@
-import Header from "../component/Header";
-import Footer from "../component/Footer";
-import Reveal from "../component/Reveal";
-import AgentsExplorer from "./AgentsExplorer";
+import HomePageContent from "../component/HomePageContent";
+import UnderConstruction from "../component/UnderConstruction";
+import { QUESTIONS, stripEmphasis } from "../component/faq-questions";
+
+const SITE_URL = "https://nathan-knaebel.com";
+const PAGE_URL = `${SITE_URL}/agents`;
 
 export const metadata = {
-  title: "Agents IA sur mesure",
+  // Titre absolu : le gabarit du layout ("%s | Votre Agent IA") ajouterait ici
+  // un suffixe qui repete le titre.
+  title: { absolute: "Votre Agent IA - un agent sur mesure pour votre métier" },
   description:
-    "Des agents IA autonomes qui prennent en charge des tâches réelles de votre entreprise : support, qualité, veille, prospection, reporting.",
-  alternates: { canonical: "https://nathan-knaebel.com/agents" },
+    "Un agent IA sur mesure qui prend en charge une tâche précise de votre entreprise : mails, prospection, devis, relances, veille. Premier mois d'essai gratuit.",
+  alternates: { canonical: PAGE_URL },
+  openGraph: {
+    title: "Votre Agent IA",
+    description:
+      "Un agent IA sur mesure qui prend en charge une tâche précise de votre entreprise.",
+    url: PAGE_URL,
+  },
 };
 
+// Le balisage est genere ici, dans un composant serveur : HomePageContent est
+// un composant client, et un JSON-LD injecte apres l'hydratation n'est pas
+// garanti d'etre vu par les robots.
+//
+// FAQPage reprend QUESTIONS, la liste que la page affiche reellement. Ne pas
+// y ajouter de question qui ne serait pas visible a l'ecran : Google traite un
+// schema sans equivalent visible comme du balisage trompeur.
+function buildJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      // Pas de noeud WebSite ici : il est declare une seule fois, sur la
+      // racine du site. Le redeclarer par page donnerait deux definitions
+      // concurrentes du meme site.
+      {
+        "@type": "Person",
+        "@id": `${SITE_URL}/#person`,
+        name: "Nathan Knaebel",
+        url: SITE_URL,
+        image: `${SITE_URL}/images/logo-nk.png`,
+        jobTitle: "Concepteur d'agents IA",
+        sameAs: [
+          "https://github.com/kurlyto",
+          "https://linkedin.com/in/nathan-knaebel",
+        ],
+        knowsAbout: [
+          "Agents IA autonomes",
+          "Automatisation de taches metier",
+          "Claude (Anthropic)",
+          "SaaS",
+        ],
+        worksFor: {
+          "@type": "Organization",
+          "@id": "https://mondevisdentaire.fr/#organization",
+          name: "Mon Devis Dentaire",
+          url: "https://mondevisdentaire.fr",
+        },
+      },
+      {
+        "@type": "Service",
+        "@id": `${SITE_URL}/#service`,
+        name: "Conception d'agents IA sur mesure",
+        description:
+          "Conception, hebergement et suivi d'agents IA autonomes qui prennent en charge des taches repetitives : mails, prospection, administratif, veille, reporting.",
+        provider: { "@id": `${SITE_URL}/#person` },
+        areaServed: "FR",
+        url: `${SITE_URL}/agents/exemples`,
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${PAGE_URL}#faq`,
+        mainEntity: QUESTIONS.map((item) => ({
+          "@type": "Question",
+          name: item.q,
+          acceptedAnswer: { "@type": "Answer", text: stripEmphasis(item.a) },
+        })),
+      },
+    ],
+  };
+}
+
 export default function AgentsPage() {
+  const isUnderConstruction = process.env.NEXT_PUBLIC_SITE_UNDER_CONSTRUCTION === "true";
+
+  if (isUnderConstruction) {
+    return <UnderConstruction />;
+  }
+
   return (
-    <div className="min-h-screen bg-white text-black">
-      <div className="bg-black text-white">
-        <Header dark />
-        <div className="max-w-6xl mx-auto px-6 pt-6 pb-20">
-          <span className="text-xs font-mono uppercase tracking-widest text-[#ff6b35]">
-            Work
-          </span>
-          <h1 className="mt-3 text-3xl md:text-5xl font-bold tracking-tight max-w-2xl">
-            Une équipe d&apos;agents IA
-            <br />
-            qui travaille pendant que vous dormez
-          </h1>
-          <p className="mt-6 text-base md:text-lg opacity-70 leading-relaxed max-w-2xl">
-            Voici des exemples d&apos;agents autonomes déjà en place, chacun avec une mission
-            précise : surveiller, vérifier, prospecter, résumer. Le même principe peut être
-            adapté à vos propres processus, quel que soit votre secteur.
-          </p>
-        </div>
-      </div>
-
-      <main className="mx-auto max-w-6xl px-6 pt-16 pb-24">
-        <Reveal>
-          <AgentsExplorer />
-        </Reveal>
-      </main>
-
-      <Footer />
-    </div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(buildJsonLd()) }}
+      />
+      <HomePageContent />
+    </>
   );
 }

@@ -14,6 +14,8 @@ import {
   siX, siInstagram, siMeta, siDiscord,
   siPaypal, siSage, siShopify, siWordpress,
 } from "simple-icons";
+// Renomme : ce fichier a deja son propre helper `t()` pour construire une pill.
+import { t as tr } from "../lib/i18n-projects";
 
 // Bandeau "tout ce que j'ai deja utilise". Volontairement exhaustif : langages,
 // frameworks, bases, infra, IA, APIs, outils, marketing, social, paiement. Chaque
@@ -92,7 +94,7 @@ function initial(label) {
 function Item({ item }) {
   if (item.cat) {
     return (
-      <span className="shrink-0 whitespace-nowrap font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#ff6b35] sm:text-[11px]">
+      <span className="shrink-0 whitespace-nowrap font-mono text-xs font-bold uppercase tracking-[0.2em] text-accent sm:text-[11px]">
         {item.cat}
       </span>
     );
@@ -141,12 +143,12 @@ function Row({ items }) {
   );
 }
 
-export default function TechMarquee() {
+export default function TechMarquee({ lang = "fr" }) {
   return (
     <section className="snap-screen flex flex-col justify-center overflow-hidden bg-black py-16 text-white max-sm:min-h-[100dvh] md:py-20">
       <div className="mx-auto max-w-7xl px-6">
         <h2 className="font-display text-3xl font-bold tracking-tight md:text-5xl">
-          I have already used in previous projects
+          {tr(lang).tech.title}
         </h2>
       </div>
       <div className="mt-12 md:mt-14">

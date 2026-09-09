@@ -8,10 +8,15 @@ import Faq from "./Faq";
 import TestimonialCarousel from "./TestimonialCarousel";
 import ToolStrip from "./ToolStrip";
 import ChatPanel from "./ChatPanel";
+import DemoPanel from "./DemoPanel";
+import { DEMOS, getDemo } from "./demo-scenarios";
 import AgentMarquee from "./AgentMarquee";
 import MetierBadges from "./MetierBadges";
 import { getMetier } from "../metiers/metiers-data";
 import HowItWorks from "./HowItWorks";
+import WhyNotChatGpt from "./WhyNotChatGpt";
+import AiosTeaser from "./AiosTeaser";
+import SecuritySection from "./SecuritySection";
 import Footer from "./Footer";
 
 // Bandeau d'offre en haut de page. Refermable : une banniere qu'on ne peut pas
@@ -23,7 +28,7 @@ function OfferBanner() {
   if (closed) return null;
 
   return (
-    <div className="relative bg-[#ff6b35] text-white">
+    <div className="relative bg-accent text-white">
       {/* py-1.5 et non py-2.5 : chaque pixel pris ici est pris au hero, qui doit
           tenir en entier dans le premier ecran. */}
       <div className="max-w-7xl mx-auto px-6 py-1.5 pr-12 text-center text-[13px] font-mono tracking-wide">
@@ -34,7 +39,7 @@ function OfferBanner() {
         type="button"
         onClick={() => setClosed(true)}
         aria-label="Fermer le bandeau"
-        className="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors text-[16px] leading-none"
+        className="absolute right-1 top-1/2 -translate-y-1/2 flex items-center justify-center w-11 h-11 text-white/70 hover:text-white transition-colors text-[16px] leading-none"
       >
         ×
       </button>
@@ -58,7 +63,7 @@ function ResetConfirm({ onKeep, onRestart }) {
             type="button"
             onClick={onRestart}
             className="w-full rounded px-4 py-2.5 text-[13px] font-mono font-bold uppercase tracking-wide text-white transition-all duration-150 hover:-translate-y-0.5"
-            style={{ background: "#ff6b35" }}
+            style={{ background: "var(--accent)" }}
           >
             Repartir de zéro
           </button>
@@ -138,6 +143,54 @@ export default function HomePageContent() {
   const [voiceMessage, setVoiceMessage] = useState(null);
   const [pendingVoice, setPendingVoice] = useState(null);
 
+  // Demonstration scriptee en cours (voir demo-scenarios.js). Elle occupe le
+  // meme emplacement que le chat : ouvrir l'un ferme l'autre, il n'y a qu'une
+  // seule fenetre de conversation a la fois.
+  // demoId vaut DEMO_MENU quand on ouvre le lecteur sans scenario choisi : le
+  // visiteur choisit lui-meme dans la liste (getDemo rend alors null).
+  const [demoId, setDemoId] = useState(null);
+  const demoOuverte = demoId !== null;
+  const demo = getDemo(demoId);
+  // Une demo lancee par le CHAMP accompagne quelqu'un en train d'ecrire : elle
+  // ne doit pas se comporter comme une fenetre qui prend la main (pas de voile
+  // sur la page, pas de contenu qui disparait sous ses yeux). Lancee par un
+  // bouton, elle reste l'element principal et garde son voile.
+  const [demoFromField, setDemoFromField] = useState(false);
+
+  function playDemo(id) {
+    setChatOpen(false);
+    setDemoFromField(false);
+    setDemoId(id);
+    scrollToChat();
+  }
+
+  // Demo lancee par le CHAMP du hero (clic dedans, espace ou entree a vide),
+  // pas par un bouton. Deux gardes :
+  // - une vraie conversation ouverte a toujours priorite sur un script ;
+  // - en mobile la demo s'affiche en plein ecran : elle recouvrirait le champ
+  //   que le visiteur vient de cliquer, clavier ouvert. Reservee au desktop, ou
+  //   elle vit dans la colonne de droite, juste a cote du champ.
+  // Pas de remontee de page non plus : on est deja dans le hero, et faire
+  // defiler la page sous les doigts de quelqu'un qui ecrit est desagreable.
+  function playDemoFromField(id) {
+    if (chatOpen) return;
+    try {
+      if (!window.matchMedia("(min-width: 1024px)").matches) return;
+    } catch {
+      return;
+    }
+    setDemoFromField(true);
+    setDemoId(id);
+  }
+
+  // Sortie de demo vers le vrai chat : la demo a fait son travail d'amorce,
+  // on enchaine sur la conversation reelle avec Nate.
+  function openChatFromDemo() {
+    setDemoId(null);
+    setChatOpen(true);
+    scrollToChat();
+  }
+
   // Le chat vit en haut de page (colonne droite du hero en desktop, plein
   // ecran en mobile). Ouvert depuis un bouton situe plus bas - un flyer metier
   // par exemple - il apparait hors champ : sans cette remontee, le visiteur ne
@@ -151,6 +204,10 @@ export default function HomePageContent() {
   }
 
   function openChatWithVoice(text) {
+    // Une demo qui tourne encore laisserait deux fenetres se disputer la
+    // colonne droite : le chat reel a toujours priorite.
+    setDemoId(null);
+
     // Un projet est deja en cours : on demande avant d'ecraser.
     let hasThread = false;
     try {
@@ -200,7 +257,7 @@ export default function HomePageContent() {
           reste possible sur le reste de la page, le voile n'est pas une modale.
           Inutile en mobile : le chat y est deja en plein ecran. */}
       <AnimatePresence>
-        {chatOpen && (
+        {(chatOpen || (demo && !demoFromField)) && (
           <motion.div
             key="chat-spotlight"
             initial={{ opacity: 0 }}
@@ -214,7 +271,7 @@ export default function HomePageContent() {
       </AnimatePresence>
 
       <OfferBanner />
-      <Header compactY />
+      <Header compactY site="agents" />
 
       <section
         // Colonne gauche a largeur fixe : le hero garde exactement la meme
@@ -230,8 +287,9 @@ export default function HomePageContent() {
         className="max-w-7xl mx-auto px-6 pt-3 pb-8 lg:pb-10 lg:pt-6 w-full grid grid-cols-1 lg:grid-cols-[minmax(0,620px)_1fr] gap-12 lg:gap-14 items-stretch lg:min-h-0 content-start lg:content-stretch"
       >
         <ScrambleHero
-          onOpenChat={() => setChatOpen(true)}
-          onVoiceResult={openChatWithVoice}
+          onSubmitNeed={openChatWithVoice}
+          onPlayDemo={playDemo}
+          onFieldFocus={playDemoFromField}
         />
         {/* Le carrousel reste en colonne droite sur desktop uniquement. Sur
             mobile il devient une section a part entiere (voir plus bas) pour
@@ -243,7 +301,7 @@ export default function HomePageContent() {
             colonne du hero jusqu'a un mot par ligne. */}
         <div
           className={`hidden lg:block lg:sticky lg:top-6 lg:self-start min-w-0 ${
-            chatOpen ? "relative z-40" : ""
+            chatOpen || demoOuverte ? "relative z-40" : ""
           }`}
         >
           <AnimatePresence mode="wait">
@@ -252,6 +310,14 @@ export default function HomePageContent() {
                 key="chat"
                 onClose={() => setChatOpen(false)}
                 initialMessage={voiceMessage}
+              />
+            ) : demoOuverte ? (
+              <DemoPanel
+                key="demo"
+                demo={demo}
+                demos={DEMOS}
+                onClose={() => setDemoId(null)}
+                onOpenChat={openChatFromDemo}
               />
             ) : (
               <div key="testimonials" className="min-w-0">
@@ -266,9 +332,11 @@ export default function HomePageContent() {
           defilement sur toute la fenetre raconte mieux "connectable a tout"
           qu'un defilement confine a une colonne de 620px. Elle s'efface quand
           le chat s'ouvre, pour que le panneau reste l'unique point d'attention.
-          Reservee au desktop : en mobile la bande vit dans le hero. */}
+          Reservee au desktop : en mobile la bande vit dans le hero.
+          Elle RESTE quand la demo a ete lancee par le champ : la faire
+          disparaitre remonterait la page sous les yeux de quelqu'un qui ecrit. */}
       <AnimatePresence>
-        {!chatOpen && (
+        {!chatOpen && (!demoOuverte || demoFromField) && (
           <motion.div
             key="toolstrip-desktop"
             initial={{ opacity: 0 }}
@@ -285,8 +353,16 @@ export default function HomePageContent() {
       {/* Temoignages avant la grille d'agents : ils servent d'amorce concrete
           ("ah, on peut faire ca"), pas de preuve sociale. Le visiteur doit y
           reconnaitre sa propre situation avant de parcourir le catalogue. */}
-      <div className="lg:hidden px-6 pb-16">
+      <div className="lg:hidden px-6 pb-10">
         <TestimonialCarousel />
+      </div>
+
+      {/* La bande d'outils, en mobile, vit ici et non plus dans le hero :
+          "connectable a tout" est un argument, pas une accroche, il n'a rien a
+          faire dans le premier ecran. Au bureau elle est plus haut, en pleine
+          largeur. */}
+      <div className="lg:hidden pb-16">
+        <ToolStrip />
       </div>
 
       <AnimatePresence>
@@ -301,6 +377,23 @@ export default function HomePageContent() {
         )}
       </AnimatePresence>
 
+      {/* En mobile la demo prend l'ecran, comme le chat : la colonne droite
+          du hero n'existe pas a cette taille. */}
+      <AnimatePresence>
+        {!chatOpen && demoOuverte && (
+          <div className="lg:hidden">
+            <DemoPanel
+              key="demo-mobile"
+              fullScreen
+              demo={demo}
+              demos={DEMOS}
+              onClose={() => setDemoId(null)}
+              onOpenChat={openChatFromDemo}
+            />
+          </div>
+        )}
+      </AnimatePresence>
+
       {pendingVoice && (
         <ResetConfirm onKeep={keepAndSendVoice} onRestart={restartWithVoice} />
       )}
@@ -310,12 +403,23 @@ export default function HomePageContent() {
           qui fait le travail. */}
       <MetierBadges onTalkToNate={openChatWithVoice} />
       <AgentMarquee />
+      {/* Ordre du bas de page : lever l'objection ChatGPT juste apres la
+          vitrine d'agents, montrer que demarrer est simple, puis les garanties
+          (securite) avant la FAQ. */}
+      <WhyNotChatGpt />
       <HowItWorks />
+      <SecuritySection />
       {/* La FAQ remplace la section "Explorer" (WorkGateway) : en fin de page,
           des questions qui levent les derniers doutes convertissent mieux que
           des liens vers les pages projets/agents, deja accessibles depuis le
           header. */}
       <Faq />
+      {/* Passerelle vers l'autre site, en DERNIERE section : les deux sites se
+          repondent en miroir (le site Foxy renvoie ici au meme endroit). Celui
+          qui a lu la page entiere sans se reconnaitre dans un agent unique a
+          peut-etre besoin du systeme complet : on l'oriente plutot que de le
+          perdre. Avant, ce bloc coupait la page en son milieu. */}
+      <AiosTeaser />
       <Footer showHomeLink={false} />
     </div>
   );

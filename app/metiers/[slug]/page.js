@@ -47,7 +47,7 @@ export default async function MetierPage({ params }) {
     <div className="min-h-screen bg-[#fafafa] text-black">
       <header className="max-w-xl mx-auto px-4 sm:px-6 pt-6 sm:pt-8">
         <Link
-          href="/"
+          href="/agents"
           data-cursor-hover
           className="font-mono text-[12px] uppercase tracking-widest transition-colors hover:text-[#ff6b35]"
         >
@@ -60,7 +60,7 @@ export default async function MetierPage({ params }) {
 
         <p className="mt-8 pb-6 text-center font-mono text-[12px] opacity-60">
           <Link
-            href="/#metiers"
+            href="/agents#metiers"
             data-cursor-hover
             className="underline underline-offset-4 transition-colors hover:text-[#ff6b35] hover:opacity-100"
           >

@@ -18,6 +18,7 @@ import {
   PostgresIcon,
   TelegramIcon,
 } from "./tech-icons";
+import { t } from "../lib/i18n-projects";
 
 // Les icones sont des composants : elles ne peuvent pas traverser la
 // frontiere Server -> Client Component en tant que reference de fonction
@@ -26,25 +27,38 @@ import {
 // Ordre = importance editoriale (les projets phares en premier), pas
 // chronologie : c'est le haut de la liste qui est vu sur telephone, ou une
 // carte occupe tout l'ecran.
+// L'ordre compte aussi pour la mise en page desktop (3 colonnes) : les trois
+// premiers forment la ligne 1 (Agents IA en tete), et Footfight/Musicfight/
+// Moviefight occupent la ligne 2 EN ENTIER, pour qu'on lise d'un coup d'oeil
+// que c'est la meme mecanique de jeu declinee en trois themes.
 const PROJECTS = [
   {
-    name: "Featuring Club",
+    name: "Agents IA sur-mesure",
+    nameEn: "Custom AI agents",
     description:
-      "Ces joueurs ont-ils été coéquipiers ? Avec qui cet acteur a-t-il joué ? Enchaînez les bonnes réponses dans un ping-pong culturel !",
-    years: "2023",
-    link: "https://featuring.club",
-    cover: "from-zinc-100 to-zinc-200",
-    coverImage: "/images/cover-featuring.png",
+      "Un employé qui fait ce que vous n'avez pas envie de faire, et qui ne dort jamais. Mails, agenda, prospection, réseaux sociaux, relances clients : il s'en occupe seul pendant que vous gérez le reste. Vous lui parlez sur Telegram comme à un collègue, et il se façonne sur mesure autour de votre métier.",
+    descriptionEn:
+      "An employee who does what you would rather not, and never sleeps. Email, calendar, prospecting, social media, client follow-ups: it handles them on its own while you get on with the rest. You talk to it on Telegram like a colleague, and it is shaped around your line of work.",
+    years: "2026",
+    link: "/",
+    cover: "from-zinc-800 to-zinc-900",
+    coverImage: "/images/cover-agents.png",
+    // Logo NK sur fond transparent : comme MDD, il doit rester ENTIER. Sans ce
+    // drapeau le desktop passe en object-cover et rogne le logo dans le cadre
+    // 4/3 (meme piege que le logo Insider Bot coupe).
     coverImageFit: "contain",
     tech: [
-      { icon: PythonIcon, label: "Python" },
       { icon: NodeJsIcon, label: "Node.js" },
+      { icon: PythonIcon, label: "Python" },
+      { icon: TelegramIcon, label: "Telegram" },
     ],
   },
   {
     name: "Mon Devis Dentaire",
     description:
       "Plateforme SaaS qui fluidifie la signature des devis pour les cabinets dentaires. L'IA explique chaque acte au patient en langage clair, des relances automatiques suivent les devis en attente, et le cabinet gère prise de rendez-vous et paiement en ligne, le tout branché sur son logiciel métier.",
+    descriptionEn:
+      "A SaaS platform that smooths out treatment plan approvals for dental practices. AI explains every procedure to the patient in plain language, automated reminders chase pending quotes, and the practice handles booking and online payment, all plugged into its own practice software.",
     years: "2025 - 2026",
     link: "https://mondevisdentaire.fr",
     cover: "from-slate-50 to-slate-100",
@@ -58,9 +72,11 @@ const PROJECTS = [
     ],
   },
   {
-    name: "AIOS",
+    name: "Foxy",
     description:
       "Mon deuxième cerveau, qui tourne en continu sur mon serveur : mails, agenda, bourse, veille, prospection, mémoire. Je lui parle à la voix ou par écrit comme à un collègue, il agit sur mes vrais outils et apprend de mes corrections d'une session à l'autre pour ne jamais refaire deux fois la même erreur.",
+    descriptionEn:
+      "My second brain, running non-stop on my server: email, calendar, stocks, market watch, prospecting, memory. I talk to it out loud or in writing like a colleague, it acts on my real tools and learns from my corrections between sessions so it never makes the same mistake twice.",
     years: "2026",
     cover: "from-zinc-800 to-zinc-900",
     coverImage: "/images/cover-aios.png",
@@ -71,27 +87,52 @@ const PROJECTS = [
     tech: [{ icon: NodeJsIcon, label: "Node.js" }],
   },
   {
-    name: "Agents IA sur-mesure",
+    name: "Footfight",
     description:
-      "Un employé qui fait ce que vous n'avez pas envie de faire, et qui ne dort jamais. Mails, agenda, prospection, réseaux sociaux, relances clients : il s'en occupe seul pendant que vous gérez le reste. Vous lui parlez sur Telegram comme à un collègue, et il se façonne sur mesure autour de votre métier.",
+      "Ces deux joueurs ont-ils déjà porté le même maillot ? Reliez-les de club en club et enchaînez les bonnes réponses dans un duel de culture foot, sans jamais vous tromper.",
+    descriptionEn:
+      "Have these two players ever worn the same shirt? Link them club by club and chain up correct answers in a football knowledge duel, without ever slipping.",
     years: "2026",
-    link: "/",
-    cover: "from-zinc-800 to-zinc-900",
-    coverImage: "/images/cover-agents.png",
-    // Logo NK sur fond transparent : comme FeatuRing et MDD, il doit rester
-    // ENTIER. Sans ce drapeau le desktop passe en object-cover et rogne le
-    // logo dans le cadre 4/3 (meme piege que le logo Insider Bot coupe).
-    coverImageFit: "contain",
+    status: "wip",
+    cover: "from-lime-600 to-green-900",
     tech: [
-      { icon: NodeJsIcon, label: "Node.js" },
       { icon: PythonIcon, label: "Python" },
-      { icon: TelegramIcon, label: "Telegram" },
+      { icon: NodeJsIcon, label: "Node.js" },
+    ],
+  },
+  {
+    name: "Musicfight",
+    description:
+      "Ces deux artistes ont-ils déjà featuré ensemble ? Reliez-les de morceau en morceau et enchaînez les bonnes réponses dans un duel de culture musicale, sans jamais vous tromper.",
+    descriptionEn:
+      "Have these two artists ever featured together? Link them track by track and chain up correct answers in a music knowledge duel, without ever slipping.",
+    years: "2026",
+    status: "wip",
+    cover: "from-fuchsia-600 to-purple-900",
+    tech: [
+      { icon: PythonIcon, label: "Python" },
+      { icon: NodeJsIcon, label: "Node.js" },
+    ],
+  },
+  {
+    name: "Moviefight",
+    description:
+      "Ces deux acteurs ont-ils déjà tourné ensemble ? Reliez-les de film en film et enchaînez les bonnes réponses dans un duel de culture ciné, sans jamais vous tromper.",
+    descriptionEn:
+      "Have these two actors ever starred together? Link them film by film and chain up correct answers in a movie knowledge duel, without ever slipping.",
+    years: "2026",
+    status: "wip",
+    cover: "from-rose-600 to-red-900",
+    tech: [
+      { icon: PythonIcon, label: "Python" },
+      { icon: NodeJsIcon, label: "Node.js" },
     ],
   },
   {
     name: "AI or Not",
     description:
       "La photo est-elle générée par IA, ou est-elle réelle ? Saurez-vous faire la différence ?",
+    descriptionEn: "Is this photo AI-generated, or is it real? Can you tell the difference?",
     years: "2023",
     link: "https://ai-or-not.nathan-knaebel.com",
     cover: "from-sky-600 to-indigo-900",
@@ -105,7 +146,9 @@ const PROJECTS = [
   },
   {
     name: "Variante de Poker Japonais",
+    nameEn: "Japanese Poker Variant",
     description: "Une variante du poker japonais en 1 contre 1.",
+    descriptionEn: "A one-on-one variant of Japanese poker.",
     years: "2023",
     link: "https://poker.nathan-knaebel.com",
     cover: "from-emerald-800 to-emerald-950",
@@ -120,8 +163,11 @@ const PROJECTS = [
   },
   {
     name: "Fichage Notariat",
+    nameEn: "Notary Client Screening",
     description:
       "Vérification de l'intégrité et de la solvabilité des clients pour études notariales, via croisement de sources publiques (BODACC, registre des entreprises).",
+    descriptionEn:
+      "Integrity and solvency checks on clients for notary firms, by cross-referencing public sources (BODACC, the French company register).",
     years: "2023 - 2024",
     cover: "from-slate-600 to-slate-900",
     coverImage: "/images/cover-notariat.png",
@@ -133,7 +179,9 @@ const PROJECTS = [
   },
   {
     name: "Courrier de succession",
+    nameEn: "Estate Letters",
     description: "Génération automatique de courriers de successions pour études notariales.",
+    descriptionEn: "Automatic generation of estate settlement letters for notary firms.",
     years: "2023 - 2024",
     cover: "from-amber-600 to-orange-900",
     coverImage: "/images/cover-succession.png",
@@ -146,6 +194,7 @@ const PROJECTS = [
   {
     name: "Insider Bot",
     description: "Alerte automatique sur les mouvements d'insiders des marchés de prédiction.",
+    descriptionEn: "Automatic alerts on insider moves in prediction markets.",
     years: "2025",
     cover: "from-zinc-100 to-zinc-200",
     coverImage: "/images/cover-insider.png",
@@ -156,25 +205,30 @@ const PROJECTS = [
   },
   {
     name: "Photographies",
+    nameEn: "Photography",
     description:
       "Une sélection de mes photographies, avec une direction artistique qui lui est propre.",
+    descriptionEn: "A selection of my photographs, with an art direction of its own.",
     years: "2026",
-    status: "En construction",
+    status: "wip",
     cover: "from-neutral-700 to-neutral-950",
   },
   {
     name: "Fetamap",
     description:
       "Crée la carte de tes aventures passées en 5 minutes, et exporte-la sur ton site en un composant réutilisable ou commande une affiche pour chez toi !",
+    descriptionEn:
+      "Build the map of your past adventures in 5 minutes, then export it to your site as a reusable component or order a poster for your wall!",
     years: "2026",
-    status: "En construction",
+    status: "wip",
     cover: "from-teal-700 to-teal-950",
   },
   {
     name: "Fetafrance",
     description: "Quelle proportion de la France as-tu réellement visitée ?",
+    descriptionEn: "How much of France have you actually visited?",
     years: "2026",
-    status: "En construction",
+    status: "wip",
     cover: "from-indigo-700 to-indigo-950",
   },
 ];
@@ -183,7 +237,7 @@ const PROJECTS = [
 // sinon degrade + icone du premier outil de la stack en placeholder. Badge
 // annee en haut a droite, tres discret (comme le compteur "13/52" de la
 // reference bewide), a la place du badge public/prive retire.
-function CoverPlaceholder({ project }) {
+function CoverPlaceholder({ project, tr }) {
   const FirstIcon = project.tech?.[0]?.icon;
   return (
     <div
@@ -215,7 +269,7 @@ function CoverPlaceholder({ project }) {
       <div className="absolute right-3 top-3 flex items-center gap-1.5">
         {project.status && (
           <span className="rounded-full bg-black/30 px-2.5 py-1 text-[11px] font-mono text-white/85 backdrop-blur-sm">
-            {project.status}
+            {tr.status[project.status]}
           </span>
         )}
         <span className="rounded-full bg-black/20 px-2.5 py-1 text-[11px] font-mono text-white/70 backdrop-blur-sm">
@@ -257,9 +311,14 @@ const CARD_CLASS =
 // barre d'URL *deployee*, ce qui deborderait de l'ecran une fois la barre
 // retractee. Le `snap-card` externe est la boite plein ecran qui sert de point
 // d'arret ; la carte visible est ancree dedans avec une marge de respiration.
-function ProjectCard({ project, index }) {
+function ProjectCard({ project, index, lang }) {
   const isExternal = project.link?.startsWith("http");
   const isPhone = useIsPhone();
+  const tr = t(lang);
+  // Le nom d'un projet ne change qu'au besoin (les noms propres restent tels
+  // quels) : `nameEn` n'existe que sur ceux dont le titre est une phrase.
+  const name = (lang === "en" && project.nameEn) || project.name;
+  const description = (lang === "en" && project.descriptionEn) || project.description;
 
   // Sur telephone la carte ne bouge pas : une animation qui translate la carte
   // pendant que le navigateur essaie de la caler sur son point d'ancrage fait
@@ -279,14 +338,14 @@ function ProjectCard({ project, index }) {
       href={project.link}
       target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noopener noreferrer" : undefined}
-      aria-label={`Découvrir ${project.name}`}
+      aria-label={tr.cards.discoverAria(name)}
       data-cursor-hover
       className="flex min-h-0 flex-1 flex-col sm:flex-none"
     >
-      <CoverPlaceholder project={project} />
+      <CoverPlaceholder project={project} tr={tr} />
     </a>
   ) : (
-    <CoverPlaceholder project={project} />
+    <CoverPlaceholder project={project} tr={tr} />
   );
 
   const body = (
@@ -295,7 +354,7 @@ function ProjectCard({ project, index }) {
 
       <div className="flex shrink-0 flex-col px-2 pb-1 pt-5 sm:flex-1 sm:pt-6">
         <h3 className="text-2xl font-bold leading-snug tracking-tight">
-          {project.name}
+          {name}
         </h3>
 
         {/* La description est bornee des le mobile (line-clamp-4) pour qu'une
@@ -304,7 +363,7 @@ function ProjectCard({ project, index }) {
             hors de la carte. A partir de sm, hauteur figee a 520px, clamp-3 pour
             aligner les cartes entre elles. */}
         <p className="mt-3 text-[15px] opacity-60 leading-relaxed line-clamp-4 sm:line-clamp-5">
-          {project.description}
+          {description}
         </p>
 
         <div className="mt-5 flex items-end justify-between gap-3 sm:mt-auto sm:pt-6">
@@ -329,7 +388,7 @@ function ProjectCard({ project, index }) {
               rel={isExternal ? "noopener noreferrer" : undefined}
               className="shrink-0 inline-flex items-center gap-1 rounded-full bg-black/[0.04] px-3.5 py-1.5 text-[13px] font-semibold text-black transition-colors duration-150 hover:bg-black hover:text-white"
             >
-              Découvrir <span aria-hidden>&rarr;</span>
+              {tr.cards.discover} <span aria-hidden>&rarr;</span>
             </a>
           )}
         </div>
@@ -373,7 +432,7 @@ function ProjectCard({ project, index }) {
 // centrage. `-mx-6` annule le padding lateral de <main> pour que la boite
 // fasse vraiment toute la largeur de l'ecran, `px-4` redonne ensuite une
 // marge propre autour de la carte.
-export default function ProjectCards() {
+export default function ProjectCards({ lang = "fr" }) {
   return (
     <div className="snap-page mt-10 grid grid-cols-1 gap-0 max-sm:mt-0 sm:mt-10 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-10">
       {PROJECTS.map((project, index) => (
@@ -381,7 +440,7 @@ export default function ProjectCards() {
           key={project.name}
           className="snap-card -mx-6 flex h-dvh items-center px-4 sm:mx-0 sm:block sm:h-auto sm:px-0"
         >
-          <ProjectCard project={project} index={index} />
+          <ProjectCard project={project} index={index} lang={lang} />
         </div>
       ))}
     </div>

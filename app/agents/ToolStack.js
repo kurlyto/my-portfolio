@@ -15,7 +15,7 @@ function ToolIcon({ tool, size }) {
       onMouseLeave={() => setHovered(false)}
     >
       <div
-        className={`flex items-center justify-center rounded-full border border-black/15 text-black/50 transition-all duration-150 ease-out hover:border-[#ff6b35] hover:text-[#ff6b35] hover:-translate-y-0.5 ${size}`}
+        className={`flex items-center justify-center rounded-full border border-black/15 text-black/50 transition-all duration-150 ease-out hover:border-accent hover:text-accent hover:-translate-y-0.5 ${size}`}
       >
         {Icon ? <Icon className="w-[55%] h-[55%]" /> : (
           <span className="text-[9px] font-mono">{tool.charAt(0)}</span>

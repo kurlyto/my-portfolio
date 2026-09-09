@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { t } from "../lib/i18n-projects";
 
 // Les deux versions du CV vivent dans public/cv/. La modale se contente de
 // pointer l'iframe vers le bon fichier selon la langue choisie ; le PDF est
@@ -11,8 +12,15 @@ const CVS = {
   en: { label: "English", file: "/cv/CV-Nathan-Knaebel-EN.pdf" },
 };
 
-export default function CvModal({ open, onClose }) {
-  const [lang, setLang] = useState("fr");
+// Le CV existe DEJA dans les deux langues : la langue de la page ne fait donc
+// que preselectionner le bon PDF (un anglais ouvre le CV anglais d'emblee), les
+// deux boutons restent la pour basculer a la main.
+export default function CvModal({ open, onClose, lang = "fr" }) {
+  const [cvLang, setCvLang] = useState(lang);
+
+  useEffect(() => {
+    setCvLang(lang);
+  }, [lang]);
 
   // Fermeture au clavier (Echap) et blocage du scroll de la page derriere la
   // modale : sans ca, la molette fait defiler le portfolio sous le PDF.
@@ -32,7 +40,8 @@ export default function CvModal({ open, onClose }) {
 
   if (!open) return null;
 
-  const current = CVS[lang];
+  const tr = t(lang);
+  const current = CVS[cvLang];
 
   return (
     <div
@@ -40,7 +49,7 @@ export default function CvModal({ open, onClose }) {
       onClick={onClose}
       role="dialog"
       aria-modal="true"
-      aria-label="Mon CV"
+      aria-label={tr.cv.title}
     >
       {/* stopPropagation : un clic dans le cadre ne doit pas fermer la modale,
           seul le clic sur le fond noir ferme. */}
@@ -54,10 +63,10 @@ export default function CvModal({ open, onClose }) {
               <button
                 key={key}
                 type="button"
-                onClick={() => setLang(key)}
+                onClick={() => setCvLang(key)}
                 data-cursor-hover
                 className={`rounded-full px-3.5 py-1.5 text-[12px] font-mono uppercase tracking-widest transition-colors duration-150 ${
-                  lang === key
+                  cvLang === key
                     ? "bg-black text-white"
                     : "bg-black/[0.05] text-black/60 hover:bg-black/10"
                 }`}
@@ -72,14 +81,14 @@ export default function CvModal({ open, onClose }) {
               href={current.file}
               download
               data-cursor-hover
-              className="inline-flex items-center gap-1.5 rounded-full bg-[#ff6b35] px-3.5 py-1.5 text-[12px] font-mono font-bold uppercase tracking-widest text-white transition-colors duration-150 hover:bg-[#e2531f]"
+              className="inline-flex items-center gap-1.5 rounded-full bg-accent px-3.5 py-1.5 text-[12px] font-mono font-bold uppercase tracking-widest text-white transition-colors duration-150 hover:bg-accent-dark"
             >
-              Télécharger
+              {tr.cv.download}
             </a>
             <button
               type="button"
               onClick={onClose}
-              aria-label="Fermer"
+              aria-label={tr.cv.close}
               data-cursor-hover
               className="flex h-8 w-8 items-center justify-center rounded-full text-2xl leading-none text-black/50 transition-colors hover:bg-black/[0.05] hover:text-black"
             >

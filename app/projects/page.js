@@ -1,26 +1,46 @@
+import { cookies, headers } from "next/headers";
 import Footer from "../component/Footer";
 import ProjectCards from "../component/ProjectCards";
 import ProjectsNav from "../component/ProjectsNav";
 import ProjectsHero from "../component/ProjectsHero";
 import TechMarquee from "../component/TechMarquee";
+import { LANG_COOKIE, detectLang, t } from "../lib/i18n-projects";
 
-export const metadata = {
-  title: "Projets — Nathan Knaebel",
-  description: "Ce que j'ai construit : SaaS, jeux, agents IA, outils metier, cartes.",
-  alternates: { canonical: "https://nathan-knaebel.com/projects" },
-};
+// Seule page bilingue du site (cf app/lib/i18n-projects.js). Lire l'en-tete
+// Accept-Language la rend forcement dynamique : c'est voulu, une page mise en
+// cache servirait la meme langue a tout le monde.
+async function currentLang() {
+  const [h, c] = await Promise.all([headers(), cookies()]);
+  return detectLang(h.get("accept-language"), c.get(LANG_COOKIE)?.value);
+}
+
+export async function generateMetadata() {
+  const lang = await currentLang();
+  const { meta } = t(lang);
+
+  return {
+    // `absolute` : le template du layout ajoute "| Votre Agent IA", suffixe
+    // francais du site vitrine. Sur un portfolio autonome, et surtout dans son
+    // rendu anglais, il n'a rien a faire dans l'onglet.
+    title: { absolute: meta.title },
+    description: meta.description,
+    alternates: { canonical: "https://nathan-knaebel.com/projects" },
+  };
+}
 
 // Page volontairement DETACHEE du site d'agents : sa propre nav (ProjectsNav),
 // pas le Header "Votre Agent IA" / Metiers / Agents / FAQ. C'est un portfolio
 // qui se tient seul.
-export default function ProjectsPage() {
+export default async function ProjectsPage() {
+  const lang = await currentLang();
+
   return (
     <div className="min-h-screen bg-black text-white">
-      <ProjectsNav />
+      <ProjectsNav lang={lang} />
 
-      <ProjectsHero />
+      <ProjectsHero lang={lang} />
 
-      <TechMarquee />
+      <TechMarquee lang={lang} />
 
       {/* Section blanche PLEINE LARGEUR (plus de boite blanche flottante au
           milieu du noir) : le blanc va bord a bord, seul le contenu reste
@@ -35,7 +55,7 @@ export default function ProjectsPage() {
               invisible pour que le lien "Mes projets" de la nav descende ici. */}
           <span id="projets" className="block scroll-mt-24" aria-hidden />
 
-          <ProjectCards />
+          <ProjectCards lang={lang} />
         </div>
       </main>
 
@@ -43,7 +63,7 @@ export default function ProjectsPage() {
           pas vers le site d'agents. Sur mobile, dernier ecran net du deck
           (snap-screen) pour que le geste depuis la derniere carte s'y pose. */}
       <div className="snap-screen max-sm:flex max-sm:min-h-[100dvh] max-sm:flex-col max-sm:justify-end">
-        <Footer showHomeLink={false} />
+        <Footer showHomeLink={false} lang={lang} />
       </div>
     </div>
   );

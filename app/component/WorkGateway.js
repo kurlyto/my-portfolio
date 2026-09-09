@@ -3,7 +3,7 @@ import Reveal from "./Reveal";
 
 const ENTRIES = [
   {
-    href: "/agents",
+    href: "/agents/exemples",
     label: "Voir des cas d'usage",
     title: "Des agents déjà en place",
     description:
@@ -22,7 +22,7 @@ export default function WorkGateway() {
   return (
     <section className="bg-white text-black border-t border-black/10">
       <Reveal className="max-w-5xl mx-auto px-6 py-28 md:py-36">
-        <span className="text-xs font-mono uppercase tracking-widest text-[#ff6b35]">
+        <span className="text-xs font-mono uppercase tracking-widest text-accent">
           Explorer
         </span>
         <h2 className="font-display mt-3 text-3xl md:text-5xl font-bold tracking-tight max-w-xl">
@@ -44,7 +44,7 @@ export default function WorkGateway() {
                 {entry.title}
               </h3>
               <p className="mt-3 text-sm opacity-70 leading-relaxed">{entry.description}</p>
-              <span className="mt-6 text-xs font-mono opacity-50 group-hover:opacity-100 group-hover:text-[#ff6b35] transition-colors">
+              <span className="mt-6 text-xs font-mono opacity-50 group-hover:opacity-100 group-hover:text-accent transition-colors">
                 &rarr;
               </span>
             </Link>

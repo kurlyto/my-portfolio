@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
-const ACCENT = "#ff6b35";
+const ACCENT = "var(--accent)";
 
 // Au-dela, on coupe : un cadrage tient en 2 minutes et la facture Groq reste
 // bornee.
@@ -341,7 +341,7 @@ export default function VoiceRecorder({ onResult, className, children, motionPro
                       onPreferWriting();
                     }}
                     data-cursor-hover
-                    className="mt-5 text-[13px] font-mono underline underline-offset-4 opacity-60 hover:opacity-100 hover:text-[#ff6b35] transition-colors"
+                    className="mt-5 text-[13px] font-mono underline underline-offset-4 opacity-60 hover:opacity-100 hover:text-accent transition-colors"
                   >
                     Je préfère écrire &rarr;
                   </button>

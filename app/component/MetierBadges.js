@@ -96,13 +96,18 @@ export default function MetierBadges({ onTalkToNate }) {
   const [active, setActive] = useState(null);
 
   return (
-    <section id="metiers" className="bg-white text-black border-t border-black/10">
+    <section className="bg-white text-black border-t border-black/10">
       {/* min-h-[100svh] : la section occupe un ecran entier, desktop comme
           mobile (svh = hauteur reellement visible, barre d'adresse deduite).
           justify-center la centre verticalement ; si le contenu depasse sur un
           tres petit ecran, min-h laisse la section grandir. */}
       <Reveal className="min-h-[100svh] max-w-5xl mx-auto px-6 py-12 flex flex-col justify-center text-center">
-        <span className="text-xs font-mono uppercase tracking-widest text-[#ff6b35]">
+        {/* Ancre sur le titre : la section fait un ecran entier et centre son
+            contenu, viser son bord haut arrivait au-dessus du texte. */}
+        <span
+          id="metiers"
+          className="scroll-mt-10 text-xs font-mono uppercase tracking-widest text-accent"
+        >
           Métiers
         </span>
         <h2 className="font-display mt-3 text-3xl md:text-4xl font-bold tracking-tight text-balance">
@@ -120,7 +125,7 @@ export default function MetierBadges({ onTalkToNate }) {
               type="button"
               onClick={() => setActive(metier)}
               data-cursor-hover
-              className="inline-flex items-center gap-2 rounded-full border border-black/15 bg-white px-4 py-2 font-mono text-[12px] md:text-[13px] transition-colors duration-150 ease-out hover:border-[#ff6b35] hover:text-[#ff6b35]"
+              className="inline-flex items-center gap-2 rounded-full border border-black/15 bg-white px-4 py-2 font-mono text-[12px] md:text-[13px] transition-colors duration-150 ease-out hover:border-accent hover:text-accent"
             >
               <span aria-hidden="true">{metier.emoji}</span>
               {metier.badge}

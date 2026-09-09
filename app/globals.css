@@ -4,12 +4,57 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Deux sites, un seul code. La couleur d'accent n'est plus une constante mais
+   une variable heritee : le site des agents (racine /agents) garde l'orange,
+   le site de l'AIOS (racine /) prend le rouge du renard de son logo.
+   Un composant partage (header, footer, chat, FAQ) s'habille donc tout seul
+   selon la page qui le contient, sans prop ni duplication.
+
+   Regle : dans les composants, on ecrit `bg-accent` / `text-accent`, JAMAIS le
+   code couleur en dur - sinon l'element resterait orange sur le site AIOS. */
+:root {
+  --accent: #ff6b35;
+  --accent-dark: #e2531f;
+  /* Couleur de ce qu'on POSE sur l'accent (texte, icone). Elle depend de la
+     teinte : l'orange est clair, il porte du noir ; le rouge du renard est
+     sombre, il porte du blanc. Sans cette variable, les icones du header
+     restaient noires sur rouge, illisibles. */
+  --accent-ink: #000000;
+  /* Valeurs neutres de repli : le site des agents n'utilise pas ces surfaces,
+     mais une variable vide rendrait `bg-surface` transparent en cas d'oubli. */
+  --surface: #ffffff;
+  --surface-2: #f4f4f4;
+  --ink: #000000;
+  --deep: #000000;
+}
+
+/* Rouge du renard (#a82418, echantillonne sur le logo AIOS) et son bordeaux de
+   survol. Pose sur le conteneur racine des pages AIOS. */
+.theme-aios {
+  --accent: #a82418;
+  --accent-dark: #7a1810;
+  --accent-ink: #ffffff;
+  /* Palette chaude du site AIOS (08/09/2026). Le noir pur faisait "outil de
+     developpeur" : un chef d'entreprise doit se sentir accueilli, pas dans un
+     terminal. Creme chaud en fond, encre brun-noir, et un brun profond pour
+     les sections contrastees - jamais #000. */
+  --surface: #faf6f0;
+  --surface-2: #f3ece2;
+  --ink: #1e1714;
+  --deep: #241a15;
+}
+
 @theme inline {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-display: var(--font-display);
-  --color-accent: #ff6b35;
-  --color-accent-dark: #e2531f;
+  --color-accent: var(--accent);
+  --color-accent-dark: var(--accent-dark);
+  --color-accent-ink: var(--accent-ink);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-deep: var(--deep);
 }
 
 /* Le hero mobile se decide sur la HAUTEUR disponible, pas sur la largeur :

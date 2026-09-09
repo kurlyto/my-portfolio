@@ -46,3 +46,6 @@ next-env.d.ts
 # fichiers de sauvegarde manuelle (session debug)
 *.bak
 *.bak-*
+
+# plugin de revue visuelle (binaire tiers, 18 Mo)
+/.claude/

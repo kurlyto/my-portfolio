@@ -15,7 +15,7 @@ function MicGlyph(props) {
   );
 }
 
-const ACCENT = "#ff6b35";
+const ACCENT = "var(--accent)";
 
 // Lien vers le meme agent sur Telegram, propose en haut du chat pour les
 // visiteurs qui preferent continuer depuis leur messagerie.
@@ -726,7 +726,7 @@ function ChatBody({ threadId, messages, streamingText, error, sendMessage, await
             setInput((current) => (current ? `${current} ${text}` : text));
             requestAnimationFrame(autoGrow);
           }}
-          className="shrink-0 w-9 h-9 flex items-center justify-center rounded-full bg-[#ff6b35] text-white transition-all duration-150 ease-out hover:-translate-y-0.5"
+          className="shrink-0 w-9 h-9 flex items-center justify-center rounded-full bg-accent text-white transition-all duration-150 ease-out hover:-translate-y-0.5"
         >
           <MicGlyph className="w-4 h-4" />
         </VoiceRecorder>
@@ -763,7 +763,7 @@ function ChatHeader({ onClose, closeLabel, progress = 5 }) {
             target="_blank"
             rel="noopener noreferrer"
             data-cursor-hover
-            className="inline-flex items-center gap-1.5 text-[12px] font-mono text-black hover:text-[#ff6b35] transition-colors duration-150"
+            className="inline-flex items-center gap-1.5 text-[12px] font-mono text-black hover:text-accent transition-colors duration-150"
           >
             {/* Sur mobile, l'icone seule : le libelle entier serrait la croix
                 et deformait l'en-tete. */}
@@ -882,7 +882,7 @@ export default function ChatPanel({ onClose, fullScreen = false, initialMessage 
       className="flex flex-col h-full min-h-[min(560px,60vh)] max-h-[calc(100vh-6.5rem)] rounded bg-white overflow-hidden"
       style={{
         border: `2px solid ${ACCENT}`,
-        boxShadow: `0 0 0 4px ${ACCENT}1a, 0 20px 40px -12px ${ACCENT}33`,
+        boxShadow: `0 0 0 4px color-mix(in srgb, ${ACCENT} 10%, transparent), 0 20px 40px -12px color-mix(in srgb, ${ACCENT} 20%, transparent)`,
       }}
     >
       <ChatHeader onClose={onClose} closeLabel="×" progress={chat.progress} />

@@ -31,12 +31,12 @@ function AgentCard({ agent }) {
 
   return (
     <Link
-      href="/agents"
+      href="/agents/exemples"
       data-cursor-hover
       // Mobile : carte verticale plus etroite que l'ecran (une carte tient
       // entierement, la suivante depasse juste assez pour signaler qu'on peut
       // faire glisser). Desktop : disposition horizontale, plus dense.
-      className="group shrink-0 w-[280px] sm:w-[420px] rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.07] to-white/[0.02] p-6 sm:p-8 flex flex-col transition-all duration-300 hover:border-[#ff6b35]/50 hover:from-white/[0.11] hover:-translate-y-1"
+      className="group shrink-0 w-[280px] sm:w-[420px] rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.07] to-white/[0.02] p-6 sm:p-8 flex flex-col transition-all duration-300 hover:border-accent/50 hover:from-white/[0.11] hover:-translate-y-1"
     >
       <div className="flex flex-col items-center text-center sm:flex-row sm:items-center sm:text-left sm:gap-5">
         <div className="shrink-0 w-24 h-24 sm:w-20 sm:h-20 rounded-2xl overflow-hidden bg-white/10 flex items-center justify-center ring-1 ring-white/10">
@@ -52,7 +52,7 @@ function AgentCard({ agent }) {
           )}
         </div>
         <div className="min-w-0 mt-4 sm:mt-0">
-          <p className="font-display text-[1.4rem] sm:text-[1.55rem] font-bold leading-tight tracking-tight text-[#ff6b35]">
+          <p className="font-display text-[1.4rem] sm:text-[1.55rem] font-bold leading-tight tracking-tight text-accent">
             {label}
           </p>
           <p className="text-[11px] sm:text-[12px] font-mono uppercase tracking-widest opacity-50 mt-1">
@@ -224,7 +224,7 @@ export default function AgentMarquee() {
   return (
     <section className="bg-black text-white py-20 md:py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <span className="text-xs font-mono uppercase tracking-widest text-[#ff6b35]">
+        <span className="text-xs font-mono uppercase tracking-widest text-accent">
           Problèmes
         </span>
         {/* max-w-2xl (672px) retire : ce titre est plus long que l'ancien

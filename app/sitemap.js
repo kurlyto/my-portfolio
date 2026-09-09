@@ -16,8 +16,11 @@ export default function sitemap() {
   const lastModified = new Date();
 
   return [
+    // Deux sites sur un domaine : la racine est celui de l'AIOS, /agents celui
+    // des agents sur mesure, /agents/exemples sa galerie d'agents en place.
     { url: BASE_URL, changeFrequency: "monthly", priority: 1, lastModified },
     { url: `${BASE_URL}/agents`, changeFrequency: "monthly", priority: 0.9, lastModified },
+    { url: `${BASE_URL}/agents/exemples`, changeFrequency: "monthly", priority: 0.7, lastModified },
     // Un flyer partageable par metier : pages statiques, bonnes portes
     // d'entree SEO ("agent IA plombier", etc.).
     ...METIERS.map((m) => ({

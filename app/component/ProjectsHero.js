@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { t } from "../lib/i18n-projects";
 
 // Petit utilitaire d'apparition en cascade : chaque bloc monte legerement avec
 // un delai croissant, ce qui donne du rythme a l'arrivee sur la page.
@@ -17,7 +18,9 @@ function rise(delay) {
 // lequel on se pose net avant de faire defiler les projets ; sur desktop il
 // respire dans sa hauteur naturelle. Photo ronde et cadree sur le haut pour ne
 // jamais couper le visage.
-export default function ProjectsHero() {
+export default function ProjectsHero({ lang = "fr" }) {
+  const tr = t(lang);
+
   return (
     <section className="snap-screen mx-auto flex min-h-[100dvh] max-w-2xl flex-col items-center justify-center gap-5 px-6 py-16 text-center sm:min-h-0 sm:py-28">
       <motion.div
@@ -26,7 +29,7 @@ export default function ProjectsHero() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className="relative"
       >
-        <div className="absolute -inset-3 -z-10 rounded-full bg-[#ff6b35]/25 blur-2xl" />
+        <div className="absolute -inset-3 -z-10 rounded-full bg-accent/25 blur-2xl" />
         <img
           src="/images/profile-pic.png"
           alt="Nathan Knaebel"
@@ -36,9 +39,9 @@ export default function ProjectsHero() {
 
       <motion.span
         {...rise(0.06)}
-        className="font-mono text-xs uppercase tracking-widest text-[#ff6b35]"
+        className="font-mono text-xs uppercase tracking-widest text-accent"
       >
-        Portfolio
+        {tr.hero.kicker}
       </motion.span>
 
       <motion.h1
@@ -52,16 +55,16 @@ export default function ProjectsHero() {
         {...rise(0.2)}
         className="max-w-md text-base leading-relaxed text-white/70 sm:text-lg"
       >
-        Ingénieur. Je construis des applications, des produits et des agents IA.
+        {tr.hero.tagline}
       </motion.p>
 
       <motion.a
         {...rise(0.28)}
         href="#projets"
         data-cursor-hover
-        className="mt-2 inline-flex items-center gap-2 rounded-full bg-[#ff6b35] px-6 py-3 font-mono text-[13px] font-bold uppercase tracking-wide text-black transition-colors duration-150 hover:bg-[#e2531f]"
+        className="mt-2 inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 font-mono text-[13px] font-bold uppercase tracking-wide text-accent-ink transition-colors duration-150 hover:bg-accent-dark"
       >
-        Voir mes projets <span aria-hidden>&darr;</span>
+        {tr.hero.cta} <span aria-hidden>&darr;</span>
       </motion.a>
     </section>
   );
