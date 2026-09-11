@@ -245,8 +245,12 @@ export default function AiosHomeContent() {
                 par etape, sans rien engager. Reserve au bureau : sur mobile,
                 quatre puces cote a cote deviennent quatre lignes qui repoussent
                 tout le reste sous la ligne de flottaison - le bouton "Voir Foxy
-                travailler" y tient ce role a lui seul. */}
-            <div className="hidden sm:flex mt-8 sm:mt-9 flex-wrap items-center gap-2">
+                travailler" y tient ce role a lui seul.
+                Sur grand bureau les puces tiennent sur UNE ligne (demande de
+                Nathan, 11/09) : il leur faut ~1015 px, la colonne n'en a que 560.
+                La rangee deborde donc sous la colonne droite (480 px + gouttiere
+                4rem), qui s'arrete ~35 px plus haut : rien ne se chevauche. */}
+            <div className="hidden sm:flex mt-8 sm:mt-9 flex-wrap xl:flex-nowrap xl:w-[calc(100%+480px+4rem)] items-center gap-2">
               <span className="text-[12px] font-mono uppercase tracking-wider text-ink/40 mr-1">
                 Essayez-le :
               </span>
@@ -256,7 +260,7 @@ export default function AiosHomeContent() {
                   type="button"
                   onClick={() => playDemo(d.id)}
                   data-cursor-hover
-                  className="inline-flex items-center gap-1.5 rounded-full border border-ink/15 px-3.5 py-2.5 text-[12.5px] font-mono text-ink/70 transition-colors duration-150 hover:border-accent hover:text-accent"
+                  className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full border border-ink/15 px-3.5 py-2.5 text-[12.5px] font-mono text-ink/70 transition-colors duration-150 hover:border-accent hover:text-accent"
                 >
                   <PlayGlyph className="w-3 h-3 text-accent-text" />
                   {d.chip}
