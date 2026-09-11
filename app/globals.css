@@ -67,6 +67,17 @@ html {
   --accent-text: #e8734f;
 }
 
+/* L'inverse : un panneau BLANC pose dans une section `on-dark` (le lecteur de
+   demo de Foxy s'ouvre dans la section brune) remet la teinte de texte faite
+   pour un fond clair. Sans ca, les outils colores des demos heritaient du rouge
+   eclairci, pale sur le blanc (11/09/2026). */
+.surface-claire {
+  --accent-text: #c8410f;
+}
+.theme-aios .surface-claire {
+  --accent-text: var(--accent);
+}
+
 /* Un element du site Foxy qui mene au site des agents reprend son orange
    (bouton "Voir les agents sur mesure", 11/09/2026). Specificite plus forte
    que .theme-aios, et les memes variables : les composants ne changent pas. */

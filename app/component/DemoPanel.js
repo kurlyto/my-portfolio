@@ -34,13 +34,7 @@ const ATTENTE_MAX = 3800;
 
 function longueurTexte(step) {
   if (!step) return 0;
-  if (step.type === "parallel") {
-    return step.branches.reduce(
-      (n, b) => n + b.label.length + b.steps.reduce((m, s) => m + s.text.length, 0),
-      0,
-    );
-  }
-  return (step.text ?? "").length + (step.tool ? step.tool.length : 0);
+  return (step.text ?? "").replace(/[{}]/g, "").length;
 }
 
 function attenteAvant(steps, index) {
@@ -70,32 +64,29 @@ function CheckGlyph(props) {
   );
 }
 
-// Pastille du nom de l'outil. Monospace, majuscules, teintee a l'accent : elle
-// doit se lire comme une ETIQUETTE DE MACHINE, pas comme du texte de la
-// conversation. C'est ce contraste de police qui fait comprendre en un coup
-// d'oeil qu'une seule demande a ouvert Lemlist, puis le web, puis l'agenda.
-function ToolTag({ name }) {
-  return (
-    <span
-      className="shrink-0 px-1.5 py-[3px] rounded text-[10.5px] font-mono font-bold uppercase tracking-wider leading-none whitespace-nowrap"
-      style={{ background: teinte(14), color: ACCENT }}
-    >
-      {name}
-    </span>
-  );
-}
-
-// Un fil de raisonnement : le point qui pulse tant que l'agent y travaille, la
-// coche une fois passe, et l'etiquette d'outil quand il y en a une.
-function ReasonLine({ tool, text, isCurrent }) {
+// Une etape de raisonnement : le point qui pulse tant que l'agent y travaille,
+// la coche une fois passe. L'outil ouvert est ecrit DANS la phrase, entre
+// accolades dans le scenario, et ressort en couleur : une phrase simple se lit
+// d'un trait ("Je regarde vos rendez-vous dans l'agenda"), et la suite des mots
+// colores montre a elle seule qu'une demande a ouvert plusieurs outils. L'ancienne
+// pastille en majuscules a part coupait la lecture en deux.
+function ReasonLine({ text, isCurrent }) {
+  const morceaux = text.split(/\{([^}]+)\}/);
   return (
     <div className="flex items-start gap-2.5 pl-1">
       <span className="mt-[5px] flex items-center justify-center w-3 shrink-0">
         {isCurrent ? <PulsingDot /> : <CheckGlyph className="w-3 h-3" style={{ color: ACCENT }} />}
       </span>
-      <p className="flex flex-wrap items-baseline gap-x-2 gap-y-1 text-[12.5px] font-mono leading-relaxed text-black/55">
-        {tool ? <ToolTag name={tool} /> : null}
-        <span>{text}</span>
+      <p className="text-[12.5px] font-mono leading-relaxed text-black/55">
+        {morceaux.map((m, i) =>
+          i % 2 === 1 ? (
+            <span key={i} className="font-bold text-accent-text">
+              {m}
+            </span>
+          ) : (
+            m
+          ),
+        )}
       </p>
     </div>
   );
@@ -135,43 +126,6 @@ function Step({ step, isCurrent }) {
     );
   }
 
-  // Plusieurs fils menes en meme temps. Une barre verticale les tient ensemble
-  // et le titre le dit en toutes lettres : sans ce cadre, deux fils empiles se
-  // lisent comme une simple suite d'etapes, et l'argument tombe a plat.
-  if (step.type === "parallel") {
-    return (
-      <motion.div
-        initial={{ opacity: 0, y: 6 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.25, ease: "easeOut" }}
-        className="pl-1"
-      >
-        <p className="mb-2 text-[10.5px] font-mono font-bold uppercase tracking-wider text-black/35">
-          En parallèle
-        </p>
-        <div
-          className="flex flex-col sm:flex-row gap-3 sm:gap-5 pl-3"
-          style={{ borderLeft: `2px solid ${teinte(30)}` }}
-        >
-          {step.branches.map((branch, bi) => (
-            <motion.div
-              key={bi}
-              initial={{ opacity: 0, x: -4 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.3, ease: "easeOut", delay: bi * 0.25 }}
-              className="flex-1 min-w-0 flex flex-col gap-1.5"
-            >
-              <p className="text-[11px] font-semibold text-black/45">{branch.label}</p>
-              {branch.steps.map((sub, si) => (
-                <ReasonLine key={si} tool={sub.tool} text={sub.text} isCurrent={false} />
-              ))}
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
-    );
-  }
-
   // Etape de raisonnement, avec ou sans outil ouvert a ce moment-la.
   return (
     <motion.div
@@ -179,7 +133,7 @@ function Step({ step, isCurrent }) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.25, ease: "easeOut" }}
     >
-      <ReasonLine tool={step.tool} text={step.text} isCurrent={isCurrent} />
+      <ReasonLine text={step.text} isCurrent={isCurrent} />
     </motion.div>
   );
 }
@@ -384,7 +338,7 @@ export default function DemoPanel({
               key={i}
               step={step}
               isCurrent={
-                (step.type === "think" || step.type === "tool") && i === count - 1 && !done
+                step.type === "think" && i === count - 1 && !done
               }
             />
           ))}
@@ -470,7 +424,7 @@ export default function DemoPanel({
         // section en text-white (section AIOS, fond noir). Sans cette couleur,
         // les textes sans classe propre (le titre de l'entete) heritent du
         // blanc et disparaissent sur le fond blanc du panneau.
-        className="fixed inset-0 z-50 bg-white text-black flex flex-col"
+        className="surface-claire fixed inset-0 z-50 bg-white text-black flex flex-col"
         style={{ boxShadow: `inset 0 0 0 2px ${ACCENT}` }}
       >
         {body}
@@ -484,7 +438,7 @@ export default function DemoPanel({
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.98 }}
       transition={{ duration: 0.25, ease: "easeOut" }}
-      className="flex flex-col h-full min-h-[min(560px,60vh)] max-h-[calc(100vh-6.5rem)] rounded bg-white text-black overflow-hidden"
+      className="surface-claire flex flex-col h-full min-h-[min(560px,60vh)] max-h-[calc(100vh-6.5rem)] rounded bg-white text-black overflow-hidden"
       style={{
         border: `2px solid ${ACCENT}`,
         boxShadow: `0 0 0 4px ${teinte(10)}, 0 20px 40px -12px ${teinte(20)}`,
