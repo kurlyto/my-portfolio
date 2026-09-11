@@ -40,7 +40,8 @@ const PROJECTS = [
     descriptionEn:
       "An employee who does what you would rather not, and never sleeps. Email, calendar, prospecting, social media, client follow-ups: it handles them on its own while you get on with the rest. You talk to it on Telegram like a colleague, and it is shaped around your line of work.",
     years: "2026",
-    link: "/",
+    // La racine est Foxy depuis le 09/09 : la vitrine d'agents vit sur /agents.
+    link: "/agents",
     cover: "from-zinc-800 to-zinc-900",
     coverImage: "/images/cover-agents.png",
     // Logo NK sur fond transparent : comme MDD, il doit rester ENTIER. Sans ce
@@ -78,6 +79,7 @@ const PROJECTS = [
     descriptionEn:
       "My second brain, running non-stop on my server: email, calendar, stocks, market watch, prospecting, memory. I talk to it out loud or in writing like a colleague, it acts on my real tools and learns from my corrections between sessions so it never makes the same mistake twice.",
     years: "2026",
+    link: "/",
     cover: "from-zinc-800 to-zinc-900",
     coverImage: "/images/cover-aios.png",
     // Icone renard sur fond sombre plein cadre : comme MDD et Agents IA
