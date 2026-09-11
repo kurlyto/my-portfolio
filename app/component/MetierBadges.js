@@ -106,7 +106,7 @@ export default function MetierBadges({ onTalkToNate }) {
             contenu, viser son bord haut arrivait au-dessus du texte. */}
         <span
           id="metiers"
-          className="scroll-mt-10 text-xs font-mono uppercase tracking-widest text-accent"
+          className="scroll-mt-10 text-xs font-mono uppercase tracking-widest text-accent-text"
         >
           Métiers
         </span>

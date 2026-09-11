@@ -28,7 +28,7 @@ function OfferBanner() {
   if (closed) return null;
 
   return (
-    <div className="relative bg-accent text-white">
+    <div className="relative bg-accent text-accent-ink">
       {/* py-1.5 et non py-2.5 : chaque pixel pris ici est pris au hero, qui doit
           tenir en entier dans le premier ecran. */}
       <div className="max-w-7xl mx-auto px-6 py-1.5 pr-12 text-center text-[13px] font-mono tracking-wide">

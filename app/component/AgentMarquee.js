@@ -7,7 +7,7 @@ import { AGENT_PITCHES } from "./agent-pitches";
 
 // Agents disposant d'un portrait dans public/images/agents/. Les autres
 // tombent sur l'initiale : meme regle que la page /agents.
-const AGENTS_WITH_PHOTO = new Set([
+export const AGENTS_WITH_PHOTO = new Set([
   "didier",
   "marcel",
   "simone",
@@ -72,7 +72,7 @@ function AgentCard({ agent }) {
 // (marcel/surveillance), ou deja incarne ailleurs sur la page (nate est le
 // cadreur de besoin, present dans le chat). Jo et Didier, eux, sont sortis du
 // catalogue agents-data.js (17/08), plus besoin de les filtrer ici.
-const HIDDEN_FROM_SHOWCASE = new Set(["marcel", "nate"]);
+export const HIDDEN_FROM_SHOWCASE = new Set(["marcel", "nate"]);
 
 // Agents absents de agents-data.js (catalogue /agents) mais montres en
 // vitrine : ils illustrent une demande frequente.
@@ -222,7 +222,7 @@ export default function AgentMarquee() {
   }
 
   return (
-    <section className="bg-black text-white py-20 md:py-24 overflow-hidden">
+    <section className="bg-black text-white py-14 md:py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <span className="text-xs font-mono uppercase tracking-widest text-accent">
           Problèmes

@@ -43,8 +43,8 @@ function CheckGlyph(props) {
 export default function WhyNotChatGpt() {
   return (
     <section className="bg-white border-t border-black/10">
-      <Reveal className="max-w-5xl mx-auto px-6 py-28 md:py-36">
-        <span className="text-xs font-mono uppercase tracking-widest text-accent">
+      <Reveal className="max-w-5xl mx-auto px-6 py-16 md:py-36">
+        <span className="text-xs font-mono uppercase tracking-widest text-accent-text">
           Face à face
         </span>
         <h2 className="font-display mt-3 text-3xl md:text-5xl font-bold tracking-tight max-w-2xl">
@@ -73,13 +73,13 @@ export default function WhyNotChatGpt() {
           </div>
 
           <div className="rounded border-2 border-accent/40 bg-[#faf8f5] p-6 md:p-8 shadow-[0_20px_50px_-20px_rgba(255,107,53,0.25)]">
-            <p className="text-[12px] font-mono uppercase tracking-widest text-accent">
+            <p className="text-[12px] font-mono uppercase tracking-widest text-accent-text">
               Votre agent
             </p>
             <ul className="mt-6 flex flex-col gap-5">
               {ROWS.map((row) => (
                 <li key={row.agent} className="flex items-start gap-3">
-                  <CheckGlyph className="mt-0.5 w-4 h-4 shrink-0 text-accent" />
+                  <CheckGlyph className="mt-0.5 w-4 h-4 shrink-0 text-accent-text" />
                   <span className="text-[15px] leading-relaxed font-medium">{row.agent}</span>
                 </li>
               ))}

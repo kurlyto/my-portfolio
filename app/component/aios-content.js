@@ -16,7 +16,7 @@
 export const CAPACITES = [
   {
     id: "matin",
-    titre: "Votre journée, déjà triée",
+    titre: "Votre journée est déjà planifiée",
     accroche: "Le point du matin",
     texte:
       "Au réveil, l'essentiel est prêt : ce qui est arrivé pendant la nuit, ce qui vous attend aujourd'hui, ce qui traîne depuis trop longtemps. Vous ouvrez un écran, pas douze.",
@@ -34,7 +34,7 @@ export const CAPACITES = [
   },
   {
     id: "mails",
-    titre: "Vos mails, lus et préparés",
+    titre: "Vos mails sont déjà lus et préparés",
     accroche: "La boîte de réception",
     texte:
       "Il repère ce qui compte, écarte le reste et prépare les réponses. Vous relisez et vous envoyez. Rien ne part sans votre accord.",
@@ -52,7 +52,7 @@ export const CAPACITES = [
   },
   {
     id: "agenda",
-    titre: "Vos rendez-vous, tenus",
+    titre: "Vos rendez-vous sont tenus",
     accroche: "L'agenda",
     texte:
       "« Cale un point avec Martin jeudi après-midi. » Il regarde vos disponibilités, crée le rendez-vous, envoie l'invitation, et vous prépare avant d'y aller.",
@@ -68,7 +68,7 @@ export const CAPACITES = [
   },
   {
     id: "clients",
-    titre: "Vos clients, suivis",
+    titre: "Vos clients sont suivis",
     accroche: "Le suivi client",
     texte:
       "Où en est ce devis ? Qui n'a pas répondu depuis deux semaines ? Il croise vos mails, vos documents et votre agenda pour répondre en une phrase.",
@@ -83,7 +83,7 @@ export const CAPACITES = [
   },
   {
     id: "voix",
-    titre: "À la voix, depuis votre poche",
+    titre: "Partout, depuis votre poche",
     accroche: "En déplacement",
     texte:
       "En voiture, entre deux rendez-vous : vous dictez, il exécute et vous rend compte. Le même assistant sur votre téléphone et sur votre ordinateur.",

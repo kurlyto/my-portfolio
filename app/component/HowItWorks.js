@@ -38,8 +38,8 @@ const STEPS = [
 export default function HowItWorks() {
   return (
     <section className="bg-[#fafafa]">
-      <Reveal className="max-w-5xl mx-auto px-6 py-28 md:py-36">
-        <span className="text-xs font-mono uppercase tracking-widest text-accent">
+      <Reveal className="max-w-5xl mx-auto px-6 py-16 md:py-36">
+        <span className="text-xs font-mono uppercase tracking-widest text-accent-text">
           Démarrer
         </span>
         {/* Le titre pose la question du visiteur, mot pour mot. Une formule
@@ -50,7 +50,7 @@ export default function HowItWorks() {
           Comment ça marche ?
         </h2>
 
-        <div className="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-14 sm:gap-8">
+        <div className="mt-12 md:mt-20 grid grid-cols-1 sm:grid-cols-3 gap-14 sm:gap-8">
           {STEPS.map((step, i) => {
             const Wrapper = step.link ? "a" : "div";
             const wrapperProps = step.link
@@ -72,7 +72,7 @@ export default function HowItWorks() {
                 transition={{ delay: i * 0.5, duration: 0.55, ease: "easeOut" }}
               >
                 <Wrapper {...wrapperProps}>
-                  <span className="block text-6xl font-bold text-accent leading-none">
+                  <span className="block text-6xl font-bold text-accent-text leading-none">
                     {step.number}
                   </span>
                   <span className="mt-4 block text-xs font-mono uppercase tracking-widest opacity-50">
@@ -97,13 +97,13 @@ export default function HowItWorks() {
           })}
         </div>
 
-        <div className="mt-20 flex flex-col items-center gap-6">
+        <div className="mt-12 md:mt-20 flex flex-col items-center gap-6">
           <a
             href={NATE_URL}
             target="_blank"
             rel="noopener noreferrer"
             data-cursor-hover
-            className="inline-block text-lg font-mono font-semibold rounded px-10 py-5 whitespace-nowrap transition-all duration-150 ease-out bg-accent text-white hover:bg-accent-dark hover:-translate-y-0.5 hover:shadow-lg"
+            className="inline-block text-lg font-mono font-semibold rounded px-10 py-5 whitespace-nowrap transition-all duration-150 ease-out bg-accent text-accent-ink hover:bg-accent-dark hover:-translate-y-0.5 hover:shadow-lg"
           >
             Commencer
           </a>

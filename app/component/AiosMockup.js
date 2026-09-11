@@ -82,7 +82,7 @@ function MockTile({ tile, compact = false, t }) {
         </span>
         {tile.badge && (
           <span
-            className={`flex items-center justify-center rounded-full bg-accent text-white font-mono font-bold ${
+            className={`flex items-center justify-center rounded-full bg-accent text-accent-ink font-mono font-bold ${
               compact ? "w-3.5 h-3.5 text-[7px]" : "w-[18px] h-[18px] text-[9px]"
             }`}
           >
@@ -132,7 +132,7 @@ export function DesktopMock({ tone = "dark" }) {
           <span className={`flex-1 text-[11px] ${t.fieldText}`}>
             Demandez n&apos;importe quoi...
           </span>
-          <span className="flex items-center justify-center w-6 h-6 rounded-full bg-accent text-white text-[10px]">
+          <span className="flex items-center justify-center w-6 h-6 rounded-full bg-accent text-accent-ink text-[10px]">
             &rarr;
           </span>
         </div>

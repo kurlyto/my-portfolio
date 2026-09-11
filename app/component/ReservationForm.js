@@ -128,14 +128,14 @@ export default function ReservationForm({ onClose }) {
               type="button"
               onClick={onClose}
               data-cursor-hover
-              className="mt-9 inline-flex items-center justify-center rounded-full bg-accent px-7 py-4 text-[13px] font-mono font-bold uppercase tracking-wide text-white transition-colors hover:bg-accent-dark"
+              className="mt-9 inline-flex items-center justify-center rounded-full bg-accent px-7 py-4 text-[13px] font-mono font-bold uppercase tracking-wide text-accent-ink transition-colors hover:bg-accent-dark"
             >
               Revenir au site
             </button>
           </div>
         ) : (
           <form onSubmit={envoyer} className="px-6 sm:px-10 py-10 sm:py-12">
-            <span className="text-xs font-mono uppercase tracking-widest text-accent">
+            <span className="text-xs font-mono uppercase tracking-widest text-accent-text">
               Accès anticipé
             </span>
             <h2 className="font-display mt-3 text-2xl md:text-3xl font-bold tracking-tight">
@@ -200,7 +200,7 @@ export default function ReservationForm({ onClose }) {
             />
 
             {erreur && (
-              <p className="mt-6 rounded-md border border-accent/30 bg-accent/[0.06] px-4 py-3 text-[13px] text-accent">
+              <p className="mt-6 rounded-md border border-accent/30 bg-accent/[0.06] px-4 py-3 text-[13px] text-accent-text">
                 {erreur}
               </p>
             )}
@@ -210,7 +210,7 @@ export default function ReservationForm({ onClose }) {
                 type="submit"
                 disabled={etat === "envoi"}
                 data-cursor-hover
-                className="inline-flex items-center justify-center rounded-full bg-accent px-7 py-4 text-[13px] font-mono font-bold uppercase tracking-wide text-white transition-colors hover:bg-accent-dark disabled:opacity-60"
+                className="inline-flex items-center justify-center rounded-full bg-accent px-7 py-4 text-[13px] font-mono font-bold uppercase tracking-wide text-accent-ink transition-colors hover:bg-accent-dark disabled:opacity-60"
               >
                 {etat === "envoi" ? "Envoi..." : "Envoyer ma demande"}
               </button>

@@ -27,8 +27,8 @@ const POINTS = [
 export default function SecuritySection() {
   return (
     <section className="bg-[#fafafa] border-t border-black/10">
-      <Reveal className="max-w-5xl mx-auto px-6 py-28 md:py-36">
-        <span className="text-xs font-mono uppercase tracking-widest text-accent">
+      <Reveal className="max-w-5xl mx-auto px-6 py-16 md:py-36">
+        <span className="text-xs font-mono uppercase tracking-widest text-accent-text">
           Sécurité
         </span>
         <h2 className="font-display mt-3 text-3xl md:text-5xl font-bold tracking-tight max-w-2xl">
@@ -38,7 +38,7 @@ export default function SecuritySection() {
         <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
           {POINTS.map((point, i) => (
             <div key={point.title} className="rounded border border-black/10 bg-white p-6 md:p-8">
-              <span className="text-[12px] font-mono font-bold text-accent">
+              <span className="text-[12px] font-mono font-bold text-accent-text">
                 0{i + 1}
               </span>
               <h3 className="font-display mt-2 text-xl md:text-[1.35rem] font-bold leading-snug">

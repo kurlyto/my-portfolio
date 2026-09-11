@@ -61,26 +61,57 @@ function CheckGlyph(props) {
   );
 }
 
+// Le duel en illustration (demande de Nathan, 11/09) : sur bureau, le titre
+// laissait un grand vide a droite. Deux medaillons inclines l'un vers l'autre
+// et un "VS" : on comprend le sujet de la section avant de lire le tableau.
+// Masque sur mobile, ou il n'y a pas de vide a combler.
+function Duel() {
+  return (
+    <div aria-hidden className="hidden md:flex items-center gap-5 lg:gap-7 pr-2">
+      <div className="flex flex-col items-center gap-3">
+        <div className="w-24 h-24 lg:w-28 lg:h-28 rounded-full bg-white flex items-center justify-center -rotate-6 shadow-[0_20px_40px_-20px_rgba(0,0,0,0.6)]">
+          {/* eslint-disable-next-line @next/next/no-img-element -- SVG local. */}
+          <img src="/images/logos/chatgpt.svg" alt="" className="w-12 h-12 lg:w-14 lg:h-14 object-contain" />
+        </div>
+        <span className="text-[11px] font-mono uppercase tracking-widest text-white/45">ChatGPT</span>
+      </div>
+      <span className="font-display text-3xl lg:text-4xl font-bold italic text-accent-text">VS</span>
+      <div className="flex flex-col items-center gap-3">
+        <div className="w-24 h-24 lg:w-28 lg:h-28 rounded-full bg-surface flex items-center justify-center rotate-6 ring-2 ring-accent shadow-[0_0_48px_-10px_var(--accent)]">
+          {/* eslint-disable-next-line @next/next/no-img-element -- logo local. */}
+          <img src="/images/cover-aios.png" alt="" className="w-16 h-16 lg:w-20 lg:h-20 object-contain" />
+        </div>
+        <span className="text-[11px] font-mono uppercase tracking-widest text-accent-text">Foxy</span>
+      </div>
+    </div>
+  );
+}
+
 export default function AiosVsChat() {
   return (
-    <section className="bg-deep text-white">
-      <Reveal className="max-w-6xl mx-auto px-6 py-24 md:py-32">
-        {/* Ancre sur le titre, pas sur la section : viser la section faisait
-            atterrir dans son padding, donc sur du vide. */}
-        <span
-          id="comparatif"
-          className="scroll-mt-10 text-xs font-mono uppercase tracking-widest text-accent"
-        >
-          Face à face
-        </span>
-        <h2 className="font-display mt-3 text-3xl md:text-5xl font-bold tracking-tight max-w-2xl">
-          Et par rapport à ChatGPT ?
-        </h2>
-        <p className="mt-6 text-base md:text-lg text-white/70 leading-relaxed max-w-2xl">
-          Foxy tourne sur les mêmes modèles que Claude, d&apos;Anthropic. La
-          différence n&apos;est donc pas le cerveau : c&apos;est tout ce qu&apos;on branche
-          autour.
-        </p>
+    <section className="on-dark bg-deep text-white">
+      <Reveal className="max-w-6xl mx-auto px-6 py-16 md:py-32">
+        <div className="md:grid md:grid-cols-[minmax(0,1fr)_auto] md:items-center md:gap-12">
+          <div>
+            {/* Ancre sur le titre, pas sur la section : viser la section faisait
+                atterrir dans son padding, donc sur du vide. */}
+            <span
+              id="comparatif"
+              className="scroll-mt-10 text-xs font-mono uppercase tracking-widest text-accent-text"
+            >
+              Face à face
+            </span>
+            <h2 className="font-display mt-3 text-3xl md:text-5xl font-bold tracking-tight max-w-2xl">
+              Et par rapport à ChatGPT ?
+            </h2>
+            <p className="mt-6 text-base md:text-lg text-white/70 leading-relaxed max-w-2xl">
+              Foxy tourne sur les mêmes modèles que Claude, d&apos;Anthropic. La
+              différence n&apos;est donc pas le cerveau : c&apos;est tout ce qu&apos;on branche
+              autour.
+            </p>
+          </div>
+          <Duel />
+        </div>
 
         {/* En-tetes de colonnes, sur grand ecran seulement : en mobile chaque
             ligne porte ses propres etiquettes, sinon on ne sait plus qui parle
@@ -90,7 +121,7 @@ export default function AiosVsChat() {
           <span className="text-[11px] font-mono uppercase tracking-widest text-white/40">
             ChatGPT, Claude, Gemini
           </span>
-          <span className="text-[11px] font-mono uppercase tracking-widest text-accent">
+          <span className="text-[11px] font-mono uppercase tracking-widest text-accent-text">
             Foxy
           </span>
         </div>
@@ -116,9 +147,9 @@ export default function AiosVsChat() {
               </div>
 
               <div className="flex items-start gap-3">
-                <CheckGlyph className="mt-0.5 w-4 h-4 shrink-0 text-accent" />
+                <CheckGlyph className="mt-0.5 w-4 h-4 shrink-0 text-accent-text" />
                 <p className="text-[14.5px] leading-relaxed text-white">
-                  <span className="md:hidden block text-[11px] font-mono uppercase tracking-wider text-accent mb-1">
+                  <span className="md:hidden block text-[11px] font-mono uppercase tracking-wider text-accent-text mb-1">
                     Foxy
                   </span>
                   {ligne.aios}

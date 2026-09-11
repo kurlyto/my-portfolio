@@ -13,8 +13,10 @@ import DemoPanel from "./DemoPanel";
 import ReservationForm from "./ReservationForm";
 import AiosCapacites from "./AiosCapacites";
 import AiosVsChat from "./AiosVsChat";
-import { AIOS_DEMOS, getAiosDemo, DEMO_MENU } from "./demo-scenarios";
+import { AIOS_DEMOS, getAiosDemo } from "./demo-scenarios";
 import FoxySchema from "./FoxySchema";
+import AgentStrip from "./AgentStrip";
+import { Stars } from "./TestimonialCarousel";
 import { AIOS_OFFER } from "./aios-offer";
 import { DesktopMock, PhoneMock } from "./AiosMockup";
 import { ETAPES, TEMOIGNAGES_AIOS, QUESTIONS_AIOS } from "./aios-content";
@@ -22,7 +24,7 @@ import { ETAPES, TEMOIGNAGES_AIOS, QUESTIONS_AIOS } from "./aios-content";
 // Site de l'AIOS (racine du domaine). Le site des agents sur mesure vit sur
 // /agents : deux produits, deux promesses, deux couleurs. La bascule de couleur
 // tient a la classe `theme-aios` posee sur le conteneur - tout ce qui est
-// `bg-accent` / `text-accent` en dessous passe du orange au rouge du renard.
+// `bg-accent` / `text-accent-text` en dessous passe du orange au rouge du renard.
 
 const CTA_MESSAGE =
   "Je veux réserver ma place pour l'accès anticipé à Foxy.";
@@ -73,7 +75,7 @@ function CtaButton({ onClick, children, className = "" }) {
       // Pleine largeur sur mobile : un bouton qui barre l'ecran ne se rate
       // pas et se touche au pouce sans viser. Il reprend sa largeur naturelle
       // des le premier palier.
-      className={`inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-accent text-white px-7 py-4 text-[13px] md:text-sm font-mono font-bold uppercase tracking-wide transition-colors duration-150 ease-out hover:bg-accent-dark w-full sm:w-fit ${className}`}
+      className={`inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-accent text-accent-ink px-7 py-4 text-[13px] md:text-sm font-mono font-bold uppercase tracking-wide transition-colors duration-150 ease-out hover:bg-accent-dark w-full sm:w-fit ${className}`}
     >
       {children}
     </button>
@@ -166,10 +168,10 @@ export default function AiosHomeContent() {
 
         {/* Premier ecran : ce que c'est, ce qu'on risque de rater (places +
             date), ou cliquer. Le detail vient plus bas, pour ceux qui defilent. */}
-        <section className="max-w-6xl mx-auto px-6 pt-4 md:pt-6 pb-20 md:pb-28 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,480px)] gap-10 lg:gap-16 items-start">
+        <section className="max-w-6xl mx-auto px-6 pt-4 md:pt-6 pb-12 md:pb-28 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,480px)] gap-10 lg:gap-16 items-start">
           <div className="lg:pt-10">
             <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
-              <span className="text-xs font-mono uppercase tracking-widest text-accent">
+              <span className="text-xs font-mono uppercase tracking-widest text-accent-text">
                 Foxy - accès anticipé
               </span>
               {/* La jauge de places tient sur bureau, ou l'oeil balaie une
@@ -208,13 +210,17 @@ export default function AiosHomeContent() {
                 l'autre : le pouce n'a rien a viser. */}
             <div className="mt-8 sm:mt-9 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
               <CtaButton onClick={openForm}>Réserver ma place</CtaButton>
+              {/* Sur mobile ce bouton JOUE la premiere demonstration au lieu
+                  d'ouvrir la liste : qui clique "voir travailler" veut voir, pas
+                  choisir. Le choix n'est pas perdu pour autant, le panneau garde
+                  son retour vers la liste et son "voir un autre exemple". */}
               <button
                 type="button"
-                onClick={() => playDemo(DEMO_MENU)}
+                onClick={() => playDemo(AIOS_DEMOS[0].id)}
                 data-cursor-hover
                 className="sm:hidden inline-flex items-center justify-center gap-2 w-full rounded-full border border-ink/20 px-6 py-4 text-[13px] font-mono font-bold uppercase tracking-wide text-ink/70"
               >
-                <PlayGlyph className="w-3 h-3 text-accent" />
+                <PlayGlyph className="w-3 h-3 text-accent-text" />
                 Voir Foxy travailler
               </button>
               <p className="hidden sm:block text-[13px] font-mono leading-relaxed text-ink/55">
@@ -252,7 +258,7 @@ export default function AiosHomeContent() {
                   data-cursor-hover
                   className="inline-flex items-center gap-1.5 rounded-full border border-ink/15 px-3.5 py-2.5 text-[12.5px] font-mono text-ink/70 transition-colors duration-150 hover:border-accent hover:text-accent"
                 >
-                  <PlayGlyph className="w-3 h-3 text-accent" />
+                  <PlayGlyph className="w-3 h-3 text-accent-text" />
                   {d.chip}
                 </button>
               ))}
@@ -326,8 +332,8 @@ export default function AiosHomeContent() {
 
       {/* Comment ca marche : trois etapes, du premier appel a l'usage. */}
       <section className="bg-surface text-ink">
-        <Reveal className="max-w-6xl mx-auto px-6 py-24 md:py-32">
-          <span className="text-xs font-mono uppercase tracking-widest text-accent">
+        <Reveal className="max-w-6xl mx-auto px-6 py-16 md:py-32">
+          <span className="text-xs font-mono uppercase tracking-widest text-accent-text">
             Démarrer
           </span>
           <h2 className="font-display mt-3 text-3xl md:text-5xl font-bold tracking-tight max-w-2xl">
@@ -337,14 +343,14 @@ export default function AiosHomeContent() {
           <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
             {ETAPES.map((e) => (
               <div key={e.numero} className="border-t border-ink/15 pt-6">
-                <span className="text-[13px] font-mono font-bold text-accent">{e.numero}</span>
+                <span className="text-[13px] font-mono font-bold text-accent-text">{e.numero}</span>
                 <h3 className="font-display mt-3 text-xl md:text-2xl font-bold">{e.titre}</h3>
                 <p className="mt-2.5 text-[15px] text-ink/60 leading-relaxed">{e.texte}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-14 flex flex-col sm:flex-row sm:items-center gap-5">
+          <div className="mt-14 flex flex-col items-center gap-4 text-center">
             <CtaButton onClick={openForm}>Réserver ma place</CtaButton>
             <p className="text-[13px] font-mono text-ink/45">
               Il reste {AIOS_OFFER.placesRestantes} places sur {AIOS_OFFER.placesTotal},
@@ -358,17 +364,17 @@ export default function AiosHomeContent() {
           volontairement absentes tant qu'elles ne sont pas validees par les
           interesses (cf. aios-content.js) : on n'invente pas de client. */}
       <section className="bg-surface-2 text-ink">
-        <Reveal className="max-w-6xl mx-auto px-6 py-24 md:py-32">
+        <Reveal className="max-w-6xl mx-auto px-6 py-16 md:py-32">
           {/* Ancre sur le titre, pas sur la section (padding + animation
               d'entree : le lien de nav tombait sur du vide). */}
           <span
             id="temoignages"
-            className="scroll-mt-10 text-xs font-mono uppercase tracking-widest text-accent"
+            className="scroll-mt-10 text-xs font-mono uppercase tracking-widest text-accent-text"
           >
             Témoignages
           </span>
           <h2 className="font-display mt-3 text-3xl md:text-5xl font-bold tracking-tight max-w-2xl">
-            Ceux qui l&apos;utilisent déjà.
+            Nos utilisateurs
           </h2>
 
           <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -377,9 +383,12 @@ export default function AiosHomeContent() {
                 key={t.quote}
                 className="flex flex-col justify-between rounded-lg border border-black/10 p-7"
               >
-                <blockquote className="text-[15px] md:text-base leading-relaxed">
-                  « {t.quote} »
-                </blockquote>
+                <div>
+                  <Stars />
+                  <blockquote className="mt-4 text-[15px] md:text-base leading-relaxed">
+                    « {t.quote} »
+                  </blockquote>
+                </div>
                 <figcaption className="mt-6 flex items-center gap-3 border-t border-black/10 pt-5">
                   <span className="flex items-center justify-center w-11 h-11 rounded-full bg-black/[0.06] text-[13px] font-mono font-bold">
                     {t.initials ?? t.usage.slice(0, 1)}
@@ -404,8 +413,8 @@ export default function AiosHomeContent() {
           n'a pas besoin d'un systeme complet, autant l'envoyer au bon endroit
           plutot que de le perdre. Le site des agents ferme sur la meme section
           en miroir (AiosTeaser) : meme place, meme gabarit, meme ton. */}
-      <section className="bg-deep text-white">
-        <Reveal className="max-w-6xl mx-auto px-6 py-20 md:py-24">
+      <section className="on-dark bg-deep text-white">
+        <Reveal className="max-w-6xl mx-auto px-6 py-14 md:py-24">
           <div className="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-12">
             <div className="flex-1">
               <div className="flex items-center gap-3">
@@ -417,7 +426,7 @@ export default function AiosHomeContent() {
                   className="w-8 h-8 rounded-md object-contain"
                 />
                 <span className="text-xs font-mono uppercase tracking-widest text-white/50">
-                  L&apos;autre offre
+                  Votre agent IA
                 </span>
               </div>
               <h2 className="font-display mt-4 text-2xl md:text-4xl font-bold tracking-tight max-w-2xl">
@@ -430,11 +439,14 @@ export default function AiosHomeContent() {
                 moins cher qu&apos;un système complet.
               </p>
             </div>
-            <div className="shrink-0">
+            {/* `accent-agents` : le bouton prend l'ORANGE du site des agents
+                (demande de Nathan, 11/09) et non le rouge Foxy. C'est la porte
+                vers l'autre marque, il en porte deja la couleur. */}
+            <div className="shrink-0 accent-agents">
               <Link
                 href="/agents"
                 data-cursor-hover
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 px-7 py-4 text-[13px] md:text-sm font-mono font-bold uppercase tracking-wide transition-colors duration-150 hover:border-accent hover:text-accent"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-accent text-accent-ink px-7 py-4 text-[13px] md:text-sm font-mono font-bold uppercase tracking-wide transition-all duration-150 hover:bg-accent-dark hover:-translate-y-0.5 hover:shadow-lg"
               >
                 Voir les agents sur mesure
                 <span aria-hidden>&rarr;</span>
@@ -444,6 +456,7 @@ export default function AiosHomeContent() {
               </p>
             </div>
           </div>
+          <AgentStrip />
         </Reveal>
       </section>
 

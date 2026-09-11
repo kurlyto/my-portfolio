@@ -184,6 +184,16 @@ function Step({ step, isCurrent }) {
   );
 }
 
+// Le triangle de lecture est DESSINE, pas ecrit : le caractere U+25B6 se rend
+// en emoji couleur sur une partie des Android, ce qui casse la pastille rouge.
+function PlayMark({ className = "" }) {
+  return (
+    <svg viewBox="0 0 10 12" fill="currentColor" aria-hidden className={className}>
+      <path d="M1 0.6 9 6 1 11.4Z" />
+    </svg>
+  );
+}
+
 function DemoHeader({ title, subtitle, onClose, onBack }) {
   return (
     <div className="shrink-0 border-b border-black/10">
@@ -206,11 +216,11 @@ function DemoHeader({ title, subtitle, onClose, onBack }) {
             </button>
           ) : (
             <span
-              className="flex items-center justify-center w-9 h-9 rounded-full text-white text-[15px]"
+              className="flex items-center justify-center w-9 h-9 rounded-full text-white"
               style={{ background: ACCENT }}
               aria-hidden
             >
-              ▶
+              <PlayMark className="w-[11px] h-[13px] ml-0.5" />
             </span>
           )}
           <div>
@@ -245,41 +255,47 @@ function demandeDe(demo) {
 // visiteur regarde poliment. Une qu'il a choisie parle de SON probleme.
 function DemoMenu({ demos, onPick, titre }) {
   return (
-    <div className="flex-1 overflow-y-auto px-4 py-5">
-      <p className="px-1 text-[13.5px] leading-relaxed text-black/60">{titre}</p>
-      <div className="mt-4 flex flex-col gap-2">
-        {demos.map((d) => (
-          <button
-            key={d.id}
-            type="button"
-            onClick={() => onPick(d)}
-            data-cursor-hover
-            className="group w-full text-left rounded border border-black/10 px-4 py-3.5 transition-colors duration-150 hover:border-transparent"
-            style={{ background: "transparent" }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = teinte(7);
-              e.currentTarget.style.borderColor = teinte(45);
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = "transparent";
-              e.currentTarget.style.borderColor = "rgba(0,0,0,0.1)";
-            }}
-          >
-            <span className="flex items-center gap-2.5">
-              <span
-                className="flex items-center justify-center shrink-0 w-6 h-6 rounded-full text-white text-[9px]"
-                style={{ background: ACCENT }}
-                aria-hidden
-              >
-                ▶
+    // my-auto sur le bloc interne : en plein ecran mobile, quatre choix ne
+    // remplissent pas la hauteur et laissaient un demi-ecran blanc sous la
+    // liste. Centre tant qu'il reste de la place, sans effet des que le
+    // contenu deborde (le defilement reprend normalement).
+    <div className="flex-1 overflow-y-auto px-4 py-5 flex flex-col">
+      <div className="my-auto">
+        <p className="px-1 text-[13.5px] leading-relaxed text-black/60">{titre}</p>
+        <div className="mt-4 flex flex-col gap-2">
+          {demos.map((d) => (
+            <button
+              key={d.id}
+              type="button"
+              onClick={() => onPick(d)}
+              data-cursor-hover
+              className="group w-full text-left rounded border border-black/10 px-4 py-3.5 transition-colors duration-150 hover:border-transparent"
+              style={{ background: "transparent" }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = teinte(7);
+                e.currentTarget.style.borderColor = teinte(45);
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "transparent";
+                e.currentTarget.style.borderColor = "rgba(0,0,0,0.1)";
+              }}
+            >
+              <span className="flex items-center gap-2.5">
+                <span
+                  className="flex items-center justify-center shrink-0 w-6 h-6 rounded-full text-white"
+                  style={{ background: ACCENT }}
+                  aria-hidden
+                >
+                  <PlayMark className="w-[7px] h-[9px] ml-px" />
+                </span>
+                <span className="text-[14px] font-semibold leading-tight">{d.chip}</span>
               </span>
-              <span className="text-[14px] font-semibold leading-tight">{d.chip}</span>
-            </span>
-            <span className="mt-2 block pl-[34px] text-[12.5px] font-mono leading-relaxed text-black/45">
-              &laquo;&nbsp;{demandeDe(d)}&nbsp;&raquo;
-            </span>
-          </button>
-        ))}
+              <span className="mt-2 block pl-[34px] text-[12.5px] font-mono leading-relaxed text-black/45">
+                &laquo;&nbsp;{demandeDe(d)}&nbsp;&raquo;
+              </span>
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );

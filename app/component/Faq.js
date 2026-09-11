@@ -14,7 +14,7 @@ function EmphasizedAnswer({ text }) {
   // etaient entre marqueurs.
   return text.split("**").map((part, i) =>
     i % 2 === 1 ? (
-      <strong key={i} className="font-semibold text-accent">
+      <strong key={i} className="font-semibold text-accent-text">
         {part}
       </strong>
     ) : (
@@ -43,7 +43,7 @@ function FaqItem({ item, isOpen, onToggle, index }) {
               l'oeil retrouve immediatement celle qui est depliee. */}
           <span
             className={`font-display text-lg md:text-xl font-bold leading-snug transition-colors duration-200 ${
-              isOpen ? "text-accent" : ""
+              isOpen ? "text-accent-text" : ""
             }`}
           >
             {item.q}
@@ -51,7 +51,7 @@ function FaqItem({ item, isOpen, onToggle, index }) {
           <span
             aria-hidden="true"
             className={`mt-1 shrink-0 text-xl leading-none font-mono transition-transform duration-200 ease-out ${
-              isOpen ? "rotate-45 text-accent" : "opacity-40 group-hover:opacity-100"
+              isOpen ? "rotate-45 text-accent-text" : "opacity-40 group-hover:opacity-100"
             }`}
           >
             +
@@ -105,17 +105,17 @@ export default function Faq({
 
   return (
     <section className={`${surfaceClass} border-t border-black/10`}>
-      <Reveal className="max-w-5xl mx-auto px-6 py-28 md:py-36">
+      <Reveal className="max-w-5xl mx-auto px-6 py-16 md:py-36">
         {/* Ancre sur le titre, pas sur la section : la section porte 112 px de
             padding, un lien "FAQ" y arrivait sur du vide. */}
         <span
           id="faq"
-          className="scroll-mt-10 text-xs font-mono uppercase tracking-widest text-accent"
+          className="scroll-mt-10 text-xs font-mono uppercase tracking-widest text-accent-text"
         >
           FAQ
         </span>
         <h2 className="font-display mt-3 text-3xl md:text-5xl font-bold tracking-tight max-w-2xl">
-          Les questions qu&apos;on nous pose en premier.
+          Questions fréquentes
         </h2>
 
         <div className="mt-14 border-t border-black/10">

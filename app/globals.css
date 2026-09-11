@@ -20,6 +20,12 @@ html {
      sombre, il porte du blanc. Sans cette variable, les icones du header
      restaient noires sur rouge, illisibles. */
   --accent-ink: #000000;
+  /* L'orange de marque ECRIT sur un fond clair ne fait que 2,84:1, sous le
+     minimum lisible (4,5:1) : mesure du 09/09/2026. Il reste la couleur des
+     aplats (un bouton orange a texte noir monte a 7,4:1), mais tout TEXTE en
+     orange prend cette teinte foncee, qui passe a 4,98:1 sans changer de
+     famille. Regle : `text-accent-text` pour un mot, `bg-accent` pour un aplat. */
+  --accent-text: #c8410f;
   /* Valeurs neutres de repli : le site des agents n'utilise pas ces surfaces,
      mais une variable vide rendrait `bg-surface` transparent en cas d'oubli. */
   --surface: #ffffff;
@@ -34,6 +40,9 @@ html {
   --accent: #a82418;
   --accent-dark: #7a1810;
   --accent-ink: #ffffff;
+  /* Le rouge du renard ecrit sur le creme donne deja 7,17:1 : le site Foxy n'a
+     pas besoin d'une teinte de texte a part, la sienne convient. */
+  --accent-text: var(--accent);
   /* Palette chaude du site AIOS (08/09/2026). Le noir pur faisait "outil de
      developpeur" : un chef d'entreprise doit se sentir accueilli, pas dans un
      terminal. Creme chaud en fond, encre brun-noir, et un brun profond pour
@@ -44,6 +53,30 @@ html {
   --deep: #241a15;
 }
 
+/* Une section a fond sombre porte `on-dark` : la teinte de texte de l'accent
+   s'y ECLAIRCIT au lieu de disparaitre. Les composants continuent d'ecrire
+   `text-accent-text` sans savoir sur quel fond ils tombent, c'est la section
+   qui decide - meme mecanique que `theme-aios`.
+   Mesures du 09/09/2026 : l'orange vif rend 7,41:1 sur du noir (rien a
+   changer), mais le rouge du renard tombait a 2,38:1 sur le brun profond du
+   site Foxy, d'ou sa version eclaircie. */
+.on-dark {
+  --accent-text: var(--accent);
+}
+.theme-aios .on-dark {
+  --accent-text: #e8734f;
+}
+
+/* Un element du site Foxy qui mene au site des agents reprend son orange
+   (bouton "Voir les agents sur mesure", 11/09/2026). Specificite plus forte
+   que .theme-aios, et les memes variables : les composants ne changent pas. */
+.theme-aios .accent-agents {
+  --accent: #ff6b35;
+  --accent-dark: #e2531f;
+  --accent-ink: #000000;
+  --accent-text: #ff6b35;
+}
+
 @theme inline {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -51,6 +84,7 @@ html {
   --color-accent: var(--accent);
   --color-accent-dark: var(--accent-dark);
   --color-accent-ink: var(--accent-ink);
+  --color-accent-text: var(--accent-text);
   --color-surface: var(--surface);
   --color-surface-2: var(--surface-2);
   --color-ink: var(--ink);

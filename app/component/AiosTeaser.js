@@ -11,8 +11,8 @@ import { AIOS_OFFER } from "./aios-offer";
 // un lien. La vente se fait sur le site d'en face.
 export default function AiosTeaser() {
   return (
-    <section className="bg-black text-white">
-      <Reveal className="max-w-6xl mx-auto px-6 py-20 md:py-24">
+    <section className="on-dark bg-black text-white">
+      <Reveal className="max-w-6xl mx-auto px-6 py-14 md:py-24">
         <div className="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-12">
           <div className="flex-1">
             <div className="flex items-center gap-3">
@@ -42,7 +42,7 @@ export default function AiosTeaser() {
             <Link
               href="/"
               data-cursor-hover
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 px-7 py-4 text-[13px] md:text-sm font-mono font-bold uppercase tracking-wide transition-colors duration-150 hover:border-accent hover:text-accent"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 px-7 py-4 text-[13px] md:text-sm font-mono font-bold uppercase tracking-wide transition-colors duration-150 hover:border-accent hover:text-accent-text"
             >
               Découvrir Foxy
               <span aria-hidden>&rarr;</span>

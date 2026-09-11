@@ -726,7 +726,7 @@ function ChatBody({ threadId, messages, streamingText, error, sendMessage, await
             setInput((current) => (current ? `${current} ${text}` : text));
             requestAnimationFrame(autoGrow);
           }}
-          className="shrink-0 w-9 h-9 flex items-center justify-center rounded-full bg-accent text-white transition-all duration-150 ease-out hover:-translate-y-0.5"
+          className="shrink-0 w-9 h-9 flex items-center justify-center rounded-full bg-accent text-accent-ink transition-all duration-150 ease-out hover:-translate-y-0.5"
         >
           <MicGlyph className="w-4 h-4" />
         </VoiceRecorder>

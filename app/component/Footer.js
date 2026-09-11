@@ -22,7 +22,7 @@ const CONTACTS = [
 ];
 
 const CONTACT_BUTTON_CLASS =
-  "w-12 h-12 flex items-center justify-center rounded-full border border-white/20 opacity-80 hover:opacity-100 hover:border-accent hover:text-accent hover:-translate-y-0.5 transition-all duration-150 ease-out";
+  "w-12 h-12 flex items-center justify-center rounded-full border border-white/20 opacity-80 hover:opacity-100 hover:border-accent hover:text-accent-text hover:-translate-y-0.5 transition-all duration-150 ease-out";
 
 // `lang` n'est passe que par la page /projects (seule page bilingue) : partout
 // ailleurs le pied de page reste en francais, comme le reste du site.
@@ -43,7 +43,9 @@ export default function Footer({
   const tr = t(lang);
 
   return (
-    <footer className={`${surfaceClass} text-center px-6 py-20`}>
+    // on-dark : le pied de page est sombre dans tous les cas, l'accent doit
+    // s'y eclaircir (sinon le rouge du renard au survol devient illisible).
+    <footer className={`on-dark ${surfaceClass} text-center px-6 py-14 md:py-20`}>
       <h2 className="font-display text-3xl md:text-4xl font-bold">{tr.footer.contact}</h2>
       <div className="mt-10 flex items-center justify-center gap-6">
         <EmailButton
@@ -68,7 +70,7 @@ export default function Footer({
       {showHomeLink && (
         <Link
           href={homeHref}
-          className="inline-block mt-12 text-xs font-mono opacity-50 hover:opacity-100 hover:text-accent transition-colors"
+          className="inline-block mt-12 text-xs font-mono opacity-50 hover:opacity-100 hover:text-accent-text transition-colors"
         >
           &larr; {tr.footer.home}
         </Link>
@@ -80,14 +82,14 @@ export default function Footer({
       <div className="mt-8 flex items-center justify-center gap-3 text-[11px] font-mono opacity-40">
         <Link
           href="/mentions-legales"
-          className="inline-flex items-center px-2 py-2 hover:opacity-100 hover:text-accent transition-colors"
+          className="inline-flex items-center px-2 py-2 hover:opacity-100 hover:text-accent-text transition-colors"
         >
           {tr.footer.legal}
         </Link>
         <span aria-hidden>·</span>
         <Link
           href="/confidentialite"
-          className="inline-flex items-center px-2 py-2 hover:opacity-100 hover:text-accent transition-colors"
+          className="inline-flex items-center px-2 py-2 hover:opacity-100 hover:text-accent-text transition-colors"
         >
           {tr.footer.privacy}
         </Link>

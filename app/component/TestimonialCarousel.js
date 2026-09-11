@@ -93,7 +93,7 @@ const AUTOPLAY_MS = 6000;
 // Cinq etoiles pleines, en orange de la marque : le code visuel universel de
 // l'avis client. Elles precedent la citation pour poser d'emblee "ceci est un
 // retour de client satisfait", avant meme la premiere ligne de texte.
-function Stars() {
+export function Stars() {
   return (
     <div className="flex items-center gap-1" aria-label="5 étoiles sur 5">
       {Array.from({ length: 5 }, (_, i) => (
@@ -144,7 +144,7 @@ function Identity({ item }) {
           className="mt-4 w-11 h-11 shrink-0 rounded-full object-cover border border-black/10"
         />
       ) : (
-        <div className="mt-4 w-11 h-11 shrink-0 rounded-full bg-accent flex items-center justify-center text-[13px] font-mono font-bold text-white">
+        <div className="mt-4 w-11 h-11 shrink-0 rounded-full bg-accent flex items-center justify-center text-[13px] font-mono font-bold text-accent-ink">
           {badge}
         </div>
       )}

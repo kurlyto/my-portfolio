@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { DEMOS, DEMO_MENU } from "./demo-scenarios";
+import { DEMOS } from "./demo-scenarios";
 
 // Titre = la promesse concrete, pas une metaphore : le visiteur doit
 // comprendre ce qu'on vend avant meme le sous-titre (refonte 09/2026,
@@ -234,24 +234,27 @@ export default function ScrambleHero({ onSubmitNeed, onPlayDemo, onFieldFocus })
             type="button"
             onClick={() => onSubmitNeed(AUDIT_MESSAGE)}
             data-cursor-hover
-            className="inline-flex items-center justify-center gap-2 w-full rounded-full bg-accent text-white px-6 py-4 text-[13px] font-mono font-bold uppercase tracking-wide"
+            className="inline-flex items-center justify-center gap-2 w-full rounded-full bg-accent text-accent-ink px-6 py-4 text-[13px] font-mono font-bold uppercase tracking-wide"
           >
             Audit gratuit
           </button>
+          {/* Comme cote Foxy : sur mobile on JOUE la premiere demonstration
+              plutot que d'ouvrir la liste. Le panneau garde le retour vers le
+              choix et le "voir un autre exemple". */}
           <button
             type="button"
-            onClick={() => onPlayDemo(DEMO_MENU)}
+            onClick={() => onPlayDemo(DEMOS[0].id)}
             data-cursor-hover
             className="inline-flex items-center justify-center gap-2 w-full rounded-full border border-black/20 px-6 py-4 text-[13px] font-mono font-bold uppercase tracking-wide text-black/70"
           >
-            <PlayGlyph className="w-3 h-3 text-accent" />
+            <PlayGlyph className="w-3 h-3 text-accent-text" />
             Voir un agent travailler
           </button>
           {/* Cette ligne dit ce que le bandeau du haut ne dit pas : ce qui se
               passe apres le clic. Elle repetait "1 mois d'essai gratuit", deja
               affiche en haut de l'ecran et rappele plus bas. */}
           <p className="mt-1 text-[12.5px] font-mono text-black/55">
-            <span className="font-bold text-accent">Un échange de 30 minutes</span>, sans
+            <span className="font-bold text-accent-text">Un échange de 30 minutes</span>, sans
             engagement.
           </p>
         </div>
@@ -276,7 +279,7 @@ export default function ScrambleHero({ onSubmitNeed, onPlayDemo, onFieldFocus })
             type="submit"
             aria-label="Envoyer ma demande"
             data-cursor-hover
-            className="flex items-center justify-center shrink-0 w-11 h-11 rounded-full bg-accent text-white transition-colors duration-150 ease-out hover:bg-accent-dark"
+            className="flex items-center justify-center shrink-0 w-11 h-11 rounded-full bg-accent text-accent-ink transition-colors duration-150 ease-out hover:bg-accent-dark"
           >
             <ArrowGlyph className="w-5 h-5" />
           </button>
@@ -296,13 +299,13 @@ export default function ScrambleHero({ onSubmitNeed, onPlayDemo, onFieldFocus })
               data-cursor-hover
               className="inline-flex items-center gap-1.5 rounded-full border border-black/15 px-3.5 py-2.5 text-[12.5px] font-mono text-black/70 transition-colors duration-150 hover:border-accent hover:text-accent"
             >
-              <PlayGlyph className="w-3 h-3 text-accent" />
+              <PlayGlyph className="w-3 h-3 text-accent-text" />
               {demo.chip}
             </button>
           ))}
         </div>
 
-        <p className="hidden sm:block mt-5 text-[13px] sm:text-sm font-mono font-bold text-accent">
+        <p className="hidden sm:block mt-5 text-[13px] sm:text-sm font-mono font-bold text-accent-text">
           Testez votre agent pendant 1 mois gratuitement sans engagement
         </p>
 

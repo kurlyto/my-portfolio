@@ -42,7 +42,7 @@ function Bulle({ etape }) {
       <div
         className={`max-w-[85%] rounded-2xl px-4 py-3 text-[13.5px] leading-relaxed ${
           estUtilisateur
-            ? "bg-accent text-white rounded-br-sm"
+            ? "bg-accent text-accent-ink rounded-br-sm"
             : "bg-white text-ink border border-ink/10 rounded-bl-sm"
         }`}
       >
@@ -129,13 +129,13 @@ export default function AiosCapacites() {
 
   return (
     <section className="bg-surface-2 text-ink">
-      <Reveal className="max-w-6xl mx-auto px-6 py-24 md:py-32">
+      <Reveal className="max-w-6xl mx-auto px-6 py-16 md:py-32">
         {/* L'ancre est posee sur le TITRE, pas sur la section : la section
             porte 96 px de padding et une animation d'entree, donc un lien de
             nav qui visait son bord haut ouvrait sur un ecran presque vide. */}
         <span
           id="capacites"
-          className="scroll-mt-10 text-xs font-mono uppercase tracking-widest text-accent"
+          className="scroll-mt-10 text-xs font-mono uppercase tracking-widest text-accent-text"
         >
           Ce qu&apos;il fait
         </span>
@@ -174,7 +174,7 @@ export default function AiosCapacites() {
                   )}
                   <span
                     className={`text-[11px] font-mono uppercase tracking-wider ${
-                      estActif ? "text-accent" : "text-ink/35"
+                      estActif ? "text-accent-text" : "text-ink/35"
                     }`}
                   >
                     {c.accroche}
@@ -229,7 +229,7 @@ export default function AiosCapacites() {
               <div className="mt-3 flex items-center gap-2 rounded-full border border-accent/40 bg-white px-4 py-2.5">
                 <span className="flex-1 text-[11px] text-ink/35">Demandez n&apos;importe quoi...</span>
                 <MicroGlyph className="w-3.5 h-3.5 text-ink/35" />
-                <span className="flex items-center justify-center w-6 h-6 rounded-full bg-accent text-white text-[10px]">
+                <span className="flex items-center justify-center w-6 h-6 rounded-full bg-accent text-accent-ink text-[10px]">
                   &rarr;
                 </span>
               </div>
