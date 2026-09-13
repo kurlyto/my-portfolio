@@ -10,7 +10,7 @@ export const metadata = {
   robots: { index: true, follow: true },
 };
 
-const MAJ = "9 août 2026";
+const MAJ = "13 septembre 2026";
 
 function Section({ title, children }) {
   return (
@@ -44,7 +44,8 @@ export default function ConditionsPage() {
             avant toute mise en place.
           </p>
           <p>
-            Le prestataire est Nathan Knaebel, micro-entrepreneur. Voir les{" "}
+            Le prestataire est Nathan Knaebel, entrepreneur individuel (micro-entreprise),
+            SIRET 10976206200015, 40 rue du Tivoli, 67000 Strasbourg. Voir les{" "}
             <Link href="/mentions-legales">mentions légales</Link> pour les informations
             d&apos;identification.
           </p>

@@ -28,7 +28,17 @@ export default function MentionsLegalesPage() {
 
         <Section title="Éditeur du site">
           <p>
-            Nathan Knaebel, micro-entrepreneur.
+            Nathan Knaebel, entrepreneur individuel (micro-entreprise).
+            <br />
+            Siège social : 40 rue du Tivoli, 67000 Strasbourg, France
+            <br />
+            SIRET : 10976206200015 (SIREN : 109762062)
+            <br />
+            Code APE : 62.02A - Conseil en systèmes et logiciels informatiques
+            <br />
+            Immatriculée au Registre national des entreprises le 10 septembre 2026.
+            <br />
+            TVA non applicable, article 293 B du Code général des impôts.
             <br />
             Contact :{" "}
             <a href="mailto:nathan.knaebel@gmail.com" className="underline hover:text-[#ff6b35]">
@@ -37,9 +47,6 @@ export default function MentionsLegalesPage() {
             <br />
             Directeur de la publication : Nathan Knaebel
           </p>
-          {/* TODO Nathan : ajouter le numero SIRET et l'adresse du siege.
-              Les deux sont obligatoires pour un micro-entrepreneur qui exerce
-              une activite commerciale en ligne. */}
         </Section>
 
         <Section title="Hébergement">

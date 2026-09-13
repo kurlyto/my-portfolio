@@ -9,7 +9,7 @@ export const metadata = {
   robots: { index: true, follow: true },
 };
 
-const MAJ = "9 août 2026";
+const MAJ = "13 septembre 2026";
 
 function Section({ title, children }) {
   return (
@@ -41,8 +41,9 @@ export default function ConfidentialitePage() {
 
         <Section title="Qui est responsable">
           <p>
-            Nathan Knaebel, micro-entrepreneur. Contact pour toute question ou demande relative à
-            vos données :{" "}
+            Nathan Knaebel, entrepreneur individuel (micro-entreprise), SIRET 10976206200015, dont
+            le siège est situé 40 rue du Tivoli, 67000 Strasbourg, France. Contact pour toute
+            question ou demande relative à vos données :{" "}
             <a href="mailto:nathan.knaebel@gmail.com" className="underline hover:text-[#ff6b35]">
               nathan.knaebel@gmail.com
             </a>
