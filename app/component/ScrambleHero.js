@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { DEMOS } from "./demo-scenarios";
+import CallButton from "./CallButton";
 
 // Titre = la promesse concrete, pas une metaphore : le visiteur doit
 // comprendre ce qu'on vend avant meme le sous-titre (refonte 09/2026,
@@ -55,10 +56,11 @@ function PlayGlyph(props) {
   );
 }
 
-// Ce que le bouton "Audit gratuit" envoie a Nate. Sur mobile, taper son besoin
-// au clavier dans un champ est une friction : le bouton ouvre la meme
-// conversation, deja amorcee, sans rien demander a ecrire.
-const AUDIT_MESSAGE =
+// Ce que le bouton "Faire un audit gratuit" envoie a Nate : la conversation
+// s'ouvre deja amorcee, et Nate enchaine sur le cadrage du besoin sans que le
+// visiteur ait a ecrire quoi que ce soit. Exporte : "Comment ca marche" ouvre la
+// meme conversation.
+export const AUDIT_MESSAGE =
   "Je voudrais un audit gratuit : dites-moi ce qu'un agent IA pourrait prendre en charge dans mon entreprise.";
 
 export default function ScrambleHero({ onSubmitNeed, onPlayDemo, onFieldFocus }) {
@@ -102,18 +104,13 @@ export default function ScrambleHero({ onSubmitNeed, onPlayDemo, onFieldFocus })
 
   // Machine a ecrire du placeholder. Elle ne tourne que si le champ est vide :
   // des que le visiteur tape, le placeholder est invisible, inutile de
-  // continuer a re-rendre. On respecte aussi prefers-reduced-motion.
+  // continuer a re-rendre.
+  // Elle tourne AUSSI en "animations reduites" (14/09) : c'est du texte qui
+  // s'ecrit, rien ne bouge a l'ecran. L'ancienne garde figeait la premiere
+  // phrase sur tout PC Windows aux animations coupees, et Nathan ne voyait
+  // jamais les exemples defiler.
   useEffect(() => {
     if (!fieldIsEmpty || !typing) return undefined;
-
-    const reduced =
-      typeof window !== "undefined" &&
-      window.matchMedia &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduced) {
-      setPlaceholder(PLACEHOLDER_EXAMPLES[0].text);
-      return undefined;
-    }
 
     let charCount = 0;
     let erasing = false;
@@ -200,17 +197,20 @@ export default function ScrambleHero({ onSubmitNeed, onPlayDemo, onFieldFocus })
         // Serif en italique, mais en graisse normale et sans voile
         // d'opacite : la phrase qui explique l'offre doit se lire d'emblee,
         // juste sous le titre.
-        className="font-display mt-3 tall:mt-4 sm:mt-6 text-[15px] tall:text-[17px] sm:text-xl md:text-[1.35rem] font-normal italic leading-snug sm:leading-relaxed text-black/90 max-w-xl text-balance"
+        // Au grand ecran la phrase prend toute la colonne (elargie a 760 px,
+        // 14/09). `text-pretty` et non `text-balance` a ce palier : l'equilibrage
+        // coupait deux lignes egales a mi-largeur, la phrase ne s'etalait pas.
+        className="font-display mt-3 tall:mt-4 sm:mt-6 text-[15px] tall:text-[17px] sm:text-xl md:text-[1.35rem] font-normal italic leading-snug sm:leading-relaxed text-black/90 max-w-xl xl:max-w-none text-balance xl:text-pretty"
       >
         {/* Une seule idee sur le premier ecran mobile : l'enumeration des
             taches (mails, devis, relances...) attend le bureau, elle se lit mal
             en trois lignes sur un telephone. */}
         <span className="hidden sm:inline">
-          Mails, devis, relances, prospection, agenda : un agent sur-mesure, branché à
-          vos outils, qui travaille comme un membre de votre équipe.
+          Un agent sur mesure se branche à vos outils et s&apos;occupe de vos mails, devis,
+          relances et rendez-vous comme un membre de votre équipe.
         </span>
         <span className="sm:hidden">
-          Un agent sur mesure, branché à vos outils, qui travaille comme un membre de
+          Un agent sur mesure qui se branche à vos outils et travaille comme un membre de
           votre équipe.
         </span>
       </motion.p>
@@ -236,8 +236,13 @@ export default function ScrambleHero({ onSubmitNeed, onPlayDemo, onFieldFocus })
             data-cursor-hover
             className="inline-flex items-center justify-center gap-2 w-full rounded-full bg-accent text-accent-ink px-6 py-4 text-[13px] font-mono font-bold uppercase tracking-wide"
           >
-            Audit gratuit
+            Faire un audit 100% gratuit
           </button>
+          {/* Sur telephone l'appel part directement (tel:), c'est le geste le
+              plus naturel de l'ecran. */}
+          <CallButton className="inline-flex items-center justify-center gap-2 w-full rounded-full border-2 border-black/15 px-6 py-3.5 text-[13px] font-mono font-bold uppercase tracking-wide text-black">
+            Passer un appel
+          </CallButton>
           {/* Comme cote Foxy : sur mobile on JOUE la premiere demonstration
               plutot que d'ouvrir la liste. Le panneau garde le retour vers le
               choix et le "voir un autre exemple". */}
@@ -247,14 +252,14 @@ export default function ScrambleHero({ onSubmitNeed, onPlayDemo, onFieldFocus })
             data-cursor-hover
             className="inline-flex items-center justify-center gap-2 w-full rounded-full border border-black/20 px-6 py-4 text-[13px] font-mono font-bold uppercase tracking-wide text-black/70"
           >
-            <PlayGlyph className="w-3 h-3 text-accent-text" />
+            <PlayGlyph className="w-3 h-3 text-accent" />
             Voir un agent travailler
           </button>
           {/* Cette ligne dit ce que le bandeau du haut ne dit pas : ce qui se
               passe apres le clic. Elle repetait "1 mois d'essai gratuit", deja
               affiche en haut de l'ecran et rappele plus bas. */}
           <p className="mt-1 text-[12.5px] font-mono text-black/55">
-            <span className="font-bold text-accent-text">Un échange de 30 minutes</span>, sans
+            <span className="font-bold text-black">Un échange de 30 minutes</span> sans
             engagement.
           </p>
         </div>
@@ -273,7 +278,7 @@ export default function ScrambleHero({ onSubmitNeed, onPlayDemo, onFieldFocus })
             onKeyDown={onKeyDown}
             placeholder={placeholder}
             aria-label="Décrivez votre besoin"
-            className="flex-1 min-w-0 bg-transparent outline-none text-[15px] sm:text-base placeholder:text-black/35 py-2"
+            className="flex-1 min-w-0 bg-transparent outline-none text-[15px] sm:text-base placeholder:text-black/50 py-2"
           />
           <button
             type="submit"
@@ -284,6 +289,28 @@ export default function ScrambleHero({ onSubmitNeed, onPlayDemo, onFieldFocus })
             <ArrowGlyph className="w-5 h-5" />
           </button>
         </motion.form>
+
+        {/* Le champ ne suffit pas comme porte d'entree : cliquer dedans joue une
+            demo, et il faut deja savoir formuler son besoin pour s'en servir.
+            Le bouton est la porte evidente vers Nate, qui aide justement a le
+            formuler (remontee par Nathan le 13/09 : on n'entrait dans le chat
+            qu'en passant par un badge metier, puis en le dementant).
+            Au grand ecran, c'est la carte de Nate (colonne droite) qui porte ce
+            bouton : le garder ici en ferait deux cote a cote. */}
+        <div className="hidden sm:flex lg:hidden mt-5 items-center gap-4">
+          <button
+            type="button"
+            onClick={() => onSubmitNeed(AUDIT_MESSAGE)}
+            data-cursor-hover
+            className="inline-flex items-center justify-center gap-2 shrink-0 rounded-full bg-accent text-accent-ink px-7 py-3.5 text-[13px] font-mono font-bold uppercase tracking-wide transition-all duration-150 ease-out hover:bg-accent-dark hover:-translate-y-0.5 hover:shadow-lg"
+          >
+            Faire un audit 100% gratuit
+            <ArrowGlyph className="w-4 h-4" />
+          </button>
+          <CallButton className="inline-flex items-center justify-center gap-2 shrink-0 rounded-full border-2 border-black/15 px-7 py-3 text-[13px] font-mono font-bold uppercase tracking-wide text-black transition-colors duration-150 ease-out hover:border-accent">
+            Passer un appel
+          </CallButton>
+        </div>
 
         {/* Trois demonstrations scriptees : le visiteur voit un agent
             travailler (raisonnement etape par etape) sans rien engager. Au
@@ -299,27 +326,14 @@ export default function ScrambleHero({ onSubmitNeed, onPlayDemo, onFieldFocus })
               data-cursor-hover
               className="inline-flex items-center gap-1.5 rounded-full border border-black/15 px-3.5 py-2.5 text-[12.5px] font-mono text-black/70 transition-colors duration-150 hover:border-accent hover:text-accent"
             >
-              <PlayGlyph className="w-3 h-3 text-accent-text" />
+              <PlayGlyph className="w-3 h-3 text-accent" />
               {demo.chip}
             </button>
           ))}
         </div>
 
-        <p className="hidden sm:block mt-5 text-[13px] sm:text-sm font-mono font-bold text-accent-text">
-          Testez votre agent pendant 1 mois gratuitement sans engagement
-        </p>
-
-        {/* Sortie discrete pour qui n'est pret ni a parler ni a regarder une
-            demo : elle mene a la section suivante, pas ailleurs. Meme lien, au
-            meme endroit, sur le site Foxy. */}
-        <a
-          href="#metiers"
-          data-cursor-hover
-          className="mt-5 sm:mt-4 inline-flex items-center gap-2 py-2 text-[13px] font-mono text-black/50 hover:text-accent transition-colors"
-        >
-          En savoir plus
-          <span aria-hidden>&darr;</span>
-        </a>
+        {/* Ni "1 mois gratuit" (le bandeau du haut le dit deja) ni lien "En
+            savoir plus" : retires a la demande de Nathan le 14/09. */}
       </motion.div>
 
       {/* La bande d'outils ne vit plus dans le hero : le premier ecran mobile

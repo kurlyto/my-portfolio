@@ -103,19 +103,18 @@ export default function MetierBadges({ onTalkToNate }) {
           tres petit ecran, min-h laisse la section grandir. */}
       <Reveal className="min-h-[100svh] max-w-5xl mx-auto px-6 py-12 flex flex-col justify-center text-center">
         {/* Ancre sur le titre : la section fait un ecran entier et centre son
-            contenu, viser son bord haut arrivait au-dessus du texte. */}
-        <span
+            contenu, viser son bord haut arrivait au-dessus du texte. Plus de
+            petit titre "Métiers" au-dessus : retire par Nathan le 14/09, la
+            question se suffit a elle-meme. */}
+        <h2
           id="metiers"
-          className="scroll-mt-10 text-xs font-mono uppercase tracking-widest text-accent-text"
+          className="scroll-mt-10 font-display text-3xl md:text-4xl font-bold tracking-tight text-balance"
         >
-          Métiers
-        </span>
-        <h2 className="font-display mt-3 text-3xl md:text-4xl font-bold tracking-tight text-balance">
           Et pour votre métier, ça donne quoi ?
         </h2>
         <p className="mt-4 text-[15px] md:text-base opacity-70 max-w-2xl mx-auto leading-relaxed">
-          Choisissez votre métier : 5 demandes concrètes, à confier à votre agent
-          dès demain.
+          Choisissez votre métier et découvrez 5 demandes concrètes à confier à votre
+          agent.
         </p>
 
         <div className="mt-10 flex flex-wrap justify-center gap-2.5 md:gap-3">
