@@ -354,9 +354,12 @@ function runOnceStreaming({ sessionId, message, isFirstTurn, historyReplay, home
         // disabled Claude subscription access" (pas un 429), la bascule ne s'est
         // donc pas declenchee et les visiteurs ont vu "Une erreur est survenue"
         // alors que le compte admin-mdd repondait normalement.
+        // Idem le 13/09/2026 : "Failed to authenticate: OAuth session expired
+        // and could not be refreshed" (nouvelle formulation du CLI) ne
+        // correspondait a aucun motif, les visiteurs restaient sans reponse.
         const accountUnusable =
           quotaExceeded ||
-          /disabled Claude subscription access|Not logged in|Please run \/login|OAuth token has expired|Invalid API key|authentication_error/i.test(
+          /disabled Claude subscription access|Not logged in|Please run \/login|OAuth (token|session) (has )?expired|Failed to authenticate|Invalid API key|authentication_error/i.test(
             `${finalResult?.result ?? ""}\n${stderr}`,
           );
         reject(

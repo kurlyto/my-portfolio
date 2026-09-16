@@ -7,7 +7,7 @@ import { useState } from "react";
 // Celui qui recoit la carte tombe donc sur une conversation qualifiee, pas sur
 // une page a lire.
 function chatUrl(metier) {
-  return `${window.location.origin}/?chat=1&metier=${metier.slug}`;
+  return `${window.location.origin}/agents?chat=1&metier=${metier.slug}`;
 }
 
 // Rasterise le flyer tel qu'il est affiche a l'ecran. On copie le DOM existant

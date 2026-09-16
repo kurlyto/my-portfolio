@@ -93,7 +93,7 @@ export async function GET(request) {
   var hint = document.getElementById("hint");
 
   function openHere() {
-    window.location.href = "/?chat=1";
+    window.location.href = "/agents?chat=1";
   }
 
   back.addEventListener("click", function () {
