@@ -9,11 +9,13 @@
 // - /api/*          : pas des pages.
 
 import { METIERS } from "./metiers/metiers-data";
+import { tousLesArticles } from "./blog/blog-data";
 
 const BASE_URL = "https://nathan-knaebel.com";
 
 export default function sitemap() {
   const lastModified = new Date();
+  const articles = tousLesArticles().filter((a) => a.statut === "publie");
 
   return [
     // Deux sites sur un domaine : la racine est celui de l'AIOS, /agents celui
@@ -28,6 +30,17 @@ export default function sitemap() {
       changeFrequency: "monthly",
       priority: 0.7,
       lastModified,
+    })),
+    // Le blog : l'index n'entre qu'avec son premier article publie, chaque
+    // article porte sa vraie date (Google s'en sert pour recrawler).
+    ...(articles.length
+      ? [{ url: `${BASE_URL}/blog`, changeFrequency: "daily", priority: 0.7, lastModified: new Date(articles[0].maj || articles[0].date) }]
+      : []),
+    ...articles.map((a) => ({
+      url: `${BASE_URL}/blog/${a.slug}`,
+      changeFrequency: "monthly",
+      priority: 0.6,
+      lastModified: new Date(a.maj || a.date),
     })),
     { url: `${BASE_URL}/projects`, changeFrequency: "monthly", priority: 0.8, lastModified },
     { url: `${BASE_URL}/mentions-legales`, changeFrequency: "yearly", priority: 0.2, lastModified },

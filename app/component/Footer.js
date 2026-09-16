@@ -2,6 +2,7 @@ import Link from "next/link";
 import { WhatsAppIcon, LinkedInIcon, GitHubIcon } from "./icons";
 import EmailButton from "./EmailButton";
 import { t } from "../lib/i18n-projects";
+import { BLOG_OUVERT } from "../blog/blog-ouvert";
 
 const CONTACTS = [
   {
@@ -93,6 +94,17 @@ export default function Footer({
         >
           {tr.footer.privacy}
         </Link>
+        {BLOG_OUVERT && (
+          <>
+            <span aria-hidden>·</span>
+            <Link
+              href="/blog"
+              className="inline-flex items-center px-2 py-2 hover:opacity-100 hover:text-accent-text transition-colors"
+            >
+              Blog
+            </Link>
+          </>
+        )}
       </div>
     </footer>
   );
