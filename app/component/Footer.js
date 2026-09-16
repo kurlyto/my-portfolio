@@ -28,15 +28,13 @@ const CONTACT_BUTTON_CLASS =
 // `lang` n'est passe que par la page /projects (seule page bilingue) : partout
 // ailleurs le pied de page reste en francais, comme le reste du site.
 //
-// `homeHref` : depuis la scission des deux sites (08/09/2026), "retour a
-// l'accueil" ne veut plus dire la meme chose partout. Les pages annexes
-// (projets, mentions, flyers metiers) appartiennent a l'activite agents, leur
-// accueil est donc /agents ; le site AIOS, lui, EST la racine et n'affiche pas
-// ce lien.
+// `homeHref` : depuis le 16/09/2026 la racine est l'accueil de l'agence, qui
+// mene a toutes les offres : c'est le "retour a l'accueil" par defaut. Les
+// accueils eux-memes (agence, Foxy) n'affichent pas ce lien.
 export default function Footer({
   showHomeLink = true,
   lang = "fr",
-  homeHref = "/agents",
+  homeHref = "/",
   // Le site AIOS ferme sur un brun profond (sa palette chaude) plutot que sur
   // le noir pur du site agents.
   surfaceClass = "bg-black text-white",

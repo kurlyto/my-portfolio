@@ -79,7 +79,7 @@ const PROJECTS = [
     descriptionEn:
       "My second brain, running non-stop on my server: email, calendar, stocks, market watch, prospecting, memory. I talk to it out loud or in writing like a colleague, it acts on my real tools and learns from my corrections between sessions so it never makes the same mistake twice.",
     years: "2026",
-    link: "/",
+    link: "/foxy",
     cover: "from-zinc-800 to-zinc-900",
     coverImage: "/images/cover-aios.png",
     // Icone renard sur fond sombre plein cadre : comme MDD et Agents IA

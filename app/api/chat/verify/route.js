@@ -25,7 +25,7 @@ export async function GET(request) {
 <script>
   document.getElementById("back").addEventListener("click", function () {
     window.close();
-    setTimeout(function () { window.location.href = "/"; }, 120);
+    setTimeout(function () { window.location.href = "/agents"; }, 120);
   });
 </script>`), {
       status: 400,

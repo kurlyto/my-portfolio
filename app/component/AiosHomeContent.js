@@ -22,7 +22,8 @@ import OfferBanner from "./OfferBanner";
 import { DesktopMock, PhoneMock } from "./AiosMockup";
 import { ETAPES, TEMOIGNAGES_AIOS, QUESTIONS_AIOS } from "./aios-content";
 
-// Site de l'AIOS (racine du domaine). Le site des agents sur mesure vit sur
+// Site de l'AIOS (/foxy, a la racine jusqu'au 16/09/2026 : la racine est
+// devenue l'accueil de l'agence). Le site des agents sur mesure vit sur
 // /agents : deux produits, deux promesses, deux couleurs. La bascule de couleur
 // tient a la classe `theme-aios` posee sur le conteneur - tout ce qui est
 // `bg-accent` / `text-accent-text` en dessous passe du orange au rouge du renard.
@@ -123,21 +124,6 @@ export default function AiosHomeContent() {
   const [demoId, setDemoId] = useState(null);
   const demoOuverte = demoId !== null;
   const demo = getAiosDemo(demoId);
-
-  // ?chat=1 appartient au chat Nate, qui vit sur /agents. Les liens ecrits
-  // avant la scission des deux sites (verification email, flyers metiers deja
-  // imprimes ou partages) pointent encore sur la racine : on les renvoie la-bas
-  // avec leurs parametres. Ouvrir le chat ICI envoyait a Nate "Je veux reserver
-  // Foxy" a la place du visiteur, et Nate ne connait pas Foxy (vu le 11/09).
-  useEffect(() => {
-    try {
-      const params = new URLSearchParams(window.location.search);
-      if (params.get("chat") !== "1") return;
-      window.location.replace(`/agents${window.location.search}`);
-    } catch {
-      // URL indisponible : on laisse le chat ferme.
-    }
-  }, []);
 
   function openForm() {
     setDemoId(null);

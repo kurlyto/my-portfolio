@@ -31,7 +31,7 @@ export const FORMATS = {
 // La page mere de chaque grappe : chaque article renvoie vers elle.
 export function pageMere(grappe = "") {
   if (grappe.startsWith("metier:")) return `/metiers/${grappe.slice(7)}`;
-  if (grappe === "foxy") return "/";
+  if (grappe === "foxy") return "/foxy";
   return "/agents";
 }
 

@@ -49,7 +49,7 @@ export default function AiosTeaser() {
               {/* Aplat ROUGE Foxy (demande de Nathan, 14/09) : meme gabarit que
                   le bouton orange de la section miroir en fin du site Foxy. */}
               <Link
-                href="/"
+                href="/foxy"
                 data-cursor-hover
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-accent text-accent-ink px-7 py-4 text-[13px] md:text-sm font-mono font-bold uppercase tracking-wide transition-all duration-150 hover:bg-accent-dark hover:-translate-y-0.5 hover:shadow-lg"
               >

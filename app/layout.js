@@ -33,12 +33,12 @@ export const metadata = {
   // `default` s'applique aux pages sans titre propre ; `template` habille
   // celles qui en declarent un, sans avoir a repeter le nom du site partout.
   //
-  // Le domaine porte DEUX sites depuis le 08/09/2026 : l'AIOS a la racine, les
-  // agents sur mesure sur /agents. Le gabarit garde le nom de l'activite
-  // agents, dont relevent toutes les pages annexes (metiers, projets,
-  // mentions). Les deux pages d'accueil declarent, elles, un titre `absolute` :
-  // sinon la home AIOS s'afficherait "AIOS ... | Votre Agent IA", soit les deux
-  // marques dans le meme onglet.
+  // Le domaine porte l'accueil de l'agence (racine, depuis le 16/09/2026) et
+  // ses deux offres : Foxy sur /foxy, les agents sur mesure sur /agents. Le
+  // gabarit garde le nom de l'activite agents, dont relevent les pages annexes
+  // (metiers, mentions). Les trois accueils declarent, eux, un titre
+  // `absolute` : sinon Foxy s'afficherait "Foxy ... | Votre Agent IA", soit
+  // les deux marques dans le meme onglet.
   title: {
     default: SITE_NAME,
     template: `%s | ${SITE_NAME}`,

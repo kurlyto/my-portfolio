@@ -12,19 +12,28 @@ const CONTACTS = [
   { label: "GitHub", href: "https://github.com/kurlyto", Icon: GitHubIcon },
 ];
 
-// Deux sites, deux navigations, un seul header. `/` est le site de l'AIOS (le
-// systeme complet, pour un chef d'entreprise) et `/agents` celui des agents sur
-// mesure (une mission precise dans un metier). Melanger les deux offres sur un
-// meme ecran est exactement ce qui rendait l'ancienne page confuse.
+// Trois sites, trois navigations, un seul header. `/` est l'accueil de
+// l'agence (qui presente les offres), `/foxy` le site de l'AIOS (le systeme
+// complet, pour un chef d'entreprise) et `/agents` celui des agents sur mesure
+// (une mission precise dans un metier). Melanger les deux offres sur un meme
+// ecran est exactement ce qui rendait l'ancienne page confuse : l'accueil les
+// presente cote a cote, chacune garde son propre site.
 //
-// Le dernier lien de chaque jeu est la passerelle vers l'autre site : un
-// visiteur arrive au mauvais endroit doit pouvoir traverser d'un clic.
+// Le dernier lien de Foxy et des agents est la passerelle vers l'autre site :
+// un visiteur arrive au mauvais endroit doit pouvoir traverser d'un clic.
 const NAV_BY_SITE = {
+  agence: [
+    { href: "/foxy", label: "Foxy" },
+    { href: "/agents", label: "Agents" },
+    { href: "/projects", label: "Réalisations" },
+    { href: "/#a-propos", label: "À propos" },
+    { href: "/#contact", label: "Contact" },
+  ],
   aios: [
-    { href: "/#capacites", label: "Au quotidien" },
-    { href: "/#comparatif", label: "Comparatif" },
-    { href: "/#temoignages", label: "Témoignages" },
-    { href: "/#faq", label: "FAQ" },
+    { href: "/foxy#capacites", label: "Au quotidien" },
+    { href: "/foxy#comparatif", label: "Comparatif" },
+    { href: "/foxy#temoignages", label: "Témoignages" },
+    { href: "/foxy#faq", label: "FAQ" },
     { href: "/agents", label: "Agents" },
   ],
   agents: [
@@ -32,7 +41,7 @@ const NAV_BY_SITE = {
     { href: "/agents/exemples", label: "Exemples" },
     { href: "/agents#temoignages", label: "Témoignages" },
     { href: "/agents#faq", label: "FAQ" },
-    { href: "/", label: "Foxy" },
+    { href: "/foxy", label: "Foxy" },
   ],
 };
 
@@ -42,8 +51,15 @@ const NAV_BY_SITE = {
 // le renard est detoure sur transparent - lui appliquer un arrondi rognerait
 // une oreille pour rien.
 const BRAND_BY_SITE = {
-  aios: {
+  agence: {
     href: "/",
+    label: "Nathan Knaebel",
+    logo: "/images/logo-nk.png",
+    logoClass: "rounded-md",
+    logoSize: 32,
+  },
+  aios: {
+    href: "/foxy",
     label: "Foxy",
     logo: "/images/cover-aios.png",
     logoClass: "",
@@ -153,8 +169,8 @@ function MobileMenu({ dark, navLinks, brand }) {
  * pour qu'il soit coupe a l'arrivee sur le site. Les autres pages gardent
  * l'espacement d'origine, elles n'ont pas de bandeau.
  *
- * `site` : "agents" (defaut) ou "aios". Determine l'enseigne et la nav. Les
- * pages annexes (projets, metiers, mentions) appartiennent a l'activite agents,
+ * `site` : "agents" (defaut), "aios" ou "agence". Determine l'enseigne et la
+ * nav. Les pages annexes (metiers, mentions, blog) gardent la nav des agents,
  * elles n'ont donc rien a declarer.
  */
 export default function Header({ dark = false, compactY = false, site = "agents" }) {
