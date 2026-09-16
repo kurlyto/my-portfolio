@@ -16,8 +16,9 @@ import AiosVsChat from "./AiosVsChat";
 import { AIOS_DEMOS, getAiosDemo } from "./demo-scenarios";
 import FoxySchema from "./FoxySchema";
 import AgentStrip from "./AgentStrip";
-import { Stars } from "./TestimonialCarousel";
+import { Stars } from "./Testimonials";
 import { AIOS_OFFER } from "./aios-offer";
+import OfferBanner from "./OfferBanner";
 import { DesktopMock, PhoneMock } from "./AiosMockup";
 import { ETAPES, TEMOIGNAGES_AIOS, QUESTIONS_AIOS } from "./aios-content";
 
@@ -123,14 +124,16 @@ export default function AiosHomeContent() {
   const demoOuverte = demoId !== null;
   const demo = getAiosDemo(demoId);
 
-  // Retour de la verification email : la personne vient de confirmer son
-  // adresse dans un autre onglet, on la ramene dans sa conversation.
+  // ?chat=1 appartient au chat Nate, qui vit sur /agents. Les liens ecrits
+  // avant la scission des deux sites (verification email, flyers metiers deja
+  // imprimes ou partages) pointent encore sur la racine : on les renvoie la-bas
+  // avec leurs parametres. Ouvrir le chat ICI envoyait a Nate "Je veux reserver
+  // Foxy" a la place du visiteur, et Nate ne connait pas Foxy (vu le 11/09).
   useEffect(() => {
     try {
       const params = new URLSearchParams(window.location.search);
       if (params.get("chat") !== "1") return;
-      setChatOpen(true);
-      window.history.replaceState({}, "", window.location.pathname);
+      window.location.replace(`/agents${window.location.search}`);
     } catch {
       // URL indisponible : on laisse le chat ferme.
     }
@@ -164,6 +167,12 @@ export default function AiosHomeContent() {
   return (
     <div className="theme-aios bg-surface text-ink">
       <div className="bg-surface text-ink">
+        {/* Meme bandeau que sur /agents, dans le rouge du renard. Les chiffres
+            viennent de aios-offer.js : une signature = une valeur a changer. */}
+        <OfferBanner
+          titre={`Accès anticipé : plus que ${AIOS_OFFER.placesRestantes} places`}
+          detail={`inscriptions jusqu'au ${AIOS_OFFER.dateLimiteTexte}, conditions de lancement gardées à vie.`}
+        />
         <Header compactY site="aios" />
 
         {/* Premier ecran : ce que c'est, ce qu'on risque de rater (places +
@@ -267,18 +276,8 @@ export default function AiosHomeContent() {
                 </button>
               ))}
             </div>
-
-            {/* Troisieme sortie, volontairement discrete : celui qui n'est pas
-                pret a s'inscrire ni a regarder une demo doit quand meme avoir
-                ou aller. Elle mene a la section suivante, pas ailleurs. */}
-            <a
-              href="#capacites"
-              data-cursor-hover
-              className="mt-6 inline-flex items-center gap-2 py-2 text-[13px] font-mono text-ink/50 hover:text-accent transition-colors"
-            >
-              En savoir plus
-              <span aria-hidden>&darr;</span>
-            </a>
+            {/* Plus de lien "En savoir plus" sous les demos : retire a la
+                demande de Nathan le 14/09, comme sur /agents. */}
           </div>
 
           {/* Colonne droite : la mascotte pose au-dessus de ses ecrans, comme
@@ -438,9 +437,10 @@ export default function AiosHomeContent() {
               </h2>
               <p className="mt-4 text-[15px] md:text-base text-white/70 leading-relaxed max-w-2xl">
                 Relancer vos devis, trier vos candidatures, surveiller vos concurrents :
-                pour un besoin unique et bien délimité,{" "}
-                <span className="text-white">un agent sur mesure</span> suffit, et coûte
-                moins cher qu&apos;un système complet.
+                pour un besoin unique et bien délimité{" "}
+                <span className="accent-agents surligne">un agent sur mesure</span> suffit
+                et coûte <span className="accent-agents surligne">moins cher</span>{" "}
+                qu&apos;un système complet.
               </p>
             </div>
             {/* `accent-agents` : le bouton prend l'ORANGE du site des agents
