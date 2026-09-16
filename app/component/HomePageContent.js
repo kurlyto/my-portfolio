@@ -3,9 +3,9 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Header from "./Header";
-import ScrambleHero from "./ScrambleHero";
+import ScrambleHero, { AUDIT_MESSAGE } from "./ScrambleHero";
 import Faq from "./Faq";
-import TestimonialCarousel from "./TestimonialCarousel";
+import Testimonials from "./Testimonials";
 import ToolStrip from "./ToolStrip";
 import ChatPanel from "./ChatPanel";
 import DemoPanel from "./DemoPanel";
@@ -18,34 +18,8 @@ import WhyNotChatGpt from "./WhyNotChatGpt";
 import AiosTeaser from "./AiosTeaser";
 import SecuritySection from "./SecuritySection";
 import Footer from "./Footer";
-
-// Bandeau d'offre en haut de page. Refermable : une banniere qu'on ne peut pas
-// fermer irrite le visiteur qui revient. Le choix n'est pas persiste
-// volontairement (pas de localStorage) : l'offre reste visible d'une visite a
-// l'autre, elle disparait seulement pour la session en cours.
-function OfferBanner() {
-  const [closed, setClosed] = useState(false);
-  if (closed) return null;
-
-  return (
-    <div className="relative bg-accent text-accent-ink">
-      {/* py-1.5 et non py-2.5 : chaque pixel pris ici est pris au hero, qui doit
-          tenir en entier dans le premier ecran. */}
-      <div className="max-w-7xl mx-auto px-6 py-1.5 pr-12 text-center text-[13px] font-mono tracking-wide">
-        <span className="font-bold uppercase">1 mois d&apos;essai 100% gratuit</span>
-        <span className="hidden sm:inline opacity-85"> - testez votre agent personnel sans aucun engagement d&apos;achat.</span>
-      </div>
-      <button
-        type="button"
-        onClick={() => setClosed(true)}
-        aria-label="Fermer le bandeau"
-        className="absolute right-1 top-1/2 -translate-y-1/2 flex items-center justify-center w-11 h-11 text-white/70 hover:text-white transition-colors text-[16px] leading-none"
-      >
-        ×
-      </button>
-    </div>
-  );
-}
+import OfferBanner from "./OfferBanner";
+import CallButton from "./CallButton";
 
 // Demande de confirmation avant d'ecraser un cadrage en cours. Le bouton vocal
 // demarre une NOUVELLE conversation : si un projet est deja en cours, l'envoyer
@@ -75,6 +49,53 @@ function ResetConfirm({ onKeep, onRestart }) {
             Continuer mon projet
           </button>
         </div>
+      </div>
+    </div>
+  );
+}
+
+// Colonne droite du hero au bureau, tant que ni le chat ni une demo ne l'occupent :
+// le visage de Nate et la porte vers lui (demande de Nathan, 14/09). Avant, un
+// carrousel de temoignages tenait cette place ; ils ont maintenant leur section.
+function NateCard({ onStart }) {
+  return (
+    // Photo A COTE du nom et non au-dessus (14/09) : empilee, la carte etait
+    // aussi haute que le texte d'en face, elle ne pouvait pas se centrer sur
+    // lui et semblait posee trop haut.
+    <div className="mx-auto w-full max-w-[380px] rounded-3xl border-2 border-accent/35 bg-[#faf8f5] p-5 shadow-[0_20px_50px_-20px_rgba(255,107,53,0.25)]">
+      <div className="flex items-center gap-4">
+        {/* eslint-disable-next-line @next/next/no-img-element -- portrait local a
+            taille fixe, deja compresse en webp (16 Ko). */}
+        <img
+          src="/images/agents/nate-hero.webp"
+          alt="Nate, l'agent qui cadre votre besoin"
+          width={640}
+          height={640}
+          className="shrink-0 w-20 h-20 xl:w-24 xl:h-24 rounded-full object-cover border-4 border-white shadow-lg"
+        />
+        <div className="min-w-0 text-left">
+          <p className="font-display text-2xl font-bold">Nate</p>
+          <p className="mt-0.5 text-[14px] leading-snug text-black/60">L&apos;agent qui cadre votre besoin</p>
+        </div>
+      </div>
+      {/* Deux portes cote a cote (14/09) : l'audit avec Nate pour qui veut
+          ecrire, l'appel (WhatsApp au bureau) pour qui prefere parler. Meme
+          largeur pour les deux, l'une sous l'autre : la carte est etroite. */}
+      <div className="mt-4 w-full flex flex-col gap-2.5">
+        {/* Fleche au grand ecran seulement : a 1024 px la carte n'a que 300 px
+            et le libelle passait sur deux lignes. */}
+        <button
+          type="button"
+          onClick={onStart}
+          data-cursor-hover
+          className="inline-flex items-center justify-center gap-2 w-full text-center whitespace-nowrap rounded-full bg-accent text-accent-ink px-4 py-3 text-[12px] font-mono font-bold uppercase tracking-wide transition-all duration-150 ease-out hover:bg-accent-dark hover:-translate-y-0.5 hover:shadow-lg"
+        >
+          Faire un audit 100% gratuit
+          <span aria-hidden className="hidden xl:inline">&rarr;</span>
+        </button>
+        <CallButton className="inline-flex items-center justify-center gap-2 w-full text-center rounded-full border-2 border-black/15 bg-white px-5 py-2.5 text-[12px] font-mono font-bold uppercase tracking-wide text-black transition-colors duration-150 ease-out hover:border-accent">
+          Passer un appel
+        </CallButton>
       </div>
     </div>
   );
@@ -191,6 +212,14 @@ export default function HomePageContent() {
     scrollToChat();
   }
 
+  // Ouverture sans message (question libre depuis la FAQ) : on reprend le fil
+  // existant s'il y en a un, rien a ecraser donc rien a demander.
+  function openChat() {
+    setDemoId(null);
+    setChatOpen(true);
+    scrollToChat();
+  }
+
   // Le chat vit en haut de page (colonne droite du hero en desktop, plein
   // ecran en mobile). Ouvert depuis un bouton situe plus bas - un flyer metier
   // par exemple - il apparait hors champ : sans cette remontee, le visiteur ne
@@ -270,7 +299,10 @@ export default function HomePageContent() {
         )}
       </AnimatePresence>
 
-      <OfferBanner />
+      <OfferBanner
+        titre="1 mois d'essai 100% gratuit"
+        detail="testez votre agent personnel sans aucun engagement d'achat."
+      />
       <Header compactY site="agents" />
 
       <section
@@ -284,24 +316,29 @@ export default function HomePageContent() {
         // pt reduit encore (pt-14 -> pt-6 en desktop) : le bandeau d'offre reste
         // en haut de page, donc c'est ici que se recupere la hauteur qui
         // manquait pour que le hero tienne entier au chargement.
-        className="max-w-7xl mx-auto px-6 pt-3 pb-8 lg:pb-10 lg:pt-6 w-full grid grid-cols-1 lg:grid-cols-[minmax(0,620px)_1fr] gap-12 lg:gap-14 items-stretch lg:min-h-0 content-start lg:content-stretch"
+        // Colonne gauche elargie au grand ecran (620 -> 760 px, 14/09) : la
+        // phrase d'offre sous le titre y gagne de la largeur. Pas avant xl : a
+        // 1024 px la colonne droite tomberait sous la largeur de la carte.
+        className="max-w-7xl mx-auto px-6 pt-3 pb-8 lg:pb-10 lg:pt-6 w-full grid grid-cols-1 lg:grid-cols-[minmax(0,620px)_1fr] xl:grid-cols-[minmax(0,760px)_1fr] gap-12 lg:gap-14 items-stretch lg:min-h-0 content-start lg:content-stretch"
       >
         <ScrambleHero
           onSubmitNeed={openChatWithVoice}
           onPlayDemo={playDemo}
           onFieldFocus={playDemoFromField}
         />
-        {/* Le carrousel reste en colonne droite sur desktop uniquement. Sur
-            mobile il devient une section a part entiere (voir plus bas) pour
-            que le hero tienne seul dans le premier ecran. */}
+        {/* Colonne droite au bureau uniquement : en mobile le hero tient seul
+            dans le premier ecran et ses boutons menent deja a Nate. */}
         {/* z-40 quand le chat est ouvert : le panneau doit passer au-dessus du
             voile (z-30), sinon il serait assombri avec le reste. */}
         {/* min-w-0 sur la colonne elle-meme : la piste d'outils en `w-max`
             (ToolStrip) gonfle sinon cette piste de grille, qui ecrase alors la
             colonne du hero jusqu'a un mot par ligne. */}
+        {/* La carte de Nate se centre en hauteur face au texte (14/09 : collee
+            en haut, elle paraissait trop haute) ; le chat et la demo restent
+            accroches en haut, ou ils collent a l'ecran pendant qu'on defile. */}
         <div
-          className={`hidden lg:block lg:sticky lg:top-6 lg:self-start min-w-0 ${
-            chatOpen || demoOuverte ? "relative z-40" : ""
+          className={`hidden lg:block min-w-0 ${
+            chatOpen || demoOuverte ? "relative z-40 lg:sticky lg:top-6 lg:self-start" : "lg:self-center"
           }`}
         >
           <AnimatePresence mode="wait">
@@ -320,8 +357,8 @@ export default function HomePageContent() {
                 onOpenChat={openChatFromDemo}
               />
             ) : (
-              <div key="testimonials" className="min-w-0">
-                <TestimonialCarousel />
+              <div key="nate" className="min-w-0">
+                <NateCard onStart={() => openChatWithVoice(AUDIT_MESSAGE)} />
               </div>
             )}
           </AnimatePresence>
@@ -349,13 +386,6 @@ export default function HomePageContent() {
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* Temoignages avant la grille d'agents : ils servent d'amorce concrete
-          ("ah, on peut faire ca"), pas de preuve sociale. Le visiteur doit y
-          reconnaitre sa propre situation avant de parcourir le catalogue. */}
-      <div className="lg:hidden px-6 pb-10">
-        <TestimonialCarousel />
-      </div>
 
       {/* La bande d'outils, en mobile, vit ici et non plus dans le hero :
           "connectable a tout" est un argument, pas une accroche, il n'a rien a
@@ -407,13 +437,16 @@ export default function HomePageContent() {
           vitrine d'agents, montrer que demarrer est simple, puis les garanties
           (securite) avant la FAQ. */}
       <WhyNotChatGpt />
-      <HowItWorks />
+      {/* La preuve juste apres l'argument : de vrais clients disent ce que leur
+          agent fait pour eux, avant de montrer comment on demarre. */}
+      <Testimonials />
+      <HowItWorks onStart={() => openChatWithVoice(AUDIT_MESSAGE)} />
       <SecuritySection />
       {/* La FAQ remplace la section "Explorer" (WorkGateway) : en fin de page,
           des questions qui levent les derniers doutes convertissent mieux que
           des liens vers les pages projets/agents, deja accessibles depuis le
           header. */}
-      <Faq />
+      <Faq onAsk={openChat} />
       {/* Passerelle vers l'autre site, en DERNIERE section : les deux sites se
           repondent en miroir (le site Foxy renvoie ici au meme endroit). Celui
           qui a lu la page entiere sans se reconnaitre dans un agent unique a
