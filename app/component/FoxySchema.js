@@ -352,18 +352,16 @@ export default function FoxySchema() {
           <p className="mt-5 text-base md:text-lg text-ink/65 leading-relaxed max-w-2xl">
             Foxy est branché sur les outils que vous utilisez déjà : vos mails, votre
             agenda, vos documents, votre fichier clients. Il voit ce qui s&apos;y passe et
-            agit dedans, sans copier-coller.
+            agit dedans.
           </p>
           <p className="mt-4 text-base md:text-lg text-ink/65 leading-relaxed max-w-2xl">
             Il garde en mémoire tout ce qui concerne votre activité et retient chaque
-            correction : il connaît vos clients, vos tarifs et votre façon de parler. Et il
-            n&apos;attend pas qu&apos;on lui demande : chaque matin, votre journée est prête.
+            correction : il connaît vos clients, vos tarifs et votre façon de parler. Plus
+            les jours passent, plus il devient performant. Et il n&apos;attend pas
+            qu&apos;on lui demande : chaque matin, votre journée est prête.
           </p>
           <p className="mt-4 text-base md:text-lg font-semibold text-ink leading-relaxed max-w-2xl">
             C&apos;est ça, un AIOS.
-          </p>
-          <p className="hidden md:block mt-6 text-[13px] text-ink/50">
-            Survolez une bulle pour voir ce qu&apos;elle fait.
           </p>
         </div>
 

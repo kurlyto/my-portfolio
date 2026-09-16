@@ -238,8 +238,8 @@ export default function AgentMarquee() {
           vôtre.
         </h2>
         <p className="mt-4 text-sm md:text-base opacity-60 max-w-xl">
-          Voici des agents déjà construits. Le vôtre sera différent : il sera
-          fait pour vous.
+          Voici des agents déjà construits. Le vôtre sera fait sur mesure pour
+          vous.
         </p>
       </div>
 
