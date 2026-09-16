@@ -137,7 +137,7 @@ export default function AiosCapacites() {
           id="capacites"
           className="scroll-mt-10 text-xs font-mono uppercase tracking-widest text-accent-text"
         >
-          Ce qu&apos;il fait
+          Au quotidien
         </span>
         <h2 className="font-display mt-3 text-3xl md:text-5xl font-bold tracking-tight max-w-2xl">
           Une journée avec Foxy.

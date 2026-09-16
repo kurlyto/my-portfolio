@@ -21,7 +21,7 @@ const CONTACTS = [
 // visiteur arrive au mauvais endroit doit pouvoir traverser d'un clic.
 const NAV_BY_SITE = {
   aios: [
-    { href: "/#capacites", label: "Ce qu'il fait" },
+    { href: "/#capacites", label: "Au quotidien" },
     { href: "/#comparatif", label: "Comparatif" },
     { href: "/#temoignages", label: "Témoignages" },
     { href: "/#faq", label: "FAQ" },
@@ -30,6 +30,7 @@ const NAV_BY_SITE = {
   agents: [
     { href: "/agents#metiers", label: "Métiers" },
     { href: "/agents/exemples", label: "Exemples" },
+    { href: "/agents#temoignages", label: "Témoignages" },
     { href: "/agents#faq", label: "FAQ" },
     { href: "/", label: "Foxy" },
   ],
