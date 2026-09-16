@@ -16,7 +16,7 @@ export default function AgentsPage() {
       <div className="bg-black text-white">
         <Header dark />
         <div className="max-w-6xl mx-auto px-6 pt-6 pb-20">
-          <span className="text-xs font-mono uppercase tracking-widest text-accent-text">
+          <span className="kicker text-xs font-mono uppercase tracking-widest">
             Work
           </span>
           <h1 className="mt-3 text-3xl md:text-5xl font-bold tracking-tight max-w-2xl">

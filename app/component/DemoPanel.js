@@ -80,7 +80,7 @@ function ReasonLine({ text, isCurrent }) {
       <p className="text-[12.5px] font-mono leading-relaxed text-black/55">
         {morceaux.map((m, i) =>
           i % 2 === 1 ? (
-            <span key={i} className="font-bold text-accent-text">
+            <span key={i} className="mot-accent font-bold">
               {m}
             </span>
           ) : (

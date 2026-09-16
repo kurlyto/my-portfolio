@@ -88,6 +88,57 @@ html {
   --accent-text: #ff6b35;
 }
 
+/* Site des agents : UN SEUL orange, celui du logo (demande de Nathan, 14/09).
+   L'orange vif ecrit en petit sur du blanc ne se lit pas (2,84:1) ; le foncer
+   en rouille pour le texte mettait DEUX oranges a l'ecran. On ne l'utilise
+   donc plus comme couleur de texte sur fond clair, mais en APLAT sous du noir :
+   - `kicker` : petit titre de section = pastille orange, texte noir (7,4:1) ;
+   - `mot-accent` : mot mis en avant = simplement en GRAS noir (Nathan prefere
+     le gras au surligneur, 14/09).
+   Sur le site Foxy (son rouge se lit tres bien en texte) et sur fond sombre,
+   les deux classes redeviennent un simple texte colore : les composants
+   partages (FAQ, lecteur de demo) n'ont rien a savoir du site qui les porte.
+   `width: fit-content` : dans une colonne flex, la pastille s'etirait sinon sur
+   toute la largeur (la "barre orange" de la section Metiers, 14/09). */
+.kicker {
+  display: inline-block;
+  width: fit-content;
+  padding: 0.35em 0.85em;
+  border-radius: 9999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+.theme-aios .kicker {
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--accent-text);
+}
+.mot-accent,
+.on-dark .surface-claire .mot-accent {
+  /* La graisse vient du composant (font-semibold / font-bold) : la fixer ici
+     changerait aussi celle du site Foxy. */
+  color: var(--ink);
+}
+.on-dark .mot-accent,
+.theme-aios .mot-accent,
+.theme-aios .surface-claire .mot-accent {
+  color: var(--accent-text);
+}
+/* Surlignage PLEIN (aplat de l'accent, texte a l'encre de l'accent) : reserve
+   aux deux sections passerelles (demande de Nathan, 14/09). Bordeaux Foxy +
+   blanc dans la section Foxy de /agents ; orange + noir dans la section agents
+   du site Foxy (on y pose `accent-agents` sur le mot). nowrap : un aplat coupe
+   en deux ("tout votre / business") se lit comme deux blocs. */
+.surligne {
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 600;
+  padding: 0.05em 0.35em;
+  border-radius: 0.25em;
+  white-space: nowrap;
+}
+
 @theme inline {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);

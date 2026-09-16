@@ -14,7 +14,7 @@ function EmphasizedAnswer({ text }) {
   // etaient entre marqueurs.
   return text.split("**").map((part, i) =>
     i % 2 === 1 ? (
-      <strong key={i} className="font-semibold text-accent-text">
+      <strong key={i} className="mot-accent font-semibold">
         {part}
       </strong>
     ) : (
@@ -43,7 +43,7 @@ function FaqItem({ item, isOpen, onToggle, index }) {
               l'oeil retrouve immediatement celle qui est depliee. */}
           <span
             className={`font-display text-lg md:text-xl font-bold leading-snug transition-colors duration-200 ${
-              isOpen ? "text-accent-text" : ""
+              isOpen ? "text-accent" : ""
             }`}
           >
             {item.q}
@@ -51,7 +51,7 @@ function FaqItem({ item, isOpen, onToggle, index }) {
           <span
             aria-hidden="true"
             className={`mt-1 shrink-0 text-xl leading-none font-mono transition-transform duration-200 ease-out ${
-              isOpen ? "rotate-45 text-accent-text" : "opacity-40 group-hover:opacity-100"
+              isOpen ? "rotate-45 text-accent" : "opacity-40 group-hover:opacity-100"
             }`}
           >
             +
@@ -97,6 +97,9 @@ export default function Faq({
   // Le site AIOS pose ses sections sur un creme chaud, pas sur du blanc pur :
   // il passe donc sa propre surface plutot que de dupliquer le composant.
   surfaceClass = "bg-white text-black",
+  // Fourni, il ouvre le chat de la page au lieu d'envoyer le visiteur sur
+  // Telegram (hors du site, et inutilisable sans l'application).
+  onAsk = null,
 }) {
   // Une seule reponse ouverte a la fois : la liste reste lisible et on evite
   // que la page ne s'allonge d'un coup. Toutes fermees au chargement (demande
@@ -110,7 +113,7 @@ export default function Faq({
             padding, un lien "FAQ" y arrivait sur du vide. */}
         <span
           id="faq"
-          className="scroll-mt-10 text-xs font-mono uppercase tracking-widest text-accent-text"
+          className="kicker scroll-mt-10 text-xs font-mono uppercase tracking-widest"
         >
           FAQ
         </span>
@@ -132,15 +135,26 @@ export default function Faq({
 
         <p className="mt-12 text-sm font-mono opacity-60">
           Une autre question ?{" "}
-          <a
-            href="https://t.me/AssistantNate_bot"
-            target="_blank"
-            rel="noopener noreferrer"
-            data-cursor-hover
-            className="inline-flex items-center py-2 underline underline-offset-4 hover:text-accent transition-colors"
-          >
-            {askLabel} &rarr;
-          </a>
+          {onAsk ? (
+            <button
+              type="button"
+              onClick={onAsk}
+              data-cursor-hover
+              className="inline-flex items-center py-2 font-mono underline underline-offset-4 hover:text-accent transition-colors"
+            >
+              {askLabel} &rarr;
+            </button>
+          ) : (
+            <a
+              href="https://t.me/AssistantNate_bot"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cursor-hover
+              className="inline-flex items-center py-2 underline underline-offset-4 hover:text-accent transition-colors"
+            >
+              {askLabel} &rarr;
+            </a>
+          )}
         </p>
       </Reveal>
     </section>
