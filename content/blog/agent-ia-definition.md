@@ -5,7 +5,7 @@ date: 2026-09-17
 format: explicatif
 grappe: agents
 mot_cle: "c'est quoi un agent ia"
-statut: brouillon
+statut: publie
 ---
 Un agent IA est un programme qui perçoit ce qui se passe autour de lui, décide quoi faire et agit seul avec vos outils pour atteindre le but que vous lui avez fixé. ChatGPT attend votre question pour répondre alors qu'un agent se met au travail dès qu'un mail arrive ou que sonne l'heure prévue, et il mène la tâche jusqu'au bout.
 
@@ -45,13 +45,13 @@ Stuart Russell et Peter Norvig ont écrit le [manuel d'intelligence artificielle
 <g fill="#fff" stroke="#1f1f1f" stroke-width="2"><ellipse cx="86" cy="356" rx="17" ry="9"/><ellipse cx="154" cy="356" rx="17" ry="9"/><circle cx="48" cy="240" r="12"/><circle cx="192" cy="240" r="12"/><rect x="110" y="108" width="20" height="20"/><rect x="78" y="124" width="84" height="132" rx="28"/><ellipse cx="74" cy="72" rx="8" ry="12"/><ellipse cx="166" cy="72" rx="8" ry="12"/><circle cx="120" cy="68" r="46"/></g>
 <path d="M98 44 Q104 30 120 30 Q136 30 142 44 Q132 38 120 40 Q108 38 98 44 Z" fill="#ffd9c7"/>
 <circle cx="104" cy="74" r="4" fill="#1f1f1f"/><circle cx="136" cy="74" r="4" fill="#1f1f1f"/><path d="M106 92 Q120 102 134 92" fill="none" stroke="#1f1f1f" stroke-width="2.5" stroke-linecap="round"/>
-<path d="M100 170 C88 161 84 155 84 150 C84 144 92 141 100 148 C108 141 116 144 116 150 C116 155 112 161 100 170 Z" fill="#ff6b35"/>
-<rect x="131" y="138" width="18" height="22" rx="2" fill="#fff" stroke="#1f1f1f" stroke-width="1.5"/><path d="M135 144 H145 M135 149 H145" stroke="#1f1f1f" stroke-width="1.2"/><rect x="127" y="150" width="26" height="22" rx="3" fill="#fff" stroke="#1f1f1f" stroke-width="2"/>
+<path d="M140 170 C128 161 124 155 124 150 C124 144 132 141 140 148 C148 141 156 144 156 150 C156 155 152 161 140 170 Z" fill="#ff6b35"/>
+<rect x="91" y="138" width="18" height="22" rx="2" fill="#fff" stroke="#1f1f1f" stroke-width="1.5"/><path d="M95 144 H105 M95 149 H105" stroke="#1f1f1f" stroke-width="1.2"/><rect x="87" y="150" width="26" height="22" rx="3" fill="#fff" stroke="#1f1f1f" stroke-width="2"/>
 <rect x="196" y="226" width="30" height="20" rx="2" fill="#fff" stroke="#1f1f1f" stroke-width="2"/><path d="M197 228 L211 238 L225 228" fill="none" stroke="#1f1f1f" stroke-width="1.5"/>
 </g>
 <g fill="none" stroke="#ff6b35" stroke-width="1.2" stroke-dasharray="3 3"><path d="M160 36 L306 22"/><path d="M178 54 L306 62"/><path d="M206 72 L306 102"/><path d="M180 158 L306 172"/><path d="M142 50 L14 46"/><path d="M140 156 L14 156"/><path d="M88 240 L14 240"/><path d="M137 320 L14 320"/></g>
 <g fill="#ff6b35" stroke="#fff" stroke-width="1.5"><circle cx="160" cy="36" r="3"/><circle cx="178" cy="54" r="3"/><circle cx="206" cy="72" r="3"/><circle cx="180" cy="158" r="3"/><circle cx="142" cy="50" r="3"/><circle cx="140" cy="156" r="3"/><circle cx="88" cy="240" r="3"/><circle cx="137" cy="320" r="3"/></g>
-<g font-family="monospace" font-size="11" font-weight="700" text-anchor="middle" dominant-baseline="central"><g><circle cx="306" cy="22" r="13" fill="#ff6b35"/><text x="306" y="22" fill="#fff">01</text></g><g><circle cx="306" cy="62" r="13" fill="#ff6b35"/><text x="306" y="62" fill="#fff">02</text></g><g><circle cx="306" cy="102" r="13" fill="#ff6b35"/><text x="306" y="102" fill="#fff">04</text></g><g><circle cx="306" cy="172" r="13" fill="#ff6b35"/><text x="306" y="172" fill="#fff">06</text></g><g><circle cx="14" cy="46" r="13" fill="#ff6b35"/><text x="14" y="46" fill="#fff">03</text></g><g><circle cx="14" cy="156" r="13" fill="#ff6b35"/><text x="14" y="156" fill="#fff">05</text></g><g><circle cx="14" cy="240" r="13" fill="#ff6b35"/><text x="14" y="240" fill="#fff">07</text></g><g><circle cx="14" cy="320" r="13" fill="#ff6b35"/><text x="14" y="320" fill="#fff">08</text></g></g>
+<g font-family="monospace" font-size="11" font-weight="700" text-anchor="middle" dominant-baseline="central"><g><circle cx="306" cy="22" r="13" fill="#ff6b35"/><text x="306" y="22" fill="#fff">01</text></g><g><circle cx="306" cy="62" r="13" fill="#ff6b35"/><text x="306" y="62" fill="#fff">02</text></g><g><circle cx="306" cy="102" r="13" fill="#ff6b35"/><text x="306" y="102" fill="#fff">04</text></g><g><circle cx="306" cy="172" r="13" fill="#ff6b35"/><text x="306" y="172" fill="#fff">05</text></g><g><circle cx="14" cy="46" r="13" fill="#ff6b35"/><text x="14" y="46" fill="#fff">03</text></g><g><circle cx="14" cy="156" r="13" fill="#ff6b35"/><text x="14" y="156" fill="#fff">06</text></g><g><circle cx="14" cy="240" r="13" fill="#ff6b35"/><text x="14" y="240" fill="#fff">07</text></g><g><circle cx="14" cy="320" r="13" fill="#ff6b35"/><text x="14" y="320" fill="#fff">08</text></g></g>
 </svg>
 <ol>
 <li><span class="repere">01</span><div><strong>Le cerveau</strong>C'est le modèle d'IA, par exemple Claude, GPT ou Mistral. Il comprend ce qu'il lit et choisit la prochaine étape.</div></li>

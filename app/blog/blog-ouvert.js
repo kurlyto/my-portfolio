@@ -4,4 +4,4 @@
 // content/blog/ lui-meme. On le bascule a true au premier article publie
 // (skill seo-publier-article), pas avant : un lien vers un blog vide est une
 // porte vers une page maigre.
-export const BLOG_OUVERT = false;
+export const BLOG_OUVERT = true;
