@@ -41,7 +41,6 @@ function lire(fichier) {
   const brut = fs.readFileSync(path.join(DOSSIER, fichier), "utf8");
   const { data, content } = matter(brut);
   const slug = fichier.replace(/\.md$/, "");
-  const mots = content.split(/\s+/).filter(Boolean).length;
   return {
     slug,
     titre: data.titre,
@@ -54,7 +53,7 @@ function lire(fichier) {
     image: data.image || null,
     imageAlt: data.image_alt || "",
     statut: data.statut || "brouillon",
-    minutes: Math.max(1, Math.round(mots / 230)),
+    minutes: minutesDeLecture(content),
     contenu: content,
   };
 }
@@ -98,6 +97,41 @@ export const PROSE =
 
 export function enHtml(markdown) {
   return marked.parse(markdown, { gfm: true });
+}
+
+function ancre(texte) {
+  return texte
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+// Le HTML de l'article avec une ancre sur chaque H2, et la liste des chapitres
+// pour le sommaire. Sert au blog et aux pages metier.
+export function enHtmlAvecChapitres(markdown) {
+  const chapitres = [];
+  const html = enHtml(markdown).replace(/<h2>(.*?)<\/h2>/g, (_, interieur) => {
+    // marked encode l'apostrophe en &#39; : le sommaire l'afficherait telle quelle.
+    const texte = interieur
+      .replace(/<[^>]+>/g, "")
+      .replace(/&#39;/g, "'")
+      .replace(/&quot;/g, '"')
+      .replace(/&lt;/g, "<")
+      .replace(/&gt;/g, ">")
+      .replace(/&amp;/g, "&");
+    const id = ancre(texte);
+    chapitres.push({ id, texte });
+    return `<h2 id="${id}">${interieur}</h2>`;
+  });
+  return { html, chapitres };
+}
+
+// Temps de lecture sur le texte seul : les illustrations HTML ne se lisent pas.
+export function minutesDeLecture(markdown) {
+  const mots = markdown.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.round(mots / 230));
 }
 
 export function dateLisible(iso) {

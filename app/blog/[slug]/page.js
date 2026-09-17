@@ -2,10 +2,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "../../component/Header";
 import Footer from "../../component/Footer";
+import Sommaire from "../../component/Sommaire";
 import {
   tousLesArticles,
   getArticle,
-  enHtml,
+  enHtmlAvecChapitres,
   PROSE,
   pageMere,
   dateLisible,
@@ -48,6 +49,7 @@ export default async function ArticlePage({ params }) {
   const { slug } = await params;
   const a = getArticle(slug);
   if (!a) notFound();
+  const { html, chapitres } = enHtmlAvecChapitres(a.contenu);
 
   const url = `${SITE_URL}/blog/${slug}`;
   const jsonLd = {
@@ -94,7 +96,11 @@ export default async function ArticlePage({ params }) {
             <img src={a.image} alt={a.imageAlt} className="mt-10 w-full rounded-xl" />
           )}
 
-          <div className={PROSE} dangerouslySetInnerHTML={{ __html: enHtml(a.contenu) }} />
+          <Sommaire chapitres={chapitres} />
+
+          {/* Memes chapitres numerotes, encadres et illustrations que les pages
+              metier (article-metier dans globals.css). */}
+          <div className={`${PROSE} article-metier`} dangerouslySetInnerHTML={{ __html: html }} />
         </article>
 
         {/* L'appel a l'action suit la grappe : un article Foxy mene a Foxy, les

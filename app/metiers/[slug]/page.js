@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import MetierFlyerShareable from "../../component/MetierFlyerShareable";
+import Sommaire from "../../component/Sommaire";
 import { METIERS, getMetier } from "../metiers-data";
 import { getFaqMetier } from "../metiers-faq";
 import { getArticleMetier } from "../metiers-articles";
@@ -113,25 +114,7 @@ export default async function MetierPage({ params }) {
               {article.maj && <> · mis à jour le {dateLisible(article.maj)}</>}
             </p>
 
-            {article.chapitres.length > 2 && (
-              <nav aria-label="Sommaire" className="mt-8 rounded-xl border border-black/10 bg-white px-5 py-4">
-                <p className="font-mono text-[11px] uppercase tracking-widest text-black/50">Sommaire</p>
-                <ol className="mt-2">
-                  {article.chapitres.map((c, i) => (
-                    <li key={c.id}>
-                      <a
-                        href={`#${c.id}`}
-                        data-cursor-hover
-                        className="flex gap-3 py-1.5 text-[15px] leading-snug transition-colors hover:text-[#ff6b35]"
-                      >
-                        <span className="font-mono text-[13px] text-[#ff6b35]">{String(i + 1).padStart(2, "0")}</span>
-                        {c.texte}
-                      </a>
-                    </li>
-                  ))}
-                </ol>
-              </nav>
-            )}
+            <Sommaire chapitres={article.chapitres} />
 
             <div className={`${PROSE} article-metier`} dangerouslySetInnerHTML={{ __html: article.html }} />
           </article>
