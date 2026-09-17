@@ -79,6 +79,23 @@ export function getArticle(slug) {
   return tousLesArticles().find((a) => a.slug === slug) || null;
 }
 
+// Le texte vient du Markdown : on style les balises generees depuis le conteneur
+// plutot que d'ajouter un plugin de typographie.
+// Partage par les articles du blog et ceux des pages metier.
+export const PROSE =
+  "mt-10 text-[17px] leading-[1.75] text-black/85 " +
+  "[&_h2]:font-display [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-black [&_h2]:mt-12 [&_h2]:mb-4 " +
+  "[&_h3]:font-display [&_h3]:text-xl [&_h3]:font-bold [&_h3]:text-black [&_h3]:mt-8 [&_h3]:mb-3 " +
+  "[&_p]:my-5 [&_ul]:my-5 [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:my-5 [&_ol]:list-decimal [&_ol]:pl-6 [&_li]:my-1.5 " +
+  "[&_a]:underline [&_a]:underline-offset-4 [&_a:hover]:text-[#ff6b35] [&_strong]:font-semibold [&_strong]:text-black " +
+  "[&_blockquote]:border-l-4 [&_blockquote]:border-[#ff6b35] [&_blockquote]:pl-5 [&_blockquote]:italic " +
+  "[&_img]:my-8 [&_img]:rounded-xl [&_img]:w-full " +
+  "[&_code]:font-mono [&_code]:text-[15px] [&_code]:bg-black/5 [&_code]:px-1.5 [&_code]:rounded " +
+  "[&_pre]:my-6 [&_pre]:bg-black [&_pre]:text-white [&_pre]:p-5 [&_pre]:rounded-xl [&_pre]:overflow-x-auto " +
+  "[&_pre_code]:bg-transparent [&_pre_code]:p-0 " +
+  "[&_table]:my-6 [&_table]:w-full [&_table]:text-[15px] [&_th]:text-left [&_th]:border-b-2 [&_th]:border-black/20 [&_th]:py-2 [&_th]:pr-3 " +
+  "[&_td]:border-b [&_td]:border-black/10 [&_td]:py-2 [&_td]:pr-3 [&_td]:align-top";
+
 export function enHtml(markdown) {
   return marked.parse(markdown, { gfm: true });
 }

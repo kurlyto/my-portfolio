@@ -9,13 +9,13 @@ import FlyerShareButton from "./FlyerShareButton";
 // Existe en composant client uniquement pour tenir la ref du flyer : le
 // bouton de partage rasterise ce noeud pour en faire l'image envoyee. La page
 // elle-meme reste un composant serveur.
-export default function MetierFlyerShareable({ metier }) {
+export default function MetierFlyerShareable({ metier, titreH1 = false }) {
   const flyerRef = useRef(null);
 
   return (
     <>
       <div ref={flyerRef}>
-        <MetierFlyer metier={metier} />
+        <MetierFlyer metier={metier} titreH1={titreH1} />
       </div>
 
       <div className="mt-5 flex flex-col items-center justify-center gap-2.5 sm:flex-row sm:gap-3">

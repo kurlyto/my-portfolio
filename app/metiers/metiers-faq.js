@@ -9,7 +9,8 @@
 // pendant le service chez le restaurateur. Les questions transverses (prix,
 // mois offert, securite generale) restent sur /agents.
 //
-// Regles d'ecriture : 3 a 5 questions, telles qu'un pro du metier les poserait ;
+// Regles d'ecriture : 3 a 7 questions, telles qu'un pro du metier les poserait
+// (les vraies, collectees le 16/09 : /data/nathan/seo/mots-cles/metiers/) ;
 // aucune promesse d'integration ou de chiffre qu'on ne tient pas ; accents,
 // pas de tiret cadratin. Texte nu (pas de **) : il part tel quel dans le JSON-LD.
 
@@ -30,6 +31,18 @@ export const FAQ_METIERS = {
     {
       q: "Il peut passer mes commandes fournisseurs ?",
       a: "Il prépare la commande à partir de votre seuil de stock et de vos habitudes. L'envoi au fournisseur attend votre validation tant que vous ne lui avez pas dit de le faire seul.",
+    },
+    {
+      q: "Un client allergique peut-il demander à l'agent ce qu'il y a dans un plat ?",
+      a: "L'agent ne répond jamais de mémoire sur les allergènes. Il renvoie vers votre fiche allergènes écrite, celle que la loi vous impose déjà, ou il vous transmet la question. Une erreur sur ce sujet peut rendre un client malade et c'est vous qui gardez la main.",
+    },
+    {
+      q: "Mes clients ne vont-ils pas trouver ça déshumanisé ?",
+      a: "C'est la première crainte des restaurateurs interrogés par l'étude Food Hotel Tech 2025. L'agent ne prend pas la place de la salle. Il répond aux messages que personne n'a le temps de lire pendant le service et il se présente comme l'assistant du restaurant. Le client obtient une réponse au lieu d'un silence.",
+    },
+    {
+      q: "L'agent peut-il demander une empreinte bancaire contre les no-shows ?",
+      a: "L'empreinte passe par votre outil de réservation. Le montant et les règles en cas d'absence doivent être annoncés au client avant qu'il valide, sinon la pénalité peut être jugée abusive. L'agent peut rappeler ces conditions dans ses réponses et relancer la veille les réservations de groupe.",
     },
   ],
   musicien: [

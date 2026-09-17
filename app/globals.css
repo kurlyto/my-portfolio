@@ -165,8 +165,14 @@ a:where(:not([class*="text-"])) {
   color: inherit;
 }
 
-a {
-  text-decoration: inherit;
+/* Dans @layer base : hors couche, cette regle battait TOUS les utilitaires
+   Tailwind (une regle sans couche gagne toujours sur une couche), et aucun
+   lien marque `underline` n'etait souligne (sources du blog et des pages
+   metier, mentions legales ; vu le 16/09/2026). */
+@layer base {
+  a {
+    text-decoration: inherit;
+  }
 }
 
 /* Un <button> affiche la fleche par defaut la ou un <a> affiche la main :
@@ -244,5 +250,133 @@ button:not(:disabled),
 
   [style*="marquee"] {
     animation: none !important;
+  }
+}
+
+/* Articles des pages metier (content/metiers/*.md) : chapitres numerotes comme
+   le flyer (01, 02...) et illustrations ecrites en HTML dans le Markdown.
+   Retour de Nathan le 16/09/2026 : un texte sans chapitres visibles, sans
+   images ni legendes se lisait comme un mur. Styles en CSS classique et non en
+   utilitaires : le Markdown vit hors des fichiers que Tailwind surveille. */
+.article-metier {
+  counter-reset: chapitre;
+}
+.article-metier h2 {
+  counter-increment: chapitre;
+  scroll-margin-top: 1.5rem;
+}
+.article-metier h2::before {
+  content: counter(chapitre, decimal-leading-zero);
+  display: block;
+  margin-bottom: 0.4rem;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: #ff6b35;
+}
+
+/* Encadre "En bref" : ce que Google et les moteurs IA reprennent en premier. */
+.article-metier .encadre {
+  margin: 2rem 0;
+  padding: 1.1rem 1.25rem;
+  border-left: 4px solid #ff6b35;
+  border-radius: 0 0.75rem 0.75rem 0;
+  background: #fff4ee;
+  font-size: 16px;
+}
+.article-metier .encadre p {
+  margin: 0.4rem 0;
+}
+
+.article-metier figure {
+  margin: 2.25rem 0;
+}
+.article-metier figcaption {
+  margin-top: 0.7rem;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: rgb(0 0 0 / 0.55);
+  text-align: center;
+}
+
+/* Maquette d'un message recu de l'agent (Telegram, WhatsApp...). */
+.article-metier .message {
+  max-width: 26rem;
+  margin: 0 auto;
+  padding: 1rem 1.1rem;
+  border: 1px solid rgb(0 0 0 / 0.1);
+  border-radius: 1rem 1rem 1rem 0.25rem;
+  background: #fff;
+  box-shadow: 0 6px 24px rgb(0 0 0 / 0.06);
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+.article-metier .message .expediteur {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgb(0 0 0 / 0.5);
+}
+.article-metier .message .ligne {
+  margin: 0.35rem 0;
+}
+.article-metier .message .actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+.article-metier .message .actions span {
+  padding: 0.3rem 0.75rem;
+  border: 1px solid #ff6b35;
+  border-radius: 999px;
+  font-size: 13px;
+  color: #c94a1a;
+}
+.article-metier .message .actions span:first-child {
+  background: #ff6b35;
+  color: #fff;
+}
+
+/* Schema en etapes : une ligne sur ordinateur, une colonne sur telephone. */
+.article-metier .flux {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+  padding: 0;
+  list-style: none;
+  counter-reset: etape;
+}
+.article-metier .flux li {
+  counter-increment: etape;
+  margin: 0;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid rgb(0 0 0 / 0.1);
+  border-radius: 0.75rem;
+  background: #fff;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.article-metier .flux li::before {
+  content: counter(etape, decimal-leading-zero);
+  display: block;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 11px;
+  color: #ff6b35;
+}
+.article-metier .flux li strong {
+  display: block;
+}
+@media (min-width: 640px) {
+  .article-metier .flux {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .article-metier .flux li {
+    font-size: 12.5px;
   }
 }

@@ -431,7 +431,7 @@ export default function HomePageContent() {
       {/* Entre le hero et la vitrine d'agents : le visiteur se reconnait
           d'abord dans son metier (badge -> flyer partageable), puis decouvre
           qui fait le travail. */}
-      <MetierBadges onTalkToNate={openChatWithVoice} />
+      <MetierBadges />
       <AgentMarquee />
       {/* Ordre du bas de page : lever l'objection ChatGPT juste apres la
           vitrine d'agents, montrer que demarrer est simple, puis les garanties

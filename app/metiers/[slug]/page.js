@@ -3,8 +3,24 @@ import { notFound } from "next/navigation";
 import MetierFlyerShareable from "../../component/MetierFlyerShareable";
 import { METIERS, getMetier } from "../metiers-data";
 import { getFaqMetier } from "../metiers-faq";
+import { getArticleMetier } from "../metiers-articles";
+import { PROSE, dateLisible } from "../../blog/blog-data";
 
 const SITE_URL = "https://nathan-knaebel.com";
+
+function articleJsonLd(article, slug) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.h1,
+    description: article.description,
+    datePublished: article.date,
+    dateModified: article.maj || article.date,
+    inLanguage: "fr-FR",
+    mainEntityOfPage: `${SITE_URL}/metiers/${slug}`,
+    author: { "@type": "Person", name: "Nathan Knaebel", url: `${SITE_URL}/projects` },
+  };
+}
 
 // Meme liste que celle affichee a l'ecran : un FAQPage annoncant des questions
 // invisibles est du balisage trompeur pour Google.
@@ -29,8 +45,13 @@ export async function generateMetadata({ params }) {
   const metier = getMetier(slug);
   if (!metier) return {};
 
-  const title = `Agent IA pour ${metier.title}`;
-  const description = `${metier.title} : 6 demandes concrètes à confier à votre agent IA. 1 mois d'essai 100% gratuit, sans engagement.`;
+  // Un metier qui a son article prend son title et sa description (ecrits pour
+  // la recherche reelle : "agent ia restaurant", pas "Restaurateur / Food truck").
+  const article = getArticleMetier(slug);
+  const title = article?.titre || `Agent IA pour ${metier.title}`;
+  const description =
+    article?.description ||
+    `${metier.title} : ${metier.demandes.length} demandes concrètes à confier à votre agent IA. 1 mois d'essai 100% gratuit, sans engagement.`;
   const url = `${SITE_URL}/metiers/${slug}`;
 
   return {
@@ -58,6 +79,7 @@ export default async function MetierPage({ params }) {
   const metier = getMetier(slug);
   if (!metier) notFound();
   const faq = getFaqMetier(slug);
+  const article = getArticleMetier(slug);
 
   return (
     <div className="min-h-screen bg-[#fafafa] text-black">
@@ -72,7 +94,48 @@ export default async function MetierPage({ params }) {
       </header>
 
       <main className="max-w-xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
-        <MetierFlyerShareable metier={metier} />
+        <MetierFlyerShareable metier={metier} titreH1={!article} />
+
+        {/* Le flyer reste en tete (c'est lui qu'on partage) ; l'article porte le
+            H1 et le texte que Google lit. */}
+        {article && (
+          <article className="mt-12">
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd(article, slug)) }}
+            />
+            <p className="font-mono text-[12px] uppercase tracking-widest text-black/50">
+              {dateLisible(article.date)} · {article.minutes} min de lecture
+            </p>
+            <h1 className="mt-3 font-display text-3xl sm:text-4xl font-black leading-tight">{article.h1}</h1>
+            <p className="mt-4 text-[14px] text-black/60">
+              Par Nathan Knaebel
+              {article.maj && <> · mis à jour le {dateLisible(article.maj)}</>}
+            </p>
+
+            {article.chapitres.length > 2 && (
+              <nav aria-label="Sommaire" className="mt-8 rounded-xl border border-black/10 bg-white px-5 py-4">
+                <p className="font-mono text-[11px] uppercase tracking-widest text-black/50">Sommaire</p>
+                <ol className="mt-2">
+                  {article.chapitres.map((c, i) => (
+                    <li key={c.id}>
+                      <a
+                        href={`#${c.id}`}
+                        data-cursor-hover
+                        className="flex gap-3 py-1.5 text-[15px] leading-snug transition-colors hover:text-[#ff6b35]"
+                      >
+                        <span className="font-mono text-[13px] text-[#ff6b35]">{String(i + 1).padStart(2, "0")}</span>
+                        {c.texte}
+                      </a>
+                    </li>
+                  ))}
+                </ol>
+              </nav>
+            )}
+
+            <div className={`${PROSE} article-metier`} dangerouslySetInnerHTML={{ __html: article.html }} />
+          </article>
+        )}
 
         {faq.length > 0 && (
           <section className="mt-14" aria-labelledby="faq-metier">

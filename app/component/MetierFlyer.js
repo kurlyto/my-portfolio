@@ -5,15 +5,19 @@ import {
   SlackIcon,
 } from "./tool-icons";
 
-// Le flyer d'un metier : la meme carte sert dans la modale de la home et sur
-// la page partageable /metiers/[slug]. Purement presentiel, aucun etat : les
+// Le flyer d'un metier, affiche sur la page /metiers/[slug] (la modale de la
+// home a disparu le 17/09 : les badges menent a la page). Purement presentiel, aucun etat : les
 // actions (partage, fermeture) vivent chez les parents.
 //
 // Densite volontairement serree : le flyer doit tenir en entier dans un ecran
 // d'ordinateur SANS scroll (raison du passage de 6 a 5 demandes). Avant
 // d'ajouter du contenu ou de l'espacement, verifier qu'il tient toujours dans
 // une fenetre de 720px de haut.
-export default function MetierFlyer({ metier }) {
+// `titreH1` : sur une page metier sans article, le nom du metier est le seul
+// titre de la page et devient son H1 (Google en veut un par page). Quand un
+// article existe, c'est lui qui porte le H1 et le flyer garde un H2.
+export default function MetierFlyer({ metier, titreH1 = false }) {
+  const Titre = titreH1 ? "h1" : "h2";
   return (
     <div className="overflow-hidden rounded-2xl border-2 border-black bg-white text-black">
       {/* Barre haute : identite du site, comme l'en-tete d'un vrai flyer. */}
@@ -32,9 +36,9 @@ export default function MetierFlyer({ metier }) {
             {metier.emoji}
           </span>
           <div className="min-w-0">
-            <h2 className="font-display text-[1.35rem] sm:text-[1.6rem] font-black tracking-tight leading-tight text-balance">
+            <Titre className="font-display text-[1.35rem] sm:text-[1.6rem] font-black tracking-tight leading-tight text-balance">
               {metier.title}
-            </h2>
+            </Titre>
             <p className="mt-0.5 font-mono text-[9.5px] sm:text-[10px] uppercase tracking-widest text-[#ff6b35]">
               5 demandes que votre agent sait traiter
             </p>
