@@ -1,121 +1,143 @@
 ---
-titre: "Agent IA immobilier : annonces, visites et mandats"
-description: "Demandes de visite, annonces, comptes rendus aux vendeurs, veille des concurrents et ventes réelles DVF : ce qu'un agent IA automatise dans une agence."
+titre: "Agent IA immobilier : visites, photos et mandats"
+description: "Demandes de visite, tournées, photos retouchées, annonces, retours aux propriétaires et relances : ce qu'un agent IA automatise dans une agence."
 h1: "Un agent IA pour votre agence immobilière"
 date: 2026-09-17
 mot_cle: "agent ia immobilier"
 ---
-Un agent IA immobilier est un assistant logiciel qui s'occupe de tout ce qui entoure un mandat pendant que vous êtes en visite. Il prépare l'annonce et répond aux demandes de visite, puis il envoie le compte rendu au vendeur et garde un œil sur les annonces du secteur. Il applique seul les règles que vous lui avez fixées et il s'arrête pour demander votre feu vert dès qu'un message engage l'agence.
+Un agent IA immobilier est un assistant logiciel qui prend en charge tout ce qui entoure une visite pendant que vous êtes sur le terrain. Il répond aux demandes des portails et organise vos tournées, il retouche vos photos et prépare vos annonces, puis il tient les propriétaires au courant et relance les acquéreurs. Il applique seul les règles que vous lui avez fixées et il s'arrête pour demander votre feu vert dès qu'un message engage l'agence.
 
 Il ne fera jamais une visite et il ne sentira pas qu'un couple hésite sur le pas de la porte, mais tout ce qui se passe avant et après cette visite peut lui être confié.
 
 <div class="encadre">
 <p><strong>En bref</strong></p>
-<p>L'agent répond aux demandes de visite, prépare les annonces, envoie les comptes rendus aux vendeurs et relance les acquéreurs quand un bien leur correspond. Il surveille aussi les annonces concurrentes et appuie vos estimations sur les ventes réelles publiées par l'État.</p>
-<p>Il ne publie rien sans votre relecture. Il ne fait pas vos contrôles anti-blanchiment et ne choisit jamais un locataire à votre place.</p>
+<p>L'agent répond aux demandes de visite et organise vos tournées avec les rappels de la veille. Il retouche vos photos, rédige vos annonces et envoie aux propriétaires le retour des visiteurs. Il relance aussi les acquéreurs silencieux et les estimations sans suite.</p>
+<p>Il ne publie rien sans votre relecture et ne gomme jamais un défaut sur une photo. Il ne fait pas vos contrôles anti-blanchiment et ne choisit jamais un locataire à votre place.</p>
 </div>
 
 ## Qu'est-ce qui mange la semaine d'un agent immobilier ?
 
-Demandez à un agent immobilier ce qu'il aime dans son métier et il vous parlera des visites, de la négociation et de la poignée de main chez le notaire, jamais de sa boîte mail du dimanche soir.
+Demandez à un agent immobilier ce qu'il aime dans son métier et il vous parlera des visites et de la poignée de main chez le notaire, jamais de sa boîte mail du dimanche soir.
 
-Prenons un samedi ordinaire. Vous enchaînez quatre visites pendant que onze demandes tombent depuis SeLoger et Leboncoin pour le T3 rentré jeudi. Le vendeur de la maison visitée mardi attend toujours de savoir ce que les visiteurs en ont pensé et huit acquéreurs venus le mois dernier n'ont plus donné signe de vie. Pendant ce temps une agence voisine vient de baisser de 15 000 € un bien qui ressemble beaucoup au vôtre et personne chez vous ne l'a remarqué.
+Prenons un samedi ordinaire. Vous enchaînez quatre visites pendant que onze demandes tombent depuis SeLoger et Leboncoin pour le T3 rentré jeudi. Le visiteur de 11 h ne viendra pas et vous l'apprendrez devant la porte de l'immeuble. Le vendeur de la maison visitée mardi voudrait savoir ce que les visiteurs en ont pensé et les photos du mandat signé hier dorment dans votre téléphone avec leurs murs penchés. Le couple chez qui vous aviez fait une estimation en mars vient de signer chez un confrère parce que personne ne l'a rappelé.
 
-Aucune de ces tâches ne réclame votre talent de négociateur. Elles réclament de la régularité et c'est précisément ce qui manque quand on passe ses journées en rendez-vous, si bien que le mandat mal suivi finit chez le confrère qui a rappelé le premier.
+Aucune de ces tâches ne réclame votre talent de négociateur mais toutes réclament une régularité qui manque quand on passe ses journées en rendez-vous.
 
 ## Que fait un agent IA dans une agence immobilière ?
 
 Imaginez un assistant commercial qui ne ferait jamais une visite et qui tiendrait à la place la boîte mail, l'agenda et le tableau des mandats. Quand on me demande un agent pour l'immobilier, ce sont presque toujours les mêmes missions qui reviennent.
 
-- **Les demandes de visite.** L'agent lit celles qui arrivent des portails par mail, pose vos questions de qualification et propose vos créneaux avant d'inscrire la visite dans votre agenda.
-- **Les annonces.** Il rédige un brouillon à partir de votre descriptif et de vos photos et vous le relisez avant toute publication.
-- **Les comptes rendus au vendeur.** Après chaque visite vous lui dictez deux phrases et il en fait un message propre pour le propriétaire.
-- **Les relances.** Il repère les acquéreurs restés silencieux depuis leur visite et prépare un message pour chacun.
-- **La veille du secteur.** Il passe chaque matin sur les annonces concurrentes et vous signale les nouveautés et les baisses de prix.
+- **Les visites.** L'agent répond aux demandes des portails, cale les rendez-vous et les confirme la veille.
+- **Les photos et les annonces.** Il retouche les photos que vous lui envoyez et prépare un brouillon d'annonce.
+- **Le retour aux propriétaires.** Il transforme vos notes dictées en compte rendu pour le vendeur.
+- **Les relances.** Il repère les acquéreurs silencieux et les estimations sans suite et prépare un message pour chacun.
+- **La veille du secteur.** Il passe chaque matin sur les annonces concurrentes et vous signale les baisses de prix.
 
 <figure>
 <div class="message">
 <div class="expediteur"><span>Assistant de l'agence</span><span>8:00</span></div>
 <div class="ligne"><strong>Bonjour. Voici votre samedi.</strong></div>
-<div class="ligne">4 visites aujourd'hui. Les deux du T3 sont regroupées entre 10 h et 11 h.</div>
-<div class="ligne">11 demandes reçues pour le T3 depuis jeudi. 6 visites calées, 3 réponses attendues et 2 demandes à regarder vous-même.</div>
+<div class="ligne">4 visites aujourd'hui. Le créneau de 11 h annulé hier soir a été repris par Mme Roy qui était en liste d'attente.</div>
+<div class="ligne">11 demandes reçues pour le T3 depuis jeudi. 6 visites calées et 2 demandes à regarder vous-même.</div>
+<div class="ligne">Le mandat exclusif de la maison avec jardin se termine dans 15 jours. Le bilan des visites est prêt.</div>
 <div class="ligne">Veille : un T3 concurrent à 400 m du vôtre a baissé de 15 000 € hier soir.</div>
-<div class="actions"><span>Voir les demandes</span><span>Voir la veille</span></div>
+<div class="actions"><span>Voir la tournée</span><span>Voir les demandes</span></div>
 </div>
-<figcaption>Exemple de point du matin reçu sur le téléphone de l'agent immobilier. Les chiffres sont fictifs.</figcaption>
+<figcaption>Exemple de point du matin. Le nom et les chiffres sont fictifs.</figcaption>
 </figure>
 
-## Comment automatiser le suivi d'un mandat, de l'annonce au compte rendu ?
+## Comment organiser ses visites sans y laisser ses soirées ?
 
-Ces missions prennent une autre dimension quand on les met bout à bout, parce qu'un mandat suit toujours le même chemin et que chaque étape fournit la matière de la suivante.
+Une heure passée dans un bien en coûte souvent une autre au téléphone et dans l'agenda.
 
-### L'annonce part de votre descriptif
+### Les demandes se qualifient sans vous
 
-Le jour où un mandat rentre, vous déposez vos photos et votre descriptif dans le dossier du bien. L'agent en tire un brouillon d'annonce et vérifie surtout qu'aucune mention obligatoire ne manque. Si la classe énergie ou le montant des honoraires n'apparaît nulle part dans vos notes, il vous pose la question plutôt que de remplir la case à votre place. Il ne retouche pas non plus une photo pour gommer une fissure ou un vis-à-vis.
+Les demandes des portails arrivent par mail et l'agent y répond dans les minutes qui suivent, y compris le dimanche soir. Il pose les questions que vous avez choisies sur le financement et le délai du projet, puis il propose les créneaux que vous avez ouverts. Vous décidez une fois pour toutes de ce qu'il confirme seul et de ce qu'il vous remonte.
 
-Une fois l'annonce validée, la diffusion reste l'affaire de votre logiciel de transaction et l'agent y dépose le texte quand ce logiciel accepte les outils extérieurs.
+### La tournée se construit et chaque visiteur confirme la veille
 
-### Les demandes de visite se qualifient sans vous
+L'agent regroupe les visites d'un même bien sur la même heure et range les rendez-vous par quartier en comptant le temps de trajet. Votre samedi ressemble alors à une tournée de facteur plutôt qu'à une partie de flipper.
 
-Les demandes des portails arrivent par mail et l'agent y répond dans les minutes qui suivent, y compris le dimanche soir. Il pose les questions que vous avez choisies sur le financement et le délai du projet, puis il propose les créneaux que vous avez ouverts, par exemple le jeudi en fin de journée et le samedi matin.
+La veille à 18 h, chaque visiteur reçoit un message avec l'adresse et l'heure et il lui suffit de répondre pour confirmer. Celui qui se tait est relancé le lendemain matin et son créneau vous est signalé comme incertain. Quand quelqu'un annule, l'agent propose la place au suivant sur la liste d'attente.
 
-Vous décidez une fois pour toutes de ce qu'il accepte seul. Une visite demandée sur un créneau ouvert par un acquéreur qui a répondu aux questions peut être confirmée sans vous, alors qu'une demande inhabituelle vous est remontée.
+### Le propriétaire reçoit le retour des visiteurs le soir même
 
-### Le vendeur reçoit son compte rendu le soir même
+En sortant d'une visite, vous dictez trente secondes de notes dans votre téléphone. L'agent en fait un compte rendu clair que vous validez avant l'envoi, si bien que le vendeur n'a plus de raison d'appeler le vendredi soir pour savoir où en est son bien.
 
-En sortant d'une visite, vous dictez trente secondes de notes dans votre téléphone. L'agent en fait un compte rendu clair pour le propriétaire et l'ajoute à l'historique du mandat. Au bout de trois semaines il sait vous dire que sept visiteurs sur neuf ont trouvé le prix trop haut, ce qui vous donne un dossier solide le jour où il faut parler d'une baisse avec le vendeur.
-
-<figure>
-<div class="message">
-<div class="expediteur"><span>Assistant de l'agence</span><span>18:40</span></div>
-<div class="ligne"><strong>Compte rendu prêt pour le propriétaire de la maison</strong></div>
-<div class="ligne">Visite de 17 h : couple avec deux enfants, financement validé par leur banque. Ils ont aimé le jardin et le séjour. Ils hésitent à cause des travaux de la salle de bains.</div>
-<div class="ligne">Depuis le début du mandat : 9 visites, 7 remarques sur le prix, 1 contre-visite demandée.</div>
-<div class="actions"><span>Envoyer</span><span>Modifier</span></div>
-</div>
-<figcaption>Exemple de compte rendu préparé après une visite. Rien ne part chez le vendeur sans votre accord. Les chiffres sont fictifs.</figcaption>
-</figure>
+Au bout de trois semaines l'agent sait vous dire que sept visiteurs sur neuf ont trouvé le prix trop haut, ce qui vous donne un dossier solide le jour où il faut parler d'une baisse.
 
 ### Les acquéreurs sont rappelés quand un bien leur correspond
 
-Chaque visiteur laisse derrière lui un budget, un quartier et un nombre de chambres. Quand un nouveau mandat rentre, l'agent parcourt votre fichier et sort la liste des acquéreurs à qui ce bien pourrait plaire, avec un message préparé pour chacun. Il fait le même travail pour ceux qui n'ont plus donné de nouvelles depuis leur visite et vous validez l'envoi d'un seul geste.
+Chaque visiteur laisse derrière lui un budget, un quartier et un nombre de chambres. Quand un mandat rentre, l'agent sort la liste des acquéreurs à qui ce bien pourrait plaire et prépare un message pour chacun. Il fait de même pour ceux qui se taisent depuis leur visite et vous validez l'envoi d'un geste.
 
 <figure>
 <ol class="flux">
-<li><strong>Mandat</strong>photos et descriptif déposés</li>
-<li><strong>Annonce</strong>brouillon, mentions vérifiées</li>
-<li><strong>Visites</strong>demandes qualifiées, créneaux calés</li>
-<li><strong>Compte rendu</strong>envoyé au vendeur le soir</li>
-<li><strong>Relances</strong>acquéreurs dont les critères collent</li>
+<li><strong>Demande</strong>portail ou site, réponse en minutes</li>
+<li><strong>Qualification</strong>financement, délai, créneau calé</li>
+<li><strong>Rappel</strong>la veille, liste d'attente si annulation</li>
+<li><strong>Compte rendu</strong>dicté, envoyé au propriétaire</li>
+<li><strong>Relance</strong>acquéreur rappelé si un bien colle</li>
 </ol>
-<figcaption>Le parcours d'un mandat. Vous fixez les règles une fois et l'agent les déroule en s'arrêtant à chaque message qui engage l'agence.</figcaption>
+<figcaption>Le parcours d'une visite. Vous fixez les règles une fois et l'agent les déroule.</figcaption>
 </figure>
 
-## Comment surveiller les annonces concurrentes sans y passer ses matinées ?
+## Peut-on confier ses photos et ses annonces à une IA ?
 
-La pige est sans doute la corvée la plus mécanique du métier et c'est pour cette raison qu'un agent IA la prend si bien. J'en ai eu la preuve en septembre en travaillant de l'autre côté du comptoir.
+Un photographe n'est pas disponible pour chaque mandat et le téléphone fait ce qu'il peut face à une baie vitrée en plein midi. Vous sortez du bien avec vingt photos et vous les envoyez à l'agent par message. Quelques minutes plus tard la série revient retouchée. La lumière est rééquilibrée pour que l'on voie la pièce et pas seulement la fenêtre, les murs penchés retrouvent leurs verticales et le ciel blanc du contre-jour reprend des couleurs.
 
-Un ami investisseur, qui gère une SCI avec des associés, passait ses soirées à éplucher les sites de plusieurs agences et des notaires de sa ville pour tenir un tableau d'étude de marché. Je lui ai construit un agent qui fait ce tour chaque jour et qui remplit une ligne du tableau pour chaque nouvelle annonce :
+L'agent peut aussi désencombrer une pièce ou meubler un salon vide, ce que le métier appelle le home staging virtuel. Ces images portent toujours la mention « aménagement virtuel » et la photo réelle reste à côté dans l'annonce. Il améliore la prise de vue et ne touche jamais au bien lui-même.
 
-- le quartier, la surface et le DPE pour situer le bien d'un coup d'œil ;
-- le prix d'achat, les frais de notaire et le prix au m² pour le comparer aux autres ;
-- le loyer au m², la taxe foncière et les charges de copropriété pour calculer ce qu'il rapporte.
+<figure>
+<div class="message">
+<div class="expediteur"><span>Assistant de l'agence</span><span>15:12</span></div>
+<div class="ligne"><strong>Vos 18 photos du T3 sont prêtes</strong></div>
+<div class="ligne">Lumière et verticales corrigées partout. Ciel retravaillé sur les 2 vues du balcon.</div>
+<div class="ligne">J'ai écarté 3 photos floues. La seule vue de la salle de bains est sombre : une deuxième prise serait utile.</div>
+<div class="ligne">Proposition : le séjour vide avec un aménagement virtuel signalé comme tel à côté de la photo réelle.</div>
+<div class="actions"><span>Voir avant et après</span><span>Valider la série</span></div>
+</div>
+<figcaption>Exemple de réponse après l'envoi d'une série de photos. Les chiffres sont fictifs.</figcaption>
+</figure>
 
-Quand une annonce ne dit rien de la taxe foncière ou des charges, l'agent prépare un brouillon de mail à l'agence pour poser la question. Il ne l'envoie jamais seul et mon ami le relit avant de cliquer.
+### L'annonce part de votre descriptif
 
-Pour une agence immobilière le mécanisme est exactement le même et seul le regard change. L'agent surveille les biens concurrents de votre secteur et vous prévient quand un prix baisse, quand une annonce disparaît ou quand un bien que vous avez en mandat simple apparaît chez un confrère.
+L'agent tire de votre descriptif un brouillon d'annonce et vérifie qu'aucune mention obligatoire ne manque. Si la classe énergie ou le montant des honoraires n'apparaît nulle part dans vos notes, il vous pose la question plutôt que de remplir la case à votre place.
 
-Reste la pige des particuliers qui sert à appeler les propriétaires vendant seuls. Depuis le 11 août 2026 le démarchage téléphonique est [interdit par principe](https://www.service-public.gouv.fr/particuliers/actualites/A19003) sans l'accord préalable de la personne et un contrat conclu à la suite d'un appel irrégulier n'est pas valable. Je ne construis donc pas de listes d'appels à froid vers des particuliers et l'agent s'en tient à la veille du marché.
+Du même texte il tire un post « nouveau bien » pour vos réseaux sociaux puis un post « vendu » le jour de la signature. La diffusion sur les portails reste l'affaire de votre logiciel de transaction.
 
-## Une IA peut-elle estimer un bien immobilier ?
+## Comment rentrer des mandats sans démarcher à froid ?
 
-Une IA généraliste à qui l'on demande le prix d'un appartement répond avec aplomb sans avoir vu une seule vente du quartier, alors que l'agent que je construis part des ventes réelles. L'État publie en données ouvertes la base [Demandes de valeurs foncières](https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres), que tout le monde appelle DVF. Elle recense les transactions des cinq dernières années à partir des actes notariés et elle est mise à jour en avril et en octobre. L'agent y cherche les ventes comparables autour du bien et en tire une fourchette de prix au m².
+Beaucoup de mandats perdus avaient pourtant tendu la main à l'agence avec une demande d'estimation restée trois jours sans réponse.
 
-Dans l'agent de mon ami investisseur, chaque chiffre qui ne vient pas de l'annonce est accompagné de son hypothèse de calcul. On y lit le taux retenu pour les frais de notaire ou la source du loyer au m², si bien qu'un associé de la SCI peut contester un chiffre sans avoir à deviner d'où il sort.
+### Les demandes d'estimation reçoivent une réponse dans la minute
 
-La base a ses angles morts et il vaut mieux les connaître. Elle ne couvre ni l'Alsace ni la Moselle ni Mayotte et elle ignore tout de l'état du bien, de l'étage ou de la vue.
+Quand un propriétaire remplit le formulaire de votre site, l'agent lui répond aussitôt. Il lui demande l'adresse, la surface et le délai de son projet puis il lui propose un rendez-vous. Le propriétaire qui a écrit à trois agences le même soir se souviendra de celle qui a répondu la première.
 
-Pour une agence, tout cela donne un dossier prêt avant le rendez-vous avec le vendeur, avec les ventes comparables et les biens concurrents encore en vente. La fourchette qui en sort reste un travail préparatoire. Elle ne remplace ni l'avis de valeur que vous signez ni le rapport d'un expert immobilier et le chiffre annoncé au vendeur reste le vôtre.
+### Le dossier d'estimation est prêt avant le rendez-vous
+
+L'agent part des ventes réelles parce que l'État publie en données ouvertes la base [Demandes de valeurs foncières](https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres), dite DVF. Elle recense les transactions des cinq dernières années, sauf en Alsace, en Moselle et à Mayotte.
+
+L'agent y cherche les ventes comparables et y ajoute les biens concurrents encore en vente, qu'il surveille chaque matin sur les sites des agences du secteur. La base ignore l'état du bien, l'étage et la vue, si bien que la fourchette obtenue reste un travail préparatoire. Elle ne remplace pas l'avis de valeur que vous signez et le chiffre annoncé au vendeur reste le vôtre.
+
+### Les estimations sans suite et les fins de mandat sont suivies
+
+Un propriétaire qui ne signe pas en mars vendra peut-être en septembre et choisira l'agence qui se sera souvenue de lui. L'agent garde la date de chaque estimation et prépare une relance au bout du délai que vous avez choisi, avec un fait utile comme une vente récente dans la rue.
+
+Il surveille aussi la date de fin de chaque exclusivité. Quelques semaines avant, vous recevez le bilan des visites et vous arrivez chez le vendeur avec des faits.
+
+## Que devient le dossier une fois l'offre acceptée ?
+
+L'offre est acceptée et commence alors la chasse aux papiers qui retarde tant de compromis.
+
+### Les pièces du notaire sont réclamées une par une
+
+L'agent dresse la liste des pièces à partir de la fiche du bien. Le [dossier de diagnostic technique](https://www.service-public.gouv.fr/particuliers/vosdroits/F10798) réclame par exemple un constat plomb pour un logement construit avant 1949 et un état de l'électricité quand l'installation a plus de 15 ans. Pour [un lot de copropriété](https://www.service-public.gouv.fr/particuliers/vosdroits/F2604) s'ajoutent le règlement, le carnet d'entretien et les procès-verbaux des assemblées générales des trois dernières années.
+
+L'agent coche ce qui est arrivé et relance le vendeur en lui disant quelle pièce manque et où la trouver.
+
+### Un avis Google est demandé à chaque client
+
+Le lendemain de la signature, l'agent envoie au vendeur et à l'acquéreur un mot de remerciement avec le lien vers votre fiche Google. Tous vos clients le reçoivent parce que Google interdit de [solliciter des avis positifs de façon sélective](https://support.google.com/contributionpolicy/answer/7400114?hl=fr).
 
 ## Ce qu'un agent IA ne doit pas faire à votre place
 
@@ -125,11 +147,17 @@ Certains outils promettent de tout faire sans vous et d'être conformes par cons
 
 L'annonce d'un professionnel doit afficher [le prix de vente et les honoraires TTC quand l'acquéreur les paie](https://www.service-public.gouv.fr/particuliers/vosdroits/F2954), ainsi que le numéro de sa carte professionnelle. L'[arrêté du 10 janvier 2017](https://www.anil.org/aj-achat-location-affichage-honoraires-professionnels/) règle la présentation des honoraires et la réglementation du DPE impose [la classe énergie, la classe climat et une estimation des dépenses annuelles d'énergie](https://www.anil.org/aj-dpe-mentions-obligatoires-annonces-baux-immobiliers/).
 
-Vous devez en plus vous assurer de l'exactitude des renseignements que vous transmettez. L'agent contrôle que chaque mention est présente mais il ne connaît que ce que vous lui avez donné, si bien que la relecture reste la vôtre.
+L'agent contrôle que chaque mention est présente mais il ne connaît que ce que vous lui avez donné, si bien que la relecture reste la vôtre.
+
+### Gommer un défaut sur une photo
+
+Le Code de la consommation range parmi les [pratiques commerciales trompeuses](https://www.inc-conso.fr/content/les-pratiques-commerciales-deloyales) toute présentation fausse ou de nature à induire en erreur sur les caractéristiques essentielles de ce qui est vendu, bien immobilier compris. La peine peut atteindre deux ans de prison et 300 000 € d'amende.
+
+L'agent corrige donc la lumière, le cadrage et les verticales parce que ces réglages rapprochent l'image de ce que l'œil voit sur place. Il refuse en revanche d'effacer une fissure ou une tache d'humidité et il laisse à sa place l'immeuble d'en face.
 
 ### Faire vos contrôles anti-blanchiment
 
-Les professionnels de l'immobilier font partie des métiers soumis à la lutte contre le blanchiment. Tracfin et la DGCCRF leur ont consacré [un guide en février 2026](https://www.economie.gouv.fr/dgccrf/actualites-dgccrf/professionnels-de-limmobilier-et-de-la-domiciliation-deux-guides-sur-vos-obligations-en-matiere-de-lutte-contre-le) qui rappelle les obligations : identifier le client et vérifier son identité, rester vigilant pendant toute l'opération et déclarer un soupçon à Tracfin.
+Tracfin et la DGCCRF ont consacré aux professionnels de l'immobilier [un guide en février 2026](https://www.economie.gouv.fr/dgccrf/actualites-dgccrf/professionnels-de-limmobilier-et-de-la-domiciliation-deux-guides-sur-vos-obligations-en-matiere-de-lutte-contre-le) qui rappelle les obligations : identifier le client et vérifier son identité, rester vigilant pendant toute l'opération et déclarer un soupçon à Tracfin.
 
 L'agent peut tenir la liste des pièces reçues et signaler celles qui manquent, mais il ne vérifie pas une identité et ne décide jamais qu'une opération est normale ou suspecte.
 
@@ -137,11 +165,15 @@ L'agent peut tenir la liste des pièces reçues et signaler celles qui manquent,
 
 Refuser un logement à quelqu'un en raison de son origine, de son âge ou de sa situation de famille est [une discrimination](https://www.service-public.gouv.fr/particuliers/vosdroits/F38175) punie jusqu'à 3 ans de prison et 45 000 € d'amende. Un tri automatique des dossiers peut reproduire ce genre de biais sans que personne ne l'ait voulu et je ne laisse donc jamais un agent classer ou écarter des candidats.
 
-Il vérifie qu'un dossier est complet et il ne réclame aucune pièce interdite par [la liste officielle](https://www.cnil.fr/fr/location-dun-bien-immobilier-quels-justificatifs), comme le relevé de compte ou le livret de famille. Le choix du locataire reste une décision humaine fondée sur des critères objectifs.
+Il vérifie qu'un dossier est complet et il ne réclame aucune pièce interdite par [la liste officielle](https://www.cnil.fr/fr/location-dun-bien-immobilier-quels-justificatifs), comme le relevé de compte ou le livret de famille.
 
 ### Aspirer vos fichiers clients sans cadre
 
-Votre fichier d'acquéreurs contient des budgets, des situations familiales et des projets de vie. La CNIL rappelle qu'un professionnel de l'immobilier doit [inscrire ce fichier dans son registre des traitements, informer les personnes et sécuriser les données](https://www.cnil.fr/fr/cnil-direct/question/gestion-et-negociations-de-biens-immobiliers-que-faire). L'agent n'ouvre donc que les boîtes et les dossiers que vous lui désignez et le choix du modèle d'IA, qui décide où partent les données, se fait avec vous avant tout branchement.
+Votre fichier d'acquéreurs contient des budgets et des projets de vie. La CNIL rappelle qu'un professionnel de l'immobilier doit [inscrire ce fichier dans son registre des traitements, informer les personnes et sécuriser les données](https://www.cnil.fr/fr/cnil-direct/question/gestion-et-negociations-de-biens-immobiliers-que-faire). L'agent n'ouvre donc que les boîtes et les dossiers que vous lui désignez et le choix du modèle d'IA, qui décide où partent les données, se fait avec vous avant tout branchement.
+
+### Appeler à froid des particuliers
+
+Depuis le 11 août 2026 le démarchage téléphonique est [interdit par principe](https://www.service-public.gouv.fr/particuliers/actualites/A19003) sans l'accord préalable de la personne. Je ne construis donc pas de listes d'appels à froid vers les propriétaires qui vendent seuls et l'agent s'en tient aux personnes qui vous ont déjà écrit.
 
 ### Se faire passer pour un humain
 
