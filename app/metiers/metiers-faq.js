@@ -74,13 +74,13 @@ export const FAQ_METIERS = {
     },
     {
       q: "Mes mandats et les données de mes clients restent-ils confidentiels ?",
-      a: "L'agent tourne sur un serveur qui vous est dédié et vos données ne servent à entraîner aucun modèle. Il n'accède qu'aux boîtes et aux dossiers que vous lui ouvrez.",
+      a: "L'agent n'accède qu'aux boîtes et aux dossiers que vous lui ouvrez. Pour lire et écrire il interroge un modèle d'IA et c'est ce choix qui décide où partent les données. Une offre professionnelle d'OpenAI, d'Anthropic ou de Google ne s'en sert pas pour l'entraînement et un modèle installé sur un serveur que vous contrôlez ne les envoie nulle part. On choisit le montage avec vous avant de brancher quoi que ce soit.",
     },
   ],
   notaire: [
     {
       q: "Un agent IA est-il compatible avec le secret professionnel du notaire ?",
-      a: "C'est la première question à trancher et on la tranche avant de brancher quoi que ce soit. L'agent tourne sur un serveur dédié à l'étude et ne sert à entraîner aucun modèle. Il n'accède qu'aux dossiers que vous lui ouvrez et chaque action est tracée. Dans les échanges, on travaille avec des numéros de dossier.",
+      a: "C'est la première question à trancher et on la tranche avant de brancher quoi que ce soit. Tout dépend du modèle d'IA et de l'endroit où il tourne, puisqu'un modèle américain reste soumis au CLOUD Act même hébergé en Europe. Le Conseil supérieur du notariat a retenu en juillet 2026 le français Mistral AI hébergé chez Scaleway et un modèle installé sur un serveur que l'étude contrôle n'envoie rien à son éditeur. L'agent n'accède qu'aux dossiers que vous lui ouvrez et travaille par numéro de dossier.",
     },
     {
       q: "Peut-il rédiger des actes ?",
@@ -150,7 +150,7 @@ export const FAQ_METIERS = {
   avocat: [
     {
       q: "Un agent IA est-il compatible avec le secret professionnel de l'avocat ?",
-      a: "On règle ce point avant tout branchement. L'agent tourne sur un serveur dédié au cabinet et vos données ne servent à entraîner aucun modèle. Il n'accède qu'aux dossiers que vous lui ouvrez et chaque consultation est tracée. Dans les échanges, on travaille par numéro de dossier.",
+      a: "On règle ce point avant tout branchement. Le guide du CNB adopté en mars 2026 demande de vérifier où l'outil est hébergé et qui exploite ses serveurs, et la réponse dépend du modèle d'IA choisi. Un modèle américain reste soumis au CLOUD Act même hébergé en Europe alors qu'un modèle installé sur un serveur que le cabinet contrôle n'envoie rien à son éditeur. L'agent n'accède qu'aux dossiers que vous lui ouvrez et travaille par numéro de dossier.",
     },
     {
       q: "Peut-il rédiger mes conclusions ?",
@@ -178,7 +178,7 @@ export const FAQ_METIERS = {
   kine: [
     {
       q: "Les notes de séance sont des données de santé : un agent IA peut-il les traiter ?",
-      a: "Ce sont des données de santé et elles doivent être hébergées chez un hébergeur certifié HDS. On part donc de votre logiciel de cabinet et on définit ensemble ce que l'agent peut lire, avant de brancher quoi que ce soit. Les tâches administratives (agenda, liste d'attente, relances) ne demandent pas d'accès au dossier médical.",
+      a: "Ce sont des données de santé. Tout prestataire qui les stocke doit être certifié HDS et les garder dans l'Union européenne à partir du 26 septembre 2026. On part donc de votre logiciel de cabinet et on choisit un montage où chaque maillon respecte ce cadre avant de brancher quoi que ce soit. Les tâches administratives comme l'agenda, la liste d'attente ou les relances ne demandent pas d'accès au dossier de soins.",
     },
     {
       q: "Comment l'agent remplit-il un créneau annulé ?",
@@ -270,7 +270,7 @@ export const FAQ_METIERS = {
     },
     {
       q: "Mes mails personnels restent-ils privés ?",
-      a: "L'agent tourne sur un serveur qui vous est dédié et vos données ne servent à entraîner aucun modèle. Vous pouvez lui retirer l'accès à votre boîte en un clic.",
+      a: "L'agent ne lit que ce que vous lui ouvrez et vous pouvez lui retirer l'accès à votre boîte en un clic. Le point qui compte est le modèle d'IA qu'il interroge. Les offres professionnelles d'OpenAI, d'Anthropic ou de Google n'utilisent pas vos échanges pour l'entraînement, alors que sur les comptes grand public il faut vérifier le réglage.",
     },
   ],
 };
