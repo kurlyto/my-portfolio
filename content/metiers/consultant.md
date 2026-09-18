@@ -2,8 +2,9 @@
 titre: "Agent IA pour consultant et coach indépendant"
 description: "Prospection, rendez-vous préparés, comptes rendus, propositions, relances, factures et trésorerie : ce que fait un agent IA pour un consultant."
 h1: "Un agent IA pour les consultants et les coachs indépendants"
-date: 2026-09-17
+date: 2026-09-15
 mot_cle: "agent ia consultant"
+mots_cles: ["agent IA consultant indépendant", "prospection", "propositions commerciales", "facturation", "relances d'impayés"]
 ---
 Un agent IA pour consultant indépendant est un assistant logiciel qui prend en charge le temps que vous ne facturez pas : la prospection et la préparation des rendez-vous puis les comptes rendus, les propositions, les relances et la facturation. Il applique seul les règles que vous lui avez fixées et vient vous chercher pour tout le reste.
 
@@ -25,7 +26,7 @@ Aucune de ces tâches n'est difficile mais elles passent toutes après la missio
 
 ## Que fait un agent IA pour un consultant ou un coach ?
 
-Imaginez un assistant de cabinet qui n'animerait jamais un atelier et qui tiendrait à la place votre boîte mail, votre fichier de prospects et votre carnet de factures. Si le mot « agent » vous paraît flou, j'ai écrit une [explication simple de ce qu'est un agent IA](/blog/agent-ia-definition). Pour un consultant je commence presque toujours par le point de 8 h sur les mails.
+Imaginez un assistant de cabinet qui n'animerait jamais un atelier et qui tiendrait à la place votre boîte mail, votre fichier de prospects et votre carnet de factures. Si le mot « agent » vous paraît flou, vous trouverez sur le blog une [explication simple de ce qu'est un agent IA](/blog/agent-ia-definition). Pour un consultant le premier chantier est presque toujours le point de 8 h sur les mails.
 
 <figure>
 <div class="message">
@@ -40,7 +41,7 @@ Imaginez un assistant de cabinet qui n'animerait jamais un atelier et qui tiendr
 <figcaption>Exemple de point de 8 h reçu sur le téléphone. Les situations et les chiffres sont fictifs.</figcaption>
 </figure>
 
-Viennent ensuite la préparation des rendez-vous, les relances, les factures et la trésorerie. Mises bout à bout ces demandes dessinent une chaîne qui va du premier contact au paiement de la facture et je construis l'agent pour qu'il tienne cette chaîne entière. J'ai aussi conçu [Foxy](/foxy) pour ceux qui préfèrent un seul outil où vivent mails, agenda, tâches et documents.
+Viennent ensuite la préparation des rendez-vous, les relances, les factures et la trésorerie. Mises bout à bout ces demandes dessinent une chaîne qui va du premier contact au paiement de la facture et l'agent est construit pour tenir cette chaîne entière. J'ai aussi conçu [Foxy](/foxy) pour ceux qui préfèrent un seul outil où vivent mails, agenda, tâches et documents.
 
 ## Comment trouver des missions sans y passer ses soirées ?
 
@@ -56,7 +57,7 @@ L'agent suit de la même façon les appels d'offres de votre spécialité et vou
 
 ### Un fichier de prospects qui se tient tout seul
 
-Beaucoup de consultants ont un tableur de prospects dont la dernière mise à jour remonte au printemps. Je branche l'agent sur ce tableur et il le tient à votre place parce qu'il lit les échanges. Chaque mail envoyé ou reçu est noté sur la bonne ligne et la prochaine étape se déduit de la conversation. Un « reparlons-en après le budget » devient un rappel en janvier et un « voyez avec mon adjoint » crée une nouvelle fiche reliée à la première.
+Beaucoup de consultants ont un tableur de prospects dont la dernière mise à jour remonte au printemps. L'agent se branche sur ce tableur et le tient à votre place parce qu'il lit les échanges. Chaque mail envoyé ou reçu est noté sur la bonne ligne et la prochaine étape se déduit de la conversation. Un « reparlons-en après le budget » devient un rappel en janvier et un « voyez avec mon adjoint » crée une nouvelle fiche reliée à la première.
 
 ### Votre présence sur LinkedIn
 
@@ -87,7 +88,7 @@ Après l'appel vous donnez à l'agent vos notes ou la transcription si votre int
 
 ### La proposition écrite sur votre trame
 
-Vos propositions commerciales suivent la même ossature d'une mission à l'autre : le contexte et les objectifs puis la démarche, le calendrier et le prix. L'agent part de cette trame puis il remplit le contexte avec les mots que le client a employés pendant le cadrage. Je lui fais laisser le prix en blanc tant que vous ne lui avez pas donné de grille. Vous ajustez un document presque fini au lieu de partir d'une page vide et la proposition arrive pendant que le client a encore le sujet en tête.
+Vos propositions commerciales suivent la même ossature d'une mission à l'autre : le contexte et les objectifs puis la démarche, le calendrier et le prix. L'agent part de cette trame puis il remplit le contexte avec les mots que le client a employés pendant le cadrage. Le prix reste en blanc tant que vous ne lui avez pas donné de grille. Vous ajustez un document presque fini au lieu de partir d'une page vide et la proposition arrive pendant que le client a encore le sujet en tête.
 
 ### Les relances que vous n'osez pas faire
 
@@ -112,7 +113,7 @@ Pendant la mission l'agent note à partir de votre agenda les jours passés chez
 
 ### Les impayés
 
-Entre professionnels le délai de paiement est en principe de [30 jours après la prestation](https://entreprendre.service-public.gouv.fr/vosdroits/F23211) et un contrat peut le porter à 60 jours après la date de la facture. Un retard ouvre droit à des pénalités et à une indemnité forfaitaire de 40 € que peu d'indépendants osent réclamer. L'agent suit chaque échéance et envoie un rappel aimable au premier jour de retard puis un second plus ferme qui cite vos conditions. Je conseille de décider vous-même du moment où l'on parle de pénalités à un client que vous voulez garder.
+Entre professionnels le délai de paiement est en principe de [30 jours après la prestation](https://entreprendre.service-public.gouv.fr/vosdroits/F23211) et un contrat peut le porter à 60 jours après la date de la facture. Un retard ouvre droit à des pénalités et à une indemnité forfaitaire de 40 € que peu d'indépendants osent réclamer. L'agent suit chaque échéance et envoie un rappel aimable au premier jour de retard puis un second plus ferme qui cite vos conditions. Mon conseil est de décider vous-même du moment où l'on parle de pénalités à un client que vous voulez garder.
 
 ### La trésorerie à six mois et les plafonds
 
@@ -134,11 +135,11 @@ L'agent n'interprète aucune réponse et ne donne aucun conseil entre deux séan
 
 ## Ce qu'un agent IA ne doit pas faire à votre place
 
-Sur les sujets qui suivent ma réponse est non et mieux vaut le savoir avant de commencer.
+Les sujets qui suivent restent fermés à l'agent et mieux vaut le savoir avant de commencer.
 
 ### Recevoir les dossiers de vos clients sans précaution
 
-Vos clients vous confient des organigrammes, des chiffres et parfois des conflits et la plupart de vos contrats comportent une clause de confidentialité. Avant de brancher un agent sur vos mails je vous demande donc de relire ces clauses et j'en tiens compte dès l'audit. La CNIL recommande de [fixer les usages autorisés et interdits d'une IA générative](https://www.cnil.fr/fr/les-questions-reponses-de-la-cnil-sur-lutilisation-dun-systeme-dia-generative) et d'en écarter les données confidentielles ou personnelles quand le fournisseur peut réutiliser ce qu'on lui confie. J'explique où partent ces données sur [la page des avocats](/metiers/avocat).
+Vos clients vous confient des organigrammes, des chiffres et parfois des conflits et la plupart de vos contrats comportent une clause de confidentialité. Ces clauses sont donc à relire avant de brancher un agent sur vos mails et l'audit en tient compte. La CNIL recommande de [fixer les usages autorisés et interdits d'une IA générative](https://www.cnil.fr/fr/les-questions-reponses-de-la-cnil-sur-lutilisation-dun-systeme-dia-generative) et d'en écarter les données confidentielles ou personnelles quand le fournisseur peut réutiliser ce qu'on lui confie. Le chemin que prennent ces données est décrit sur [la page des avocats](/metiers/avocat).
 
 La confidentialité d'un coach repose sur son contrat et sur le code de déontologie auquel il adhère. Celui de l'ICF demande à ses membres de remplir leurs obligations [y compris à travers tout système technologique utilisé](https://coachingfederation.org/wp-content/uploads/2025/03/french-icf-ethics-code-of-ethics-2025.pdf) et il cite l'intelligence artificielle. Les notes de séance restent donc hors de portée de l'agent sauf si vous en décidez autrement avec l'accord de votre client.
 
@@ -156,7 +157,7 @@ LinkedIn [n'autorise pas les logiciels tiers et les extensions](https://www.link
 
 ### Se faire passer pour vous
 
-Le règlement européen sur l'IA [est devenu applicable le 2 août 2026](https://digital-strategy.ec.europa.eu/fr/policies/regulatory-framework-ai) et son [article 50](https://ai-act-service-desk.ec.europa.eu/fr/ai-act/article-50) demande que toute personne qui échange avec une IA en soit informée. Quand l'agent répond seul à une demande de premier échange, je le règle donc pour qu'il se présente comme votre assistant et il ne signe jamais de votre prénom.
+Le règlement européen sur l'IA [est devenu applicable le 2 août 2026](https://digital-strategy.ec.europa.eu/fr/policies/regulatory-framework-ai) et son [article 50](https://ai-act-service-desk.ec.europa.eu/fr/ai-act/article-50) demande que toute personne qui échange avec une IA en soit informée. Quand l'agent répond seul à une demande de premier échange, il se présente donc comme votre assistant et ne signe jamais de votre prénom.
 
 ## Comment ça se passe ?
 

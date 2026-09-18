@@ -299,6 +299,18 @@ button:not(:disabled),
   color: rgb(0 0 0 / 0.55);
   text-align: center;
 }
+/* Photo d'illustration : le credit (auteur, licence, source) est une obligation
+   des licences Creative Commons, il vit sous la legende en plus petit. */
+.article-metier figure img {
+  margin: 0;
+  height: auto;
+}
+.article-metier figcaption .credit {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 12px;
+  color: rgb(0 0 0 / 0.45);
+}
 
 /* Maquette d'un message recu de l'agent (Telegram, WhatsApp...). */
 .article-metier .message {

@@ -2,8 +2,9 @@
 titre: "Agent IA pour coiffeur et institut de beauté"
 description: "Téléphone, rendez-vous, rappels SMS, liste d'attente, creux de la semaine, Instagram et stock : ce qu'un agent IA fait dans un salon, et ses limites."
 h1: "Un agent IA pour votre salon de coiffure ou votre institut"
-date: 2026-09-17
+date: 2026-08-21
 mot_cle: "agent ia coiffeur"
+mots_cles: ["agent IA salon de coiffure", "prise de rendez-vous", "rendez-vous non honorés", "liste d'attente", "fidélisation"]
 ---
 Un agent IA pour coiffeur est un assistant logiciel qui tient le téléphone, l'agenda, les rappels et les relances du salon pendant que vous avez les mains dans une couleur. Il répond aux demandes de rendez-vous et propose un créneau adapté à la prestation. Il applique seul les règles que vous lui avez fixées et vient vous chercher pour tout le reste.
 
@@ -21,9 +22,9 @@ Chacune de ces interruptions se règle en deux minutes, sauf que vos deux mains 
 
 ## Que fait un agent IA dans un salon de coiffure ?
 
-Le poste ressemble à celui d'une personne à l'accueil qui ne prendrait jamais de pause et ne toucherait jamais un peigne. J'ai expliqué [ce qu'est un agent IA](/blog/agent-ia-definition) dans un article à part et dans un salon son travail tient en quatre missions : répondre à chaque demande, remplir les fauteuils, faire revenir les clientes et tenir les coulisses.
+Le poste ressemble à celui d'une personne à l'accueil qui ne prendrait jamais de pause et ne toucherait jamais un peigne. Un article à part explique [ce qu'est un agent IA](/blog/agent-ia-definition) et dans un salon son travail tient en quatre missions : répondre à chaque demande, remplir les fauteuils, faire revenir les clientes et tenir les coulisses.
 
-Je ne pousse jamais à tout confier d'un coup. Un agent qui tient **très bien les rendez-vous et les rappels** vous rendra plus de services qu'un agent qui bâcle tout le reste.
+Rien n'oblige à tout confier d'un coup. Un agent qui tient **très bien les rendez-vous et les rappels** vous rendra plus de services qu'un agent qui bâcle tout le reste.
 
 ## Comment l'agent prend-il les rendez-vous pendant que vous coiffez ?
 
@@ -31,7 +32,7 @@ Je ne pousse jamais à tout confier d'un coup. Un agent qui tient **très bien l
 
 Le montage que je préfère est un simple renvoi d'appel : votre téléphone sonne comme d'habitude et si personne ne décroche au bout de quatre sonneries l'appel bascule vers l'agent. Il se présente comme l'assistant virtuel du salon puis il demande la prestation et propose deux créneaux. La cliente reçoit sa confirmation par SMS et vous retrouvez le rendez-vous dans l'agenda sans avoir lâché votre pinceau.
 
-La voix de synthèse a ses limites parce qu'elle marque un léger temps entre deux phrases et qu'un accent ou un prénom rare la font parfois répéter. Un agent bien réglé ne devine pas ce qu'il n'a pas compris et propose alors de continuer par SMS. Je conseille souvent de commencer par l'écrit et d'ouvrir la voix ensuite.
+La voix de synthèse a ses limites parce qu'elle marque un léger temps entre deux phrases et qu'un accent ou un prénom rare la font parfois répéter. Un agent bien réglé ne devine pas ce qu'il n'a pas compris et propose alors de continuer par SMS. Moi je vous conseillerais de commencer par l'écrit et d'ouvrir la voix ensuite.
 
 ### Par écrit et depuis votre site
 
@@ -39,7 +40,7 @@ Beaucoup de demandes arrivent par écrit et souvent le soir, quand vos clientes 
 
 ### Les règles que vous fixez une fois
 
-Le créneau d'une couleur n'a rien à voir avec celui d'une coupe et le temps de pose libère un fauteuil pendant une demi-heure. À l'audit j'écris donc avec vous la durée de chaque prestation et qui sait la réaliser dans l'équipe. L'agent sait alors qu'une coupe homme tient dans la pose d'un balayage et qu'une décoloration ne se case pas à 18 h un samedi. Un institut suit la même logique avec ses cabines et la durée des soins.
+Le créneau d'une couleur n'a rien à voir avec celui d'une coupe et le temps de pose libère un fauteuil pendant une demi-heure. L'audit sert donc à écrire avec vous la durée de chaque prestation et qui sait la réaliser dans l'équipe. L'agent sait alors qu'une coupe homme tient dans la pose d'un balayage et qu'une décoloration ne se case pas à 18 h un samedi. Un institut suit la même logique avec ses cabines et la durée des soins.
 
 Vous décidez aussi de ce qu'il accepte sans vous. Une coupe pour une cliente connue se réserve toute seule alors qu'une coiffure de mariage vous est remontée avec la photo et la demande.
 
@@ -79,17 +80,17 @@ Tous les salons ont leur mardi après-midi. Le lundi matin l'agent repère dans 
 <figcaption>Exemple de proposition pour remplir un creux. Le prénom et les chiffres sont fictifs.</figcaption>
 </figure>
 
-Un seul message suffit et une cliente qui ne répond pas n'est pas relancée une seconde fois sans votre accord. Tout cela repose sur des fiches propres et c'est le premier point que je regarde à l'audit. Entre deux clientes il vous suffit de dicter « Mme Martin, 7.1 avec du 20 volumes et 35 minutes de pose » pour que l'agent range la formule dans la bonne fiche. Il vous la ressort la veille du prochain rendez-vous et la date de cette couleur lui permet d'écrire « votre couleur a six semaines » à la bonne cliente.
+Un seul message suffit et une cliente qui ne répond pas n'est pas relancée une seconde fois sans votre accord. Tout cela repose sur des fiches propres et c'est le premier point à regarder à l'audit. Entre deux clientes il vous suffit de dicter « Mme Martin, 7.1 avec du 20 volumes et 35 minutes de pose » pour que l'agent range la formule dans la bonne fiche. Il vous la ressort la veille du prochain rendez-vous et la date de cette couleur lui permet d'écrire « votre couleur a six semaines » à la bonne cliente.
 
 ### La fidélité entre deux visites
 
 L'agent souhaite un anniversaire avec le geste que vous avez prévu et tient le compte des passages si vous offrez la dixième coupe. Quand une cliente repart avec un shampoing, il lui propose deux mois plus tard de lui en mettre un de côté pour sa prochaine visite.
 
-Trois semaines avant Noël et avant la fête des Mères, il prépare l'annonce de vos cartes cadeaux puis il garde la liste des cartes vendues avec leur date de validité. Tous ces messages sont de la prospection commerciale aux yeux de la loi et j'y reviens plus bas.
+Trois semaines avant Noël et avant la fête des Mères, il prépare l'annonce de vos cartes cadeaux puis il garde la liste des cartes vendues avec leur date de validité. Tous ces messages sont de la prospection commerciale aux yeux de la loi et le sujet est traité plus bas.
 
 ## Qui tient votre vitrine sur Instagram et sur Google ?
 
-Votre meilleur argument commercial dort dans votre téléphone avec toutes ces photos avant et après que vous n'avez jamais le temps de publier. Envoyez la photo à l'agent avec trois mots sur la prestation et il prépare le post qui attend ensuite votre validation. [Service-Public](https://www.service-public.fr/particuliers/vosdroits/F32103) rappelle qu'il faut un accord écrit et précis pour diffuser l'image d'une personne reconnaissable et l'agent garde donc la trace de cet accord dans la fiche. J'ai détaillé ce droit à l'image dans la page sur [l'agent IA d'un photographe](/metiers/photographe).
+Votre meilleur argument commercial dort dans votre téléphone avec toutes ces photos avant et après que vous n'avez jamais le temps de publier. Envoyez la photo à l'agent avec trois mots sur la prestation et il prépare le post qui attend ensuite votre validation. [Service-Public](https://www.service-public.fr/particuliers/vosdroits/F32103) rappelle qu'il faut un accord écrit et précis pour diffuser l'image d'une personne reconnaissable et l'agent garde donc la trace de cet accord dans la fiche. Ce droit à l'image est détaillé dans la page sur [l'agent IA d'un photographe](/metiers/photographe).
 
 La fiche Google est l'autre vitrine et elle vieillit vite. L'agent y met à jour vos horaires avant un jour férié ou vos congés d'août et il peut y annoncer l'arrivée d'une nouvelle coloriste.
 
@@ -116,23 +117,23 @@ Une fois la caisse fermée, l'agent vous envoie le récap de la journée avec la
 <figcaption>Exemple de récap du soir reçu sur le téléphone de la gérante. Les noms et les chiffres sont fictifs.</figcaption>
 </figure>
 
-Mes propres agents me demandent mon feu vert avant tout envoi et je garde la même règle pour un salon. Vous ouvrez les vannes une à une en commençant par les rappels de la veille et tout le reste attend votre accord aussi longtemps que vous le souhaitez.
+Je valide moi-même chaque envoi des agents qui travaillent pour moi et un salon garde la même règle. Vous ouvrez les vannes une à une en commençant par les rappels de la veille et tout le reste attend votre accord aussi longtemps que vous le souhaitez.
 
 ## Un agent IA remplace-t-il Planity ou Treatwell ?
 
 Il ne les remplace pas. Ces plateformes vous amènent des clientes, gèrent la réservation en ligne et envoient souvent déjà des rappels. Planity a même annoncé en juillet 2026 [un assistant téléphonique](https://www.maddyness.com/2026/07/08/10-ans-apres-sa-creation-planity-devient-rentable-et-se-rapproche-du-statut-de-centaure/) qui répondra aux appels et proposera des créneaux, sans date de lancement annoncée à ce jour.
 
-L'agent s'appuie sur l'outil que vous avez déjà et s'occupe de ce qui vit en dehors sans doubler les rappels que la plateforme envoie. Si elle ouvre un accès aux outils extérieurs, l'agent réserve directement dedans et sinon il travaille sur un agenda que vous partagez avec lui. Je vérifie votre situation avant de commencer parce qu'un seul agenda doit faire foi, sans quoi le même fauteuil finit tôt ou tard promis à deux clientes.
+L'agent s'appuie sur l'outil que vous avez déjà et s'occupe de ce qui vit en dehors sans doubler les rappels que la plateforme envoie. Si elle ouvre un accès aux outils extérieurs, l'agent réserve directement dedans et sinon il travaille sur un agenda que vous partagez avec lui. Ce point se vérifie avant de commencer parce qu'un seul agenda doit faire foi, sans quoi le même fauteuil finit tôt ou tard promis à deux clientes.
 
 ## Ce qu'un agent IA ne doit pas faire à votre place
 
-Sur les sujets qui suivent ma réponse est non et mieux vaut le savoir avant de signer.
+Les demandes qui suivent reviennent souvent et je les décline toutes avant même le premier devis.
 
 ### Conseiller sur une allergie ou une réaction à une coloration
 
 Les [recommandations de l'ANSM aux coiffeurs](https://ansm.sante.fr/uploads/2021/03/11/311953034a0cfd67144c845842b18528.pdf) demandent de ne pas réaliser de teinture sur une cliente qui a déjà réagi à une coloration et elles rappellent que l'absence de réaction à une touche d'essai ne garantit rien. L'Anses précise de son côté que cette touche d'essai [n'est plus obligatoire depuis 2001](https://www.anses.fr/system/files/VigilAnsesN28FR.pdf) mais que les fabricants continuent de la conseiller. Ce jugement vous appartient. Dès qu'un message parle d'allergie, de démangeaisons ou de brûlure, l'agent vous le transmet sans donner d'avis et face à une réaction sévère il répète la consigne officielle d'appeler le 15.
 
-La fiche cliente suit la même prudence parce que la CNIL range la santé parmi les [données sensibles](https://www.cnil.fr/fr/definition/donnee-sensible). Une allergie n'y entre qu'avec l'accord clair de la cliente et l'agent ne note jamais de lui-même une grossesse ou un traitement aperçus dans une conversation. J'explique où partent ces données selon le modèle d'IA choisi dans la page sur [l'agent IA d'un kiné](/metiers/kine).
+La fiche cliente suit la même prudence parce que la CNIL range la santé parmi les [données sensibles](https://www.cnil.fr/fr/definition/donnee-sensible). Une allergie n'y entre qu'avec l'accord clair de la cliente et l'agent ne note jamais de lui-même une grossesse ou un traitement aperçus dans une conversation. La page sur [l'agent IA d'un kiné](/metiers/kine) explique où partent ces données selon le modèle d'IA choisi.
 
 ### Relancer tout le fichier par SMS
 

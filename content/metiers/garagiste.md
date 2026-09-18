@@ -2,8 +2,9 @@
 titre: "Agent IA pour garagiste et mécanicien auto"
 description: "Téléphone, rendez-vous atelier, pré-devis, pièces, accord du client, rappels de révision et de contrôle technique : ce qu'un agent IA fait dans un garage."
 h1: "Un agent IA pour votre garage automobile"
-date: 2026-09-17
+date: 2026-09-10
 mot_cle: "agent ia garagiste"
+mots_cles: ["agent IA garage automobile", "prise de rendez-vous", "accord sur devis", "rappels d'entretien", "planning atelier"]
 ---
 Un agent IA pour garagiste est un assistant logiciel qui tient le téléphone, l'agenda de l'atelier, les commandes de pièces et les relances pendant que vous avez les mains dans un moteur. Il prend les rendez-vous et prépare les devis que vous validez. Il applique seul les règles que vous lui avez fixées et vient vous chercher pour tout le reste.
 
@@ -23,7 +24,7 @@ Le métier s'est encore peu emparé du sujet. D'après la première étude de l'
 
 ## Que fait un agent IA dans un garage ?
 
-Le poste ressemble à celui d'un réceptionnaire d'atelier qui ne prendrait jamais de pause et ne toucherait jamais une clé. J'ai expliqué [ce qu'est un agent IA](/blog/agent-ia-definition) dans un article à part. Dans un garage son travail suit le trajet d'une voiture : il prend la demande et prépare le passage à l'atelier puis il tient le client au courant et le fait revenir au bon moment.
+Le poste ressemble à celui d'un réceptionnaire d'atelier qui ne prendrait jamais de pause et ne toucherait jamais une clé. Un article à part détaille [ce qu'est un agent IA](/blog/agent-ia-definition). Dans un garage son travail suit le trajet d'une voiture : il prend la demande et prépare le passage à l'atelier puis il tient le client au courant et le fait revenir au bon moment.
 
 Mon conseil est de ne pas tout confier d'un coup. Un agent qui tient **très bien le téléphone et les rappels de révision** vous rendra plus de services qu'un agent qui bâcle tout le reste.
 
@@ -31,7 +32,7 @@ Mon conseil est de ne pas tout confier d'un coup. Un agent qui tient **très bie
 
 ### Le téléphone qui sonne à 21 h
 
-Je commence toujours par le montage le plus simple qui est un renvoi d'appel : votre téléphone sonne comme d'habitude et l'appel bascule vers l'agent si personne ne décroche au bout de quatre sonneries. Il se présente comme l'assistant virtuel du garage puis il demande l'immatriculation ou le modèle, le kilométrage et ce qui amène la voiture.
+J'aime bien commencer par le montage le plus simple qui est un renvoi d'appel : votre téléphone sonne comme d'habitude et l'appel bascule vers l'agent si personne ne décroche au bout de quatre sonneries. Il se présente comme l'assistant virtuel du garage puis il demande l'immatriculation ou le modèle, le kilométrage et ce qui amène la voiture.
 
 Un client qui parle d'un voyant rouge ou d'une pédale de frein molle ne reçoit pas un créneau dans dix jours. C'est le même tri que [les urgences de nuit d'un plombier](/metiers/plombier) : l'agent vous prévient aussitôt et c'est vous qui rappelez pour dire s'il peut encore rouler.
 
@@ -39,7 +40,7 @@ Les mêmes demandes arrivent par SMS, par mail ou depuis votre fiche Google et l
 
 ### Un pré-devis à partir de la panne décrite
 
-Pour une demande claire comme des plaquettes avant sur une Clio 4 ou une vidange avec filtres, l'agent prépare une estimation à partir de vos forfaits, de votre taux horaire et du prix de la pièce chez votre fournisseur. Il vous la soumet et l'envoie après votre feu vert. Je règle l'agent pour qu'une panne floue comme « ça claque quand je tourne » débouche sur un rendez-vous de diagnostic et jamais sur un prix.
+Pour une demande claire comme des plaquettes avant sur une Clio 4 ou une vidange avec filtres, l'agent prépare une estimation à partir de vos forfaits, de votre taux horaire et du prix de la pièce chez votre fournisseur. Il vous la soumet et l'envoie après votre feu vert. Une panne floue comme « ça claque quand je tourne » débouche toujours sur un rendez-vous de diagnostic et jamais sur un prix.
 
 <figure>
 <div class="message">
@@ -55,7 +56,7 @@ Pour une demande claire comme des plaquettes avant sur une Clio 4 ou une vidange
 
 ### Les règles que vous fixez une fois
 
-Un embrayage n'occupe pas un pont comme une vidange et tout le monde à l'atelier ne touche pas à la climatisation. Je note donc avec vous dès l'audit la durée de chaque intervention, le nombre de ponts et qui fait quoi dans l'équipe. L'agent sait alors qu'une distribution bloque un pont pour la journée et qu'on ne cale pas une géométrie le vendredi à 17 h.
+Un embrayage n'occupe pas un pont comme une vidange et tout le monde à l'atelier ne touche pas à la climatisation. L'audit sert donc à noter avec vous la durée de chaque intervention, le nombre de ponts et qui fait quoi dans l'équipe. L'agent sait alors qu'une distribution bloque un pont pour la journée et qu'on ne cale pas une géométrie le vendredi à 17 h.
 
 Vous décidez aussi de ce qu'il accepte sans vous. Une vidange pour un client connu se réserve toute seule alors qu'une voiture qui arrive sur plateau vous est remontée avec le message d'origine.
 
@@ -137,11 +138,11 @@ Une fois le rideau baissé, l'agent vous envoie le récap de la journée.
 <figcaption>Exemple de récap du soir reçu sur le téléphone du garagiste. Les noms et les chiffres sont fictifs.</figcaption>
 </figure>
 
-Mes propres agents me demandent mon feu vert avant tout envoi et je garde la même règle pour un garage. Vous ouvrez les vannes une à une en commençant par les confirmations de rendez-vous et tout le reste attend votre accord aussi longtemps que vous le souhaitez.
+Au début rien ne part sans votre feu vert. Vous ouvrez les vannes une à une en commençant par les confirmations de rendez-vous et tout le reste attend votre accord aussi longtemps que vous le souhaitez.
 
 ## Ce qu'un agent IA ne doit pas faire à votre place
 
-Sur les sujets qui suivent ma réponse est non et mieux vaut le savoir avant de signer.
+La liste qui suit est courte et je ne la négocie pas parce qu'elle protège vos clients autant que votre garage.
 
 ### Poser un diagnostic ou dire qu'une voiture peut rouler
 
@@ -149,7 +150,7 @@ Le garagiste a une [obligation de résultat](https://entreprendre.service-public
 
 ### Chiffrer seul un devis
 
-Un devis n'est pas obligatoire dans un garage mais [Service-Public](https://entreprendre.service-public.gouv.fr/vosdroits/F39056) conseille de rédiger un ordre de réparation avant toute intervention et d'y donner une estimation du coût. Or les machines ont tendance à voir trop petit : lors d'un test mené par Mobilians en carrosserie, les outils de chiffrage par IA ont [sous-estimé les dommages](https://www.mobilians.fr/presse/communiques-de-presse/groupe-de-travail-sur-l-ia-en-carrosserie-par-mobilians-premiers-resultats-des-tests-lances-en-juillet/) relevés par les professionnels. Je fais donc sortir l'estimation de vos forfaits et de vos prix et aucun montant ne part sans votre validation.
+Un devis n'est pas obligatoire dans un garage mais [Service-Public](https://entreprendre.service-public.gouv.fr/vosdroits/F39056) conseille de rédiger un ordre de réparation avant toute intervention et d'y donner une estimation du coût. Or les machines ont tendance à voir trop petit : lors d'un test mené par Mobilians en carrosserie, les outils de chiffrage par IA ont [sous-estimé les dommages](https://www.mobilians.fr/presse/communiques-de-presse/groupe-de-travail-sur-l-ia-en-carrosserie-par-mobilians-premiers-resultats-des-tests-lances-en-juillet/) relevés par les professionnels. L'estimation sort donc de vos forfaits et de vos prix et aucun montant ne part sans votre validation.
 
 ### Oublier les pièces d'occasion ou inventer un prix
 

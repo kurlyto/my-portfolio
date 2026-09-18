@@ -2,8 +2,9 @@
 titre: "Agent IA pour plombier et chauffagiste"
 description: "Astreinte, devis sur photos, pièces, tournée, factures, relances et contrats d'entretien : ce qu'un agent IA fait pour un plombier, et ses limites."
 h1: "Un agent IA pour votre entreprise de plomberie"
-date: 2026-09-17
+date: 2026-09-07
 mot_cle: "agent ia plombier"
+mots_cles: ["agent IA plombier", "astreinte", "devis sur photos", "relances de devis", "contrats d'entretien"]
 ---
 Un agent IA pour plombier est un assistant logiciel qui tient le téléphone, les devis, les commandes de pièces et les relances pendant que vous avez la tête sous un évier. Il trie les appels selon vos critères et prépare les papiers à partir de vos photos et de vos dictées. Il applique seul les règles que vous lui avez fixées et vient vous chercher pour tout le reste.
 
@@ -21,7 +22,7 @@ Rien de tout cela n'est de la plomberie et tout se paie pourtant. L'appel manqu�
 
 ## Que fait un agent IA pour un plombier ?
 
-Le poste ressemble à celui d'une secrétaire de chantier qui ne dormirait jamais et qui ne toucherait jamais une clé à molette. J'ai expliqué [ce qu'est un agent IA](/blog/agent-ia-definition) dans un article à part et chez un plombier son travail suit le parcours d'un client du premier coup de fil jusqu'à la visite d'entretien de l'année suivante.
+Le poste ressemble à celui d'une secrétaire de chantier qui ne dormirait jamais et qui ne toucherait jamais une clé à molette. Un article à part explique [ce qu'est un agent IA](/blog/agent-ia-definition) et chez un plombier son travail suit le parcours d'un client du premier coup de fil jusqu'à la visite d'entretien de l'année suivante.
 
 L'agent travaille sur les outils que vous avez déjà et vous lui parlez par message ou par note vocale depuis la camionnette. Inutile de tout lui confier d'un coup. Je conseille de commencer par **le téléphone et les devis** parce que c'est là que le chiffre d'affaires se perd sans bruit.
 
@@ -29,7 +30,7 @@ L'agent travaille sur les outils que vous avez déjà et vous lui parlez par mes
 
 ### Des questions simples et vos critères à vous
 
-Je pars du montage le plus courant qui est un renvoi d'appel : si vous ne décrochez pas, l'appel bascule vers l'agent qui se présente comme l'assistant virtuel de l'entreprise. Il pose alors les questions que vous poseriez vous-même. Il demande si l'eau coule encore, si le robinet d'arrêt est fermé et s'il y a de l'eau près d'un tableau électrique.
+Le montage le plus courant est un renvoi d'appel : si vous ne décrochez pas, l'appel bascule vers l'agent qui se présente comme l'assistant virtuel de l'entreprise. Il pose alors les questions que vous poseriez vous-même. Il demande si l'eau coule encore, si le robinet d'arrêt est fermé et s'il y a de l'eau près d'un tableau électrique.
 
 La définition d'une vraie urgence vous appartient et c'est la première chose que j'écris avec vous à l'audit. Une fuite que le client n'arrive pas à couper vous réveille à toute heure. Une panne d'eau chaude en plein hiver chez une personne âgée peut passer en tête de la tournée du matin alors que le robinet qui goutte attendra 8 h avec un rendez-vous déjà proposé.
 
@@ -49,7 +50,7 @@ Avant de vous déranger, l'agent annonce au client votre taux horaire, vos frais
 
 ### Quand la voix ne comprend pas
 
-Une voix de synthèse bute encore sur un nom de rue mal articulé. Je règle l'agent pour qu'il ne devine jamais ce qu'il n'a pas compris et qu'il bascule alors vers le SMS en demandant l'adresse par écrit avec une photo de la fuite. Les demandes qui arrivent par votre site ou par mail suivent le même tri.
+Une voix de synthèse bute encore sur un nom de rue mal articulé. L'agent ne devine jamais ce qu'il n'a pas compris et bascule alors vers le SMS en demandant l'adresse par écrit avec une photo de la fuite. Les demandes qui arrivent par votre site ou par mail suivent le même tri.
 
 ## Comment passer des photos du client à un devis signé ?
 
@@ -75,11 +76,11 @@ Vous recevez alors un brouillon de devis. Quand la photo ne suffit pas pour s'en
 
 En plomberie le devis est obligatoire avant les travaux comme avant un dépannage et la [fiche de Service-Public Entreprendre](https://entreprendre.service-public.gouv.fr/vosdroits/F31144) en donne la liste des mentions. On y trouve le décompte détaillé en quantité et en prix, le taux horaire TTC et les frais de déplacement puis la durée de validité de l'offre et le caractère gratuit ou payant du devis. L'oubli du devis expose à une amende qui peut atteindre 3 000 € pour un entrepreneur individuel et 15 000 € pour une société.
 
-Je range ces mentions une fois dans votre modèle avec votre assurance décennale et l'agent ne remplit plus que les lignes qui changent.
+Ces mentions sont rangées une fois dans votre modèle avec votre assurance décennale et l'agent ne remplit plus que les lignes qui changent.
 
 ### La dictée depuis la camionnette
 
-Sur place la réalité déborde presque toujours du devis. En sortant il vous suffit de dicter « chez Garnier j'ai aussi remplacé le réducteur de pression, une heure de plus et la pièce à 64 euros ». L'agent prépare l'avenant ou la ligne de facture et vous la montre avant tout envoi. J'ai décrit cette dictée plus en détail pour [le devis vocal d'un électricien](/metiers/electricien) et la demande d'accord écrite pour [le supplément d'un garagiste](/metiers/garagiste).
+Sur place la réalité déborde presque toujours du devis. En sortant il vous suffit de dicter « chez Garnier j'ai aussi remplacé le réducteur de pression, une heure de plus et la pièce à 64 euros ». L'agent prépare l'avenant ou la ligne de facture et vous la montre avant tout envoi. Cette dictée est décrite plus en détail pour [le devis vocal d'un électricien](/metiers/electricien) et la demande d'accord écrite l'est pour [le supplément d'un garagiste](/metiers/garagiste).
 
 ## Qui commande les pièces et prépare la tournée du lendemain ?
 
@@ -110,7 +111,7 @@ Une facture envoyée le soir même arrive quand le client a encore le dépannage
 
 Un devis resté sans réponse reçoit un seul message courtois au bout du délai que vous choisissez, sept jours par exemple.
 
-Pour les impayés, l'agent lit les échéances dans votre logiciel de facturation ou sur votre relevé bancaire. Une première relance aimable part à la date prévue et une seconde plus ferme suit si rien ne bouge. Je laisse la dernière entre vos mains, tout comme la décision d'aller plus loin.
+Pour les impayés, l'agent lit les échéances dans votre logiciel de facturation ou sur votre relevé bancaire. Une première relance aimable part à la date prévue et une seconde plus ferme suit si rien ne bouge. La dernière reste entre vos mains, tout comme la décision d'aller plus loin.
 
 Les règles changent si vous travaillez pour des agences ou d'autres entreprises. Entre professionnels le délai de paiement est en principe de 30 jours et chaque facture en retard ouvre droit à [une indemnité forfaitaire de 40 €](https://entreprendre.service-public.gouv.fr/vosdroits/F23211) en plus des pénalités. L'agent adapte donc ses relances selon qu'il écrit à un particulier ou à une entreprise.
 

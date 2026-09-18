@@ -2,8 +2,9 @@
 titre: "Agent IA pour commerce de proximité : stock, DLC, avis"
 description: "Dates limites, promotions, stock, commandes fournisseurs, avis Google, habitués : ce qu'un agent IA fait seul dans un commerce et où il s'arrête."
 h1: "Un agent IA pour votre commerce de proximité"
-date: 2026-09-17
+date: 2026-09-04
 mot_cle: "agent ia commerce"
+mots_cles: ["agent IA commerce de proximité", "gestion de stock", "dates limites", "commandes fournisseurs", "anti-gaspillage"]
 ---
 Un agent IA pour commerce de proximité est un assistant logiciel qui suit vos produits depuis le carton du livreur jusqu'au ticket de caisse pendant que vous servez vos clients. Il tient le stock et les dates limites, prépare les promotions et les commandes fournisseurs et répond aux messages comme aux avis Google. Il applique seul les règles que vous lui avez fixées et vient vous chercher pour tout le reste.
 
@@ -25,7 +26,7 @@ Aucune de ces tâches ne demande plus de cinq minutes et chacune se paie au prix
 
 ## Que fait un agent IA dans un commerce de proximité ?
 
-Imaginez un employé qui ne quitterait jamais l'arrière-boutique et qui garderait en tête chaque carton entré et chaque article sorti. Si le mot vous paraît encore flou, j'ai expliqué [ce qu'est un agent IA](/blog/agent-ia-definition) dans un article à part. Pour un commerce je range presque toujours les missions de l'agent en trois familles.
+Imaginez un employé qui ne quitterait jamais l'arrière-boutique et qui garderait en tête chaque carton entré et chaque article sorti. Si le mot vous paraît encore flou, vous trouverez [ce qu'est un agent IA](/blog/agent-ia-definition) dans un article à part. Pour un commerce les missions de l'agent se rangent presque toujours en trois familles.
 
 - **La gestion de la boutique.** Le stock, les seuils de réassort et les dates limites sont suivis chaque jour et la commande fournisseur arrive prête à relire.
 - **Le marketing du quotidien.** L'agent prépare les promotions et les posts et tient la fiche Google à jour. Il répond aux avis et aux questions d'horaires, d'arrivages et de disponibilité qui tombent sur Instagram.
@@ -37,7 +38,7 @@ Le tout se résume chaque matin dans un seul message que vous lisez avant de lev
 
 ### La livraison devient une fiche propre
 
-Quand le livreur passe, vous photographiez le bon de livraison ou vous dictez l'arrivage à l'agent comme à un employé. Il reconnaît chaque ligne par son code-barres, ajoute les quantités au stock et note la date imprimée sur le lot. Je commence toujours par ranger le fichier produits, parce qu'un pot noté « miel foncé petit » dans un tableau et enregistré autrement dans la caisse devient deux produits que rien ne recoupe plus.
+Quand le livreur passe, vous photographiez le bon de livraison ou vous dictez l'arrivage à l'agent comme à un employé. Il reconnaît chaque ligne par son code-barres, ajoute les quantités au stock et note la date imprimée sur le lot. Tout démarre par un fichier produits bien rangé, parce qu'un pot noté « miel foncé petit » dans un tableau et enregistré autrement dans la caisse devient deux produits que rien ne recoupe plus.
 
 ### Le stock se tient entre deux clients
 
@@ -69,7 +70,7 @@ Vous fixez les règles une fois. Vous décidez par exemple qu'un produit frais p
 <figcaption>Exemple d'alerte sur les dates. L'agent propose une sortie pour chaque produit et attend votre feu vert. Les produits et les chiffres sont fictifs.</figcaption>
 </figure>
 
-Je conseille de valider chaque proposition d'un mot au début. Quand une règle a fait ses preuves, vous pouvez laisser l'agent dérouler seul tout ce qui ne touche pas la caisse. Il change alors le prix de la vitrine en ligne et publie le post puis retire le produit du site le dernier soir.
+Au début je conseille de valider chaque proposition d'un mot. Quand une règle a fait ses preuves, vous pouvez laisser l'agent dérouler seul tout ce qui ne touche pas la caisse. Il change alors le prix de la vitrine en ligne et publie le post puis retire le produit du site le dernier soir.
 
 <figure>
 <ol class="flux">
@@ -82,7 +83,7 @@ Je conseille de valider chaque proposition d'un mot au début. Quand une règle 
 <figcaption>Le parcours d'un produit frais, de la livraison à la vente. Vous fixez les règles une fois et l'agent les déroule.</figcaption>
 </figure>
 
-Je lui fais envoyer chaque semaine le bilan de ce que ces règles ont sauvé et il sert à ajuster la commande suivante, parce qu'un produit bradé tous les quinze jours est d'abord un produit commandé en trop.
+L'agent envoie chaque semaine le bilan de ce que ces règles ont sauvé et ce bilan sert à ajuster la commande suivante, parce qu'un produit bradé tous les quinze jours est d'abord un produit commandé en trop.
 
 ## Peut-on automatiser les promotions et les réseaux sociaux ?
 

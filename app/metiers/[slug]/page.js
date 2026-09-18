@@ -3,6 +3,9 @@ import { notFound } from "next/navigation";
 import MetierFlyerShareable from "../../component/MetierFlyerShareable";
 import Sommaire from "../../component/Sommaire";
 import Footer from "../../component/FooterAvecArticles";
+import Partager from "../../component/Partager";
+import { LigneAuteur, MotsCles, LireAussi } from "../../component/ArticleExtras";
+import { lireAussiPourMetier } from "../../blog/lire-aussi";
 import { METIERS, getMetier } from "../metiers-data";
 import { getFaqMetier } from "../metiers-faq";
 import { getArticleMetier } from "../metiers-articles";
@@ -20,6 +23,7 @@ function articleJsonLd(article, slug) {
     dateModified: article.maj || article.date,
     inLanguage: "fr-FR",
     mainEntityOfPage: `${SITE_URL}/metiers/${slug}`,
+    keywords: article.motsCles.length ? article.motsCles.join(", ") : undefined,
     author: { "@type": "Person", name: "Nathan Knaebel", url: `${SITE_URL}/projects` },
   };
 }
@@ -106,18 +110,21 @@ export default async function MetierPage({ params }) {
               type="application/ld+json"
               dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd(article, slug)) }}
             />
-            <p className="font-mono text-[12px] uppercase tracking-widest text-black/50">
-              {dateLisible(article.date)} · {article.minutes} min de lecture
-            </p>
-            <h1 className="mt-3 font-display text-3xl sm:text-4xl font-black leading-tight">{article.h1}</h1>
-            <p className="mt-4 text-[14px] text-black/60">
-              Par Nathan Knaebel
-              {article.maj && <> · mis à jour le {dateLisible(article.maj)}</>}
-            </p>
+            <h1 className="font-display text-3xl sm:text-4xl font-black leading-tight">{article.h1}</h1>
+            <LigneAuteur
+              dateTexte={dateLisible(article.date)}
+              majTexte={article.maj ? dateLisible(article.maj) : null}
+              minutes={article.minutes}
+            />
 
             <Sommaire chapitres={article.chapitres} />
 
             <div className={`${PROSE} article-metier`} dangerouslySetInnerHTML={{ __html: article.html }} />
+
+            <MotsCles mots={article.motsCles} />
+            <div className="mt-8 border-t border-black/10 pt-6">
+              <Partager url={`${SITE_URL}/metiers/${slug}`} titre={article.titre} />
+            </div>
           </article>
         )}
 
@@ -125,7 +132,7 @@ export default async function MetierPage({ params }) {
           <section className="mt-14" aria-labelledby="faq-metier">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(faq)) }} />
             <h2 id="faq-metier" className="font-display text-2xl font-bold">
-              Vos questions sur un agent IA : {metier.title}
+              Questions fréquentes
             </h2>
             {/* <details> natif : les reponses sont dans le HTML des le premier
                 octet (lues par Google et les IA), sans JavaScript. */}
@@ -154,6 +161,8 @@ export default async function MetierPage({ params }) {
             </div>
           </section>
         )}
+
+        {article && <LireAussi liens={lireAussiPourMetier(slug, article.lireAussi)} />}
 
         <p className="mt-8 pb-6 text-center font-mono text-[12px] opacity-60">
           <Link

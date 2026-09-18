@@ -2,12 +2,13 @@
 titre: "Agent IA pour notaire : usages, secret et données"
 description: "Ce qu'un agent IA prend en charge dans une étude notariale, ce que disent les règles du notariat et comment garder la main sur les données de vos clients."
 h1: "Un agent IA pour votre étude notariale"
-date: 2026-09-17
+date: 2026-08-26
 mot_cle: "ia notaire"
+mots_cles: ["agent IA notaire", "secret professionnel", "pièces de dossier", "relances clients", "hébergement des données"]
 ---
 Un agent IA pour notaire est un assistant logiciel qui trie les mails de l'étude, relance les pièces manquantes, cale les rendez-vous de signature et prépare des récapitulatifs de dossier que le notaire vérifie. Il prépare le travail et ne touche ni à la rédaction des actes ni au conseil, qui restent l'affaire du notaire.
 
-Reste la question que tout notaire pose avant les autres : que deviennent les données de ses clients ? Le notariat a lui-même tranché une partie du débat cet été et j'y consacre un chapitre entier.
+Reste la question que tout notaire pose avant les autres : que deviennent les données de ses clients ? Le notariat a lui-même tranché une partie du débat cet été et un chapitre entier de cette page y est consacré.
 
 <div class="encadre">
 <p><strong>En bref</strong></p>
@@ -114,15 +115,15 @@ Les règles professionnelles sont nettes : le notaire [ne peut sous-traiter](htt
 
 ### Toucher aux dossiers de lutte contre le blanchiment
 
-Il est interdit de révéler à un client [l'existence d'une déclaration de soupçon](https://www.economie.gouv.fr/tracfin/la-confidentialite-de-la-declaration-de-soupcon) adressée à Tracfin. Un assistant qui prépare des réponses aux clients n'a donc rien à faire dans ces dossiers et je les exclus de son périmètre dès l'audit. La même prudence vaut pour [un cabinet d'expertise comptable](/metiers/expert-comptable).
+Il est interdit de révéler à un client [l'existence d'une déclaration de soupçon](https://www.economie.gouv.fr/tracfin/la-confidentialite-de-la-declaration-de-soupcon) adressée à Tracfin. Un assistant qui prépare des réponses aux clients n'a donc rien à faire dans ces dossiers et ils sortent de son périmètre dès l'audit. La même prudence vaut pour [un cabinet d'expertise comptable](/metiers/expert-comptable).
 
 ### Répondre seul aux clients
 
-Un brouillon relu puis envoyé par l'étude reste un courrier de l'étude. Un robot qui converse directement avec vos clients pose une autre question de secret et de responsabilité et j'explique sur [la page des avocats](/metiers/avocat) comment le CNB l'a traitée. Chez moi l'agent prépare par défaut et c'est l'étude qui envoie.
+Un brouillon relu puis envoyé par l'étude reste un courrier de l'étude. Un robot qui converse directement avec vos clients pose une autre question de secret et de responsabilité et [la page des avocats](/metiers/avocat) explique comment le CNB l'a traitée. Par défaut je préfère que l'agent prépare et que l'étude envoie.
 
 ### Se faire passer pour un humain
 
-Le règlement européen sur l'IA [est devenu applicable le 2 août 2026](https://digital-strategy.ec.europa.eu/fr/policies/regulatory-framework-ai) et son [article 50](https://ai-act-service-desk.ec.europa.eu/fr/ai-act/article-50) demande que toute personne qui échange avec une IA en soit informée. Si l'agent répond un jour à un premier contact, je le règle pour qu'il se présente comme l'assistant de l'étude.
+Le règlement européen sur l'IA [est devenu applicable le 2 août 2026](https://digital-strategy.ec.europa.eu/fr/policies/regulatory-framework-ai) et son [article 50](https://ai-act-service-desk.ec.europa.eu/fr/ai-act/article-50) demande que toute personne qui échange avec une IA en soit informée. Si l'agent répond un jour à un premier contact, il se présente comme l'assistant de l'étude.
 
 ## Comment ça se passe ?
 

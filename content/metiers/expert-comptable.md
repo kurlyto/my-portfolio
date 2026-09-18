@@ -2,12 +2,13 @@
 titre: "Agent IA pour expert-comptable : usages et données"
 description: "Ce qu'un agent IA prend en charge dans un cabinet d'expertise comptable, ce que recommande l'Ordre et comment protéger les données couvertes par le secret."
 h1: "Un agent IA pour votre cabinet d'expertise comptable"
-date: 2026-09-17
+date: 2026-09-03
 mot_cle: "agent ia expert comptable"
+mots_cles: ["agent IA expert-comptable", "collecte des pièces", "relances clients", "facture électronique", "secret professionnel"]
 ---
 Un agent IA pour expert-comptable est un assistant logiciel qui relance les justificatifs manquants, trie les factures reçues par mail, prépare les rappels d'échéances et répond aux questions récurrentes des clients sous le contrôle du cabinet. Il enlève du chemin la collecte et la relance pour que les collaborateurs passent leur temps sur la production et le conseil.
 
-L'Ordre lui-même encourage la profession à se saisir de l'IA, à une condition qu'il répète dans chacun de ses documents : ne pas charger de données clients non anonymisées dans un outil que le cabinet ne maîtrise pas. Je consacre donc un chapitre entier de cette page à la question des données.
+L'Ordre lui-même encourage la profession à se saisir de l'IA, à une condition qu'il répète dans chacun de ses documents : ne pas charger de données clients non anonymisées dans un outil que le cabinet ne maîtrise pas. Un chapitre entier de cette page est donc consacré à la question des données.
 
 <div class="encadre">
 <p><strong>En bref</strong></p>
@@ -23,7 +24,7 @@ Il faut ensuite ranger chaque facture dans le bon dossier avant l'import, rappel
 
 ## Que fait un agent IA dans un cabinet d'expertise comptable ?
 
-Imaginez un assistant dont l'unique obsession serait que chaque dossier soit complet le jour où un collaborateur l'ouvre. Je ne laisse jamais un agent passer une écriture engageante ni donner un conseil fiscal, mais il fait disparaître une bonne partie du travail de collecte. J'ai expliqué ailleurs [ce qu'est un agent IA](/blog/agent-ia-definition) en mots simples.
+Imaginez un assistant dont l'unique obsession serait que chaque dossier soit complet le jour où un collaborateur l'ouvre. Je ne laisse jamais un agent passer une écriture engageante ni donner un conseil fiscal, mais il fait disparaître une bonne partie du travail de collecte. Un autre article explique [ce qu'est un agent IA](/blog/agent-ia-definition) en mots simples.
 
 - **Les justificatifs manquants.** L'agent sait ce qui manque pour chaque client et prépare des relances personnalisées que le cabinet valide.
 - **Le tri des factures.** Il repère les factures reçues par mail et les range client par client avant l'import dans votre logiciel de production.
@@ -104,25 +105,25 @@ Du plus fermé au plus ouvert, cinq montages reviennent dans la pratique et chac
 
 Deux précisions évitent les mauvaises surprises. La première concerne la pseudonymisation qui remplace les noms par des codes avant l'envoi au modèle. La CNIL rappelle que des données pseudonymisées [restent des données personnelles](https://www.cnil.fr/fr/lanonymisation-de-donnees-personnelles) et le secret couvre de toute façon les informations que vos clients vous confient bien au-delà des noms. La seconde concerne le contrat, puisque le RGPD impose un [contrat de sous-traitance](https://www.cnil.fr/fr/rgpd-et-professionnels-de-sante-liberaux-ce-que-vous-devez-savoir) avec chaque prestataire qui touche aux données et que la CNIL recommande d'y interdire noir sur blanc toute réutilisation par le fournisseur.
 
-Le bon montage dépend enfin de ce que l'agent touche réellement. Un agent qui relance des justificatifs manquants manipule bien moins d'informations sensibles qu'un agent qui ouvre les FEC ou les bulletins de paie. Rien n'empêche donc de réserver le montage le plus fermé aux tâches qui touchent aux chiffres des clients. Je choisis le montage avec vous à l'audit et j'annonce chaque compromis avant de construire.
+Le bon montage dépend enfin de ce que l'agent touche réellement. Un agent qui relance des justificatifs manquants manipule bien moins d'informations sensibles qu'un agent qui ouvre les FEC ou les bulletins de paie. Rien n'empêche donc de réserver le montage le plus fermé aux tâches qui touchent aux chiffres des clients. Le montage se décide avec vous pendant l'audit et je vous dis avant de construire ce que chaque option vous fait abandonner.
 
 ## Ce qu'un agent IA ne doit pas faire à votre place
 
 ### Valider une déclaration ou un conseil fiscal
 
-Le modèle de charte proposé par l'Ordre pose que l'IA [ne remplace pas la décision humaine](https://www.experts-comptables.fr/sites/default/files/assets/files/COMMENT%20UTILISER%20CHATGPT%20-%20A4_p%C3%A0p.pdf) et le livre blanc de l'Ordre de Paris demande que toute production d'IA soit [relue et vérifiée](https://www.oec-paris.fr/wp-content/uploads/2025/09/livre-blanc_IA-et-data.pdf) avant d'être communiquée. Une erreur reste celle du cabinet, quel que soit l'outil qui l'a produite. Je construis donc l'agent pour que rien ne parte sans relecture.
+Le modèle de charte proposé par l'Ordre pose que l'IA [ne remplace pas la décision humaine](https://www.experts-comptables.fr/sites/default/files/assets/files/COMMENT%20UTILISER%20CHATGPT%20-%20A4_p%C3%A0p.pdf) et le livre blanc de l'Ordre de Paris demande que toute production d'IA soit [relue et vérifiée](https://www.oec-paris.fr/wp-content/uploads/2025/09/livre-blanc_IA-et-data.pdf) avant d'être communiquée. Une erreur reste celle du cabinet, quel que soit l'outil qui l'a produite. Rien ne part donc de l'agent sans relecture.
 
 ### Faire la vigilance anti-blanchiment à votre place
 
-L'agent peut aider à rassembler les pièces d'identification d'un client. La vigilance et la décision de déclarer un soupçon à Tracfin restent en revanche des obligations du professionnel et il est interdit d'en révéler l'existence au client. Je sors donc ces dossiers du périmètre de l'agent dès l'audit et la même règle vaut dans [une étude notariale](/metiers/notaire).
+L'agent peut aider à rassembler les pièces d'identification d'un client. La vigilance et la décision de déclarer un soupçon à Tracfin restent en revanche des obligations du professionnel et il est interdit d'en révéler l'existence au client. Je préfère donc sortir ces dossiers du périmètre de l'agent dès l'audit et la même règle vaut dans [une étude notariale](/metiers/notaire).
 
 ### Se prendre pour une plateforme de facturation électronique
 
-Depuis le 1er septembre 2026 toutes les entreprises concernées doivent pouvoir recevoir leurs factures électroniques [par une plateforme agréée](https://www.impots.gouv.fr/sites/default/files/media/1_metier/2_professionnel/EV/2_gestion/290_facturation_electronique/guide_pratique_facturation_electronique.pdf). Un agent IA n'en est pas une. Il peut préparer et trier, mais la réception et l'émission au sens de la réforme passent par la plateforme choisie. Je décris le côté client de cette chaîne sur la page des [consultants indépendants](/metiers/consultant).
+Depuis le 1er septembre 2026 toutes les entreprises concernées doivent pouvoir recevoir leurs factures électroniques [par une plateforme agréée](https://www.impots.gouv.fr/sites/default/files/media/1_metier/2_professionnel/EV/2_gestion/290_facturation_electronique/guide_pratique_facturation_electronique.pdf). Un agent IA n'en est pas une. Il peut préparer et trier, mais la réception et l'émission au sens de la réforme passent par la plateforme choisie. Le côté client de cette chaîne est décrit sur la page des [consultants indépendants](/metiers/consultant).
 
 ### Se faire passer pour un humain
 
-Le règlement européen sur l'IA [est devenu applicable le 2 août 2026](https://digital-strategy.ec.europa.eu/fr/policies/regulatory-framework-ai) et son [article 50](https://ai-act-service-desk.ec.europa.eu/fr/ai-act/article-50) demande que toute personne qui échange avec une IA en soit informée. Quand l'agent répond à un client, je le règle pour qu'il se présente comme l'assistant du cabinet.
+Le règlement européen sur l'IA [est devenu applicable le 2 août 2026](https://digital-strategy.ec.europa.eu/fr/policies/regulatory-framework-ai) et son [article 50](https://ai-act-service-desk.ec.europa.eu/fr/ai-act/article-50) demande que toute personne qui échange avec une IA en soit informée. Quand l'agent répond à un client, il se présente toujours comme l'assistant du cabinet.
 
 ## Comment ça se passe ?
 

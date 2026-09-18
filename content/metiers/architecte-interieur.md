@@ -2,8 +2,9 @@
 titre: "Agent IA pour architecte d'intérieur"
 description: "Premier contact, moodboard, devis d'artisans, commandes, chantier, honoraires et portfolio : ce qu'un agent IA fait pour un architecte d'intérieur."
 h1: "Un agent IA pour votre agence d'architecture d'intérieur"
-date: 2026-09-17
+date: 2026-09-14
 mot_cle: "agent ia architecte d'intérieur"
+mots_cles: ["agent IA architecte d'intérieur", "suivi de chantier", "planches d'ambiance", "artisans", "images générées par IA"]
 ---
 Un agent IA pour architecte d'intérieur est un assistant logiciel qui tient les coulisses de vos projets pendant que vous dessinez. Il qualifie les premiers contacts et relance les validations qui traînent, puis il suit les devis d'artisans, les commandes de mobilier et les honoraires. Il applique seul les règles que vous lui avez fixées et vient vous chercher pour tout le reste.
 
@@ -23,7 +24,7 @@ Aucune de ces tâches n'est difficile mais chacune interrompt la conception et c
 
 ## Que fait un agent IA pour un architecte d'intérieur ?
 
-Le poste ressemble à celui d'un assistant de projet qui n'aurait aucun avis sur la couleur des murs et une mémoire parfaite des dates. J'ai expliqué [ce qu'est un agent IA](/blog/agent-ia-definition) dans un article à part. Je pars toujours de la vie d'un projet parce que chaque étape produit sa propre paperasse.
+Le poste ressemble à celui d'un assistant de projet qui n'aurait aucun avis sur la couleur des murs et une mémoire parfaite des dates. Un article à part explique [ce qu'est un agent IA](/blog/agent-ia-definition). Le plus simple est de suivre la vie d'un projet parce que chaque étape produit sa propre paperasse.
 
 <figure>
 <ol class="flux">
@@ -44,7 +45,7 @@ Le poste ressemble à celui d'un assistant de projet qui n'aurait aucun avis sur
 
 Une demande qui arrive par le site, par Instagram ou par mail reçoit une réponse dans l'heure et cela vaut aussi le dimanche soir, quand les gens pensent enfin à leur salon. L'agent se présente comme l'assistant virtuel de l'agence et pose les questions que vous posez toujours sur la surface, le budget des travaux, le délai souhaité et le style qui attire le client. Il demande aussi des photos du lieu.
 
-Je fixe les règles de tri avec vous à l'audit. Une rénovation complète dans votre secteur se voit proposer deux créneaux alors qu'une demande très en dessous de votre budget plancher reçoit la réponse courtoise que vous avez rédigée une fois pour toutes.
+Les règles de tri se fixent avec vous à l'audit. Une rénovation complète dans votre secteur se voit proposer deux créneaux alors qu'une demande très en dessous de votre budget plancher reçoit la réponse courtoise que vous avez rédigée une fois pour toutes.
 
 <figure>
 <div class="message">
@@ -63,7 +64,7 @@ Je fixe les règles de tri avec vous à l'audit. Une rénovation complète dans 
 
 Après le premier rendez-vous vous dictez vos notes dans la voiture et l'agent en tire un brief propre que le client relit et complète. Il prépare ensuite une première planche à partir de ce brief, des photos du lieu et de votre propre bibliothèque de références. La planche arrive avec les prix publics des pièces repérées, si bien que la discussion sur le budget commence en même temps que celle sur le style.
 
-Je règle cette planche comme une base de travail pour vous et jamais comme un envoi direct au client. Vous gardez ce qui vous parle et la direction artistique demeure la vôtre du début à la fin.
+Cette planche reste une base de travail pour vous et ne part jamais directement chez le client. Vous gardez ce qui vous parle et la direction artistique demeure la vôtre du début à la fin.
 
 ### Des images d'ambiance pour ouvrir la discussion
 
@@ -84,7 +85,7 @@ Un plan envoyé sans réponse bloque tout ce qui suit. Vous fixez un délai de s
 <figcaption>Exemple de relance de validation soumise à l'architecte d'intérieur avant envoi. Le prénom, les dates et les chiffres sont fictifs.</figcaption>
 </figure>
 
-Un client important peut toujours passer par vous et je ne laisse jamais un agent relancer une seconde fois sans votre accord.
+Un client important peut toujours passer par vous et l'agent ne relance jamais une seconde fois sans votre accord.
 
 ## Devis d'artisans, commandes et chantier : que suit l'agent sans vous ?
 
@@ -92,7 +93,7 @@ Un client important peut toujours passer par vous et je ne laisse jamais un agen
 
 Trois électriciens ne chiffrent jamais la même chose de la même façon, même quand ils [dictent leur devis à un agent](/metiers/electricien). L'agent lit les devis reçus et les range dans un tableau aligné sur votre descriptif, poste par poste. Il vous signale ce qui manque chez l'un et ce qui est compté deux fois chez l'autre.
 
-Il vérifie aussi que chaque devis arrive avec l'attestation d'assurance décennale de l'entreprise, puisque [Service-Public](https://entreprendre.service-public.gouv.fr/vosdroits/F2034) rappelle qu'elle doit être jointe aux devis et aux factures. Je laisse le choix de l'artisan entre vos mains et celles de votre client.
+Il vérifie aussi que chaque devis arrive avec l'attestation d'assurance décennale de l'entreprise, puisque [Service-Public](https://entreprendre.service-public.gouv.fr/vosdroits/F2034) rappelle qu'elle doit être jointe aux devis et aux factures. Le choix de l'artisan reste entre vos mains et celles de votre client.
 
 ### La liste d'achats et les commandes
 
@@ -135,7 +136,7 @@ Deux semaines après la réception, l'agent envoie à chaque client sans excepti
 
 ## Ce qu'un agent IA ne doit pas faire à votre place
 
-Sur les sujets qui suivent ma réponse est non et mieux vaut le savoir avant de signer.
+Un agent sait techniquement faire une partie de ce qui suit et je refuse pourtant de le lui confier.
 
 ### Concevoir à votre place
 
@@ -157,7 +158,7 @@ Ouvrir la cuisine sur le séjour fait partie des demandes les plus courantes et 
 
 [Service-Public](https://entreprendre.service-public.gouv.fr/vosdroits/F2034) range le maître d'œuvre parmi les constructeurs tenus de souscrire une assurance décennale et l'absence de cette assurance peut coûter jusqu'à six mois d'emprisonnement et 75 000 € d'amende. Si vous suivez des chantiers, cette responsabilité court pendant dix ans après la réception et aucun outil ne la porte à votre place.
 
-L'agent aligne des chiffres et repère des écarts mais un métré ou une estimation ne part chez un client qu'après votre relecture. Je n'ai trouvé aucune position d'assureur sur les erreurs venues d'un outil d'IA et la question mérite d'être posée au vôtre.
+L'agent aligne des chiffres et repère des écarts mais un métré ou une estimation ne part chez un client qu'après votre relecture. Pour l'heure je n'ai trouvé aucune position d'assureur sur les erreurs venues d'un outil d'IA et la question mérite d'être posée au vôtre.
 
 ### Publier l'intérieur d'un client sans son accord
 

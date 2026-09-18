@@ -2,8 +2,9 @@
 titre: "Agent IA personnel pour la vie quotidienne et la famille"
 description: "Mails triés, abonnements surveillés, assurance comparée, papiers retrouvés, échéances et rendez-vous : ce qu'un agent IA personnel fait et ses limites."
 h1: "Un agent IA personnel pour votre vie quotidienne"
-date: 2026-09-17
+date: 2026-09-18
 mot_cle: "agent ia personnel"
+mots_cles: ["agent IA personnel", "tri des mails", "abonnements", "papiers administratifs", "rendez-vous"]
 ---
 Un agent IA personnel est un assistant logiciel qui lit vos mails, tient votre agenda, range vos papiers et surveille vos contrats pour que la paperasse du foyer cesse de vous courir après. Il applique seul les règles que vous lui avez fixées et vient vous chercher pour tout ce qui engage votre argent ou votre signature.
 
@@ -23,9 +24,9 @@ Aucune de ces tâches ne demande plus d'un quart d'heure mais il faut y penser a
 
 ## Que fait un agent IA personnel au quotidien ?
 
-Imaginez un secrétaire particulier qui ne dormirait jamais et qui n'aurait ni carte bancaire ni stylo pour signer. Si le mot « agent » vous paraît flou, j'ai écrit une [explication simple de ce qu'est un agent IA](/blog/agent-ia-definition). J'en utilise un moi-même tous les jours et je commence toujours un agent personnel par les mêmes missions.
+Imaginez un secrétaire particulier qui ne dormirait jamais et qui n'aurait ni carte bancaire ni stylo pour signer. Si le mot « agent » vous paraît flou, le blog propose une [explication simple de ce qu'est un agent IA](/blog/agent-ia-definition). J'en utilise un moi-même tous les jours et je commence toujours un agent personnel par les mêmes missions.
 
-Je fais tenir le tout dans un point du matin d'un seul message parce que dix messages par jour seraient une corvée de plus. Pour une entreprise j'ai conçu [Foxy](/foxy) qui réunit de la même façon mails, agenda, tâches et documents.
+Le tout tient dans un point du matin d'un seul message parce que dix messages par jour seraient une corvée de plus. Pour une entreprise j'ai conçu [Foxy](/foxy) qui réunit de la même façon mails, agenda, tâches et documents.
 
 <figure>
 <div class="message">
@@ -52,7 +53,7 @@ L'agent vous signale aussi le mail qui réclame un paiement urgent ou dont l'adr
 
 ### Les abonnements qui se renouvellent en silence
 
-Je fais d'abord dresser à l'agent la liste de ce que vous payez chaque mois à partir des factures et des confirmations reçues par mail. On y trouve la vidéo à la demande et la salle de sport mais aussi l'application essayée un soir et jamais résiliée.
+L'agent dresse d'abord la liste de ce que vous payez chaque mois à partir des factures et des confirmations reçues par mail. On y trouve la vidéo à la demande et la salle de sport mais aussi l'application essayée un soir et jamais résiliée.
 
 Chaque ligne reçoit sa date de renouvellement et vous êtes prévenu dix jours avant, quand il est encore temps de dire non.
 
@@ -111,7 +112,7 @@ La règle vient de la [garantie légale de conformité](https://www.service-publ
 
 Le premier contrôle technique d'une voiture se passe [dans les six mois qui précèdent son quatrième anniversaire](https://www.service-public.gouv.fr/particuliers/vosdroits/F2878) puis il revient tous les deux ans. La carte d'identité et le passeport semblent toujours expirer trois semaines avant un départ, la déclaration de revenus revient chaque printemps et les inscriptions à la cantine ou au centre de loisirs ferment à date fixe.
 
-L'agent relève ces dates dans vos documents et vos mails et je règle avec vous le délai de chaque alerte, soit deux mois avant pour un passeport et non la veille.
+L'agent relève ces dates dans vos documents et vos mails et le délai de chaque alerte se règle avec vous, soit deux mois avant pour un passeport et non la veille.
 
 ## Rendez-vous, enfants, week-ends : qui porte la charge mentale ?
 
@@ -143,13 +144,13 @@ Le dimanche soir il propose les menus de la semaine et la liste de courses arriv
 
 ## Ce qu'un agent IA ne doit pas faire à votre place
 
-Sur les sujets qui suivent ma réponse est non et mieux vaut le savoir avant de commencer.
+Sur les sujets qui suivent la réponse est non et mieux vaut le savoir avant de commencer.
 
 ### Payer ou signer sans vous
 
-Tout ce qui engage votre argent ou votre nom attend votre validation et mes propres agents me demandent eux aussi mon feu vert avant tout envoi. L'agent prépare la lettre et remplit le formulaire mais il n'a ni votre carte bancaire ni votre signature. Le centre d'alerte de l'ANSSI demande dans [son bulletin d'avril 2026 sur les agents IA](https://www.cert.ssi.gouv.fr/actualite/CERTFR-2026-ACT-016/) qu'une validation humaine soit obligatoire avant toute action qui modifie quelque chose.
+Tout ce qui engage votre argent ou votre nom attend votre validation. L'agent prépare la lettre et remplit le formulaire mais il n'a ni votre carte bancaire ni votre signature. Le centre d'alerte de l'ANSSI demande dans [son bulletin d'avril 2026 sur les agents IA](https://www.cert.ssi.gouv.fr/actualite/CERTFR-2026-ACT-016/) qu'une validation humaine soit obligatoire avant toute action qui modifie quelque chose.
 
-Le même bulletin décrit le mail piégé qui cache des consignes destinées à l'agent et personne ne sait bloquer cette attaque à coup sûr. Je ne donne donc à l'agent que les accès dont il a besoin.
+Le même bulletin décrit le mail piégé qui cache des consignes destinées à l'agent et personne ne sait bloquer cette attaque à coup sûr. L'agent ne reçoit donc que les accès dont il a besoin.
 
 ### Recevoir le mot de passe de votre banque
 
@@ -163,17 +164,17 @@ Comparer deux contrats à garanties égales revient à poser des chiffres côte 
 
 ### Donner un avis médical
 
-L'agent prend le rendez-vous et s'arrête là. Il ne commente ni un symptôme ni un résultat d'analyse et si vous lui posez la question il vous renvoie vers votre médecin ou vers le 15 en cas d'urgence. Les informations de santé font partie des [données sensibles](https://www.cnil.fr/fr/definition/donnee-sensible) au sens de la CNIL et l'agent n'en garde que ce que vous lui avez demandé de noter. J'explique ce que ces données exigent d'un hébergeur sur la page des [kinés et ostéopathes](/metiers/kine).
+L'agent prend le rendez-vous et s'arrête là. Il ne commente ni un symptôme ni un résultat d'analyse et si vous lui posez la question il vous renvoie vers votre médecin ou vers le 15 en cas d'urgence. Les informations de santé font partie des [données sensibles](https://www.cnil.fr/fr/definition/donnee-sensible) au sens de la CNIL et l'agent n'en garde que ce que vous lui avez demandé de noter. La page des [kinés et ostéopathes](/metiers/kine) explique ce que ces données exigent d'un hébergeur.
 
 ### Envoyer vos données n'importe où
 
 Un agent qui lit vos mails les fait passer par un modèle d'IA et tout dépend de ce que son fournisseur en fait. La CNIL constate que [de plus en plus d'entreprises utilisent les données de leurs utilisateurs pour entraîner leurs modèles](https://www.cnil.fr/fr/ia-comment-sopposer-la-reutilisation-de-ses-donnees-personnelles-entrainement-agent-conversationnel) et explique comment s'y opposer. Les offres professionnelles obéissent à d'autres règles et Anthropic écrit qu'il [n'entraîne pas ses modèles par défaut sur les données de ses produits commerciaux](https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training).
 
-Je vous dis donc avant de commencer quel modèle lit vos mails et sous quel contrat, sans vous promettre que vos données ne quittent jamais l'Europe quand le fournisseur est américain. Le chapitre que j'ai écrit pour [les cabinets d'avocats](/metiers/avocat) détaille les montages possibles du plus souverain au moins souverain.
+Avant de commencer je vous dis donc quel modèle lit vos mails et sous quel contrat, sans vous promettre que vos données ne quittent jamais l'Europe quand le fournisseur est américain. Le chapitre écrit pour [les cabinets d'avocats](/metiers/avocat) détaille les montages possibles du plus souverain au moins souverain.
 
 ### Ficher vos proches
 
-Votre boîte mail parle aussi de votre conjoint, de vos enfants et de vos parents et l'agent n'en retient que l'utile comme une date ou un document à rendre. Pour les enfants la CNIL rappelle qu'avant 15 ans [l'accord d'un parent est requis](https://www.cnil.fr/fr/recommandation-4-rechercher-le-consentement-dun-parent-pour-les-mineurs-de-moins-de-15-ans) pour les services en ligne fondés sur le consentement. Je ne construis donc pas d'agent qui discute avec un enfant.
+Votre boîte mail parle aussi de votre conjoint, de vos enfants et de vos parents et l'agent n'en retient que l'utile comme une date ou un document à rendre. Pour les enfants la CNIL rappelle qu'avant 15 ans [l'accord d'un parent est requis](https://www.cnil.fr/fr/recommandation-4-rechercher-le-consentement-dun-parent-pour-les-mineurs-de-moins-de-15-ans) pour les services en ligne fondés sur le consentement. Un agent personnel ne discute donc jamais avec un enfant.
 
 ## Comment ça se passe ?
 

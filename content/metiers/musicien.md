@@ -2,12 +2,13 @@
 titre: "Agent IA pour musicien et professeur de musique"
 description: "Booking, relances des salles, tournée, sortie d'un titre, Sacem, cachets et élèves : ce qu'un agent IA automatise pour un musicien et ce qu'il ne fera jamais."
 h1: "Un agent IA pour les musiciens et les professeurs de musique"
-date: 2026-09-17
+date: 2026-09-02
 mot_cle: "agent ia musicien"
+mots_cles: ["agent IA musicien", "démarchage de salles", "cours de musique", "cachets", "lettre d'information"]
 ---
 Un agent IA pour musicien est un assistant logiciel qui prend en charge le démarchage des salles, les relances, la promotion des sorties et l'administratif pendant que vous jouez ou que vous donnez cours. Il applique seul les règles que vous lui avez fixées et vient vous chercher pour tout le reste.
 
-Autant lever le malentendu tout de suite : cet agent ne compose rien et ne joue rien. Les générateurs de chansons comme Suno sont un tout autre sujet et l'agent dont je parle s'occupe du travail de bureau qui entoure la musique et qui finit par prendre la place des répétitions.
+Autant lever le malentendu tout de suite : cet agent ne compose rien et ne joue rien. Les générateurs de chansons comme Suno sont un tout autre sujet et l'agent décrit ici s'occupe du travail de bureau qui entoure la musique et qui finit par prendre la place des répétitions.
 
 <div class="encadre">
 <p><strong>En bref</strong></p>
@@ -25,7 +26,7 @@ Aucune de ces tâches n'est difficile mais elles arrivent toutes ensemble et se 
 
 ## Que fait un agent IA pour un musicien ?
 
-Imaginez un régisseur qui ne monterait jamais sur scène et qui tiendrait à la place la boîte mail, le fichier des salles et le carnet de factures. Si le mot « agent » vous paraît flou, j'ai écrit une [explication simple de ce qu'est un agent IA](/blog/agent-ia-definition). Pour un musicien je commence toujours par les cinq mêmes missions parce qu'elles reviennent chaque semaine.
+Imaginez un régisseur qui ne monterait jamais sur scène et qui tiendrait à la place la boîte mail, le fichier des salles et le carnet de factures. Si le mot « agent » vous paraît flou, j'ai écrit une [explication simple de ce qu'est un agent IA](/blog/agent-ia-definition). Pour un musicien tout commence par les cinq mêmes missions parce qu'elles reviennent chaque semaine.
 
 - **Les relances des salles.** L'agent réécrit aux salles restées muettes en reprenant le fil de chaque échange.
 - **Les demandes sur Instagram.** Il propose vos créneaux d'essai du mercredi et vous transmet toute proposition de concert.
@@ -47,11 +48,11 @@ Imaginez un régisseur qui ne monterait jamais sur scène et qui tiendrait à la
 <figcaption>Exemple de point du vendredi reçu sur le téléphone. Les chiffres sont fictifs et seul le décompte de France Travail fait foi pour vos heures.</figcaption>
 </figure>
 
-Je vois ces cinq missions comme un point de départ. Un musicien fait en réalité trois métiers de bureau puisqu'il prospecte quand il cherche des dates, fait du marketing quand il sort un titre et de l'administratif le reste du temps.
+Ces cinq missions sont un point de départ. Un musicien fait en réalité trois métiers de bureau puisqu'il prospecte quand il cherche des dates, fait du marketing quand il sort un titre et de l'administratif le reste du temps.
 
 ## Comment trouver des dates de concert sans y passer ses soirées ?
 
-À mon avis le booking est une prospection commerciale qui ne dit pas son nom et c'est le terrain où un agent va le plus loin. La mécanique est celle que je décris pour [la prospection d'un consultant indépendant](/metiers/consultant).
+À mon avis le booking est une prospection commerciale qui ne dit pas son nom et c'est le terrain où un agent va le plus loin. La mécanique est la même que pour [la prospection d'un consultant indépendant](/metiers/consultant).
 
 ### Repérer qui programme votre style
 
@@ -61,13 +62,13 @@ L'agent cherche ensuite le nom de la personne qui programme et la date de la pro
 
 ### L'agent part de votre fichier au lieu de le remplacer
 
-Beaucoup de musiciens tiennent déjà un tableur des salles et un outil qui demanderait de tout ressaisir finirait vite au placard. Je branche donc l'agent sur ce tableau et il y écrit lui-même chaque mail envoyé et chaque réponse reçue.
+Beaucoup de musiciens tiennent déjà un tableur des salles et un outil qui demanderait de tout ressaisir finirait vite au placard. L'agent se branche donc sur ce tableau et il y écrit lui-même chaque mail envoyé et chaque réponse reçue.
 
 Ce fichier sait aussi ce qu'un logiciel d'envoi en masse ignore. Certains programmateurs vous ont déjà fait jouer et ces pistes chaudes ne reçoivent pas le même message qu'un inconnu. Le dossier joint s'adapte lui aussi, si bien qu'un café-concert reçoit la bio courte et la formule en duo alors qu'un festival reçoit la captation live et la fiche technique.
 
 ### Des relances qui suivent la réponse
 
-Une fois le mail type validé, un silence de deux semaines déclenche la première relance et un « pas cette saison » est noté avec un rappel pour la programmation suivante alors qu'un refus net arrête tout. Je trouve qu'une relance sèche agace et je demande donc à l'agent d'attendre de préférence une actualité pour réécrire, par exemple un titre qui sort ou une première partie décrochée.
+Une fois le mail type validé, un silence de deux semaines déclenche la première relance et un « pas cette saison » est noté avec un rappel pour la programmation suivante alors qu'un refus net arrête tout. Une relance sèche agace et l'agent attend donc de préférence une actualité pour réécrire, par exemple un titre qui sort ou une première partie décrochée.
 
 Il s'arrête dès qu'une réponse sort du cadre. Une salle qui propose une date ou un programmateur qui parle d'argent remontent vers vous avec un brouillon de réponse. Je ne laisse jamais un agent accepter **une date** ni négocier un cachet de sa propre initiative.
 
@@ -75,7 +76,7 @@ Il s'arrête dès qu'une réponse sort du cadre. Une salle qui propose une date 
 
 Prenons une salle située à six heures de train qui vous propose une date. Une fois payés le billet, la nuit d'hôtel et les techniciens, le cachet ne couvre plus les frais et la date vous coûte de l'argent si elle reste seule.
 
-L'agent fait ce calcul parce que je lui donne dès le départ votre coût de plateau et votre règle du jeu, par exemple jamais de date à perte sauf une première partie qui rapporte en visibilité. Il cherche alors les salles de la même région puis prépare des demandes pour la veille et le lendemain, si bien que le même billet de train s'amortit sur plusieurs soirs et qu'une date déficitaire devient une petite tournée.
+L'agent fait ce calcul parce qu'il connaît dès le départ votre coût de plateau et votre règle du jeu, par exemple jamais de date à perte sauf une première partie qui rapporte en visibilité. Il cherche alors les salles de la même région puis prépare des demandes pour la veille et le lendemain, si bien que le même billet de train s'amortit sur plusieurs soirs et qu'une date déficitaire devient une petite tournée.
 
 <figure>
 <div class="message">
@@ -111,7 +112,7 @@ Spotify demande par exemple de présenter un inédit à son équipe éditoriale 
 
 Les radios locales, les webzines et les blogs se traitent comme les salles. Un second fichier reçoit l'annonce avec le lien d'écoute et l'agent note qui a diffusé, si bien que la sortie suivante démarre avec une liste déjà triée. Si vous passez par une plateforme de pitch payante, il rédige les pitchs et dépouille les retours pour enrichir ce fichier.
 
-Pour Instagram, l'agent lit d'abord l'historique de vos publications pour attraper votre vocabulaire. Il propose ensuite les posts qui entourent la sortie sous forme de brouillons et rien ne se publie sans votre accord. Mes propres agents attendent eux aussi mon feu vert avant tout envoi.
+Pour Instagram, l'agent lit d'abord l'historique de vos publications pour attraper votre vocabulaire. Il propose ensuite les posts qui entourent la sortie sous forme de brouillons et rien ne se publie sans votre accord.
 
 Reste la lettre d'information que presque tout le monde repousse et que je conseille pourtant de lancer tôt parce qu'une liste de mails vous appartient. L'agent prépare chaque mois une lettre courte avec la sortie, les dates à venir et le lien de la billetterie. Vos fans sont des particuliers et la CNIL exige [leur accord avant le premier envoi](https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique), si bien que l'agent n'écrit qu'aux personnes qui se sont inscrites.
 
@@ -141,7 +142,7 @@ L'agent tient le planning et envoie un rappel la veille du cours. C'est la même
 
 ## Ce qu'un agent IA ne doit pas faire à votre place
 
-Certains outils promettent beaucoup sur les sujets qui suivent. Chez moi la réponse est non et mieux vaut le savoir avant de commencer.
+Certains outils promettent beaucoup sur les sujets qui suivent. Aucune de ces promesses n'entrera dans votre agent et autant que vous le sachiez dès maintenant.
 
 ### Composer ou écrire à votre place
 
@@ -163,7 +164,7 @@ De la même façon, c'est à celui qui organise le concert de [demander l'autori
 
 ### Se faire passer pour vous
 
-Le règlement européen sur l'IA [est devenu applicable le 2 août 2026](https://digital-strategy.ec.europa.eu/fr/policies/regulatory-framework-ai) et son [article 50](https://ai-act-service-desk.ec.europa.eu/fr/ai-act/article-50) demande que toute personne qui échange avec une IA en soit informée. Quand l'agent répond seul à une demande de cours d'essai sur Instagram, je le règle donc pour qu'il se présente comme votre assistant et il ne signe jamais de votre prénom.
+Le règlement européen sur l'IA [est devenu applicable le 2 août 2026](https://digital-strategy.ec.europa.eu/fr/policies/regulatory-framework-ai) et son [article 50](https://ai-act-service-desk.ec.europa.eu/fr/ai-act/article-50) demande que toute personne qui échange avec une IA en soit informée. Quand l'agent répond seul à une demande de cours d'essai sur Instagram, il se présente donc comme votre assistant et ne signe jamais de votre prénom.
 
 ## Comment ça se passe ?
 

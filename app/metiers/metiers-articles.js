@@ -8,7 +8,8 @@
 // actuelle : on les ecrit un par un, chacun relu par Nathan.
 //
 // En-tete : titre (title de l'onglet, le suffixe du site s'ajoute : 60 caracteres
-// au total), description (meta, 155 max), h1, date, maj (optionnel), mot_cle.
+// au total), description (meta, 155 max), h1, date, maj (optionnel), mot_cle,
+// mots_cles (liste affichee en bas d'article), lire_aussi (optionnel).
 // Le H1 vit dans l'en-tete et non dans le corps : la page l'affiche suivi de la
 // date, de l'auteur et du sommaire (retour de Nathan le 16/09 : un mur de texte
 // sans date ni chapitres ne fait pas vrai). Le sommaire se tire des H2.
@@ -37,6 +38,8 @@ export function getArticleMetier(slug) {
     date: enIso(data.date),
     maj: enIso(data.maj),
     minutes: minutesDeLecture(content),
+    motsCles: Array.isArray(data.mots_cles) ? data.mots_cles : [],
+    lireAussi: Array.isArray(data.lire_aussi) ? data.lire_aussi : [],
     chapitres,
     html,
   };

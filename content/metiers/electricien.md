@@ -2,8 +2,9 @@
 titre: "Agent IA pour électricien"
 description: "Demandes de devis, devis dicté, relances, matériel, chantiers longs, bornes et syndics : ce qu'un agent IA fait pour un électricien, et ses limites."
 h1: "Un agent IA pour votre entreprise d'électricité"
-date: 2026-09-17
+date: 2026-09-09
 mot_cle: "agent ia électricien"
+mots_cles: ["agent IA électricien", "devis", "suivi de chantier", "facture électronique", "relances"]
 ---
 Un agent IA pour électricien est un assistant logiciel qui tient le bureau de l'entreprise pendant que vous êtes sur un chantier. Il répond aux demandes de devis et met au propre celui que vous lui dictez puis il relance les clients qui ne répondent pas et prépare les factures. Il applique seul les règles que vous lui avez fixées et vient vous chercher pour tout le reste.
 
@@ -21,7 +22,7 @@ Chacun de ces messages se règle en cinq minutes, sauf qu'on ne répond pas au t
 
 ## Que fait un agent IA chez un électricien ?
 
-Le poste ressemble à celui d'une secrétaire de chantier qui connaîtrait votre agenda et votre grille de tarifs et qui ne monterait jamais sur un escabeau. J'ai expliqué [ce qu'est un agent IA](/blog/agent-ia-definition) dans un article à part. Chez un électricien son travail tient en quatre missions : répondre aux demandes et sortir les devis, suivre les chantiers jusqu'à la facture et remplir le carnet de commandes.
+Le poste ressemble à celui d'une secrétaire de chantier qui connaîtrait votre agenda et votre grille de tarifs et qui ne monterait jamais sur un escabeau. Un article à part explique [ce qu'est un agent IA](/blog/agent-ia-definition). Chez un électricien son travail tient en quatre missions : répondre aux demandes et sortir les devis, suivre les chantiers jusqu'à la facture et remplir le carnet de commandes.
 
 Vous lui parlez comme à un employé, par message ou à la voix depuis la camionnette. Inutile de tout lui confier d'un coup parce que je préfère de loin un agent qui tient **très bien les demandes et les devis** à un agent qui bâcle toute la chaîne.
 
@@ -49,7 +50,7 @@ Vous retrouvez alors une fiche complète à la place d'un « rappelez-moi » et 
 
 L'agent propose les passages d'après votre agenda et d'après la carte. Une visite à Illkirch se glisse le jour où vous travaillez déjà à côté et la veille il vous envoie la tournée avec les adresses et le matériel à charger.
 
-Vous décidez aussi de ce qui ne peut pas attendre. Une panne générale chez un client sous contrat vous est remontée tout de suite par un appel alors qu'une demande de prises supplémentaires attend le récap du soir. J'ai détaillé ce tri dans la page sur [l'astreinte d'un plombier](/metiers/plombier).
+Vous décidez aussi de ce qui ne peut pas attendre. Une panne générale chez un client sous contrat vous est remontée tout de suite par un appel alors qu'une demande de prises supplémentaires attend le récap du soir. Ce tri est détaillé dans la page sur [l'astreinte d'un plombier](/metiers/plombier).
 
 ## Comment passer d'un vocal à un devis signé ?
 
@@ -57,7 +58,7 @@ Vous décidez aussi de ce qui ne peut pas attendre. Une panne générale chez un
 
 En remontant dans la camionnette vous dictez le chantier comme vous le raconteriez à un collègue. Cela donne « tableau à remplacer avec deux différentiels 30 milliampères, six prises dans la cuisine, une ligne dédiée pour la plaque et une demi-journée à deux ».
 
-L'agent range chaque ligne dans votre modèle de devis avec votre en-tête et les prix de votre grille. Je le règle pour qu'il signale ce qu'il n'a pas trouvé plutôt que de l'inventer et le devis vous attend en brouillon. Si votre logiciel de devis accepte un outil extérieur, l'agent écrit directement dedans et sinon il produit un PDF.
+L'agent range chaque ligne dans votre modèle de devis avec votre en-tête et les prix de votre grille. Il signale ce qu'il n'a pas trouvé plutôt que de l'inventer et le devis vous attend en brouillon. Si votre logiciel de devis accepte un outil extérieur, l'agent écrit directement dedans et sinon il produit un PDF.
 
 <figure>
 <div class="message">
@@ -73,13 +74,13 @@ L'agent range chaque ligne dans votre modèle de devis avec votre en-tête et le
 
 ### Les mentions qui ne s'oublient plus
 
-L'électricité fait partie des activités où le devis est obligatoire avant les travaux et [Entreprendre Service-Public](https://entreprendre.service-public.gouv.fr/vosdroits/F31144) liste ce qu'il doit contenir. Le décompte détaillé en quantité et en prix y côtoie le taux horaire TTC, les frais de déplacement et la durée de validité de l'offre. Je règle ces mentions une fois dans le modèle et ni vous ni l'agent n'avez plus à y penser.
+L'électricité fait partie des activités où le devis est obligatoire avant les travaux et [Entreprendre Service-Public](https://entreprendre.service-public.gouv.fr/vosdroits/F31144) liste ce qu'il doit contenir. Le décompte détaillé en quantité et en prix y côtoie le taux horaire TTC, les frais de déplacement et la durée de validité de l'offre. Ces mentions se règlent une fois dans le modèle et ni vous ni l'agent n'avez plus à y penser.
 
 La même fiche rappelle un détail qui coûte cher quand on l'ignore. Une somme versée à la commande est considérée comme des arrhes si le contrat ne précise rien et le client peut alors renoncer en abandonnant la somme. Le mot « acompte » écrit en toutes lettres sur le devis engage les deux parties.
 
 ### Les relances que personne n'aime faire
 
-Un devis envoyé sans relance est souvent un devis perdu parce que le client en a demandé trois et qu'il signe avec celui qui s'est manifesté. L'agent relance au bout d'une semaine avec un message court qui propose de répondre aux questions, puis une seconde fois quinze jours plus tard. Je ne vais jamais au-delà de deux relances et l'agent s'arrête aussi dès que le client dit non.
+Un devis envoyé sans relance est souvent un devis perdu parce que le client en a demandé trois et qu'il signe avec celui qui s'est manifesté. L'agent relance au bout d'une semaine avec un message court qui propose de répondre aux questions, puis une seconde fois quinze jours plus tard. Pour ma part je ne vais jamais au-delà de deux relances et l'agent s'arrête aussi dès que le client dit non.
 
 Quand le client répond « c'est trop cher » ou « peut-on enlever la cuisine ? », l'agent vous transmet la question sans négocier à votre place.
 
@@ -91,7 +92,7 @@ L'agent tire du devis signé une commande pour votre grossiste avec les référe
 
 ### Les chantiers longs et leurs papiers
 
-Une rénovation complète dure des semaines et dépend des autres corps de métier. L'agent tient le planning partagé et demande chaque vendredi au plaquiste ou au plombier si leur date tient toujours. Quand le placo glisse d'une semaine, il vous propose de déplacer votre seconde intervention et prévient le client. C'est le même suivi que celui que je décris pour [le chantier d'un architecte d'intérieur](/metiers/architecte-interieur).
+Une rénovation complète dure des semaines et dépend des autres corps de métier. L'agent tient le planning partagé et demande chaque vendredi au plaquiste ou au plombier si leur date tient toujours. Quand le placo glisse d'une semaine, il vous propose de déplacer votre seconde intervention et prévient le client. C'est le même suivi que pour [le chantier d'un architecte d'intérieur](/metiers/architecte-interieur).
 
 Il suit aussi l'argent du chantier : l'acompte se réclame à la signature et les situations de travaux partent aux étapes prévues au devis. Une facture restée impayée après son échéance reçoit un rappel poli dont vous avez validé le texte.
 
@@ -137,7 +138,7 @@ Le dépannage fait tourner la semaine mais les chantiers qui font l'année se ch
 
 ### Les syndics et les agences par mail
 
-L'agent dresse la liste des syndics, des agences et des gestionnaires de biens dans votre rayon d'action à partir de sources publiques. Il prépare pour chacun un mail court qui dit ce que vous faites, dans quel délai vous intervenez et comment vous joindre. Je vous fais toujours relire le premier envoi et l'agent suit ensuite les réponses, relance une fois et note qui veut être rappelé au printemps. Ce démarchage entre professionnels a ses règles et j'y reviens plus bas.
+L'agent dresse la liste des syndics, des agences et des gestionnaires de biens dans votre rayon d'action à partir de sources publiques. Il prépare pour chacun un mail court qui dit ce que vous faites, dans quel délai vous intervenez et comment vous joindre. Je tiens à ce que vous relisiez le premier envoi et l'agent suit ensuite les réponses, relance une fois et note qui veut être rappelé au printemps. Ce démarchage entre professionnels a ses règles que vous trouverez plus bas.
 
 ### Les appels d'offres de votre secteur
 
@@ -145,7 +146,7 @@ Les mairies et les bailleurs sociaux publient leurs marchés d'éclairage, de mi
 
 ## Ce qu'un agent IA ne doit pas faire à votre place
 
-Sur les sujets qui suivent ma réponse est non et mieux vaut le savoir avant de signer.
+Certaines tâches restent fermées à l'agent parce qu'elles engagent votre responsabilité ou la confiance de vos clients.
 
 ### Dimensionner une installation ou juger de sa conformité
 
@@ -153,7 +154,7 @@ Une IA généraliste parle de sections de câble et de calibres avec beaucoup d'
 
 ### Envoyer un devis que vous n'avez pas relu
 
-Un devis accepté [engage le professionnel](https://entreprendre.service-public.gouv.fr/vosdroits/F31144) et une ligne oubliée reste à votre charge. La même fiche prévoit une amende administrative qui peut atteindre 3 000 € pour un entrepreneur individuel et 15 000 € pour une société quand le devis obligatoire n'est pas remis. Mes propres agents me demandent mon feu vert avant tout envoi et je garde la même règle pour vos devis, même quand ils ne comptent que trois lignes.
+Un devis accepté [engage le professionnel](https://entreprendre.service-public.gouv.fr/vosdroits/F31144) et une ligne oubliée reste à votre charge. La même fiche prévoit une amende administrative qui peut atteindre 3 000 € pour un entrepreneur individuel et 15 000 € pour une société quand le devis obligatoire n'est pas remis. Je ne transige pas sur ce point et aucun devis ne part sans votre feu vert, même quand il ne compte que trois lignes.
 
 ### Vendre des bornes sans la qualification
 
@@ -165,7 +166,7 @@ Depuis le 11 août 2026 un professionnel n'a [plus le droit d'appeler un particu
 
 ### Garder les codes d'alarme et les accès de vos clients
 
-Un électricien qui pose de la domotique ou une alarme connaît des codes, des plans et des habitudes de vie. Ces informations ne doivent pas entrer dans l'agent, qui n'en a pas besoin pour faire un devis ou une facture. France Num a conçu avec la CPME et la [CNIL](https://www.cnil.fr/fr/utiliser-lia-generative-dans-les-tpe-et-pme) quatre fiches qui aident les petites entreprises à choisir un outil d'IA et à l'utiliser avec précaution. La question de l'endroit où partent les données mérite une réponse écrite de la part de tout prestataire, moi compris. J'ai écrit un guide sur ce sujet dans la page sur [l'agent IA d'un avocat](/metiers/avocat).
+Un électricien qui pose de la domotique ou une alarme connaît des codes, des plans et des habitudes de vie. Ces informations ne doivent pas entrer dans l'agent, qui n'en a pas besoin pour faire un devis ou une facture. France Num a conçu avec la CPME et la [CNIL](https://www.cnil.fr/fr/utiliser-lia-generative-dans-les-tpe-et-pme) quatre fiches qui aident les petites entreprises à choisir un outil d'IA et à l'utiliser avec précaution. La question de l'endroit où partent les données mérite une réponse écrite de la part de tout prestataire, moi compris. La page sur [l'agent IA d'un avocat](/metiers/avocat) contient un guide sur ce sujet.
 
 ### Se faire passer pour un humain
 

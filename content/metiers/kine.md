@@ -2,12 +2,13 @@
 titre: "IA pour kiné et ostéopathe : usages et données de santé"
 description: "Ce qu'un agent IA prend en charge dans un cabinet de kiné ou d'ostéopathie, les règles sur les données de santé et comment garder la main sur les dossiers patients."
 h1: "Un agent IA pour votre cabinet de kiné ou d'ostéopathie"
-date: 2026-09-17
+date: 2026-08-28
 mot_cle: "ia kiné"
+mots_cles: ["agent IA kinésithérapeute", "données de santé", "agenda du cabinet", "liste d'attente", "comptes rendus"]
 ---
 Un agent IA pour kinésithérapeute ou ostéopathe est un assistant logiciel qui gère la liste d'attente, relance les patients perdus de vue, prend les rendez-vous pendant les séances et met en forme les notes dictées après une consultation. Il s'occupe de l'administratif pour que le praticien reste auprès de ses patients.
 
-Tout ce qui touche au soin relève pourtant des données de santé, qui sont parmi les plus protégées du droit français. Je consacre un chapitre entier de cette page à la manière de les traiter et à ce que change le choix du modèle d'IA.
+Tout ce qui touche au soin relève pourtant des données de santé, qui sont parmi les plus protégées du droit français. Un chapitre entier de cette page explique la manière de les traiter et ce que change le choix du modèle d'IA.
 
 <div class="encadre">
 <p><strong>En bref</strong></p>
@@ -23,7 +24,7 @@ Une annulation de dernière minute laisse un créneau vide alors que trois patie
 
 ## Que fait un agent IA dans un cabinet de kiné ?
 
-Imaginez une secrétaire médicale qui ne serait jamais en pause déjeuner et qui connaîtrait votre agenda mieux que vous. Je ne laisse jamais un agent toucher au traitement, mais il garde le cabinet plein et les dossiers à jour. Si le mot « agent » vous paraît flou, j'ai écrit une [explication simple de ce qu'est un agent IA](/blog/agent-ia-definition).
+Imaginez une secrétaire médicale qui ne serait jamais en pause déjeuner et qui connaîtrait votre agenda mieux que vous. Je refuse qu'un agent touche au traitement, mais il garde le cabinet plein et les dossiers à jour. Si le mot « agent » vous paraît flou, une [explication simple de ce qu'est un agent IA](/blog/agent-ia-definition) vous attend sur le blog.
 
 - **La liste d'attente.** Dès qu'un patient annule, l'agent propose le créneau par SMS aux patients qui attendaient une place.
 - **Les patients perdus de vue.** Il repère ceux qui n'ont plus de rendez-vous depuis trois semaines en pleine rééducation et prépare une relance que vous validez.
@@ -42,7 +43,7 @@ Imaginez une secrétaire médicale qui ne serait jamais en pause déjeuner et qu
 <figcaption>Exemple d'annulation rattrapée pendant une séance. Aucune donnée de soin ne circule dans ce message et les horaires sont fictifs.</figcaption>
 </figure>
 
-C'est la même mécanique que [la liste d'attente d'un salon de coiffure](/metiers/coiffeur) et je construis d'abord cette partie parce qu'elle n'ouvre jamais le dossier de soins.
+C'est la même mécanique que [la liste d'attente d'un salon de coiffure](/metiers/coiffeur) et je conseille de commencer par cette partie parce qu'elle n'ouvre jamais le dossier de soins.
 
 ## Données de santé : où vont les informations de vos patients ?
 
@@ -107,13 +108,13 @@ Deux précisions évitent les mauvaises surprises. La première concerne la pseu
 
 Un cabinet de santé ajoute une contrainte qui ne se discute pas. Chaque maillon qui stocke des données de patients doit se trouver chez un hébergeur certifié HDS, de la messagerie aux sauvegardes en passant par les brouillons. Cloud Temple annonce par exemple une [inférence sur une infrastructure qualifiée SecNumCloud et certifiée HDS](https://www.cloud-temple.com/en/products/large-language-model-as-a-service-llmaas/). Savoir si un fournisseur d'IA qui ne conserve rien est un hébergeur au sens de la loi reste une question sans réponse officielle et c'est pourquoi je penche pour les montages les plus fermés.
 
-Le bon montage dépend enfin de ce que l'agent touche réellement. La liste d'attente et les relances manipulent déjà des données de patients sans ouvrir le dossier de soins, alors que la mise en forme des notes de séance touche le cœur des données de santé. Rien n'empêche donc de réserver le montage le plus fermé à ces notes. Je choisis le montage avec vous à l'audit et j'annonce chaque compromis avant de construire.
+Le bon montage dépend enfin de ce que l'agent touche réellement. La liste d'attente et les relances manipulent déjà des données de patients sans ouvrir le dossier de soins, alors que la mise en forme des notes de séance touche le cœur des données de santé. Rien n'empêche donc de réserver le montage le plus fermé à ces notes. Nous tranchons ce point ensemble à l'audit et vous connaissez chaque concession avant le début de la construction.
 
 ## Ce qu'un agent IA ne doit pas faire à votre place
 
 ### Poser un diagnostic ou adapter un traitement
 
-La Haute Autorité de santé rappelle qu'[aucun contenu généré par une IA n'est vérifié par défaut](https://www.has-sante.fr/jcms/p_3703115/fr/premieres-clefs-d-usage-de-l-ia-generative-en-sante). Je construis l'agent pour qu'un compte rendu reste un brouillon tant que vous ne l'avez pas relu et la responsabilité du soin reste entièrement la vôtre.
+La Haute Autorité de santé rappelle qu'[aucun contenu généré par une IA n'est vérifié par défaut](https://www.has-sante.fr/jcms/p_3703115/fr/premieres-clefs-d-usage-de-l-ia-generative-en-sante). Un compte rendu reste donc un brouillon tant que vous ne l'avez pas relu et la responsabilité du soin reste entièrement la vôtre.
 
 ### Répondre à une question médicale d'un patient
 
@@ -121,7 +122,7 @@ L'agent peut donner un horaire ou déplacer un rendez-vous. Dès qu'un patient d
 
 ### Faire croire qu'on parle à un humain
 
-Le règlement européen sur l'IA [est devenu applicable le 2 août 2026](https://digital-strategy.ec.europa.eu/fr/policies/regulatory-framework-ai) et son [article 50](https://ai-act-service-desk.ec.europa.eu/fr/ai-act/article-50) demande que toute personne qui échange avec une IA en soit informée. Au téléphone comme par SMS, je règle l'agent pour qu'il se présente comme l'assistant du cabinet.
+Le règlement européen sur l'IA [est devenu applicable le 2 août 2026](https://digital-strategy.ec.europa.eu/fr/policies/regulatory-framework-ai) et son [article 50](https://ai-act-service-desk.ec.europa.eu/fr/ai-act/article-50) demande que toute personne qui échange avec une IA en soit informée. Au téléphone comme par SMS, l'agent se présente comme l'assistant du cabinet.
 
 ### Vous dispenser des formalités RGPD
 

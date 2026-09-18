@@ -7,7 +7,8 @@
 //   titre, description (meta, 155 caracteres max), date (AAAA-MM-JJ), maj
 //   (optionnel), format (explicatif | tuto | actu | comparatif), grappe (agents |
 //   foxy | metier:<slug> | tutos | actus), mot_cle, image, image_alt,
-//   statut (brouillon | publie).
+//   mots_cles (liste affichee en bas d'article), lire_aussi (liste d'adresses
+//   internes, optionnelle : voir lire-aussi.js), statut (brouillon | publie).
 //
 // Un brouillon n'existe qu'en local (npm run dev) : jamais liste, jamais genere,
 // jamais dans le sitemap en production. Un article "publie" date du futur attend
@@ -50,6 +51,8 @@ function lire(fichier) {
     format: data.format || "explicatif",
     grappe: data.grappe || "agents",
     motCle: data.mot_cle || "",
+    motsCles: Array.isArray(data.mots_cles) ? data.mots_cles : [],
+    lireAussi: Array.isArray(data.lire_aussi) ? data.lire_aussi : [],
     image: data.image || null,
     imageAlt: data.image_alt || "",
     statut: data.statut || "brouillon",

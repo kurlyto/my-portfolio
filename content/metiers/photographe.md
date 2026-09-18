@@ -2,12 +2,13 @@
 titre: "Agent IA pour photographe de mariage et corporate"
 description: "Devis, contrat et acompte, préparation de la séance, galerie, facture, tirages et avis : ce qu'un agent IA automatise pour un photographe et ses limites."
 h1: "Un agent IA pour les photographes de mariage, de famille et d'entreprise"
-date: 2026-09-17
+date: 2026-09-11
 mot_cle: "agent ia photographe"
+mots_cles: ["agent IA photographe", "demandes de devis", "contrats et acomptes", "droit à l'image", "livraison des galeries"]
 ---
 Un agent IA pour photographe est un assistant logiciel qui prend en charge les demandes de devis, les contrats, la livraison des galeries et les relances pendant que vous êtes en prise de vue ou en retouche. Il applique seul les règles que vous lui avez fixées et vient vous chercher pour tout le reste.
 
-Autant lever le malentendu tout de suite : cet agent ne prend aucune photo et ne remplace pas votre œil. Les générateurs d'images sont un tout autre sujet et l'agent dont je parle s'occupe du travail de bureau qui entoure chaque séance et qui finit par déborder sur vos soirées de retouche.
+Autant lever le malentendu tout de suite : cet agent ne prend aucune photo et ne remplace pas votre œil. Les générateurs d'images sont un tout autre sujet et l'agent décrit ici s'occupe du travail de bureau qui entoure chaque séance et qui finit par déborder sur vos soirées de retouche.
 
 <div class="encadre">
 <p><strong>En bref</strong></p>
@@ -25,7 +26,7 @@ Aucune de ces tâches ne demande votre regard et chacune mord pourtant sur le te
 
 ## Que fait un agent IA pour un photographe ?
 
-Imaginez un assistant de studio qui ne toucherait jamais un boîtier et qui tiendrait à la place la boîte mail, l'agenda et le carnet de factures. Si le mot « agent » vous paraît flou, j'ai écrit une [explication simple de ce qu'est un agent IA](/blog/agent-ia-definition). Pour un photographe je pars presque toujours de cinq missions.
+Imaginez un assistant de studio qui ne toucherait jamais un boîtier et qui tiendrait à la place la boîte mail, l'agenda et le carnet de factures. Si le mot « agent » vous paraît flou, une [explication simple de ce qu'est un agent IA](/blog/agent-ia-definition) vous attend sur le blog. Pour un photographe je pars presque toujours de cinq missions.
 
 - **Les demandes de devis.** L'agent répond par mail et sur Instagram avec vos formules mariage et corporate.
 - **Les devis sans réponse.** Il relance les clients qui n'ont pas validé.
@@ -41,7 +42,7 @@ Ces cinq demandes sont un point de départ et la chaîne complète d'une séance
 
 Un couple qui prépare son mariage écrit rarement à un seul photographe et celui qui répond vite avec des éléments précis part avec une longueur d'avance. L'agent lit la demande et vérifie dans votre agenda que la date est libre. Il répond ensuite avec la formule qui correspond, celle du mariage en journée complète ou celle du reportage d'entreprise à la demi-journée.
 
-Tout ce qui sort de vos formules remonte vers vous avec un brouillon. Un mariage à l'étranger, une demande de drone ou un client qui négocie le prix ne reçoivent jamais de réponse automatique parce que je ne laisse l'agent inventer **aucun tarif** ni accorder aucune remise.
+Tout ce qui sort de vos formules remonte vers vous avec un brouillon. Un mariage à l'étranger, une demande de drone ou un client qui négocie le prix ne reçoivent jamais de réponse automatique parce que l'agent n'invente **aucun tarif** et n'accorde aucune remise.
 
 <figure>
 <div class="message">
@@ -59,7 +60,7 @@ Tout ce qui sort de vos formules remonte vers vous avec un brouillon. Un mariage
 
 Un devis qui dort ne vaut pas toujours refus. Vous fixez la règle une fois, par exemple une relance au bout de cinq jours puis une dernière dix jours plus tard qui précise que la date reste libre pour l'instant.
 
-Je règle l'agent pour qu'il reprenne le fil de l'échange au lieu d'envoyer un message type et il s'arrête au premier « nous avons choisi quelqu'un d'autre » en notant la raison quand elle est donnée.
+L'agent reprend le fil de l'échange au lieu d'envoyer un message type et il s'arrête au premier « nous avons choisi quelqu'un d'autre » en notant la raison quand elle est donnée.
 
 ### Le contrat et l'acompte partent dès le oui
 
@@ -83,7 +84,7 @@ Quand une demande tombe sur une semaine déjà pleine, il vous le signale et vou
 
 ### Un premier tri que vous validez
 
-Par défaut je ne branche pas l'agent sur vos images et vous pouvez très bien en rester là. Ceux qui rentrent d'un mariage avec deux mille déclenchements peuvent lui confier un premier passage technique où il met de côté les images floues, les yeux fermés et les doublons d'une même rafale puis vous présente une pré-sélection à valider.
+Par défaut l'agent n'est pas branché sur vos images et vous pouvez très bien en rester là. Ceux qui rentrent d'un mariage avec deux mille déclenchements peuvent lui confier un premier passage technique où il met de côté les images floues, les yeux fermés et les doublons d'une même rafale puis vous présente une pré-sélection à valider.
 
 Il ne supprime rien et ne choisit pas la photo qui raconte la journée, parce que le flou voulu d'une danse ou le regard d'un père ne se lisent pas dans une mesure de netteté.
 
@@ -127,11 +128,11 @@ Il envoie aussi à tous les clients sans exception le lien pour laisser un avis,
 
 Envoyez à l'agent cinq images d'une séance avec trois mots sur la journée et il prépare le carrousel et la légende dans votre ton.
 
-Il vérifie d'abord dans la fiche du client que l'accord de publication a été signé et pour quels supports. Mes propres agents me demandent mon feu vert avant tout envoi et je garde la même règle ici.
+Il vérifie d'abord dans la fiche du client que l'accord de publication a été signé et pour quels supports. Ensuite je tiens à ce qu'aucun post ne parte sans votre feu vert.
 
 ### Les dates qui reviennent
 
-Un photographe de famille vit de clients qui reviennent. L'agent note la date de chaque mariage et de chaque naissance et il prépare un mot pour le premier anniversaire de mariage ou une invitation à la séance famille annuelle quand l'automne approche. Ces messages sont de la prospection commerciale aux yeux de la loi et j'y reviens plus bas.
+Un photographe de famille vit de clients qui reviennent. L'agent note la date de chaque mariage et de chaque naissance et il prépare un mot pour le premier anniversaire de mariage ou une invitation à la séance famille annuelle quand l'automne approche. Ces messages sont de la prospection commerciale aux yeux de la loi et la règle est détaillée plus bas.
 
 ## Comment trouver des clients entreprises et suivre les droits cédés ?
 
@@ -139,7 +140,7 @@ Un photographe de famille vit de clients qui reviennent. L'agent note la date de
 
 Le corporate remplit les mois creux du mariage à condition d'aller le chercher. Vous décrivez votre cible à l'agent, par exemple les cabinets d'avocats, les agences immobilières et les entreprises de plus de vingt salariés à trente minutes de chez vous.
 
-Il repère celles dont la page équipe aligne des portraits dépareillés et celles qui viennent de recruter. Pour chacune il prépare un mail court qui part d'un fait observé et propose une demi-journée de portraits sur place. J'ai décrit cette prospection pas à pas dans la page sur [l'agent IA d'un consultant](/metiers/consultant). Vous validez le premier lot pour régler le ton et les réponses intéressées remontent vers vous avec un créneau d'appel.
+Il repère celles dont la page équipe aligne des portraits dépareillés et celles qui viennent de recruter. Pour chacune il prépare un mail court qui part d'un fait observé et propose une demi-journée de portraits sur place. Cette prospection est décrite pas à pas dans la page sur [l'agent IA d'un consultant](/metiers/consultant). Vous validez le premier lot pour régler le ton et les réponses intéressées remontent vers vous avec un créneau d'appel.
 
 ### Les droits cédés ont une date de fin
 
@@ -149,7 +150,7 @@ L'agent tient ce registre à partir de vos contrats et vous prévient deux mois 
 
 ## Ce qu'un agent IA ne doit pas faire à votre place
 
-Certains outils promettent beaucoup sur les sujets qui suivent. Chez moi la réponse est non et mieux vaut le savoir avant de commencer.
+Certains outils promettent beaucoup sur les sujets qui suivent. Sur chacun d'eux je préfère vous dire non dès maintenant plutôt qu'en cours de route.
 
 ### Publier une image sans accord écrit
 
@@ -167,7 +168,7 @@ L'agent remplit votre modèle avec les éléments du devis et vous le soumet. Il
 
 L'image d'une personne est [une donnée personnelle](https://www.cnil.fr/fr/definition/donnee-personnelle) et les images d'un mariage ou d'un nouveau-né méritent mieux qu'un envoi à l'aveugle. La CNIL demande de [ne soumettre à une IA générative que des informations qu'on est autorisé à partager](https://www.cnil.fr/fr/les-questions-reponses-de-la-cnil-sur-lutilisation-dun-systeme-dia-generative). Elle invite aussi à vérifier si le fournisseur réutilise ce qu'on lui envoie.
 
-L'agent dont je parle lit des mails, un agenda et des factures et n'a pas besoin de vos fichiers. Si vous lui confiez un premier tri, il passe par un outil installé sur votre machine ou par un prestataire dont vous avez lu les conditions. J'ai écrit un guide sur l'endroit où tournent ces modèles dans la page sur [l'agent IA d'un avocat](/metiers/avocat).
+L'agent décrit sur cette page lit des mails, un agenda et des factures et n'a pas besoin de vos fichiers. Si vous lui confiez un premier tri, il passe par un outil installé sur votre machine ou par un prestataire dont vous avez lu les conditions. La page sur [l'agent IA d'un avocat](/metiers/avocat) contient un guide sur l'endroit où tournent ces modèles.
 
 Je déconseille aussi le regroupement automatique par visages parce que la CNIL range parmi les [données sensibles](https://www.cnil.fr/fr/definition/donnee-sensible) les données biométriques qui servent à identifier une personne de manière unique et que leur traitement est interdit par principe.
 
@@ -175,7 +176,7 @@ Je déconseille aussi le regroupement automatique par visages parce que la CNIL 
 
 L'[article 50 du règlement européen sur l'IA](https://ai-act-service-desk.ec.europa.eu/fr/ai-act/article-50) demande à celui qui diffuse un hypertrucage d'indiquer que l'image a été générée ou manipulée par une IA. Le même article écarte du marquage les outils d'assistance qui ne modifient pas de manière substantielle le fichier d'origine. Une correction d'exposition ne me paraît donc pas visée alors qu'un invité ajouté dans une photo de groupe l'est bien plus sûrement.
 
-L'agent ne génère aucune image et ne retouche rien. La correction de lumière que je décris pour [les photos d'une annonce immobilière](/metiers/agent-immobilier) n'a pas sa place chez un photographe dont la retouche est le métier.
+L'agent ne génère aucune image et ne retouche rien. La correction de lumière décrite pour [les photos d'une annonce immobilière](/metiers/agent-immobilier) n'a pas sa place chez un photographe dont la retouche est le métier.
 
 ### Prospecter n'importe qui
 

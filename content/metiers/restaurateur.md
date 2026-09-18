@@ -2,8 +2,9 @@
 titre: "Agent IA pour restaurant et food truck"
 description: "Réservations, avis, DLC, stock et boutique en ligne : ce qu'un agent IA automatise dans un restaurant ou un food truck, et ce qu'il ne doit jamais faire."
 h1: "Un agent IA pour votre restaurant ou votre food truck"
-date: 2026-09-16
+date: 2026-08-19
 mot_cle: "agent ia restaurant"
+mots_cles: ["agent IA restaurant", "food truck", "avis Google", "commandes fournisseurs", "réservations", "anti-gaspillage"]
 ---
 Un agent IA pour restaurant est un assistant logiciel qui prend en charge les messages, les avis, le suivi du stock et la boutique en ligne pendant que vous êtes aux fourneaux. Il lit ce qui arrive et prépare les réponses. Il applique seul les règles que vous lui avez données et vient vous chercher pour tout le reste.
 
@@ -25,12 +26,12 @@ Aucune de ces tâches ne prend plus de deux minutes. Le problème vient de leur 
 
 ## Que fait un agent IA dans un restaurant ?
 
-Imaginez un commis qui ne toucherait jamais une casserole et qui tiendrait à la place le téléphone, la boîte de messages et la paperasse. C'est à peu près le poste et j'ai expliqué [ce qu'est un agent IA](/blog/agent-ia-definition) dans un article à part. Pour un restaurant je pars presque toujours des mêmes missions.
+Imaginez un commis qui ne toucherait jamais une casserole et qui tiendrait à la place le téléphone, la boîte de messages et la paperasse. C'est à peu près le poste et [ce qu'est un agent IA](/blog/agent-ia-definition) fait l'objet d'un article à part. Pour un restaurant les mêmes missions reviennent presque toujours.
 
 - **Les réservations et les messages.** L'agent répond sur Instagram, sur Google et par mail en notant le nom, l'heure et le nombre de couverts. Vous décidez à l'avance ce qu'il accepte seul et ce qu'il doit vous remonter.
 - **Les avis Google.** Il rédige une réponse à chaque avis et vous montre les avis négatifs avant d'envoyer quoi que ce soit.
 - **Le planning.** Il envoie le planning de la semaine à l'équipe et garde la trace des échanges de services.
-- **Les commandes fournisseurs.** Il prépare la commande d'après votre stock réel et vos habitudes et je ne le laisse jamais l'envoyer sans votre feu vert.
+- **Les commandes fournisseurs.** Il prépare la commande d'après votre stock réel et vos habitudes et elle ne part jamais sans votre feu vert.
 - **Le point du matin.** À 7 h un seul message sur votre téléphone rassemble ce qui compte pour la journée.
 
 <figure>
@@ -54,9 +55,9 @@ C'est la corvée que tout le monde repousse et c'est pourtant par elle que je co
 
 ### Comment l'agent connaît votre stock
 
-Si vous avez un logiciel de caisse ou de gestion de stock, je branche l'agent dessus en premier. Sinon une simple photo du bon de livraison lui suffit pour relever les produits, les quantités et les dates avant de remplir le tableau à votre place.
+Si vous avez un logiciel de caisse ou de gestion de stock, l'agent s'y branche en premier. Sinon une simple photo du bon de livraison lui suffit pour relever les produits, les quantités et les dates avant de remplir le tableau à votre place.
 
-Mes années d'ingénierie industrielle m'ont appris qu'un stock n'est juste que si l'on note ce qui en sort. La caisse s'en charge pour tout ce qui se vend. Pour les pertes et ce que consomme la cuisine, il suffit de glisser à l'agent une phrase comme « jette 2 kg de tomates » entre deux commandes.
+Un stock n'est juste que si l'on note ce qui en sort. La caisse s'en charge pour tout ce qui se vend. Pour les pertes et ce que consomme la cuisine, il suffit de glisser à l'agent une phrase comme « jette 2 kg de tomates » entre deux commandes.
 
 ### Ce qu'il en fait chaque jour
 
@@ -95,7 +96,7 @@ Une fois branché sur la boutique, l'agent la fait tourner au même rythme que l
 - **Les promotions suivent vos règles.** Vous les fixez une fois pour toutes, par exemple −30 % trois jours avant la DLC et retrait de la vente la veille. L'agent les applique ensuite seul et vous envoie le bilan de la semaine.
 - **Il repère ce qui dort sur l'étagère.** Un produit qui ne s'est pas vendu depuis trois semaines vous est signalé avec une idée pour le relancer.
 
-Un point de droit mérite qu'on s'y arrête. Quand vous affichez une réduction, le prix barré doit être [le plus bas des 30 derniers jours](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000044549592). Le vieux tour qui consiste à gonfler le prix la veille pour afficher une remise spectaculaire le lendemain est donc hors jeu. La loi prévoit une exception pour les produits frais qui approchent de leur date mais pas pour vos bocaux de conserve. L'agent applique la règle qui correspond à chaque produit et je détaille ces règles de prix dans la page sur [l'agent IA d'un commerce de proximité](/metiers/epicerie).
+Un point de droit mérite qu'on s'y arrête. Quand vous affichez une réduction, le prix barré doit être [le plus bas des 30 derniers jours](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000044549592). Le vieux tour qui consiste à gonfler le prix la veille pour afficher une remise spectaculaire le lendemain est donc hors jeu. La loi prévoit une exception pour les produits frais qui approchent de leur date mais pas pour vos bocaux de conserve. L'agent applique la règle qui correspond à chaque produit et ces règles de prix sont détaillées dans la page sur [l'agent IA d'un commerce de proximité](/metiers/epicerie).
 
 <figure>
 <ol class="flux">
@@ -112,7 +113,7 @@ Un point de droit mérite qu'on s'y arrête. Quand vous affichez une réduction,
 
 Sur un food truck le gain se voit souvent encore plus vite parce que le camion change d'adresse d'un jour à l'autre et qu'une bonne partie du chiffre vient des privatisations.
 
-Pour un food truck je ne commence ni par un chatbot ni par les réservations. Je branche d'abord les mails et l'agenda pour ne plus laisser filer une seule demande de devis. Je mets ensuite l'agent en chasse des événements, des associations et des entreprises prêtes à privatiser un camion et il prépare pour chacun un premier message que vous relisez. C'est la même mécanique que [la prospection locale d'un photographe](/metiers/photographe) qui cherche des clients entreprises.
+Pour un food truck j'aime bien commencer par les mails et l'agenda plutôt que par un chatbot ou par les réservations afin de ne plus laisser filer une seule demande de devis. L'agent part ensuite en chasse des événements, des associations et des entreprises prêtes à privatiser un camion et il prépare pour chacun un premier message que vous relisez. C'est la même mécanique que [la prospection locale d'un photographe](/metiers/photographe) qui cherche des clients entreprises.
 
 L'agent peut aussi répondre à la question qui revient sans cesse sur les réseaux : « vous êtes où ce soir ? ». Il va chercher la réponse dans le planning que vous mettez à jour une fois par semaine.
 
@@ -120,11 +121,11 @@ Pour les emplacements, il prépare les demandes à la mairie et suit les relance
 
 ## Ce qu'un agent IA ne doit pas faire à votre place
 
-Certains outils promettent monts et merveilles sur les sujets qui suivent. Chez moi la réponse est non et je préfère que vous le sachiez avant de signer.
+Certains outils promettent monts et merveilles sur les sujets qui suivent. Aucun des agents que je construis ne s'y aventure et autant que vous le sachiez avant de signer.
 
 ### Répondre de mémoire sur les allergènes
 
-La loi impose d'informer vos clients par écrit sur les allergènes de vos plats à partir de vos vraies recettes ([décret du 17 avril 2015](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000030491684)). Or une IA généraliste peut se tromper avec beaucoup d'aplomb et [une étude](https://www.sciencedirect.com/science/article/pii/S0899900723001053) l'a surprise à proposer du lait d'amande dans un régime sans fruits à coque. Mon agent renvoie donc vers votre fiche allergènes ou vers vous et n'improvise jamais sur ce terrain.
+La loi impose d'informer vos clients par écrit sur les allergènes de vos plats à partir de vos vraies recettes ([décret du 17 avril 2015](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000030491684)). Or une IA généraliste peut se tromper avec beaucoup d'aplomb et [une étude](https://www.sciencedirect.com/science/article/pii/S0899900723001053) l'a surprise à proposer du lait d'amande dans un régime sans fruits à coque. L'agent renvoie donc vers votre fiche allergènes ou vers vous et n'improvise jamais sur ce terrain.
 
 ### Juger si un produit est encore bon
 

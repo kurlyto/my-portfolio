@@ -6,10 +6,11 @@ format: explicatif
 grappe: agents
 mot_cle: "c'est quoi un agent ia"
 statut: publie
+mots_cles: ["agent IA", "définition", "ChatGPT", "automatisation", "petite entreprise", "Anthropic"]
 ---
 Un agent IA est un programme qui perçoit ce qui se passe autour de lui, décide quoi faire et agit seul avec vos outils pour atteindre le but que vous lui avez fixé. ChatGPT attend votre question pour répondre alors qu'un agent se met au travail dès qu'un mail arrive ou que sonne l'heure prévue, et il mène la tâche jusqu'au bout.
 
-Le mot impressionne alors que l'idée est vieille comme le monde, puisqu'elle décrit ce que fait n'importe quel employé à qui l'on confie une mission. Pour l'expliquer à ma grand-mère je compare toujours un agent à un corps humain avec sa tête, ses sens, ses mains et ses jambes. C'est le chemin que je vous propose de suivre.
+Le mot impressionne alors que l'idée est vieille comme le monde, puisqu'elle décrit ce que fait n'importe quel employé à qui l'on confie une mission. Pour l'expliquer à ma grand-mère je compare toujours un agent à un corps humain avec sa tête, ses sens, ses mains et ses jambes. C'est le chemin que suit cet article.
 
 <div class="encadre">
 <p><strong>En bref</strong></p>
@@ -24,6 +25,11 @@ Dans leur version de tous les jours, ChatGPT, Claude ou Mistral ressemblent à u
 Un agent part de ce même cerveau et lui construit un corps autour. On lui branche des yeux sur votre boîte mail et des mains dans votre agenda ou votre logiciel de facturation, puis on lui donne des jambes pour qu'il se lève tout seul à 7 h. La différence tient donc moins à l'intelligence qu'à tout ce qu'on installe autour d'elle.
 
 Anthropic, l'entreprise qui fabrique Claude, en donne une [définition plus technique](https://www.anthropic.com/engineering/building-effective-agents) : un agent est un système dans lequel le modèle d'IA dirige lui-même ses étapes et choisit les outils dont il a besoin pour accomplir la tâche. Vous lui indiquez la destination et il cherche lui-même le chemin.
+
+<figure>
+<img src="/images/blog/anthropic-siege-500-howard.webp" alt="Immeuble de verre du 500 Howard Street à San Francisco, siège d'Anthropic, avec l'ancienne enseigne Slack sur la façade" width="1400" height="1110" loading="lazy">
+<figcaption>Le siège d'Anthropic au 500 Howard Street à San Francisco. La photo date de 2020, quand la façade portait encore l'enseigne de Slack, l'ancien locataire. Fondée en 2021, l'entreprise compte environ 2 500 salariés <a href="https://en.wikipedia.org/wiki/Anthropic">d'après sa fiche Wikipédia</a>.<span class="credit">Photo : HaeB, <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr">CC BY-SA 4.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:Slack_offices,_Howard_Street,_San_Francisco_(viewed_from_the_north-east,_January_2020).jpg">Wikimedia Commons</a></span></figcaption>
+</figure>
 
 | | Un chatbot comme ChatGPT | Un agent IA |
 |---|---|---|
@@ -69,7 +75,7 @@ Stuart Russell et Peter Norvig ont écrit le [manuel d'intelligence artificielle
 
 Les deux pièces qu'on oublie le plus souvent sont aussi les plus importantes. La première se trouve dans le cœur, parce qu'un agent sans mission claire ressemble au stagiaire à qui l'on aurait lancé « rends-toi utile » avant de partir en vacances. Lui demander de trier vos mails reste trop vague alors que lui demander de mettre de côté les factures fournisseurs et de préparer une réponse à chaque demande de devis lui donne de quoi travailler dès le premier jour.
 
-La seconde est la conscience. OpenAI la range sous le nom de garde-fous au même rang que le modèle et les outils dans son [guide pour construire des agents](https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents/). Je la règle toujours avant le reste en partant d'une règle simple où l'agent prépare et où vous validez. On ne le laisse agir seul qu'après quelques semaines de confiance et uniquement sur les gestes sans risque.
+La seconde est la conscience. OpenAI la range sous le nom de garde-fous au même rang que le modèle et les outils dans son [guide pour construire des agents](https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents/). D'habitude je la règle avant tout le reste en partant d'une règle simple où l'agent prépare et où vous validez. On ne le laisse agir seul qu'après quelques semaines de confiance et uniquement sur les gestes sans risque.
 
 ## Comment un agent IA travaille-t-il au quotidien ?
 
@@ -131,7 +137,7 @@ Il en fait comme n'importe quel nouvel employé et c'est pour cette raison qu'il
 
 ### Mes données sont-elles en sécurité avec un agent IA ?
 
-Tout dépend du modèle choisi et de l'endroit où tournent l'agent et vos données. J'ai détaillé les options possibles dans le [guide destiné aux avocats](/metiers/avocat), depuis le modèle hébergé aux États-Unis jusqu'au modèle installé chez vous. Ce guide vaut pour toute profession qui manipule des informations sensibles.
+Tout dépend du modèle choisi et de l'endroit où tournent l'agent et vos données. Le [guide destiné aux avocats](/metiers/avocat) détaille les options possibles, depuis le modèle hébergé aux États-Unis jusqu'au modèle installé chez vous. Ce guide vaut pour toute profession qui manipule des informations sensibles.
 
 ### Un agent IA va-t-il remplacer mes salariés ?
 

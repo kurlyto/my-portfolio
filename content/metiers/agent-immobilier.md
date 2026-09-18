@@ -2,8 +2,9 @@
 titre: "Agent IA immobilier : visites, photos et mandats"
 description: "Demandes de visite, tournées, photos retouchées, annonces, retours aux propriétaires et relances : ce qu'un agent IA automatise dans une agence."
 h1: "Un agent IA pour votre agence immobilière"
-date: 2026-09-17
+date: 2026-08-31
 mot_cle: "agent ia immobilier"
+mots_cles: ["agent IA immobilier", "visites", "relance des propriétaires", "retouche photo", "mandats"]
 ---
 Un agent IA immobilier est un assistant logiciel qui prend en charge tout ce qui entoure une visite pendant que vous êtes sur le terrain. Il répond aux demandes des portails et organise vos tournées, il retouche vos photos et prépare vos annonces, puis il tient les propriétaires au courant et relance les acquéreurs. Il applique seul les règles que vous lui avez fixées et il s'arrête pour demander votre feu vert dès qu'un message engage l'agence.
 
@@ -25,7 +26,7 @@ Aucune de ces tâches ne réclame votre talent de négociateur mais toutes récl
 
 ## Que fait un agent IA dans une agence immobilière ?
 
-Imaginez un assistant commercial qui ne ferait jamais une visite et qui tiendrait à la place la boîte mail, l'agenda et le tableau des mandats. Si le mot vous paraît flou, j'ai expliqué [ce qu'est un agent IA](/blog/agent-ia-definition) dans un article à part. Pour une agence je pars presque toujours des cinq mêmes missions.
+Imaginez un assistant commercial qui ne ferait jamais une visite et qui tiendrait à la place la boîte mail, l'agenda et le tableau des mandats. Si le mot vous paraît flou, un article à part explique [ce qu'est un agent IA](/blog/agent-ia-definition). Dans une agence ce sont presque toujours les cinq mêmes missions qui reviennent.
 
 - **Les visites.** L'agent répond aux demandes des portails, cale les rendez-vous et les confirme la veille.
 - **Les photos et les annonces.** Il retouche les photos que vous lui envoyez et prépare un brouillon d'annonce.
@@ -52,7 +53,7 @@ Une heure passée dans un bien en coûte souvent une autre au téléphone et dan
 
 ### Les demandes se qualifient sans vous
 
-Les demandes des portails arrivent par mail et l'agent y répond dans les minutes qui suivent, y compris le dimanche soir. Il pose les questions que vous avez choisies sur le financement et le délai du projet, puis il propose les créneaux que vous avez ouverts. Je règle avec vous dès l'audit ce qu'il confirme seul et ce qu'il vous remonte.
+Les demandes des portails arrivent par mail et l'agent y répond dans les minutes qui suivent, y compris le dimanche soir. Il pose les questions que vous avez choisies sur le financement et le délai du projet, puis il propose les créneaux que vous avez ouverts. Ce qu'il confirme seul et ce qu'il vous remonte se décide avec vous dès l'audit.
 
 ### La tournée se construit et chaque visiteur confirme la veille
 
@@ -117,11 +118,11 @@ Quand un propriétaire remplit le formulaire de votre site, l'agent lui répond 
 
 L'agent part des ventes réelles parce que l'État publie en données ouvertes la base [Demandes de valeurs foncières](https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres), dite DVF. Elle recense les transactions des cinq dernières années, sauf en Alsace, en Moselle et à Mayotte.
 
-L'agent y cherche les ventes comparables et y ajoute les biens concurrents encore en vente, qu'il surveille chaque matin sur les sites des agences du secteur. La base ignore l'état du bien, l'étage et la vue, si bien que la fourchette obtenue reste un travail préparatoire. Je ne laisse jamais un agent annoncer un prix à un vendeur parce que cette fourchette ne remplace pas l'avis de valeur que vous signez.
+L'agent y cherche les ventes comparables et y ajoute les biens concurrents encore en vente, qu'il surveille chaque matin sur les sites des agences du secteur. La base ignore l'état du bien, l'étage et la vue, si bien que la fourchette obtenue reste un travail préparatoire. Cette fourchette ne remplace pas l'avis de valeur que vous signez et je ne laisse donc jamais un agent annoncer un prix à un vendeur.
 
 ### Les estimations sans suite et les fins de mandat sont suivies
 
-Un propriétaire qui ne signe pas en mars vendra peut-être en septembre et choisira l'agence qui se sera souvenue de lui. L'agent garde la date de chaque estimation et prépare une relance au bout du délai que vous avez choisi. Je conseille d'y glisser un fait utile comme une vente récente dans la rue.
+Un propriétaire qui ne signe pas en mars vendra peut-être en septembre et choisira l'agence qui se sera souvenue de lui. L'agent garde la date de chaque estimation et prépare une relance au bout du délai que vous avez choisi. D'habitude je conseille d'y glisser un fait utile comme une vente récente dans la rue.
 
 Il surveille aussi la date de fin de chaque exclusivité. Quelques semaines avant, vous recevez le bilan des visites et vous arrivez chez le vendeur avec des faits.
 
@@ -163,13 +164,13 @@ L'agent peut tenir la liste des pièces reçues et signaler celles qui manquent,
 
 ### Trier les candidats locataires
 
-Refuser un logement à quelqu'un en raison de son origine, de son âge ou de sa situation de famille est [une discrimination](https://www.service-public.gouv.fr/particuliers/vosdroits/F38175) punie jusqu'à 3 ans de prison et 45 000 € d'amende. Un tri automatique des dossiers peut reproduire ce genre de biais sans que personne ne l'ait voulu et je ne laisse donc jamais un agent classer ou écarter des candidats.
+Refuser un logement à quelqu'un en raison de son origine, de son âge ou de sa situation de famille est [une discrimination](https://www.service-public.gouv.fr/particuliers/vosdroits/F38175) punie jusqu'à 3 ans de prison et 45 000 € d'amende. Un tri automatique des dossiers peut reproduire ce genre de biais sans que personne ne l'ait voulu et l'agent ne classe donc jamais les candidats et n'en écarte aucun.
 
 Il vérifie qu'un dossier est complet et il ne réclame aucune pièce interdite par [la liste officielle](https://www.cnil.fr/fr/location-dun-bien-immobilier-quels-justificatifs), comme le relevé de compte ou le livret de famille.
 
 ### Aspirer vos fichiers clients sans cadre
 
-Votre fichier d'acquéreurs contient des budgets et des projets de vie. La CNIL rappelle qu'un professionnel de l'immobilier doit [inscrire ce fichier dans son registre des traitements, informer les personnes et sécuriser les données](https://www.cnil.fr/fr/cnil-direct/question/gestion-et-negociations-de-biens-immobiliers-que-faire). L'agent n'ouvre donc que les boîtes et les dossiers que vous lui désignez. Le choix du modèle d'IA décide où partent les données et je le fais avec vous avant tout branchement en suivant le guide que j'ai écrit pour [l'agent IA d'un notaire](/metiers/notaire).
+Votre fichier d'acquéreurs contient des budgets et des projets de vie. La CNIL rappelle qu'un professionnel de l'immobilier doit [inscrire ce fichier dans son registre des traitements, informer les personnes et sécuriser les données](https://www.cnil.fr/fr/cnil-direct/question/gestion-et-negociations-de-biens-immobiliers-que-faire). L'agent n'ouvre donc que les boîtes et les dossiers que vous lui désignez. Le choix du modèle d'IA décide où partent les données et il se fait avec vous avant tout branchement en suivant le guide écrit pour [l'agent IA d'un notaire](/metiers/notaire).
 
 ### Appeler à froid des particuliers
 
