@@ -25,7 +25,7 @@ Aucune de ces tâches ne demande plus de cinq minutes et chacune se paie au prix
 
 ## Que fait un agent IA dans un commerce de proximité ?
 
-Imaginez un employé qui ne quitterait jamais l'arrière-boutique et qui garderait en tête chaque carton entré et chaque article sorti. Si le mot vous paraît encore flou, j'ai expliqué [ce qu'est un agent IA](/blog/agent-ia-definition) dans un article à part. Quand on me demande un agent pour un commerce, les mêmes missions reviennent presque toujours et elles se rangent en trois familles.
+Imaginez un employé qui ne quitterait jamais l'arrière-boutique et qui garderait en tête chaque carton entré et chaque article sorti. Si le mot vous paraît encore flou, j'ai expliqué [ce qu'est un agent IA](/blog/agent-ia-definition) dans un article à part. Pour un commerce je range presque toujours les missions de l'agent en trois familles.
 
 - **La gestion de la boutique.** Le stock, les seuils de réassort et les dates limites sont suivis chaque jour et la commande fournisseur arrive prête à relire.
 - **Le marketing du quotidien.** L'agent prépare les promotions et les posts et tient la fiche Google à jour. Il répond aux avis et aux questions d'horaires, d'arrivages et de disponibilité qui tombent sur Instagram.
@@ -37,11 +37,11 @@ Le tout se résume chaque matin dans un seul message que vous lisez avant de lev
 
 ### La livraison devient une fiche propre
 
-Quand le livreur passe, vous photographiez le bon de livraison ou vous dictez l'arrivage à l'agent comme à un employé. Il reconnaît chaque ligne par son code-barres, ajoute les quantités au stock et note la date imprimée sur le lot. Cela suppose un rangement préalable qui n'a rien de séduisant, parce qu'un pot noté « miel foncé petit » dans un tableau et enregistré autrement dans la caisse devient deux produits que rien ne recoupe plus.
+Quand le livreur passe, vous photographiez le bon de livraison ou vous dictez l'arrivage à l'agent comme à un employé. Il reconnaît chaque ligne par son code-barres, ajoute les quantités au stock et note la date imprimée sur le lot. Je commence toujours par ranger le fichier produits, parce qu'un pot noté « miel foncé petit » dans un tableau et enregistré autrement dans la caisse devient deux produits que rien ne recoupe plus.
 
 ### Le stock se tient entre deux clients
 
-Les ventes descendent du stock sans vous parce que l'agent **lit la caisse sans jamais y écrire**. Elle reste la source de vérité et un outil qui irait y corriger un prix dans votre dos ruinerait votre confiance en une journée. La casse et les dégustations ne passent par aucun ticket mais il suffit d'écrire « deux pots cassés » à l'agent pour que le compte reste juste.
+Les ventes descendent du stock sans vous parce que l'agent **lit la caisse sans jamais y écrire**. Je tiens à ce qu'elle reste la source de vérité parce qu'un outil qui irait y corriger un prix dans votre dos ruinerait votre confiance en une journée. La casse et les dégustations ne passent par aucun ticket mais il suffit d'écrire « deux pots cassés » à l'agent pour que le compte reste juste.
 
 ### Deux dates qui n'ont pas le même poids
 
@@ -53,7 +53,7 @@ Les rappels de produits suivent le même chemin. Les avis de [Rappel Conso](http
 
 ## Que devient un produit qui approche de sa date ?
 
-C'est ici que l'agent gagne sa place, parce qu'une alerte seule n'a jamais sauvé un yaourt. Trois jours avant une DLC il cherche une porte de sortie pour le produit et vous la propose toute montée.
+C'est ici que l'agent gagne sa place à mon avis, parce qu'une alerte seule n'a jamais sauvé un yaourt. Trois jours avant une DLC il cherche une porte de sortie pour le produit et vous la propose toute montée.
 
 Vous fixez les règles une fois. Vous décidez par exemple qu'un produit frais passe à −20 % trois jours avant sa date, qu'il rejoint un panier anti-gaspi la veille et qu'il quitte le rayon le dernier soir. L'agent prépare alors l'étiquette à imprimer et rédige le post qui annonce l'offre.
 
@@ -69,7 +69,7 @@ Vous fixez les règles une fois. Vous décidez par exemple qu'un produit frais p
 <figcaption>Exemple d'alerte sur les dates. L'agent propose une sortie pour chaque produit et attend votre feu vert. Les produits et les chiffres sont fictifs.</figcaption>
 </figure>
 
-Au début vous validez chaque proposition d'un mot. Quand une règle a fait ses preuves, vous pouvez laisser l'agent dérouler seul tout ce qui ne touche pas la caisse. Il change alors le prix de la vitrine en ligne et publie le post puis retire le produit du site le dernier soir.
+Je conseille de valider chaque proposition d'un mot au début. Quand une règle a fait ses preuves, vous pouvez laisser l'agent dérouler seul tout ce qui ne touche pas la caisse. Il change alors le prix de la vitrine en ligne et publie le post puis retire le produit du site le dernier soir.
 
 <figure>
 <ol class="flux">
@@ -82,7 +82,7 @@ Au début vous validez chaque proposition d'un mot. Quand une règle a fait ses 
 <figcaption>Le parcours d'un produit frais, de la livraison à la vente. Vous fixez les règles une fois et l'agent les déroule.</figcaption>
 </figure>
 
-Chaque semaine il vous dit ce que ces règles ont sauvé et ce bilan sert à ajuster la commande suivante, parce qu'un produit bradé tous les quinze jours est d'abord un produit commandé en trop.
+Je lui fais envoyer chaque semaine le bilan de ce que ces règles ont sauvé et il sert à ajuster la commande suivante, parce qu'un produit bradé tous les quinze jours est d'abord un produit commandé en trop.
 
 ## Peut-on automatiser les promotions et les réseaux sociaux ?
 
@@ -106,7 +106,7 @@ Google permet de déclarer des [horaires d'ouverture exceptionnels](https://supp
 
 ## Comment prévenir les habitués et prendre les commandes par message ?
 
-L'agent peut tenir le fichier de vos habitués aussi proprement que celui des produits. Il note qui a demandé à être prévenu du retour de la truffe, du prochain tome d'une série ou des premières pivoines de la saison. Quand le bon de livraison contient le produit attendu, il prépare le message pour ces clients-là et pour eux seuls.
+L'agent peut tenir le fichier de vos habitués aussi proprement que celui des produits. Il note qui a demandé à être prévenu du retour de la truffe, du prochain tome d'une série ou des premières pivoines de la saison. Quand le bon de livraison contient le produit attendu, il prépare le message pour ces clients-là et pour eux seuls. C'est la même mécanique que [les relances d'un salon de coiffure](/metiers/coiffeur) qui n'écrit qu'aux clientes dont la couleur a six semaines.
 
 <figure>
 <div class="message">
@@ -124,7 +124,7 @@ Les commandes par message suivent la même logique. Un client écrit sur Instagr
 
 ## L'IA peut-elle gérer les commandes fournisseurs, les factures et le planning ?
 
-Elle peut tout préparer et c'est déjà l'essentiel du travail. Quand un produit passe sous son seuil, l'agent regarde ce qui s'est vendu les dernières semaines et tient compte du jour de passage du fournisseur comme du minimum de commande. Je ne laisse pas un agent envoyer seul une commande parce qu'elle engage votre trésorerie et qu'un seuil mal réglé peut vous livrer quarante kilos de farine la veille de vos congés.
+Elle peut tout préparer et c'est déjà l'essentiel du travail. Quand un produit passe sous son seuil, l'agent regarde ce qui s'est vendu les dernières semaines et tient compte du jour de passage du fournisseur comme du minimum de commande. Sur [les agents que je construis](/agents) aucun n'envoie seul une commande parce qu'elle engage votre trésorerie et qu'un seuil mal réglé peut vous livrer quarante kilos de farine la veille de vos congés.
 
 Depuis le 1er septembre 2026 [toutes les entreprises doivent être en mesure de recevoir des factures électroniques](https://entreprendre.service-public.gouv.fr/actualites/A18953) en passant par une plateforme agréée. L'agent y récupère vos factures chaque semaine, les rapproche des bons de livraison et les range dans votre outil de comptabilité.
 
@@ -160,7 +160,7 @@ La CNIL pose une règle simple : un SMS ou un mail publicitaire adressé à un p
 
 ### Se faire passer pour vous
 
-Depuis le 2 août 2026 le règlement européen sur l'IA impose d'informer toute personne qui discute avec une IA ([article 50](https://www.cyberlawwatch.com/2026/07/31/eu-digital-omnibus-on-ai-enters-into-force/)). Quand l'agent répond à la question du comté sur Instagram, il se présente comme l'assistant de la boutique et ne signe jamais de votre prénom.
+Le [règlement européen sur l'IA](https://digital-strategy.ec.europa.eu/fr/policies/regulatory-framework-ai) s'applique depuis le 2 août 2026 et son [article 50](https://ai-act-service-desk.ec.europa.eu/fr/ai-act/article-50) impose d'informer toute personne qui discute avec une IA. Quand l'agent répond à la question du comté sur Instagram, il se présente comme l'assistant de la boutique et ne signe jamais de votre prénom.
 
 ## Comment ça se passe ?
 

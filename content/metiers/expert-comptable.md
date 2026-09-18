@@ -7,7 +7,7 @@ mot_cle: "agent ia expert comptable"
 ---
 Un agent IA pour expert-comptable est un assistant logiciel qui relance les justificatifs manquants, trie les factures reçues par mail, prépare les rappels d'échéances et répond aux questions récurrentes des clients sous le contrôle du cabinet. Il enlève du chemin la collecte et la relance pour que les collaborateurs passent leur temps sur la production et le conseil.
 
-L'Ordre lui-même encourage la profession à se saisir de l'IA, à une condition qu'il répète dans chacun de ses documents : ne pas charger de données clients non anonymisées dans un outil que le cabinet ne maîtrise pas. Cette page consacre donc un chapitre entier à la question des données.
+L'Ordre lui-même encourage la profession à se saisir de l'IA, à une condition qu'il répète dans chacun de ses documents : ne pas charger de données clients non anonymisées dans un outil que le cabinet ne maîtrise pas. Je consacre donc un chapitre entier de cette page à la question des données.
 
 <div class="encadre">
 <p><strong>En bref</strong></p>
@@ -23,7 +23,7 @@ Il faut ensuite ranger chaque facture dans le bon dossier avant l'import, rappel
 
 ## Que fait un agent IA dans un cabinet d'expertise comptable ?
 
-Imaginez un assistant dont l'unique obsession serait que chaque dossier soit complet le jour où un collaborateur l'ouvre. Il ne passe aucune écriture engageante et ne donne aucun conseil fiscal, mais il fait disparaître une bonne partie du travail de collecte.
+Imaginez un assistant dont l'unique obsession serait que chaque dossier soit complet le jour où un collaborateur l'ouvre. Je ne laisse jamais un agent passer une écriture engageante ni donner un conseil fiscal, mais il fait disparaître une bonne partie du travail de collecte. J'ai expliqué ailleurs [ce qu'est un agent IA](/blog/agent-ia-definition) en mots simples.
 
 - **Les justificatifs manquants.** L'agent sait ce qui manque pour chaque client et prépare des relances personnalisées que le cabinet valide.
 - **Le tri des factures.** Il repère les factures reçues par mail et les range client par client avant l'import dans votre logiciel de production.
@@ -51,7 +51,7 @@ Pour savoir où partent les données, il faut d'abord séparer deux pièces que 
 
 L'expert-comptable est tenu au secret par l'[article 21 de l'ordonnance du 19 septembre 1945](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033678954) et sa violation expose aux peines du code pénal. [La notice que l'Ordre consacre à ChatGPT](https://www.experts-comptables.fr/sites/default/files/assets/files/COMMENT%20UTILISER%20CHATGPT%20-%20A4_p%C3%A0p.pdf) demande de ne charger ni mails clients ni FEC ni DSN non anonymisés dans des « sites non maîtrisés ».
 
-Le [livre blanc de l'Ordre de Paris](https://www.oec-paris.fr/wp-content/uploads/2025/09/livre-blanc_IA-et-data.pdf) va plus loin et invite à privilégier les offres européennes conformes au RGPD. Toute la question devient alors de savoir ce qu'est un outil maîtrisé et c'est l'objet des lignes qui suivent.
+Le [livre blanc de l'Ordre de Paris](https://www.oec-paris.fr/wp-content/uploads/2025/09/livre-blanc_IA-et-data.pdf) va plus loin et invite à privilégier les offres européennes conformes au RGPD. Toute la question devient alors de savoir ce qu'est un outil maîtrisé et j'ai écrit les lignes qui suivent pour y répondre.
 
 ### D'où vient le modèle et quel droit l'accompagne ?
 
@@ -83,7 +83,7 @@ C'est la crainte qui revient le plus souvent et la réponse dépend moins du fou
 
 Pas d'entraînement ne veut pas dire pour autant zéro conservation. OpenAI et Anthropic gardent par défaut les échanges de leurs API jusqu'à trente jours pour détecter les abus. L'option « zéro rétention » existe mais s'obtient sur accord et Anthropic conserve malgré tout trente jours les échanges avec [ses modèles les plus avancés](https://privacy.claude.com/en/articles/15425996-data-retention-practices-for-covered-models) depuis juin 2026. Un juge peut aussi s'en mêler puisqu'en 2025 le procès intenté par le New York Times a [obligé OpenAI à conserver](https://www.engadget.com/ai/openai-no-longer-has-to-preserve-all-of-its-chatgpt-data-with-some-exceptions-192422093.html) pendant plusieurs mois les journaux de ChatGPT et de son API.
 
-La règle pratique tient donc en une phrase : un compte grand public n'a rien à faire dans un cabinet, qu'il soit gratuit ou payant.
+Ma règle pratique tient donc en une phrase : un compte grand public n'a rien à faire dans un cabinet, qu'il soit gratuit ou payant.
 
 ### Les montages qui tiennent la route
 
@@ -104,25 +104,25 @@ Du plus fermé au plus ouvert, cinq montages reviennent dans la pratique et chac
 
 Deux précisions évitent les mauvaises surprises. La première concerne la pseudonymisation qui remplace les noms par des codes avant l'envoi au modèle. La CNIL rappelle que des données pseudonymisées [restent des données personnelles](https://www.cnil.fr/fr/lanonymisation-de-donnees-personnelles) et le secret couvre de toute façon les informations que vos clients vous confient bien au-delà des noms. La seconde concerne le contrat, puisque le RGPD impose un [contrat de sous-traitance](https://www.cnil.fr/fr/rgpd-et-professionnels-de-sante-liberaux-ce-que-vous-devez-savoir) avec chaque prestataire qui touche aux données et que la CNIL recommande d'y interdire noir sur blanc toute réutilisation par le fournisseur.
 
-Le bon montage dépend enfin de ce que l'agent touche réellement. Un agent qui relance des justificatifs manquants manipule bien moins d'informations sensibles qu'un agent qui ouvre les FEC ou les bulletins de paie. Rien n'empêche donc de réserver le montage le plus fermé aux tâches qui touchent aux chiffres des clients.
+Le bon montage dépend enfin de ce que l'agent touche réellement. Un agent qui relance des justificatifs manquants manipule bien moins d'informations sensibles qu'un agent qui ouvre les FEC ou les bulletins de paie. Rien n'empêche donc de réserver le montage le plus fermé aux tâches qui touchent aux chiffres des clients. Je choisis le montage avec vous à l'audit et j'annonce chaque compromis avant de construire.
 
 ## Ce qu'un agent IA ne doit pas faire à votre place
 
 ### Valider une déclaration ou un conseil fiscal
 
-Le modèle de charte proposé par l'Ordre pose que l'IA [ne remplace pas la décision humaine](https://www.experts-comptables.fr/sites/default/files/assets/files/COMMENT%20UTILISER%20CHATGPT%20-%20A4_p%C3%A0p.pdf) et le livre blanc de l'Ordre de Paris demande que toute production d'IA soit [relue et vérifiée](https://www.oec-paris.fr/wp-content/uploads/2025/09/livre-blanc_IA-et-data.pdf) avant d'être communiquée. Une erreur reste celle du cabinet, quel que soit l'outil qui l'a produite.
+Le modèle de charte proposé par l'Ordre pose que l'IA [ne remplace pas la décision humaine](https://www.experts-comptables.fr/sites/default/files/assets/files/COMMENT%20UTILISER%20CHATGPT%20-%20A4_p%C3%A0p.pdf) et le livre blanc de l'Ordre de Paris demande que toute production d'IA soit [relue et vérifiée](https://www.oec-paris.fr/wp-content/uploads/2025/09/livre-blanc_IA-et-data.pdf) avant d'être communiquée. Une erreur reste celle du cabinet, quel que soit l'outil qui l'a produite. Je construis donc l'agent pour que rien ne parte sans relecture.
 
 ### Faire la vigilance anti-blanchiment à votre place
 
-L'agent peut aider à rassembler les pièces d'identification d'un client. La vigilance et la décision de déclarer un soupçon à Tracfin restent en revanche des obligations du professionnel et il est interdit d'en révéler l'existence au client. Ces dossiers sortent donc du périmètre de l'agent.
+L'agent peut aider à rassembler les pièces d'identification d'un client. La vigilance et la décision de déclarer un soupçon à Tracfin restent en revanche des obligations du professionnel et il est interdit d'en révéler l'existence au client. Je sors donc ces dossiers du périmètre de l'agent dès l'audit et la même règle vaut dans [une étude notariale](/metiers/notaire).
 
 ### Se prendre pour une plateforme de facturation électronique
 
-Depuis le 1er septembre 2026 toutes les entreprises concernées doivent pouvoir recevoir leurs factures électroniques [par une plateforme agréée](https://www.impots.gouv.fr/sites/default/files/media/1_metier/2_professionnel/EV/2_gestion/290_facturation_electronique/guide_pratique_facturation_electronique.pdf). Un agent IA n'en est pas une. Il peut préparer et trier, mais la réception et l'émission au sens de la réforme passent par la plateforme choisie.
+Depuis le 1er septembre 2026 toutes les entreprises concernées doivent pouvoir recevoir leurs factures électroniques [par une plateforme agréée](https://www.impots.gouv.fr/sites/default/files/media/1_metier/2_professionnel/EV/2_gestion/290_facturation_electronique/guide_pratique_facturation_electronique.pdf). Un agent IA n'en est pas une. Il peut préparer et trier, mais la réception et l'émission au sens de la réforme passent par la plateforme choisie. Je décris le côté client de cette chaîne sur la page des [consultants indépendants](/metiers/consultant).
 
 ### Se faire passer pour un humain
 
-Depuis le 2 août 2026, une personne qui échange avec une IA doit en être informée ([article 50 du règlement européen sur l'IA](https://www.cyberlawwatch.com/2026/07/31/eu-digital-omnibus-on-ai-enters-into-force/)). Quand l'agent répond à un client, il se présente comme l'assistant du cabinet.
+Le règlement européen sur l'IA [est devenu applicable le 2 août 2026](https://digital-strategy.ec.europa.eu/fr/policies/regulatory-framework-ai) et son [article 50](https://ai-act-service-desk.ec.europa.eu/fr/ai-act/article-50) demande que toute personne qui échange avec une IA en soit informée. Quand l'agent répond à un client, je le règle pour qu'il se présente comme l'assistant du cabinet.
 
 ## Comment ça se passe ?
 

@@ -228,7 +228,7 @@ export const FAQ_METIERS = {
     },
     {
       q: "Est-ce qu'il touche à mes photos ?",
-      a: "Non. L'agent gère l'administratif : les devis et les factures, le planning et l'envoi du lien de galerie. Le tri et la retouche restent votre travail.",
+      a: "Par défaut non. L'agent gère l'administratif : les devis et les factures, le planning et l'envoi du lien de galerie. Si vous le voulez il peut écarter les photos floues et les doublons pour vous préparer une première sélection, sans jamais rien supprimer. Le choix final et la retouche restent votre travail.",
     },
   ],
   garagiste: [

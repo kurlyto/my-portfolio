@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "../../component/Header";
-import Footer from "../../component/Footer";
+import Footer from "../../component/FooterAvecArticles";
 import Sommaire from "../../component/Sommaire";
 import {
   tousLesArticles,

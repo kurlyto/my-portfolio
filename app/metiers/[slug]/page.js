@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import MetierFlyerShareable from "../../component/MetierFlyerShareable";
 import Sommaire from "../../component/Sommaire";
+import Footer from "../../component/FooterAvecArticles";
 import { METIERS, getMetier } from "../metiers-data";
 import { getFaqMetier } from "../metiers-faq";
 import { getArticleMetier } from "../metiers-articles";
@@ -164,6 +165,7 @@ export default async function MetierPage({ params }) {
           </Link>
         </p>
       </main>
+      <Footer />
     </div>
   );
 }

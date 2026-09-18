@@ -25,21 +25,21 @@ Le métier s'est encore peu emparé du sujet. D'après la première étude de l'
 
 Le poste ressemble à celui d'un réceptionnaire d'atelier qui ne prendrait jamais de pause et ne toucherait jamais une clé. J'ai expliqué [ce qu'est un agent IA](/blog/agent-ia-definition) dans un article à part. Dans un garage son travail suit le trajet d'une voiture : il prend la demande et prépare le passage à l'atelier puis il tient le client au courant et le fait revenir au bon moment.
 
-Inutile de tout confier d'un coup. Un agent qui tient **très bien le téléphone et les rappels de révision** vous rendra plus de services qu'un agent qui bâcle tout le reste.
+Mon conseil est de ne pas tout confier d'un coup. Un agent qui tient **très bien le téléphone et les rappels de révision** vous rendra plus de services qu'un agent qui bâcle tout le reste.
 
 ## Comment l'agent prend-il les rendez-vous quand vous êtes sous un pont ?
 
 ### Le téléphone qui sonne à 21 h
 
-Le montage le plus simple est un renvoi d'appel : votre téléphone sonne comme d'habitude et l'appel bascule vers l'agent si personne ne décroche au bout de quatre sonneries. Il se présente comme l'assistant virtuel du garage puis il demande l'immatriculation ou le modèle, le kilométrage et ce qui amène la voiture.
+Je commence toujours par le montage le plus simple qui est un renvoi d'appel : votre téléphone sonne comme d'habitude et l'appel bascule vers l'agent si personne ne décroche au bout de quatre sonneries. Il se présente comme l'assistant virtuel du garage puis il demande l'immatriculation ou le modèle, le kilométrage et ce qui amène la voiture.
 
-Un client qui parle d'un voyant rouge ou d'une pédale de frein molle ne reçoit pas un créneau dans dix jours. L'agent vous prévient aussitôt et c'est vous qui rappelez pour dire s'il peut encore rouler.
+Un client qui parle d'un voyant rouge ou d'une pédale de frein molle ne reçoit pas un créneau dans dix jours. C'est le même tri que [les urgences de nuit d'un plombier](/metiers/plombier) : l'agent vous prévient aussitôt et c'est vous qui rappelez pour dire s'il peut encore rouler.
 
 Les mêmes demandes arrivent par SMS, par mail ou depuis votre fiche Google et l'agent les traite de la même façon. La voix de synthèse garde ses limites et un agent bien réglé propose de continuer par SMS plutôt que de deviner un modèle rare qu'il n'a pas compris.
 
 ### Un pré-devis à partir de la panne décrite
 
-Pour une demande claire comme des plaquettes avant sur une Clio 4 ou une vidange avec filtres, l'agent prépare une estimation à partir de vos forfaits, de votre taux horaire et du prix de la pièce chez votre fournisseur. Il vous la soumet et l'envoie après votre feu vert. Une panne floue comme « ça claque quand je tourne » débouche sur un rendez-vous de diagnostic et jamais sur un prix.
+Pour une demande claire comme des plaquettes avant sur une Clio 4 ou une vidange avec filtres, l'agent prépare une estimation à partir de vos forfaits, de votre taux horaire et du prix de la pièce chez votre fournisseur. Il vous la soumet et l'envoie après votre feu vert. Je règle l'agent pour qu'une panne floue comme « ça claque quand je tourne » débouche sur un rendez-vous de diagnostic et jamais sur un prix.
 
 <figure>
 <div class="message">
@@ -55,7 +55,7 @@ Pour une demande claire comme des plaquettes avant sur une Clio 4 ou une vidange
 
 ### Les règles que vous fixez une fois
 
-Un embrayage n'occupe pas un pont comme une vidange et tout le monde à l'atelier ne touche pas à la climatisation. On écrit donc ensemble la durée de chaque intervention, le nombre de ponts et qui fait quoi dans l'équipe. L'agent sait alors qu'une distribution bloque un pont pour la journée et qu'on ne cale pas une géométrie le vendredi à 17 h.
+Un embrayage n'occupe pas un pont comme une vidange et tout le monde à l'atelier ne touche pas à la climatisation. Je note donc avec vous dès l'audit la durée de chaque intervention, le nombre de ponts et qui fait quoi dans l'équipe. L'agent sait alors qu'une distribution bloque un pont pour la journée et qu'on ne cale pas une géométrie le vendredi à 17 h.
 
 Vous décidez aussi de ce qu'il accepte sans vous. Une vidange pour un client connu se réserve toute seule alors qu'une voiture qui arrive sur plateau vous est remontée avec le message d'origine.
 
@@ -83,7 +83,7 @@ Revenons au disque usé de tout à l'heure. Vous prenez une photo de la pièce e
 <figcaption>Exemple de demande d'accord reçue par la cliente. Le nom et les chiffres sont fictifs.</figcaption>
 </figure>
 
-Cette trace écrite a son importance parce qu'un client peut contester des travaux qu'il n'a pas commandés : Service-Public lui fournit même une [lettre type pour refuser de payer des réparations qui n'étaient pas prévues](https://www.service-public.gouv.fr/particuliers/vosdroits/R24072). L'agent range donc l'accord daté dans le dossier du véhicule. Une réponse ambiguë comme « faites au mieux » vous est remontée et l'agent ne prend jamais un silence pour un oui.
+Cette trace écrite a son importance parce qu'un client peut contester des travaux qu'il n'a pas commandés : Service-Public lui fournit même une [lettre type pour refuser de payer des réparations qui n'étaient pas prévues](https://www.service-public.gouv.fr/particuliers/vosdroits/R24072). L'agent range donc l'accord daté dans le dossier du véhicule. Une réponse ambiguë comme « faites au mieux » vous est remontée et je ne laisse jamais un agent prendre un silence pour un oui.
 
 ### La voiture est prête
 
@@ -106,7 +106,7 @@ Quand vous passez l'intervention à « terminée », le client reçoit un messag
 
 Chaque facture de garage porte déjà le kilométrage du véhicule puisqu'il fait partie des [mentions attendues sur la note](https://entreprendre.service-public.gouv.fr/vosdroits/F39056). Avec deux passages l'agent connaît donc le rythme de chaque client : une voiture relevée à 82 000 km en mars puis à 97 000 km un an plus tard roule 15 000 km par an. Il estime alors laquelle des deux limites du plan d'entretien tombera la première entre le kilométrage et la date.
 
-Le message part au moment que vous choisissez avec deux créneaux proposés. Un seul rappel suffit et un client qui ne répond pas n'est pas relancé une seconde fois sans votre accord.
+Le message part au moment que vous choisissez avec deux créneaux proposés et c'est la même mécanique que [le rappel de couleur d'un salon de coiffure](/metiers/coiffeur). Un seul rappel suffit à mon avis et un client qui ne répond pas n'est pas relancé une seconde fois sans votre accord.
 
 ### Le contrôle technique qui approche
 
@@ -120,7 +120,7 @@ Le lendemain de la restitution, l'agent envoie à tous les clients sans exceptio
 
 ## Devis en attente, impayés et récap du soir : que fait l'agent en coulisses ?
 
-Un devis resté sans réponse au bout de cinq jours reçoit une relance courte qui propose un créneau. Après deux relances l'agent classe le devis. Les factures impayées des clients professionnels suivent la même discipline et vous choisissez le ton quand il s'agit d'un bon client.
+Un devis resté sans réponse au bout de cinq jours reçoit une relance courte qui propose un créneau. Après deux relances l'agent classe le devis parce que je refuse qu'il harcèle qui que ce soit. Les factures impayées des clients professionnels suivent la même discipline et vous choisissez le ton quand il s'agit d'un bon client.
 
 Une fois le rideau baissé, l'agent vous envoie le récap de la journée.
 
@@ -149,7 +149,7 @@ Le garagiste a une [obligation de résultat](https://entreprendre.service-public
 
 ### Chiffrer seul un devis
 
-Un devis n'est pas obligatoire dans un garage mais [Service-Public](https://entreprendre.service-public.gouv.fr/vosdroits/F39056) conseille de rédiger un ordre de réparation avant toute intervention et d'y donner une estimation du coût. Or les machines ont tendance à voir trop petit : lors d'un test mené par Mobilians en carrosserie, les outils de chiffrage par IA ont [sous-estimé les dommages](https://www.mobilians.fr/presse/communiques-de-presse/groupe-de-travail-sur-l-ia-en-carrosserie-par-mobilians-premiers-resultats-des-tests-lances-en-juillet/) relevés par les professionnels. L'estimation de l'agent sort donc de vos forfaits et de vos prix et aucun montant ne part sans votre validation.
+Un devis n'est pas obligatoire dans un garage mais [Service-Public](https://entreprendre.service-public.gouv.fr/vosdroits/F39056) conseille de rédiger un ordre de réparation avant toute intervention et d'y donner une estimation du coût. Or les machines ont tendance à voir trop petit : lors d'un test mené par Mobilians en carrosserie, les outils de chiffrage par IA ont [sous-estimé les dommages](https://www.mobilians.fr/presse/communiques-de-presse/groupe-de-travail-sur-l-ia-en-carrosserie-par-mobilians-premiers-resultats-des-tests-lances-en-juillet/) relevés par les professionnels. Je fais donc sortir l'estimation de vos forfaits et de vos prix et aucun montant ne part sans votre validation.
 
 ### Oublier les pièces d'occasion ou inventer un prix
 

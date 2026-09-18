@@ -7,7 +7,7 @@ mot_cle: "ia kiné"
 ---
 Un agent IA pour kinésithérapeute ou ostéopathe est un assistant logiciel qui gère la liste d'attente, relance les patients perdus de vue, prend les rendez-vous pendant les séances et met en forme les notes dictées après une consultation. Il s'occupe de l'administratif pour que le praticien reste auprès de ses patients.
 
-Tout ce qui touche au soin relève pourtant des données de santé, qui sont parmi les plus protégées du droit français. Cette page consacre un chapitre entier à la manière de les traiter et à ce que change le choix du modèle d'IA.
+Tout ce qui touche au soin relève pourtant des données de santé, qui sont parmi les plus protégées du droit français. Je consacre un chapitre entier de cette page à la manière de les traiter et à ce que change le choix du modèle d'IA.
 
 <div class="encadre">
 <p><strong>En bref</strong></p>
@@ -23,7 +23,7 @@ Une annulation de dernière minute laisse un créneau vide alors que trois patie
 
 ## Que fait un agent IA dans un cabinet de kiné ?
 
-Imaginez une secrétaire médicale qui ne serait jamais en pause déjeuner et qui connaîtrait votre agenda mieux que vous. L'agent ne touche jamais au traitement, mais il garde le cabinet plein et les dossiers à jour.
+Imaginez une secrétaire médicale qui ne serait jamais en pause déjeuner et qui connaîtrait votre agenda mieux que vous. Je ne laisse jamais un agent toucher au traitement, mais il garde le cabinet plein et les dossiers à jour. Si le mot « agent » vous paraît flou, j'ai écrit une [explication simple de ce qu'est un agent IA](/blog/agent-ia-definition).
 
 - **La liste d'attente.** Dès qu'un patient annule, l'agent propose le créneau par SMS aux patients qui attendaient une place.
 - **Les patients perdus de vue.** Il repère ceux qui n'ont plus de rendez-vous depuis trois semaines en pleine rééducation et prépare une relance que vous validez.
@@ -41,6 +41,8 @@ Imaginez une secrétaire médicale qui ne serait jamais en pause déjeuner et qu
 </div>
 <figcaption>Exemple d'annulation rattrapée pendant une séance. Aucune donnée de soin ne circule dans ce message et les horaires sont fictifs.</figcaption>
 </figure>
+
+C'est la même mécanique que [la liste d'attente d'un salon de coiffure](/metiers/coiffeur) et je construis d'abord cette partie parce qu'elle n'ouvre jamais le dossier de soins.
 
 ## Données de santé : où vont les informations de vos patients ?
 
@@ -82,7 +84,7 @@ C'est la crainte qui revient le plus souvent et la réponse dépend moins du fou
 
 Pas d'entraînement ne veut pas dire pour autant zéro conservation. OpenAI et Anthropic gardent par défaut les échanges de leurs API jusqu'à trente jours pour détecter les abus. L'option « zéro rétention » existe mais s'obtient sur accord et Anthropic conserve malgré tout trente jours les échanges avec [ses modèles les plus avancés](https://privacy.claude.com/en/articles/15425996-data-retention-practices-for-covered-models) depuis juin 2026. Un juge peut aussi s'en mêler puisqu'en 2025 le procès intenté par le New York Times a [obligé OpenAI à conserver](https://www.engadget.com/ai/openai-no-longer-has-to-preserve-all-of-its-chatgpt-data-with-some-exceptions-192422093.html) pendant plusieurs mois les journaux de ChatGPT et de son API.
 
-La règle pratique tient donc en une phrase : un compte grand public n'a rien à faire dans un cabinet, qu'il soit gratuit ou payant.
+Ma règle pratique tient donc en une phrase : un compte grand public n'a rien à faire dans un cabinet, qu'il soit gratuit ou payant.
 
 ### Les montages qui tiennent la route
 
@@ -103,23 +105,23 @@ Du plus fermé au plus ouvert, cinq montages reviennent dans la pratique et chac
 
 Deux précisions évitent les mauvaises surprises. La première concerne la pseudonymisation qui remplace les noms par des codes avant l'envoi au modèle. La CNIL rappelle que des données pseudonymisées [restent des données personnelles](https://www.cnil.fr/fr/lanonymisation-de-donnees-personnelles) et le secret couvre de toute façon tout ce que le patient vous confie bien au-delà des noms. La seconde concerne le contrat, puisque le RGPD impose un [contrat de sous-traitance](https://www.cnil.fr/fr/rgpd-et-professionnels-de-sante-liberaux-ce-que-vous-devez-savoir) avec chaque prestataire qui touche aux données et que la CNIL recommande d'y interdire noir sur blanc toute réutilisation par le fournisseur.
 
-Un cabinet de santé ajoute une contrainte qui ne se discute pas. Chaque maillon qui stocke des données de patients doit se trouver chez un hébergeur certifié HDS, de la messagerie aux sauvegardes en passant par les brouillons. Cloud Temple annonce par exemple une [inférence sur une infrastructure qualifiée SecNumCloud et certifiée HDS](https://www.cloud-temple.com/en/products/large-language-model-as-a-service-llmaas/). Savoir si un fournisseur d'IA qui ne conserve rien est un hébergeur au sens de la loi reste une question sans réponse officielle et cela plaide pour les montages les plus fermés.
+Un cabinet de santé ajoute une contrainte qui ne se discute pas. Chaque maillon qui stocke des données de patients doit se trouver chez un hébergeur certifié HDS, de la messagerie aux sauvegardes en passant par les brouillons. Cloud Temple annonce par exemple une [inférence sur une infrastructure qualifiée SecNumCloud et certifiée HDS](https://www.cloud-temple.com/en/products/large-language-model-as-a-service-llmaas/). Savoir si un fournisseur d'IA qui ne conserve rien est un hébergeur au sens de la loi reste une question sans réponse officielle et c'est pourquoi je penche pour les montages les plus fermés.
 
-Le bon montage dépend enfin de ce que l'agent touche réellement. La liste d'attente et les relances manipulent déjà des données de patients sans ouvrir le dossier de soins, alors que la mise en forme des notes de séance touche le cœur des données de santé. Rien n'empêche donc de réserver le montage le plus fermé à ces notes.
+Le bon montage dépend enfin de ce que l'agent touche réellement. La liste d'attente et les relances manipulent déjà des données de patients sans ouvrir le dossier de soins, alors que la mise en forme des notes de séance touche le cœur des données de santé. Rien n'empêche donc de réserver le montage le plus fermé à ces notes. Je choisis le montage avec vous à l'audit et j'annonce chaque compromis avant de construire.
 
 ## Ce qu'un agent IA ne doit pas faire à votre place
 
 ### Poser un diagnostic ou adapter un traitement
 
-La Haute Autorité de santé rappelle qu'[aucun contenu généré par une IA n'est vérifié par défaut](https://www.has-sante.fr/jcms/p_3703115/fr/premieres-clefs-d-usage-de-l-ia-generative-en-sante). Un compte rendu mis en forme par l'agent reste un brouillon tant que vous ne l'avez pas relu et la responsabilité du soin reste entièrement la vôtre.
+La Haute Autorité de santé rappelle qu'[aucun contenu généré par une IA n'est vérifié par défaut](https://www.has-sante.fr/jcms/p_3703115/fr/premieres-clefs-d-usage-de-l-ia-generative-en-sante). Je construis l'agent pour qu'un compte rendu reste un brouillon tant que vous ne l'avez pas relu et la responsabilité du soin reste entièrement la vôtre.
 
 ### Répondre à une question médicale d'un patient
 
-L'agent peut donner un horaire ou déplacer un rendez-vous. Dès qu'un patient décrit une douleur ou demande un conseil, il transmet au praticien sans rien improviser.
+L'agent peut donner un horaire ou déplacer un rendez-vous. Dès qu'un patient décrit une douleur ou demande un conseil, je veux qu'il transmette au praticien sans rien improviser.
 
 ### Faire croire qu'on parle à un humain
 
-Depuis le 2 août 2026, une personne qui échange avec une IA doit en être informée ([article 50 du règlement européen sur l'IA](https://www.cyberlawwatch.com/2026/07/31/eu-digital-omnibus-on-ai-enters-into-force/)). Au téléphone comme par SMS, l'agent se présente comme l'assistant du cabinet.
+Le règlement européen sur l'IA [est devenu applicable le 2 août 2026](https://digital-strategy.ec.europa.eu/fr/policies/regulatory-framework-ai) et son [article 50](https://ai-act-service-desk.ec.europa.eu/fr/ai-act/article-50) demande que toute personne qui échange avec une IA en soit informée. Au téléphone comme par SMS, je règle l'agent pour qu'il se présente comme l'assistant du cabinet.
 
 ### Vous dispenser des formalités RGPD
 

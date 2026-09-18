@@ -23,7 +23,7 @@ Aucune de ces tâches n'est difficile mais leur addition mange l'énergie qu'il 
 
 ## Que fait un agent IA pour une recherche d'emploi ?
 
-Imaginez un assistant qui ne passerait jamais l'entretien à votre place et qui tiendrait tout ce qui l'entoure. Si le mot « agent » vous paraît flou, j'ai écrit une [explication simple de ce qu'est un agent IA](/blog/agent-ia-definition). Quand on me demande un agent pour une recherche d'emploi, les mêmes demandes reviennent presque à chaque fois.
+Imaginez un assistant qui ne passerait jamais l'entretien à votre place et qui tiendrait tout ce qui l'entoure. Si le mot « agent » vous paraît flou, j'ai écrit une [explication simple de ce qu'est un agent IA](/blog/agent-ia-definition). Pour une recherche d'emploi je construis l'agent autour des cinq mêmes missions.
 
 - **La veille du matin.** À 8 h l'agent envoie les nouvelles offres qui collent à votre profil sur LinkedIn et Welcome to the Jungle.
 - **La candidature adaptée.** Il prépare le CV et la lettre pour une offre précise à partir de votre vrai parcours.
@@ -46,7 +46,7 @@ Imaginez un assistant qui ne passerait jamais l'entretien à votre place et qui 
 
 ### Une veille sur tous vos sites à la fois
 
-Vous décrivez une fois ce que vous cherchez avec les intitulés de poste et la zone géographique, le type de contrat et le salaire plancher puis les secteurs dont vous ne voulez pas. Chaque matin l'agent parcourt vos sites d'emploi et les pages carrières des entreprises que vous visez. Il lit les annonces publiques que n'importe qui peut voir sans se connecter et n'a donc besoin d'aucun de vos mots de passe.
+Vous décrivez une fois ce que vous cherchez avec les intitulés de poste et la zone géographique, le type de contrat et le salaire plancher puis les secteurs dont vous ne voulez pas. Chaque matin l'agent parcourt vos sites d'emploi et les pages carrières des entreprises que vous visez. Je ne le branche que sur les annonces publiques que n'importe qui peut voir sans se connecter et il n'a donc besoin d'aucun de vos mots de passe.
 
 Une même offre circule souvent sur plusieurs sites à la fois. L'agent reconnaît ces doublons et garde de préférence l'annonce du site de l'entreprise.
 
@@ -54,13 +54,13 @@ Une même offre circule souvent sur plusieurs sites à la fois. L'agent reconna�
 
 L'agent compare chaque offre à votre profil et lui donne une note accompagnée de ses raisons, avec ce qui colle et ce qu'il faudra défendre en entretien.
 
-Si l'agent écarte à tort les postes qui demandent un outil que vous maîtrisez, vous le lui dites et la règle change pour tous les matins suivants. Vous recevez alors **une liste courte** de trois à cinq offres qui méritent votre attention au lieu d'un flux sans fin.
+Si l'agent écarte à tort les postes qui demandent un outil que vous maîtrisez, vous le lui dites et la règle change pour tous les matins suivants. Je règle l'agent pour que vous receviez **une liste courte** de trois à cinq offres qui méritent votre attention au lieu d'un flux sans fin.
 
 ### Les entreprises qui recrutent sans annonce
 
 Toutes les embauches ne passent pas par une annonce et La Bonne Boîte de France Travail avance que [sept entreprises sur dix consultent les candidatures spontanées](https://www.francetravail.fr/candidat/vos-services-en-ligne/la-bonne-boite.html) qu'elles reçoivent.
 
-L'agent tient donc une seconde liste avec les entreprises que vous visez même quand elles ne publient rien. Il surveille leurs actualités comme une levée de fonds ou l'ouverture d'un site et cherche qui dirige l'équipe que vous voudriez rejoindre. Il prépare ensuite une candidature spontanée qui part de cette actualité.
+L'agent tient donc une seconde liste avec les entreprises que vous visez même quand elles ne publient rien. Il surveille leurs actualités comme une levée de fonds ou l'ouverture d'un site et cherche qui dirige l'équipe que vous voudriez rejoindre. Il prépare ensuite une candidature spontanée qui part de cette actualité. La démarche ressemble à [la prospection d'un consultant indépendant](/metiers/consultant).
 
 ## Comment adapter son CV et sa lettre à chaque offre sans tricher ?
 
@@ -68,7 +68,7 @@ L'agent tient donc une seconde liste avec les entreprises que vous visez même q
 
 Tout part d'un document que j'appelle le CV maître. On y verse une fois tout votre parcours dans une version bien plus longue qu'un CV normal, avec chaque poste et chaque projet puis les résultats obtenus et les outils pratiqués.
 
-Pour une offre donnée l'agent y choisit ce qui répond à l'annonce et le remonte en tête. Il ne peut rien écrire qui ne figure pas dans le CV maître.
+Pour une offre donnée l'agent y choisit ce qui répond à l'annonce et le remonte en tête. Je construis l'agent pour qu'il ne puisse rien écrire qui ne figure pas dans le CV maître.
 
 Reste la peur du robot trieur. France Travail écrit qu'un logiciel de recrutement [« ne décide pas de vous embaucher »](https://www.francetravail.fr/candidat/vos-recherches/preparer-votre-candidature/cv-lettre-de-motivation-e-mail/logiciels-de-recrutement-ats-ada.html) et qu'il classe les dossiers avant qu'un humain tranche. Le même article conseille un CV sur une seule colonne dans un fichier Word ou un PDF texte et l'agent produit ce format sobre par défaut.
 
@@ -88,11 +88,11 @@ France Travail prévient que les recruteurs [« repèrent vite les lettres trop 
 <figcaption>Exemple de candidature préparée. Le poste et les détails sont fictifs et l'envoi reste entre vos mains.</figcaption>
 </figure>
 
-Vous relisez et vous corrigez puis c'est vous qui cliquez sur « Postuler ». **Rien ne part sans votre relecture** parce que c'est vous qui postulez et pas un robot.
+Vous relisez et vous corrigez puis c'est vous qui cliquez sur « Postuler ». **Rien ne part sans votre relecture** parce que c'est vous qui postulez et pas un robot. Les agents de mon activité me demandent eux aussi mon feu vert avant tout envoi.
 
 ## Qui tient le tableau de candidatures et les relances ?
 
-Tout le monde commence un tableau de suivi et presque personne ne le tient au-delà de la troisième semaine. L'agent le tient pour vous dans un simple tableur.
+Tout le monde commence un tableau de suivi et presque personne ne le tient au-delà de la troisième semaine. Je le fais tenir par l'agent dans un simple tableur.
 
 Chaque candidature envoyée y prend sa ligne avec la date et le lien de l'annonce, la version du CV utilisée et le nom du contact. Si vous lui ouvrez votre boîte mail en lecture, il reconnaît un accusé de réception comme un refus ou une proposition d'entretien et il met la ligne à jour tout seul.
 
@@ -129,7 +129,7 @@ France Travail conseille d'envoyer [un message de remerciement deux ou trois jou
 
 Le plus dur est de rester régulier quand les réponses tardent. Vous pouvez fixer à l'agent un objectif simple comme trois candidatures ciblées par jour ou deux prises de contact par semaine.
 
-Le vendredi il envoie le bilan de la semaine. Au bout d'un mois l'agent peut vous dire quels intitulés et quels types d'entreprises vous répondent et lesquels restent muets. Gardez en tête que ces chiffres portent sur quelques dizaines de candidatures et qu'ils donnent une tendance plutôt qu'une preuve.
+Le vendredi il envoie le bilan de la semaine. Au bout d'un mois l'agent peut vous dire quels intitulés et quels types d'entreprises vous répondent et lesquels restent muets. Je conseille de lire ces chiffres avec prudence parce qu'ils portent sur quelques dizaines de candidatures et qu'ils donnent une tendance plutôt qu'une preuve.
 
 <figure>
 <div class="message">
@@ -143,7 +143,7 @@ Le vendredi il envoie le bilan de la semaine. Au bout d'un mois l'agent peut vou
 <figcaption>Exemple de bilan du vendredi. Tous les chiffres sont fictifs.</figcaption>
 </figure>
 
-L'agent tient enfin le calendrier des démarches. Une personne inscrite à France Travail doit actualiser sa situation chaque mois et l'agent le lui rappelle à l'ouverture de la période puis avant la date limite.
+L'agent tient enfin le calendrier des démarches. Une personne inscrite à France Travail doit actualiser sa situation chaque mois et l'agent le lui rappelle à l'ouverture de la période puis avant la date limite. Un agent personnel suit de la même façon [les échéances et les papiers de tout un foyer](/metiers/vie-personnelle).
 
 ## Ce qu'un agent IA ne doit pas faire à votre place
 
@@ -157,17 +157,17 @@ Certains outils promettent beaucoup sur les sujets qui suivent. Chez moi la rép
 
 Les règles d'Indeed sont explicites : [« N'utilisez pas de bots ou autres outils automatisés tiers pour postuler à une offre d'emploi »](https://www.indeed.com/help/job-seekers/articles/360028540531-indeed-job-seeker-guidelines?hl=fr&co=FR) et un compte qui les enfreint peut être fermé. LinkedIn [interdit de la même façon les bots et les extensions](https://www.linkedin.com/help/linkedin/answer/a1341387/interdiction-concernant-les-logiciels-et-extensions?lang=fr) qui automatisent l'activité d'un compte et prévient qu'il peut être restreint ou supprimé. Perdre son profil en pleine recherche serait le pire des services à vous rendre.
 
-L'envoi en masse est surtout inefficace. France Travail indique que [77 % des demandeurs d'emploi utilisent déjà l'IA](https://www.francetravail.fr/actualites/a-laffiche/2026/candidats-ce-que-l-ia-change-vra.html) et résume la bonne mesure d'une formule : « L'IA est un outil, pas un raccourci ». L'agent prépare donc dix candidatures soignées plutôt que cent copies et ne se connecte jamais à vos comptes.
+L'envoi en masse est surtout inefficace. France Travail indique que [77 % des demandeurs d'emploi utilisent déjà l'IA](https://www.francetravail.fr/actualites/a-laffiche/2026/candidats-ce-que-l-ia-change-vra.html) et résume la bonne mesure d'une formule : « L'IA est un outil, pas un raccourci ». Je règle donc l'agent sur dix candidatures soignées plutôt que cent copies et il ne se connecte jamais à vos comptes.
 
 ### Promettre de déjouer les filtres des recruteurs
 
-Aucun outil honnête ne garantit un entretien ni un CV « indétectable ». Le tri automatique des candidatures est d'ailleurs pris au sérieux par le droit européen puisque le règlement sur l'IA range parmi les [systèmes à haut risque](https://artificialintelligenceact.eu/fr/annex/3/) ceux qui servent à analyser et filtrer les candidatures.
+Je ne garantis ni un entretien ni un CV « indétectable » et aucun outil honnête ne le fait. Le tri automatique des candidatures est d'ailleurs pris au sérieux par le droit européen puisque le règlement sur l'IA range parmi les [systèmes à haut risque](https://artificialintelligenceact.eu/fr/annex/3/) ceux qui servent à analyser et filtrer les candidatures.
 
 Vous avez aussi des droits sur votre dossier. Le [guide du recrutement](https://www.cnil.fr/fr/le-guide-du-recrutement) de la CNIL rappelle que les candidats gardent la maîtrise de leurs données et un recruteur ne peut [conserver votre dossier deux ans après le dernier contact](https://www.cnil.fr/fr/cnil-direct/question/recrutement-un-employeur-peut-il-conserver-mon-dossier) qu'avec votre accord. L'agent peut préparer la demande d'accès ou de suppression que vous adresserez à une entreprise.
 
 ### Envoyer votre CV n'importe où
 
-Un CV contient votre adresse, votre téléphone et tout votre parcours et ces données voyagent vers le modèle d'IA que l'agent interroge. La CNIL explique [comment s'opposer à la réutilisation de ses données pour l'entraînement](https://www.cnil.fr/fr/ia-comment-sopposer-la-reutilisation-de-ses-donnees-personnelles-entrainement-agent-conversationnel) sur les plateformes grand public. Je vous indique donc quel modèle lit votre CV et sous quelles conditions et l'agent ne le dépose sur aucun site sans votre accord.
+Un CV contient votre adresse, votre téléphone et tout votre parcours et ces données voyagent vers le modèle d'IA que l'agent interroge. La CNIL explique [comment s'opposer à la réutilisation de ses données pour l'entraînement](https://www.cnil.fr/fr/ia-comment-sopposer-la-reutilisation-de-ses-donnees-personnelles-entrainement-agent-conversationnel) sur les plateformes grand public. Je vous indique donc quel modèle lit votre CV et sous quelles conditions et l'agent ne le dépose sur aucun site sans votre accord. J'explique où partent ces données sur [la page des avocats](/metiers/avocat).
 
 ### Faire vos démarches France Travail à votre place
 

@@ -36,7 +36,7 @@ Le poste ressemble à celui d'un assistant de projet qui n'aurait aucun avis sur
 <figcaption>La vie d'un projet, du premier message aux photos de fin de chantier. La conception reste chez vous à chaque étape.</figcaption>
 </figure>
 
-Inutile de tout confier d'un coup. Un agent qui tient **très bien les premiers contacts et le suivi des commandes** vous rendra plus de services qu'un agent qui bâcle toute la chaîne.
+À mon avis il vaut mieux ne pas tout confier d'un coup. Un agent qui tient **très bien les premiers contacts et le suivi des commandes** vous rendra plus de services qu'un agent qui bâcle toute la chaîne.
 
 ## Du premier contact au moodboard : que prépare l'agent avant vous ?
 
@@ -44,7 +44,7 @@ Inutile de tout confier d'un coup. Un agent qui tient **très bien les premiers 
 
 Une demande qui arrive par le site, par Instagram ou par mail reçoit une réponse dans l'heure et cela vaut aussi le dimanche soir, quand les gens pensent enfin à leur salon. L'agent se présente comme l'assistant virtuel de l'agence et pose les questions que vous posez toujours sur la surface, le budget des travaux, le délai souhaité et le style qui attire le client. Il demande aussi des photos du lieu.
 
-Vous décidez des règles de tri. Une rénovation complète dans votre secteur se voit proposer deux créneaux alors qu'une demande très en dessous de votre budget plancher reçoit la réponse courtoise que vous avez rédigée une fois pour toutes.
+Je fixe les règles de tri avec vous à l'audit. Une rénovation complète dans votre secteur se voit proposer deux créneaux alors qu'une demande très en dessous de votre budget plancher reçoit la réponse courtoise que vous avez rédigée une fois pour toutes.
 
 <figure>
 <div class="message">
@@ -63,11 +63,11 @@ Vous décidez des règles de tri. Une rénovation complète dans votre secteur s
 
 Après le premier rendez-vous vous dictez vos notes dans la voiture et l'agent en tire un brief propre que le client relit et complète. Il prépare ensuite une première planche à partir de ce brief, des photos du lieu et de votre propre bibliothèque de références. La planche arrive avec les prix publics des pièces repérées, si bien que la discussion sur le budget commence en même temps que celle sur le style.
 
-Cette planche est une base de travail pour vous et jamais un envoi direct au client. Vous gardez ce qui vous parle et la direction artistique demeure la vôtre du début à la fin.
+Je règle cette planche comme une base de travail pour vous et jamais comme un envoi direct au client. Vous gardez ce qui vous parle et la direction artistique demeure la vôtre du début à la fin.
 
 ### Des images d'ambiance pour ouvrir la discussion
 
-L'agent peut aussi générer deux ou trois images d'ambiance à partir d'une photo de la pièce pour aider un client qui ne sait pas lire un plan à dire « plutôt ça » ou « surtout pas ça ». Elles sont toujours présentées comme des images d'ambiance et jamais comme un rendu contractuel, avec la mention « image générée par IA, non contractuelle ». Elles ignorent les cotes et la technique et inventent volontiers une fenêtre, si bien qu'elles ne remplacent ni votre plan ni votre rendu.
+L'agent peut aussi générer deux ou trois images d'ambiance à partir d'une photo de la pièce pour aider un client qui ne sait pas lire un plan à dire « plutôt ça » ou « surtout pas ça ». Je tiens à ce qu'elles soient toujours présentées comme des images d'ambiance et jamais comme un rendu contractuel, avec la mention « image générée par IA, non contractuelle ». Elles ignorent les cotes et la technique et inventent volontiers une fenêtre, si bien qu'elles ne remplacent ni votre plan ni votre rendu. C'est la même règle que pour [l'aménagement virtuel d'une annonce immobilière](/metiers/agent-immobilier).
 
 ### La validation qui traîne
 
@@ -84,15 +84,15 @@ Un plan envoyé sans réponse bloque tout ce qui suit. Vous fixez un délai de s
 <figcaption>Exemple de relance de validation soumise à l'architecte d'intérieur avant envoi. Le prénom, les dates et les chiffres sont fictifs.</figcaption>
 </figure>
 
-Un client important peut toujours passer par vous et l'agent ne relance jamais une seconde fois sans votre accord.
+Un client important peut toujours passer par vous et je ne laisse jamais un agent relancer une seconde fois sans votre accord.
 
 ## Devis d'artisans, commandes et chantier : que suit l'agent sans vous ?
 
 ### Les devis comparés ligne à ligne
 
-Trois électriciens ne chiffrent jamais la même chose de la même façon. L'agent lit les devis reçus et les range dans un tableau aligné sur votre descriptif, poste par poste. Il vous signale ce qui manque chez l'un et ce qui est compté deux fois chez l'autre.
+Trois électriciens ne chiffrent jamais la même chose de la même façon, même quand ils [dictent leur devis à un agent](/metiers/electricien). L'agent lit les devis reçus et les range dans un tableau aligné sur votre descriptif, poste par poste. Il vous signale ce qui manque chez l'un et ce qui est compté deux fois chez l'autre.
 
-Il vérifie aussi que chaque devis arrive avec l'attestation d'assurance décennale de l'entreprise, puisque [Service-Public](https://entreprendre.service-public.gouv.fr/vosdroits/F2034) rappelle qu'elle doit être jointe aux devis et aux factures. Le choix de l'artisan reste le vôtre et celui de votre client.
+Il vérifie aussi que chaque devis arrive avec l'attestation d'assurance décennale de l'entreprise, puisque [Service-Public](https://entreprendre.service-public.gouv.fr/vosdroits/F2034) rappelle qu'elle doit être jointe aux devis et aux factures. Je laisse le choix de l'artisan entre vos mains et celles de votre client.
 
 ### La liste d'achats et les commandes
 
@@ -129,7 +129,7 @@ Les honoraires suivent les phases du contrat. Quand une phase se termine, l'agen
 
 ## Photos de fin de chantier et avis : qui s'occupe de votre visibilité ?
 
-Vos meilleurs arguments dorment dans votre téléphone avec les photos de fin de chantier que vous n'avez jamais le temps de trier. Envoyez-les à l'agent avec trois mots sur le projet et il prépare la fiche du portfolio, le post Instagram et les épingles Pinterest dans votre ton. Rien ne part sans votre validation ni sans l'accord écrit du client dont l'agent garde la trace dans le dossier.
+Vos meilleurs arguments dorment dans votre téléphone avec les photos de fin de chantier que vous n'avez jamais le temps de trier. Envoyez-les à l'agent avec trois mots sur le projet et il prépare la fiche du portfolio, le post Instagram et les épingles Pinterest dans votre ton. Rien ne part sans votre validation ni sans l'accord écrit du client dont l'agent garde la trace dans le dossier. Ce que cet accord doit préciser est détaillé dans la page sur [l'agent IA d'un photographe](/metiers/photographe).
 
 Deux semaines après la réception, l'agent envoie à chaque client sans exception un mot de remerciement avec le lien pour laisser un avis, parce que Google interdit de [solliciter des avis uniquement auprès des clients satisfaits](https://support.google.com/contributionpolicy/answer/7400114?hl=fr).
 
@@ -141,7 +141,7 @@ Sur les sujets qui suivent ma réponse est non et mieux vaut le savoir avant de 
 
 Un agent qui assemble une planche ou génère une image n'a ni goût ni responsabilité. L'Ordre des architectes a publié en juillet 2026 [un rapport sur l'IA et la déontologie](https://www.architectes.org/actualites/les-rapports-du-cnoa-lia-et-les-architectes-concilier-opportunites-et-deontologie-137802) qui s'adresse aux architectes inscrits et non aux architectes d'intérieur. Ses axes valent pourtant pour tout concepteur, à commencer par la transparence envers le client et la responsabilité de celui qui signe.
 
-Le droit d'auteur va dans le même sens. Un [rapport du Conseil supérieur de la propriété littéraire et artistique](https://www.culture.gouv.fr/nous-connaitre/organisation-du-ministere/conseil-superieur-de-la-propriete-litteraire-et-artistique-cspla/travaux-et-publications-du-cspla/missions-du-cspla/rapport-de-mission-sur-le-statut-des-productions-de-l-intelligence-artificielle) paru en juillet 2026 distingue la création hybride où l'humain garde un rôle créatif de la production générée sans intervention humaine significative, qui reste étrangère au droit d'auteur. Mieux vaut donc ne jamais promettre à un client l'exclusivité d'une image sortie telle quelle d'un générateur.
+Le droit d'auteur va dans le même sens. Un [rapport du Conseil supérieur de la propriété littéraire et artistique](https://www.culture.gouv.fr/nous-connaitre/organisation-du-ministere/conseil-superieur-de-la-propriete-litteraire-et-artistique-cspla/travaux-et-publications-du-cspla/missions-du-cspla/rapport-de-mission-sur-le-statut-des-productions-de-l-intelligence-artificielle) paru en juillet 2026 distingue la création hybride où l'humain garde un rôle créatif de la production générée sans intervention humaine significative, qui reste étrangère au droit d'auteur. Je conseille donc de ne jamais promettre à un client l'exclusivité d'une image sortie telle quelle d'un générateur.
 
 ### Se dire architecte ou monter un permis
 

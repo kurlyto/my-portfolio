@@ -25,12 +25,12 @@ Aucune de ces tâches ne prend plus de deux minutes. Le problème vient de leur 
 
 ## Que fait un agent IA dans un restaurant ?
 
-Imaginez un commis qui ne toucherait jamais une casserole et qui tiendrait à la place le téléphone, la boîte de messages et la paperasse. C'est à peu près le poste. Quand je construis un agent pour un restaurant, ce sont presque toujours les mêmes missions qui reviennent.
+Imaginez un commis qui ne toucherait jamais une casserole et qui tiendrait à la place le téléphone, la boîte de messages et la paperasse. C'est à peu près le poste et j'ai expliqué [ce qu'est un agent IA](/blog/agent-ia-definition) dans un article à part. Pour un restaurant je pars presque toujours des mêmes missions.
 
 - **Les réservations et les messages.** L'agent répond sur Instagram, sur Google et par mail en notant le nom, l'heure et le nombre de couverts. Vous décidez à l'avance ce qu'il accepte seul et ce qu'il doit vous remonter.
 - **Les avis Google.** Il rédige une réponse à chaque avis et vous montre les avis négatifs avant d'envoyer quoi que ce soit.
 - **Le planning.** Il envoie le planning de la semaine à l'équipe et garde la trace des échanges de services.
-- **Les commandes fournisseurs.** Il prépare la commande d'après votre stock réel et vos habitudes puis attend votre feu vert pour l'envoyer.
+- **Les commandes fournisseurs.** Il prépare la commande d'après votre stock réel et vos habitudes et je ne le laisse jamais l'envoyer sans votre feu vert.
 - **Le point du matin.** À 7 h un seul message sur votre téléphone rassemble ce qui compte pour la journée.
 
 <figure>
@@ -46,17 +46,17 @@ Imaginez un commis qui ne toucherait jamais une casserole et qui tiendrait à la
 <figcaption>Exemple de point du matin reçu sur le téléphone du gérant. Les chiffres sont fictifs.</figcaption>
 </figure>
 
-Inutile de tout prendre d'un coup. Un agent qui fait **très bien deux de ces tâches** vous rendra plus de services qu'un agent qui bâcle les cinq.
+Je déconseille de tout prendre d'un coup parce qu'un agent qui fait **très bien deux de ces tâches** vous rendra plus de services qu'un agent qui bâcle les cinq.
 
 ## Suivre les DLC et le stock sans y penser
 
-C'est la corvée que tout le monde repousse et c'est aussi celle qui coûte le plus cher le jour où on l'oublie. Dès le lendemain de sa date limite de consommation, un produit n'a plus le droit d'être vendu et l'amende peut grimper jusqu'à [1 500 € par produit](https://www.service-public.fr/particuliers/vosdroits/F10990).
+C'est la corvée que tout le monde repousse et c'est pourtant par elle que je conseille de commencer parce qu'elle coûte cher le jour où on l'oublie. Dès le lendemain de sa date limite de consommation, un produit n'a plus le droit d'être vendu et l'amende peut grimper jusqu'à [1 500 € par produit](https://www.service-public.fr/particuliers/vosdroits/F10990).
 
 ### Comment l'agent connaît votre stock
 
-Si vous avez un logiciel de caisse ou de gestion de stock, l'agent s'y branche directement. Sinon une simple photo du bon de livraison lui suffit pour relever les produits, les quantités et les dates avant de remplir le tableau à votre place.
+Si vous avez un logiciel de caisse ou de gestion de stock, je branche l'agent dessus en premier. Sinon une simple photo du bon de livraison lui suffit pour relever les produits, les quantités et les dates avant de remplir le tableau à votre place.
 
-Tout gestionnaire le sait bien : un stock n'est juste que si l'on note ce qui en sort. La caisse s'en charge pour tout ce qui se vend. Pour les pertes et ce que consomme la cuisine, il suffit de glisser à l'agent une phrase comme « jette 2 kg de tomates » entre deux commandes.
+Mes années d'ingénierie industrielle m'ont appris qu'un stock n'est juste que si l'on note ce qui en sort. La caisse s'en charge pour tout ce qui se vend. Pour les pertes et ce que consomme la cuisine, il suffit de glisser à l'agent une phrase comme « jette 2 kg de tomates » entre deux commandes.
 
 ### Ce qu'il en fait chaque jour
 
@@ -95,7 +95,7 @@ Une fois branché sur la boutique, l'agent la fait tourner au même rythme que l
 - **Les promotions suivent vos règles.** Vous les fixez une fois pour toutes, par exemple −30 % trois jours avant la DLC et retrait de la vente la veille. L'agent les applique ensuite seul et vous envoie le bilan de la semaine.
 - **Il repère ce qui dort sur l'étagère.** Un produit qui ne s'est pas vendu depuis trois semaines vous est signalé avec une idée pour le relancer.
 
-Un point de droit mérite qu'on s'y arrête. Quand vous affichez une réduction, le prix barré doit être [le plus bas des 30 derniers jours](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000044549592). Le vieux tour qui consiste à gonfler le prix la veille pour afficher une remise spectaculaire le lendemain est donc hors jeu. La loi prévoit une exception pour les produits frais qui approchent de leur date mais pas pour vos bocaux de conserve. L'agent applique la règle qui correspond à chaque produit.
+Un point de droit mérite qu'on s'y arrête. Quand vous affichez une réduction, le prix barré doit être [le plus bas des 30 derniers jours](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000044549592). Le vieux tour qui consiste à gonfler le prix la veille pour afficher une remise spectaculaire le lendemain est donc hors jeu. La loi prévoit une exception pour les produits frais qui approchent de leur date mais pas pour vos bocaux de conserve. L'agent applique la règle qui correspond à chaque produit et je détaille ces règles de prix dans la page sur [l'agent IA d'un commerce de proximité](/metiers/epicerie).
 
 <figure>
 <ol class="flux">
@@ -112,7 +112,7 @@ Un point de droit mérite qu'on s'y arrête. Quand vous affichez une réduction,
 
 Sur un food truck le gain se voit souvent encore plus vite parce que le camion change d'adresse d'un jour à l'autre et qu'une bonne partie du chiffre vient des privatisations.
 
-Le gérant d'un food truck m'a appelé début septembre sans me dire un mot de chatbot ni de réservations. Il voulait deux choses bien précises : trouver des événements, des associations et des entreprises prêtes à privatiser un camion, puis brancher ses mails et son agenda pour ne plus laisser filer une seule demande de devis.
+Pour un food truck je ne commence ni par un chatbot ni par les réservations. Je branche d'abord les mails et l'agenda pour ne plus laisser filer une seule demande de devis. Je mets ensuite l'agent en chasse des événements, des associations et des entreprises prêtes à privatiser un camion et il prépare pour chacun un premier message que vous relisez. C'est la même mécanique que [la prospection locale d'un photographe](/metiers/photographe) qui cherche des clients entreprises.
 
 L'agent peut aussi répondre à la question qui revient sans cesse sur les réseaux : « vous êtes où ce soir ? ». Il va chercher la réponse dans le planning que vous mettez à jour une fois par semaine.
 
@@ -136,11 +136,11 @@ Publier un faux avis est une [pratique commerciale trompeuse](https://www.econom
 
 ### Faire votre plan d'hygiène
 
-Un plan HACCP écrit par une IA ne remplace ni la [formation hygiène de 14 heures](https://agriculture.gouv.fr/restauration-quelles-obligations-en-matiere-de-formation-a-lhygiene-des-aliments) ni les autocontrôles que vous faites au quotidien.
+Je refuse de faire écrire votre plan HACCP par une IA parce qu'il ne remplacerait ni la [formation hygiène de 14 heures](https://agriculture.gouv.fr/restauration-quelles-obligations-en-matiere-de-formation-a-lhygiene-des-aliments) ni les autocontrôles que vous faites au quotidien.
 
 ### Se faire passer pour un humain
 
-Depuis le 2 août 2026, toute personne qui échange avec une IA doit en être informée ([article 50 du règlement européen sur l'IA](https://www.cyberlawwatch.com/2026/07/31/eu-digital-omnibus-on-ai-enters-into-force/)). L'agent se présente donc comme l'assistant du restaurant et ne se fait jamais passer pour votre serveur.
+Le [règlement européen sur l'IA](https://digital-strategy.ec.europa.eu/fr/policies/regulatory-framework-ai) s'applique depuis le 2 août 2026 et son [article 50](https://ai-act-service-desk.ec.europa.eu/fr/ai-act/article-50) veut que toute personne qui échange avec une IA en soit informée. L'agent se présente donc comme l'assistant du restaurant et ne se fait jamais passer pour votre serveur.
 
 ## Comment ça se passe ?
 

@@ -7,7 +7,7 @@ mot_cle: "agent ia avocat"
 ---
 Un agent IA pour avocat est un assistant logiciel qui trie les mails du cabinet, surveille les délais de procédure, résume les pièces et prépare des brouillons que l'avocat relit avant tout envoi. Il travaille dans les outils que le cabinet utilise déjà et ne signe jamais rien à sa place.
 
-La question qui arrive juste après est toujours la même et elle est légitime : que deviennent les données couvertes par le secret professionnel ? Cette page y consacre un chapitre entier parce que la réponse dépend moins de l'agent que du modèle d'IA qui tourne derrière et de l'endroit où il tourne.
+La question qui arrive juste après est toujours la même et elle est légitime : que deviennent les données couvertes par le secret professionnel ? J'y consacre un chapitre entier parce que la réponse dépend moins de l'agent que du modèle d'IA qui tourne derrière et de l'endroit où il tourne.
 
 <div class="encadre">
 <p><strong>En bref</strong></p>
@@ -25,7 +25,7 @@ Rien de tout cela n'exige d'avoir prêté serment et pourtant tout finit sur le 
 
 ## Que fait un agent IA dans un cabinet d'avocats ?
 
-Imaginez un assistant qui arriverait au cabinet avant tout le monde et aurait lu chaque mail avant votre premier café. Il ne plaide pas et ne signe rien, mais il prépare le terrain pour que votre première heure serve à décider plutôt qu'à trier.
+Imaginez un assistant qui arriverait au cabinet avant tout le monde et aurait lu chaque mail avant votre premier café. Il ne plaide pas et ne signe rien, mais il prépare le terrain pour que votre première heure serve à décider plutôt qu'à trier. Si le mot « agent » vous paraît flou, j'ai écrit une [explication simple de ce qu'est un agent IA](/blog/agent-ia-definition).
 
 - **Le point du matin.** À 8 h l'agent vous envoie les mails urgents et les échéances de la semaine, rangés dossier par dossier.
 - **Les délais de procédure.** Il relève les dates dans les actes et les avis reçus puis vous alerte dix jours avant chaque échéance et encore la veille.
@@ -46,7 +46,7 @@ Imaginez un assistant qui arriverait au cabinet avant tout le monde et aurait lu
 <figcaption>Exemple de point du matin. Les dossiers sont désignés par leur numéro et les chiffres sont fictifs.</figcaption>
 </figure>
 
-Le message ne cite aucun nom de client. Travailler par numéro de dossier est une habitude toute simple qui réduit ce qui circule et elle prend tout son sens dans le chapitre qui suit.
+Le message ne cite aucun nom de client. Je fais toujours travailler l'agent par numéro de dossier parce que cette habitude toute simple réduit ce qui circule et elle prend tout son sens dans le chapitre qui suit.
 
 ## Secret professionnel : où vont les données de vos clients ?
 
@@ -58,14 +58,14 @@ L'[article 66-5 de la loi du 31 décembre 1971](https://www.legifrance.gouv.fr/c
 
 Le CNB a adopté le 17 mars 2026 un [guide « Déontologie et intelligence artificielle »](https://cnb.avocat.fr/actualite/le-cnb-adopte-un-guide-sur-la-deontologie-et-l-intelligence-artificielle) qui encadre l'IA sans l'interdire. Son texte intégral est réservé aux avocats. D'après [les commentaires publiés](https://www.village-justice.com/articles/deontologie-des-avocats-guide-cnb,56753.html), il maintient l'interdiction de confier des données couvertes par le secret à une IA générative. Il demande aussi de vérifier avant tout outil où il est hébergé, qui exploite ses serveurs et ce que disent ses conditions générales.
 
-Les lignes qui suivent ne remplacent pas la lecture de ce guide. Elles aident à comprendre ce que recouvrent ces vérifications et pourquoi certains montages résistent mieux que d'autres.
+Les lignes qui suivent ne remplacent pas la lecture de ce guide et je les ai écrites pour aider à comprendre ce que recouvrent ces vérifications et pourquoi certains montages résistent mieux que d'autres.
 
 ### D'où vient le modèle et quel droit l'accompagne ?
 
 Les modèles d'IA se rangent en trois grandes familles et chacune voyage avec le droit de son pays.
 
 - **Les modèles américains.** Ce sont ceux d'OpenAI et d'Anthropic, de Google ou de Meta. Le [CLOUD Act](https://www.congress.gov/bill/115th-congress/house-bill/4943/text) de 2018 oblige une entreprise américaine à livrer sur réquisition les données qu'elle détient même quand elles sont stockées hors des États-Unis. Interrogé sous serment au Sénat en juin 2025, le directeur des affaires publiques et juridiques de Microsoft France a reconnu [ne pas pouvoir garantir](https://www.senat.fr/compte-rendu-commissions/20250609/ce_commande_publique.html) que les données des Français ne seraient jamais transmises.
-- **Les modèles européens.** Le plus connu est celui de Mistral AI, une entreprise française qui [héberge par défaut les données dans l'Union européenne](https://help.mistral.ai/en/articles/347629-where-do-you-store-my-data-or-my-organization-s-data). C'est ce partenaire que le [Conseil supérieur du notariat a choisi](https://www.csn.notaires.fr/fr/actualites/intelligence-artificielle-le-conseil-superieur-du-notariat-choisit-mistral-ai-et) en juillet 2026 avec un hébergement chez le français Scaleway.
+- **Les modèles européens.** Le plus connu est celui de Mistral AI, une entreprise française qui [héberge par défaut les données dans l'Union européenne](https://help.mistral.ai/en/articles/347629-where-do-you-store-my-data-or-my-organization-s-data). C'est ce partenaire que le [Conseil supérieur du notariat a choisi](https://www.csn.notaires.fr/fr/actualites/intelligence-artificielle-le-conseil-superieur-du-notariat-choisit-mistral-ai-et) en juillet 2026 avec un hébergement chez le français Scaleway. Je reviens sur ce choix dans [la page consacrée aux notaires](/metiers/notaire).
 - **Les modèles chinois.** DeepSeek, Qwen chez Alibaba et Kimi chez Moonshot AI en sont les têtes d'affiche. Utilisé en direct, DeepSeek [stocke les données en Chine](https://cdn.deepseek.com/policies/en-US/deepseek-privacy-policy.html) et l'autorité italienne de protection des données a [ordonné en urgence la limitation](https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/10097450) du traitement des données de ses utilisateurs italiens dès janvier 2025.
 
 Une subtilité change pourtant la donne. Le droit qui s'applique dépend moins du pays qui a conçu le modèle que de l'entreprise qui le fait tourner et garde les données. Beaucoup de modèles sont publiés « à poids ouverts » et on peut alors les télécharger pour les installer sur son propre serveur. Un modèle chinois ou américain installé sur une machine française que vous contrôlez n'envoie rien à son éditeur.
@@ -90,7 +90,7 @@ C'est la crainte qui revient le plus souvent et la réponse dépend moins du fou
 
 Pas d'entraînement ne veut pas dire pour autant zéro conservation. OpenAI et Anthropic gardent par défaut les échanges de leurs API jusqu'à trente jours pour détecter les abus. L'option « zéro rétention » existe mais s'obtient sur accord et Anthropic conserve malgré tout trente jours les échanges avec [ses modèles les plus avancés](https://privacy.claude.com/en/articles/15425996-data-retention-practices-for-covered-models) depuis juin 2026. Un juge peut aussi s'en mêler puisqu'en 2025 le procès intenté par le New York Times a [obligé OpenAI à conserver](https://www.engadget.com/ai/openai-no-longer-has-to-preserve-all-of-its-chatgpt-data-with-some-exceptions-192422093.html) pendant plusieurs mois les journaux de ChatGPT et de son API.
 
-La règle pratique tient donc en une phrase : un compte grand public n'a rien à faire dans un cabinet, qu'il soit gratuit ou payant.
+Ma règle pratique tient donc en une phrase : un compte grand public n'a rien à faire dans un cabinet, qu'il soit gratuit ou payant.
 
 ### Les montages qui tiennent la route
 
@@ -111,25 +111,25 @@ Du plus fermé au plus ouvert, cinq montages reviennent dans la pratique et chac
 
 Deux précisions évitent les mauvaises surprises. La première concerne la pseudonymisation qui remplace les noms par des codes avant l'envoi au modèle. La CNIL rappelle que des données pseudonymisées [restent des données personnelles](https://www.cnil.fr/fr/lanonymisation-de-donnees-personnelles) et le secret couvre de toute façon toutes les pièces du dossier bien au-delà des noms. La seconde concerne le contrat, puisque le RGPD impose un [contrat de sous-traitance](https://www.cnil.fr/fr/rgpd-et-professionnels-de-sante-liberaux-ce-que-vous-devez-savoir) avec chaque prestataire qui touche aux données et que la CNIL recommande d'y interdire noir sur blanc toute réutilisation par le fournisseur.
 
-Le bon montage dépend enfin de ce que l'agent touche réellement. Un agent qui tient l'agenda et relance les honoraires manipule bien moins d'informations sensibles qu'un agent qui résume des pièces adverses et lit le cœur de l'affaire. Rien n'empêche donc de réserver le montage le plus fermé aux tâches couvertes par le secret.
+Le bon montage dépend enfin de ce que l'agent touche réellement. Un agent qui tient l'agenda et relance les honoraires manipule bien moins d'informations sensibles qu'un agent qui résume des pièces adverses et lit le cœur de l'affaire. Rien n'empêche donc de réserver le montage le plus fermé aux tâches couvertes par le secret. Je choisis le montage avec vous à l'audit et j'annonce chaque compromis avant de construire.
 
 ## Ce qu'un agent IA ne doit pas faire à votre place
 
 ### Citer une jurisprudence que personne n'a vérifiée
 
-Les modèles d'IA inventent parfois des références avec un aplomb désarmant et les juridictions françaises commencent à le relever. Le tribunal administratif d'Orléans a trouvé [une quinzaine de références fictives](https://www.village-justice.com/articles/les-hallucinations-intelligence-artificielle-devant-les-juridictions-francaises,56337.html) dans les conclusions d'un avocat le 29 décembre 2025 et l'a invité à vérifier ses sources à l'avenir. Ce n'est pas l'usage de l'IA que le juge a reproché mais l'absence de vérification. L'agent donne donc ses sources et c'est vous qui les contrôlez.
+Les modèles d'IA inventent parfois des références avec un aplomb désarmant et les juridictions françaises commencent à le relever. Le tribunal administratif d'Orléans a trouvé [une quinzaine de références fictives](https://www.village-justice.com/articles/les-hallucinations-intelligence-artificielle-devant-les-juridictions-francaises,56337.html) dans les conclusions d'un avocat le 29 décembre 2025 et l'a invité à vérifier ses sources à l'avenir. Ce n'est pas l'usage de l'IA que le juge a reproché mais l'absence de vérification. Je construis donc l'agent pour qu'il donne ses sources et c'est vous qui les contrôlez.
 
 ### Répondre seul à vos clients
 
-Un brouillon que vous relisez puis envoyez sous votre nom reste votre courrier. Un robot qui converse directement avec le client est une autre affaire, puisque [le guide du CNB adopté en mars 2026](https://www.village-justice.com/articles/deontologie-des-avocats-guide-cnb,56753.html) demande dans ce cas le consentement explicite du client. Par défaut l'agent prépare et vous envoyez.
+Un brouillon que vous relisez puis envoyez sous votre nom reste votre courrier. Un robot qui converse directement avec le client est une autre affaire, puisque [le guide du CNB adopté en mars 2026](https://www.village-justice.com/articles/deontologie-des-avocats-guide-cnb,56753.html) demande dans ce cas le consentement explicite du client. Chez moi l'agent prépare par défaut et c'est vous qui envoyez.
 
 ### Vous vendre une conformité clé en main
 
-Aucune instance ne certifie un outil d'IA comme conforme au secret professionnel et il n'existe pas de label RGPD général pour un logiciel. Un prestataire qui vous promet l'inverse vous vend une étiquette. On peut en revanche vérifier un montage précis en demandant quel modèle tourne, où il est hébergé, sous quel contrat et avec quelles données.
+Aucune instance ne certifie un outil d'IA comme conforme au secret professionnel et il n'existe pas de label RGPD général pour un logiciel. Je ne vous promettrai donc jamais un agent « conforme » et un prestataire qui promet l'inverse vend une étiquette. On peut en revanche vérifier un montage précis en demandant quel modèle tourne, où il est hébergé, sous quel contrat et avec quelles données.
 
 ### Se faire passer pour un humain
 
-Depuis le 2 août 2026, une personne qui échange avec une IA doit en être informée ([article 50 du règlement européen sur l'IA](https://www.cyberlawwatch.com/2026/07/31/eu-digital-omnibus-on-ai-enters-into-force/)). Si l'agent répond un jour à un premier contact sur le site du cabinet, il se présente comme l'assistant du cabinet.
+Le règlement européen sur l'IA [est devenu applicable le 2 août 2026](https://digital-strategy.ec.europa.eu/fr/policies/regulatory-framework-ai) et son [article 50](https://ai-act-service-desk.ec.europa.eu/fr/ai-act/article-50) demande que toute personne qui échange avec une IA en soit informée. Si l'agent répond un jour à un premier contact sur le site du cabinet, je le règle pour qu'il se présente comme l'assistant du cabinet.
 
 ## Comment ça se passe ?
 

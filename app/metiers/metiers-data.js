@@ -75,7 +75,7 @@ export const METIERS = [
     nateMessage:
       "Je tiens une épicerie et j'ai consulté les possibilités pour un agent pour mon métier, je suis intéressé.",
     emoji: "\u{1F6D2}",
-    badge: "Épicerie",
+    badge: "Commerçant",
     title: "Commerce de proximité / Épicerie",
     demandes: [
       "Alerte-moi quand un produit passe sous 5 unités et prépare la commande fournisseur.",

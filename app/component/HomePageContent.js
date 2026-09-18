@@ -103,7 +103,7 @@ function NateCard({ onStart }) {
 
 const THREAD_STORAGE_KEY = "nate-chat-thread-id";
 
-export default function HomePageContent() {
+export default function HomePageContent({ articles = [] }) {
   const [chatOpen, setChatOpen] = useState(false);
 
   // Rouvre le chat uniquement au retour de la verification email (?chat=1) :
@@ -453,7 +453,7 @@ export default function HomePageContent() {
           peut-etre besoin du systeme complet : on l'oriente plutot que de le
           perdre. Avant, ce bloc coupait la page en son milieu. */}
       <AiosTeaser />
-      <Footer showHomeLink={false} />
+      <Footer articles={articles} showHomeLink={false} />
     </div>
   );
 }

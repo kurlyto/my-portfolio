@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Header from "../component/Header";
-import Footer from "../component/Footer";
+import Footer from "../component/FooterAvecArticles";
 import { tousLesArticles, FORMATS, SITE_URL, dateLisible } from "./blog-data";
 
 const articles = tousLesArticles();

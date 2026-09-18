@@ -25,7 +25,7 @@ Aucune de ces tâches ne réclame votre talent de négociateur mais toutes récl
 
 ## Que fait un agent IA dans une agence immobilière ?
 
-Imaginez un assistant commercial qui ne ferait jamais une visite et qui tiendrait à la place la boîte mail, l'agenda et le tableau des mandats. Quand on me demande un agent pour l'immobilier, ce sont presque toujours les mêmes missions qui reviennent.
+Imaginez un assistant commercial qui ne ferait jamais une visite et qui tiendrait à la place la boîte mail, l'agenda et le tableau des mandats. Si le mot vous paraît flou, j'ai expliqué [ce qu'est un agent IA](/blog/agent-ia-definition) dans un article à part. Pour une agence je pars presque toujours des cinq mêmes missions.
 
 - **Les visites.** L'agent répond aux demandes des portails, cale les rendez-vous et les confirme la veille.
 - **Les photos et les annonces.** Il retouche les photos que vous lui envoyez et prépare un brouillon d'annonce.
@@ -52,13 +52,13 @@ Une heure passée dans un bien en coûte souvent une autre au téléphone et dan
 
 ### Les demandes se qualifient sans vous
 
-Les demandes des portails arrivent par mail et l'agent y répond dans les minutes qui suivent, y compris le dimanche soir. Il pose les questions que vous avez choisies sur le financement et le délai du projet, puis il propose les créneaux que vous avez ouverts. Vous décidez une fois pour toutes de ce qu'il confirme seul et de ce qu'il vous remonte.
+Les demandes des portails arrivent par mail et l'agent y répond dans les minutes qui suivent, y compris le dimanche soir. Il pose les questions que vous avez choisies sur le financement et le délai du projet, puis il propose les créneaux que vous avez ouverts. Je règle avec vous dès l'audit ce qu'il confirme seul et ce qu'il vous remonte.
 
 ### La tournée se construit et chaque visiteur confirme la veille
 
 L'agent regroupe les visites d'un même bien sur la même heure et range les rendez-vous par quartier en comptant le temps de trajet. Votre samedi ressemble alors à une tournée de facteur plutôt qu'à une partie de flipper.
 
-La veille à 18 h, chaque visiteur reçoit un message avec l'adresse et l'heure et il lui suffit de répondre pour confirmer. Celui qui se tait est relancé le lendemain matin et son créneau vous est signalé comme incertain. Quand quelqu'un annule, l'agent propose la place au suivant sur la liste d'attente.
+La veille à 18 h, chaque visiteur reçoit un message avec l'adresse et l'heure et il lui suffit de répondre pour confirmer. Celui qui se tait est relancé le lendemain matin et son créneau vous est signalé comme incertain. Quand quelqu'un annule, l'agent propose la place au suivant sur la liste d'attente et c'est la même mécanique que [dans un salon de coiffure](/metiers/coiffeur).
 
 ### Le propriétaire reçoit le retour des visiteurs le soir même
 
@@ -85,7 +85,7 @@ Chaque visiteur laisse derrière lui un budget, un quartier et un nombre de cham
 
 Un photographe n'est pas disponible pour chaque mandat et le téléphone fait ce qu'il peut face à une baie vitrée en plein midi. Vous sortez du bien avec vingt photos et vous les envoyez à l'agent par message. Quelques minutes plus tard la série revient retouchée. La lumière est rééquilibrée pour que l'on voie la pièce et pas seulement la fenêtre, les murs penchés retrouvent leurs verticales et le ciel blanc du contre-jour reprend des couleurs.
 
-L'agent peut aussi désencombrer une pièce ou meubler un salon vide, ce que le métier appelle le home staging virtuel. Ces images portent toujours la mention « aménagement virtuel » et la photo réelle reste à côté dans l'annonce. Il améliore la prise de vue et ne touche jamais au bien lui-même.
+L'agent peut aussi désencombrer une pièce ou meubler un salon vide, ce que le métier appelle le home staging virtuel. Je tiens à ce que ces images portent toujours la mention « aménagement virtuel » et que la photo réelle reste à côté dans l'annonce. C'est la règle que suit aussi [l'image d'ambiance d'un architecte d'intérieur](/metiers/architecte-interieur). Il améliore la prise de vue et ne touche jamais au bien lui-même.
 
 <figure>
 <div class="message">
@@ -117,11 +117,11 @@ Quand un propriétaire remplit le formulaire de votre site, l'agent lui répond 
 
 L'agent part des ventes réelles parce que l'État publie en données ouvertes la base [Demandes de valeurs foncières](https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres), dite DVF. Elle recense les transactions des cinq dernières années, sauf en Alsace, en Moselle et à Mayotte.
 
-L'agent y cherche les ventes comparables et y ajoute les biens concurrents encore en vente, qu'il surveille chaque matin sur les sites des agences du secteur. La base ignore l'état du bien, l'étage et la vue, si bien que la fourchette obtenue reste un travail préparatoire. Elle ne remplace pas l'avis de valeur que vous signez et le chiffre annoncé au vendeur reste le vôtre.
+L'agent y cherche les ventes comparables et y ajoute les biens concurrents encore en vente, qu'il surveille chaque matin sur les sites des agences du secteur. La base ignore l'état du bien, l'étage et la vue, si bien que la fourchette obtenue reste un travail préparatoire. Je ne laisse jamais un agent annoncer un prix à un vendeur parce que cette fourchette ne remplace pas l'avis de valeur que vous signez.
 
 ### Les estimations sans suite et les fins de mandat sont suivies
 
-Un propriétaire qui ne signe pas en mars vendra peut-être en septembre et choisira l'agence qui se sera souvenue de lui. L'agent garde la date de chaque estimation et prépare une relance au bout du délai que vous avez choisi, avec un fait utile comme une vente récente dans la rue.
+Un propriétaire qui ne signe pas en mars vendra peut-être en septembre et choisira l'agence qui se sera souvenue de lui. L'agent garde la date de chaque estimation et prépare une relance au bout du délai que vous avez choisi. Je conseille d'y glisser un fait utile comme une vente récente dans la rue.
 
 Il surveille aussi la date de fin de chaque exclusivité. Quelques semaines avant, vous recevez le bilan des visites et vous arrivez chez le vendeur avec des faits.
 
@@ -169,7 +169,7 @@ Il vérifie qu'un dossier est complet et il ne réclame aucune pièce interdite 
 
 ### Aspirer vos fichiers clients sans cadre
 
-Votre fichier d'acquéreurs contient des budgets et des projets de vie. La CNIL rappelle qu'un professionnel de l'immobilier doit [inscrire ce fichier dans son registre des traitements, informer les personnes et sécuriser les données](https://www.cnil.fr/fr/cnil-direct/question/gestion-et-negociations-de-biens-immobiliers-que-faire). L'agent n'ouvre donc que les boîtes et les dossiers que vous lui désignez et le choix du modèle d'IA, qui décide où partent les données, se fait avec vous avant tout branchement.
+Votre fichier d'acquéreurs contient des budgets et des projets de vie. La CNIL rappelle qu'un professionnel de l'immobilier doit [inscrire ce fichier dans son registre des traitements, informer les personnes et sécuriser les données](https://www.cnil.fr/fr/cnil-direct/question/gestion-et-negociations-de-biens-immobiliers-que-faire). L'agent n'ouvre donc que les boîtes et les dossiers que vous lui désignez. Le choix du modèle d'IA décide où partent les données et je le fais avec vous avant tout branchement en suivant le guide que j'ai écrit pour [l'agent IA d'un notaire](/metiers/notaire).
 
 ### Appeler à froid des particuliers
 
@@ -177,7 +177,7 @@ Depuis le 11 août 2026 le démarchage téléphonique est [interdit par principe
 
 ### Se faire passer pour un humain
 
-Depuis le 2 août 2026, toute personne qui échange avec une IA doit en être informée ([article 50 du règlement européen sur l'IA](https://www.cyberlawwatch.com/2026/07/31/eu-digital-omnibus-on-ai-enters-into-force/)). Quand il répond à une demande de visite, l'agent se présente donc comme l'assistant de l'agence et ne signe jamais de votre prénom.
+Le [règlement européen sur l'IA](https://digital-strategy.ec.europa.eu/fr/policies/regulatory-framework-ai) s'applique depuis le 2 août 2026 et son [article 50](https://ai-act-service-desk.ec.europa.eu/fr/ai-act/article-50) veut que toute personne qui échange avec une IA en soit informée. Quand il répond à une demande de visite, l'agent se présente donc comme l'assistant de l'agence et ne signe jamais de votre prénom.
 
 ## Comment ça se passe ?
 

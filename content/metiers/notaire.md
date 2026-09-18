@@ -7,7 +7,7 @@ mot_cle: "ia notaire"
 ---
 Un agent IA pour notaire est un assistant logiciel qui trie les mails de l'étude, relance les pièces manquantes, cale les rendez-vous de signature et prépare des récapitulatifs de dossier que le notaire vérifie. Il prépare le travail et ne touche ni à la rédaction des actes ni au conseil, qui restent l'affaire du notaire.
 
-Reste la question que tout notaire pose avant les autres : que deviennent les données de ses clients ? Le notariat a lui-même tranché une partie du débat cet été et cette page y consacre un chapitre entier.
+Reste la question que tout notaire pose avant les autres : que deviennent les données de ses clients ? Le notariat a lui-même tranché une partie du débat cet été et j'y consacre un chapitre entier.
 
 <div class="encadre">
 <p><strong>En bref</strong></p>
@@ -23,7 +23,7 @@ Pendant ce temps la boîte de l'étude se remplit de questions sur l'avancement 
 
 ## Que fait un agent IA dans une étude notariale ?
 
-Imaginez un clerc infatigable dont le seul métier serait de courir après les pièces et de tenir les agendas. L'agent ne rédige pas l'acte, mais il fait en sorte que le dossier soit complet le jour où vous vous asseyez pour le rédiger.
+Imaginez un clerc infatigable dont le seul métier serait de courir après les pièces et de tenir les agendas. L'agent ne rédige pas l'acte, mais il fait en sorte que le dossier soit complet le jour où vous vous asseyez pour le rédiger. Si le mot « agent » vous paraît flou, j'ai écrit une [explication simple de ce qu'est un agent IA](/blog/agent-ia-definition).
 
 - **Le point du matin.** À 8 h l'agent vous envoie les mails de la nuit et les échéances des dossiers de la semaine.
 - **Les pièces manquantes.** Il tient pour chaque dossier la liste de ce qui est arrivé et de ce qui manque, puis prépare les relances que vous validez.
@@ -70,9 +70,9 @@ Choisir où tourne le modèle ressemble beaucoup au choix d'un endroit pour rang
 - **Le coffre étranger : l'API du fournisseur.** Vous appelez directement le modèle chez OpenAI, Anthropic ou Google. Vous profitez des modèles les plus puissants du marché et le CLOUD Act s'applique pleinement.
 - **L'agence locale : un cloud américain installé en Europe.** Microsoft propose par exemple de [traiter les requêtes dans l'Union européenne](https://learn.microsoft.com/en-us/azure/foundry/responsible-ai/openai/data-privacy) sans les utiliser pour l'entraînement. Amazon a ouvert en janvier 2026 un [cloud européen](https://aws.amazon.com/blogs/aws/opening-the-aws-european-sovereign-cloud) géré par des sociétés de droit allemand. L'opérateur reste pourtant rattaché à un groupe américain et aucun juge n'a encore dit si le CLOUD Act l'atteint.
 - **Le coffre agréé : un cloud qualifié SecNumCloud.** Cette qualification délivrée par l'ANSSI exige que le prestataire soit [soumis exclusivement au droit européen](https://cyber.gouv.fr/enjeux-technologiques/cloud/faq-qualification-secnumcloud/) et que les données restent dans l'Union. L'ANSSI la présente comme une protection face à une possible injonction étrangère et [Outscale](https://en.outscale.com/llmaas-by-outscale/) propose déjà des modèles de Mistral sur une telle infrastructure.
-- **L'armoire du bureau : un modèle installé chez vous.** Un modèle à poids ouverts tourne alors sur un serveur du étude ou sur un serveur dédié chez un hébergeur français. La [CNIL recommande](https://www.cnil.fr/fr/les-questions-reponses-de-la-cnil-sur-lutilisation-dun-systeme-dia-generative) justement de privilégier ce déploiement « sur site » pour des données sensibles et [Mistral Small 3.1](https://mistral.ai/news/mistral-small-3-1/) tient par exemple sur une seule carte graphique haut de gamme.
+- **L'armoire du bureau : un modèle installé chez vous.** Un modèle à poids ouverts tourne alors sur un serveur de l'étude ou sur un serveur dédié chez un hébergeur français. La [CNIL recommande](https://www.cnil.fr/fr/les-questions-reponses-de-la-cnil-sur-lutilisation-dun-systeme-dia-generative) justement de privilégier ce déploiement « sur site » pour des données sensibles et [Mistral Small 3.1](https://mistral.ai/news/mistral-small-3-1/) tient par exemple sur une seule carte graphique haut de gamme.
 
-L'armoire a ses propres contraintes. Les modèles qui tiennent sur une machine de étude restent moins brillants que les plus gros modèles du marché sur les tâches complexes et le serveur réclame des mises à jour, des sauvegardes et une vraie surveillance. Tout le logiciel autour du modèle doit aussi jouer le jeu, puisqu'une messagerie ou une sauvegarde hébergée ailleurs suffit à faire sortir les données par une autre porte. Les licences méritent enfin un coup d'œil car celle de Llama 4 [exclut les entreprises établies dans l'Union](https://github.com/meta-llama/llama-models/blob/main/models/llama4/LICENSE) pour ses modèles multimodaux.
+L'armoire a ses propres contraintes. Les modèles qui tiennent sur une machine de l'étude restent moins brillants que les plus gros modèles du marché sur les tâches complexes et le serveur réclame des mises à jour, des sauvegardes et une vraie surveillance. Tout le logiciel autour du modèle doit aussi jouer le jeu, puisqu'une messagerie ou une sauvegarde hébergée ailleurs suffit à faire sortir les données par une autre porte. Les licences méritent enfin un coup d'œil car celle de Llama 4 [exclut les entreprises établies dans l'Union](https://github.com/meta-llama/llama-models/blob/main/models/llama4/LICENSE) pour ses modèles multimodaux.
 
 ### Vos données servent-elles à entraîner le modèle ?
 
@@ -83,7 +83,7 @@ C'est la crainte qui revient le plus souvent et la réponse dépend moins du fou
 
 Pas d'entraînement ne veut pas dire pour autant zéro conservation. OpenAI et Anthropic gardent par défaut les échanges de leurs API jusqu'à trente jours pour détecter les abus. L'option « zéro rétention » existe mais s'obtient sur accord et Anthropic conserve malgré tout trente jours les échanges avec [ses modèles les plus avancés](https://privacy.claude.com/en/articles/15425996-data-retention-practices-for-covered-models) depuis juin 2026. Un juge peut aussi s'en mêler puisqu'en 2025 le procès intenté par le New York Times a [obligé OpenAI à conserver](https://www.engadget.com/ai/openai-no-longer-has-to-preserve-all-of-its-chatgpt-data-with-some-exceptions-192422093.html) pendant plusieurs mois les journaux de ChatGPT et de son API.
 
-La règle pratique tient donc en une phrase : un compte grand public n'a rien à faire dans un étude, qu'il soit gratuit ou payant.
+Ma règle pratique tient donc en une phrase : un compte grand public n'a rien à faire dans une étude, qu'il soit gratuit ou payant.
 
 ### Les montages qui tiennent la route
 
@@ -93,7 +93,7 @@ Du plus fermé au plus ouvert, cinq montages reviennent dans la pratique et chac
 
 | Montage | Où vont les données | Ce qu'il faut accepter |
 |---|---|---|
-| Modèle ouvert sur un serveur du étude ou chez un hébergeur français | Nulle part ailleurs | Un modèle moins puissant et un serveur à entretenir |
+| Modèle ouvert sur un serveur de l'étude ou chez un hébergeur français | Nulle part ailleurs | Un modèle moins puissant et un serveur à entretenir |
 | Modèle ouvert en service chez un opérateur qualifié SecNumCloud | Chez un opérateur soumis au seul droit européen | Un choix de modèles plus restreint |
 | Modèle européen par API avec hébergement dans l'Union | Chez Mistral, dans l'Union par défaut | Des sous-traitants possibles hors de l'Union et des réglages à vérifier |
 | Modèle américain dans un cloud américain installé en Europe | En Europe, chez un opérateur rattaché à un groupe américain | Une exposition au CLOUD Act qui n'est pas levée |
@@ -104,25 +104,25 @@ Du plus fermé au plus ouvert, cinq montages reviennent dans la pratique et chac
 
 Deux précisions évitent les mauvaises surprises. La première concerne la pseudonymisation qui remplace les noms par des codes avant l'envoi au modèle. La CNIL rappelle que des données pseudonymisées [restent des données personnelles](https://www.cnil.fr/fr/lanonymisation-de-donnees-personnelles) et le secret couvre de toute façon tout ce qui a été porté à la connaissance du notaire bien au-delà des noms. La seconde concerne le contrat, puisque le RGPD impose un [contrat de sous-traitance](https://www.cnil.fr/fr/rgpd-et-professionnels-de-sante-liberaux-ce-que-vous-devez-savoir) avec chaque prestataire qui touche aux données et que la CNIL recommande d'y interdire noir sur blanc toute réutilisation par le fournisseur.
 
-Le bon montage dépend enfin de ce que l'agent touche réellement. Un agent qui cale des rendez-vous de signature manipule bien moins d'informations sensibles qu'un agent qui prépare le récapitulatif d'une succession. Rien n'empêche donc de réserver le montage le plus fermé aux tâches qui ouvrent le fond des dossiers.
+Le bon montage dépend enfin de ce que l'agent touche réellement. Un agent qui cale des rendez-vous de signature manipule bien moins d'informations sensibles qu'un agent qui prépare le récapitulatif d'une succession. Rien n'empêche donc de réserver le montage le plus fermé aux tâches qui ouvrent le fond des dossiers. Je choisis le montage avec vous à l'audit et j'annonce chaque compromis avant de construire.
 
 ## Ce qu'un agent IA ne doit pas faire à votre place
 
 ### Rédiger l'acte ou conseiller le client
 
-Les règles professionnelles sont nettes : le notaire [ne peut sous-traiter](https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000049060714) ni la rédaction de ses actes, ni leur réception, ni le conseil. L'agent prépare les pièces et les synthèses mais la plume reste la vôtre. Le guide publié par l'Institut d'études juridiques du CSN en décembre 2025 parle d'une [responsabilité « pleine et entière »](https://www.csn.notaires.fr/fr/actualites/introduction-lintelligence-artificielle-le-nouveau-guide-juridique-de-liej) de l'acte notarié.
+Les règles professionnelles sont nettes : le notaire [ne peut sous-traiter](https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000049060714) ni la rédaction de ses actes, ni leur réception, ni le conseil. Je ne construis donc aucun agent qui rédige un acte. L'agent prépare les pièces et les synthèses mais la plume reste la vôtre. Le guide publié par l'Institut d'études juridiques du CSN en décembre 2025 parle d'une [responsabilité « pleine et entière »](https://www.csn.notaires.fr/fr/actualites/introduction-lintelligence-artificielle-le-nouveau-guide-juridique-de-liej) de l'acte notarié.
 
 ### Toucher aux dossiers de lutte contre le blanchiment
 
-Il est interdit de révéler à un client [l'existence d'une déclaration de soupçon](https://www.economie.gouv.fr/tracfin/la-confidentialite-de-la-declaration-de-soupcon) adressée à Tracfin. Un assistant qui prépare des réponses aux clients n'a donc rien à faire dans ces dossiers et on les exclut de son périmètre dès le départ.
+Il est interdit de révéler à un client [l'existence d'une déclaration de soupçon](https://www.economie.gouv.fr/tracfin/la-confidentialite-de-la-declaration-de-soupcon) adressée à Tracfin. Un assistant qui prépare des réponses aux clients n'a donc rien à faire dans ces dossiers et je les exclus de son périmètre dès l'audit. La même prudence vaut pour [un cabinet d'expertise comptable](/metiers/expert-comptable).
 
 ### Répondre seul aux clients
 
-Un brouillon relu puis envoyé par l'étude reste un courrier de l'étude. Un robot qui converse directement avec vos clients pose une autre question de secret et de responsabilité. Par défaut l'agent prépare et c'est l'étude qui envoie.
+Un brouillon relu puis envoyé par l'étude reste un courrier de l'étude. Un robot qui converse directement avec vos clients pose une autre question de secret et de responsabilité et j'explique sur [la page des avocats](/metiers/avocat) comment le CNB l'a traitée. Chez moi l'agent prépare par défaut et c'est l'étude qui envoie.
 
 ### Se faire passer pour un humain
 
-Depuis le 2 août 2026, une personne qui échange avec une IA doit en être informée ([article 50 du règlement européen sur l'IA](https://www.cyberlawwatch.com/2026/07/31/eu-digital-omnibus-on-ai-enters-into-force/)). Si l'agent répond un jour à un premier contact, il se présente comme l'assistant de l'étude.
+Le règlement européen sur l'IA [est devenu applicable le 2 août 2026](https://digital-strategy.ec.europa.eu/fr/policies/regulatory-framework-ai) et son [article 50](https://ai-act-service-desk.ec.europa.eu/fr/ai-act/article-50) demande que toute personne qui échange avec une IA en soit informée. Si l'agent répond un jour à un premier contact, je le règle pour qu'il se présente comme l'assistant de l'étude.
 
 ## Comment ça se passe ?
 

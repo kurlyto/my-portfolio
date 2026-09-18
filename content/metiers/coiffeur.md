@@ -23,13 +23,13 @@ Chacune de ces interruptions se règle en deux minutes, sauf que vos deux mains 
 
 Le poste ressemble à celui d'une personne à l'accueil qui ne prendrait jamais de pause et ne toucherait jamais un peigne. J'ai expliqué [ce qu'est un agent IA](/blog/agent-ia-definition) dans un article à part et dans un salon son travail tient en quatre missions : répondre à chaque demande, remplir les fauteuils, faire revenir les clientes et tenir les coulisses.
 
-Inutile de tout confier d'un coup. Un agent qui tient **très bien les rendez-vous et les rappels** vous rendra plus de services qu'un agent qui bâcle tout le reste.
+Je ne pousse jamais à tout confier d'un coup. Un agent qui tient **très bien les rendez-vous et les rappels** vous rendra plus de services qu'un agent qui bâcle tout le reste.
 
 ## Comment l'agent prend-il les rendez-vous pendant que vous coiffez ?
 
 ### Au téléphone quand vous avez les mains prises
 
-Le montage le plus simple est un renvoi d'appel : votre téléphone sonne comme d'habitude et si personne ne décroche au bout de quatre sonneries l'appel bascule vers l'agent. Il se présente comme l'assistant virtuel du salon puis il demande la prestation et propose deux créneaux. La cliente reçoit sa confirmation par SMS et vous retrouvez le rendez-vous dans l'agenda sans avoir lâché votre pinceau.
+Le montage que je préfère est un simple renvoi d'appel : votre téléphone sonne comme d'habitude et si personne ne décroche au bout de quatre sonneries l'appel bascule vers l'agent. Il se présente comme l'assistant virtuel du salon puis il demande la prestation et propose deux créneaux. La cliente reçoit sa confirmation par SMS et vous retrouvez le rendez-vous dans l'agenda sans avoir lâché votre pinceau.
 
 La voix de synthèse a ses limites parce qu'elle marque un léger temps entre deux phrases et qu'un accent ou un prénom rare la font parfois répéter. Un agent bien réglé ne devine pas ce qu'il n'a pas compris et propose alors de continuer par SMS. Je conseille souvent de commencer par l'écrit et d'ouvrir la voix ensuite.
 
@@ -39,7 +39,7 @@ Beaucoup de demandes arrivent par écrit et souvent le soir, quand vos clientes 
 
 ### Les règles que vous fixez une fois
 
-Le créneau d'une couleur n'a rien à voir avec celui d'une coupe et le temps de pose libère un fauteuil pendant une demi-heure. On écrit donc ensemble la durée de chaque prestation et qui sait la réaliser dans l'équipe. L'agent sait alors qu'une coupe homme tient dans la pose d'un balayage et qu'une décoloration ne se case pas à 18 h un samedi. Un institut suit la même logique avec ses cabines et la durée des soins.
+Le créneau d'une couleur n'a rien à voir avec celui d'une coupe et le temps de pose libère un fauteuil pendant une demi-heure. À l'audit j'écris donc avec vous la durée de chaque prestation et qui sait la réaliser dans l'équipe. L'agent sait alors qu'une coupe homme tient dans la pose d'un balayage et qu'une décoloration ne se case pas à 18 h un samedi. Un institut suit la même logique avec ses cabines et la durée des soins.
 
 Vous décidez aussi de ce qu'il accepte sans vous. Une coupe pour une cliente connue se réserve toute seule alors qu'une coiffure de mariage vous est remontée avec la photo et la demande.
 
@@ -49,7 +49,7 @@ Chaque rendez-vous pris déclenche une confirmation immédiate. La veille, l'age
 
 L'agent cherche ensuite dans la liste d'attente les clientes dont la prestation tient dans le trou et il leur écrit dans l'ordre que vous avez choisi. La première qui confirme prend la place et les autres sont prévenues que le créneau est parti.
 
-Reste la cliente qui ne répond pas au rappel et ne vient pas. L'agent note le lapin dans sa fiche et au deuxième il vous pose la question. Vous pouvez alors lui faire demander un acompte pour les prestations longues et il enverra le lien de paiement avec la confirmation. Aucun outil sérieux ne promet la fin des lapins mais cette chaîne en rattrape déjà une bonne partie.
+Reste la cliente qui ne répond pas au rappel et ne vient pas. L'agent note le lapin dans sa fiche et au deuxième il vous pose la question. Vous pouvez alors lui faire demander un acompte pour les prestations longues et il enverra le lien de paiement avec la confirmation. Je ne vous promettrai pas la fin des lapins et aucun outil sérieux ne le peut mais cette chaîne en rattrape déjà une bonne partie.
 
 <figure>
 <ol class="flux">
@@ -79,7 +79,7 @@ Tous les salons ont leur mardi après-midi. Le lundi matin l'agent repère dans 
 <figcaption>Exemple de proposition pour remplir un creux. Le prénom et les chiffres sont fictifs.</figcaption>
 </figure>
 
-Un seul message suffit et une cliente qui ne répond pas n'est pas relancée une seconde fois sans votre accord. Tout cela repose sur des fiches propres. Entre deux clientes il vous suffit de dicter « Mme Martin, 7.1 avec du 20 volumes et 35 minutes de pose » pour que l'agent range la formule dans la bonne fiche. Il vous la ressort la veille du prochain rendez-vous et la date de cette couleur lui permet d'écrire « votre couleur a six semaines » à la bonne cliente.
+Un seul message suffit et une cliente qui ne répond pas n'est pas relancée une seconde fois sans votre accord. Tout cela repose sur des fiches propres et c'est le premier point que je regarde à l'audit. Entre deux clientes il vous suffit de dicter « Mme Martin, 7.1 avec du 20 volumes et 35 minutes de pose » pour que l'agent range la formule dans la bonne fiche. Il vous la ressort la veille du prochain rendez-vous et la date de cette couleur lui permet d'écrire « votre couleur a six semaines » à la bonne cliente.
 
 ### La fidélité entre deux visites
 
@@ -89,7 +89,7 @@ Trois semaines avant Noël et avant la fête des Mères, il prépare l'annonce d
 
 ## Qui tient votre vitrine sur Instagram et sur Google ?
 
-Votre meilleur argument commercial dort dans votre téléphone avec toutes ces photos avant et après que vous n'avez jamais le temps de publier. Envoyez la photo à l'agent avec trois mots sur la prestation et il prépare le post qui attend ensuite votre validation. [Service-Public](https://www.service-public.fr/particuliers/vosdroits/F32103) rappelle qu'il faut un accord écrit et précis pour diffuser l'image d'une personne reconnaissable et l'agent garde donc la trace de cet accord dans la fiche.
+Votre meilleur argument commercial dort dans votre téléphone avec toutes ces photos avant et après que vous n'avez jamais le temps de publier. Envoyez la photo à l'agent avec trois mots sur la prestation et il prépare le post qui attend ensuite votre validation. [Service-Public](https://www.service-public.fr/particuliers/vosdroits/F32103) rappelle qu'il faut un accord écrit et précis pour diffuser l'image d'une personne reconnaissable et l'agent garde donc la trace de cet accord dans la fiche. J'ai détaillé ce droit à l'image dans la page sur [l'agent IA d'un photographe](/metiers/photographe).
 
 La fiche Google est l'autre vitrine et elle vieillit vite. L'agent y met à jour vos horaires avant un jour férié ou vos congés d'août et il peut y annoncer l'arrivée d'une nouvelle coloriste.
 
@@ -97,7 +97,7 @@ Le lendemain de chaque visite, l'agent envoie à toutes les clientes sans except
 
 ## Stock, planning et récap du soir : que fait l'agent en coulisses ?
 
-La caisse lui indique ce qui sort des étagères de revente. Pour les produits techniques, il suffit de lui signaler « j'ouvre le dernier 7.1 » ou de lui envoyer une photo de l'étagère le lundi. Quand une référence passe sous le seuil que vous avez fixé, trois unités par exemple, il l'ajoute à la commande du grossiste qui ne part qu'avec votre feu vert.
+La caisse lui indique ce qui sort des étagères de revente. Pour les produits techniques, il suffit de lui signaler « j'ouvre le dernier 7.1 » ou de lui envoyer une photo de l'étagère le lundi. Quand une référence passe sous le seuil que vous avez fixé, trois unités par exemple, il l'ajoute à la commande du grossiste qui ne part qu'avec votre feu vert. C'est la même mécanique de seuils que [dans un commerce de proximité](/metiers/epicerie).
 
 Pour le planning, vous lui dites une fois que Léa travaille 35 heures et que Sarah ne vient que le samedi. Il croise ces contraintes avec la charge de l'agenda et propose une semaine qui met du monde là où il y a des couleurs. La décision reste la vôtre parce qu'il ne connaît ni les contrats de chacune ni votre convention collective, celle de [la coiffure](https://code.travail.gouv.fr/convention-collective/2596-coiffure-et-professions-connexes) ou celle de l'esthétique.
 
@@ -132,7 +132,7 @@ Sur les sujets qui suivent ma réponse est non et mieux vaut le savoir avant de 
 
 Les [recommandations de l'ANSM aux coiffeurs](https://ansm.sante.fr/uploads/2021/03/11/311953034a0cfd67144c845842b18528.pdf) demandent de ne pas réaliser de teinture sur une cliente qui a déjà réagi à une coloration et elles rappellent que l'absence de réaction à une touche d'essai ne garantit rien. L'Anses précise de son côté que cette touche d'essai [n'est plus obligatoire depuis 2001](https://www.anses.fr/system/files/VigilAnsesN28FR.pdf) mais que les fabricants continuent de la conseiller. Ce jugement vous appartient. Dès qu'un message parle d'allergie, de démangeaisons ou de brûlure, l'agent vous le transmet sans donner d'avis et face à une réaction sévère il répète la consigne officielle d'appeler le 15.
 
-La fiche cliente suit la même prudence parce que la CNIL range la santé parmi les [données sensibles](https://www.cnil.fr/fr/definition/donnee-sensible). Une allergie n'y entre qu'avec l'accord clair de la cliente et l'agent ne note jamais de lui-même une grossesse ou un traitement aperçus dans une conversation.
+La fiche cliente suit la même prudence parce que la CNIL range la santé parmi les [données sensibles](https://www.cnil.fr/fr/definition/donnee-sensible). Une allergie n'y entre qu'avec l'accord clair de la cliente et l'agent ne note jamais de lui-même une grossesse ou un traitement aperçus dans une conversation. J'explique où partent ces données selon le modèle d'IA choisi dans la page sur [l'agent IA d'un kiné](/metiers/kine).
 
 ### Relancer tout le fichier par SMS
 
@@ -148,11 +148,11 @@ Un salon de coiffure doit afficher en vitrine au moins dix prix TTC de ses prest
 
 ### Trier vos candidatures
 
-Quand vous cherchez un apprenti, l'agent peut accuser réception des candidatures et caler les entretiens mais je ne lui confie pas le tri. Le règlement européen sur l'IA range parmi les [systèmes à haut risque](https://artificialintelligenceact.eu/fr/annex/3/) ceux qui servent à analyser et filtrer des candidatures et [Service-Public](https://www.service-public.fr/particuliers/vosdroits/F1642) rappelle qu'une embauche ne peut se décider que sur des critères professionnels. L'agent vous présente donc toutes les candidatures dans leur ordre d'arrivée.
+Quand vous cherchez un apprenti, l'agent peut accuser réception des candidatures et caler les entretiens mais je ne lui confie pas le tri. Le règlement européen sur l'IA range parmi les [systèmes à haut risque](https://ai-act-service-desk.ec.europa.eu/fr/ai-act/annex-3) ceux qui servent à analyser et filtrer des candidatures et [Service-Public](https://www.service-public.fr/particuliers/vosdroits/F1642) rappelle qu'une embauche ne peut se décider que sur des critères professionnels. L'agent vous présente donc toutes les candidatures dans leur ordre d'arrivée.
 
 ### Se faire passer pour un humain
 
-Depuis le 2 août 2026, toute personne qui échange avec une IA doit en être informée ([article 50 du règlement européen sur l'IA](https://www.cyberlawwatch.com/2026/07/31/eu-digital-omnibus-on-ai-enters-into-force/)) et le [texte de l'article](https://artificialintelligenceact.eu/fr/article/50/) situe cette information au plus tard à la première interaction. L'agent se présente donc dès sa première phrase comme l'assistant virtuel du salon et il signe ses messages de la même façon.
+Le [règlement européen sur l'IA](https://digital-strategy.ec.europa.eu/fr/policies/regulatory-framework-ai) s'applique depuis le 2 août 2026 et son [article 50](https://ai-act-service-desk.ec.europa.eu/fr/ai-act/article-50) veut que toute personne qui échange avec une IA en soit informée au plus tard à la première interaction. L'agent se présente donc dès sa première phrase comme l'assistant virtuel du salon et il signe ses messages de la même façon.
 
 ## Comment ça se passe ?
 

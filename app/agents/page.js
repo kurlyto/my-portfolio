@@ -1,4 +1,5 @@
 import HomePageContent from "../component/HomePageContent";
+import { articlesPiedDePage } from "../component/FooterAvecArticles";
 import UnderConstruction from "../component/UnderConstruction";
 import { QUESTIONS, stripEmphasis } from "../component/faq-questions";
 
@@ -94,7 +95,7 @@ export default function AgentsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(buildJsonLd()) }}
       />
-      <HomePageContent />
+      <HomePageContent articles={articlesPiedDePage()} />
     </>
   );
 }

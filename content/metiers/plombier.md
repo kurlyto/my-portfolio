@@ -29,9 +29,9 @@ L'agent travaille sur les outils que vous avez déjà et vous lui parlez par mes
 
 ### Des questions simples et vos critères à vous
 
-Le montage le plus courant est un renvoi d'appel : si vous ne décrochez pas, l'appel bascule vers l'agent qui se présente comme l'assistant virtuel de l'entreprise. Il pose alors les questions que vous poseriez vous-même. Il demande si l'eau coule encore, si le robinet d'arrêt est fermé et s'il y a de l'eau près d'un tableau électrique.
+Je pars du montage le plus courant qui est un renvoi d'appel : si vous ne décrochez pas, l'appel bascule vers l'agent qui se présente comme l'assistant virtuel de l'entreprise. Il pose alors les questions que vous poseriez vous-même. Il demande si l'eau coule encore, si le robinet d'arrêt est fermé et s'il y a de l'eau près d'un tableau électrique.
 
-La définition d'une vraie urgence vous appartient et on l'écrit ensemble une fois. Une fuite que le client n'arrive pas à couper vous réveille à toute heure. Une panne d'eau chaude en plein hiver chez une personne âgée peut passer en tête de la tournée du matin alors que le robinet qui goutte attendra 8 h avec un rendez-vous déjà proposé.
+La définition d'une vraie urgence vous appartient et c'est la première chose que j'écris avec vous à l'audit. Une fuite que le client n'arrive pas à couper vous réveille à toute heure. Une panne d'eau chaude en plein hiver chez une personne âgée peut passer en tête de la tournée du matin alors que le robinet qui goutte attendra 8 h avec un rendez-vous déjà proposé.
 
 Avant de vous déranger, l'agent annonce au client votre taux horaire, vos frais de déplacement et la majoration de nuit. [Service-Public](https://www.service-public.gouv.fr/particuliers/vosdroits/F38350) rappelle que ces informations doivent être données avant toute intervention de dépannage, majorations de nuit et de week-end comprises. Un client qui accepte ces conditions à 2 h du matin ne tombera pas des nues devant la facture.
 
@@ -49,7 +49,7 @@ Avant de vous déranger, l'agent annonce au client votre taux horaire, vos frais
 
 ### Quand la voix ne comprend pas
 
-Une voix de synthèse bute encore sur un nom de rue mal articulé. Un agent bien réglé ne devine pas ce qu'il n'a pas compris et bascule alors vers le SMS en demandant l'adresse par écrit avec une photo de la fuite. Les demandes qui arrivent par votre site ou par mail suivent le même tri.
+Une voix de synthèse bute encore sur un nom de rue mal articulé. Je règle l'agent pour qu'il ne devine jamais ce qu'il n'a pas compris et qu'il bascule alors vers le SMS en demandant l'adresse par écrit avec une photo de la fuite. Les demandes qui arrivent par votre site ou par mail suivent le même tri.
 
 ## Comment passer des photos du client à un devis signé ?
 
@@ -57,7 +57,7 @@ Une voix de synthèse bute encore sur un nom de rue mal articulé. Un agent bien
 
 La plupart des demandes ressemblent à un message de trois lignes accompagné de deux photos floues. L'agent commence par réclamer ce qui manque : une vue d'ensemble, la plaque de l'appareil, l'arrivée d'eau et l'évacuation. Il rapproche ensuite la demande de votre grille, où figurent vos forfaits courants, votre taux horaire et vos déplacements par zone.
 
-Vous recevez alors un brouillon de devis. Quand la photo ne suffit pas pour s'engager, l'agent le dit et propose plutôt une visite parce qu'un devis signé vous lie au prix annoncé.
+Vous recevez alors un brouillon de devis. Quand la photo ne suffit pas pour s'engager, je veux que l'agent le dise et propose plutôt une visite parce qu'un devis signé vous lie au prix annoncé.
 
 <figure>
 <div class="message">
@@ -75,11 +75,11 @@ Vous recevez alors un brouillon de devis. Quand la photo ne suffit pas pour s'en
 
 En plomberie le devis est obligatoire avant les travaux comme avant un dépannage et la [fiche de Service-Public Entreprendre](https://entreprendre.service-public.gouv.fr/vosdroits/F31144) en donne la liste des mentions. On y trouve le décompte détaillé en quantité et en prix, le taux horaire TTC et les frais de déplacement puis la durée de validité de l'offre et le caractère gratuit ou payant du devis. L'oubli du devis expose à une amende qui peut atteindre 3 000 € pour un entrepreneur individuel et 15 000 € pour une société.
 
-On range ces mentions une fois dans votre modèle avec votre assurance décennale et l'agent ne remplit plus que les lignes qui changent.
+Je range ces mentions une fois dans votre modèle avec votre assurance décennale et l'agent ne remplit plus que les lignes qui changent.
 
 ### La dictée depuis la camionnette
 
-Sur place la réalité déborde presque toujours du devis. En sortant il vous suffit de dicter « chez Garnier j'ai aussi remplacé le réducteur de pression, une heure de plus et la pièce à 64 euros ». L'agent prépare l'avenant ou la ligne de facture et vous la montre avant tout envoi.
+Sur place la réalité déborde presque toujours du devis. En sortant il vous suffit de dicter « chez Garnier j'ai aussi remplacé le réducteur de pression, une heure de plus et la pièce à 64 euros ». L'agent prépare l'avenant ou la ligne de facture et vous la montre avant tout envoi. J'ai décrit cette dictée plus en détail pour [le devis vocal d'un électricien](/metiers/electricien) et la demande d'accord écrite pour [le supplément d'un garagiste](/metiers/garagiste).
 
 ## Qui commande les pièces et prépare la tournée du lendemain ?
 
@@ -110,7 +110,7 @@ Une facture envoyée le soir même arrive quand le client a encore le dépannage
 
 Un devis resté sans réponse reçoit un seul message courtois au bout du délai que vous choisissez, sept jours par exemple.
 
-Pour les impayés, l'agent lit les échéances dans votre logiciel de facturation ou sur votre relevé bancaire. Une première relance aimable part à la date prévue et une seconde plus ferme suit si rien ne bouge. La dernière reste entre vos mains, tout comme la décision d'aller plus loin.
+Pour les impayés, l'agent lit les échéances dans votre logiciel de facturation ou sur votre relevé bancaire. Une première relance aimable part à la date prévue et une seconde plus ferme suit si rien ne bouge. Je laisse la dernière entre vos mains, tout comme la décision d'aller plus loin.
 
 Les règles changent si vous travaillez pour des agences ou d'autres entreprises. Entre professionnels le délai de paiement est en principe de 30 jours et chaque facture en retard ouvre droit à [une indemnité forfaitaire de 40 €](https://entreprendre.service-public.gouv.fr/vosdroits/F23211) en plus des pénalités. L'agent adapte donc ses relances selon qu'il écrit à un particulier ou à une entreprise.
 
@@ -126,7 +126,7 @@ Le lendemain de chaque intervention, l'agent remercie le client et lui envoie le
 
 ### Les contrats d'entretien et le rappel annuel
 
-C'est souvent le revenu le plus régulier du métier et aussi le plus mal suivi. [Service-Public](https://www.service-public.gouv.fr/particuliers/vosdroits/F20760) rappelle que l'entretien d'une chaudière de 4 à 400 kW est obligatoire chaque année civile, tout comme celui d'une pompe à chaleur. Le professionnel doit remettre l'attestation d'entretien dans les 15 jours qui suivent sa visite.
+C'est à mon avis le revenu le plus régulier du métier et souvent le plus mal suivi. [Service-Public](https://www.service-public.gouv.fr/particuliers/vosdroits/F20760) rappelle que l'entretien d'une chaudière de 4 à 400 kW est obligatoire chaque année civile, tout comme celui d'une pompe à chaleur. Le professionnel doit remettre l'attestation d'entretien dans les 15 jours qui suivent sa visite.
 
 L'agent tient donc la liste de vos clients avec l'appareil, sa marque et la date du dernier passage. À l'approche de l'échéance il propose deux créneaux au client sous contrat et il remplit les semaines creuses de septembre avant la ruée des premières gelées. Après la visite, il prépare l'attestation à partir de vos mesures dictées et vous la soumet dans la semaine.
 
@@ -169,7 +169,7 @@ Un SMS qui vante une offre est lui aussi de la prospection commerciale. [La CNIL
 
 ### Se faire passer pour un humain
 
-Depuis le 2 août 2026, toute personne qui échange avec une IA doit en être informée ([Commission européenne](https://digital-strategy.ec.europa.eu/fr/policies/regulatory-framework-ai)) et l'[article 50 du règlement sur l'IA](https://artificialintelligenceact.eu/fr/article/50/) situe cette information au plus tard à la première interaction. Au téléphone comme par SMS, l'agent se présente donc dès sa première phrase comme l'assistant virtuel de l'entreprise.
+Depuis le 2 août 2026, toute personne qui échange avec une IA doit en être informée ([Commission européenne](https://digital-strategy.ec.europa.eu/fr/policies/regulatory-framework-ai)) et l'[article 50 du règlement sur l'IA](https://ai-act-service-desk.ec.europa.eu/fr/ai-act/article-50) situe cette information au plus tard à la première interaction. Au téléphone comme par SMS, l'agent se présente donc dès sa première phrase comme l'assistant virtuel de l'entreprise.
 
 ## Comment ça se passe ?
 

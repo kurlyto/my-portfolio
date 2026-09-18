@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Header from "./Header";
-import Footer from "./Footer";
+import Footer from "./FooterAvecArticles";
 import Reveal from "./Reveal";
 import LegacyFoxyAnchors from "./LegacyFoxyAnchors";
 import { AIOS_OFFER } from "./aios-offer";

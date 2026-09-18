@@ -1,4 +1,5 @@
 import AiosHomeContent from "../component/AiosHomeContent";
+import { articlesPiedDePage } from "../component/FooterAvecArticles";
 import UnderConstruction from "../component/UnderConstruction";
 import { QUESTIONS_AIOS, stripEmphasisAios } from "../component/aios-content";
 
@@ -99,7 +100,7 @@ export default function FoxyPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(buildJsonLd()) }}
       />
-      <AiosHomeContent />
+      <AiosHomeContent articles={articlesPiedDePage()} />
     </>
   );
 }

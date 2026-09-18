@@ -113,7 +113,7 @@ function Overlay({ children, onClose }) {
   );
 }
 
-export default function AiosHomeContent() {
+export default function AiosHomeContent({ articles = [] }) {
   const [chatOpen, setChatOpen] = useState(false);
   // Depuis le 08/09/2026, "Reserver ma place" ouvre un formulaire et non plus
   // le chat : qui clique ce bouton a decide, il veut laisser ses coordonnees.
@@ -450,7 +450,7 @@ export default function AiosHomeContent() {
         </Reveal>
       </section>
 
-      <Footer showHomeLink={false} surfaceClass="bg-deep text-white" />
+      <Footer articles={articles} showHomeLink={false} surfaceClass="bg-deep text-white" />
 
       {formOpen && <ReservationForm onClose={() => setFormOpen(false)} />}
 

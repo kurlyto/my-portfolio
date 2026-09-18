@@ -1,5 +1,5 @@
 import { cookies, headers } from "next/headers";
-import Footer from "../component/Footer";
+import Footer from "../component/FooterAvecArticles";
 import ProjectCards from "../component/ProjectCards";
 import ProjectsNav from "../component/ProjectsNav";
 import ProjectsHero from "../component/ProjectsHero";

@@ -3,6 +3,19 @@ import { WhatsAppIcon, LinkedInIcon, GitHubIcon } from "./icons";
 import EmailButton from "./EmailButton";
 import { t } from "../lib/i18n-projects";
 import { BLOG_OUVERT } from "../blog/blog-ouvert";
+import { METIERS } from "../metiers/metiers-data";
+
+// Les offres de l'agence, dans l'ordre de l'accueil.
+const PRODUITS = [
+  { label: "Foxy, l'assistant de votre entreprise", href: "/foxy" },
+  { label: "Agents IA sur mesure", href: "/agents" },
+  { label: "Exemples d'agents", href: "/agents/exemples" },
+  { label: "Réalisations", href: "/projects" },
+];
+
+const LIEN_PLAN_CLASS =
+  "inline-block py-2 text-[13px] leading-snug opacity-70 hover:opacity-100 hover:text-accent-text transition-colors";
+const TITRE_PLAN_CLASS = "font-mono text-[11px] uppercase tracking-widest opacity-50";
 
 const CONTACTS = [
   {
@@ -38,6 +51,10 @@ export default function Footer({
   // Le site AIOS ferme sur un brun profond (sa palette chaude) plutot que sur
   // le noir pur du site agents.
   surfaceClass = "bg-black text-white",
+  // Derniers articles du blog ({ slug, titre }). Le pied de page est aussi
+  // rendu par des composants client : il ne lit donc jamais le disque, la page
+  // serveur lui passe la liste (voir FooterAvecArticles).
+  articles = [],
 }) {
   const tr = t(lang);
 
@@ -66,6 +83,59 @@ export default function Footer({
           </a>
         ))}
       </div>
+      {/* Plan du site : les offres, une page par metier et les derniers
+          articles. En francais seulement (la page /projects en anglais garde
+          le pied de page court). */}
+      {lang === "fr" && (
+        <nav
+          aria-label="Plan du site"
+          className="mx-auto mt-14 grid max-w-5xl gap-10 border-t border-white/10 pt-12 text-left sm:grid-cols-2 lg:grid-cols-[1fr_1.6fr_1.2fr]"
+        >
+          <div>
+            <h3 className={TITRE_PLAN_CLASS}>Produits</h3>
+            <ul className="mt-4">
+              {PRODUITS.map(({ label, href }) => (
+                <li key={href}>
+                  <Link href={href} className={LIEN_PLAN_CLASS}>
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 className={TITRE_PLAN_CLASS}>Un agent IA pour votre métier</h3>
+            <ul className="mt-4 grid grid-cols-2 gap-x-6">
+              {METIERS.map(({ slug, badge }) => (
+                <li key={slug}>
+                  <Link href={`/metiers/${slug}`} className={LIEN_PLAN_CLASS}>
+                    {badge}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          {BLOG_OUVERT && (
+            <div className="sm:col-span-2 lg:col-span-1">
+              <h3 className={TITRE_PLAN_CLASS}>Articles</h3>
+              <ul className="mt-4">
+                {articles.map(({ slug, titre }) => (
+                  <li key={slug}>
+                    <Link href={`/blog/${slug}`} className={LIEN_PLAN_CLASS}>
+                      {titre}
+                    </Link>
+                  </li>
+                ))}
+                <li>
+                  <Link href="/blog" className={LIEN_PLAN_CLASS}>
+                    Tous les articles &rarr;
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          )}
+        </nav>
+      )}
       {showHomeLink && (
         <Link
           href={homeHref}
