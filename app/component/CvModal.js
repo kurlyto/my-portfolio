@@ -81,6 +81,7 @@ export default function CvModal({ open, onClose, lang = "fr" }) {
               href={current.file}
               download
               data-cursor-hover
+              data-clic={`clic-projets-cv-telecharger-${cvLang}`}
               className="inline-flex items-center gap-1.5 rounded-full bg-accent px-3.5 py-1.5 text-[12px] font-mono font-bold uppercase tracking-widest text-accent-ink transition-colors duration-150 hover:bg-accent-dark"
             >
               {tr.cv.download}

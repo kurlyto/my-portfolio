@@ -88,12 +88,13 @@ function NateCard({ onStart }) {
           type="button"
           onClick={onStart}
           data-cursor-hover
+          data-umami-event="clic-agents-hero-audit-gratuit"
           className="inline-flex items-center justify-center gap-2 w-full text-center whitespace-nowrap rounded-full bg-accent text-accent-ink px-4 py-3 text-[12px] font-mono font-bold uppercase tracking-wide transition-all duration-150 ease-out hover:bg-accent-dark hover:-translate-y-0.5 hover:shadow-lg"
         >
           Faire un audit 100% gratuit
           <span aria-hidden className="hidden xl:inline">&rarr;</span>
         </button>
-        <CallButton className="inline-flex items-center justify-center gap-2 w-full text-center rounded-full border-2 border-black/15 bg-white px-5 py-2.5 text-[12px] font-mono font-bold uppercase tracking-wide text-black transition-colors duration-150 ease-out hover:border-accent">
+        <CallButton evenement="clic-agents-hero-passer-un-appel" className="inline-flex items-center justify-center gap-2 w-full text-center rounded-full border-2 border-black/15 bg-white px-5 py-2.5 text-[12px] font-mono font-bold uppercase tracking-wide text-black transition-colors duration-150 ease-out hover:border-accent">
           Passer un appel
         </CallButton>
       </div>

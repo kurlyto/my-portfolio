@@ -4,13 +4,14 @@ import EmailButton from "./EmailButton";
 import { t } from "../lib/i18n-projects";
 import { BLOG_OUVERT } from "../blog/blog-ouvert";
 import { METIERS } from "../metiers/metiers-data";
+import { nomClic } from "../lib/suivi-clics";
 
 // Les offres de l'agence, dans l'ordre de l'accueil.
 const PRODUITS = [
-  { label: "Foxy, l'assistant de votre entreprise", href: "/foxy" },
-  { label: "Agents IA sur mesure", href: "/agents" },
-  { label: "Exemples d'agents", href: "/agents/exemples" },
-  { label: "Réalisations", href: "/projects" },
+  { label: "Foxy, l'assistant de votre entreprise", href: "/foxy", evenement: "clic-footer-foxy" },
+  { label: "Agents IA sur mesure", href: "/agents", evenement: "clic-footer-agents" },
+  { label: "Exemples d'agents", href: "/agents/exemples", evenement: "clic-footer-exemples" },
+  { label: "Réalisations", href: "/projects", evenement: "clic-footer-realisations" },
 ];
 
 const LIEN_PLAN_CLASS =
@@ -68,6 +69,7 @@ export default function Footer({
           className={CONTACT_BUTTON_CLASS}
           iconClassName="w-5 h-5"
           dark
+          zone="footer"
         />
         {CONTACTS.map(({ label, href, Icon }) => (
           <a
@@ -77,6 +79,7 @@ export default function Footer({
             rel="noopener noreferrer"
             aria-label={label}
             data-cursor-hover
+            data-umami-event={nomClic("footer", label)}
             className={CONTACT_BUTTON_CLASS}
           >
             <Icon className="w-5 h-5" />
@@ -94,9 +97,9 @@ export default function Footer({
           <div>
             <h3 className={TITRE_PLAN_CLASS}>Produits</h3>
             <ul className="mt-4">
-              {PRODUITS.map(({ label, href }) => (
+              {PRODUITS.map(({ label, href, evenement }) => (
                 <li key={href}>
-                  <Link href={href} className={LIEN_PLAN_CLASS}>
+                  <Link href={href} data-clic={evenement} className={LIEN_PLAN_CLASS}>
                     {label}
                   </Link>
                 </li>
@@ -108,7 +111,7 @@ export default function Footer({
             <ul className="mt-4 grid grid-cols-2 gap-x-6">
               {METIERS.map(({ slug, badge }) => (
                 <li key={slug}>
-                  <Link href={`/metiers/${slug}`} className={LIEN_PLAN_CLASS}>
+                  <Link href={`/metiers/${slug}`} data-clic="clic-footer-page-metier" className={LIEN_PLAN_CLASS}>
                     {badge}
                   </Link>
                 </li>
@@ -121,13 +124,13 @@ export default function Footer({
               <ul className="mt-4">
                 {articles.map(({ slug, titre }) => (
                   <li key={slug}>
-                    <Link href={`/blog/${slug}`} className={LIEN_PLAN_CLASS}>
+                    <Link href={`/blog/${slug}`} data-clic="clic-footer-article" className={LIEN_PLAN_CLASS}>
                       {titre}
                     </Link>
                   </li>
                 ))}
                 <li>
-                  <Link href="/blog" className={LIEN_PLAN_CLASS}>
+                  <Link href="/blog" data-clic="clic-footer-blog" className={LIEN_PLAN_CLASS}>
                     Tous les articles &rarr;
                   </Link>
                 </li>
@@ -139,6 +142,7 @@ export default function Footer({
       {showHomeLink && (
         <Link
           href={homeHref}
+          data-clic="clic-footer-retour-accueil"
           className="inline-block mt-12 text-xs font-mono opacity-50 hover:opacity-100 hover:text-accent-text transition-colors"
         >
           &larr; {tr.footer.home}
@@ -151,6 +155,7 @@ export default function Footer({
       <div className="mt-8 flex items-center justify-center gap-3 text-[11px] font-mono opacity-40">
         <Link
           href="/mentions-legales"
+          data-clic="clic-footer-mentions-legales"
           className="inline-flex items-center px-2 py-2 hover:opacity-100 hover:text-accent-text transition-colors"
         >
           {tr.footer.legal}
@@ -158,6 +163,7 @@ export default function Footer({
         <span aria-hidden>·</span>
         <Link
           href="/confidentialite"
+          data-clic="clic-footer-confidentialite"
           className="inline-flex items-center px-2 py-2 hover:opacity-100 hover:text-accent-text transition-colors"
         >
           {tr.footer.privacy}
@@ -167,6 +173,7 @@ export default function Footer({
             <span aria-hidden>·</span>
             <Link
               href="/blog"
+              data-clic="clic-footer-blog"
               className="inline-flex items-center px-2 py-2 hover:opacity-100 hover:text-accent-text transition-colors"
             >
               Blog

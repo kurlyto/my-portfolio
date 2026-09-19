@@ -30,6 +30,7 @@ const OFFRES = [
       "Vos mails, votre agenda, vos clients et vos tâches au même endroit. Vous lui parlez et il s'occupe du reste.",
     detail: `Accès anticipé : ${AIOS_OFFER.placesRestantes} places sur ${AIOS_OFFER.placesTotal}`,
     cta: "Découvrir Foxy",
+    evenement: "clic-agence-offre-foxy",
   },
   {
     href: "/agents",
@@ -42,6 +43,7 @@ const OFFRES = [
       "Relancer vos devis, trier vos candidatures ou surveiller vos concurrents : l'agent s'en charge chaque jour à votre place.",
     detail: "1 mois d'essai gratuit, sans engagement",
     cta: "Voir les agents",
+    evenement: "clic-agence-offre-agents",
   },
   {
     href: "/projects",
@@ -53,6 +55,7 @@ const OFFRES = [
     vignettes: ["/images/cover-mdd.png", "/images/cover-featuring.png", "/images/cover-poker.png"],
     detail: "SaaS, jeux, outils métier",
     cta: "Voir les réalisations",
+    evenement: "clic-agence-offre-realisations",
   },
 ];
 
@@ -98,6 +101,7 @@ function CarteOffre({ offre }) {
     <Link
       href={offre.href}
       data-cursor-hover
+      data-clic={offre.evenement}
       className={`group flex flex-col h-full rounded-lg p-7 md:p-8 transition-transform duration-200 ease-out hover:-translate-y-1 ${offre.surface}`}
     >
       <div className="flex items-center gap-3 min-h-11">
@@ -154,12 +158,13 @@ export default function AgenceHomeContent() {
           travaillez.
         </p>
         <div className="mt-9 flex flex-col sm:flex-row gap-3 sm:gap-4">
-          <a href="#offres" data-cursor-hover className={`${CTA_CLASS} w-full sm:w-fit`}>
+          <a href="#offres" data-cursor-hover data-clic="clic-agence-hero-voir-les-offres" className={`${CTA_CLASS} w-full sm:w-fit`}>
             Voir les offres
           </a>
           <a
             href="#contact"
             data-cursor-hover
+            data-clic="clic-agence-hero-me-contacter"
             className="inline-flex items-center justify-center rounded-full border border-black/20 px-6 py-3.5 text-[13px] font-mono font-bold uppercase tracking-wide text-black/70 transition-colors duration-150 hover:border-black hover:text-black w-full sm:w-fit"
           >
             Me contacter

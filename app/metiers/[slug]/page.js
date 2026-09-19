@@ -168,6 +168,7 @@ export default async function MetierPage({ params }) {
           <Link
             href="/agents#metiers"
             data-cursor-hover
+            data-clic="clic-metier-voir-les-autres-metiers"
             className="underline underline-offset-4 transition-colors hover:text-[#ff6b35] hover:opacity-100"
           >
             Voir les autres métiers &rarr;

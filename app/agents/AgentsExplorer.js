@@ -52,6 +52,7 @@ function AgentAvatarChip({ agent, active, onClick }) {
       type="button"
       onClick={onClick}
       data-cursor-hover
+      data-umami-event={`clic-exemple-${agent.slug}`}
       className={`flex flex-col items-center gap-1.5 shrink-0 w-16 group ${
         active ? "" : "opacity-50 hover:opacity-100"
       } transition-opacity duration-150 ease-out`}
@@ -140,6 +141,7 @@ function DesktopExplorer() {
           key={agent.slug}
           onClick={() => setFocusedSlug(agent.slug)}
           data-cursor-hover
+          data-umami-event={`clic-exemple-${agent.slug}`}
           className="group flex flex-col text-left transition-transform duration-200 ease-out hover:-translate-y-1 cursor-pointer"
         >
           <h2 className="text-lg font-bold leading-snug">{agent.title}</h2>

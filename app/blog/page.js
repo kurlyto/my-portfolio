@@ -38,7 +38,7 @@ export default function BlogPage() {
                   {a.statut !== "publie" && <span className="ml-2 text-[#ff6b35]">brouillon</span>}
                 </p>
                 <h2 className="mt-2 font-display text-xl md:text-2xl font-bold">
-                  <Link href={`/blog/${a.slug}`} data-cursor-hover className="hover:text-[#ff6b35] transition-colors">
+                  <Link href={`/blog/${a.slug}`} data-cursor-hover data-clic={`clic-blog-article-${a.slug}`} className="hover:text-[#ff6b35] transition-colors">
                     {a.titre}
                   </Link>
                 </h2>

@@ -51,6 +51,7 @@ export default function AiosTeaser() {
               <Link
                 href="/foxy"
                 data-cursor-hover
+                data-clic="clic-agents-fin-de-page-decouvrir-foxy"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-accent text-accent-ink px-7 py-4 text-[13px] md:text-sm font-mono font-bold uppercase tracking-wide transition-all duration-150 hover:bg-accent-dark hover:-translate-y-0.5 hover:shadow-lg"
               >
                 Découvrir Foxy

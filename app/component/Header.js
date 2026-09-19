@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { WhatsAppIcon, LinkedInIcon, GitHubIcon } from "./icons";
 import EmailButton from "./EmailButton";
+import { nomClic } from "../lib/suivi-clics";
 
 const CONTACTS = [
   { label: "WhatsApp", href: "https://wa.me/33622164758", Icon: WhatsAppIcon },
@@ -82,7 +83,7 @@ function ContactIcons({ compact = false, dark = false }) {
 
   return (
     <div className="flex items-center gap-3">
-      <EmailButton className={buttonClass} iconClassName={iconClass} dark={dark} />
+      <EmailButton className={buttonClass} iconClassName={iconClass} dark={dark} zone="header" />
       {CONTACTS.map(({ label, href, Icon }) => (
         <a
           key={label}
@@ -91,6 +92,7 @@ function ContactIcons({ compact = false, dark = false }) {
           rel="noopener noreferrer"
           aria-label={label}
           data-cursor-hover
+          data-umami-event={nomClic("header", label)}
           className={buttonClass}
         >
           <Icon className={iconClass} />
@@ -110,6 +112,7 @@ function MobileMenu({ dark, navLinks, brand }) {
         onClick={() => setOpen(true)}
         aria-label="Ouvrir le menu"
         data-cursor-hover
+        data-umami-event="clic-nav-ouvrir-menu-mobile"
         className="flex flex-col items-end justify-center gap-1.5 w-11 h-11 pr-0.5 -mr-1"
       >
         <span className={`block w-6 h-0.5 ${dark ? "bg-white" : "bg-black"}`} />
@@ -119,7 +122,7 @@ function MobileMenu({ dark, navLinks, brand }) {
       {open && (
         <div className={`fixed inset-0 z-50 flex flex-col ${dark ? "bg-black text-white" : "bg-white text-black"}`}>
           <div className="flex items-center justify-between px-4 py-6">
-            <Link href={brand.href} className="flex items-center gap-2 opacity-80" onClick={() => setOpen(false)}>
+            <Link href={brand.href} data-clic="clic-nav-logo" className="flex items-center gap-2 opacity-80" onClick={() => setOpen(false)}>
               <Image
                 src={brand.logo}
                 alt=""
@@ -147,6 +150,7 @@ function MobileMenu({ dark, navLinks, brand }) {
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
+                data-clic={nomClic("nav", item.label)}
                 className="text-3xl font-bold tracking-tight"
               >
                 {item.label}
@@ -185,6 +189,7 @@ export default function Header({ dark = false, compactY = false, site = "agents"
     >
       <Link
         href={brand.href}
+        data-clic="clic-nav-logo"
         className="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity"
       >
         <Image
@@ -205,6 +210,7 @@ export default function Header({ dark = false, compactY = false, site = "agents"
             key={item.href}
             href={item.href}
             data-cursor-hover
+            data-clic={nomClic("nav", item.label)}
             className="whitespace-nowrap opacity-80 hover:opacity-100 transition-opacity"
           >
             {item.label}

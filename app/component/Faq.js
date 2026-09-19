@@ -140,6 +140,7 @@ export default function Faq({
               type="button"
               onClick={onAsk}
               data-cursor-hover
+              data-umami-event="clic-faq-poser-une-question"
               className="inline-flex items-center py-2 font-mono underline underline-offset-4 hover:text-accent transition-colors"
             >
               {askLabel} &rarr;
@@ -150,6 +151,7 @@ export default function Faq({
               target="_blank"
               rel="noopener noreferrer"
               data-cursor-hover
+              data-umami-event="clic-faq-poser-une-question"
               className="inline-flex items-center py-2 underline underline-offset-4 hover:text-accent transition-colors"
             >
               {askLabel} &rarr;

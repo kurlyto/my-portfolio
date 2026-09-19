@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { nomClic } from "../lib/suivi-clics";
 
 // Boutons de partage d'un article (blog et pages metier). De simples liens vers
 // les pages de partage des reseaux : aucun script tiers, aucun traceur. Sur
@@ -52,7 +53,7 @@ export default function Partager({ url, titre, libelle = "Partager cet article" 
     <div className="flex flex-wrap items-center gap-2" aria-label={libelle}>
       <span className="mr-1 font-mono text-[11px] uppercase tracking-widest text-black/50">{libelle}</span>
       {natif && (
-        <button type="button" onClick={partagerNatif} data-cursor-hover className={`${BOUTON} sm:hidden`}>
+        <button type="button" onClick={partagerNatif} data-cursor-hover data-umami-event="clic-partager-menu-du-telephone" className={`${BOUTON} sm:hidden`}>
           Partager
         </button>
       )}
@@ -63,12 +64,13 @@ export default function Partager({ url, titre, libelle = "Partager cet article" 
           target="_blank"
           rel="noopener noreferrer"
           data-cursor-hover
+          data-umami-event={nomClic("partager", r.nom)}
           className={BOUTON}
         >
           {r.nom}
         </a>
       ))}
-      <button type="button" onClick={copier} data-cursor-hover className={BOUTON} aria-live="polite">
+      <button type="button" onClick={copier} data-cursor-hover data-umami-event="clic-partager-copier-le-lien" className={BOUTON} aria-live="polite">
         {copie ? "Lien copié" : "Copier le lien"}
       </button>
     </div>

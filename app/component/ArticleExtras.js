@@ -19,7 +19,7 @@ export function LigneAuteur({ dateTexte, majTexte, minutes }) {
       <div className="text-[14px] leading-snug">
         <p className="font-semibold text-black">
           Par{" "}
-          <Link href="/projects" data-cursor-hover className="underline-offset-4 hover:text-[#ff6b35] hover:underline">
+          <Link href="/projects" data-cursor-hover data-clic="clic-article-auteur" className="underline-offset-4 hover:text-[#ff6b35] hover:underline">
             Nathan Knaebel
           </Link>
         </p>
@@ -62,6 +62,7 @@ export function LireAussi({ liens, large = false }) {
             <Link
               href={l.href}
               data-cursor-hover
+              data-clic="clic-article-lire-aussi"
               className="group block h-full rounded-xl border border-black/10 bg-white p-4 transition-colors hover:border-[#ff6b35]"
             >
               <p className="font-mono text-[11px] uppercase tracking-widest text-black/50">{l.etiquette}</p>

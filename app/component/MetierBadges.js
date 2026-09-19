@@ -35,6 +35,7 @@ export default function MetierBadges() {
               key={metier.slug}
               href={`/metiers/${metier.slug}`}
               data-cursor-hover
+              data-clic={`clic-agents-metier-${metier.slug}`}
               className="inline-flex items-center gap-2 rounded-full border border-black/15 bg-white px-4 py-2 font-mono text-[12px] md:text-[13px] transition-colors duration-150 ease-out hover:border-accent hover:text-accent"
             >
               <span aria-hidden="true">{metier.emoji}</span>

@@ -8,6 +8,7 @@ import {
   CopyIcon,
   CheckIcon,
 } from "./icons";
+import { nomClic } from "../lib/suivi-clics";
 
 export const EMAIL = "nathan.knaebel@gmail.com";
 
@@ -38,7 +39,10 @@ const WEBMAILS = [
   },
 ];
 
-export default function EmailButton({ className, iconClassName, dark = false }) {
+// `zone` : ou se trouve le bouton (header, footer...), pour que le suivi des
+// clics dise LEQUEL sert.
+export default function EmailButton({ className, iconClassName, dark = false, zone = "page" }) {
+  const evenement = nomClic(zone, "email");
   const [open, setOpen] = useState(false);
   const [copied, setCopied] = useState(false);
   const [isTouch, setIsTouch] = useState(false);
@@ -116,7 +120,7 @@ export default function EmailButton({ className, iconClassName, dark = false }) 
 
   if (isTouch) {
     return (
-      <a href={MAILTO} aria-label="Email" data-cursor-hover className={className}>
+      <a href={MAILTO} aria-label="Email" data-cursor-hover data-clic={evenement} className={className}>
         <MailIcon className={iconClassName} />
       </a>
     );
@@ -131,6 +135,7 @@ export default function EmailButton({ className, iconClassName, dark = false }) 
         aria-haspopup="menu"
         aria-expanded={open}
         data-cursor-hover
+        data-umami-event={evenement}
         className={className}
       >
         <MailIcon className={iconClassName} />

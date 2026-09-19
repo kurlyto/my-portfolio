@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { nomClicDemo } from "../lib/suivi-clics";
 
 const ACCENT = "var(--accent)";
 // L'accent est une VARIABLE CSS depuis la scission des deux sites : lui coller
@@ -223,6 +224,7 @@ function DemoMenu({ demos, onPick, titre }) {
               type="button"
               onClick={() => onPick(d)}
               data-cursor-hover
+              data-umami-event={nomClicDemo(d.id)}
               className="group w-full text-left rounded border border-black/10 px-4 py-3.5 transition-colors duration-150 hover:border-transparent"
               style={{ background: "transparent" }}
               onMouseEnter={(e) => {
@@ -268,6 +270,8 @@ export default function DemoPanel({
   fullScreen = false,
   subtitle = "Démonstration : un agent au travail",
   ctaLabel = "Décrire mon vrai besoin",
+  // Nom du clic suivi (Umami) sur le bouton de fin de demonstration.
+  evenementCta = "clic-agents-demo-fin-decrire-mon-besoin",
   disclaimer = "Ceci est une démonstration écrite à l'avance. Votre agent, lui, sera branché à vos vrais outils.",
   menuTitle = "Choisissez ce que vous voulez le voir faire. Chaque démonstration se joue étape par étape, en quelques secondes.",
 }) {
@@ -361,6 +365,7 @@ export default function DemoPanel({
                 type="button"
                 onClick={onOpenChat}
                 data-cursor-hover
+                data-umami-event={evenementCta}
                 className="inline-flex items-center gap-2 text-[13px] font-mono font-bold uppercase tracking-wide rounded-full px-5 py-2.5 text-white transition-all duration-150 ease-out hover:-translate-y-0.5"
                 style={{ background: ACCENT }}
               >

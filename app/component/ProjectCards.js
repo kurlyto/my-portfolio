@@ -19,6 +19,7 @@ import {
   TelegramIcon,
 } from "./tech-icons";
 import { t } from "../lib/i18n-projects";
+import { attributClic, nomClic } from "../lib/suivi-clics";
 
 // Les icones sont des composants : elles ne peuvent pas traverser la
 // frontiere Server -> Client Component en tant que reference de fonction
@@ -342,6 +343,7 @@ function ProjectCard({ project, index, lang }) {
       rel={isExternal ? "noopener noreferrer" : undefined}
       aria-label={tr.cards.discoverAria(name)}
       data-cursor-hover
+      {...attributClic(nomClic("projet", project.name), isExternal)}
       className="flex min-h-0 flex-1 flex-col sm:flex-none"
     >
       <CoverPlaceholder project={project} tr={tr} />
@@ -388,6 +390,7 @@ function ProjectCard({ project, index, lang }) {
               href={project.link}
               target={isExternal ? "_blank" : undefined}
               rel={isExternal ? "noopener noreferrer" : undefined}
+              {...attributClic(nomClic("projet", project.name), isExternal)}
               className="shrink-0 inline-flex items-center gap-1 rounded-full bg-black/[0.04] px-3.5 py-1.5 text-[13px] font-semibold text-black transition-colors duration-150 hover:bg-black hover:text-white"
             >
               {tr.cards.discover} <span aria-hidden>&rarr;</span>

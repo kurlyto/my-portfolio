@@ -33,6 +33,7 @@ function AgentCard({ agent }) {
     <Link
       href="/agents/exemples"
       data-cursor-hover
+      data-clic="clic-agents-bandeau-voir-un-exemple"
       // Mobile : carte verticale plus etroite que l'ecran (une carte tient
       // entierement, la suivante depasse juste assez pour signaler qu'on peut
       // faire glisser). Desktop : disposition horizontale, plus dense.

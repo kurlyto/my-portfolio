@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { TelegramToolIcon } from "./tool-icons";
 import MailProviderLinks from "./mail-provider-links";
 import VoiceRecorder from "./VoiceRecorder";
+import { attributClic, suivreClic } from "../lib/suivi-clics";
 
 function MicGlyph(props) {
   return (
@@ -170,6 +171,7 @@ function ActionLink({ action }) {
       target={isPayment ? "_blank" : undefined}
       rel={isPayment ? "noopener noreferrer" : undefined}
       data-cursor-hover
+      {...attributClic(isPayment ? "clic-chat-nate-payer" : "clic-chat-nate-appeler", isPayment)}
       className="inline-flex items-center gap-2 text-[13px] font-mono font-semibold rounded px-4 py-2.5 text-white transition-all duration-150 ease-out hover:-translate-y-0.5"
       style={{ background: isPayment ? "#16a34a" : "#111111" }}
     >
@@ -606,6 +608,7 @@ function ChatBody({ threadId, messages, streamingText, error, sendMessage, await
   const [input, setInput] = useState("");
   const scrollRef = useRef(null);
   const inputRef = useRef(null);
+  const premierMessageSuivi = useRef(false);
 
   // La zone de saisie grandit avec le texte (jusqu'a ~5 lignes) puis scrolle :
   // un textarea a hauteur fixe cacherait les premieres lignes d'un message long.
@@ -618,6 +621,13 @@ function ChatBody({ threadId, messages, streamingText, error, sendMessage, await
 
   function submit() {
     if (!input.trim()) return;
+    // Suivi : le premier message ECRIT par le visiteur dans ce panneau (les
+    // messages amorces par un bouton sont deja comptes par ce bouton). Un seul
+    // envoi par ouverture, sinon chaque replique gonflerait le compteur.
+    if (!premierMessageSuivi.current) {
+      premierMessageSuivi.current = true;
+      suivreClic("clic-chat-nate-premier-message");
+    }
     sendMessage(input);
     setInput("");
     // Repasse la zone a une ligne une fois le message parti.
@@ -763,6 +773,7 @@ function ChatHeader({ onClose, closeLabel, progress = 5 }) {
             target="_blank"
             rel="noopener noreferrer"
             data-cursor-hover
+            data-umami-event="clic-chat-nate-continuer-sur-telegram"
             className="inline-flex items-center gap-1.5 text-[12px] font-mono text-black hover:text-accent transition-colors duration-150"
           >
             {/* Sur mobile, l'icone seule : le libelle entier serrait la croix

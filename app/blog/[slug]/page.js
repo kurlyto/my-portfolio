@@ -128,6 +128,7 @@ export default async function ArticlePage({ params }) {
           <Link
             href={pageMere(a.grappe)}
             data-cursor-hover
+            data-clic={a.grappe === "foxy" ? "clic-blog-cta-decouvrir-foxy" : "clic-blog-cta-voir-les-agents"}
             className="mt-4 inline-flex py-2 font-mono text-[13px] uppercase tracking-widest underline underline-offset-4 hover:text-[#ff6b35] transition-colors"
           >
             {a.grappe === "foxy" ? "Découvrir Foxy" : "Voir ce qu'un agent peut faire"} &rarr;

@@ -21,6 +21,7 @@ import { AIOS_OFFER } from "./aios-offer";
 import OfferBanner from "./OfferBanner";
 import { DesktopMock, PhoneMock } from "./AiosMockup";
 import { ETAPES, TEMOIGNAGES_AIOS, QUESTIONS_AIOS } from "./aios-content";
+import { nomClicDemo } from "../lib/suivi-clics";
 
 // Site de l'AIOS (/foxy, a la racine jusqu'au 16/09/2026 : la racine est
 // devenue l'accueil de l'agence). Le site des agents sur mesure vit sur
@@ -68,12 +69,14 @@ function PlayGlyph(props) {
   );
 }
 
-function CtaButton({ onClick, children, className = "" }) {
+// `evenement` : nom du clic suivi (Umami), pour savoir QUEL bouton convertit.
+function CtaButton({ onClick, children, className = "", evenement }) {
   return (
     <button
       type="button"
       onClick={onClick}
       data-cursor-hover
+      data-umami-event={evenement}
       // Pleine largeur sur mobile : un bouton qui barre l'ecran ne se rate
       // pas et se touche au pouce sans viser. Il reprend sa largeur naturelle
       // des le premier palier.
@@ -144,6 +147,7 @@ export default function AiosHomeContent({ articles = [] }) {
       setDemoId(null);
       setFormOpen(true);
     },
+    evenementCta: "clic-foxy-demo-fin-reserver-ma-place",
     subtitle: "Démonstration : Foxy au travail",
     ctaLabel: "Réserver ma place",
     disclaimer:
@@ -204,7 +208,9 @@ export default function AiosHomeContent({ articles = [] }) {
                 rien d'autre. Sur mobile les deux barrent l'ecran l'un sous
                 l'autre : le pouce n'a rien a viser. */}
             <div className="mt-8 sm:mt-9 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
-              <CtaButton onClick={openForm}>Réserver ma place</CtaButton>
+              <CtaButton onClick={openForm} evenement="clic-foxy-hero-reserver-ma-place">
+                Réserver ma place
+              </CtaButton>
               {/* Sur mobile ce bouton JOUE la premiere demonstration au lieu
                   d'ouvrir la liste : qui clique "voir travailler" veut voir, pas
                   choisir. Le choix n'est pas perdu pour autant, le panneau garde
@@ -213,6 +219,7 @@ export default function AiosHomeContent({ articles = [] }) {
                 type="button"
                 onClick={() => playDemo(AIOS_DEMOS[0].id)}
                 data-cursor-hover
+                data-umami-event="clic-foxy-hero-voir-foxy-travailler"
                 className="sm:hidden inline-flex items-center justify-center gap-2 w-full rounded-full border border-ink/20 px-6 py-4 text-[13px] font-mono font-bold uppercase tracking-wide text-ink/70"
               >
                 <PlayGlyph className="w-3 h-3 text-accent-text" />
@@ -255,6 +262,7 @@ export default function AiosHomeContent({ articles = [] }) {
                   type="button"
                   onClick={() => playDemo(d.id)}
                   data-cursor-hover
+                  data-umami-event={nomClicDemo(d.id)}
                   className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full border border-ink/15 px-3.5 py-2.5 text-[12.5px] font-mono text-ink/70 transition-colors duration-150 hover:border-accent hover:text-accent"
                 >
                   <PlayGlyph className="w-3 h-3 text-accent-text" />
@@ -340,7 +348,9 @@ export default function AiosHomeContent({ articles = [] }) {
           </div>
 
           <div className="mt-14 flex flex-col items-center gap-4 text-center">
-            <CtaButton onClick={openForm}>Réserver ma place</CtaButton>
+            <CtaButton onClick={openForm} evenement="clic-foxy-comment-ca-marche-reserver-ma-place">
+              Réserver ma place
+            </CtaButton>
             <p className="text-[13px] font-mono text-ink/45">
               Il reste {AIOS_OFFER.placesRestantes} places sur {AIOS_OFFER.placesTotal},
               jusqu&apos;au {AIOS_OFFER.dateLimiteTexte}.
@@ -436,6 +446,7 @@ export default function AiosHomeContent({ articles = [] }) {
               <Link
                 href="/agents"
                 data-cursor-hover
+                data-clic="clic-foxy-fin-de-page-voir-les-agents"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-accent text-accent-ink px-7 py-4 text-[13px] md:text-sm font-mono font-bold uppercase tracking-wide transition-all duration-150 hover:bg-accent-dark hover:-translate-y-0.5 hover:shadow-lg"
               >
                 Voir les agents sur mesure

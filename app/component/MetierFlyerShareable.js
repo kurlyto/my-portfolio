@@ -26,6 +26,7 @@ export default function MetierFlyerShareable({ metier, titreH1 = false }) {
         <Link
           href={`/agents?chat=1&metier=${metier.slug}`}
           data-cursor-hover
+          data-clic="clic-metier-en-parler-a-nate"
           className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#ff6b35] px-6 py-2.5 text-[12px] sm:text-[13px] font-mono font-bold uppercase tracking-wide text-[#ff6b35] transition-colors duration-150 ease-out hover:bg-[#ff6b35] hover:text-white"
         >
           En parler à Nate

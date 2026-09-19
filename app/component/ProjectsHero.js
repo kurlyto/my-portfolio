@@ -62,6 +62,7 @@ export default function ProjectsHero({ lang = "fr" }) {
         {...rise(0.28)}
         href="#projets"
         data-cursor-hover
+        data-clic="clic-projets-hero-voir-les-projets"
         className="mt-2 inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 font-mono text-[13px] font-bold uppercase tracking-wide text-accent-ink transition-colors duration-150 hover:bg-accent-dark"
       >
         {tr.hero.cta} <span aria-hidden>&darr;</span>

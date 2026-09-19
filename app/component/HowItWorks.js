@@ -103,11 +103,12 @@ export default function HowItWorks({ onStart }) {
             type="button"
             onClick={onStart}
             data-cursor-hover
+            data-umami-event="clic-agents-comment-ca-marche-audit-gratuit"
             className="inline-block text-lg font-mono font-semibold rounded px-10 py-5 whitespace-nowrap transition-all duration-150 ease-out bg-accent text-accent-ink hover:bg-accent-dark hover:-translate-y-0.5 hover:shadow-lg"
           >
             Faire un audit gratuit
           </button>
-          <CallButton className="inline-flex items-center gap-2 py-2 px-2 text-sm font-mono opacity-60 hover:opacity-100 hover:text-accent transition-colors">
+          <CallButton evenement="clic-agents-comment-ca-marche-passer-un-appel" className="inline-flex items-center gap-2 py-2 px-2 text-sm font-mono opacity-60 hover:opacity-100 hover:text-accent transition-colors">
             &rarr; ou passer un appel
           </CallButton>
         </div>

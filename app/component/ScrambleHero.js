@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { DEMOS } from "./demo-scenarios";
 import CallButton from "./CallButton";
+import { nomClicDemo, suivreClic } from "../lib/suivi-clics";
 
 // Titre = la promesse concrete, pas une metaphore : le visiteur doit
 // comprendre ce qu'on vend avant meme le sous-titre (refonte 09/2026,
@@ -171,6 +172,9 @@ export default function ScrambleHero({ onSubmitNeed, onPlayDemo, onFieldFocus })
     const text = need.trim();
     if (!text) return;
     setNeed("");
+    // Suivi a la main : l'envoi part aussi bien de la touche Entree que du
+    // bouton, et seulement si un besoin a vraiment ete ecrit.
+    suivreClic("clic-agents-hero-envoyer-mon-besoin");
     onSubmitNeed(text);
   }
 
@@ -234,13 +238,14 @@ export default function ScrambleHero({ onSubmitNeed, onPlayDemo, onFieldFocus })
             type="button"
             onClick={() => onSubmitNeed(AUDIT_MESSAGE)}
             data-cursor-hover
+            data-umami-event="clic-agents-hero-audit-gratuit"
             className="inline-flex items-center justify-center gap-2 w-full rounded-full bg-accent text-accent-ink px-6 py-4 text-[13px] font-mono font-bold uppercase tracking-wide"
           >
             Faire un audit 100% gratuit
           </button>
           {/* Sur telephone l'appel part directement (tel:), c'est le geste le
               plus naturel de l'ecran. */}
-          <CallButton className="inline-flex items-center justify-center gap-2 w-full rounded-full border-2 border-black/15 px-6 py-3.5 text-[13px] font-mono font-bold uppercase tracking-wide text-black">
+          <CallButton evenement="clic-agents-hero-passer-un-appel" className="inline-flex items-center justify-center gap-2 w-full rounded-full border-2 border-black/15 px-6 py-3.5 text-[13px] font-mono font-bold uppercase tracking-wide text-black">
             Passer un appel
           </CallButton>
           {/* Comme cote Foxy : sur mobile on JOUE la premiere demonstration
@@ -250,6 +255,7 @@ export default function ScrambleHero({ onSubmitNeed, onPlayDemo, onFieldFocus })
             type="button"
             onClick={() => onPlayDemo(DEMOS[0].id)}
             data-cursor-hover
+            data-umami-event="clic-agents-hero-voir-un-agent-travailler"
             className="inline-flex items-center justify-center gap-2 w-full rounded-full border border-black/20 px-6 py-4 text-[13px] font-mono font-bold uppercase tracking-wide text-black/70"
           >
             <PlayGlyph className="w-3 h-3 text-accent" />
@@ -302,12 +308,13 @@ export default function ScrambleHero({ onSubmitNeed, onPlayDemo, onFieldFocus })
             type="button"
             onClick={() => onSubmitNeed(AUDIT_MESSAGE)}
             data-cursor-hover
+            data-umami-event="clic-agents-hero-audit-gratuit"
             className="inline-flex items-center justify-center gap-2 shrink-0 rounded-full bg-accent text-accent-ink px-7 py-3.5 text-[13px] font-mono font-bold uppercase tracking-wide transition-all duration-150 ease-out hover:bg-accent-dark hover:-translate-y-0.5 hover:shadow-lg"
           >
             Faire un audit 100% gratuit
             <ArrowGlyph className="w-4 h-4" />
           </button>
-          <CallButton className="inline-flex items-center justify-center gap-2 shrink-0 rounded-full border-2 border-black/15 px-7 py-3 text-[13px] font-mono font-bold uppercase tracking-wide text-black transition-colors duration-150 ease-out hover:border-accent">
+          <CallButton evenement="clic-agents-hero-passer-un-appel" className="inline-flex items-center justify-center gap-2 shrink-0 rounded-full border-2 border-black/15 px-7 py-3 text-[13px] font-mono font-bold uppercase tracking-wide text-black transition-colors duration-150 ease-out hover:border-accent">
             Passer un appel
           </CallButton>
         </div>
@@ -324,6 +331,7 @@ export default function ScrambleHero({ onSubmitNeed, onPlayDemo, onFieldFocus })
               type="button"
               onClick={() => onPlayDemo(demo.id)}
               data-cursor-hover
+              data-umami-event={nomClicDemo(demo.id)}
               className="inline-flex items-center gap-1.5 rounded-full border border-black/15 px-3.5 py-2.5 text-[12.5px] font-mono text-black/70 transition-colors duration-150 hover:border-accent hover:text-accent"
             >
               <PlayGlyph className="w-3 h-3 text-accent" />

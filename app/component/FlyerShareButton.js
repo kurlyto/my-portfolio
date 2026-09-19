@@ -140,6 +140,7 @@ export default function FlyerShareButton({ metier, flyerRef }) {
       onClick={share}
       disabled={state === "working"}
       data-cursor-hover
+      data-umami-event="clic-metier-partager-le-flyer"
       className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-6 py-3 text-[12px] sm:text-[13px] font-mono font-bold uppercase tracking-wide text-accent-ink transition-colors duration-150 ease-out hover:bg-accent-dark disabled:opacity-70"
     >
       {label}

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { AIOS_OFFER } from "./aios-offer";
+import { suivreClic } from "../lib/suivi-clics";
 
 // Formulaire de reservation d'une place en acces anticipe.
 //
@@ -81,6 +82,9 @@ export default function ReservationForm({ onClose }) {
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data.error ?? "Envoi impossible.");
+      // Compte seulement les demandes vraiment parties, pas les clics sur un
+      // formulaire incomplet ou en erreur.
+      suivreClic("clic-foxy-reservation-envoyee");
       setEtat("envoye");
     } catch (err) {
       setErreur(err.message);
