@@ -17,7 +17,7 @@ Ce comparatif range dix-sept outils en cinq familles et place mes deux offres au
 <p><strong>En bref</strong></p>
 <p>Pour rédiger, résumer ou traduire, un assistant de bureau à une vingtaine d'euros par personne suffit et se prend en main dans la journée.</p>
 <p>Pour qu'une tâche se fasse sans vous (trier les mails, relancer un devis, tenir un tableau), il faut un agent branché sur vos outils. Vous pouvez le monter vous-même sur une plateforme, le louer tout fait, ou le faire construire.</p>
-<p>Les prix relevés vont de 0 € (outils libres à installer soi-même) à 799 € HT par mois. Un agent sur mesure coûte chez moi de 20 à 50 € par mois, et Foxy 100 € par mois, installation et serveur compris.</p>
+<p>Les prix relevés vont de 0 € (outils libres à installer soi-même) à 799 € HT par mois. Un agent sur mesure coûte chez moi de 20 à 50 € par mois, et Foxy 100 € par mois, installation et serveur compris. Dans les deux cas l'abonnement d'IA reste à votre nom et se paie à part.</p>
 </div>
 
 ## Quelles sont les cinq familles d'outils d'IA pour une entreprise ?
@@ -128,9 +128,9 @@ Beaucoup de petites entreprises n'ont pas besoin d'un système complet. Elles on
 
 | Offre | Prix public | Ce que le prix comprend | Essai |
 |---|---|---|---|
-| **Agent sur mesure** | De 20 € par mois pour un agent simple à 50 € par mois selon la complexité, sans TVA à ajouter | La construction, l'hébergement, le branchement sur vos outils et les ajustements | 1 mois gratuit, sans engagement d'achat |
+| **Agent sur mesure** | De 20 € par mois pour un agent simple à 50 € par mois selon la complexité, sans TVA à ajouter | La construction, l'hébergement, le branchement sur vos outils et les ajustements. L'abonnement Claude reste à votre nom, en plus | 1 mois gratuit, sans engagement d'achat |
 
-À titre de repère la formule d'entrée de Limova coûte 79,90 € HT par mois pour huit agents standards et un abonnement Lindy 29,99 $ par personne pour un agent que vous montez vous-même. La comparaison a ses limites puisque ces offres couvrent plus de terrain qu'un agent unique, alors qu'un agent sur mesure ne fait qu'une chose et la fait à votre façon.
+À titre de repère la formule d'entrée de Limova coûte 79,90 € HT par mois pour huit agents standards et un abonnement Lindy 29,99 $ par personne pour un agent que vous montez vous-même. La comparaison a ses limites. Ces deux offres n'affichent aucun abonnement d'IA à prendre à part (Lindy compte en crédits, 3 000 par mois à ce prix), alors qu'un agent sur mesure demande en plus votre abonnement Claude, à partir de 17 à 20 $ par mois en formule Pro. Elles couvrent aussi plus de terrain qu'un agent unique, alors qu'un agent sur mesure ne fait qu'une chose et la fait à votre façon.
 
 ## D'où vient la méthode derrière Foxy et les agents sur mesure ?
 
@@ -150,7 +150,7 @@ La méthode la plus sûre consiste à partir de la tâche et non de l'outil. Not
 | Un salarié aime construire et a du temps | Une plateforme (n8n, Make, Dust) | De 0 à 50 € pour démarrer |
 | Des besoins courants, tout de suite | Des agents prêts à l'emploi (Limova) | 79,90 à 139,90 € HT |
 | Un profil technique dans l'équipe | Claude Code, Hermes Agent ou OpenClaw | Gratuit à 20 $, plus le temps passé |
-| Une corvée précise propre à votre métier | Un agent sur mesure | 20 à 50 € |
+| Une corvée précise propre à votre métier | Un agent sur mesure | 20 à 50 €, abonnement Claude en plus |
 | Un bras droit branché sur toute l'entreprise | Une IA installée pour vous | 100 € (Foxy) à 799 € HT, abonnement Claude en plus |
 
 J'aime bien qu'on commence petit avec un assistant à vingt euros ou un seul agent sur une seule tâche, parce qu'un mois d'usage réel vous apprend plus sur vos besoins que n'importe quel comparatif.
@@ -163,7 +163,7 @@ Parce qu'il n'y a ni équipe commerciale ni bureaux à financer et que l'abonnem
 
 ### L'abonnement Claude est-il compris dans le prix ?
 
-Non, et c'est le cas chez les trois offres installées pour vous. Vous souscrivez l'abonnement Claude à votre nom, de 17 à 20 $ par mois pour la formule Pro et à partir de 100 $ pour la formule Max, et la création du compte se fait ensemble pendant l'installation.
+Non, ni pour Foxy ni pour un agent sur mesure, et c'est aussi le cas chez les deux concurrents qui installent pour vous. Vous souscrivez l'abonnement Claude à votre nom, de 17 à 20 $ par mois pour la formule Pro et à partir de 100 $ pour la formule Max, et la création du compte se fait ensemble pendant l'installation.
 
 ### Ces prix seront-ils encore vrais dans six mois ?
 
