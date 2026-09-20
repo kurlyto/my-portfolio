@@ -5,7 +5,7 @@ date: 2026-09-20
 format: comparatif
 grappe: agents
 mot_cle: "quel outil ia pour mon entreprise"
-statut: brouillon
+statut: publie
 mots_cles: ["comparatif IA", "outil IA entreprise", "Claude", "ChatGPT Work", "Dust", "Limova", "agent IA sur mesure"]
 lire_aussi: ["/blog/agent-ia-definition", "/foxy", "/agents"]
 ---
@@ -130,7 +130,7 @@ Beaucoup de petites entreprises n'ont pas besoin d'un système complet. Elles on
 |---|---|---|---|
 | **Agent sur mesure** | De 20 € par mois pour un agent simple à 50 € par mois selon la complexité, sans TVA à ajouter | La construction, l'hébergement, le branchement sur vos outils et les ajustements. L'abonnement Claude reste à votre nom, en plus | 1 mois gratuit, sans engagement d'achat |
 
-À titre de repère la formule d'entrée de Limova coûte 79,90 € HT par mois pour huit agents standards et un abonnement Lindy 29,99 $ par personne pour un agent que vous montez vous-même. La comparaison a ses limites. Ces deux offres n'affichent aucun abonnement d'IA à prendre à part (Lindy compte en crédits, 3 000 par mois à ce prix), alors qu'un agent sur mesure demande en plus votre abonnement Claude, à partir de 17 à 20 $ par mois en formule Pro. Elles couvrent aussi plus de terrain qu'un agent unique, alors qu'un agent sur mesure ne fait qu'une chose et la fait à votre façon.
+À titre de repère la formule d'entrée de Limova coûte 79,90 € HT par mois pour huit agents standards et un abonnement Lindy 29,99 $ par personne pour un agent que vous montez vous-même. La comparaison a ses limites. Ces deux offres n'affichent aucun abonnement d'IA à prendre à part et Lindy compte en crédits, 3 000 par mois à ce prix. Un agent sur mesure demande en plus votre abonnement Claude, à partir de 17 à 20 $ par mois en formule Pro. Ces offres couvrent aussi plus de terrain qu'un agent unique, alors qu'un agent sur mesure ne fait qu'une chose et la fait à votre façon.
 
 ## D'où vient la méthode derrière Foxy et les agents sur mesure ?
 
