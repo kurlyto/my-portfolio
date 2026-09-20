@@ -98,8 +98,29 @@ export const PROSE =
   "[&_table]:my-6 [&_table]:w-full [&_table]:text-[15px] [&_th]:text-left [&_th]:border-b-2 [&_th]:border-black/20 [&_th]:py-2 [&_th]:pr-3 " +
   "[&_td]:border-b [&_td]:border-black/10 [&_td]:py-2 [&_td]:pr-3 [&_td]:align-top";
 
+// Sur telephone un tableau large deborde ou s'ecrase : chaque cellule recoit le
+// titre de sa colonne (data-label) et le CSS (.article-metier table dans
+// globals.css) transforme alors chaque ligne en fiche empilee. Le tableau reste un
+// vrai <table> : Google et les moteurs IA le reprennent tel quel.
+function tableauxEnFiches(html) {
+  return html.replace(/<table>([\s\S]*?)<\/table>/g, (_, interieur) => {
+    const titres = [...interieur.matchAll(/<th[^>]*>([\s\S]*?)<\/th>/g)].map((m) =>
+      m[1].replace(/<[^>]+>/g, "").replace(/&nbsp;/g, " ").replace(/"/g, "&quot;").trim()
+    );
+    const corps = interieur.replace(/<tr>([\s\S]*?)<\/tr>/g, (ligne, cellules) => {
+      let i = 0;
+      return (
+        "<tr>" +
+        cellules.replace(/<td([^>]*)>/g, (_td, attributs) => `<td${attributs} data-label="${titres[i++] || ""}">`) +
+        "</tr>"
+      );
+    });
+    return `<div class="tableau"><table>${corps}</table></div>`;
+  });
+}
+
 export function enHtml(markdown) {
-  return marked.parse(markdown, { gfm: true });
+  return tableauxEnFiches(marked.parse(markdown, { gfm: true }));
 }
 
 function ancre(texte) {

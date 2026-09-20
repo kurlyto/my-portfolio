@@ -454,3 +454,123 @@ button:not(:disabled),
     column-gap: 1.75rem;
   }
 }
+
+/* Tableaux des articles (comparatifs surtout). Sur ordinateur : un tableau
+   classique qui peut defiler de cote plutot que de casser la page. Sur
+   telephone : chaque ligne devient une fiche, le titre de colonne (data-label,
+   pose par tableauxEnFiches dans blog-data.js) passe au-dessus de sa valeur. */
+.article-metier .tableau {
+  margin: 1.75rem 0;
+  overflow-x: auto;
+}
+.article-metier .tableau table {
+  margin: 0;
+  border-collapse: collapse;
+  font-size: 15.5px;
+  line-height: 1.5;
+}
+.article-metier .tableau th {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgb(0 0 0 / 0.55);
+  white-space: nowrap;
+}
+.article-metier .tableau td:first-child {
+  font-weight: 600;
+  color: #000;
+}
+.article-metier .tableau td:first-child {
+  min-width: 9.5rem;
+}
+.article-metier .tableau tbody tr:hover {
+  background: #fff4ee;
+}
+/* La ligne dont le nom est en gras dans le Markdown (l'offre de la maison dans
+   un comparatif) ressort d'un fond leger et d'un lisere orange. */
+.article-metier .tableau tbody tr:has(td:first-child strong) {
+  background: #fff4ee;
+  box-shadow: inset 3px 0 0 #ff6b35;
+}
+.article-metier .tableau tbody tr:has(td:first-child strong) td:first-child {
+  padding-left: 0.75rem;
+}
+@media (max-width: 640px) {
+  .article-metier .tableau {
+    overflow-x: visible;
+  }
+  .article-metier .tableau table,
+  .article-metier .tableau tbody,
+  .article-metier .tableau tr,
+  .article-metier .tableau td {
+    display: block;
+    width: 100%;
+  }
+  .article-metier .tableau thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+  .article-metier .tableau tr {
+    margin: 0 0 0.9rem;
+    padding: 0.9rem 1rem;
+    border: 1px solid rgb(0 0 0 / 0.12);
+    border-radius: 0.75rem;
+    background: #fff;
+  }
+  .article-metier .tableau tbody tr:hover {
+    background: #fff;
+  }
+  .article-metier .tableau td:first-child {
+    min-width: 0;
+  }
+  .article-metier .tableau tbody tr:has(td:first-child strong),
+  .article-metier .tableau tbody tr:has(td:first-child strong):hover {
+    background: #fff4ee;
+    border-color: #ff6b35;
+    box-shadow: none;
+  }
+  .article-metier .tableau tbody tr:has(td:first-child strong) td:first-child {
+    padding-left: 0;
+  }
+  .article-metier .tableau td {
+    padding: 0.35rem 0;
+    border: 0;
+    font-size: 16px;
+  }
+  .article-metier .tableau td:first-child {
+    padding-bottom: 0.55rem;
+    margin-bottom: 0.35rem;
+    border-bottom: 1px solid rgb(0 0 0 / 0.1);
+    font-size: 17px;
+  }
+  .article-metier .tableau td:not(:first-child)::before {
+    content: attr(data-label);
+    display: block;
+    font-family: var(--font-geist-mono), monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgb(0 0 0 / 0.5);
+  }
+  .article-metier .tableau td:empty {
+    display: none;
+  }
+}
+
+/* Verdict de fin de section d'un comparatif : "prenez-le si...". */
+.article-metier .verdict {
+  margin: 1.5rem 0 0;
+  padding: 1rem 1.2rem;
+  border: 1px solid rgb(0 0 0 / 0.12);
+  border-radius: 0.75rem;
+  background: #fafafa;
+  font-size: 16px;
+}
+.article-metier .verdict p {
+  margin: 0.35rem 0;
+}
