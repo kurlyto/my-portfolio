@@ -60,7 +60,7 @@ Vous donnez à l'agent quelques noms d'artistes proches de votre registre qui on
 
 L'agent cherche ensuite le nom de la personne qui programme et la date de la prochaine édition, parce qu'un festival boucle son affiche de longs mois à l'avance et qu'un mail envoyé trop tard part pour rien.
 
-### L'agent part de votre fichier au lieu de le remplacer
+### Votre fichier reste la base
 
 Beaucoup de musiciens tiennent déjà un tableur des salles et un outil qui demanderait de tout ressaisir finirait vite au placard. L'agent se branche donc sur ce tableau et il y écrit lui-même chaque mail envoyé et chaque réponse reçue.
 
@@ -72,7 +72,7 @@ Une fois le mail type validé, un silence de deux semaines déclenche la premiè
 
 Il s'arrête dès qu'une réponse sort du cadre. Une salle qui propose une date ou un programmateur qui parle d'argent remontent vers vous avec un brouillon de réponse. Je ne laisse jamais un agent accepter **une date** ni négocier un cachet de sa propre initiative.
 
-### Une date isolée peut coûter plus qu'elle ne rapporte
+### Le piège de la date isolée
 
 Prenons une salle située à six heures de train qui vous propose une date. Une fois payés le billet, la nuit d'hôtel et les techniciens, le cachet ne couvre plus les frais et la date vous coûte de l'argent si elle reste seule.
 
@@ -140,7 +140,7 @@ L'agent tient le planning et envoie un rappel la veille du cours. C'est la même
 
 À la fin du mois il rapproche les virements reçus de la liste des élèves. L'élève à jour n'entend parler de rien alors que les autres reçoivent un rappel aimable puis un second plus ferme. Vous validez les premiers messages pour régler le ton. En juin il demande à chaque famille si l'élève continue et vous présente le planning de la rentrée avec les créneaux qui se libèrent.
 
-## Ce qu'un agent IA ne doit pas faire à votre place
+## Ce qu'un agent IA ne doit pas faire
 
 Certains outils promettent beaucoup sur les sujets qui suivent. Aucune de ces promesses n'entrera dans votre agent et autant que vous le sachiez dès maintenant.
 

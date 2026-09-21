@@ -140,7 +140,7 @@ Une fois le rideau baissé, l'agent vous envoie le récap de la journée.
 
 Au début rien ne part sans votre feu vert. Vous ouvrez les vannes une à une en commençant par les confirmations de rendez-vous et tout le reste attend votre accord aussi longtemps que vous le souhaitez.
 
-## Ce qu'un agent IA ne doit pas faire à votre place
+## Ce qu'un agent IA ne doit pas faire
 
 La liste qui suit est courte et je ne la négocie pas parce qu'elle protège vos clients autant que votre garage.
 

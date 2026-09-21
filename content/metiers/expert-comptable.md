@@ -107,7 +107,7 @@ Deux précisions évitent les mauvaises surprises. La première concerne la pseu
 
 Le bon montage dépend enfin de ce que l'agent touche réellement. Un agent qui relance des justificatifs manquants manipule bien moins d'informations sensibles qu'un agent qui ouvre les FEC ou les bulletins de paie. Rien n'empêche donc de réserver le montage le plus fermé aux tâches qui touchent aux chiffres des clients. Le montage se décide avec vous pendant l'audit et je vous dis avant de construire ce que chaque option vous fait abandonner.
 
-## Ce qu'un agent IA ne doit pas faire à votre place
+## Ce qu'un agent IA ne doit pas faire
 
 ### Valider une déclaration ou un conseil fiscal
 

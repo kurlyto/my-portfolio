@@ -119,7 +119,7 @@ L'agent peut aussi répondre à la question qui revient sans cesse sur les rése
 
 Pour les emplacements, il prépare les demandes à la mairie et suit les relances. La décision d'autoriser le camion reste entre les mains de la commune et aucun outil ne peut vous la garantir.
 
-## Ce qu'un agent IA ne doit pas faire à votre place
+## Ce qu'un agent IA ne doit pas faire
 
 Certains outils promettent monts et merveilles sur les sujets qui suivent. Aucun des agents que je construis ne s'y aventure et autant que vous le sachiez avant de signer.
 

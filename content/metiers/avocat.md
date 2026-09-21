@@ -114,7 +114,7 @@ Deux précisions évitent les mauvaises surprises. La première concerne la pseu
 
 Le bon montage dépend enfin de ce que l'agent touche réellement. Un agent qui tient l'agenda et relance les honoraires manipule bien moins d'informations sensibles qu'un agent qui résume des pièces adverses et lit le cœur de l'affaire. Rien n'empêche donc de réserver le montage le plus fermé aux tâches couvertes par le secret. Le montage se décide avec vous pendant l'audit et je mets chaque compromis sur la table avant de construire.
 
-## Ce qu'un agent IA ne doit pas faire à votre place
+## Ce qu'un agent IA ne doit pas faire
 
 ### Citer une jurisprudence que personne n'a vérifiée
 

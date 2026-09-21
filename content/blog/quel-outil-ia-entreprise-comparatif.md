@@ -25,7 +25,9 @@ Ce comparatif range quinze outils en cinq familles et place mes deux offres au m
 
 ## Cinq familles d'outils
 
-Les outils de cette page se ressemblent sur leurs pages d'accueil et presque tous promettent de vous faire gagner des heures. Ce qui les sépare vraiment tient à la part du travail qui vous revient une fois l'abonnement payé.
+<figure class="tri-familles"><div class="famille"><span class="nom">Assistants de bureau</span><span class="logos"><span class="logo" style="--dx:71px;--dy:73px;--r:-3deg"><img src="/images/blog/logos/claude.png" alt="Logo Claude" width="44" height="44" loading="lazy"><em>Claude</em></span><span class="logo" style="--dx:121px;--dy:60px;--r:-24deg"><img src="/images/blog/logos/chatgpt.png" alt="Logo ChatGPT" width="44" height="44" loading="lazy"><em>ChatGPT</em></span><span class="logo" style="--dx:58px;--dy:66px;--r:-5deg"><img src="/images/blog/logos/copilot.png" alt="Logo Copilot" width="44" height="44" loading="lazy"><em>Copilot</em></span><span class="logo" style="--dx:36px;--dy:61px;--r:4deg"><img src="/images/blog/logos/mistral.png" alt="Logo Mistral" width="44" height="44" loading="lazy"><em>Mistral</em></span></span></div><div class="famille"><span class="nom">Plateformes d&#x27;agents</span><span class="logos"><span class="logo" style="--dx:43px;--dy:14px;--r:-23deg"><img src="/images/blog/logos/dust.png" alt="Logo Dust" width="44" height="44" loading="lazy"><em>Dust</em></span><span class="logo" style="--dx:66px;--dy:63px;--r:-24deg"><img src="/images/blog/logos/n8n.svg" alt="Logo n8n" width="44" height="44" loading="lazy"><em>n8n</em></span><span class="logo" style="--dx:-17px;--dy:21px;--r:7deg"><img src="/images/blog/logos/make.png" alt="Logo Make" width="44" height="44" loading="lazy"><em>Make</em></span><span class="logo" style="--dx:-4px;--dy:17px;--r:24deg"><img src="/images/blog/logos/zapier.png" alt="Logo Zapier" width="44" height="44" loading="lazy"><em>Zapier</em></span><span class="logo" style="--dx:-2px;--dy:25px;--r:-14deg"><img src="/images/blog/logos/lindy.png" alt="Logo Lindy" width="44" height="44" loading="lazy"><em>Lindy</em></span><span class="logo" style="--dx:-19px;--dy:17px;--r:8deg"><img src="/images/blog/logos/relevance-ai.png" alt="Logo Relevance AI" width="44" height="44" loading="lazy"><em>Relevance AI</em></span></span></div><div class="famille"><span class="nom">Agents prêts à l&#x27;emploi</span><span class="logos"><span class="logo" style="--dx:138px;--dy:16px;--r:-25deg"><img src="/images/blog/logos/limova.png" alt="Logo Limova" width="44" height="44" loading="lazy"><em>Limova</em></span></span></div><div class="famille"><span class="nom">Outils plus techniques</span><span class="logos"><span class="logo" style="--dx:45px;--dy:-73px;--r:7deg"><img src="/images/blog/logos/claude.png" alt="Logo Claude Code" width="44" height="44" loading="lazy"><em>Claude Code</em></span><span class="logo" style="--dx:-10px;--dy:-41px;--r:-2deg"><img src="/images/blog/logos/chatgpt.png" alt="Logo Codex" width="44" height="44" loading="lazy"><em>Codex</em></span><span class="logo" style="--dx:-42px;--dy:-63px;--r:8deg"><img src="/images/blog/logos/hermes-agent.png" alt="Logo Hermes Agent" width="44" height="44" loading="lazy"><em>Hermes Agent</em></span><span class="logo" style="--dx:-34px;--dy:-55px;--r:-22deg"><img src="/images/blog/logos/openclaw.png" alt="Logo OpenClaw" width="44" height="44" loading="lazy"><em>OpenClaw</em></span></span></div><div class="famille"><span class="nom">Installé pour vous</span><span class="logos"><span class="logo" style="--dx:137px;--dy:-98px;--r:-5deg"><img src="/images/blog/logos/foxy.png" alt="Logo Foxy" width="44" height="44" loading="lazy"><em>Foxy</em></span><span class="logo" style="--dx:-20px;--dy:-114px;--r:8deg"><img src="/images/blog/logos/agent-sur-mesure.png" alt="Logo Agent sur mesure" width="44" height="44" loading="lazy"><em>Agent sur mesure</em></span></span></div><figcaption>Quinze outils qui se ressemblent en vitrine et qui se rangent en cinq familles dès qu'on regarde qui fait les réglages.</figcaption></figure>
+
+Les outils de cette page se ressemblent sur leurs pages d'accueil et presque tous promettent de vous faire gagner des heures. Ce qui les sépare tient à la part du travail qui vous revient une fois l'abonnement payé.
 
 | Famille | Exemples | Qui fait les réglages | Prix d'entrée relevé |
 |---|---|---|---|
@@ -36,6 +38,8 @@ Les outils de cette page se ressemblent sur leurs pages d'accueil et presque tou
 | Installé pour vous | Foxy, agent sur mesure | Le prestataire | De 20 € à 100 € par mois |
 
 ## Les assistants de bureau : Claude, ChatGPT, Copilot et Mistral
+
+<p class="rangee-logos"><span class="logo"><img src="/images/blog/logos/claude.png" alt="Logo Claude" width="44" height="44" loading="lazy"><em>Claude</em></span><span class="logo"><img src="/images/blog/logos/chatgpt.png" alt="Logo ChatGPT" width="44" height="44" loading="lazy"><em>ChatGPT</em></span><span class="logo"><img src="/images/blog/logos/copilot.png" alt="Logo Copilot" width="44" height="44" loading="lazy"><em>Copilot</em></span><span class="logo"><img src="/images/blog/logos/mistral.png" alt="Logo Mistral" width="44" height="44" loading="lazy"><em>Mistral</em></span></p>
 
 Les quatre grands assistants font très bien ce pour quoi ils sont conçus. Vous posez une question ou vous collez un document et ils rédigent ou résument mieux que la plupart d'entre nous. Tous les quatre ont une interface en français, une mémoire et des connecteurs vers les mails, l'agenda ou Microsoft 365. Trois des quatre noms ont bougé cette année, ce qui explique les parenthèses du tableau.
 
@@ -54,6 +58,8 @@ Un détail mérite votre attention si vous regardez Mistral pour son hébergemen
 </div>
 
 ## Les plateformes pour monter ses agents soi-même : Dust, n8n, Make
+
+<p class="rangee-logos"><span class="logo"><img src="/images/blog/logos/dust.png" alt="Logo Dust" width="44" height="44" loading="lazy"><em>Dust</em></span><span class="logo"><img src="/images/blog/logos/n8n.svg" alt="Logo n8n" width="44" height="44" loading="lazy"><em>n8n</em></span><span class="logo"><img src="/images/blog/logos/make.png" alt="Logo Make" width="44" height="44" loading="lazy"><em>Make</em></span><span class="logo"><img src="/images/blog/logos/zapier.png" alt="Logo Zapier" width="44" height="44" loading="lazy"><em>Zapier</em></span><span class="logo"><img src="/images/blog/logos/lindy.png" alt="Logo Lindy" width="44" height="44" loading="lazy"><em>Lindy</em></span><span class="logo"><img src="/images/blog/logos/relevance-ai.png" alt="Logo Relevance AI" width="44" height="44" loading="lazy"><em>Relevance AI</em></span></p>
 
 Ces plateformes sont de vrais ateliers et elles offrent une liberté qu'aucune offre installée n'égale, avec des centaines de connecteurs et des prix d'entrée très bas. La contrepartie est écrite noir sur blanc dans leurs documentations, puisque c'est le client qui construit l'agent et qui l'entretient. Dust l'écrit ainsi dans son guide, « Good instructions make the difference between poor and great results » ([documentation Dust](https://docs.dust.tt/docs/user-documentation/agents/create-your-first-agent.md)).
 
@@ -75,6 +81,8 @@ D'habitude je conseille n8n aux entreprises qui ont déjà dans l'équipe quelqu
 
 ## Les agents prêts à l'emploi : Limova
 
+<p class="rangee-logos"><span class="logo"><img src="/images/blog/logos/limova.png" alt="Logo Limova" width="44" height="44" loading="lazy"><em>Limova</em></span></p>
+
 Limova est une start-up de Nice qui loue une équipe de huit agents déjà construits, chacun avec un prénom et un rôle qui va du standard téléphonique à la prospection. Tout est en français, un conseiller vous guide au démarrage et l'éditeur écrit qu'il n'y a « aucune ligne de code à écrire ». Son agent téléphonique répond aux appels jour et nuit, ce que ni Foxy ni mes agents ne font aujourd'hui.
 
 | Formule | Prix public | Ce qu'elle contient | Engagement |
@@ -91,6 +99,8 @@ Les agents sont les mêmes pour tous les clients et la personnalisation porte su
 </div>
 
 ## Les outils plus techniques : Claude Code, Codex, Hermes Agent, OpenClaw
+
+<p class="rangee-logos"><span class="logo"><img src="/images/blog/logos/claude.png" alt="Logo Claude Code" width="44" height="44" loading="lazy"><em>Claude Code</em></span><span class="logo"><img src="/images/blog/logos/chatgpt.png" alt="Logo Codex" width="44" height="44" loading="lazy"><em>Codex</em></span><span class="logo"><img src="/images/blog/logos/hermes-agent.png" alt="Logo Hermes Agent" width="44" height="44" loading="lazy"><em>Hermes Agent</em></span><span class="logo"><img src="/images/blog/logos/openclaw.png" alt="Logo OpenClaw" width="44" height="44" loading="lazy"><em>OpenClaw</em></span></p>
 
 Ces quatre outils sont les moteurs les plus avancés du moment et deux d'entre eux sont libres et gratuits. Ils s'installent par une ligne de commande dans un terminal. Pour travailler en continu, Hermes Agent et OpenClaw demandent en plus une machine toujours allumée et des clés à obtenir chez un fournisseur de modèles, avec une vigilance sur la sécurité que l'éditeur d'OpenClaw rappelle lui-même dans sa documentation.
 
@@ -110,6 +120,8 @@ J'ai passé une partie du mois d'août 2026 à démonter Hermes Agent, avec l'id
 
 ## Foxy : mon bras droit personnalisé
 
+<p class="rangee-logos"><span class="logo"><img src="/images/blog/logos/foxy.png" alt="Logo Foxy" width="44" height="44" loading="lazy"><em>Foxy</em></span></p>
+
 Cette famille part du constat précédent : un moteur d'agent devient utile à un dirigeant le jour où quelqu'un l'installe sur un serveur, le branche sur ses outils et le tient à jour. C'est le métier de [Foxy](/foxy), qui fonctionne avec Claude et laisse l'abonnement Claude à votre nom.
 
 | Offre | Prix public | Abonnement Claude | Accompagnement | Essai |
@@ -124,6 +136,8 @@ Foxy est tenu par un artisan seul, ce qui explique à la fois son prix et sa lim
 </div>
 
 ## Un agent sur mesure
+
+<p class="rangee-logos"><span class="logo"><img src="/images/blog/logos/agent-sur-mesure.png" alt="Logo Agent sur mesure" width="44" height="44" loading="lazy"><em>Agent sur mesure</em></span></p>
 
 Beaucoup de petites entreprises n'ont pas besoin d'un système complet. Elles ont une corvée précise, comme les demandes de privatisation d'un foodtruck ou les relances de devis d'un artisan, et un [agent construit pour cette seule tâche](/agents) la règle mieux qu'un outil généraliste. L'agent vit dans la messagerie que vous utilisez déjà (WhatsApp, Telegram ou le mail) et il n'y a aucune interface à apprendre.
 

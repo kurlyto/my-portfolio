@@ -107,7 +107,7 @@ Deux précisions évitent les mauvaises surprises. La première concerne la pseu
 
 Le bon montage dépend enfin de ce que l'agent touche réellement. Un agent qui cale des rendez-vous de signature manipule bien moins d'informations sensibles qu'un agent qui prépare le récapitulatif d'une succession. Rien n'empêche donc de réserver le montage le plus fermé aux tâches qui ouvrent le fond des dossiers. Je choisis le montage avec vous à l'audit et j'annonce chaque compromis avant de construire.
 
-## Ce qu'un agent IA ne doit pas faire à votre place
+## Ce qu'un agent IA ne doit pas faire
 
 ### Rédiger l'acte ou conseiller le client
 

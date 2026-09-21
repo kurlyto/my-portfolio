@@ -55,19 +55,19 @@ Une heure passée dans un bien en coûte souvent une autre au téléphone et dan
 
 Les demandes des portails arrivent par mail et l'agent y répond dans les minutes qui suivent, y compris le dimanche soir. Il pose les questions que vous avez choisies sur le financement et le délai du projet, puis il propose les créneaux que vous avez ouverts. Ce qu'il confirme seul et ce qu'il vous remonte se décide avec vous dès l'audit.
 
-### La tournée se construit et chaque visiteur confirme la veille
+### La tournée de visites
 
 L'agent regroupe les visites d'un même bien sur la même heure et range les rendez-vous par quartier en comptant le temps de trajet. Votre samedi ressemble alors à une tournée de facteur plutôt qu'à une partie de flipper.
 
 La veille à 18 h, chaque visiteur reçoit un message avec l'adresse et l'heure et il lui suffit de répondre pour confirmer. Celui qui se tait est relancé le lendemain matin et son créneau vous est signalé comme incertain. Quand quelqu'un annule, l'agent propose la place au suivant sur la liste d'attente et c'est la même mécanique que [dans un salon de coiffure](/metiers/coiffeur).
 
-### Le propriétaire reçoit le retour des visiteurs le soir même
+### Le retour au propriétaire le soir même
 
 En sortant d'une visite, vous dictez trente secondes de notes dans votre téléphone. L'agent en fait un compte rendu clair que vous validez avant l'envoi, si bien que le vendeur n'a plus de raison d'appeler le vendredi soir pour savoir où en est son bien.
 
 Au bout de trois semaines l'agent sait vous dire que sept visiteurs sur neuf ont trouvé le prix trop haut, ce qui vous donne un dossier solide le jour où il faut parler d'une baisse.
 
-### Les acquéreurs sont rappelés quand un bien leur correspond
+### Le rappel des acquéreurs
 
 Chaque visiteur laisse derrière lui un budget, un quartier et un nombre de chambres. Quand un mandat rentre, l'agent sort la liste des acquéreurs à qui ce bien pourrait plaire et prépare un message pour chacun. Il fait de même pour ceux qui se taisent depuis leur visite et vous validez l'envoi d'un geste.
 
@@ -110,17 +110,17 @@ Du même texte il tire un post « nouveau bien » pour vos réseaux sociaux puis
 
 Beaucoup de mandats perdus avaient pourtant tendu la main à l'agence avec une demande d'estimation restée trois jours sans réponse.
 
-### Les demandes d'estimation reçoivent une réponse dans la minute
+### Les demandes d'estimation
 
 Quand un propriétaire remplit le formulaire de votre site, l'agent lui répond aussitôt. Il lui demande l'adresse, la surface et le délai de son projet puis il lui propose un rendez-vous. Le propriétaire qui a écrit à trois agences le même soir se souviendra de celle qui a répondu la première.
 
-### Le dossier d'estimation est prêt avant le rendez-vous
+### Le dossier d'estimation
 
 L'agent part des ventes réelles parce que l'État publie en données ouvertes la base [Demandes de valeurs foncières](https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres), dite DVF. Elle recense les transactions des cinq dernières années, sauf en Alsace, en Moselle et à Mayotte.
 
 L'agent y cherche les ventes comparables et y ajoute les biens concurrents encore en vente, qu'il surveille chaque matin sur les sites des agences du secteur. La base ignore l'état du bien, l'étage et la vue, si bien que la fourchette obtenue reste un travail préparatoire. Cette fourchette ne remplace pas l'avis de valeur que vous signez et je ne laisse donc jamais un agent annoncer un prix à un vendeur.
 
-### Les estimations sans suite et les fins de mandat sont suivies
+### Les estimations sans suite et les fins de mandat
 
 Un propriétaire qui ne signe pas en mars vendra peut-être en septembre et choisira l'agence qui se sera souvenue de lui. L'agent garde la date de chaque estimation et prépare une relance au bout du délai que vous avez choisi. D'habitude je conseille d'y glisser un fait utile comme une vente récente dans la rue.
 
@@ -130,7 +130,7 @@ Il surveille aussi la date de fin de chaque exclusivité. Quelques semaines avan
 
 L'offre est acceptée et commence alors la chasse aux papiers qui retarde tant de compromis.
 
-### Les pièces du notaire sont réclamées une par une
+### Les pièces du notaire
 
 L'agent dresse la liste des pièces à partir de la fiche du bien. Le [dossier de diagnostic technique](https://www.service-public.gouv.fr/particuliers/vosdroits/F10798) réclame par exemple un constat plomb pour un logement construit avant 1949 et un état de l'électricité quand l'installation a plus de 15 ans. Pour [un lot de copropriété](https://www.service-public.gouv.fr/particuliers/vosdroits/F2604) s'ajoutent le règlement, le carnet d'entretien et les procès-verbaux des assemblées générales des trois dernières années.
 
@@ -140,7 +140,7 @@ L'agent coche ce qui est arrivé et relance le vendeur en lui disant quelle piè
 
 Le lendemain de la signature, l'agent envoie au vendeur et à l'acquéreur un mot de remerciement avec le lien vers votre fiche Google. Tous vos clients le reçoivent parce que Google interdit de [solliciter des avis positifs de façon sélective](https://support.google.com/contributionpolicy/answer/7400114?hl=fr).
 
-## Ce qu'un agent IA ne doit pas faire à votre place
+## Ce qu'un agent IA ne doit pas faire
 
 Certains outils promettent de tout faire sans vous et d'être conformes par construction. Sur les sujets qui suivent ma réponse est non et autant que vous le sachiez avant de signer.
 

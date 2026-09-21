@@ -142,7 +142,7 @@ Le dimanche soir il propose les menus de la semaine et la liste de courses arriv
 
 « Prépare un week-end à Lisbonne en mai » suffit pour lancer le travail. L'agent regarde vos dates libres et propose un itinéraire jour par jour avec trois hôtels dans votre budget et le total estimé vols compris. Il ne réserve rien et ne paie rien. Vous choisissez et il range ensuite billets et confirmations dans le dossier du voyage.
 
-## Ce qu'un agent IA ne doit pas faire à votre place
+## Ce qu'un agent IA ne doit pas faire
 
 Sur les sujets qui suivent la réponse est non et mieux vaut le savoir avant de commencer.
 

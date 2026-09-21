@@ -72,7 +72,7 @@ Vous recevez alors un brouillon de devis. Quand la photo ne suffit pas pour s'en
 <figcaption>Exemple de brouillon de devis soumis au plombier. Le nom, la ville et le prix sont fictifs.</figcaption>
 </figure>
 
-### Les mentions obligatoires rangées une fois pour toutes
+### Les mentions obligatoires
 
 En plomberie le devis est obligatoire avant les travaux comme avant un dépannage et la [fiche de Service-Public Entreprendre](https://entreprendre.service-public.gouv.fr/vosdroits/F31144) en donne la liste des mentions. On y trouve le décompte détaillé en quantité et en prix, le taux horaire TTC et les frais de déplacement puis la durée de validité de l'offre et le caractère gratuit ou payant du devis. L'oubli du devis expose à une amende qui peut atteindre 3 000 € pour un entrepreneur individuel et 15 000 € pour une société.
 
@@ -146,7 +146,7 @@ Après un dépannage, les pièces remplacées sont en principe [garanties trois 
 <figcaption>Le parcours d'un client, du premier appel au rappel d'entretien de l'année suivante.</figcaption>
 </figure>
 
-## Ce qu'un agent IA ne doit pas faire à votre place
+## Ce qu'un agent IA ne doit pas faire
 
 Sur les sujets qui suivent ma réponse est non et mieux vaut le savoir avant de signer.
 
@@ -154,7 +154,7 @@ Sur les sujets qui suivent ma réponse est non et mieux vaut le savoir avant de 
 
 Un devis accepté [engage le professionnel](https://entreprendre.service-public.gouv.fr/vosdroits/F31144) et une erreur de chiffrage se paie donc de votre poche. Mes propres agents me demandent mon feu vert avant tout envoi et je garde la même règle pour vos devis, y compris pour un petit montant.
 
-### Diagnostiquer à distance et surtout quand il y a du gaz
+### Diagnostiquer à distance
 
 L'agent pose des questions de tri et ne conseille à personne de démonter un siphon ou de rallumer une chaudière. Dès qu'un appel évoque une odeur de gaz, il répète la consigne officielle de quitter les lieux et d'appeler le numéro [Urgence Sécurité Gaz de GRDF](https://www.grdf.fr/particuliers/urgence-depannage-fuite-gaz) au 0 800 47 33 33. Des maux de tête ou des nausées près d'un appareil de chauffage font penser au monoxyde de carbone et la consigne devient alors d'aérer, de sortir et d'appeler [le 15, le 18 ou le 112](https://www.service-public.gouv.fr/particuliers/actualites/A14487). Vous êtes prévenu dans la foulée.
 

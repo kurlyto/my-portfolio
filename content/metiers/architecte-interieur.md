@@ -134,7 +134,7 @@ Vos meilleurs arguments dorment dans votre téléphone avec les photos de fin de
 
 Deux semaines après la réception, l'agent envoie à chaque client sans exception un mot de remerciement avec le lien pour laisser un avis, parce que Google interdit de [solliciter des avis uniquement auprès des clients satisfaits](https://support.google.com/contributionpolicy/answer/7400114?hl=fr).
 
-## Ce qu'un agent IA ne doit pas faire à votre place
+## Ce qu'un agent IA ne doit pas faire
 
 Un agent sait techniquement faire une partie de ce qui suit et je refuse pourtant de le lui confier.
 

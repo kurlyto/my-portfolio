@@ -133,7 +133,7 @@ Deux jours avant la séance il envoie le court questionnaire que vous avez écri
 
 L'agent n'interprète aucune réponse et ne donne aucun conseil entre deux séances. Une personne qui écrit qu'elle va mal reçoit un message qui vous passe la main et vous êtes prévenu dans la minute.
 
-## Ce qu'un agent IA ne doit pas faire à votre place
+## Ce qu'un agent IA ne doit pas faire
 
 Les sujets qui suivent restent fermés à l'agent et mieux vaut le savoir avant de commencer.
 

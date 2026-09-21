@@ -49,7 +49,7 @@ C'est la même mécanique que [la liste d'attente d'un salon de coiffure](/metie
 
 Pour savoir où partent les données, il faut d'abord séparer deux pièces que l'on confond souvent. L'agent est le programme qui lit vos mails, range les documents et prépare les brouillons. Pour comprendre un texte ou en écrire un, il interroge un modèle d'IA qui tourne quelque part sur un serveur, un peu comme un collaborateur qui passerait un coup de fil à un expert extérieur. Le sort de vos données dépend de ce modèle et de l'endroit où il tourne bien plus que de l'agent lui-même.
 
-### Ce que disent les règles sur les données de santé
+### Les règles sur les données de santé
 
 Toute personne qui héberge des données de santé pour le compte d'un professionnel doit être [certifiée HDS](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000049577902), pour hébergeur de données de santé. Le [décret du 24 mars 2026](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053717250) durcit la règle puisque ce stockage devra se faire exclusivement dans l'Union européenne ou l'Espace économique européen à partir du 26 septembre 2026. L'hébergeur devra aussi prévenir ses clients des lois étrangères qui permettraient d'accéder aux données.
 
@@ -110,7 +110,7 @@ Un cabinet de santé ajoute une contrainte qui ne se discute pas. Chaque maillon
 
 Le bon montage dépend enfin de ce que l'agent touche réellement. La liste d'attente et les relances manipulent déjà des données de patients sans ouvrir le dossier de soins, alors que la mise en forme des notes de séance touche le cœur des données de santé. Rien n'empêche donc de réserver le montage le plus fermé à ces notes. Nous tranchons ce point ensemble à l'audit et vous connaissez chaque concession avant le début de la construction.
 
-## Ce qu'un agent IA ne doit pas faire à votre place
+## Ce qu'un agent IA ne doit pas faire
 
 ### Poser un diagnostic ou adapter un traitement
 

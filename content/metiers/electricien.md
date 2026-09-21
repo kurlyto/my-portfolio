@@ -144,7 +144,7 @@ L'agent dresse la liste des syndics, des agences et des gestionnaires de biens d
 
 Les mairies et les bailleurs sociaux publient leurs marchés d'éclairage, de mise aux normes ou de maintenance sur le BOAMP qui ouvre [ses données en accès libre](https://www.boamp.fr/pages/donnees-ouvertes-et-api/). L'agent les filtre chaque matin par département et par mots-clés puis il vous envoie ceux qui correspondent à votre taille avec leur date limite. Il prépare le dossier administratif qui se répète d'un marché à l'autre et vous gardez le mémoire technique et le prix.
 
-## Ce qu'un agent IA ne doit pas faire à votre place
+## Ce qu'un agent IA ne doit pas faire
 
 Certaines tâches restent fermées à l'agent parce qu'elles engagent votre responsabilité ou la confiance de vos clients.
 
@@ -164,7 +164,7 @@ L'agent peut répondre aux demandes de bornes et préparer les devis mais il ne 
 
 Depuis le 11 août 2026 un professionnel n'a [plus le droit d'appeler un particulier](https://www.service-public.gouv.fr/particuliers/vosdroits/F33267) pour lui vendre quelque chose sans son accord préalable et il doit pouvoir prouver cet accord. L'agent n'appelle donc jamais un particulier pour proposer une borne ou une remise aux normes. Par mail et par SMS la [CNIL](https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique-sms-mms-et-automate-dappel) exige le consentement des particuliers, avec une exception pour vos clients existants à qui vous proposez des prestations similaires. Entre professionnels elle demande que la personne soit informée, qu'elle puisse s'opposer simplement et que le message ait un rapport avec sa profession.
 
-### Garder les codes d'alarme et les accès de vos clients
+### Garder les codes d'alarme de vos clients
 
 Un électricien qui pose de la domotique ou une alarme connaît des codes, des plans et des habitudes de vie. Ces informations ne doivent pas entrer dans l'agent, qui n'en a pas besoin pour faire un devis ou une facture. France Num a conçu avec la CPME et la [CNIL](https://www.cnil.fr/fr/utiliser-lia-generative-dans-les-tpe-et-pme) quatre fiches qui aident les petites entreprises à choisir un outil d'IA et à l'utiliser avec précaution. La question de l'endroit où partent les données mérite une réponse écrite de la part de tout prestataire, moi compris. La page sur [l'agent IA d'un avocat](/metiers/avocat) contient un guide sur ce sujet.
 

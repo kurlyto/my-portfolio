@@ -148,7 +148,7 @@ Quand une entreprise vous commande des images, vous lui cédez des droits d'util
 
 L'agent tient ce registre à partir de vos contrats et vous prévient deux mois avant chaque échéance avec un brouillon de proposition de renouvellement.
 
-## Ce qu'un agent IA ne doit pas faire à votre place
+## Ce qu'un agent IA ne doit pas faire
 
 Certains outils promettent beaucoup sur les sujets qui suivent. Sur chacun d'eux je préfère vous dire non dès maintenant plutôt qu'en cours de route.
 
@@ -164,7 +164,7 @@ Vos photos sont protégées par le droit d'auteur dès leur création à conditi
 
 L'agent remplit votre modèle avec les éléments du devis et vous le soumet. Il ne signe rien et ne consent aucune extension d'usage par mail.
 
-### Envoyer les photos de vos clients à n'importe quelle IA
+### Confier vos photos à n'importe quelle IA
 
 L'image d'une personne est [une donnée personnelle](https://www.cnil.fr/fr/definition/donnee-personnelle) et les images d'un mariage ou d'un nouveau-né méritent mieux qu'un envoi à l'aveugle. La CNIL demande de [ne soumettre à une IA générative que des informations qu'on est autorisé à partager](https://www.cnil.fr/fr/les-questions-reponses-de-la-cnil-sur-lutilisation-dun-systeme-dia-generative). Elle invite aussi à vérifier si le fournisseur réutilise ce qu'on lui envoie.
 

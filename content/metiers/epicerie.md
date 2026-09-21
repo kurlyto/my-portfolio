@@ -89,7 +89,7 @@ L'agent envoie chaque semaine le bilan de ce que ces règles ont sauvé et ce bi
 
 L'agent repère aussi l'article qui dort depuis trois semaines et vous suggère un lot avec un produit qui marche ou une place plus près de la caisse.
 
-### Le droit s'invite dans la mécanique
+### Ce que la loi impose sur les promotions
 
 Le prix barré doit correspondre [au prix le plus bas pratiqué au cours des 30 jours qui précèdent](https://www.service-public.gouv.fr/particuliers/actualites/A15721) et la règle vaut en magasin comme en ligne. Service-Public précise qu'elle ne s'applique pas aux produits périssables menacés d'une altération rapide, ce qui peut concerner un yaourt à deux jours de sa date mais sûrement pas un bocal de sauce. L'agent garde donc la preuve du prix de référence de chaque article.
 
@@ -135,11 +135,11 @@ Pour le planning vous lui donnez les contraintes de chacun. Il propose le mois s
 
 Un avis sans réponse donne l'image d'une boutique où personne ne décroche. L'agent rédige une réponse à chaque avis dans votre ton et publie seul les remerciements si vous l'y autorisez. Dès qu'une note tombe sous trois étoiles il vous montre l'avis avec un brouillon et il attend, parce qu'une réponse à un client mécontent porte votre nom.
 
-## Ce qu'un agent IA ne doit pas faire à votre place
+## Ce qu'un agent IA ne doit pas faire
 
 Plusieurs des gestes qui suivent sont techniquement à la portée d'un agent et c'est pourquoi je les lui interdis.
 
-### Écrire dans la caisse ou changer un prix en rayon
+### Toucher à la caisse ou aux prix
 
 Le prix affiché doit être indiqué toutes taxes comprises et de façon lisible pour que le client le connaisse [sans avoir à le demander](https://entreprendre.service-public.gouv.fr/vosdroits/F34344). L'agent prépare donc les étiquettes et vous seul changez les prix.
 

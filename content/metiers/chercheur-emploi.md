@@ -146,7 +146,7 @@ Le vendredi il envoie le bilan de la semaine. Au bout d'un mois l'agent peut vou
 
 L'agent tient enfin le calendrier des démarches. Une personne inscrite à France Travail doit actualiser sa situation chaque mois et l'agent le lui rappelle à l'ouverture de la période puis avant la date limite. Un agent personnel suit de la même façon [les échéances et les papiers de tout un foyer](/metiers/vie-personnelle).
 
-## Ce qu'un agent IA ne doit pas faire à votre place
+## Ce qu'un agent IA ne doit pas faire
 
 Certains outils promettent beaucoup sur les sujets qui suivent. Sur chacun de ces sujets je réponds non et autant l'apprendre ici qu'en cours de route.
 

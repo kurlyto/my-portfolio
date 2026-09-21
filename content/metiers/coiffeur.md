@@ -125,11 +125,11 @@ Il ne les remplace pas. Ces plateformes vous amènent des clientes, gèrent la r
 
 L'agent s'appuie sur l'outil que vous avez déjà et s'occupe de ce qui vit en dehors sans doubler les rappels que la plateforme envoie. Si elle ouvre un accès aux outils extérieurs, l'agent réserve directement dedans et sinon il travaille sur un agenda que vous partagez avec lui. Ce point se vérifie avant de commencer parce qu'un seul agenda doit faire foi, sans quoi le même fauteuil finit tôt ou tard promis à deux clientes.
 
-## Ce qu'un agent IA ne doit pas faire à votre place
+## Ce qu'un agent IA ne doit pas faire
 
 Les demandes qui suivent reviennent souvent et je les décline toutes avant même le premier devis.
 
-### Conseiller sur une allergie ou une réaction à une coloration
+### Conseiller sur une allergie
 
 Les [recommandations de l'ANSM aux coiffeurs](https://ansm.sante.fr/uploads/2021/03/11/311953034a0cfd67144c845842b18528.pdf) demandent de ne pas réaliser de teinture sur une cliente qui a déjà réagi à une coloration et elles rappellent que l'absence de réaction à une touche d'essai ne garantit rien. L'Anses précise de son côté que cette touche d'essai [n'est plus obligatoire depuis 2001](https://www.anses.fr/system/files/VigilAnsesN28FR.pdf) mais que les fabricants continuent de la conseiller. Ce jugement vous appartient. Dès qu'un message parle d'allergie, de démangeaisons ou de brûlure, l'agent vous le transmet sans donner d'avis et face à une réaction sévère il répète la consigne officielle d'appeler le 15.
 
