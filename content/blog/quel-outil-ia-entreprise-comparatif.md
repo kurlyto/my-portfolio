@@ -159,9 +159,14 @@ Un envoi, un paiement ou une suppression attend toujours votre accord et tout ce
 
 La méthode la plus sûre consiste à partir de la tâche et non de l'outil. Notez pendant une semaine ce qui vous prend du temps sans demander de jugement, puis regardez dans quelle ligne vous tombez.
 
+<figure>
+<img src="/images/blog/caisse-a-outils-pleine.webp" alt="Une caisse à outils métallique bleue ouverte sur une table, remplie de clés, de tournevis et d'un niveau" width="1400" height="820" loading="lazy">
+<figcaption>Personne n'ouvre sa caisse à outils avant de savoir ce qu'il y a à réparer et le choix d'un outil d'IA suit la même logique.<span class="credit">Photo : Rieul Techer, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:Caisse_%C3%A0_outils_avec_petit_outillage.JPG">Wikimedia Commons</a></span></figcaption>
+</figure>
+
 | Votre situation | Ce qui convient | Budget mensuel relevé |
 |---|---|---|
-| Écrire, résumer, traduire plus vite | Un assistant de bureau | 15 à 25 par personne |
+| Écrire, résumer, traduire plus vite | Un assistant de bureau | 15 à 25 € ou $ par personne |
 | Un salarié aime construire et a du temps | Une plateforme (n8n, Make, Dust) | De 0 à 50 € pour démarrer |
 | Des besoins courants, tout de suite | Des agents prêts à l'emploi (Limova) | 79,90 à 139,90 € HT |
 | Un profil technique dans l'équipe | Claude Code, Hermes Agent ou OpenClaw | Gratuit à 20 $, plus le temps passé |
