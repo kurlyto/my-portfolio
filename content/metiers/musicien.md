@@ -16,7 +16,7 @@ Autant lever le malentendu tout de suite : cet agent ne compose rien et ne joue 
 <p>Trois choses lui restent interdites : créer à votre place, acheter de la fausse audience et signer ou déclarer quoi que ce soit en votre nom.</p>
 </div>
 
-## Qu'est-ce qui mange la semaine d'un musicien ?
+## La semaine d'un musicien
 
 Demandez à un musicien ce qui l'use et il vous parlera rarement de la scène. Le reste du métier ressemble à une petite agence dont vous seriez à la fois le programmateur, l'attaché de presse et le comptable.
 
@@ -24,7 +24,7 @@ Prenons un mardi ordinaire. Douze salles contactées il y a deux semaines n'ont 
 
 Aucune de ces tâches n'est difficile mais elles arrivent toutes ensemble et se paient en dates perdues, parce qu'un programmateur qui n'a pas été relancé a déjà rempli sa saison avec quelqu'un d'autre.
 
-## Que fait un agent IA pour un musicien ?
+## Ce que fait l'agent
 
 Imaginez un régisseur qui ne monterait jamais sur scène et qui tiendrait à la place la boîte mail, le fichier des salles et le carnet de factures. Si le mot « agent » vous paraît flou, j'ai écrit une [explication simple de ce qu'est un agent IA](/blog/agent-ia-definition). Pour un musicien tout commence par les cinq mêmes missions parce qu'elles reviennent chaque semaine.
 
@@ -50,7 +50,7 @@ Imaginez un régisseur qui ne monterait jamais sur scène et qui tiendrait à la
 
 Ces cinq missions sont un point de départ. Un musicien fait en réalité trois métiers de bureau puisqu'il prospecte quand il cherche des dates, fait du marketing quand il sort un titre et de l'administratif le reste du temps.
 
-## Comment trouver des dates de concert sans y passer ses soirées ?
+## Trouver des dates de concert
 
 À mon avis le booking est une prospection commerciale qui ne dit pas son nom et c'est le terrain où un agent va le plus loin. La mécanique est la même que pour [la prospection d'un consultant indépendant](/metiers/consultant).
 
@@ -104,7 +104,7 @@ Quand vous avez dit oui, l'agent prépare la feuille de route, envoie la fiche t
 <figcaption>Le parcours d'une date. Vous validez les règles et chaque engagement, l'agent déroule le reste.</figcaption>
 </figure>
 
-## Comment préparer la sortie d'un titre sans rien oublier ?
+## La sortie d'un titre
 
 Une sortie est une affaire de calendrier. Vous donnez à l'agent la date du titre et il remonte le temps pour poser chaque échéance à sa place.
 
@@ -118,13 +118,13 @@ Reste la lettre d'information que presque tout le monde repousse et que je conse
 
 **Les concerts se calent enfin sur les sorties.** L'agent concentre le démarchage sur les semaines qui suivent un titre pour que chaque date profite d'une actualité toute fraîche. Vous pouvez aussi lui confier vos objectifs de l'année et l'autoriser à vous dire quand vos semaines s'en éloignent.
 
-## Comment ne plus rater un tremplin ou un appel à candidatures ?
+## Les tremplins et les appels à candidatures
 
 Les tremplins, les résidences et les dispositifs d'accompagnement ont un point commun : on les découvre presque toujours trois jours après la date limite.
 
 L'agent parcourt chaque semaine les sites qui les publient et ne garde que les appels qui correspondent à votre style, à votre région et aux critères d'âge. Trois semaines avant chaque date limite il vous le rappelle et prépare le dossier à partir des précédents. Vous relisez et c'est vous qui envoyez.
 
-## Cachets, Sacem, intermittence : qui tient les comptes ?
+## Les cachets et la Sacem
 
 L'administratif est le métier de bureau où un oubli coûte le plus cher. Chaque date a sa ligne dans un tableau avec le montant prévu, le contrat et le paiement et l'agent relance l'organisateur en retard avec votre accord.
 

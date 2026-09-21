@@ -14,19 +14,19 @@ Un agent IA pour coiffeur est un assistant logiciel qui tient le téléphone, l'
 <p>Deux choses lui restent interdites : conseiller une cliente sur une allergie ou une réaction à une coloration et envoyer un message commercial que vous n'avez pas autorisé.</p>
 </div>
 
-## Qu'est-ce qui mange la journée d'un coiffeur ou d'une esthéticienne ?
+## La journée d'un coiffeur ou d'une esthéticienne
 
 Prenons un samedi à 10 h 40. Vous posez une couleur et le téléphone sonne pour la troisième fois depuis l'ouverture. Sur Instagram une inconnue demande le prix d'un balayage et un créneau jeudi en fin de journée, pendant que la cliente de 14 h prévient par SMS qu'elle ne viendra pas. Le dernier tube de 7.1 est entamé et Sarah voudrait échanger son samedi de la semaine prochaine.
 
 Chacune de ces interruptions se règle en deux minutes, sauf que vos deux mains sont prises. L'appel qui sonne dans le vide finit souvent chez un confrère et le trou de 14 h reste un fauteuil vide alors que d'autres clientes auraient volontiers pris la place.
 
-## Que fait un agent IA dans un salon de coiffure ?
+## Ce que fait l'agent
 
 Le poste ressemble à celui d'une personne à l'accueil qui ne prendrait jamais de pause et ne toucherait jamais un peigne. Un article à part explique [ce qu'est un agent IA](/blog/agent-ia-definition) et dans un salon son travail tient en quatre missions : répondre à chaque demande, remplir les fauteuils, faire revenir les clientes et tenir les coulisses.
 
 Rien n'oblige à tout confier d'un coup. Un agent qui tient **très bien les rendez-vous et les rappels** vous rendra plus de services qu'un agent qui bâcle tout le reste.
 
-## Comment l'agent prend-il les rendez-vous pendant que vous coiffez ?
+## La prise de rendez-vous
 
 ### Au téléphone quand vous avez les mains prises
 
@@ -44,7 +44,7 @@ Le créneau d'une couleur n'a rien à voir avec celui d'une coupe et le temps de
 
 Vous décidez aussi de ce qu'il accepte sans vous. Une coupe pour une cliente connue se réserve toute seule alors qu'une coiffure de mariage vous est remontée avec la photo et la demande.
 
-## Comment éviter les fauteuils vides et les lapins ?
+## Les fauteuils vides et les lapins
 
 Chaque rendez-vous pris déclenche une confirmation immédiate. La veille, l'agent envoie un rappel qui attend une réponse et une cliente qui écrit « je ne peux plus venir » se voit proposer une autre date dans la foulée.
 
@@ -63,7 +63,7 @@ Reste la cliente qui ne répond pas au rappel et ne vient pas. L'agent note le l
 <figcaption>Le parcours d'un rendez-vous, de la première demande à la visite suivante.</figcaption>
 </figure>
 
-## Comment remplir les creux de la semaine et faire revenir les clientes ?
+## Les creux de la semaine et la fidélité
 
 ### Le mardi après-midi qui sonne creux
 
@@ -88,7 +88,7 @@ L'agent souhaite un anniversaire avec le geste que vous avez prévu et tient le 
 
 Trois semaines avant Noël et avant la fête des Mères, il prépare l'annonce de vos cartes cadeaux puis il garde la liste des cartes vendues avec leur date de validité. Tous ces messages sont de la prospection commerciale aux yeux de la loi et le sujet est traité plus bas.
 
-## Qui tient votre vitrine sur Instagram et sur Google ?
+## Votre vitrine sur Instagram et sur Google
 
 Votre meilleur argument commercial dort dans votre téléphone avec toutes ces photos avant et après que vous n'avez jamais le temps de publier. Envoyez la photo à l'agent avec trois mots sur la prestation et il prépare le post qui attend ensuite votre validation. [Service-Public](https://www.service-public.fr/particuliers/vosdroits/F32103) rappelle qu'il faut un accord écrit et précis pour diffuser l'image d'une personne reconnaissable et l'agent garde donc la trace de cet accord dans la fiche. Ce droit à l'image est détaillé dans la page sur [l'agent IA d'un photographe](/metiers/photographe).
 
@@ -96,7 +96,7 @@ La fiche Google est l'autre vitrine et elle vieillit vite. L'agent y met à jour
 
 Le lendemain de chaque visite, l'agent envoie à toutes les clientes sans exception un mot de remerciement avec le lien pour laisser un avis. Il rédige ensuite une réponse à chaque avis et vous montre d'abord ceux qui sont sous trois étoiles.
 
-## Stock, planning et récap du soir : que fait l'agent en coulisses ?
+## Les coulisses du salon
 
 La caisse lui indique ce qui sort des étagères de revente. Pour les produits techniques, il suffit de lui signaler « j'ouvre le dernier 7.1 » ou de lui envoyer une photo de l'étagère le lundi. Quand une référence passe sous le seuil que vous avez fixé, trois unités par exemple, il l'ajoute à la commande du grossiste qui ne part qu'avec votre feu vert. C'est la même mécanique de seuils que [dans un commerce de proximité](/metiers/epicerie).
 

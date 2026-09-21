@@ -16,7 +16,7 @@ Il ne fera jamais une visite et il ne sentira pas qu'un couple hésite sur le pa
 <p>Il ne publie rien sans votre relecture et ne gomme jamais un défaut sur une photo. Il ne fait pas vos contrôles anti-blanchiment et ne choisit jamais un locataire à votre place.</p>
 </div>
 
-## Qu'est-ce qui mange la semaine d'un agent immobilier ?
+## La semaine d'un agent immobilier
 
 Demandez à un agent immobilier ce qu'il aime dans son métier et il vous parlera des visites et de la poignée de main chez le notaire, jamais de sa boîte mail du dimanche soir.
 
@@ -24,7 +24,7 @@ Prenons un samedi ordinaire. Vous enchaînez quatre visites pendant que onze dem
 
 Aucune de ces tâches ne réclame votre talent de négociateur mais toutes réclament une régularité qui manque quand on passe ses journées en rendez-vous.
 
-## Que fait un agent IA dans une agence immobilière ?
+## Ce que fait l'agent
 
 Imaginez un assistant commercial qui ne ferait jamais une visite et qui tiendrait à la place la boîte mail, l'agenda et le tableau des mandats. Si le mot vous paraît flou, un article à part explique [ce qu'est un agent IA](/blog/agent-ia-definition). Dans une agence ce sont presque toujours les cinq mêmes missions qui reviennent.
 
@@ -47,7 +47,7 @@ Imaginez un assistant commercial qui ne ferait jamais une visite et qui tiendrai
 <figcaption>Exemple de point du matin. Le nom et les chiffres sont fictifs.</figcaption>
 </figure>
 
-## Comment organiser ses visites sans y laisser ses soirées ?
+## Les visites
 
 Une heure passée dans un bien en coûte souvent une autre au téléphone et dans l'agenda.
 
@@ -82,7 +82,7 @@ Chaque visiteur laisse derrière lui un budget, un quartier et un nombre de cham
 <figcaption>Le parcours d'une visite. Vous fixez les règles une fois et l'agent les déroule.</figcaption>
 </figure>
 
-## Peut-on confier ses photos et ses annonces à une IA ?
+## Les photos et les annonces
 
 Un photographe n'est pas disponible pour chaque mandat et le téléphone fait ce qu'il peut face à une baie vitrée en plein midi. Vous sortez du bien avec vingt photos et vous les envoyez à l'agent par message. Quelques minutes plus tard la série revient retouchée. La lumière est rééquilibrée pour que l'on voie la pièce et pas seulement la fenêtre, les murs penchés retrouvent leurs verticales et le ciel blanc du contre-jour reprend des couleurs.
 
@@ -106,7 +106,7 @@ L'agent tire de votre descriptif un brouillon d'annonce et vérifie qu'aucune me
 
 Du même texte il tire un post « nouveau bien » pour vos réseaux sociaux puis un post « vendu » le jour de la signature. La diffusion sur les portails reste l'affaire de votre logiciel de transaction.
 
-## Comment rentrer des mandats sans démarcher à froid ?
+## Rentrer des mandats
 
 Beaucoup de mandats perdus avaient pourtant tendu la main à l'agence avec une demande d'estimation restée trois jours sans réponse.
 
@@ -126,7 +126,7 @@ Un propriétaire qui ne signe pas en mars vendra peut-être en septembre et choi
 
 Il surveille aussi la date de fin de chaque exclusivité. Quelques semaines avant, vous recevez le bilan des visites et vous arrivez chez le vendeur avec des faits.
 
-## Que devient le dossier une fois l'offre acceptée ?
+## Après l'offre acceptée
 
 L'offre est acceptée et commence alors la chasse aux papiers qui retarde tant de compromis.
 

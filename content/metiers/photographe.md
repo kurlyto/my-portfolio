@@ -16,7 +16,7 @@ Autant lever le malentendu tout de suite : cet agent ne prend aucune photo et ne
 <p>Trois choses lui restent interdites : choisir ou publier une image sans vous, envoyer les photos de vos clients à n'importe quel service en ligne et signer une cession de droits en votre nom.</p>
 </div>
 
-## Qu'est-ce qui mange la semaine d'un photographe ?
+## La semaine d'un photographe
 
 Demandez à un photographe combien d'heures il passe l'appareil en main et la réponse surprend toujours ceux qui rêvent du métier. Une journée de mariage se paie d'une semaine entière de mails, de tri, de retouche et de livraison.
 
@@ -24,7 +24,7 @@ Prenons un lundi de juin. Le mariage de samedi attend sur deux cartes mémoire e
 
 Aucune de ces tâches ne demande votre regard et chacune mord pourtant sur le temps de retouche, si bien que les livraisons glissent et que le couple de l'été prochain signe avec le confrère qui a répondu dans l'heure.
 
-## Que fait un agent IA pour un photographe ?
+## Ce que fait l'agent
 
 Imaginez un assistant de studio qui ne toucherait jamais un boîtier et qui tiendrait à la place la boîte mail, l'agenda et le carnet de factures. Si le mot « agent » vous paraît flou, une [explication simple de ce qu'est un agent IA](/blog/agent-ia-definition) vous attend sur le blog. Pour un photographe je pars presque toujours de cinq missions.
 
@@ -36,7 +36,7 @@ Imaginez un assistant de studio qui ne toucherait jamais un boîtier et qui tien
 
 Ces cinq demandes sont un point de départ et la chaîne complète d'une séance va bien plus loin.
 
-## Comment répondre aux demandes de devis sans y passer ses soirées ?
+## Les demandes de devis
 
 ### Une réponse dans l'heure avec la bonne formule
 
@@ -68,7 +68,7 @@ Le moment le plus fragile d'une vente se situe entre le oui enthousiaste et la s
 
 [Service-Public](https://www.service-public.gouv.fr/particuliers/vosdroits/F31187) rappelle qu'un acompte engage définitivement les deux parties alors que des arrhes laissent chacun libre de renoncer et que les sommes versées sont présumées être des arrhes quand le contrat ne précise rien. Votre modèle de contrat doit donc employer le bon mot et l'agent reprend ce modèle sans jamais le réécrire.
 
-## Comment préparer une séance et livrer sans retard ?
+## La préparation d'une séance et la livraison
 
 ### Le questionnaire qui évite les oublis du jour J
 
@@ -116,7 +116,7 @@ Entre professionnels le délai de paiement est de [30 jours par défaut et chaqu
 <figcaption>Le parcours d'une séance. Vous fixez les règles et validez chaque image, l'agent déroule le reste.</figcaption>
 </figure>
 
-## Comment faire vivre une séance après la livraison ?
+## Après la livraison
 
 ### Les tirages et les avis
 
@@ -134,7 +134,7 @@ Il vérifie d'abord dans la fiche du client que l'accord de publication a été 
 
 Un photographe de famille vit de clients qui reviennent. L'agent note la date de chaque mariage et de chaque naissance et il prépare un mot pour le premier anniversaire de mariage ou une invitation à la séance famille annuelle quand l'automne approche. Ces messages sont de la prospection commerciale aux yeux de la loi et la règle est détaillée plus bas.
 
-## Comment trouver des clients entreprises et suivre les droits cédés ?
+## Les clients entreprises et les droits cédés
 
 ### Une prospection locale préparée pour vous
 

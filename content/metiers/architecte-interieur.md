@@ -16,13 +16,13 @@ Il ne dessine rien à votre place. Le goût, le plan et le choix d'un matériau 
 <p>Deux choses lui restent interdites : concevoir à votre place et laisser passer une image générée pour une réalisation.</p>
 </div>
 
-## Qu'est-ce qui mange la semaine d'un architecte d'intérieur ?
+## La semaine d'un architecte d'intérieur
 
 Prenons un jeudi ordinaire avec trois chantiers ouverts et deux projets en esquisse. À 8 h le carreleur écrit qu'il ne pourra pas commencer lundi parce que le plombier n'a pas fini. Le canapé d'un client vient de passer de six à onze semaines de délai et le plan du séjour envoyé à une cliente attend sa validation depuis dix jours. Pendant ce temps trois demandes sont arrivées par le formulaire du site et l'une d'elles parle de « refaire une cuisine » sans un mot sur le budget ni sur la surface.
 
 Aucune de ces tâches n'est difficile mais chacune interrompt la conception et coûte cher quand on l'oublie, parce qu'un plan non validé bloque un devis et qu'une commande passée trop tard décale tout un chantier.
 
-## Que fait un agent IA pour un architecte d'intérieur ?
+## Ce que fait l'agent
 
 Le poste ressemble à celui d'un assistant de projet qui n'aurait aucun avis sur la couleur des murs et une mémoire parfaite des dates. Un article à part explique [ce qu'est un agent IA](/blog/agent-ia-definition). Le plus simple est de suivre la vie d'un projet parce que chaque étape produit sa propre paperasse.
 
@@ -39,7 +39,7 @@ Le poste ressemble à celui d'un assistant de projet qui n'aurait aucun avis sur
 
 À mon avis il vaut mieux ne pas tout confier d'un coup. Un agent qui tient **très bien les premiers contacts et le suivi des commandes** vous rendra plus de services qu'un agent qui bâcle toute la chaîne.
 
-## Du premier contact au moodboard : que prépare l'agent avant vous ?
+## Du premier contact au moodboard
 
 ### Un premier contact déjà qualifié
 
@@ -87,7 +87,7 @@ Un plan envoyé sans réponse bloque tout ce qui suit. Vous fixez un délai de s
 
 Un client important peut toujours passer par vous et l'agent ne relance jamais une seconde fois sans votre accord.
 
-## Devis d'artisans, commandes et chantier : que suit l'agent sans vous ?
+## Les artisans et le chantier
 
 ### Les devis comparés ligne à ligne
 
@@ -122,13 +122,13 @@ Ce message remplace la tournée du matin dans la boîte mail, l'agenda et les ta
 
 En sortant d'une réunion de chantier vous dictez ce qui a été décidé. L'agent en fait un compte rendu classé par lot avec le nom de celui qui doit agir et la date promise, puis il vous le montre avant de l'envoyer aux artisans et au client. La semaine suivante il reprend la liste et demande à chacun où il en est.
 
-## Réception, réserves et honoraires : comment l'agent ferme-t-il le projet ?
+## La réception et les honoraires
 
 Le jour de la réception vous dictez les réserves pièce par pièce et l'agent les range dans une liste avec une photo, l'entreprise concernée et la date de levée prévue. Il relance ensuite chaque entreprise jusqu'à la levée. La [garantie de parfait achèvement](https://www.service-public.gouv.fr/particuliers/vosdroits/F2958) court pendant l'année qui suit et un désordre signalé au onzième mois vaut mieux qu'un regret au treizième.
 
 Les honoraires suivent les phases du contrat. Quand une phase se termine, l'agent prépare la facture correspondante dans votre outil de facturation et vous la montre avant l'envoi. Il suit ensuite les paiements et prépare une relance polie à l'échéance.
 
-## Photos de fin de chantier et avis : qui s'occupe de votre visibilité ?
+## Les photos de fin de chantier et les avis
 
 Vos meilleurs arguments dorment dans votre téléphone avec les photos de fin de chantier que vous n'avez jamais le temps de trier. Envoyez-les à l'agent avec trois mots sur le projet et il prépare la fiche du portfolio, le post Instagram et les épingles Pinterest dans votre ton. Rien ne part sans votre validation ni sans l'accord écrit du client dont l'agent garde la trace dans le dossier. Ce que cet accord doit préciser est détaillé dans la page sur [l'agent IA d'un photographe](/metiers/photographe).
 

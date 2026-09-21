@@ -16,13 +16,13 @@ Autant lever le malentendu tout de suite : cet agent ne postule pas à votre pla
 <p>Trois choses lui restent interdites : inventer une ligne de votre parcours, envoyer sans votre relecture et se connecter à vos comptes.</p>
 </div>
 
-## Qu'est-ce qui use dans une recherche d'emploi ?
+## Ce qui use dans une recherche d'emploi
 
 Prenons un lundi matin ordinaire. Cinq onglets sont ouverts avec LinkedIn et Welcome to the Jungle, France Travail et l'Apec puis le site carrières d'une entreprise que vous visez. La même offre apparaît trois fois sous trois intitulés et vous ne savez plus si vous y avez déjà répondu. Un recruteur qui devait vous rappeler n'a plus donné signe de vie depuis douze jours et l'entretien de jeudi approche alors que vous n'avez encore rien lu sur l'entreprise.
 
 Aucune de ces tâches n'est difficile mais leur addition mange l'énergie qu'il faudrait garder pour une candidature bien ciblée et un entretien préparé.
 
-## Que fait un agent IA pour une recherche d'emploi ?
+## Ce que fait l'agent
 
 Imaginez un assistant qui ne passerait jamais l'entretien à votre place et qui tiendrait tout ce qui l'entoure. Si le mot « agent » vous paraît flou, le blog propose une [explication simple de ce qu'est un agent IA](/blog/agent-ia-definition). Pour une recherche d'emploi l'agent se construit autour des cinq mêmes missions.
 
@@ -43,7 +43,7 @@ Imaginez un assistant qui ne passerait jamais l'entretien à votre place et qui 
 <figcaption>Exemple de message du matin. Le poste et les chiffres sont fictifs.</figcaption>
 </figure>
 
-## Comment ne plus rater une offre sans y passer ses matinées ?
+## La veille des offres
 
 ### Une veille sur tous vos sites à la fois
 
@@ -63,7 +63,7 @@ Toutes les embauches ne passent pas par une annonce et La Bonne Boîte de France
 
 L'agent tient donc une seconde liste avec les entreprises que vous visez même quand elles ne publient rien. Il surveille leurs actualités comme une levée de fonds ou l'ouverture d'un site et cherche qui dirige l'équipe que vous voudriez rejoindre. Il prépare ensuite une candidature spontanée qui part de cette actualité. La démarche ressemble à [la prospection d'un consultant indépendant](/metiers/consultant).
 
-## Comment adapter son CV et sa lettre à chaque offre sans tricher ?
+## Un CV et une lettre adaptés à chaque offre
 
 ### Un CV maître et rien d'autre
 
@@ -91,7 +91,7 @@ France Travail prévient que les recruteurs [« repèrent vite les lettres trop 
 
 Vous relisez et vous corrigez puis c'est vous qui cliquez sur « Postuler ». **Rien ne part sans votre relecture** parce que c'est vous qui postulez et pas un robot. Dans mon activité aussi les agents attendent mon feu vert avant tout envoi.
 
-## Qui tient le tableau de candidatures et les relances ?
+## Le tableau de candidatures et les relances
 
 Tout le monde commence un tableau de suivi et presque personne ne le tient au-delà de la troisième semaine. L'agent le tient à votre place dans un simple tableur.
 
@@ -114,7 +114,7 @@ France Travail conseille de [relancer un recruteur après une dizaine de jours](
 <figcaption>Le parcours d'une candidature. Vous fixez les règles et vous envoyez, l'agent déroule le reste.</figcaption>
 </figure>
 
-## Comment arriver préparé à un entretien ?
+## La préparation des entretiens
 
 Dès qu'un entretien entre dans votre agenda, l'agent prépare une fiche de deux pages. Elle résume l'activité de l'entreprise et ses actualités puis le parcours public de la personne qui vous reçoit. L'agent y ajoute les questions probables avec pour chacune l'épisode de votre parcours qui y répond le mieux et quelques questions à poser vous-même.
 
@@ -126,7 +126,7 @@ Pour le salaire l'agent relève les fourchettes affichées dans les annonces com
 
 France Travail conseille d'envoyer [un message de remerciement deux ou trois jours après l'entretien](https://www.francetravail.fr/candidat/vos-recherches/preparer-votre-candidature/entretien/comment-bien-gerer-lapres-entret.html). L'agent vous propose ce message le surlendemain avec un détail de la conversation que vous lui aurez raconté en sortant.
 
-## Comment tenir le rythme pendant des mois ?
+## Tenir sur la durée
 
 Le plus dur est de rester régulier quand les réponses tardent. Vous pouvez fixer à l'agent un objectif simple comme trois candidatures ciblées par jour ou deux prises de contact par semaine.
 

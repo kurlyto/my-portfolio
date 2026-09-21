@@ -14,19 +14,19 @@ Un agent IA pour électricien est un assistant logiciel qui tient le bureau de l
 <p>Deux choses lui restent interdites : se prononcer sur la conformité d'une installation et envoyer un devis que vous n'avez pas relu.</p>
 </div>
 
-## Qu'est-ce qui mange la journée d'un électricien ?
+## La journée d'un électricien
 
 Prenons un jeudi à 10 h 20. Vous avez les deux mains dans un tableau que vous remplacez et le téléphone vibre pour la quatrième fois de la matinée. Une dame voudrait un devis pour une borne de recharge dans son garage et une agence immobilière demande un passage avant une vente. Le client de la rénovation veut savoir quel jour vous revenez et votre grossiste attend la liste du chantier de lundi.
 
 Chacun de ces messages se règle en cinq minutes, sauf qu'on ne répond pas au téléphone avec un tournevis isolé dans la main. La réponse part donc le soir vers 21 h après le devis de la veille et avant la facture du mois dernier. Entre-temps la dame de la borne a souvent trouvé un confrère qui a répondu plus vite. C'est cette deuxième journée qui pèse, celle du bureau qui commence quand la première finit.
 
-## Que fait un agent IA chez un électricien ?
+## Ce que fait l'agent
 
 Le poste ressemble à celui d'une secrétaire de chantier qui connaîtrait votre agenda et votre grille de tarifs et qui ne monterait jamais sur un escabeau. Un article à part explique [ce qu'est un agent IA](/blog/agent-ia-definition). Chez un électricien son travail tient en quatre missions : répondre aux demandes et sortir les devis, suivre les chantiers jusqu'à la facture et remplir le carnet de commandes.
 
 Vous lui parlez comme à un employé, par message ou à la voix depuis la camionnette. Inutile de tout lui confier d'un coup parce que je préfère de loin un agent qui tient **très bien les demandes et les devis** à un agent qui bâcle toute la chaîne.
 
-## Comment répondre aux demandes de devis quand on est sur un chantier ?
+## Les demandes de devis pendant un chantier
 
 ### Une demande qualifiée plutôt qu'un numéro à rappeler
 
@@ -52,7 +52,7 @@ L'agent propose les passages d'après votre agenda et d'après la carte. Une vis
 
 Vous décidez aussi de ce qui ne peut pas attendre. Une panne générale chez un client sous contrat vous est remontée tout de suite par un appel alors qu'une demande de prises supplémentaires attend le récap du soir. Ce tri est détaillé dans la page sur [l'astreinte d'un plombier](/metiers/plombier).
 
-## Comment passer d'un vocal à un devis signé ?
+## D'un vocal à un devis signé
 
 ### La dictée en sortant de chez le client
 
@@ -84,7 +84,7 @@ Un devis envoyé sans relance est souvent un devis perdu parce que le client en 
 
 Quand le client répond « c'est trop cher » ou « peut-on enlever la cuisine ? », l'agent vous transmet la question sans négocier à votre place.
 
-## Du devis signé à la facture : que fait l'agent seul ?
+## Du devis signé à la facture
 
 ### Le matériel commandé à partir du devis
 
@@ -130,7 +130,7 @@ En fin de mois il range les factures d'achat du grossiste, les tickets de carbur
 <figcaption>Exemple de récap de 19 h reçu sur le téléphone de l'artisan. Les noms et les chiffres sont fictifs.</figcaption>
 </figure>
 
-## Comment trouver des chantiers quand le carnet se vide ?
+## Trouver des chantiers quand le carnet se vide
 
 ### Un marché souvent oublié
 

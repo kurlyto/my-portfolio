@@ -16,7 +16,7 @@ Il ne conseillera jamais un fromage ou un roman aussi bien que vous. Son terrain
 <p>Trois gestes lui restent interdits : écrire dans votre caisse, envoyer une commande que vous n'avez pas validée et écrire à des clients qui n'ont pas donné leur accord.</p>
 </div>
 
-## Qu'est-ce qui mange la semaine d'un commerçant ?
+## La semaine d'un commerçant
 
 Conseiller une bouteille pour un dîner ou mettre de côté le dernier bouquet de pivoines pour une habituée fait partie du plaisir du métier et ce qui pèse se passe plutôt dans le dos du comptoir.
 
@@ -24,7 +24,7 @@ Prenons un jeudi ordinaire dans une boutique de quartier. Le livreur a déposé 
 
 Aucune de ces tâches ne demande plus de cinq minutes et chacune se paie au prix fort quand on l'oublie.
 
-## Que fait un agent IA dans un commerce de proximité ?
+## Ce que fait l'agent
 
 Imaginez un employé qui ne quitterait jamais l'arrière-boutique et qui garderait en tête chaque carton entré et chaque article sorti. Si le mot vous paraît encore flou, vous trouverez [ce qu'est un agent IA](/blog/agent-ia-definition) dans un article à part. Pour un commerce les missions de l'agent se rangent presque toujours en trois familles.
 
@@ -34,7 +34,7 @@ Imaginez un employé qui ne quitterait jamais l'arrière-boutique et qui gardera
 
 Le tout se résume chaque matin dans un seul message que vous lisez avant de lever le rideau. Rien n'oblige à tout lui confier le premier jour et je commence presque toujours par **le stock et les dates** parce que tout le reste s'appuie dessus.
 
-## Comment suivre le stock et les dates limites sans y passer ses soirées ?
+## Le stock et les dates limites
 
 ### La livraison devient une fiche propre
 
@@ -52,7 +52,7 @@ Un commerce sans produits frais a lui aussi ses échéances. Le fleuriste compte
 
 Les rappels de produits suivent le même chemin. Les avis de [Rappel Conso](https://rappel.conso.gouv.fr/) existent en [données ouvertes classées par code-barres](https://data.economie.gouv.fr/explore/dataset/rappelconso-v2-gtin-trie/information/) et l'agent les compare chaque matin à vos fiches produits.
 
-## Que devient un produit qui approche de sa date ?
+## Les produits qui approchent de leur date
 
 C'est ici que l'agent gagne sa place à mon avis, parce qu'une alerte seule n'a jamais sauvé un yaourt. Trois jours avant une DLC il cherche une porte de sortie pour le produit et vous la propose toute montée.
 
@@ -85,7 +85,7 @@ Au début je conseille de valider chaque proposition d'un mot. Quand une règle 
 
 L'agent envoie chaque semaine le bilan de ce que ces règles ont sauvé et ce bilan sert à ajuster la commande suivante, parce qu'un produit bradé tous les quinze jours est d'abord un produit commandé en trop.
 
-## Peut-on automatiser les promotions et les réseaux sociaux ?
+## Les promotions et les réseaux sociaux
 
 L'agent repère aussi l'article qui dort depuis trois semaines et vous suggère un lot avec un produit qui marche ou une place plus près de la caisse.
 
@@ -105,7 +105,7 @@ Vous envoyez à l'agent la photo des cèpes du matin ou du carton de la rentrée
 
 Google permet de déclarer des [horaires d'ouverture exceptionnels](https://support.google.com/business/answer/6303076?hl=fr) pour un jour férié ou une courte fermeture sans toucher aux horaires habituels. L'agent connaît le calendrier et vous pose la question dix jours avant chaque jour férié puis met la fiche à jour selon votre réponse.
 
-## Comment prévenir les habitués et prendre les commandes par message ?
+## Les habitués et les commandes par message
 
 L'agent peut tenir le fichier de vos habitués aussi proprement que celui des produits. Il note qui a demandé à être prévenu du retour de la truffe, du prochain tome d'une série ou des premières pivoines de la saison. Quand le bon de livraison contient le produit attendu, il prépare le message pour ces clients-là et pour eux seuls. C'est la même mécanique que [les relances d'un salon de coiffure](/metiers/coiffeur) qui n'écrit qu'aux clientes dont la couleur a six semaines.
 
@@ -123,15 +123,15 @@ L'agent peut tenir le fichier de vos habitués aussi proprement que celui des pr
 
 Les commandes par message suivent la même logique. Un client écrit sur Instagram qu'il voudrait un plateau de fromages pour huit samedi et l'agent vérifie le stock avant de vous soumettre la demande avec un créneau de retrait. Une fois que vous avez dit oui, il confirme au client et vous obtenez un click and collect sans site marchand.
 
-## L'IA peut-elle gérer les commandes fournisseurs, les factures et le planning ?
+## Les fournisseurs et le planning
 
-Elle peut tout préparer et c'est déjà l'essentiel du travail. Quand un produit passe sous son seuil, l'agent regarde ce qui s'est vendu les dernières semaines et tient compte du jour de passage du fournisseur comme du minimum de commande. Sur [les agents que je construis](/agents) aucun n'envoie seul une commande parce qu'elle engage votre trésorerie et qu'un seuil mal réglé peut vous livrer quarante kilos de farine la veille de vos congés.
+L'agent peut tout préparer et c'est déjà l'essentiel du travail. Quand un produit passe sous son seuil, l'agent regarde ce qui s'est vendu les dernières semaines et tient compte du jour de passage du fournisseur comme du minimum de commande. Sur [les agents que je construis](/agents) aucun n'envoie seul une commande parce qu'elle engage votre trésorerie et qu'un seuil mal réglé peut vous livrer quarante kilos de farine la veille de vos congés.
 
 Depuis le 1er septembre 2026 [toutes les entreprises doivent être en mesure de recevoir des factures électroniques](https://entreprendre.service-public.gouv.fr/actualites/A18953) en passant par une plateforme agréée. L'agent y récupère vos factures chaque semaine, les rapproche des bons de livraison et les range dans votre outil de comptabilité.
 
 Pour le planning vous lui donnez les contraintes de chacun. Il propose le mois suivant en respectant les règles que vous lui avez apprises, à commencer par le [repos quotidien d'au moins 11 heures consécutives](https://www.service-public.gouv.fr/particuliers/vosdroits/F990) entre deux journées de travail. Vous validez et il l'envoie à l'équipe.
 
-## Que peut faire l'agent avec les avis Google ?
+## Les avis Google
 
 Un avis sans réponse donne l'image d'une boutique où personne ne décroche. L'agent rédige une réponse à chaque avis dans votre ton et publie seul les remerciements si vous l'y autorisez. Dès qu'une note tombe sous trois étoiles il vous montre l'avis avec un brouillon et il attend, parce qu'une réponse à un client mécontent porte votre nom.
 

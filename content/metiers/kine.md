@@ -16,13 +16,13 @@ Tout ce qui touche au soin relève pourtant des données de santé, qui sont par
 <p>Les données de santé exigent un hébergeur certifié HDS et un stockage dans l'Union européenne. Le choix du modèle d'IA et de l'endroit où il tourne décide du reste.</p>
 </div>
 
-## Qu'est-ce qui mange la semaine d'un kiné ?
+## La semaine d'un kiné
 
 Un kiné en libéral travaille les mains occupées et c'est précisément le problème. Le téléphone sonne pendant une mobilisation d'épaule et la personne au bout du fil veut un rendez-vous que personne ne peut lui donner avant la fin de la séance.
 
 Une annulation de dernière minute laisse un créneau vide alors que trois patients attendaient justement une place. Un patient en rééducation du genou ne revient plus depuis trois semaines sans que personne ne s'en aperçoive. Et le soir, les notes griffonnées ou dictées entre deux séances attendent encore d'être transformées en comptes rendus lisibles.
 
-## Que fait un agent IA dans un cabinet de kiné ?
+## Ce que fait l'agent
 
 Imaginez une secrétaire médicale qui ne serait jamais en pause déjeuner et qui connaîtrait votre agenda mieux que vous. Je refuse qu'un agent touche au traitement, mais il garde le cabinet plein et les dossiers à jour. Si le mot « agent » vous paraît flou, une [explication simple de ce qu'est un agent IA](/blog/agent-ia-definition) vous attend sur le blog.
 
@@ -45,7 +45,7 @@ Imaginez une secrétaire médicale qui ne serait jamais en pause déjeuner et qu
 
 C'est la même mécanique que [la liste d'attente d'un salon de coiffure](/metiers/coiffeur) et je conseille de commencer par cette partie parce qu'elle n'ouvre jamais le dossier de soins.
 
-## Données de santé : où vont les informations de vos patients ?
+## Les données de santé de vos patients
 
 Pour savoir où partent les données, il faut d'abord séparer deux pièces que l'on confond souvent. L'agent est le programme qui lit vos mails, range les documents et prépare les brouillons. Pour comprendre un texte ou en écrire un, il interroge un modèle d'IA qui tourne quelque part sur un serveur, un peu comme un collaborateur qui passerait un coup de fil à un expert extérieur. Le sort de vos données dépend de ce modèle et de l'endroit où il tourne bien plus que de l'agent lui-même.
 

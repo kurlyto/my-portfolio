@@ -16,7 +16,7 @@ Il ne touchera ni à vos recettes ni au sourire de votre équipe en salle. Il s'
 <p>Deux choses lui restent interdites : répondre de mémoire sur les allergènes et décider si un produit est encore bon.</p>
 </div>
 
-## Qu'est-ce qui mange la semaine d'un restaurateur ?
+## La semaine d'un restaurateur
 
 Demandez à un restaurateur ce qui l'épuise et il vous parlera rarement du coup de feu de midi. Il connaît le service par cœur et ce qui l'use tient plutôt dans la petite musique qui joue par-dessus.
 
@@ -24,7 +24,7 @@ Prenons un mardi ordinaire. Pendant que les assiettes partent, une cliente deman
 
 Aucune de ces tâches ne prend plus de deux minutes. Le problème vient de leur nombre, parce qu'elles finissent par dévorer les soirées et que celle qu'on oublie se paie toujours en tables vides ou en marchandise jetée.
 
-## Que fait un agent IA dans un restaurant ?
+## Ce que fait l'agent
 
 Imaginez un commis qui ne toucherait jamais une casserole et qui tiendrait à la place le téléphone, la boîte de messages et la paperasse. C'est à peu près le poste et [ce qu'est un agent IA](/blog/agent-ia-definition) fait l'objet d'un article à part. Pour un restaurant les mêmes missions reviennent presque toujours.
 

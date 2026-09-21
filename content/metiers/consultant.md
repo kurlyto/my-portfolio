@@ -16,7 +16,7 @@ Cet agent ne conseille pas vos clients et ne coache personne. Votre expertise et
 <p>Trois choses lui restent interdites : piloter votre compte LinkedIn, enregistrer un appel sans accord et lire les dossiers de vos clients avant que vous ayez relu vos clauses de confidentialité.</p>
 </div>
 
-## Qu'est-ce qui mange la semaine d'un consultant indépendant ?
+## La semaine d'un consultant indépendant
 
 Un indépendant vend des jours et il en facture rarement cinq par semaine. Le reste part dans un travail que personne ne paie et qui remplit pourtant le carnet de commandes de l'année suivante.
 
@@ -24,7 +24,7 @@ Prenons un jeudi soir ordinaire. Vous sortez de trois jours chez un client et qu
 
 Aucune de ces tâches n'est difficile mais elles passent toutes après la mission en cours. La prospection s'arrête donc quand la mission bat son plein puis la mission se termine et le trou d'air commence. Je suis moi-même indépendant et je vis ces tâches chaque semaine.
 
-## Que fait un agent IA pour un consultant ou un coach ?
+## Ce que fait l'agent
 
 Imaginez un assistant de cabinet qui n'animerait jamais un atelier et qui tiendrait à la place votre boîte mail, votre fichier de prospects et votre carnet de factures. Si le mot « agent » vous paraît flou, vous trouverez sur le blog une [explication simple de ce qu'est un agent IA](/blog/agent-ia-definition). Pour un consultant le premier chantier est presque toujours le point de 8 h sur les mails.
 
@@ -43,7 +43,7 @@ Imaginez un assistant de cabinet qui n'animerait jamais un atelier et qui tiendr
 
 Viennent ensuite la préparation des rendez-vous, les relances, les factures et la trésorerie. Mises bout à bout ces demandes dessinent une chaîne qui va du premier contact au paiement de la facture et l'agent est construit pour tenir cette chaîne entière. J'ai aussi conçu [Foxy](/foxy) pour ceux qui préfèrent un seul outil où vivent mails, agenda, tâches et documents.
 
-## Comment trouver des missions sans y passer ses soirées ?
+## Trouver des missions
 
 ### Repérer les entreprises qui ont un besoin maintenant
 
@@ -63,7 +63,7 @@ Beaucoup de consultants ont un tableur de prospects dont la dernière mise à jo
 
 Un consultant visible reçoit des demandes au lieu de les chercher mais le post de la semaine est la première chose qui saute quand une mission démarre. Vous dictez donc à l'agent trois phrases en sortant d'un atelier sur ce que vous venez d'y voir. Il en tire un brouillon dans votre vocabulaire après avoir retiré le nom du client et tout détail qui permettrait de l'identifier. Rien ne se publie sans votre relecture parce que vous seul savez ce que votre contrat vous autorise à raconter.
 
-## Comment passer du premier rendez-vous à la proposition signée ?
+## Du premier rendez-vous à la proposition signée
 
 ### La fiche de la veille
 
@@ -105,7 +105,7 @@ Une proposition sans réponse est rarement un refus parce que votre interlocuteu
 <figcaption>Le parcours d'une mission. Vous validez les règles et chaque engagement, l'agent déroule le reste.</figcaption>
 </figure>
 
-## Qui facture, relance les impayés et surveille vos plafonds ?
+## La facturation et vos plafonds
 
 ### La facture de fin de mois
 

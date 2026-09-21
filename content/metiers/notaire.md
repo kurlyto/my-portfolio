@@ -16,13 +16,13 @@ Reste la question que tout notaire pose avant les autres : que deviennent les do
 <p>Pour le secret, le modèle d'IA et l'endroit où il tourne comptent davantage que l'agent. Le Conseil supérieur du notariat a retenu en juillet 2026 le français Mistral AI hébergé chez Scaleway, sans interdire d'autres outils conformes à sa charte.</p>
 </div>
 
-## Qu'est-ce qui mange la semaine d'un notaire ?
+## La semaine d'un notaire
 
 Un dossier de vente ou de succession ressemble souvent à un puzzle dont les pièces arrivent au compte-gouttes. Le diagnostic manque encore, un héritier n'a pas renvoyé son livret de famille et la banque promet l'offre de prêt « pour la fin de semaine » depuis dix jours.
 
 Pendant ce temps la boîte de l'étude se remplit de questions sur l'avancement des dossiers, les agendas de trois associés doivent s'accorder pour une signature et les factures d'honoraires du mois attendent d'être préparées. Chacune de ces tâches paraît minuscule mais leur somme occupe des journées entières de collaborateurs qualifiés.
 
-## Que fait un agent IA dans une étude notariale ?
+## Ce que fait l'agent
 
 Imaginez un clerc infatigable dont le seul métier serait de courir après les pièces et de tenir les agendas. L'agent ne rédige pas l'acte, mais il fait en sorte que le dossier soit complet le jour où vous vous asseyez pour le rédiger. Si le mot « agent » vous paraît flou, j'ai écrit une [explication simple de ce qu'est un agent IA](/blog/agent-ia-definition).
 
@@ -44,7 +44,7 @@ Imaginez un clerc infatigable dont le seul métier serait de courir après les p
 <figcaption>Exemple de point du matin. Les dossiers sont désignés par leur numéro et les chiffres sont fictifs.</figcaption>
 </figure>
 
-## Secret de l'étude : où vont les données de vos clients ?
+## Le secret de l'étude et les données clients
 
 Pour savoir où partent les données, il faut d'abord séparer deux pièces que l'on confond souvent. L'agent est le programme qui lit vos mails, range les documents et prépare les brouillons. Pour comprendre un texte ou en écrire un, il interroge un modèle d'IA qui tourne quelque part sur un serveur, un peu comme un collaborateur qui passerait un coup de fil à un expert extérieur. Le sort de vos données dépend de ce modèle et de l'endroit où il tourne bien plus que de l'agent lui-même.
 

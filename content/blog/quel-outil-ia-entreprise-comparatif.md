@@ -178,7 +178,7 @@ Parce qu'il n'y a ni équipe commerciale ni bureaux à financer et que l'abonnem
 
 ### L'abonnement Claude est-il compris dans le prix ?
 
-Non, ni pour Foxy ni pour un agent sur mesure. Vous souscrivez l'abonnement Claude à votre nom, de 17 à 20 $ par mois pour la formule Pro et à partir de 100 $ pour la formule Max, et la création du compte se fait ensemble pendant l'installation.
+L'abonnement Claude n'est compris ni dans Foxy ni dans un agent sur mesure. Vous le souscrivez à votre nom, de 17 à 20 $ par mois pour la formule Pro et à partir de 100 $ pour la formule Max. La création du compte se fait ensemble pendant l'installation.
 
 ### Ces prix seront-ils encore vrais dans six mois ?
 

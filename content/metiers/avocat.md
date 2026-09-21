@@ -16,7 +16,7 @@ La question qui arrive juste après est toujours la même et elle est légitime 
 <p>Pour le secret professionnel, le modèle d'IA et l'endroit où il tourne comptent davantage que l'agent. Un modèle américain reste soumis au CLOUD Act même hébergé en Europe alors qu'un modèle ouvert installé sur un serveur contrôlé par le cabinet n'envoie rien à son éditeur.</p>
 </div>
 
-## Qu'est-ce qui mange la semaine d'un avocat ?
+## La semaine d'un avocat
 
 Demandez à un avocat où filent ses heures non facturables et la liste arrive vite. La plaidoirie et la rédaction sont rarement en cause, puisque ce qui grignote la semaine se trouve tout autour.
 
@@ -24,7 +24,7 @@ Prenons un lundi matin. La boîte du cabinet a reçu une quarantaine de mails pe
 
 Rien de tout cela n'exige d'avoir prêté serment et pourtant tout finit sur le bureau de l'avocat, parce qu'un délai manqué ou un client resté sans nouvelles engage le cabinet.
 
-## Que fait un agent IA dans un cabinet d'avocats ?
+## Ce que fait l'agent
 
 Imaginez un assistant qui arriverait au cabinet avant tout le monde et aurait lu chaque mail avant votre premier café. Il ne plaide pas et ne signe rien, mais il prépare le terrain pour que votre première heure serve à décider plutôt qu'à trier. Si le mot « agent » vous paraît flou, une [explication simple de ce qu'est un agent IA](/blog/agent-ia-definition) vous attend sur le blog.
 
@@ -49,7 +49,7 @@ Imaginez un assistant qui arriverait au cabinet avant tout le monde et aurait lu
 
 Le message ne cite aucun nom de client. J'ai pris l'habitude de faire travailler l'agent par numéro de dossier parce que cette règle toute simple réduit ce qui circule et elle prend tout son sens dans le chapitre qui suit.
 
-## Secret professionnel : où vont les données de vos clients ?
+## Le secret professionnel et les données de vos clients
 
 Pour savoir où partent les données, il faut d'abord séparer deux pièces que l'on confond souvent. L'agent est le programme qui lit vos mails, range les documents et prépare les brouillons. Pour comprendre un texte ou en écrire un, il interroge un modèle d'IA qui tourne quelque part sur un serveur, un peu comme un collaborateur qui passerait un coup de fil à un expert extérieur. Le sort de vos données dépend de ce modèle et de l'endroit où il tourne bien plus que de l'agent lui-même.
 

@@ -16,13 +16,13 @@ L'Ordre lui-même encourage la profession à se saisir de l'IA, à une condition
 <p>L'Ordre déconseille de charger des données clients non anonymisées dans un outil non maîtrisé. Ce qui rend un outil maîtrisé tient surtout au modèle d'IA choisi, à l'endroit où il tourne et à l'offre souscrite.</p>
 </div>
 
-## Qu'est-ce qui mange la semaine d'un expert-comptable ?
+## La semaine d'un expert-comptable
 
 Posez la question dans n'importe quel cabinet et la réponse tient souvent en un mot : les relances. Les justificatifs du mois arrivent en retard, par morceaux et sous toutes les formes possibles, de la photo de ticket froissé au PDF glissé dans un fil de mails qui parle d'autre chose.
 
 Il faut ensuite ranger chaque facture dans le bon dossier avant l'import, rappeler à chaque client ses échéances fiscales et répondre pour la dixième fois de la semaine à la question de la date limite de la TVA. En période de bilans cette petite mécanique devient un goulot d'étranglement qui retarde tout le reste.
 
-## Que fait un agent IA dans un cabinet d'expertise comptable ?
+## Ce que fait l'agent
 
 Imaginez un assistant dont l'unique obsession serait que chaque dossier soit complet le jour où un collaborateur l'ouvre. Je ne laisse jamais un agent passer une écriture engageante ni donner un conseil fiscal, mais il fait disparaître une bonne partie du travail de collecte. Un autre article explique [ce qu'est un agent IA](/blog/agent-ia-definition) en mots simples.
 
@@ -44,7 +44,7 @@ Imaginez un assistant dont l'unique obsession serait que chaque dossier soit com
 <figcaption>Exemple de point du lundi. Les clients sont désignés par leur numéro de dossier et les chiffres sont fictifs.</figcaption>
 </figure>
 
-## Secret professionnel : où vont les données de vos clients ?
+## Le secret professionnel et les données de vos clients
 
 Pour savoir où partent les données, il faut d'abord séparer deux pièces que l'on confond souvent. L'agent est le programme qui lit vos mails, range les documents et prépare les brouillons. Pour comprendre un texte ou en écrire un, il interroge un modèle d'IA qui tourne quelque part sur un serveur, un peu comme un collaborateur qui passerait un coup de fil à un expert extérieur. Le sort de vos données dépend de ce modèle et de l'endroit où il tourne bien plus que de l'agent lui-même.
 

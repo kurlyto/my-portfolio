@@ -14,7 +14,7 @@ Un agent IA pour garagiste est un assistant logiciel qui tient le téléphone, l
 <p>Deux choses lui restent interdites : dire à un client ce qu'a sa voiture ou si elle peut rouler et envoyer un prix que vous n'avez pas validé.</p>
 </div>
 
-## Qu'est-ce qui mange la journée d'un garagiste ?
+## La journée d'un garagiste
 
 Prenons un jeudi à 10 h 15. Vous êtes sous une Clio avec un cardan dans les mains et le téléphone sonne pour la quatrième fois depuis l'ouverture. Le livreur dépose un carton de plaquettes qui ne correspond pas à la commande et la propriétaire de la 308 attend dans le bureau de savoir si sa voiture sera prête ce soir. Sur le pont d'à côté, un disque de frein usé jusqu'à la corde réclame un coup de fil à son propriétaire avant d'aller plus loin.
 
@@ -22,13 +22,13 @@ Aucune de ces interruptions ne dure plus de trois minutes mais chacune vous obli
 
 Le métier s'est encore peu emparé du sujet. D'après la première étude de l'ANFA sur l'IA, [6 % des entreprises des services de l'automobile](https://www.anfa-auto.fr/actualites/decouvrez-notre-premiere-etude-sur-lusage-de-lia-dans-les-services-de-lautomobile) déclaraient en 2024 utiliser des outils intégrant de l'IA et 4 % seulement parmi les structures d'un à cinq salariés.
 
-## Que fait un agent IA dans un garage ?
+## Ce que fait l'agent
 
 Le poste ressemble à celui d'un réceptionnaire d'atelier qui ne prendrait jamais de pause et ne toucherait jamais une clé. Un article à part détaille [ce qu'est un agent IA](/blog/agent-ia-definition). Dans un garage son travail suit le trajet d'une voiture : il prend la demande et prépare le passage à l'atelier puis il tient le client au courant et le fait revenir au bon moment.
 
 Mon conseil est de ne pas tout confier d'un coup. Un agent qui tient **très bien le téléphone et les rappels de révision** vous rendra plus de services qu'un agent qui bâcle tout le reste.
 
-## Comment l'agent prend-il les rendez-vous quand vous êtes sous un pont ?
+## La prise de rendez-vous
 
 ### Le téléphone qui sonne à 21 h
 
@@ -60,7 +60,7 @@ Un embrayage n'occupe pas un pont comme une vidange et tout le monde à l'atelie
 
 Vous décidez aussi de ce qu'il accepte sans vous. Une vidange pour un client connu se réserve toute seule alors qu'une voiture qui arrive sur plateau vous est remontée avec le message d'origine.
 
-## Que fait l'agent entre le dépôt des clés et la restitution ?
+## Du dépôt des clés à la restitution
 
 ### Les pièces commandées avant l'arrivée de la voiture
 
@@ -101,7 +101,7 @@ Quand vous passez l'intervention à « terminée », le client reçoit un messag
 <figcaption>Le parcours d'une voiture, du premier appel au rappel de la révision suivante.</figcaption>
 </figure>
 
-## Comment faire revenir les clients au bon moment ?
+## Faire revenir les clients au bon moment
 
 ### La révision selon le kilométrage et la date
 
@@ -119,7 +119,7 @@ L'agent note la date du dernier contrôle à chaque passage de la voiture. Six s
 
 Le lendemain de la restitution, l'agent envoie à tous les clients sans exception un mot de remerciement avec le lien pour laisser un avis. Il vous montre ensuite en premier les avis sous trois étoiles avec une réponse déjà rédigée.
 
-## Devis en attente, impayés et récap du soir : que fait l'agent en coulisses ?
+## Les coulisses du garage
 
 Un devis resté sans réponse au bout de cinq jours reçoit une relance courte qui propose un créneau. Après deux relances l'agent classe le devis parce que je refuse qu'il harcèle qui que ce soit. Les factures impayées des clients professionnels suivent la même discipline et vous choisissez le ton quand il s'agit d'un bon client.
 

@@ -14,19 +14,19 @@ Un agent IA pour plombier est un assistant logiciel qui tient le téléphone, le
 <p>Deux choses lui restent interdites : signer un prix à votre place et juger à distance d'une installation, surtout quand il y a du gaz.</p>
 </div>
 
-## Qu'est-ce qui mange la semaine d'un plombier ?
+## La semaine d'un plombier
 
 Prenons un jeudi de janvier. À 2 h 14 un client appelle pour un robinet qui goutte et à 6 h 50 une vraie fuite inonde une cuisine à l'autre bout de la ville. Dans la matinée trois personnes envoient des photos de leur salle de bains en demandant « un prix à peu près ». Le mitigeur prévu pour le chantier de vendredi n'a pas été commandé et le devis d'un remplacement de chaudière attend une réponse depuis douze jours. Le soir il reste deux factures à rédiger de mémoire avec des notes prises sur un bout de carton.
 
 Rien de tout cela n'est de la plomberie et tout se paie pourtant. L'appel manqué part chez le confrère suivant dans la liste de Google et la facture rédigée le dimanche soir est encaissée un mois après les autres.
 
-## Que fait un agent IA pour un plombier ?
+## Ce que fait l'agent
 
 Le poste ressemble à celui d'une secrétaire de chantier qui ne dormirait jamais et qui ne toucherait jamais une clé à molette. Un article à part explique [ce qu'est un agent IA](/blog/agent-ia-definition) et chez un plombier son travail suit le parcours d'un client du premier coup de fil jusqu'à la visite d'entretien de l'année suivante.
 
 L'agent travaille sur les outils que vous avez déjà et vous lui parlez par message ou par note vocale depuis la camionnette. Inutile de tout lui confier d'un coup. Je conseille de commencer par **le téléphone et les devis** parce que c'est là que le chiffre d'affaires se perd sans bruit.
 
-## Comment l'agent trie-t-il les urgences la nuit et le week-end ?
+## Le tri des urgences la nuit et le week-end
 
 ### Des questions simples et vos critères à vous
 
@@ -52,7 +52,7 @@ Avant de vous déranger, l'agent annonce au client votre taux horaire, vos frais
 
 Une voix de synthèse bute encore sur un nom de rue mal articulé. L'agent ne devine jamais ce qu'il n'a pas compris et bascule alors vers le SMS en demandant l'adresse par écrit avec une photo de la fuite. Les demandes qui arrivent par votre site ou par mail suivent le même tri.
 
-## Comment passer des photos du client à un devis signé ?
+## Des photos du client à un devis signé
 
 ### Les photos et la grille de tarifs
 
@@ -82,7 +82,7 @@ Ces mentions sont rangées une fois dans votre modèle avec votre assurance déc
 
 Sur place la réalité déborde presque toujours du devis. En sortant il vous suffit de dicter « chez Garnier j'ai aussi remplacé le réducteur de pression, une heure de plus et la pièce à 64 euros ». L'agent prépare l'avenant ou la ligne de facture et vous la montre avant tout envoi. Cette dictée est décrite plus en détail pour [le devis vocal d'un électricien](/metiers/electricien) et la demande d'accord écrite l'est pour [le supplément d'un garagiste](/metiers/garagiste).
 
-## Qui commande les pièces et prépare la tournée du lendemain ?
+## Les pièces et la tournée du lendemain
 
 Dès qu'un devis est signé, l'agent en tire la liste des fournitures et la compare au stock que vous avez déclaré dans le dépôt et dans le camion. Il prépare la commande chez votre négoce habituel puis il vous donne la date de livraison annoncée. Selon ce que le négoce accepte, c'est un panier sur votre compte professionnel en ligne ou un simple mail au comptoir et la commande ne part qu'avec votre feu vert.
 
@@ -101,7 +101,7 @@ La veille au soir il assemble la tournée où les urgences passent devant et où
 <figcaption>Exemple de récap du soir. Les noms et les chiffres sont fictifs.</figcaption>
 </figure>
 
-## Qui relance les devis sans réponse et les factures impayées ?
+## Les devis sans réponse et les factures impayées
 
 ### La facture part le jour même
 
@@ -119,7 +119,7 @@ Les règles changent si vous travaillez pour des agences ou d'autres entreprises
 
 Chaque facture de fournisseur qui arrive par mail est rangée par mois et rattachée à son chantier. Depuis le 1er septembre 2026, toutes les entreprises doivent pouvoir recevoir des factures électroniques par une plateforme agréée et les petites entreprises devront en émettre [à partir du 1er septembre 2027](https://entreprendre.service-public.gouv.fr/vosdroits/F23208). L'agent n'est pas cette plateforme : il prépare et il trie alors que l'envoi légal passe par votre logiciel ou par votre comptable.
 
-## Comment transformer un dépannage en client fidèle ?
+## D'un dépannage à un client fidèle
 
 ### L'avis Google demandé à tous les clients
 

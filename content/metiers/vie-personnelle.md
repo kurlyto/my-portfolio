@@ -16,13 +16,13 @@ La différence avec une conversation sur ChatGPT tient en une phrase : ChatGPT a
 <p>Trois choses lui restent interdites : payer ou signer à votre place, recevoir le mot de passe de votre banque et donner un avis médical ou un conseil en placement.</p>
 </div>
 
-## Qu'est-ce qui pèse vraiment dans la vie administrative d'un foyer ?
+## Ce qui pèse dans la vie administrative d'un foyer
 
 Prenons un dimanche soir ordinaire. La boîte mail affiche 312 messages non lus et l'un d'eux annonce que l'assurance auto augmente en janvier. Le contrôle technique tombe le mois prochain et un passeport expire avant les vacances, pendant que l'ophtalmo ne donne plus de rendez-vous avant trois mois. Quelque part dans un tiroir dort la facture d'un lave-linge qui vient de tomber en panne et personne ne sait s'il est encore sous garantie.
 
 Aucune de ces tâches ne demande plus d'un quart d'heure mais il faut y penser au bon moment et ce travail de mémoire porte un nom depuis quelques années, la charge mentale. Un oubli se paie en euros quand un abonnement repart pour un an ou en sueurs froides quand on découvre à l'aéroport une carte d'identité périmée.
 
-## Que fait un agent IA personnel au quotidien ?
+## Ce que fait l'agent
 
 Imaginez un secrétaire particulier qui ne dormirait jamais et qui n'aurait ni carte bancaire ni stylo pour signer. Si le mot « agent » vous paraît flou, le blog propose une [explication simple de ce qu'est un agent IA](/blog/agent-ia-definition). J'en utilise un moi-même tous les jours et je commence toujours un agent personnel par les mêmes missions.
 
@@ -41,7 +41,7 @@ Le tout tient dans un point du matin d'un seul message parce que dix messages pa
 <figcaption>Exemple de point du matin. Les dates et les montants sont fictifs.</figcaption>
 </figure>
 
-## Comment l'agent vient-il à bout d'une boîte mail qui déborde ?
+## La boîte mail qui déborde
 
 Une boîte personnelle reçoit surtout du bruit fait de promotions, de notifications et de lettres d'information auxquelles on ne se souvient pas de s'être abonné. Les messages qui comptent s'y noient.
 
@@ -49,7 +49,7 @@ Vous fixez les règles une fois et tout ce qui vient d'un humain, de l'école, d
 
 L'agent vous signale aussi le mail qui réclame un paiement urgent ou dont l'adresse ne colle pas avec l'expéditeur affiché. Il ne les repère pas tous et le conseil du [ministère de l'Intérieur](https://www.masecurite.interieur.gouv.fr/fr/fiches-pratiques/numerique/arnaques-utilisant-intelligence-artificielle-ia) reste le bon : vérifier par un autre moyen en appelant un numéro officiel.
 
-## Comment payer moins cher son assurance, son énergie et ses abonnements ?
+## Les contrats et les abonnements
 
 ### Les abonnements qui se renouvellent en silence
 
@@ -84,7 +84,7 @@ Contester une facture, demander un remboursement ou réclamer une indemnité son
 
 L'agent retrouve la réservation dans vos mails, vérifie les horaires puis rédige la réclamation que vous n'avez plus qu'à relire et envoyer. Il vous rappelle de relancer si la compagnie fait la sourde oreille.
 
-## Où sont vos papiers et quand tombent vos échéances ?
+## Vos papiers et vos échéances
 
 ### Un classement qui se tient seul
 
@@ -114,7 +114,7 @@ Le premier contrôle technique d'une voiture se passe [dans les six mois qui pr�
 
 L'agent relève ces dates dans vos documents et vos mails et le délai de chaque alerte se règle avec vous, soit deux mois avant pour un passeport et non la veille.
 
-## Rendez-vous, enfants, week-ends : qui porte la charge mentale ?
+## La charge mentale du foyer
 
 ### Les rendez-vous médicaux
 
