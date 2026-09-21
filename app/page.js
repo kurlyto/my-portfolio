@@ -12,7 +12,24 @@ export const metadata = {
   title: { absolute: TITRE },
   description: DESCRIPTION,
   alternates: { canonical: SITE_URL },
-  openGraph: { title: TITRE, description: DESCRIPTION, url: SITE_URL },
+  // Une page qui declare son openGraph REMPLACE en bloc celui du layout (Next
+  // ne fusionne pas) : type, nom du site et image se redonnent donc ici, sinon
+  // LinkedIn n'a rien pour fabriquer son apercu.
+  openGraph: {
+    title: TITRE,
+    description: DESCRIPTION,
+    url: SITE_URL,
+    siteName: "Nathan Knaebel - agence IA",
+    locale: "fr_FR",
+    type: "website",
+    images: [{ url: "/images/partage-agence.png", width: 1200, height: 627, alt: TITRE }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITRE,
+    description: DESCRIPTION,
+    images: ["/images/partage-agence.png"],
+  },
 };
 
 // Accueil de l'agence depuis le 16/09/2026 (Foxy, qui etait ici, vit sur

@@ -18,6 +18,19 @@ export const metadata = {
     description:
       "Un agent IA sur mesure qui prend en charge une tâche précise de votre entreprise.",
     url: PAGE_URL,
+    // Une page qui declare son openGraph REMPLACE en bloc celui du layout :
+    // type, nom du site et image se redonnent ici.
+    siteName: "Votre Agent IA",
+    locale: "fr_FR",
+    type: "website",
+    images: [{ url: "/images/partage-agents.png", width: 1200, height: 627, alt: "Votre Agent IA" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Votre Agent IA",
+    description:
+      "Un agent IA sur mesure qui prend en charge une tâche précise de votre entreprise.",
+    images: ["/images/partage-agents.png"],
   },
 };
 

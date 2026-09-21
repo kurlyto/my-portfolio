@@ -73,6 +73,7 @@ export async function generateMetadata({ params }) {
       siteName: "Votre Agent IA",
       locale: "fr_FR",
       type: "website",
+      images: [{ url: "/images/partage-agents.png", width: 1200, height: 627, alt: title }],
     },
   };
 }

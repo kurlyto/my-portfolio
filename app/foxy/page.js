@@ -26,9 +26,21 @@ export const metadata = {
     description:
       "Mails, agenda, clients, tâches : un seul interlocuteur qui connaît votre entreprise et agit pour vous.",
     url: PAGE_URL,
-    // Version a fond plein : le logo du site est detoure, et un PNG transparent
-    // se retrouve sur un fond impose (souvent noir) dans les apercus partages.
-    images: [{ url: "/images/aios-partage.png", width: 512, height: 512, alt: "Foxy" }],
+    // Une page qui declare son openGraph REMPLACE en bloc celui du layout :
+    // type, nom du site et langue se redonnent ici.
+    siteName: "Foxy",
+    locale: "fr_FR",
+    type: "website",
+    // Format paysage 1200x627 attendu par LinkedIn : l'ancien carre de 512 px
+    // lui faisait repondre "impossible de generer un apercu" (21/09/2026).
+    images: [{ url: "/images/partage-foxy.png", width: 1200, height: 627, alt: "Foxy, un bras droit qui connaît tout votre business" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Foxy - l'AIOS qui connaît tout votre business",
+    description:
+      "Mails, agenda, clients, tâches : un seul interlocuteur qui connaît votre entreprise et agit pour vous.",
+    images: ["/images/partage-foxy.png"],
   },
 };
 

@@ -43,7 +43,9 @@ export async function generateMetadata({ params }) {
       publishedTime: a.date,
       modifiedTime: a.maj || a.date,
       authors: ["Nathan Knaebel"],
-      images: a.image ? [{ url: `${SITE_URL}${a.image}`, alt: a.imageAlt }] : undefined,
+      images: a.image
+        ? [{ url: `${SITE_URL}${a.image}`, alt: a.imageAlt }]
+        : [{ url: `${SITE_URL}/images/partage-agence.png`, width: 1200, height: 627, alt: a.titre }],
     },
   };
 }
