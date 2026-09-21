@@ -6,6 +6,7 @@ format: comparatif
 grappe: agents
 mot_cle: "quel outil ia pour mon entreprise"
 statut: publie
+image_partage: "/images/blog/partage-quel-outil-ia-entreprise-comparatif.png"
 mots_cles: ["comparatif IA", "outil IA entreprise", "Claude", "ChatGPT Work", "Dust", "Limova", "agent IA sur mesure"]
 lire_aussi: ["/blog/agent-ia-definition", "/foxy", "/agents"]
 ---
@@ -22,7 +23,7 @@ Ce comparatif range quinze outils en cinq familles et place mes deux offres au m
 <p>Les prix relevés vont de 0 € (outils libres à installer soi-même) à plusieurs centaines d'euros par mois. Un agent sur mesure coûte chez moi de 20 à 50 € par mois, et Foxy 100 € par mois, installation et serveur compris. Dans les deux cas l'abonnement d'IA reste à votre nom et se paie à part.</p>
 </div>
 
-## Cinq familles d'outils et ce qui les sépare vraiment
+## Cinq familles d'outils
 
 Les outils de cette page se ressemblent sur leurs pages d'accueil et presque tous promettent de vous faire gagner des heures. Ce qui les sépare vraiment tient à la part du travail qui vous revient une fois l'abonnement payé.
 
@@ -31,7 +32,7 @@ Les outils de cette page se ressemblent sur leurs pages d'accueil et presque tou
 | Assistants de bureau | Claude, ChatGPT Work, Microsoft 365 Copilot, Mistral Vibe | Vous | 15 à 25 par personne et par mois, en euros ou en dollars selon l'éditeur |
 | Plateformes d'agents | Dust, n8n, Make, Zapier, Lindy, Relevance AI | Vous ou un salarié à l'aise avec l'outil | De 0 à 30 € par mois pour démarrer |
 | Agents prêts à l'emploi | Limova | Vous, guidé par l'éditeur | 79,90 € HT par mois |
-| Outils de technicien | Claude Code, Codex, Hermes Agent, OpenClaw | Quelqu'un qui connaît le terminal | Gratuit ou 20 $ par mois, plus le temps passé |
+| Outils plus techniques | Claude Code, Codex, Hermes Agent, OpenClaw | Quelqu'un qui connaît le terminal | Gratuit ou 20 $ par mois, plus le temps passé |
 | Installé pour vous | Foxy, agent sur mesure | Le prestataire | De 20 € à 100 € par mois |
 
 ## Les assistants de bureau : Claude, ChatGPT, Copilot et Mistral
@@ -72,7 +73,7 @@ D'habitude je conseille n8n aux entreprises qui ont déjà dans l'équipe quelqu
 <p><strong>Regardez ailleurs si</strong> ce temps n'existe pas. Un agent monté un dimanche et jamais repris s'arrête au premier changement de mot de passe, et le prix d'entrée ne compte pas les heures passées.</p>
 </div>
 
-## Les agents prêts à l'emploi, avec l'exemple de Limova
+## Les agents prêts à l'emploi : Limova
 
 Limova est une start-up de Nice qui loue une équipe de huit agents déjà construits, chacun avec un prénom et un rôle qui va du standard téléphonique à la prospection. Tout est en français, un conseiller vous guide au démarrage et l'éditeur écrit qu'il n'y a « aucune ligne de code à écrire ». Son agent téléphonique répond aux appels jour et nuit, ce que ni Foxy ni mes agents ne font aujourd'hui.
 
@@ -89,7 +90,7 @@ Les agents sont les mêmes pour tous les clients et la personnalisation porte su
 <p><strong>Regardez ailleurs si</strong> la tâche qui vous pèse est propre à votre métier, comme le rapprochement d'un bon de livraison avec un stock ou la préparation d'un dossier de locataire. Un agent standard ne connaît pas vos cas particuliers.</p>
 </div>
 
-## Les outils de technicien : Claude Code, Codex, Hermes Agent, OpenClaw
+## Les outils plus techniques : Claude Code, Codex, Hermes Agent, OpenClaw
 
 Ces quatre outils sont les moteurs les plus avancés du moment et deux d'entre eux sont libres et gratuits. Ils s'installent par une ligne de commande dans un terminal. Pour travailler en continu, Hermes Agent et OpenClaw demandent en plus une machine toujours allumée et des clés à obtenir chez un fournisseur de modèles, avec une vigilance sur la sécurité que l'éditeur d'OpenClaw rappelle lui-même dans sa documentation.
 
@@ -107,7 +108,7 @@ J'ai passé une partie du mois d'août 2026 à démonter Hermes Agent, avec l'id
 <p><strong>Regardez ailleurs si</strong> le mot « terminal » vous évoque surtout un aéroport. Ces outils sont la matière première des offres de la famille suivante.</p>
 </div>
 
-## L'IA installée pour vous : Foxy, 100 € par mois
+## Foxy : mon bras droit personnalisé
 
 Cette famille part du constat précédent : un moteur d'agent devient utile à un dirigeant le jour où quelqu'un l'installe sur un serveur, le branche sur ses outils et le tient à jour. C'est le métier de [Foxy](/foxy), qui fonctionne avec Claude et laisse l'abonnement Claude à votre nom.
 
@@ -122,7 +123,7 @@ Foxy est tenu par un artisan seul, ce qui explique à la fois son prix et sa lim
 <p><strong>Regardez ailleurs si</strong> vous voulez une équipe entière derrière vous ou des heures de formation inscrites au contrat. Un artisan seul ne promet pas cela.</p>
 </div>
 
-## L'agent sur mesure, quand une seule tâche vous pèse
+## Un agent sur mesure
 
 Beaucoup de petites entreprises n'ont pas besoin d'un système complet. Elles ont une corvée précise, comme les demandes de privatisation d'un foodtruck ou les relances de devis d'un artisan, et un [agent construit pour cette seule tâche](/agents) la règle mieux qu'un outil généraliste. L'agent vit dans la messagerie que vous utilisez déjà (WhatsApp, Telegram ou le mail) et il n'y a aucune interface à apprendre.
 

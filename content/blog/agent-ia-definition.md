@@ -18,7 +18,7 @@ Le mot impressionne alors que l'idée est vieille comme le monde, puisqu'elle d�
 <p>On lui confie une mission et une fiche de poste, et sa conscience lui rappelle ce qu'il n'a pas le droit de faire sans votre accord.</p>
 </div>
 
-## ChatGPT répond, un agent IA agit
+## La différence entre ChatGPT et un agent IA
 
 Dans leur version de tous les jours, ChatGPT, Claude ou Mistral ressemblent à un cerveau posé dans un bocal. Ce cerveau est brillant et il rédige, résume ou traduit mieux que la plupart d'entre nous. Il lui manque pourtant tout le reste du corps. Il ne voit pas vos mails arriver et ne peut pas ouvrir votre agenda, et surtout il ne bouge pas tant que vous ne lui avez rien demandé.
 

@@ -55,6 +55,9 @@ function lire(fichier) {
     lireAussi: Array.isArray(data.lire_aussi) ? data.lire_aussi : [],
     image: data.image || null,
     imageAlt: data.image_alt || "",
+    // Miniature des apercus de partage (1200x627), distincte de l'image affichee
+    // dans l'article. Fabriquee par /data/nathan/seo/outils/miniature-article.py.
+    imagePartage: data.image_partage || null,
     statut: data.statut || "brouillon",
     minutes: minutesDeLecture(content),
     contenu: content,
