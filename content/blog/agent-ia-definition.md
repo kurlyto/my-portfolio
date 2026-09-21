@@ -1,6 +1,6 @@
 ---
 titre: "C'est quoi un agent IA ? Explication simple"
-description: "Un agent IA perçoit, décide et agit seul avec vos outils. L'explication par le corps humain, avec un schéma et trois agents qui travaillent vraiment."
+description: "Tout le monde parle d'agents IA, mais qu'est-ce que c'est réellement ? J'essaye ici de montrer de quoi un agent est fait et comment il fonctionne, avec des mots compréhensibles par tous."
 date: 2026-09-17
 format: explicatif
 grappe: agents
@@ -18,7 +18,7 @@ Le mot impressionne alors que l'idée est vieille comme le monde, puisqu'elle d�
 <p>On lui confie une mission et une fiche de poste, et sa conscience lui rappelle ce qu'il n'a pas le droit de faire sans votre accord.</p>
 </div>
 
-## Quelle différence entre ChatGPT et un agent IA ?
+## ChatGPT répond, un agent IA agit
 
 Dans leur version de tous les jours, ChatGPT, Claude ou Mistral ressemblent à un cerveau posé dans un bocal. Ce cerveau est brillant et il rédige, résume ou traduit mieux que la plupart d'entre nous. Il lui manque pourtant tout le reste du corps. Il ne voit pas vos mails arriver et ne peut pas ouvrir votre agenda, et surtout il ne bouge pas tant que vous ne lui avez rien demandé.
 
@@ -38,7 +38,7 @@ Anthropic, l'entreprise qui fabrique Claude, en donne une [définition plus tech
 | Ce qu'il produit | Un texte que vous recopiez ailleurs | Une action faite dans vos outils |
 | Quand il s'arrête | À la fin de sa réponse | Quand la mission est remplie |
 
-## De quoi est fait un agent IA ?
+## Un agent IA se comprend comme un corps humain
 
 Stuart Russell et Peter Norvig ont écrit le [manuel d'intelligence artificielle](https://aima.cs.berkeley.edu/) qui sert de référence dans les universités du monde entier. Ils y définissent un agent comme tout ce qui perçoit son environnement grâce à des capteurs et agit dessus grâce à des effecteurs. Ils prennent eux-mêmes l'exemple de l'être humain qui perçoit avec ses yeux et ses oreilles et qui agit avec ses mains et ses jambes. La comparaison avec le corps vient donc de la définition elle-même et pas seulement de mon envie de faire simple.
 
@@ -77,7 +77,7 @@ Les deux pièces qu'on oublie le plus souvent sont aussi les plus importantes. L
 
 La seconde est la conscience. OpenAI la range sous le nom de garde-fous au même rang que le modèle et les outils dans son [guide pour construire des agents](https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents/). D'habitude je la règle avant tout le reste en partant d'une règle simple où l'agent prépare et où vous validez. On ne le laisse agir seul qu'après quelques semaines de confiance et uniquement sur les gestes sans risque.
 
-## Comment un agent IA travaille-t-il au quotidien ?
+## Une journée de travail d'un agent IA
 
 Suivons un seul mail du début à la fin. Un mardi à 10 h, une cliente écrit pour déplacer son rendez-vous du jeudi et l'agent déroule alors une petite boucle que vous reconnaîtrez tout de suite.
 

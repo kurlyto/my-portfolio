@@ -81,7 +81,7 @@ export default async function ArticlePage({ params }) {
           data-cursor-hover
           className="inline-flex py-2 font-mono text-[12px] uppercase tracking-widest text-black/60 hover:text-[#ff6b35] transition-colors"
         >
-          &larr; Le blog
+          &larr; Mes articles
         </Link>
 
         <article>

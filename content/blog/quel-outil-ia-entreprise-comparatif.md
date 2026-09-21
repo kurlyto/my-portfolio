@@ -1,6 +1,6 @@
 ---
 titre: "Quel outil d'IA pour mon entreprise ? Comparatif 2026"
-description: "Assistants, plateformes, agents prêts à l'emploi ou installés pour vous : 17 outils d'IA comparés à prix publics et sources datées pour choisir le vôtre."
+description: "Claude, ChatGPT, n8n, Limova ou un agent sur mesure ? Les outils d'IA se ressemblent tous sur leur page d'accueil. Je les ai rangés en cinq familles, prix publics à l'appui, pour vous aider à trouver le vôtre."
 date: 2026-09-20
 format: comparatif
 grappe: agents
@@ -9,20 +9,22 @@ statut: publie
 mots_cles: ["comparatif IA", "outil IA entreprise", "Claude", "ChatGPT Work", "Dust", "Limova", "agent IA sur mesure"]
 lire_aussi: ["/blog/agent-ia-definition", "/foxy", "/agents"]
 ---
-Le bon outil d'IA pour une petite entreprise dépend moins de la marque que de la personne qui fera l'installation et les réglages. Un assistant comme Claude ou ChatGPT coûte une vingtaine d'euros par personne et se règle seul, alors qu'une plateforme comme Dust ou n8n vous laisse construire vos agents vous-même. Une offre installée pour vous va de 20 € par mois pour un agent sur mesure à 799 € HT par mois pour un système complet.
+Choisir un outil d'IA pour sa petite entreprise ressemble à un rayon de supermarché où toutes les boîtes promettent la même chose. J'ai donc relevé les prix publics de quinze d'entre eux pour y voir clair, et ce que j'en retiens tient en une phrase : la marque compte moins que la personne qui fera l'installation et les réglages.
 
-Ce comparatif range dix-sept outils en cinq familles et place mes deux offres au milieu d'eux. Comme je vends deux des lignes de ces tableaux, la loi classe cette page dans la publicité comparative. Chaque prix et chaque citation renvoie donc à la page officielle de l'éditeur, relevée le 18 ou le 20 septembre 2026. Quand une information ne figure nulle part sur le site d'un éditeur, la case indique « non communiqué » plutôt qu'une supposition.
+Un assistant comme Claude ou ChatGPT coûte une vingtaine d'euros par personne et se règle seul, alors qu'une plateforme comme Dust ou n8n vous laisse construire vos agents vous-même. Une offre installée pour vous va chez moi de 20 € par mois pour un agent sur mesure à 100 € par mois pour un système complet.
+
+Ce comparatif range quinze outils en cinq familles et place mes deux offres au milieu d'eux. Comme je vends deux des lignes de ces tableaux, la loi classe cette page dans la publicité comparative. Chaque prix et chaque citation renvoie donc à la page officielle de l'éditeur, relevée le 18 ou le 20 septembre 2026. Quand une information ne figure nulle part sur le site d'un éditeur, la case indique « non communiqué » plutôt qu'une supposition.
 
 <div class="encadre">
 <p><strong>En bref</strong></p>
 <p>Pour rédiger, résumer ou traduire, un assistant de bureau à une vingtaine d'euros par personne suffit et se prend en main dans la journée.</p>
 <p>Pour qu'une tâche se fasse sans vous (trier les mails, relancer un devis, tenir un tableau), il faut un agent branché sur vos outils. Vous pouvez le monter vous-même sur une plateforme, le louer tout fait, ou le faire construire.</p>
-<p>Les prix relevés vont de 0 € (outils libres à installer soi-même) à 799 € HT par mois. Un agent sur mesure coûte chez moi de 20 à 50 € par mois, et Foxy 100 € par mois, installation et serveur compris. Dans les deux cas l'abonnement d'IA reste à votre nom et se paie à part.</p>
+<p>Les prix relevés vont de 0 € (outils libres à installer soi-même) à plusieurs centaines d'euros par mois. Un agent sur mesure coûte chez moi de 20 à 50 € par mois, et Foxy 100 € par mois, installation et serveur compris. Dans les deux cas l'abonnement d'IA reste à votre nom et se paie à part.</p>
 </div>
 
-## Quelles sont les cinq familles d'outils d'IA pour une entreprise ?
+## Cinq familles d'outils et ce qui les sépare vraiment
 
-Les dix-sept outils de cette page se ressemblent sur leurs pages d'accueil et presque tous promettent de vous faire gagner des heures. Ce qui les sépare vraiment tient à la part du travail qui vous revient une fois l'abonnement payé.
+Les outils de cette page se ressemblent sur leurs pages d'accueil et presque tous promettent de vous faire gagner des heures. Ce qui les sépare vraiment tient à la part du travail qui vous revient une fois l'abonnement payé.
 
 | Famille | Exemples | Qui fait les réglages | Prix d'entrée relevé |
 |---|---|---|---|
@@ -30,9 +32,9 @@ Les dix-sept outils de cette page se ressemblent sur leurs pages d'accueil et pr
 | Plateformes d'agents | Dust, n8n, Make, Zapier, Lindy, Relevance AI | Vous ou un salarié à l'aise avec l'outil | De 0 à 30 € par mois pour démarrer |
 | Agents prêts à l'emploi | Limova | Vous, guidé par l'éditeur | 79,90 € HT par mois |
 | Outils de technicien | Claude Code, Codex, Hermes Agent, OpenClaw | Quelqu'un qui connaît le terminal | Gratuit ou 20 $ par mois, plus le temps passé |
-| Installé pour vous | AIOS by Azuro AI, Elio, Foxy, agent sur mesure | Le prestataire | De 20 € à 799 € HT par mois |
+| Installé pour vous | Foxy, agent sur mesure | Le prestataire | De 20 € à 100 € par mois |
 
-## Un assistant de bureau suffit-il à une petite entreprise ?
+## Les assistants de bureau : Claude, ChatGPT, Copilot et Mistral
 
 Les quatre grands assistants font très bien ce pour quoi ils sont conçus. Vous posez une question ou vous collez un document et ils rédigent ou résument mieux que la plupart d'entre nous. Tous les quatre ont une interface en français, une mémoire et des connecteurs vers les mails, l'agenda ou Microsoft 365. Trois des quatre noms ont bougé cette année, ce qui explique les parenthèses du tableau.
 
@@ -50,7 +52,7 @@ Un détail mérite votre attention si vous regardez Mistral pour son hébergemen
 <p><strong>Regardez ailleurs si</strong> vous attendez qu'une tâche se fasse en votre absence. Un assistant répond quand on lui parle, et aucun éditeur de cette famille n'envoie quelqu'un le brancher sur votre logiciel de caisse ou votre tableau de suivi.</p>
 </div>
 
-## Faut-il monter ses agents soi-même sur Dust, n8n ou Make ?
+## Les plateformes pour monter ses agents soi-même : Dust, n8n, Make
 
 Ces plateformes sont de vrais ateliers et elles offrent une liberté qu'aucune offre installée n'égale, avec des centaines de connecteurs et des prix d'entrée très bas. La contrepartie est écrite noir sur blanc dans leurs documentations, puisque c'est le client qui construit l'agent et qui l'entretient. Dust l'écrit ainsi dans son guide, « Good instructions make the difference between poor and great results » ([documentation Dust](https://docs.dust.tt/docs/user-documentation/agents/create-your-first-agent.md)).
 
@@ -70,7 +72,7 @@ D'habitude je conseille n8n aux entreprises qui ont déjà dans l'équipe quelqu
 <p><strong>Regardez ailleurs si</strong> ce temps n'existe pas. Un agent monté un dimanche et jamais repris s'arrête au premier changement de mot de passe, et le prix d'entrée ne compte pas les heures passées.</p>
 </div>
 
-## Que valent les agents prêts à l'emploi comme Limova ?
+## Les agents prêts à l'emploi, avec l'exemple de Limova
 
 Limova est une start-up de Nice qui loue une équipe de huit agents déjà construits, chacun avec un prénom et un rôle qui va du standard téléphonique à la prospection. Tout est en français, un conseiller vous guide au démarrage et l'éditeur écrit qu'il n'y a « aucune ligne de code à écrire ». Son agent téléphonique répond aux appels jour et nuit, ce que ni Foxy ni mes agents ne font aujourd'hui.
 
@@ -87,7 +89,7 @@ Les agents sont les mêmes pour tous les clients et la personnalisation porte su
 <p><strong>Regardez ailleurs si</strong> la tâche qui vous pèse est propre à votre métier, comme le rapprochement d'un bon de livraison avec un stock ou la préparation d'un dossier de locataire. Un agent standard ne connaît pas vos cas particuliers.</p>
 </div>
 
-## Claude Code, Codex, Hermes Agent, OpenClaw : est-ce pour un dirigeant ?
+## Les outils de technicien : Claude Code, Codex, Hermes Agent, OpenClaw
 
 Ces quatre outils sont les moteurs les plus avancés du moment et deux d'entre eux sont libres et gratuits. Ils s'installent par une ligne de commande dans un terminal. Pour travailler en continu, Hermes Agent et OpenClaw demandent en plus une machine toujours allumée et des clés à obtenir chez un fournisseur de modèles, avec une vigilance sur la sécurité que l'éditeur d'OpenClaw rappelle lui-même dans sa documentation.
 
@@ -105,24 +107,22 @@ J'ai passé une partie du mois d'août 2026 à démonter Hermes Agent, avec l'id
 <p><strong>Regardez ailleurs si</strong> le mot « terminal » vous évoque surtout un aéroport. Ces outils sont la matière première des offres de la famille suivante.</p>
 </div>
 
-## Combien coûte une IA installée pour vous : AIOS by Azuro AI, Elio ou Foxy ?
+## L'IA installée pour vous : Foxy, 100 € par mois
 
-Cette famille part du constat précédent : un moteur d'agent devient utile à un dirigeant le jour où quelqu'un l'installe sur un serveur, le branche sur ses outils et le tient à jour. Trois offres françaises le proposent, toutes trois fonctionnent avec Claude et toutes laissent l'abonnement Claude à votre nom, entre 20 et 100 € par mois selon l'usage d'après les deux éditeurs concurrents.
+Cette famille part du constat précédent : un moteur d'agent devient utile à un dirigeant le jour où quelqu'un l'installe sur un serveur, le branche sur ses outils et le tient à jour. C'est le métier de [Foxy](/foxy), qui fonctionne avec Claude et laisse l'abonnement Claude à votre nom.
 
 | Offre | Prix public | Abonnement Claude | Accompagnement | Essai |
 |---|---|---|---|---|
-| AIOS by Azuro AI | 399, 499 ou 799 € HT par mois, sans engagement ([source](https://aios.fr/pricing)) | En plus, à votre nom | Support par e-mail à 399 €, mise en route guidée à partir de 499 €, 2 h dédiées par mois à 799 € | 7 jours sans carte bancaire |
-| Elio | Non public : « Tarif communiqué à l'appel », accès sur candidature ([source](https://elio-aios.fr)) | En plus, à votre nom, « aucune marge dessus » | Installation par l'éditeur, coaching de groupe et individuel selon la formule | 7 jours sans carte bancaire |
 | **Foxy** | 100 € par mois tout compris : installation, serveur en France et maintenance, sans TVA à ajouter | En plus, à votre nom | Installation et réglages faits avec vous les premières semaines | 1 mois, sans engagement |
 
-Les deux concurrents ont pour eux une équipe et des heures de coaching inscrites au contrat, et Azuro AI affiche en plus trois formules lisibles. [Foxy](/foxy) est tenu par un artisan seul, ce qui explique à la fois son prix et sa limite : le nombre d'entreprises suivies en même temps restera volontairement petit. Je refuse de revendre l'abonnement Claude avec une marge, parce qu'un abonnement à votre nom vous montre ce que l'IA coûte vraiment et vous laisse partir avec le jour où vous le décidez.
+Foxy est tenu par un artisan seul, ce qui explique à la fois son prix et sa limite : le nombre d'entreprises suivies en même temps restera volontairement petit. Je refuse de revendre l'abonnement Claude avec une marge, parce qu'un abonnement à votre nom vous montre ce que l'IA coûte vraiment et vous laisse partir avec le jour où vous le décidez.
 
 <div class="verdict">
-<p><strong>Prenez AIOS by Azuro AI ou Elio si</strong> vous voulez un programme d'accompagnement cadré, avec des heures de coaching et une équipe derrière.</p>
-<p><strong>Prenez Foxy si</strong> vous cherchez le même principe (un serveur à vous, une mémoire de votre entreprise, vos outils branchés) à un prix de quatre à huit fois plus bas, avec un seul interlocuteur qui a construit l'outil.</p>
+<p><strong>Prenez Foxy si</strong> vous cherchez un bras droit branché sur toute l'entreprise (un serveur à vous, une mémoire de votre activité, vos outils reliés) avec un seul interlocuteur qui a construit l'outil.</p>
+<p><strong>Regardez ailleurs si</strong> vous voulez une équipe entière derrière vous ou des heures de formation inscrites au contrat. Un artisan seul ne promet pas cela.</p>
 </div>
 
-## Et si une seule tâche vous pèse : l'agent sur mesure à partir de 20 € par mois
+## L'agent sur mesure, quand une seule tâche vous pèse
 
 Beaucoup de petites entreprises n'ont pas besoin d'un système complet. Elles ont une corvée précise, comme les demandes de privatisation d'un foodtruck ou les relances de devis d'un artisan, et un [agent construit pour cette seule tâche](/agents) la règle mieux qu'un outil généraliste. L'agent vit dans la messagerie que vous utilisez déjà (WhatsApp, Telegram ou le mail) et il n'y a aucune interface à apprendre.
 
@@ -132,7 +132,7 @@ Beaucoup de petites entreprises n'ont pas besoin d'un système complet. Elles on
 
 À titre de repère la formule d'entrée de Limova coûte 79,90 € HT par mois pour huit agents standards et un abonnement Lindy 29,99 $ par personne pour un agent que vous montez vous-même. La comparaison a ses limites. Ces deux offres n'affichent aucun abonnement d'IA à prendre à part et Lindy compte en crédits, 3 000 par mois à ce prix. Un agent sur mesure demande en plus votre abonnement Claude, à partir de 17 à 20 $ par mois en formule Pro. Ces offres couvrent aussi plus de terrain qu'un agent unique, alors qu'un agent sur mesure ne fait qu'une chose et la fait à votre façon.
 
-## D'où vient la méthode derrière Foxy et les agents sur mesure ?
+## La méthode derrière Foxy et les agents sur mesure
 
 Chaque agent livré hérite d'un même cahier de règles appelé la doctrine, et ce cahier a été écrit en étudiant les outils de la quatrième famille plutôt qu'en partant d'une page blanche. Claude Code a donné le principe d'une mémoire tenue dans des fichiers lisibles, que l'agent relit en début de journée et que vous pouvez ouvrir vous-même. Hermes Agent a inspiré les compétences que l'agent rédige à partir de son expérience, si bien qu'une erreur corrigée une fois ne revient pas chez le client suivant.
 
@@ -140,7 +140,7 @@ La recherche publique sur la mémoire des agents, comme les travaux autour de Le
 
 Un envoi, un paiement ou une suppression attend toujours votre accord et tout ce que l'agent a fait se relit après coup. Ces garde-fous viennent de la même étude, car les éditeurs de ces moteurs documentent eux-mêmes les risques d'un agent laissé sans limite.
 
-## Comment choisir sans se tromper ?
+## Partir de la tâche plutôt que de l'outil
 
 La méthode la plus sûre consiste à partir de la tâche et non de l'outil. Notez pendant une semaine ce qui vous prend du temps sans demander de jugement, puis regardez dans quelle ligne vous tombez.
 
@@ -151,7 +151,7 @@ La méthode la plus sûre consiste à partir de la tâche et non de l'outil. Not
 | Des besoins courants, tout de suite | Des agents prêts à l'emploi (Limova) | 79,90 à 139,90 € HT |
 | Un profil technique dans l'équipe | Claude Code, Hermes Agent ou OpenClaw | Gratuit à 20 $, plus le temps passé |
 | Une corvée précise propre à votre métier | Un agent sur mesure | 20 à 50 €, abonnement Claude en plus |
-| Un bras droit branché sur toute l'entreprise | Une IA installée pour vous | 100 € (Foxy) à 799 € HT, abonnement Claude en plus |
+| Un bras droit branché sur toute l'entreprise | Une IA installée pour vous (Foxy) | 100 €, abonnement Claude en plus |
 
 J'aime bien qu'on commence petit avec un assistant à vingt euros ou un seul agent sur une seule tâche, parce qu'un mois d'usage réel vous apprend plus sur vos besoins que n'importe quel comparatif.
 
@@ -163,11 +163,11 @@ Parce qu'il n'y a ni équipe commerciale ni bureaux à financer et que l'abonnem
 
 ### L'abonnement Claude est-il compris dans le prix ?
 
-Non, ni pour Foxy ni pour un agent sur mesure, et c'est aussi le cas chez les deux concurrents qui installent pour vous. Vous souscrivez l'abonnement Claude à votre nom, de 17 à 20 $ par mois pour la formule Pro et à partir de 100 $ pour la formule Max, et la création du compte se fait ensemble pendant l'installation.
+Non, ni pour Foxy ni pour un agent sur mesure. Vous souscrivez l'abonnement Claude à votre nom, de 17 à 20 $ par mois pour la formule Pro et à partir de 100 $ pour la formule Max, et la création du compte se fait ensemble pendant l'installation.
 
 ### Ces prix seront-ils encore vrais dans six mois ?
 
-Probablement pas tous. Trois des dix-sept outils ont changé de nom en 2026 et les grilles bougent presque chaque trimestre. Cette page affiche la date de ses relevés et elle est revérifiée tous les trois mois. Si vous constatez un écart avec le site d'un éditeur, c'est le site de l'éditeur qui fait foi.
+Probablement pas tous. Trois des quinze outils ont changé de nom en 2026 et les grilles bougent presque chaque trimestre. Cette page affiche la date de ses relevés et elle est revérifiée tous les trois mois. Si vous constatez un écart avec le site d'un éditeur, c'est le site de l'éditeur qui fait foi.
 
 ### Un éditeur peut-il faire corriger une ligne ?
 

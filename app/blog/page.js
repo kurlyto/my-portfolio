@@ -8,7 +8,7 @@ const articles = tousLesArticles();
 export const metadata = {
   title: "Blog : agents IA et intelligence artificielle au travail",
   description:
-    "Comprendre les agents IA, les mettre au travail dans une petite entreprise, suivre l'actualité utile. Écrit par Nathan Knaebel, qui en construit.",
+    "Nathan Knaebel construit des agents IA pour des petites entreprises et raconte ici ce que ce travail lui apprend, des bases aux cas concrets.",
   alternates: { canonical: `${SITE_URL}/blog` },
   // Un index vide est une page maigre : on ne le montre a Google qu'a partir
   // du premier article publie.
@@ -21,10 +21,11 @@ export default function BlogPage() {
       <Header />
 
       <main className="max-w-3xl mx-auto px-6 pt-14 pb-24">
-        <h1 className="font-display text-3xl md:text-4xl font-bold">Le blog</h1>
+        <h1 className="font-display text-3xl md:text-4xl font-bold">Mes articles</h1>
         <p className="mt-4 text-[17px] leading-relaxed text-black/70">
-          Les agents IA expliqués sans jargon, des tutoriels à refaire chez vous et l&apos;actualité
-          qui change vraiment quelque chose pour une petite entreprise.
+          Je construis des agents IA pour des petites entreprises et j&apos;écris ici ce que ce
+          travail m&apos;apprend. Des explications, quelques tutoriels et mon avis sur l&apos;actualité
+          quand elle vaut qu&apos;on s&apos;y arrête.
         </p>
 
         {articles.length === 0 ? (
