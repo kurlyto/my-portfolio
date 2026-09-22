@@ -66,6 +66,8 @@ Vous décidez aussi de ce qu'il accepte sans vous. Une vidange pour un client co
 
 Dès qu'un rendez-vous est validé, l'agent vérifie la référence à partir de l'immatriculation et prépare la commande chez votre fournisseur habituel. Vous choisissez ce qui part seul comme les filtres et les plaquettes sous un certain montant et tout le reste attend votre accord. Un catalogue en ligne avec votre compte professionnel suffit souvent et sinon l'agent prépare le mail de commande que vous envoyez d'un clic.
 
+<figure><img src="/images/metiers/garagiste-voiture-sur-pont.webp" alt="Un mécanicien en combinaison règle un cric sous une voiture levée" width="1400" height="1100" loading="lazy"><figcaption>Une suspension changée sur un pont en 2020. Les pièces ont été commandées avant l'arrivée de la voiture, ce qui évite l'immobilisation.<span class="credit">Photo : Shixart1985, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:Car_mechanic_worker_repairing_suspension_of_lifted_automobile_at_auto_repair_garage_shop.jpg">Wikimedia Commons</a></span></figcaption></figure>
+
 Si la pièce annoncée pour mercredi glisse à vendredi, il vous propose de décaler le rendez-vous et prévient le client avant qu'il ne pose une demi-journée pour rien.
 
 ### L'accord du client avant tout supplément

@@ -53,6 +53,8 @@ Je déconseille de tout prendre d'un coup parce qu'un agent qui fait **très bie
 
 C'est la corvée que tout le monde repousse et c'est pourtant par elle que je conseille de commencer parce qu'elle coûte cher le jour où on l'oublie. Dès le lendemain de sa date limite de consommation, un produit n'a plus le droit d'être vendu et l'amende peut grimper jusqu'à [1 500 € par produit](https://www.service-public.fr/particuliers/vosdroits/F10990).
 
+<figure><img src="/images/metiers/restaurateur-cuisine-brigade.webp" alt="Une cuisine professionnelle en inox avec un cuisinier au fond" width="1400" height="930" loading="lazy"><figcaption>La cuisine du restaurant Pétrus à Londres en 2011. Chaque chambre froide cache des dates limites que personne ne relit en plein service.<span class="credit">Photo : Nick Webb, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:Petrus_(London)_Kitchen.jpg">Wikimedia Commons</a></span></figcaption></figure>
+
 ### Comment l'agent connaît votre stock
 
 Si vous avez un logiciel de caisse ou de gestion de stock, l'agent s'y branche en premier. Sinon une simple photo du bon de livraison lui suffit pour relever les produits, les quantités et les dates avant de remplir le tableau à votre place.
@@ -112,6 +114,8 @@ Un point de droit mérite qu'on s'y arrête. Quand vous affichez une réduction,
 ## Et pour un food truck ?
 
 Sur un food truck le gain se voit souvent encore plus vite parce que le camion change d'adresse d'un jour à l'autre et qu'une bonne partie du chiffre vient des privatisations.
+
+<figure><img src="/images/metiers/restaurateur-food-truck.webp" alt="Un food truck noir sur base de Citroën Type H, des clients au comptoir" width="1400" height="1050" loading="lazy"><figcaption>Un food truck sur base de Citroën Type H à Nevers en 2018. Le camion change d'adresse et les demandes de privatisation arrivent par mail.<span class="credit">Photo : Guillaume Vachey, <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.fr">CC0</a>, via <a href="https://commons.wikimedia.org/wiki/File:Citroen_Type_H_Food_truck_(40785633241).jpg">Wikimedia Commons</a></span></figcaption></figure>
 
 Pour un food truck j'aime bien commencer par les mails et l'agenda plutôt que par un chatbot ou par les réservations afin de ne plus laisser filer une seule demande de devis. L'agent part ensuite en chasse des événements, des associations et des entreprises prêtes à privatiser un camion et il prépare pour chacun un premier message que vous relisez. C'est la même mécanique que [la prospection locale d'un photographe](/metiers/photographe) qui cherche des clients entreprises.
 

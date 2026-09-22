@@ -92,6 +92,8 @@ Trois semaines avant Noël et avant la fête des Mères, il prépare l'annonce d
 
 Votre meilleur argument commercial dort dans votre téléphone avec toutes ces photos avant et après que vous n'avez jamais le temps de publier. Envoyez la photo à l'agent avec trois mots sur la prestation et il prépare le post qui attend ensuite votre validation. [Service-Public](https://www.service-public.fr/particuliers/vosdroits/F32103) rappelle qu'il faut un accord écrit et précis pour diffuser l'image d'une personne reconnaissable et l'agent garde donc la trace de cet accord dans la fiche. Ce droit à l'image est détaillé dans la page sur [l'agent IA d'un photographe](/metiers/photographe).
 
+<figure><img src="/images/metiers/coiffeur-vitrine-salon.webp" alt="La façade d'un salon de coiffure de village avec son enseigne Dames et Hommes" width="1400" height="1050" loading="lazy"><figcaption>Un salon de coiffure à Le Chesne, dans les Ardennes, en 2019. La vitrine de la rue ne bouge pas. Celle de Google et d'Instagram vieillit chaque semaine.<span class="credit">Photo : François Goglins, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:Le_Chesne-FR-08-salon_de_coiffure-a2.jpg">Wikimedia Commons</a></span></figcaption></figure>
+
 La fiche Google est l'autre vitrine et elle vieillit vite. L'agent y met à jour vos horaires avant un jour férié ou vos congés d'août et il peut y annoncer l'arrivée d'une nouvelle coloriste.
 
 Le lendemain de chaque visite, l'agent envoie à toutes les clientes sans exception un mot de remerciement avec le lien pour laisser un avis. Il rédige ensuite une réponse à chaque avis et vous montre d'abord ceux qui sont sous trois étoiles.

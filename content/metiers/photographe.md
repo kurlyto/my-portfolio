@@ -74,6 +74,8 @@ Le moment le plus fragile d'une vente se situe entre le oui enthousiaste et la s
 
 Trois semaines avant un mariage, l'agent envoie au couple un questionnaire de préparation qui demande les lieux et les horaires de la journée ainsi que la liste des photos de groupe et le nom du témoin qui rassemblera les invités.
 
+<figure><img src="/images/metiers/photographe-seance-mariage.webp" alt="Une photographe de dos cadre un couple de jeunes mariés devant un mur de marbre" width="1400" height="933" loading="lazy"><figcaption>Une séance de mariage à Raleigh, en Caroline du Nord, en 2012. Les lieux et les horaires du jour ont été réglés par questionnaire trois semaines avant.<span class="credit">Photo : Ildar Sagdejev, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:2012-05-20_Photographer_takes_picture_of_newlywed_couple.jpg">Wikimedia Commons</a></span></figcaption></figure>
+
 La veille il vous remet une feuille de route d'une page avec les adresses, les temps de trajet et l'heure du coucher du soleil pour les portraits de couple.
 
 ### Les jours de retouche se bloquent tout seuls

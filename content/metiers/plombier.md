@@ -18,6 +18,8 @@ Un agent IA pour plombier est un assistant logiciel qui tient le téléphone, le
 
 Prenons un jeudi de janvier. À 2 h 14 un client appelle pour un robinet qui goutte et à 6 h 50 une vraie fuite inonde une cuisine à l'autre bout de la ville. Dans la matinée trois personnes envoient des photos de leur salle de bains en demandant « un prix à peu près ». Le mitigeur prévu pour le chantier de vendredi n'a pas été commandé et le devis d'un remplacement de chaudière attend une réponse depuis douze jours. Le soir il reste deux factures à rédiger de mémoire avec des notes prises sur un bout de carton.
 
+<figure><img src="/images/metiers/plombier-sous-evier.webp" alt="Un plombier agenouillé devant un évier de cuisine, le placard ouvert, un seau au sol" width="1400" height="1084" loading="lazy"><figcaption>Un dépannage sous un évier de cuisine. Pendant ce temps le téléphone sonne dans la camionnette.<span class="credit">Photo : rick (Flickr), <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:Plumber_at_work_(retouched).jpg">Wikimedia Commons</a></span></figcaption></figure>
+
 Rien de tout cela n'est de la plomberie et tout se paie pourtant. L'appel manqué part chez le confrère suivant dans la liste de Google et la facture rédigée le dimanche soir est encaissée un mois après les autres.
 
 ## Ce que fait l'agent

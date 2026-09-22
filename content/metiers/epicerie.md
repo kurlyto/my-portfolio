@@ -40,6 +40,8 @@ Le tout se résume chaque matin dans un seul message que vous lisez avant de lev
 
 Quand le livreur passe, vous photographiez le bon de livraison ou vous dictez l'arrivage à l'agent comme à un employé. Il reconnaît chaque ligne par son code-barres, ajoute les quantités au stock et note la date imprimée sur le lot. Tout démarre par un fichier produits bien rangé, parce qu'un pot noté « miel foncé petit » dans un tableau et enregistré autrement dans la caisse devient deux produits que rien ne recoupe plus.
 
+<figure><img src="/images/metiers/epicerie-rayons.webp" alt="L'intérieur d'une épicerie fine aux rayons chargés jusqu'au plafond, trois personnes au comptoir" width="1400" height="932" loading="lazy"><figcaption>L'épicerie Izrael à Paris en 2012. Des centaines de références et autant de dates limites à surveiller.<span class="credit">Photo : Piero d'Houin dit Inocybe, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:%C3%89picerie_Izrael_en_2012.jpg">Wikimedia Commons</a></span></figcaption></figure>
+
 ### Le stock se tient entre deux clients
 
 Les ventes descendent du stock sans vous parce que l'agent **lit la caisse sans jamais y écrire**. Je tiens à ce qu'elle reste la source de vérité parce qu'un outil qui irait y corriger un prix dans votre dos ruinerait votre confiance en une journée. La casse et les dégustations ne passent par aucun ticket mais il suffit d'écrire « deux pots cassés » à l'agent pour que le compte reste juste.

@@ -86,6 +86,8 @@ Chaque visiteur laisse derrière lui un budget, un quartier et un nombre de cham
 
 Un photographe n'est pas disponible pour chaque mandat et le téléphone fait ce qu'il peut face à une baie vitrée en plein midi. Vous sortez du bien avec vingt photos et vous les envoyez à l'agent par message. Quelques minutes plus tard la série revient retouchée. La lumière est rééquilibrée pour que l'on voie la pièce et pas seulement la fenêtre, les murs penchés retrouvent leurs verticales et le ciel blanc du contre-jour reprend des couleurs.
 
+<figure><img src="/images/metiers/agent-immobilier-vitrine-annonces.webp" alt="La vitrine rouge d'une agence immobilière de village, couverte d'annonces" width="1400" height="1050" loading="lazy"><figcaption>Une agence immobilière à Lurcy-Lévis, dans l'Allier, en 2019. Une annonce en vitrine se lit en dix secondes et la photo fait tout.<span class="credit">Photo : François Goglins, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:Lurcy-L%C3%A9vis-FR-03-agence_immobili%C3%A8re-02.jpg">Wikimedia Commons</a></span></figcaption></figure>
+
 L'agent peut aussi désencombrer une pièce ou meubler un salon vide, ce que le métier appelle le home staging virtuel. Je tiens à ce que ces images portent toujours la mention « aménagement virtuel » et que la photo réelle reste à côté dans l'annonce. C'est la règle que suit aussi [l'image d'ambiance d'un architecte d'intérieur](/metiers/architecte-interieur). Il améliore la prise de vue et ne touche jamais au bien lui-même.
 
 <figure>

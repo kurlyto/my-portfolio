@@ -45,6 +45,8 @@ Le poste ressemble à celui d'un assistant de projet qui n'aurait aucun avis sur
 
 Une demande qui arrive par le site, par Instagram ou par mail reçoit une réponse dans l'heure et cela vaut aussi le dimanche soir, quand les gens pensent enfin à leur salon. L'agent se présente comme l'assistant virtuel de l'agence et pose les questions que vous posez toujours sur la surface, le budget des travaux, le délai souhaité et le style qui attire le client. Il demande aussi des photos du lieu.
 
+<figure><img src="/images/metiers/architecte-interieur-nuancier.webp" alt="Un nuancier de couleurs ouvert en éventail" width="1400" height="1050" loading="lazy"><figcaption>Un nuancier de couleurs. Chaque projet accumule des références de teintes et de matières que l'agent range par client.<span class="credit">Photo : Daniel Ullrich (Threedots), <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:HKS-K-Farbfaecher.jpg">Wikimedia Commons</a></span></figcaption></figure>
+
 Les règles de tri se fixent avec vous à l'audit. Une rénovation complète dans votre secteur se voit proposer deux créneaux alors qu'une demande très en dessous de votre budget plancher reçoit la réponse courtoise que vous avez rédigée une fois pour toutes.
 
 <figure>

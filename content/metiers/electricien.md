@@ -32,6 +32,8 @@ Vous lui parlez comme à un employé, par message ou à la voix depuis la camion
 
 L'agent lit ce qui arrive par mail, par le formulaire de votre site et par votre fiche Google. Il répond dans les minutes qui suivent en se présentant comme l'assistant de l'entreprise et il pose les questions que vous auriez posées vous-même. Il demande la nature des travaux, l'âge du logement, une photo du tableau et l'adresse.
 
+<figure><img src="/images/metiers/electricien-pose-prise.webp" alt="Deux mains raccordent les fils d'une prise murale" width="1400" height="1050" loading="lazy"><figcaption>Le câblage d'une prise en 2016. Les mains occupées, impossible de décrocher, et la demande de devis part chez le confrère.<span class="credit">Photo : Santeri Viinamäki, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:Electrician_installing_socket.jpg">Wikimedia Commons</a></span></figcaption></figure>
+
 Vous retrouvez alors une fiche complète à la place d'un « rappelez-moi » et vous savez avant de vous déplacer si la visite vaut le trajet.
 
 <figure>
