@@ -1,7 +1,7 @@
 ---
 titre: "Quel agent IA pour votre métier ?"
 description: "J'ai écrit une page par métier, du plombier au notaire. Je les ai réunies ici pour que vous ouvriez la vôtre d'un clic et trouviez la tâche par laquelle commencer."
-date: 2026-09-28
+date: 2026-09-22
 format: explicatif
 grappe: agents
 mot_cle: "agent ia pour mon métier"
