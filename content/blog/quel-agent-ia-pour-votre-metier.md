@@ -1,6 +1,6 @@
 ---
 titre: "Quel agent IA pour votre métier ?"
-description: "J'ai écrit une page par métier, du plombier au notaire. Je les ai réunies ici pour que vous ouvriez la vôtre d'un clic et voyiez ce qu'un agent ferait chez vous."
+description: "J'ai écrit une page par métier, du plombier au notaire. Je les ai réunies ici pour que vous ouvriez la vôtre d'un clic et trouviez la tâche par laquelle commencer."
 date: 2026-09-28
 format: explicatif
 grappe: agents
@@ -13,11 +13,11 @@ lire_aussi: ["/blog/agent-ia-definition", "/blog/quel-outil-ia-entreprise-compar
 ---
 Un agent IA pour votre métier est un assistant logiciel réglé sur les tâches qui reviennent chaque semaine dans votre activité. Il tient le téléphone qui sonne pendant que vous travaillez, chiffre les devis, envoie les relances et passe les commandes. Le principe reste le même d'un métier à l'autre alors que le détail change tout, parce qu'un plombier ne vit pas la même semaine qu'un notaire.
 
-J'ai donc écrit une page par métier, dix-sept à ce jour, et chacune raconte une semaine ordinaire avant de montrer ce que l'agent y prend en charge et ce qu'il ne doit jamais faire. Cette page les réunit par famille pour que vous ouvriez la vôtre d'un clic.
+J'ai donc écrit une page par métier, dix-sept à ce jour, et chacune raconte une semaine ordinaire avant de nommer les tâches confiées à l'agent et les lignes rouges. Cette page les réunit par famille pour que vous ouvriez la vôtre d'un clic.
 
 <div class="encadre">
 <p><strong>En bref</strong></p>
-<p>Dix-sept métiers rangés en six familles. Chaque page décrit la semaine du métier, les tâches confiées à l'agent, ses limites et les règles à respecter, avec des exemples de messages tels que l'agent les enverrait.</p>
+<p>Dix-sept métiers rangés en six familles. Chaque page décrit la semaine du métier, les tâches confiées à l'agent, les lignes rouges et les règles à respecter, avec des exemples de messages tels que l'agent les enverrait.</p>
 <p>Si votre métier manque, la dernière partie vous dit par où commencer.</p>
 </div>
 
@@ -73,7 +73,7 @@ Mon conseil tient en une ligne : commencez par un seul de ces chantiers, celui q
 
 Il en manque forcément, et la liste s'allonge au rythme des demandes que je reçois. Un hôtelier, un boulanger ou un paysagiste retrouvera l'essentiel de sa semaine dans la famille la plus proche, parce que les cinq chantiers ci-dessus ne changent pas de nom en changeant de métier.
 
-Le plus simple reste de me décrire une semaine ordinaire chez vous, du premier coup de fil à la dernière facture. Je vous dis alors ce qu'un agent y prendrait et ce qu'il vaut mieux garder pour vous, et [la page des agents sur mesure](/agents) explique comment se passe cette première conversation.
+Le plus simple reste de me décrire une semaine ordinaire chez vous, du premier coup de fil à la dernière facture. Je vous dis alors par quelle tâche commencer et lesquelles garder pour vous, et [la page des agents sur mesure](/agents) explique comment se passe cette première conversation.
 
 ## Questions fréquentes
 

@@ -1,6 +1,6 @@
 ---
 titre: "Agent IA pour garagiste et mécanicien auto"
-description: "Téléphone, rendez-vous atelier, pré-devis, pièces, accord du client, rappels de révision et de contrôle technique : ce qu'un agent IA fait dans un garage."
+description: "Un agent IA qui répond au téléphone et cale les rendez-vous atelier. Il prépare le pré-devis, commande les pièces et rappelle révisions et contrôles techniques."
 h1: "Un agent IA pour votre garage automobile"
 date: 2026-09-10
 mot_cle: "agent ia garagiste"
@@ -23,7 +23,7 @@ Aucune de ces interruptions ne dure plus de trois minutes mais chacune vous obli
 
 Le métier s'est encore peu emparé du sujet. D'après la première étude de l'ANFA sur l'IA, [6 % des entreprises des services de l'automobile](https://www.anfa-auto.fr/actualites/decouvrez-notre-premiere-etude-sur-lusage-de-lia-dans-les-services-de-lautomobile) déclaraient en 2024 utiliser des outils intégrant de l'IA et 4 % seulement parmi les structures d'un à cinq salariés.
 
-## Ce que fait l'agent
+## Les tâches confiées à l'agent
 
 Le poste ressemble à celui d'un réceptionnaire d'atelier qui ne prendrait jamais de pause et ne toucherait jamais une clé. Un article à part détaille [ce qu'est un agent IA](/blog/agent-ia-definition). Dans un garage son travail suit le trajet d'une voiture : il prend la demande et prépare le passage à l'atelier puis il tient le client au courant et le fait revenir au bon moment.
 
@@ -143,7 +143,7 @@ Une fois le rideau baissé, l'agent vous envoie le récap de la journée.
 
 Au début rien ne part sans votre feu vert. Vous ouvrez les vannes une à une en commençant par les confirmations de rendez-vous et tout le reste attend votre accord aussi longtemps que vous le souhaitez.
 
-## Ce qu'un agent IA ne doit pas faire
+## Les lignes rouges
 
 La liste qui suit est courte et je ne la négocie pas parce qu'elle protège vos clients autant que votre garage.
 
@@ -179,6 +179,6 @@ Le [règlement européen sur l'IA](https://digital-strategy.ec.europa.eu/fr/poli
 
 Tout commence par un audit gratuit pendant lequel on cherche ensemble où filent vos heures et ce qui mérite d'être confié.
 
-Je construis ensuite l'agent sur les outils que vous utilisez déjà. Son prix dépend de ce qu'il fait et se fixe après l'audit. Le premier mois est gratuit et sans engagement. Si l'agent ne vous a pas rendu d'heures au bout de ces quatre semaines, vous arrêtez là.
+Je construis ensuite l'agent sur les outils que vous utilisez déjà. Son prix dépend des tâches confiées et se fixe après l'audit. Le premier mois est gratuit et sans engagement. Si l'agent ne vous a pas rendu d'heures au bout de ces quatre semaines, vous arrêtez là.
 
-Si vous voulez savoir ce qu'un agent prendrait chez vous, [Nate vous répond en deux minutes](/agents?chat=1&metier=garagiste).
+Pour savoir par quelle tâche commencer chez vous, [Nate vous répond en deux minutes](/agents?chat=1&metier=garagiste).

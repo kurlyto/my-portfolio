@@ -1,6 +1,6 @@
 ---
 titre: "Agent IA personnel pour la vie quotidienne et la famille"
-description: "Mails triés, abonnements surveillés, assurance comparée, papiers retrouvés, échéances et rendez-vous : ce qu'un agent IA personnel fait et ses limites."
+description: "Un agent IA personnel qui trie vos mails et surveille vos abonnements. Il compare votre assurance, retrouve vos papiers et vous rappelle les échéances."
 h1: "Un agent IA personnel pour votre vie quotidienne"
 date: 2026-09-18
 mot_cle: "agent ia personnel"
@@ -23,7 +23,7 @@ Prenons un dimanche soir ordinaire. La boîte mail affiche 312 messages non lus 
 
 Aucune de ces tâches ne demande plus d'un quart d'heure mais il faut y penser au bon moment et ce travail de mémoire porte un nom depuis quelques années, la charge mentale. Un oubli se paie en euros quand un abonnement repart pour un an ou en sueurs froides quand on découvre à l'aéroport une carte d'identité périmée.
 
-## Ce que fait l'agent
+## Les tâches confiées à l'agent
 
 Imaginez un secrétaire particulier qui ne dormirait jamais et qui n'aurait ni carte bancaire ni stylo pour signer. Si le mot « agent » vous paraît flou, le blog propose une [explication simple de ce qu'est un agent IA](/blog/agent-ia-definition). J'en utilise un moi-même tous les jours et je commence toujours un agent personnel par les mêmes missions.
 
@@ -143,7 +143,7 @@ Le dimanche soir il propose les menus de la semaine et la liste de courses arriv
 
 « Prépare un week-end à Lisbonne en mai » suffit pour lancer le travail. L'agent regarde vos dates libres et propose un itinéraire jour par jour avec trois hôtels dans votre budget et le total estimé vols compris. Il ne réserve rien et ne paie rien. Vous choisissez et il range ensuite billets et confirmations dans le dossier du voyage.
 
-## Ce qu'un agent IA ne doit pas faire
+## Les lignes rouges
 
 Sur les sujets qui suivent la réponse est non et mieux vaut le savoir avant de commencer.
 
@@ -181,6 +181,6 @@ Votre boîte mail parle aussi de votre conjoint, de vos enfants et de vos parent
 
 Tout commence par un premier échange gratuit pendant lequel on regarde ensemble ce qui vous pèse le plus et ce qui mérite d'être confié.
 
-Je construis ensuite l'agent sur les outils que vous utilisez déjà. Son prix dépend de ce qu'il fait et se fixe après cet échange. Le premier mois est gratuit et sans engagement. Si l'agent ne vous a pas rendu du temps et de la tranquillité au bout de ces quatre semaines, vous arrêtez là.
+Je construis ensuite l'agent sur les outils que vous utilisez déjà. Son prix dépend des tâches confiées et se fixe après cet échange. Le premier mois est gratuit et sans engagement. Si l'agent ne vous a pas rendu du temps et de la tranquillité au bout de ces quatre semaines, vous arrêtez là.
 
-Si vous voulez savoir ce qu'un agent prendrait chez vous, [Nate vous répond en deux minutes](/agents?chat=1&metier=vie-personnelle).
+Pour savoir par quelle tâche commencer chez vous, [Nate vous répond en deux minutes](/agents?chat=1&metier=vie-personnelle).

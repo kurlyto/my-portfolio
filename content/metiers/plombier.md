@@ -1,6 +1,6 @@
 ---
 titre: "Agent IA pour plombier et chauffagiste"
-description: "Astreinte, devis sur photos, pièces, tournée, factures, relances et contrats d'entretien : ce qu'un agent IA fait pour un plombier, et ses limites."
+description: "Un agent IA qui prend l'astreinte et chiffre un devis sur photos. Il commande les pièces, organise la tournée, facture et suit les contrats d'entretien."
 h1: "Un agent IA pour votre entreprise de plomberie"
 date: 2026-09-07
 mot_cle: "agent ia plombier"
@@ -23,7 +23,7 @@ Prenons un jeudi de janvier. À 2 h 14 un client appelle pour un robinet qui gou
 
 Rien de tout cela n'est de la plomberie et tout se paie pourtant. L'appel manqué part chez le confrère suivant dans la liste de Google et la facture rédigée le dimanche soir est encaissée un mois après les autres.
 
-## Ce que fait l'agent
+## Les tâches confiées à l'agent
 
 Le poste ressemble à celui d'une secrétaire de chantier qui ne dormirait jamais et qui ne toucherait jamais une clé à molette. Un article à part explique [ce qu'est un agent IA](/blog/agent-ia-definition) et chez un plombier son travail suit le parcours d'un client du premier coup de fil jusqu'à la visite d'entretien de l'année suivante.
 
@@ -149,7 +149,7 @@ Après un dépannage, les pièces remplacées sont en principe [garanties trois 
 <figcaption>Le parcours d'un client, du premier appel au rappel d'entretien de l'année suivante.</figcaption>
 </figure>
 
-## Ce qu'un agent IA ne doit pas faire
+## Les lignes rouges
 
 Sur les sujets qui suivent ma réponse est non et mieux vaut le savoir avant de signer.
 
@@ -179,6 +179,6 @@ Depuis le 2 août 2026, toute personne qui échange avec une IA doit en être in
 
 Tout commence par un audit gratuit pendant lequel on cherche ensemble où filent vos heures et ce qui mérite d'être confié.
 
-Je construis ensuite l'agent sur les outils que vous utilisez déjà. Son prix dépend de ce qu'il fait et se fixe après l'audit. Le premier mois est gratuit et sans engagement. Si l'agent ne vous a pas rendu d'heures au bout de ces quatre semaines, vous arrêtez là.
+Je construis ensuite l'agent sur les outils que vous utilisez déjà. Son prix dépend des tâches confiées et se fixe après l'audit. Le premier mois est gratuit et sans engagement. Si l'agent ne vous a pas rendu d'heures au bout de ces quatre semaines, vous arrêtez là.
 
-Si vous voulez savoir ce qu'un agent prendrait chez vous, [Nate vous répond en deux minutes](/agents?chat=1&metier=plombier).
+Pour savoir par quelle tâche commencer chez vous, [Nate vous répond en deux minutes](/agents?chat=1&metier=plombier).

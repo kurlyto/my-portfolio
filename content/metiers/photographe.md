@@ -1,6 +1,6 @@
 ---
 titre: "Agent IA pour photographe de mariage et corporate"
-description: "Devis, contrat et acompte, préparation de la séance, galerie, facture, tirages et avis : ce qu'un agent IA automatise pour un photographe et ses limites."
+description: "Un agent IA qui envoie devis et contrat et encaisse l'acompte. Il prépare la séance, livre la galerie, facture et récolte les avis de vos clients."
 h1: "Un agent IA pour les photographes de mariage, de famille et d'entreprise"
 date: 2026-09-11
 mot_cle: "agent ia photographe"
@@ -25,7 +25,7 @@ Prenons un lundi de juin. Le mariage de samedi attend sur deux cartes mémoire e
 
 Aucune de ces tâches ne demande votre regard et chacune mord pourtant sur le temps de retouche, si bien que les livraisons glissent et que le couple de l'été prochain signe avec le confrère qui a répondu dans l'heure.
 
-## Ce que fait l'agent
+## Les tâches confiées à l'agent
 
 Imaginez un assistant de studio qui ne toucherait jamais un boîtier et qui tiendrait à la place la boîte mail, l'agenda et le carnet de factures. Si le mot « agent » vous paraît flou, une [explication simple de ce qu'est un agent IA](/blog/agent-ia-definition) vous attend sur le blog. Pour un photographe je pars presque toujours de cinq missions.
 
@@ -151,7 +151,7 @@ Quand une entreprise vous commande des images, vous lui cédez des droits d'util
 
 L'agent tient ce registre à partir de vos contrats et vous prévient deux mois avant chaque échéance avec un brouillon de proposition de renouvellement.
 
-## Ce qu'un agent IA ne doit pas faire
+## Les lignes rouges
 
 Certains outils promettent beaucoup sur les sujets qui suivent. Sur chacun d'eux je préfère vous dire non dès maintenant plutôt qu'en cours de route.
 
@@ -195,6 +195,6 @@ Le [règlement européen sur l'IA](https://digital-strategy.ec.europa.eu/fr/poli
 
 Tout commence par un audit gratuit pendant lequel on cherche ensemble où filent vos heures et ce qui mérite d'être confié.
 
-Je construis ensuite l'agent sur les outils que vous utilisez déjà. Son prix dépend de ce qu'il fait et se fixe après l'audit. Le premier mois est gratuit et sans engagement. Si l'agent ne vous a pas rendu d'heures au bout de ces quatre semaines, vous arrêtez là.
+Je construis ensuite l'agent sur les outils que vous utilisez déjà. Son prix dépend des tâches confiées et se fixe après l'audit. Le premier mois est gratuit et sans engagement. Si l'agent ne vous a pas rendu d'heures au bout de ces quatre semaines, vous arrêtez là.
 
-Si vous voulez savoir ce qu'un agent prendrait chez vous, [Nate vous répond en deux minutes](/agents?chat=1&metier=photographe).
+Pour savoir par quelle tâche commencer chez vous, [Nate vous répond en deux minutes](/agents?chat=1&metier=photographe).

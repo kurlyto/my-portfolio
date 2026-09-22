@@ -1,6 +1,6 @@
 ---
 titre: "Agent IA pour musicien et professeur de musique"
-description: "Booking, relances des salles, tournée, sortie d'un titre, Sacem, cachets et élèves : ce qu'un agent IA automatise pour un musicien et ce qu'il ne fera jamais."
+description: "Un agent IA qui envoie les demandes de booking et relance les salles. Il organise la tournée, prépare la sortie d'un titre et suit la Sacem et vos élèves."
 h1: "Un agent IA pour les musiciens et les professeurs de musique"
 date: 2026-09-02
 mot_cle: "agent ia musicien"
@@ -25,7 +25,7 @@ Prenons un mardi ordinaire. Douze salles contactées il y a deux semaines n'ont 
 
 Aucune de ces tâches n'est difficile mais elles arrivent toutes ensemble et se paient en dates perdues, parce qu'un programmateur qui n'a pas été relancé a déjà rempli sa saison avec quelqu'un d'autre.
 
-## Ce que fait l'agent
+## Les tâches confiées à l'agent
 
 Imaginez un régisseur qui ne monterait jamais sur scène et qui tiendrait à la place la boîte mail, le fichier des salles et le carnet de factures. Si le mot « agent » vous paraît flou, j'ai écrit une [explication simple de ce qu'est un agent IA](/blog/agent-ia-definition). Pour un musicien tout commence par les cinq mêmes missions parce qu'elles reviennent chaque semaine.
 
@@ -141,7 +141,7 @@ L'agent tient le planning et envoie un rappel la veille du cours. C'est la même
 
 À la fin du mois il rapproche les virements reçus de la liste des élèves. L'élève à jour n'entend parler de rien alors que les autres reçoivent un rappel aimable puis un second plus ferme. Vous validez les premiers messages pour régler le ton. En juin il demande à chaque famille si l'élève continue et vous présente le planning de la rentrée avec les créneaux qui se libèrent.
 
-## Ce qu'un agent IA ne doit pas faire
+## Les lignes rouges
 
 Certains outils promettent beaucoup sur les sujets qui suivent. Aucune de ces promesses n'entrera dans votre agent et autant que vous le sachiez dès maintenant.
 
@@ -171,6 +171,6 @@ Le règlement européen sur l'IA [est devenu applicable le 2 août 2026](https:/
 
 Tout commence par un audit gratuit pendant lequel on cherche ensemble où filent vos heures et ce qui mérite d'être confié.
 
-Je construis ensuite l'agent sur les outils que vous utilisez déjà. Son prix dépend de ce qu'il fait et se fixe après l'audit. Le premier mois est gratuit et sans engagement. Si l'agent ne vous a pas rendu d'heures au bout de ces quatre semaines, vous arrêtez là.
+Je construis ensuite l'agent sur les outils que vous utilisez déjà. Son prix dépend des tâches confiées et se fixe après l'audit. Le premier mois est gratuit et sans engagement. Si l'agent ne vous a pas rendu d'heures au bout de ces quatre semaines, vous arrêtez là.
 
-Si vous voulez savoir ce qu'un agent prendrait chez vous, [Nate vous répond en deux minutes](/agents?chat=1&metier=musicien).
+Pour savoir par quelle tâche commencer chez vous, [Nate vous répond en deux minutes](/agents?chat=1&metier=musicien).

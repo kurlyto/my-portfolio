@@ -1,6 +1,6 @@
 ---
 titre: "Agent IA immobilier : visites, photos et mandats"
-description: "Demandes de visite, tournées, photos retouchées, annonces, retours aux propriétaires et relances : ce qu'un agent IA automatise dans une agence."
+description: "Un agent IA qui répond aux demandes de visite et organise vos tournées. Il retouche les photos, rédige les annonces et tient les propriétaires au courant."
 h1: "Un agent IA pour votre agence immobilière"
 date: 2026-08-31
 mot_cle: "agent ia immobilier"
@@ -25,7 +25,7 @@ Prenons un samedi ordinaire. Vous enchaînez quatre visites pendant que onze dem
 
 Aucune de ces tâches ne réclame votre talent de négociateur mais toutes réclament une régularité qui manque quand on passe ses journées en rendez-vous.
 
-## Ce que fait l'agent
+## Les tâches confiées à l'agent
 
 Imaginez un assistant commercial qui ne ferait jamais une visite et qui tiendrait à la place la boîte mail, l'agenda et le tableau des mandats. Si le mot vous paraît flou, un article à part explique [ce qu'est un agent IA](/blog/agent-ia-definition). Dans une agence ce sont presque toujours les cinq mêmes missions qui reviennent.
 
@@ -143,7 +143,7 @@ L'agent coche ce qui est arrivé et relance le vendeur en lui disant quelle piè
 
 Le lendemain de la signature, l'agent envoie au vendeur et à l'acquéreur un mot de remerciement avec le lien vers votre fiche Google. Tous vos clients le reçoivent parce que Google interdit de [solliciter des avis positifs de façon sélective](https://support.google.com/contributionpolicy/answer/7400114?hl=fr).
 
-## Ce qu'un agent IA ne doit pas faire
+## Les lignes rouges
 
 Certains outils promettent de tout faire sans vous et d'être conformes par construction. Sur les sujets qui suivent ma réponse est non et autant que vous le sachiez avant de signer.
 
@@ -187,6 +187,6 @@ Le [règlement européen sur l'IA](https://digital-strategy.ec.europa.eu/fr/poli
 
 Tout commence par un audit gratuit pendant lequel on cherche ensemble où filent vos heures et ce qui mérite d'être confié.
 
-Je construis ensuite l'agent sur les outils que vous utilisez déjà. Son prix dépend de ce qu'il fait et se fixe après l'audit. Le premier mois est gratuit et sans engagement. Si l'agent ne vous a pas rendu d'heures au bout de ces quatre semaines, vous arrêtez là.
+Je construis ensuite l'agent sur les outils que vous utilisez déjà. Son prix dépend des tâches confiées et se fixe après l'audit. Le premier mois est gratuit et sans engagement. Si l'agent ne vous a pas rendu d'heures au bout de ces quatre semaines, vous arrêtez là.
 
-Si vous voulez savoir ce qu'un agent prendrait chez vous, [Nate vous répond en deux minutes](/agents?chat=1&metier=agent-immobilier).
+Pour savoir par quelle tâche commencer chez vous, [Nate vous répond en deux minutes](/agents?chat=1&metier=agent-immobilier).

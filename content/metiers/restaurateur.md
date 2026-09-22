@@ -1,6 +1,6 @@
 ---
 titre: "Agent IA pour restaurant et food truck"
-description: "Réservations, avis, DLC, stock et boutique en ligne : ce qu'un agent IA automatise dans un restaurant ou un food truck, et ce qu'il ne doit jamais faire."
+description: "Un agent IA qui prend les réservations et répond aux avis. Il surveille les DLC et le stock et tient la boutique en ligne d'un restaurant ou d'un food truck."
 h1: "Un agent IA pour votre restaurant ou votre food truck"
 date: 2026-08-19
 mot_cle: "agent ia restaurant"
@@ -25,7 +25,7 @@ Prenons un mardi ordinaire. Pendant que les assiettes partent, une cliente deman
 
 Aucune de ces tâches ne prend plus de deux minutes. Le problème vient de leur nombre, parce qu'elles finissent par dévorer les soirées et que celle qu'on oublie se paie toujours en tables vides ou en marchandise jetée.
 
-## Ce que fait l'agent
+## Les tâches confiées à l'agent
 
 Imaginez un commis qui ne toucherait jamais une casserole et qui tiendrait à la place le téléphone, la boîte de messages et la paperasse. C'est à peu près le poste et [ce qu'est un agent IA](/blog/agent-ia-definition) fait l'objet d'un article à part. Pour un restaurant les mêmes missions reviennent presque toujours.
 
@@ -62,7 +62,7 @@ Si vous avez un logiciel de caisse ou de gestion de stock, l'agent s'y branche e
 
 Un stock n'est juste que si l'on note ce qui en sort. La caisse s'en charge pour tout ce qui se vend. Pour les pertes et ce que consomme la cuisine, il suffit de glisser à l'agent une phrase comme « jette 2 kg de tomates » entre deux commandes.
 
-### Ce qu'il en fait chaque jour
+### Sa tournée du matin
 
 Chaque matin l'agent sait ce qui arrive à échéance dans les trois jours. Plutôt que de vous envoyer une liste de mauvaises nouvelles, il cherche une porte de sortie pour chaque produit :
 
@@ -124,7 +124,7 @@ L'agent peut aussi répondre à la question qui revient sans cesse sur les rése
 
 Pour les emplacements, il prépare les demandes à la mairie et suit les relances. La décision d'autoriser le camion reste entre les mains de la commune et aucun outil ne peut vous la garantir.
 
-## Ce qu'un agent IA ne doit pas faire
+## Les lignes rouges
 
 Certains outils promettent monts et merveilles sur les sujets qui suivent. Aucun des agents que je construis ne s'y aventure et autant que vous le sachiez avant de signer.
 
@@ -152,6 +152,6 @@ Le [règlement européen sur l'IA](https://digital-strategy.ec.europa.eu/fr/poli
 
 Tout commence par un audit gratuit pendant lequel on cherche ensemble où filent vos heures et ce qui mérite d'être confié.
 
-Je construis ensuite l'agent sur les outils que vous utilisez déjà. Son prix dépend de ce qu'il fait et se fixe après l'audit. Le premier mois est gratuit et sans engagement. Si l'agent ne vous a pas rendu d'heures au bout de ces quatre semaines, vous arrêtez là.
+Je construis ensuite l'agent sur les outils que vous utilisez déjà. Son prix dépend des tâches confiées et se fixe après l'audit. Le premier mois est gratuit et sans engagement. Si l'agent ne vous a pas rendu d'heures au bout de ces quatre semaines, vous arrêtez là.
 
-Si vous voulez savoir ce qu'un agent prendrait chez vous, [Nate vous répond en deux minutes](/agents?chat=1&metier=restaurateur).
+Pour savoir par quelle tâche commencer chez vous, [Nate vous répond en deux minutes](/agents?chat=1&metier=restaurateur).

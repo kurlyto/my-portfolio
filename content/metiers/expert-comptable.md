@@ -1,6 +1,6 @@
 ---
 titre: "Agent IA pour expert-comptable : usages et données"
-description: "Ce qu'un agent IA prend en charge dans un cabinet d'expertise comptable, ce que recommande l'Ordre et comment protéger les données couvertes par le secret."
+description: "Un agent IA qui réclame les justificatifs manquants et trie les factures. Il suit les échéances fiscales selon l'Ordre, sans sortir le secret du cabinet."
 h1: "Un agent IA pour votre cabinet d'expertise comptable"
 date: 2026-09-03
 mot_cle: "agent ia expert comptable"
@@ -23,7 +23,7 @@ Posez la question dans n'importe quel cabinet et la réponse tient souvent en un
 
 Il faut ensuite ranger chaque facture dans le bon dossier avant l'import, rappeler à chaque client ses échéances fiscales et répondre pour la dixième fois de la semaine à la question de la date limite de la TVA. En période de bilans cette petite mécanique devient un goulot d'étranglement qui retarde tout le reste.
 
-## Ce que fait l'agent
+## Les tâches confiées à l'agent
 
 Imaginez un assistant dont l'unique obsession serait que chaque dossier soit complet le jour où un collaborateur l'ouvre. Je ne laisse jamais un agent passer une écriture engageante ni donner un conseil fiscal, mais il fait disparaître une bonne partie du travail de collecte. Un autre article explique [ce qu'est un agent IA](/blog/agent-ia-definition) en mots simples.
 
@@ -108,7 +108,7 @@ Deux précisions évitent les mauvaises surprises. La première concerne la pseu
 
 Le bon montage dépend enfin de ce que l'agent touche réellement. Un agent qui relance des justificatifs manquants manipule bien moins d'informations sensibles qu'un agent qui ouvre les FEC ou les bulletins de paie. Rien n'empêche donc de réserver le montage le plus fermé aux tâches qui touchent aux chiffres des clients. Le montage se décide avec vous pendant l'audit et je vous dis avant de construire ce que chaque option vous fait abandonner.
 
-## Ce qu'un agent IA ne doit pas faire
+## Les lignes rouges
 
 ### Valider une déclaration ou un conseil fiscal
 
@@ -130,6 +130,6 @@ Le règlement européen sur l'IA [est devenu applicable le 2 août 2026](https:/
 
 Tout commence par un audit gratuit pendant lequel on regarde ensemble où filent les heures du cabinet et quelles données l'agent aurait besoin de toucher. C'est à ce moment qu'on choisit le montage technique, en partant des recommandations de l'Ordre et du niveau de souveraineté que vous visez.
 
-Je construis ensuite l'agent sur les outils que vous utilisez déjà. Son prix dépend de ce qu'il fait et se fixe après l'audit. Le premier mois est gratuit et sans engagement.
+Je construis ensuite l'agent sur les outils que vous utilisez déjà. Son prix dépend des tâches confiées et se fixe après l'audit. Le premier mois est gratuit et sans engagement.
 
-Si vous voulez savoir ce qu'un agent prendrait en charge dans votre cabinet, [Nate vous répond en deux minutes](/agents?chat=1&metier=expert-comptable).
+Pour savoir par quelle tâche commencer dans votre cabinet, [Nate vous répond en deux minutes](/agents?chat=1&metier=expert-comptable).

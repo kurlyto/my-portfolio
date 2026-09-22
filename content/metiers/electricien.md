@@ -1,6 +1,6 @@
 ---
 titre: "Agent IA pour électricien"
-description: "Demandes de devis, devis dicté, relances, matériel, chantiers longs, bornes et syndics : ce qu'un agent IA fait pour un électricien, et ses limites."
+description: "Un agent IA qui trie les demandes de devis et tape celui que vous lui dictez. Il relance, commande le matériel et suit les chantiers longs et les syndics."
 h1: "Un agent IA pour votre entreprise d'électricité"
 date: 2026-09-09
 mot_cle: "agent ia électricien"
@@ -21,7 +21,7 @@ Prenons un jeudi à 10 h 20. Vous avez les deux mains dans un tableau que vous r
 
 Chacun de ces messages se règle en cinq minutes, sauf qu'on ne répond pas au téléphone avec un tournevis isolé dans la main. La réponse part donc le soir vers 21 h après le devis de la veille et avant la facture du mois dernier. Entre-temps la dame de la borne a souvent trouvé un confrère qui a répondu plus vite. C'est cette deuxième journée qui pèse, celle du bureau qui commence quand la première finit.
 
-## Ce que fait l'agent
+## Les tâches confiées à l'agent
 
 Le poste ressemble à celui d'une secrétaire de chantier qui connaîtrait votre agenda et votre grille de tarifs et qui ne monterait jamais sur un escabeau. Un article à part explique [ce qu'est un agent IA](/blog/agent-ia-definition). Chez un électricien son travail tient en quatre missions : répondre aux demandes et sortir les devis, suivre les chantiers jusqu'à la facture et remplir le carnet de commandes.
 
@@ -147,7 +147,7 @@ L'agent dresse la liste des syndics, des agences et des gestionnaires de biens d
 
 Les mairies et les bailleurs sociaux publient leurs marchés d'éclairage, de mise aux normes ou de maintenance sur le BOAMP qui ouvre [ses données en accès libre](https://www.boamp.fr/pages/donnees-ouvertes-et-api/). L'agent les filtre chaque matin par département et par mots-clés puis il vous envoie ceux qui correspondent à votre taille avec leur date limite. Il prépare le dossier administratif qui se répète d'un marché à l'autre et vous gardez le mémoire technique et le prix.
 
-## Ce qu'un agent IA ne doit pas faire
+## Les lignes rouges
 
 Certaines tâches restent fermées à l'agent parce qu'elles engagent votre responsabilité ou la confiance de vos clients.
 
@@ -179,6 +179,6 @@ Depuis le 2 août 2026, toute personne qui échange avec une IA doit en être in
 
 Tout commence par un audit gratuit pendant lequel on cherche ensemble où filent vos heures et ce qui mérite d'être confié.
 
-Je construis ensuite l'agent sur les outils que vous utilisez déjà. Son prix dépend de ce qu'il fait et se fixe après l'audit. Le premier mois est gratuit et sans engagement. Si l'agent ne vous a pas rendu d'heures au bout de ces quatre semaines, vous arrêtez là.
+Je construis ensuite l'agent sur les outils que vous utilisez déjà. Son prix dépend des tâches confiées et se fixe après l'audit. Le premier mois est gratuit et sans engagement. Si l'agent ne vous a pas rendu d'heures au bout de ces quatre semaines, vous arrêtez là.
 
-Si vous voulez savoir ce qu'un agent prendrait chez vous, [Nate vous répond en deux minutes](/agents?chat=1&metier=electricien).
+Pour savoir par quelle tâche commencer chez vous, [Nate vous répond en deux minutes](/agents?chat=1&metier=electricien).

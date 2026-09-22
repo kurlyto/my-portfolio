@@ -1,6 +1,6 @@
 ---
 titre: "Agent IA pour commerce de proximité : stock, DLC, avis"
-description: "Dates limites, promotions, stock, commandes fournisseurs, avis Google, habitués : ce qu'un agent IA fait seul dans un commerce et où il s'arrête."
+description: "Un agent IA qui surveille les dates limites et prépare les commandes fournisseurs. Il lance les promotions, répond aux avis Google et pense à vos habitués."
 h1: "Un agent IA pour votre commerce de proximité"
 date: 2026-09-04
 mot_cle: "agent ia commerce"
@@ -25,7 +25,7 @@ Prenons un jeudi ordinaire dans une boutique de quartier. Le livreur a déposé 
 
 Aucune de ces tâches ne demande plus de cinq minutes et chacune se paie au prix fort quand on l'oublie.
 
-## Ce que fait l'agent
+## Les tâches confiées à l'agent
 
 Imaginez un employé qui ne quitterait jamais l'arrière-boutique et qui garderait en tête chaque carton entré et chaque article sorti. Si le mot vous paraît encore flou, vous trouverez [ce qu'est un agent IA](/blog/agent-ia-definition) dans un article à part. Pour un commerce les missions de l'agent se rangent presque toujours en trois familles.
 
@@ -138,7 +138,7 @@ Pour le planning vous lui donnez les contraintes de chacun. Il propose le mois s
 
 Un avis sans réponse donne l'image d'une boutique où personne ne décroche. L'agent rédige une réponse à chaque avis dans votre ton et publie seul les remerciements si vous l'y autorisez. Dès qu'une note tombe sous trois étoiles il vous montre l'avis avec un brouillon et il attend, parce qu'une réponse à un client mécontent porte votre nom.
 
-## Ce qu'un agent IA ne doit pas faire
+## Les lignes rouges
 
 Plusieurs des gestes qui suivent sont techniquement à la portée d'un agent et c'est pourquoi je les lui interdis.
 
@@ -170,6 +170,6 @@ Le [règlement européen sur l'IA](https://digital-strategy.ec.europa.eu/fr/poli
 
 Tout commence par un audit gratuit pendant lequel on cherche ensemble où filent vos heures et ce qui mérite d'être confié.
 
-Je construis ensuite l'agent sur les outils que vous utilisez déjà, en commençant par une seule brique. Son prix dépend de ce qu'il fait et se fixe après l'audit. Le premier mois est gratuit et sans engagement. Si l'agent ne vous a pas rendu d'heures au bout de ces quatre semaines, vous arrêtez là.
+Je construis ensuite l'agent sur les outils que vous utilisez déjà, en commençant par une seule brique. Son prix dépend des tâches confiées et se fixe après l'audit. Le premier mois est gratuit et sans engagement. Si l'agent ne vous a pas rendu d'heures au bout de ces quatre semaines, vous arrêtez là.
 
-Si vous voulez savoir ce qu'un agent prendrait chez vous, [Nate vous répond en deux minutes](/agents?chat=1&metier=epicerie).
+Pour savoir par quelle tâche commencer chez vous, [Nate vous répond en deux minutes](/agents?chat=1&metier=epicerie).

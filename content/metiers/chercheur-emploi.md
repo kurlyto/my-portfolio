@@ -1,6 +1,6 @@
 ---
 titre: "Agent IA pour la recherche d'emploi"
-description: "Veille des offres, CV et lettre adaptés, tableau de candidatures, relances et entretiens préparés : ce que fait un agent IA et ce qu'il ne fera jamais."
+description: "Un agent IA qui surveille les offres et adapte votre CV à chacune. Il tient le tableau des candidatures, relance les recruteurs et prépare vos entretiens."
 h1: "Un agent IA pour votre recherche d'emploi"
 date: 2026-09-16
 mot_cle: "agent ia recherche d'emploi"
@@ -23,7 +23,7 @@ Prenons un lundi matin ordinaire. Cinq onglets sont ouverts avec LinkedIn et Wel
 
 Aucune de ces tâches n'est difficile mais leur addition mange l'énergie qu'il faudrait garder pour une candidature bien ciblée et un entretien préparé.
 
-## Ce que fait l'agent
+## Les tâches confiées à l'agent
 
 Imaginez un assistant qui ne passerait jamais l'entretien à votre place et qui tiendrait tout ce qui l'entoure. Si le mot « agent » vous paraît flou, le blog propose une [explication simple de ce qu'est un agent IA](/blog/agent-ia-definition). Pour une recherche d'emploi l'agent se construit autour des cinq mêmes missions.
 
@@ -147,7 +147,7 @@ Le vendredi il envoie le bilan de la semaine. Au bout d'un mois l'agent peut vou
 
 L'agent tient enfin le calendrier des démarches. Une personne inscrite à France Travail doit actualiser sa situation chaque mois et l'agent le lui rappelle à l'ouverture de la période puis avant la date limite. Un agent personnel suit de la même façon [les échéances et les papiers de tout un foyer](/metiers/vie-personnelle).
 
-## Ce qu'un agent IA ne doit pas faire
+## Les lignes rouges
 
 Certains outils promettent beaucoup sur les sujets qui suivent. Sur chacun de ces sujets je réponds non et autant l'apprendre ici qu'en cours de route.
 
@@ -179,6 +179,6 @@ L'actualisation mensuelle est une déclaration personnelle. [Service-Public](htt
 
 Tout commence par un premier échange gratuit sur votre recherche pendant lequel on regarde ensemble le poste que vous visez, les sites que vous suivez et ce qui vous prend le plus de temps.
 
-Je construis ensuite l'agent sur les outils que vous utilisez déjà comme votre boîte mail, votre agenda et un simple tableur. Son prix dépend de ce qu'il fait et se fixe après cet échange. Le premier mois est gratuit et sans engagement. Si l'agent ne vous a pas rendu d'heures au bout de ces quatre semaines, vous arrêtez là.
+Je construis ensuite l'agent sur les outils que vous utilisez déjà comme votre boîte mail, votre agenda et un simple tableur. Son prix dépend des tâches confiées et se fixe après cet échange. Le premier mois est gratuit et sans engagement. Si l'agent ne vous a pas rendu d'heures au bout de ces quatre semaines, vous arrêtez là.
 
-Si vous voulez savoir ce qu'un agent prendrait dans votre recherche, [Nate vous répond en deux minutes](/agents?chat=1&metier=chercheur-emploi).
+Pour savoir par quelle tâche commencer dans votre recherche, [Nate vous répond en deux minutes](/agents?chat=1&metier=chercheur-emploi).

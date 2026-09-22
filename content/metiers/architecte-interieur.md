@@ -1,6 +1,6 @@
 ---
 titre: "Agent IA pour architecte d'intérieur"
-description: "Premier contact, moodboard, devis d'artisans, commandes, chantier, honoraires et portfolio : ce qu'un agent IA fait pour un architecte d'intérieur."
+description: "Un agent IA qui prend le premier contact et prépare le moodboard. Il relance les devis d'artisans, suit le chantier et facture vos honoraires."
 h1: "Un agent IA pour votre agence d'architecture d'intérieur"
 date: 2026-09-14
 mot_cle: "agent ia architecte d'intérieur"
@@ -23,7 +23,7 @@ Prenons un jeudi ordinaire avec trois chantiers ouverts et deux projets en esqui
 
 Aucune de ces tâches n'est difficile mais chacune interrompt la conception et coûte cher quand on l'oublie, parce qu'un plan non validé bloque un devis et qu'une commande passée trop tard décale tout un chantier.
 
-## Ce que fait l'agent
+## Les tâches confiées à l'agent
 
 Le poste ressemble à celui d'un assistant de projet qui n'aurait aucun avis sur la couleur des murs et une mémoire parfaite des dates. Un article à part explique [ce qu'est un agent IA](/blog/agent-ia-definition). Le plus simple est de suivre la vie d'un projet parce que chaque étape produit sa propre paperasse.
 
@@ -137,7 +137,7 @@ Vos meilleurs arguments dorment dans votre téléphone avec les photos de fin de
 
 Deux semaines après la réception, l'agent envoie à chaque client sans exception un mot de remerciement avec le lien pour laisser un avis, parce que Google interdit de [solliciter des avis uniquement auprès des clients satisfaits](https://support.google.com/contributionpolicy/answer/7400114?hl=fr).
 
-## Ce qu'un agent IA ne doit pas faire
+## Les lignes rouges
 
 Un agent sait techniquement faire une partie de ce qui suit et je refuse pourtant de le lui confier.
 
@@ -179,6 +179,6 @@ Le même article demande d'indiquer qu'une image a été générée par IA quand
 
 Tout commence par un audit gratuit pendant lequel on cherche ensemble où filent vos heures et ce qui mérite d'être confié.
 
-Je construis ensuite l'agent sur les outils que vous utilisez déjà. Son prix dépend de ce qu'il fait et se fixe après l'audit. Le premier mois est gratuit et sans engagement. Si l'agent ne vous a pas rendu d'heures au bout de ces quatre semaines, vous arrêtez là.
+Je construis ensuite l'agent sur les outils que vous utilisez déjà. Son prix dépend des tâches confiées et se fixe après l'audit. Le premier mois est gratuit et sans engagement. Si l'agent ne vous a pas rendu d'heures au bout de ces quatre semaines, vous arrêtez là.
 
-Si vous voulez savoir ce qu'un agent prendrait chez vous, [Nate vous répond en deux minutes](/agents?chat=1&metier=architecte-interieur).
+Pour savoir par quelle tâche commencer chez vous, [Nate vous répond en deux minutes](/agents?chat=1&metier=architecte-interieur).

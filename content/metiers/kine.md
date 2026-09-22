@@ -1,6 +1,6 @@
 ---
 titre: "IA pour kiné et ostéopathe : usages et données de santé"
-description: "Ce qu'un agent IA prend en charge dans un cabinet de kiné ou d'ostéopathie, les règles sur les données de santé et comment garder la main sur les dossiers patients."
+description: "Un agent IA qui tient la liste d'attente et rappelle les patients perdus de vue. Il prend le téléphone pendant les séances, dans le respect des données de santé."
 h1: "Un agent IA pour votre cabinet de kiné ou d'ostéopathie"
 date: 2026-08-28
 mot_cle: "ia kiné"
@@ -23,7 +23,7 @@ Un kiné en libéral travaille les mains occupées et c'est précisément le pro
 
 Une annulation de dernière minute laisse un créneau vide alors que trois patients attendaient justement une place. Un patient en rééducation du genou ne revient plus depuis trois semaines sans que personne ne s'en aperçoive. Et le soir, les notes griffonnées ou dictées entre deux séances attendent encore d'être transformées en comptes rendus lisibles.
 
-## Ce que fait l'agent
+## Les tâches confiées à l'agent
 
 Imaginez une secrétaire médicale qui ne serait jamais en pause déjeuner et qui connaîtrait votre agenda mieux que vous. Je refuse qu'un agent touche au traitement, mais il garde le cabinet plein et les dossiers à jour. Si le mot « agent » vous paraît flou, une [explication simple de ce qu'est un agent IA](/blog/agent-ia-definition) vous attend sur le blog.
 
@@ -111,7 +111,7 @@ Un cabinet de santé ajoute une contrainte qui ne se discute pas. Chaque maillon
 
 Le bon montage dépend enfin de ce que l'agent touche réellement. La liste d'attente et les relances manipulent déjà des données de patients sans ouvrir le dossier de soins, alors que la mise en forme des notes de séance touche le cœur des données de santé. Rien n'empêche donc de réserver le montage le plus fermé à ces notes. Nous tranchons ce point ensemble à l'audit et vous connaissez chaque concession avant le début de la construction.
 
-## Ce qu'un agent IA ne doit pas faire
+## Les lignes rouges
 
 ### Poser un diagnostic ou adapter un traitement
 
@@ -133,6 +133,6 @@ Il n'y a plus de déclaration préalable à la CNIL, mais [le registre des trait
 
 Tout commence par un audit gratuit pendant lequel on regarde ensemble où filent vos heures et quelles données l'agent aurait besoin de toucher. Beaucoup de tâches, comme la liste d'attente ou les relances, se passent très bien du dossier médical. C'est à ce moment qu'on choisit le montage technique.
 
-Je construis ensuite l'agent sur les outils que vous utilisez déjà. Son prix dépend de ce qu'il fait et se fixe après l'audit. Le premier mois est gratuit et sans engagement.
+Je construis ensuite l'agent sur les outils que vous utilisez déjà. Son prix dépend des tâches confiées et se fixe après l'audit. Le premier mois est gratuit et sans engagement.
 
-Si vous voulez savoir ce qu'un agent prendrait en charge dans votre cabinet, [Nate vous répond en deux minutes](/agents?chat=1&metier=kine).
+Pour savoir par quelle tâche commencer dans votre cabinet, [Nate vous répond en deux minutes](/agents?chat=1&metier=kine).

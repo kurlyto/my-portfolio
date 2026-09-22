@@ -1,6 +1,6 @@
 ---
 titre: "Agent IA pour coiffeur et institut de beauté"
-description: "Téléphone, rendez-vous, rappels SMS, liste d'attente, creux de la semaine, Instagram et stock : ce qu'un agent IA fait dans un salon, et ses limites."
+description: "Un agent IA qui répond au téléphone pendant que vous coupez et remplit les creux de la semaine. Il envoie les rappels SMS et gère la liste d'attente."
 h1: "Un agent IA pour votre salon de coiffure ou votre institut"
 date: 2026-08-21
 mot_cle: "agent ia coiffeur"
@@ -21,7 +21,7 @@ Prenons un samedi à 10 h 40. Vous posez une couleur et le téléphone sonne pou
 
 Chacune de ces interruptions se règle en deux minutes, sauf que vos deux mains sont prises. L'appel qui sonne dans le vide finit souvent chez un confrère et le trou de 14 h reste un fauteuil vide alors que d'autres clientes auraient volontiers pris la place.
 
-## Ce que fait l'agent
+## Les tâches confiées à l'agent
 
 Le poste ressemble à celui d'une personne à l'accueil qui ne prendrait jamais de pause et ne toucherait jamais un peigne. Un article à part explique [ce qu'est un agent IA](/blog/agent-ia-definition) et dans un salon son travail tient en quatre missions : répondre à chaque demande, remplir les fauteuils, faire revenir les clientes et tenir les coulisses.
 
@@ -128,7 +128,7 @@ Il ne les remplace pas. Ces plateformes vous amènent des clientes, gèrent la r
 
 L'agent s'appuie sur l'outil que vous avez déjà et s'occupe de ce qui vit en dehors sans doubler les rappels que la plateforme envoie. Si elle ouvre un accès aux outils extérieurs, l'agent réserve directement dedans et sinon il travaille sur un agenda que vous partagez avec lui. Ce point se vérifie avant de commencer parce qu'un seul agenda doit faire foi, sans quoi le même fauteuil finit tôt ou tard promis à deux clientes.
 
-## Ce qu'un agent IA ne doit pas faire
+## Les lignes rouges
 
 Les demandes qui suivent reviennent souvent et je les décline toutes avant même le premier devis.
 
@@ -162,6 +162,6 @@ Le [règlement européen sur l'IA](https://digital-strategy.ec.europa.eu/fr/poli
 
 Tout commence par un audit gratuit pendant lequel on cherche ensemble où filent vos heures et ce qui mérite d'être confié.
 
-Je construis ensuite l'agent sur les outils que vous utilisez déjà. Son prix dépend de ce qu'il fait et se fixe après l'audit. Le premier mois est gratuit et sans engagement. Si l'agent ne vous a pas rendu d'heures au bout de ces quatre semaines, vous arrêtez là.
+Je construis ensuite l'agent sur les outils que vous utilisez déjà. Son prix dépend des tâches confiées et se fixe après l'audit. Le premier mois est gratuit et sans engagement. Si l'agent ne vous a pas rendu d'heures au bout de ces quatre semaines, vous arrêtez là.
 
-Si vous voulez savoir ce qu'un agent prendrait chez vous, [Nate vous répond en deux minutes](/agents?chat=1&metier=coiffeur).
+Pour savoir par quelle tâche commencer chez vous, [Nate vous répond en deux minutes](/agents?chat=1&metier=coiffeur).

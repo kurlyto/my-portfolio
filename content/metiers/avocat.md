@@ -1,6 +1,6 @@
 ---
 titre: "Agent IA pour avocat : usages, secret et données"
-description: "Ce qu'un agent IA prend en charge dans un cabinet d'avocats, ce que dit le CNB et comment garder la main sur les données couvertes par le secret professionnel."
+description: "Un agent IA qui suit les délais de procédure et résume les pièces. Il relance les honoraires dans le cadre du CNB, sans que le secret quitte le cabinet."
 h1: "Un agent IA pour votre cabinet d'avocats"
 date: 2026-08-24
 mot_cle: "agent ia avocat"
@@ -25,7 +25,7 @@ Prenons un lundi matin. La boîte du cabinet a reçu une quarantaine de mails pe
 
 Rien de tout cela n'exige d'avoir prêté serment et pourtant tout finit sur le bureau de l'avocat, parce qu'un délai manqué ou un client resté sans nouvelles engage le cabinet.
 
-## Ce que fait l'agent
+## Les tâches confiées à l'agent
 
 Imaginez un assistant qui arriverait au cabinet avant tout le monde et aurait lu chaque mail avant votre premier café. Il ne plaide pas et ne signe rien, mais il prépare le terrain pour que votre première heure serve à décider plutôt qu'à trier. Si le mot « agent » vous paraît flou, une [explication simple de ce qu'est un agent IA](/blog/agent-ia-definition) vous attend sur le blog.
 
@@ -115,7 +115,7 @@ Deux précisions évitent les mauvaises surprises. La première concerne la pseu
 
 Le bon montage dépend enfin de ce que l'agent touche réellement. Un agent qui tient l'agenda et relance les honoraires manipule bien moins d'informations sensibles qu'un agent qui résume des pièces adverses et lit le cœur de l'affaire. Rien n'empêche donc de réserver le montage le plus fermé aux tâches couvertes par le secret. Le montage se décide avec vous pendant l'audit et je mets chaque compromis sur la table avant de construire.
 
-## Ce qu'un agent IA ne doit pas faire
+## Les lignes rouges
 
 ### Citer une jurisprudence que personne n'a vérifiée
 
@@ -137,6 +137,6 @@ Le règlement européen sur l'IA [est devenu applicable le 2 août 2026](https:/
 
 Tout commence par un audit gratuit pendant lequel on regarde ensemble où filent vos heures et quelles données l'agent aurait besoin de toucher. C'est à ce moment qu'on choisit le montage technique, en partant des règles de votre barreau et du niveau de souveraineté que vous visez.
 
-Je construis ensuite l'agent sur les outils que vous utilisez déjà. Son prix dépend de ce qu'il fait et se fixe après l'audit. Le premier mois est gratuit et sans engagement.
+Je construis ensuite l'agent sur les outils que vous utilisez déjà. Son prix dépend des tâches confiées et se fixe après l'audit. Le premier mois est gratuit et sans engagement.
 
-Si vous voulez savoir ce qu'un agent prendrait en charge dans votre cabinet, [Nate vous répond en deux minutes](/agents?chat=1&metier=avocat).
+Pour savoir par quelle tâche commencer dans votre cabinet, [Nate vous répond en deux minutes](/agents?chat=1&metier=avocat).

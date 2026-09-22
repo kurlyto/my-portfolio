@@ -1,6 +1,6 @@
 ---
 titre: "Agent IA pour notaire : usages, secret et données"
-description: "Ce qu'un agent IA prend en charge dans une étude notariale, ce que disent les règles du notariat et comment garder la main sur les données de vos clients."
+description: "Un agent IA qui réclame les pièces manquantes et cale les signatures. Il rédige les récapitulatifs selon les règles du notariat, sans sortir le secret de l'étude."
 h1: "Un agent IA pour votre étude notariale"
 date: 2026-08-26
 mot_cle: "ia notaire"
@@ -23,7 +23,7 @@ Un dossier de vente ou de succession ressemble souvent à un puzzle dont les pi�
 
 Pendant ce temps la boîte de l'étude se remplit de questions sur l'avancement des dossiers, les agendas de trois associés doivent s'accorder pour une signature et les factures d'honoraires du mois attendent d'être préparées. Chacune de ces tâches paraît minuscule mais leur somme occupe des journées entières de collaborateurs qualifiés.
 
-## Ce que fait l'agent
+## Les tâches confiées à l'agent
 
 Imaginez un clerc infatigable dont le seul métier serait de courir après les pièces et de tenir les agendas. L'agent ne rédige pas l'acte, mais il fait en sorte que le dossier soit complet le jour où vous vous asseyez pour le rédiger. Si le mot « agent » vous paraît flou, j'ai écrit une [explication simple de ce qu'est un agent IA](/blog/agent-ia-definition).
 
@@ -108,7 +108,7 @@ Deux précisions évitent les mauvaises surprises. La première concerne la pseu
 
 Le bon montage dépend enfin de ce que l'agent touche réellement. Un agent qui cale des rendez-vous de signature manipule bien moins d'informations sensibles qu'un agent qui prépare le récapitulatif d'une succession. Rien n'empêche donc de réserver le montage le plus fermé aux tâches qui ouvrent le fond des dossiers. Je choisis le montage avec vous à l'audit et j'annonce chaque compromis avant de construire.
 
-## Ce qu'un agent IA ne doit pas faire
+## Les lignes rouges
 
 ### Rédiger l'acte ou conseiller le client
 
@@ -130,6 +130,6 @@ Le règlement européen sur l'IA [est devenu applicable le 2 août 2026](https:/
 
 Tout commence par un audit gratuit pendant lequel on regarde ensemble où filent les heures de l'étude et quelles données l'agent aurait besoin de toucher. C'est à ce moment qu'on choisit le montage technique, en partant de la charte du notariat et du niveau de souveraineté que vous visez.
 
-Je construis ensuite l'agent sur les outils que vous utilisez déjà. Son prix dépend de ce qu'il fait et se fixe après l'audit. Le premier mois est gratuit et sans engagement.
+Je construis ensuite l'agent sur les outils que vous utilisez déjà. Son prix dépend des tâches confiées et se fixe après l'audit. Le premier mois est gratuit et sans engagement.
 
-Si vous voulez savoir ce qu'un agent prendrait en charge dans votre étude, [Nate vous répond en deux minutes](/agents?chat=1&metier=notaire).
+Pour savoir par quelle tâche commencer dans votre étude, [Nate vous répond en deux minutes](/agents?chat=1&metier=notaire).

@@ -1,6 +1,6 @@
 ---
 titre: "Agent IA pour consultant et coach indépendant"
-description: "Prospection, rendez-vous préparés, comptes rendus, propositions, relances, factures et trésorerie : ce que fait un agent IA pour un consultant."
+description: "Un agent IA qui prospecte et prépare vos rendez-vous. Il rédige comptes rendus et propositions, relance les clients et surveille votre trésorerie."
 h1: "Un agent IA pour les consultants et les coachs indépendants"
 date: 2026-09-15
 mot_cle: "agent ia consultant"
@@ -25,7 +25,7 @@ Prenons un jeudi soir ordinaire. Vous sortez de trois jours chez un client et qu
 
 Aucune de ces tâches n'est difficile mais elles passent toutes après la mission en cours. La prospection s'arrête donc quand la mission bat son plein puis la mission se termine et le trou d'air commence. Je suis moi-même indépendant et je vis ces tâches chaque semaine.
 
-## Ce que fait l'agent
+## Les tâches confiées à l'agent
 
 Imaginez un assistant de cabinet qui n'animerait jamais un atelier et qui tiendrait à la place votre boîte mail, votre fichier de prospects et votre carnet de factures. Si le mot « agent » vous paraît flou, vous trouverez sur le blog une [explication simple de ce qu'est un agent IA](/blog/agent-ia-definition). Pour un consultant le premier chantier est presque toujours le point de 8 h sur les mails.
 
@@ -134,7 +134,7 @@ Deux jours avant la séance il envoie le court questionnaire que vous avez écri
 
 L'agent n'interprète aucune réponse et ne donne aucun conseil entre deux séances. Une personne qui écrit qu'elle va mal reçoit un message qui vous passe la main et vous êtes prévenu dans la minute.
 
-## Ce qu'un agent IA ne doit pas faire
+## Les lignes rouges
 
 Les sujets qui suivent restent fermés à l'agent et mieux vaut le savoir avant de commencer.
 
@@ -164,6 +164,6 @@ Le règlement européen sur l'IA [est devenu applicable le 2 août 2026](https:/
 
 Tout commence par un audit gratuit pendant lequel on cherche ensemble où filent vos heures et ce qui mérite d'être confié.
 
-Je construis ensuite l'agent sur les outils que vous utilisez déjà. Son prix dépend de ce qu'il fait et se fixe après l'audit. Le premier mois est gratuit et sans engagement. Si l'agent ne vous a pas rendu d'heures au bout de ces quatre semaines, vous arrêtez là.
+Je construis ensuite l'agent sur les outils que vous utilisez déjà. Son prix dépend des tâches confiées et se fixe après l'audit. Le premier mois est gratuit et sans engagement. Si l'agent ne vous a pas rendu d'heures au bout de ces quatre semaines, vous arrêtez là.
 
-Si vous voulez savoir ce qu'un agent prendrait chez vous, [Nate vous répond en deux minutes](/agents?chat=1&metier=consultant).
+Pour savoir par quelle tâche commencer chez vous, [Nate vous répond en deux minutes](/agents?chat=1&metier=consultant).
