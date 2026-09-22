@@ -5,6 +5,7 @@ h1: "Un agent IA pour votre garage automobile"
 date: 2026-09-10
 mot_cle: "agent ia garagiste"
 mots_cles: ["agent IA garage automobile", "prise de rendez-vous", "accord sur devis", "rappels d'entretien", "planning atelier"]
+lire_aussi: ["/blog/quel-agent-ia-pour-votre-metier"]
 ---
 Un agent IA pour garagiste est un assistant logiciel qui tient le téléphone, l'agenda de l'atelier, les commandes de pièces et les relances pendant que vous avez les mains dans un moteur. Il prend les rendez-vous et prépare les devis que vous validez. Il applique seul les règles que vous lui avez fixées et vient vous chercher pour tout le reste.
 

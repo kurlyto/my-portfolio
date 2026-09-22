@@ -5,6 +5,7 @@ h1: "Un agent IA pour votre étude notariale"
 date: 2026-08-26
 mot_cle: "ia notaire"
 mots_cles: ["agent IA notaire", "secret professionnel", "pièces de dossier", "relances clients", "hébergement des données"]
+lire_aussi: ["/blog/quel-agent-ia-pour-votre-metier"]
 ---
 Un agent IA pour notaire est un assistant logiciel qui trie les mails de l'étude, relance les pièces manquantes, cale les rendez-vous de signature et prépare des récapitulatifs de dossier que le notaire vérifie. Il prépare le travail et ne touche ni à la rédaction des actes ni au conseil, qui restent l'affaire du notaire.
 

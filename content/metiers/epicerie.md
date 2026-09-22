@@ -5,6 +5,7 @@ h1: "Un agent IA pour votre commerce de proximité"
 date: 2026-09-04
 mot_cle: "agent ia commerce"
 mots_cles: ["agent IA commerce de proximité", "gestion de stock", "dates limites", "commandes fournisseurs", "anti-gaspillage"]
+lire_aussi: ["/blog/quel-agent-ia-pour-votre-metier"]
 ---
 Un agent IA pour commerce de proximité est un assistant logiciel qui suit vos produits depuis le carton du livreur jusqu'au ticket de caisse pendant que vous servez vos clients. Il tient le stock et les dates limites, prépare les promotions et les commandes fournisseurs et répond aux messages comme aux avis Google. Il applique seul les règles que vous lui avez fixées et vient vous chercher pour tout le reste.
 

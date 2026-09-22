@@ -5,6 +5,7 @@ h1: "Un agent IA pour votre recherche d'emploi"
 date: 2026-09-16
 mot_cle: "agent ia recherche d'emploi"
 mots_cles: ["agent IA recherche d'emploi", "veille des offres", "CV et lettre", "suivi des candidatures", "préparation d'entretien"]
+lire_aussi: ["/blog/quel-agent-ia-pour-votre-metier"]
 ---
 Un agent IA pour la recherche d'emploi est un assistant logiciel qui surveille les offres, prépare vos candidatures et tient votre tableau de suivi pendant que vous gardez votre énergie pour les entretiens. Il applique seul les règles que vous lui avez fixées et vient vous chercher pour tout le reste.
 

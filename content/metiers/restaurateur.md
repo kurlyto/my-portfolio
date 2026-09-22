@@ -5,6 +5,7 @@ h1: "Un agent IA pour votre restaurant ou votre food truck"
 date: 2026-08-19
 mot_cle: "agent ia restaurant"
 mots_cles: ["agent IA restaurant", "food truck", "avis Google", "commandes fournisseurs", "réservations", "anti-gaspillage"]
+lire_aussi: ["/blog/quel-agent-ia-pour-votre-metier"]
 ---
 Un agent IA pour restaurant est un assistant logiciel qui prend en charge les messages, les avis, le suivi du stock et la boutique en ligne pendant que vous êtes aux fourneaux. Il lit ce qui arrive et prépare les réponses. Il applique seul les règles que vous lui avez données et vient vous chercher pour tout le reste.
 

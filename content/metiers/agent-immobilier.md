@@ -5,6 +5,7 @@ h1: "Un agent IA pour votre agence immobilière"
 date: 2026-08-31
 mot_cle: "agent ia immobilier"
 mots_cles: ["agent IA immobilier", "visites", "relance des propriétaires", "retouche photo", "mandats"]
+lire_aussi: ["/blog/quel-agent-ia-pour-votre-metier"]
 ---
 Un agent IA immobilier est un assistant logiciel qui prend en charge tout ce qui entoure une visite pendant que vous êtes sur le terrain. Il répond aux demandes des portails et organise vos tournées, il retouche vos photos et prépare vos annonces, puis il tient les propriétaires au courant et relance les acquéreurs. Il applique seul les règles que vous lui avez fixées et il s'arrête pour demander votre feu vert dès qu'un message engage l'agence.
 

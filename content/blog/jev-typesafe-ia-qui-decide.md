@@ -5,7 +5,7 @@ date: 2026-09-24
 format: explicatif
 grappe: agents
 mot_cle: "typesafe ai"
-image_carte: "/images/blog/cartes/jev-typesafe-ia-qui-decide.webp"
+image_carte: "/images/blog/cartes/jev-typesafe-ia-qui-decide-schema.webp"
 statut: publie
 image_partage: "/images/blog/partage-jev-typesafe-ia-qui-decide.png"
 mots_cles: ["TypeSafe", "Jev", "modèle de décision", "probabilité calibrée", "extraction de données", "agent IA"]

@@ -5,6 +5,7 @@ h1: "Un agent IA pour votre salon de coiffure ou votre institut"
 date: 2026-08-21
 mot_cle: "agent ia coiffeur"
 mots_cles: ["agent IA salon de coiffure", "prise de rendez-vous", "rendez-vous non honorés", "liste d'attente", "fidélisation"]
+lire_aussi: ["/blog/quel-agent-ia-pour-votre-metier"]
 ---
 Un agent IA pour coiffeur est un assistant logiciel qui tient le téléphone, l'agenda, les rappels et les relances du salon pendant que vous avez les mains dans une couleur. Il répond aux demandes de rendez-vous et propose un créneau adapté à la prestation. Il applique seul les règles que vous lui avez fixées et vient vous chercher pour tout le reste.
 

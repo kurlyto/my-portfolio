@@ -5,6 +5,7 @@ h1: "Un agent IA pour les musiciens et les professeurs de musique"
 date: 2026-09-02
 mot_cle: "agent ia musicien"
 mots_cles: ["agent IA musicien", "démarchage de salles", "cours de musique", "cachets", "lettre d'information"]
+lire_aussi: ["/blog/quel-agent-ia-pour-votre-metier"]
 ---
 Un agent IA pour musicien est un assistant logiciel qui prend en charge le démarchage des salles, les relances, la promotion des sorties et l'administratif pendant que vous jouez ou que vous donnez cours. Il applique seul les règles que vous lui avez fixées et vient vous chercher pour tout le reste.
 

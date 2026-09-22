@@ -493,6 +493,65 @@ button:not(:disabled),
   }
 }
 
+/* Grille de metiers cliquables (article "Quel agent IA pour votre metier") :
+   une tuile = un lien entier vers /metiers/<slug>, pictogramme, nom du metier
+   et ce que l'agent y fait. Deux colonnes des la tablette. */
+.article-metier .grille-metiers {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.6rem;
+  margin: 1.25rem 0 2rem;
+  padding: 0;
+  list-style: none;
+}
+.article-metier .grille-metiers li {
+  margin: 0;
+}
+.article-metier .grille-metiers a {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgb(0 0 0 / 0.12);
+  border-radius: 0.9rem;
+  background: #fff;
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.article-metier .grille-metiers a:hover {
+  border-color: #ff6b35;
+  color: inherit;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -16px rgb(0 0 0 / 0.3);
+}
+.article-metier .grille-metiers .e {
+  flex: none;
+  font-size: 1.55rem;
+  line-height: 1;
+}
+.article-metier .grille-metiers .t {
+  display: block;
+  min-width: 0;
+}
+.article-metier .grille-metiers strong {
+  display: block;
+  font-size: 16px;
+  line-height: 1.25;
+}
+.article-metier .grille-metiers .d {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 13.5px;
+  line-height: 1.35;
+  color: rgb(0 0 0 / 0.55);
+}
+@media (min-width: 640px) {
+  .article-metier .grille-metiers {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 /* Maquette "les trois questions de Jev" (article TypeSafe) : trois cartes,
    chacune montre le document, la question et les probabilites en barres. L'etat
    FINAL est la barre pleine a sa valeur ; l'animation ne fait que la remplir

@@ -5,6 +5,7 @@ h1: "Un agent IA pour les photographes de mariage, de famille et d'entreprise"
 date: 2026-09-11
 mot_cle: "agent ia photographe"
 mots_cles: ["agent IA photographe", "demandes de devis", "contrats et acomptes", "droit à l'image", "livraison des galeries"]
+lire_aussi: ["/blog/quel-agent-ia-pour-votre-metier"]
 ---
 Un agent IA pour photographe est un assistant logiciel qui prend en charge les demandes de devis, les contrats, la livraison des galeries et les relances pendant que vous êtes en prise de vue ou en retouche. Il applique seul les règles que vous lui avez fixées et vient vous chercher pour tout le reste.
 

@@ -5,6 +5,7 @@ h1: "Un agent IA pour votre cabinet d'avocats"
 date: 2026-08-24
 mot_cle: "agent ia avocat"
 mots_cles: ["agent IA avocat", "secret professionnel", "gestion du cabinet", "suivi des dossiers", "RGPD"]
+lire_aussi: ["/blog/quel-agent-ia-pour-votre-metier"]
 ---
 Un agent IA pour avocat est un assistant logiciel qui trie les mails du cabinet, surveille les délais de procédure, résume les pièces et prépare des brouillons que l'avocat relit avant tout envoi. Il travaille dans les outils que le cabinet utilise déjà et ne signe jamais rien à sa place.
 

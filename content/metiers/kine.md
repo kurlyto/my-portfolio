@@ -5,6 +5,7 @@ h1: "Un agent IA pour votre cabinet de kiné ou d'ostéopathie"
 date: 2026-08-28
 mot_cle: "ia kiné"
 mots_cles: ["agent IA kinésithérapeute", "données de santé", "agenda du cabinet", "liste d'attente", "comptes rendus"]
+lire_aussi: ["/blog/quel-agent-ia-pour-votre-metier"]
 ---
 Un agent IA pour kinésithérapeute ou ostéopathe est un assistant logiciel qui gère la liste d'attente, relance les patients perdus de vue, prend les rendez-vous pendant les séances et met en forme les notes dictées après une consultation. Il s'occupe de l'administratif pour que le praticien reste auprès de ses patients.
 

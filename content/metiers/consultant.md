@@ -5,6 +5,7 @@ h1: "Un agent IA pour les consultants et les coachs indépendants"
 date: 2026-09-15
 mot_cle: "agent ia consultant"
 mots_cles: ["agent IA consultant indépendant", "prospection", "propositions commerciales", "facturation", "relances d'impayés"]
+lire_aussi: ["/blog/quel-agent-ia-pour-votre-metier"]
 ---
 Un agent IA pour consultant indépendant est un assistant logiciel qui prend en charge le temps que vous ne facturez pas : la prospection et la préparation des rendez-vous puis les comptes rendus, les propositions, les relances et la facturation. Il applique seul les règles que vous lui avez fixées et vient vous chercher pour tout le reste.
 

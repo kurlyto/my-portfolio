@@ -5,6 +5,7 @@ h1: "Un agent IA pour votre entreprise de plomberie"
 date: 2026-09-07
 mot_cle: "agent ia plombier"
 mots_cles: ["agent IA plombier", "astreinte", "devis sur photos", "relances de devis", "contrats d'entretien"]
+lire_aussi: ["/blog/quel-agent-ia-pour-votre-metier"]
 ---
 Un agent IA pour plombier est un assistant logiciel qui tient le téléphone, les devis, les commandes de pièces et les relances pendant que vous avez la tête sous un évier. Il trie les appels selon vos critères et prépare les papiers à partir de vos photos et de vos dictées. Il applique seul les règles que vous lui avez fixées et vient vous chercher pour tout le reste.
 

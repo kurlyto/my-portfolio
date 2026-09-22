@@ -5,6 +5,7 @@ h1: "Un agent IA pour votre agence d'architecture d'intérieur"
 date: 2026-09-14
 mot_cle: "agent ia architecte d'intérieur"
 mots_cles: ["agent IA architecte d'intérieur", "suivi de chantier", "planches d'ambiance", "artisans", "images générées par IA"]
+lire_aussi: ["/blog/quel-agent-ia-pour-votre-metier"]
 ---
 Un agent IA pour architecte d'intérieur est un assistant logiciel qui tient les coulisses de vos projets pendant que vous dessinez. Il qualifie les premiers contacts et relance les validations qui traînent, puis il suit les devis d'artisans, les commandes de mobilier et les honoraires. Il applique seul les règles que vous lui avez fixées et vient vous chercher pour tout le reste.
 

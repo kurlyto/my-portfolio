@@ -5,6 +5,7 @@ h1: "Un agent IA pour votre entreprise d'électricité"
 date: 2026-09-09
 mot_cle: "agent ia électricien"
 mots_cles: ["agent IA électricien", "devis", "suivi de chantier", "facture électronique", "relances"]
+lire_aussi: ["/blog/quel-agent-ia-pour-votre-metier"]
 ---
 Un agent IA pour électricien est un assistant logiciel qui tient le bureau de l'entreprise pendant que vous êtes sur un chantier. Il répond aux demandes de devis et met au propre celui que vous lui dictez puis il relance les clients qui ne répondent pas et prépare les factures. Il applique seul les règles que vous lui avez fixées et vient vous chercher pour tout le reste.
 

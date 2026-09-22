@@ -5,6 +5,7 @@ h1: "Un agent IA personnel pour votre vie quotidienne"
 date: 2026-09-18
 mot_cle: "agent ia personnel"
 mots_cles: ["agent IA personnel", "tri des mails", "abonnements", "papiers administratifs", "rendez-vous"]
+lire_aussi: ["/blog/quel-agent-ia-pour-votre-metier"]
 ---
 Un agent IA personnel est un assistant logiciel qui lit vos mails, tient votre agenda, range vos papiers et surveille vos contrats pour que la paperasse du foyer cesse de vous courir après. Il applique seul les règles que vous lui avez fixées et vient vous chercher pour tout ce qui engage votre argent ou votre signature.
 

@@ -5,6 +5,7 @@ h1: "Un agent IA pour votre cabinet d'expertise comptable"
 date: 2026-09-03
 mot_cle: "agent ia expert comptable"
 mots_cles: ["agent IA expert-comptable", "collecte des pièces", "relances clients", "facture électronique", "secret professionnel"]
+lire_aussi: ["/blog/quel-agent-ia-pour-votre-metier"]
 ---
 Un agent IA pour expert-comptable est un assistant logiciel qui relance les justificatifs manquants, trie les factures reçues par mail, prépare les rappels d'échéances et répond aux questions récurrentes des clients sous le contrôle du cabinet. Il enlève du chemin la collecte et la relance pour que les collaborateurs passent leur temps sur la production et le conseil.
 
