@@ -493,6 +493,106 @@ button:not(:disabled),
   }
 }
 
+/* Maquette "les trois questions de Jev" (article TypeSafe) : trois cartes,
+   chacune montre le document, la question et les probabilites en barres. L'etat
+   FINAL est la barre pleine a sa valeur ; l'animation ne fait que la remplir
+   depuis zero, en boucle, et se coupe avec prefers-reduced-motion. */
+.article-metier .jev-questions {
+  display: grid;
+  gap: 0.9rem;
+  padding: 1rem;
+  border: 1px solid rgb(0 0 0 / 0.1);
+  border-radius: 16px;
+  background: #fafafa;
+}
+.article-metier .jev-questions .jq {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgb(0 0 0 / 0.1);
+  border-radius: 12px;
+  background: #fff;
+  font-size: 13.5px;
+  line-height: 1.4;
+}
+.article-metier .jev-questions .jq-type {
+  width: fit-content;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  background: #ff6b35;
+  color: #fff;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.article-metier .jev-questions .jq-etat {
+  color: rgb(0 0 0 / 0.6);
+  font-style: italic;
+}
+.article-metier .jev-questions .jq-question {
+  font-weight: 600;
+}
+.article-metier .jev-questions .jq-barres {
+  display: grid;
+  gap: 0.35rem;
+  margin-top: 0.2rem;
+}
+.article-metier .jev-questions .jq-barre {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 1.6rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 6px;
+  background: #f1f1f1;
+  overflow: hidden;
+}
+.article-metier .jev-questions .jq-barre::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: var(--p);
+  background: #ffd3c2;
+  animation: jq-remplir 9s ease-out infinite;
+}
+.article-metier .jev-questions .jq-barre span,
+.article-metier .jev-questions .jq-barre b {
+  position: relative;
+}
+.article-metier .jev-questions .jq-barre b {
+  margin-left: 0.5rem;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.article-metier .jev-questions figcaption {
+  grid-column: 1 / -1;
+}
+.article-metier .jev-questions .jq-conf {
+  margin-top: 0.15rem;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 11.5px;
+  color: rgb(0 0 0 / 0.55);
+}
+@keyframes jq-remplir {
+  0%, 8% { width: 0; }
+  30%, 100% { width: var(--p); }
+}
+@media (min-width: 640px) {
+  .article-metier .jev-questions {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .article-metier .jev-questions .jq-barre::before {
+    animation: none;
+  }
+}
+
 /* Planche "le corps d'un agent" : une silhouette aux reperes numerotes puis la
    legende de chaque repere, sur deux colonnes des qu'il y a la place. */
 .article-metier .planche {
