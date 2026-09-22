@@ -5,6 +5,8 @@ date: 2026-09-17
 format: explicatif
 grappe: agents
 mot_cle: "c'est quoi un agent ia"
+image_partage: "/images/blog/partage-agent-ia-definition.png"
+image_carte: "/images/blog/cartes/agent-ia-definition.webp"
 statut: publie
 mots_cles: ["agent IA", "définition", "ChatGPT", "automatisation", "petite entreprise", "Anthropic"]
 ---

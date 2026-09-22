@@ -58,6 +58,9 @@ function lire(fichier) {
     // Miniature des apercus de partage (1200x627), distincte de l'image affichee
     // dans l'article. Fabriquee par /data/nathan/seo/outils/miniature-article.py.
     imagePartage: data.image_partage || null,
+    // Visuel de la carte dans la liste du blog (800x450, une vraie image qui
+    // donne envie d'ouvrir). Sinon la miniature de partage, sinon l'image du corps.
+    imageCarte: data.image_carte || null,
     statut: data.statut || "brouillon",
     minutes: minutesDeLecture(content),
     contenu: content,

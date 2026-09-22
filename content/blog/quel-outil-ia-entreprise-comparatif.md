@@ -5,6 +5,7 @@ date: 2026-09-20
 format: comparatif
 grappe: agents
 mot_cle: "quel outil ia pour mon entreprise"
+image_carte: "/images/blog/cartes/quel-outil-ia-entreprise-comparatif.webp"
 statut: publie
 image_partage: "/images/blog/partage-quel-outil-ia-entreprise-comparatif.png"
 mots_cles: ["comparatif IA", "outil IA entreprise", "Claude", "ChatGPT Work", "Dust", "Limova", "agent IA sur mesure"]
