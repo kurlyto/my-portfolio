@@ -5,6 +5,7 @@ import { t } from "../lib/i18n-projects";
 import { BLOG_OUVERT } from "../blog/blog-ouvert";
 import { METIERS } from "../metiers/metiers-data";
 import { nomClic } from "../lib/suivi-clics";
+import { RDV_URL, RDV_LABEL, CalendrierIcon } from "../lib/rendez-vous";
 
 // Les offres de l'agence, dans l'ordre de l'accueil.
 const PRODUITS = [
@@ -64,7 +65,19 @@ export default function Footer({
     // s'y eclaircir (sinon le rouge du renard au survol devient illisible).
     <footer className={`on-dark ${surfaceClass} text-center px-6 py-14 md:py-20`}>
       <h2 className="font-display text-3xl md:text-4xl font-bold">{tr.footer.contact}</h2>
-      <div className="mt-10 flex items-center justify-center gap-6">
+      {/* Le rendez-vous passe en premier : c'est le contact qui engage le plus. */}
+      <a
+        href={RDV_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        data-cursor-hover
+        data-umami-event={nomClic("footer", RDV_LABEL)}
+        className="mt-8 inline-flex min-h-11 items-center gap-2 rounded-full bg-accent px-6 py-3 text-base font-semibold text-accent-ink transition-all duration-150 ease-out hover:-translate-y-0.5 hover:bg-accent-dark"
+      >
+        <CalendrierIcon className="h-5 w-5" />
+        {RDV_LABEL}
+      </a>
+      <div className="mt-8 flex items-center justify-center gap-6">
         <EmailButton
           className={CONTACT_BUTTON_CLASS}
           iconClassName="w-5 h-5"

@@ -3,6 +3,7 @@ import { Inter, Fraunces, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import SuiviClics from "./component/SuiviClics";
+import BoutonRendezVous from "./component/BoutonRendezVous";
 
 const inter = Inter({
   variable: "--font-geist-sans",
@@ -87,6 +88,7 @@ export default function RootLayout({ children }) {
     <html lang="fr">
       <body className={`${inter.variable} ${fraunces.variable} ${geistMono.variable} antialiased bg-white text-black`}>
         {children}
+        <BoutonRendezVous />
         <Analytics />
         <SuiviClics />
         {/* Umami (self-hosted). data-domains limite la collecte au domaine de

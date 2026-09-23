@@ -1,4 +1,5 @@
 import { writeLead } from "@/app/lib/chat/lead-writer";
+import { sendReservationNotice } from "@/app/lib/chat/mailer";
 
 // Demande de place pour l'acces anticipe a l'AIOS (bouton "Reserver ma place"
 // du site racine). Avant le 08/09/2026 ce bouton ouvrait le chat de Nate :
@@ -78,6 +79,14 @@ export async function POST(request) {
       { status: 500 }
     );
   }
+
+  // Doublon volontaire du Telegram, dans la boite perso de Nathan (demande du
+  // 23/09/2026). Le lead est deja enregistre : un mail rate ne doit pas faire
+  // echouer la demande du visiteur. Pas d'`await` : l'envoi SMTP depuis le VPS
+  // a pris plus de 2 minutes au test du 23/09, le visiteur n'attend pas ca.
+  sendReservationNotice(lead).catch((err) => {
+    console.error("Mail de reservation AIOS echoue:", err);
+  });
 
   return Response.json({ ok: true });
 }

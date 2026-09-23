@@ -12,6 +12,26 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+// Nouvelle demande "Reserver ma place" : un mail a Nathan lui-meme, en plus du
+// message Telegram d'Elon. `replyTo` = le prospect, pour repondre en un clic.
+export async function sendReservationNotice(lead) {
+  const lignes = [
+    `${lead.prenom} ${lead.nom}`,
+    `${lead.fonction} chez ${lead.entreprise}`,
+    `Mail : ${lead.email}`,
+    `Téléphone : ${lead.telephone}`,
+    `Personnes intéressées : ${lead.utilisateurs || "non précisé"}`,
+  ];
+  if (lead.message) lignes.push("", `Message : ${lead.message}`);
+  await transporter.sendMail({
+    from: process.env.SMTP_USER,
+    to: process.env.SMTP_USER,
+    replyTo: lead.email,
+    subject: `Foxy : ${lead.prenom} ${lead.nom} (${lead.entreprise}) réserve sa place`,
+    text: lignes.join("\n"),
+  });
+}
+
 export async function sendVerificationEmail({ to, firstName, verifyUrl }) {
   await transporter.sendMail({
     from: process.env.SMTP_USER,
