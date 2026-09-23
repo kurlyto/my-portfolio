@@ -1,6 +1,6 @@
 ---
 titre: "Jev de TypeSafe : l'IA qui décide au lieu d'écrire"
-description: "Jev est sorti le 15 septembre : un modèle qui n'écrit rien et répond par un choix, une note ou un oui, avec sa probabilité. Une semaine d'essais."
+description: "Tout le monde a parlé de Jev cette semaine, un modèle qui ne rédige rien et se contente de trancher. Je l'ai testé sur des annonces immobilières et je vous dis ce qu'il vaut, et pour qui."
 date: 2026-09-23
 format: explicatif
 grappe: agents
@@ -74,7 +74,7 @@ Prenez une question sans bonne réponse : « qui est le plus fort, Sangoku ou Na
 
 TypeSafe appelle cette propriété la calibration. Le modèle a été entraîné pour que ses probabilités soient honnêtes : sur un lot de réponses données à 80 %, environ 80 % sont justes. Cela ne garantit rien sur une réponse prise isolément, mais cela permet de régler des seuils. La documentation propose [une échelle en trois paliers](https://docs.typesafe.ai/patterns/confidence-routing) :
 
-| Confiance | Ce que fait le programme |
+| Confiance | Réaction du programme |
 |---|---|
 | Sous 0,6 | Il passe la main à un humain |
 | Entre 0,6 et 0,85 | Il agit sur ce qui est sans risque et demande confirmation pour le reste |
