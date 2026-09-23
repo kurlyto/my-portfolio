@@ -121,7 +121,10 @@ function tableauxEnFiches(html) {
         "</tr>"
       );
     });
-    return `<div class="tableau"><table>${corps}</table></div>`;
+    // Un tableau de NOTES (cellules ●●●○○ d'un comparatif) doit tenir dans la
+    // colonne de l'article sans defilement : classe dediee, style dans globals.css.
+    const classe = interieur.includes("●") ? "tableau tableau-notes" : "tableau";
+    return `<div class="${classe}"><table>${corps}</table></div>`;
   });
 }
 

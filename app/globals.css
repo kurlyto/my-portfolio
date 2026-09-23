@@ -756,7 +756,40 @@ button:not(:disabled),
 .article-metier .tableau tbody tr:has(td:first-child strong) td:first-child {
   padding-left: 0.75rem;
 }
+/* Tableau de notes d'un comparatif (7 colonnes, cellules ●●●○○) : les en-tetes
+   se replient et les notes se serrent pour tenir dans les 720 px de l'article
+   sans defilement interne (mesure du 23/09/2026 : 919 px avant cette regle). */
+.article-metier .tableau-notes th {
+  white-space: normal;
+  line-height: 1.25;
+  vertical-align: bottom;
+}
+.article-metier .tableau-notes th,
+.article-metier .tableau-notes td {
+  padding: 0.45rem 0.4rem;
+}
+.article-metier .tableau-notes td:first-child {
+  min-width: 0;
+}
+.article-metier .tableau-notes th:not(:first-child),
+.article-metier .tableau-notes td:not(:first-child) {
+  text-align: center;
+}
+.article-metier .tableau-notes td:nth-child(n + 3) {
+  white-space: nowrap;
+  font-size: 14px;
+  letter-spacing: -0.04em;
+}
 @media (max-width: 640px) {
+  .article-metier .tableau-notes th:not(:first-child),
+  .article-metier .tableau-notes td:not(:first-child) {
+    text-align: left;
+  }
+  .article-metier .tableau-notes td:nth-child(n + 3) {
+    white-space: normal;
+    font-size: 16px;
+    letter-spacing: 0;
+  }
   .article-metier .tableau {
     overflow-x: visible;
   }
