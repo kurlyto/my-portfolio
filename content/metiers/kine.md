@@ -1,6 +1,6 @@
 ---
 titre: "IA pour kiné et ostéopathe : usages et données de santé"
-description: "Un agent IA qui tient la liste d'attente et rappelle les patients perdus de vue. Il prend le téléphone pendant les séances, dans le respect des données de santé."
+description: "Un agent IA qui tient la liste d'attente et rappelle les patients perdus de vue. Il prend le téléphone pendant les séances et respecte les données de santé."
 h1: "Un agent IA pour votre cabinet de kiné ou d'ostéopathie"
 date: 2026-08-28
 mot_cle: "ia kiné"

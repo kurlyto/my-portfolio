@@ -1,6 +1,6 @@
 ---
 titre: "Agent IA pour avocat : usages, secret et données"
-description: "Un agent IA qui suit les délais de procédure et résume les pièces. Il relance les honoraires dans le cadre du CNB, sans que le secret quitte le cabinet."
+description: "Un agent IA qui suit les délais de procédure et résume les pièces. Il relance les honoraires dans le cadre du CNB et le secret ne quitte jamais le cabinet."
 h1: "Un agent IA pour votre cabinet d'avocats"
 date: 2026-08-24
 mot_cle: "agent ia avocat"

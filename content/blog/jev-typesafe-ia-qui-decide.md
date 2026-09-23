@@ -1,6 +1,6 @@
 ---
 titre: "Jev de TypeSafe : l'IA qui décide au lieu d'écrire"
-description: "Tout le monde a parlé de Jev cette semaine, un modèle qui ne rédige rien et se contente de trancher. Je l'ai testé sur des annonces immobilières et je vous dis ce qu'il vaut, et pour qui."
+description: "Jev a fait parler tout le monde cette semaine : un modèle qui ne rédige rien et se contente de trancher. Je l'ai testé sur de vraies annonces immobilières et je vous donne un premier avis dessus."
 date: 2026-09-23
 format: explicatif
 grappe: agents
@@ -80,7 +80,7 @@ TypeSafe appelle cette propriété la calibration. Le modèle a été entraîné
 | Entre 0,6 et 0,85 | Agit sans risque et demande confirmation pour le reste |
 | Au-dessus de 0,85 | Agit seul même sur une action sensible |
 
-Le seuil n'a rien de fixe et il se règle selon ce que coûte une erreur. Pour classer un mail dans un dossier, une confiance de 0,6 suffit puisqu'on peut le déplacer. Pour valider un virement, on exige beaucoup plus, ou un humain.
+Le seuil n'a rien de fixe et il se règle selon ce que coûte une erreur. Pour classer un mail dans un dossier, une confiance de 0,6 suffit puisqu'on peut le déplacer. Pour valider un virement on demande beaucoup plus ou on laisse un humain trancher.
 
 ## Ce que j'ai regardé sur des annonces immobilières
 

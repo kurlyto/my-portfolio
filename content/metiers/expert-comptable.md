@@ -1,6 +1,6 @@
 ---
 titre: "Agent IA pour expert-comptable : usages et données"
-description: "Un agent IA qui réclame les justificatifs manquants et trie les factures. Il suit les échéances fiscales selon l'Ordre, sans sortir le secret du cabinet."
+description: "Un agent IA qui réclame les justificatifs manquants et trie les factures. Il suit les échéances fiscales selon l'Ordre et le secret ne sort jamais du cabinet."
 h1: "Un agent IA pour votre cabinet d'expertise comptable"
 date: 2026-09-03
 mot_cle: "agent ia expert comptable"

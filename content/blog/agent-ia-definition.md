@@ -1,6 +1,6 @@
 ---
 titre: "C'est quoi un agent IA ? Explication simple"
-description: "Tout le monde parle d'agents IA, mais qu'est-ce que c'est réellement ? J'essaye ici de montrer de quoi un agent est fait et comment il fonctionne, avec des mots compréhensibles par tous."
+description: "Tout le monde parle d'agents IA et personne ne dit ce que c'est vraiment. J'explique ici de quoi un agent est fait et comment il fonctionne avec des mots compréhensibles par tous."
 date: 2026-09-17
 format: explicatif
 grappe: agents

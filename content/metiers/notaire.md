@@ -1,6 +1,6 @@
 ---
 titre: "Agent IA pour notaire : usages, secret et données"
-description: "Un agent IA qui réclame les pièces manquantes et cale les signatures. Il rédige les récapitulatifs selon les règles du notariat, sans sortir le secret de l'étude."
+description: "Un agent IA qui réclame les pièces manquantes et cale les signatures. Il rédige les récapitulatifs selon les règles du notariat et le secret ne sort jamais de l'étude."
 h1: "Un agent IA pour votre étude notariale"
 date: 2026-08-26
 mot_cle: "ia notaire"
