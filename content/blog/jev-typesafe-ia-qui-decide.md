@@ -1,7 +1,7 @@
 ---
 titre: "Jev de TypeSafe : l'IA qui décide au lieu d'écrire"
 description: "Jev est sorti le 15 septembre : un modèle qui n'écrit rien et répond par un choix, une note ou un oui, avec sa probabilité. Une semaine d'essais."
-date: 2026-09-24
+date: 2026-09-23
 format: explicatif
 grappe: agents
 mot_cle: "typesafe ai"
