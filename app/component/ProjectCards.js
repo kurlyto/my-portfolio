@@ -37,9 +37,9 @@ const PROJECTS = [
     name: "Agents IA sur-mesure",
     nameEn: "Custom AI agents",
     description:
-      "Un employé qui fait ce que vous n'avez pas envie de faire, et qui ne dort jamais. Mails, agenda, prospection, réseaux sociaux, relances clients : il s'en occupe seul pendant que vous gérez le reste. Vous lui parlez sur Telegram comme à un collègue, et il se façonne sur mesure autour de votre métier.",
+      "Un employé qui ne dort jamais et fait ce que vous n'avez pas envie de faire. Mails, agenda, prospection, réseaux sociaux, relances clients : il s'en occupe seul pendant que vous gérez le reste. Vous lui parlez sur Telegram comme à un collègue et il se façonne autour de votre métier.",
     descriptionEn:
-      "An employee who does what you would rather not, and never sleeps. Email, calendar, prospecting, social media, client follow-ups: it handles them on its own while you get on with the rest. You talk to it on Telegram like a colleague, and it is shaped around your line of work.",
+      "An employee who never sleeps and does what you would rather not. Email, calendar, prospecting, social media, client follow-ups: it handles them on its own while you get on with the rest. You talk to it on Telegram like a colleague and it adapts to your line of work.",
     years: "2026",
     // La racine est Foxy depuis le 09/09 : la vitrine d'agents vit sur /agents.
     link: "/agents",
@@ -58,9 +58,9 @@ const PROJECTS = [
   {
     name: "Mon Devis Dentaire",
     description:
-      "Plateforme SaaS qui fluidifie la signature des devis pour les cabinets dentaires. L'IA explique chaque acte au patient en langage clair, des relances automatiques suivent les devis en attente, et le cabinet gère prise de rendez-vous et paiement en ligne, le tout branché sur son logiciel métier.",
+      "Plateforme SaaS qui fluidifie la signature des devis pour les cabinets dentaires. L'IA explique chaque acte au patient en langage clair, des relances automatiques suivent les devis en attente et le cabinet gère la prise de rendez-vous et le paiement en ligne depuis son propre logiciel métier.",
     descriptionEn:
-      "A SaaS platform that smooths out treatment plan approvals for dental practices. AI explains every procedure to the patient in plain language, automated reminders chase pending quotes, and the practice handles booking and online payment, all plugged into its own practice software.",
+      "A SaaS platform that smooths out treatment plan approvals for dental practices. AI explains every procedure to the patient in plain language, automated reminders chase pending quotes and the practice handles booking and online payment right from its own practice software.",
     years: "2025 - 2026",
     link: "https://mondevisdentaire.fr",
     cover: "from-slate-50 to-slate-100",
@@ -92,9 +92,9 @@ const PROJECTS = [
   {
     name: "Football Fight",
     description:
-      "Ces deux joueurs ont-ils déjà porté le même maillot ? Reliez-les de club en club et enchaînez les bonnes réponses dans un duel de culture foot en 1 contre 1, sans jamais vous tromper.",
+      "Ces deux joueurs ont-ils déjà porté le même maillot ? Reliez-les de club en club et enchaînez les bonnes réponses pour gagner votre duel de culture foot en 1 contre 1.",
     descriptionEn:
-      "Have these two players ever worn the same shirt? Link them club by club and chain up correct answers in a one-on-one football knowledge duel, without ever slipping.",
+      "Have these two players ever worn the same shirt? Link them club by club and chain up correct answers to win your one-on-one football knowledge duel.",
     years: "2026",
     link: "https://footballfight.app",
     cover: "from-[#067a47] to-[#067a47]",
@@ -157,9 +157,9 @@ const PROJECTS = [
     name: "Fichage Notariat",
     nameEn: "Notary Client Screening",
     description:
-      "Vérification de l'intégrité et de la solvabilité des clients pour études notariales, via croisement de sources publiques (BODACC, registre des entreprises).",
+      "Vérification de l'intégrité et de la solvabilité des clients d'une étude notariale par croisement de sources publiques comme le BODACC et le registre des entreprises.",
     descriptionEn:
-      "Integrity and solvency checks on clients for notary firms, by cross-referencing public sources (BODACC, the French company register).",
+      "Integrity and solvency checks on notary clients by cross-referencing public sources such as BODACC and the French company register.",
     years: "2023 - 2024",
     cover: "from-slate-600 to-slate-900",
     coverImage: "/images/cover-notariat.png",
@@ -200,8 +200,8 @@ const PROJECTS = [
     name: "Photographies",
     nameEn: "Photography",
     description:
-      "Une sélection de mes photographies, avec une direction artistique qui lui est propre.",
-    descriptionEn: "A selection of my photographs, with an art direction of its own.",
+      "Une sélection de mes photographies qui suit sa propre direction artistique.",
+    descriptionEn: "A selection of my photographs that follows its own art direction.",
     years: "2026",
     status: "wip",
     cover: "from-neutral-700 to-neutral-950",
