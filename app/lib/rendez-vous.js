@@ -5,7 +5,7 @@
 //
 // Module sans "use client" : le pied de page (composant serveur) et le bouton
 // flottant (composant client) le lisent tous les deux.
-export const RDV_URL = "https://cal.com/nathan-knaebel/15min";
+export const RDV_URL = "https://cal.com/nathan-knaebel/20min";
 export const RDV_LABEL = "Réserver un appel";
 
 export function CalendrierIcon(props) {
