@@ -29,7 +29,7 @@ Imaginez un assistant dont l'unique obsession serait que chaque dossier soit com
 
 - **Les justificatifs manquants.** L'agent sait ce qui manque pour chaque client et prépare des relances personnalisées que le cabinet valide.
 - **Le tri des factures.** Il repère les factures reçues par mail et les range client par client avant l'import dans votre logiciel de production.
-- **Les échéances fiscales.** Il prépare les rappels du trimestre pour chaque client, selon son régime.
+- **Les échéances fiscales.** Il prépare les rappels du trimestre pour chaque client selon son régime.
 - **Les questions récurrentes.** Il prépare les réponses aux questions qui reviennent sans cesse et transfère au bon collaborateur tout ce qui sort de l'ordinaire.
 - **Le point du lundi.** À 8 h il envoie la liste des bilans en retard et les rendez-vous de la semaine.
 
@@ -95,9 +95,9 @@ Du plus fermé au plus ouvert, cinq montages reviennent dans la pratique et chac
 
 | Montage | Où vont les données | Ce qu'il faut accepter |
 |---|---|---|
-| Modèle ouvert sur un serveur du cabinet ou chez un hébergeur français | Nulle part ailleurs | Un modèle moins puissant et un serveur à entretenir |
+| Modèle ouvert sur votre serveur ou chez un hébergeur français | Nulle part ailleurs | Un modèle moins puissant et un serveur à entretenir |
 | Modèle ouvert en service chez un opérateur qualifié SecNumCloud | Chez un opérateur soumis au seul droit européen | Un choix de modèles plus restreint |
-| Modèle européen par API avec hébergement dans l'Union | Chez Mistral, dans l'Union par défaut | Des sous-traitants possibles hors de l'Union et des réglages à vérifier |
+| Modèle européen par API avec hébergement dans l'Union | Chez Mistral, dans l'Union par défaut | Sous-traitants possibles hors de l'Union et réglages à vérifier |
 | Modèle américain dans un cloud américain installé en Europe | En Europe, chez un opérateur rattaché à un groupe américain | Une exposition au CLOUD Act qui n'est pas levée |
 | Modèle américain par l'offre professionnelle du fournisseur | Chez le fournisseur, trente jours par défaut | Le CLOUD Act et une conservation courte mais réelle |
 

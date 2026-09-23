@@ -43,7 +43,7 @@ Le prix découle de ce silence. Comme le modèle ne produit presque aucun mot, T
 
 Tout ce que Jev sait faire tient dans [trois formes de question](https://docs.typesafe.ai/primitives). Le choix de la forme dépend de ce que votre programme doit faire de la réponse.
 
-**Le choix** (Choice) sert quand la réponse est une option parmi une liste fermée, jusqu'à 255 options. Quel service doit traiter ce message, dans quelle catégorie ranger ce produit, lequel de ces montants est la taxe foncière. Jev renvoie l'option retenue et une probabilité pour chacune des autres.
+**Le choix** (Choice) sert quand la réponse est une option parmi une liste fermée qui peut compter jusqu'à 255 options. Quel service doit traiter ce message, dans quelle catégorie ranger ce produit, lequel de ces montants est la taxe foncière. Jev renvoie l'option retenue et une probabilité pour chacune des autres.
 
 **La note** (Score) sert quand la réponse se place sur une échelle ordonnée. Quelle est la gravité de ce bug, à quel point ce client est agacé, quel niveau d'urgence pour cette demande. Vous décrivez de deux à dix paliers avec des mots et Jev renvoie une position sur cette échelle, avec des décimales quand il hésite entre deux paliers.
 
@@ -72,13 +72,13 @@ Une réponse de Jev se lit à deux niveaux. Le premier est l'option retenue. Le 
 
 Prenez une question sans bonne réponse : « qui est le plus fort, Sangoku ou Naruto ? ». Jev vous renverra quelque chose comme 55 % pour l'un et 45 % pour l'autre. Ce résultat ne vous apprend rien sur les deux héros. Il vous apprend que le modèle n'a aucune conviction et qu'un programme qui prendrait cette réponse pour un verdict ferait n'importe quoi une fois sur deux. La bonne lecture est donc simple. **Sous un certain niveau de confiance, on ne fait rien de la réponse et on passe la main.**
 
-TypeSafe appelle cette propriété la calibration. Le modèle a été entraîné pour que ses probabilités soient honnêtes : sur un lot de réponses données à 80 %, environ 80 % sont justes. Cela ne garantit rien sur une réponse prise isolément, mais cela permet de régler des seuils. La documentation propose [une échelle en trois paliers](https://docs.typesafe.ai/patterns/confidence-routing) :
+TypeSafe appelle cette propriété la calibration. Le modèle a été entraîné pour que ses probabilités soient honnêtes : quand il annonce 80 %, il a raison environ huit fois sur dix. Cela ne garantit rien sur une réponse prise isolément, mais cela permet de régler des seuils. La documentation propose [une échelle en trois paliers](https://docs.typesafe.ai/patterns/confidence-routing) :
 
 | Confiance | Réaction du programme |
 |---|---|
 | Sous 0,6 | Il passe la main à un humain |
-| Entre 0,6 et 0,85 | Il agit sur ce qui est sans risque et demande confirmation pour le reste |
-| Au-dessus de 0,85 | Il agit seul, même sur une action sensible |
+| Entre 0,6 et 0,85 | Agit sans risque et demande confirmation pour le reste |
+| Au-dessus de 0,85 | Agit seul même sur une action sensible |
 
 Le seuil n'a rien de fixe et il se règle selon ce que coûte une erreur. Pour classer un mail dans un dossier, une confiance de 0,6 suffit puisqu'on peut le déplacer. Pour valider un virement, on exige beaucoup plus, ou un humain.
 
@@ -86,7 +86,7 @@ Le seuil n'a rien de fixe et il se règle selon ce que coûte une erreur. Pour c
 
 Un ami agent immobilier me demande de suivre les annonces de plusieurs agences pour repérer, entre autres, la taxe foncière de chaque bien. Avant de brancher Jev, j'ai pris six annonces réelles de Caen et j'ai noté où se trouvait l'information. Chez Century 21, la taxe est dans un champ étiqueté « Taxe foncière : 1 763 € ». Une simple règle de texte la trouve et l'intelligence artificielle n'a rien à faire là. Chez Pozzo, elle n'apparaît nulle part et aucun modèle au monde ne peut inventer un chiffre absent. Il faut appeler l'agence.
 
-La place de Jev se trouve entre ces deux cas. L'information existe mais elle est noyée dans la description au milieu des travaux et du chauffage, sous la forme « TF environ 1 400 €/an ». Une annonce contient une quinzaine de montants et la question « lequel est la taxe foncière ? » est un choix minuscule pour lui. C'est d'ailleurs [la recette officielle de TypeSafe](https://docs.typesafe.ai/cookbooks/pre_parsed_value_extraction_cookbook) pour extraire une valeur d'un texte fouillis.
+La place de Jev se trouve entre ces deux cas. L'information existe mais elle est noyée dans la description au milieu des travaux et du chauffage et elle prend la forme « TF environ 1 400 €/an ». Une annonce contient une quinzaine de montants et la question « lequel est la taxe foncière ? » est un choix minuscule pour lui. C'est d'ailleurs [la recette officielle de TypeSafe](https://docs.typesafe.ai/cookbooks/pre_parsed_value_extraction_cookbook) pour extraire une valeur d'un texte fouillis.
 
 <figure>
 <ol class="flux">
@@ -112,9 +112,9 @@ En une semaine, une communauté de développeurs a publié une trentaine de dém
 <figcaption>La galerie de démonstrations montée par Nikunj Kothari. Chaque carte renvoie vers la publication de son auteur, avec le temps et le coût mesurés.<span class="credit">Capture : jevable.com, 22 septembre 2026.</span></figcaption>
 </figure>
 
-Dans l'industrie, Trinay Hari a fait classer par Jev les plans d'un chantier pour en tirer la nomenclature du bâtiment : 26 pages traitées en 2,9 secondes pour un demi-centime. Nikunj Kothari a fait noter 3 000 goûters pour enfants sur plusieurs critères en 28 secondes, pour 11 centimes. Ce genre de travail existait déjà avec un grand modèle, mais à un prix et une lenteur qui faisaient renoncer.
+Dans l'industrie, Trinay Hari a fait classer par Jev les plans d'un chantier pour en tirer la nomenclature du bâtiment : 26 pages traitées en 2,9 secondes pour un demi-centime. Nikunj Kothari a fait noter 3 000 goûters pour enfants sur plusieurs critères en 28 secondes et pour 11 centimes. Ce genre de travail existait déjà avec un grand modèle, mais à un prix et une lenteur qui faisaient renoncer.
 
-Gregor Zunic est l'auteur de l'outil Browser Use et il a branché Jev sur son agent navigateur. Le modèle ne lit plus l'écran et choisit l'action suivante dans une liste que le programme reconstruit à chaque étape. Une recherche de vols prend 7 secondes et coûte 0,0039 dollar. C'est la même idée que ma taxe foncière, appliquée à chaque clic.
+Gregor Zunic est l'auteur de l'outil Browser Use et il a branché Jev sur son agent navigateur. Le modèle ne lit plus l'écran et choisit l'action suivante dans une liste que le programme reconstruit à chaque étape. Une recherche de vols prend 7 secondes et coûte 0,0039 dollar. C'est la même idée que ma taxe foncière appliquée à chaque clic.
 
 D'autres démonstrations touchent au quotidien d'une petite entreprise. Nader Dabit cherche sa boîte mail par intention plutôt que par mots-clés et Ethan coupe les notifications commerciales de son téléphone. Tamir a construit un formulaire qui choisit sa question suivante selon la réponse précédente et Higgsfield aiguille chaque demande vers le modèle d'IA le plus adapté. Quelques expériences de trading automatique circulent aussi et je les regarde avec la plus grande prudence. Un modèle bien calibré sur des textes n'a jamais fait de quelqu'un un bon investisseur.
 
@@ -126,7 +126,7 @@ Jev lit au pied de la lettre. Il répond à la question écrite, pas à celle qu
 
 Il ne remplace donc pas un modèle qui rédige, et il ne fait pas de miracle sur ce qui demande de réfléchir. Un développeur connu sous le nom de Theo a résumé la critique la plus juste. Ce qui est assez simple pour que Jev le juge, presque tous les modèles le réussissent déjà. Le gain se trouve dans la vitesse, le prix et la probabilité honnête, pas dans l'intelligence. Un premier engouement pour lui faire élaguer la mémoire des agents de programmation est d'ailleurs retombé pour cette raison : il juge chaque morceau isolément, sans voir le fil, et jette parfois ce dont l'agent avait besoin.
 
-Deux réserves de ma part. Les mesures de vitesse et de coût sont celles du vendeur, comparées à une moyenne de grands modèles, et personne ne les a reproduites de façon indépendante. Et Jev tourne uniquement sur les serveurs américains de TypeSafe, sans version installable chez soi. Je refuse d'y envoyer des données de santé ou des dossiers couverts par le secret professionnel, quelle que soit la promesse de confidentialité. Pour ces documents, le [guide écrit pour les avocats](/metiers/avocat) détaille les montages possibles.
+Deux réserves de ma part. Les mesures de vitesse et de coût sont celles du vendeur, comparées à une moyenne de grands modèles, et personne ne les a reproduites de façon indépendante. Et Jev tourne uniquement sur les serveurs américains de TypeSafe sans aucune version installable chez soi. Je refuse d'y envoyer des données de santé ou des dossiers couverts par le secret professionnel, quelle que soit la promesse de confidentialité. Pour ces documents, le [guide écrit pour les avocats](/metiers/avocat) détaille les montages possibles.
 
 ## Par où commencer
 

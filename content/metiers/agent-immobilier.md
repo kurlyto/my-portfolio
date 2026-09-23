@@ -54,7 +54,7 @@ Une heure passée dans un bien en coûte souvent une autre au téléphone et dan
 
 ### Les demandes se qualifient sans vous
 
-Les demandes des portails arrivent par mail et l'agent y répond dans les minutes qui suivent, y compris le dimanche soir. Il pose les questions que vous avez choisies sur le financement et le délai du projet, puis il propose les créneaux que vous avez ouverts. Ce qu'il confirme seul et ce qu'il vous remonte se décide avec vous dès l'audit.
+Les demandes des portails arrivent par mail et l'agent y répond dans les minutes qui suivent et même le dimanche soir. Il pose les questions que vous avez choisies sur le financement et le délai du projet, puis il propose les créneaux que vous avez ouverts. Ce qu'il confirme seul et ce qu'il vous remonte se décide avec vous dès l'audit.
 
 ### La tournée de visites
 
@@ -119,7 +119,7 @@ Quand un propriétaire remplit le formulaire de votre site, l'agent lui répond 
 
 ### Le dossier d'estimation
 
-L'agent part des ventes réelles parce que l'État publie en données ouvertes la base [Demandes de valeurs foncières](https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres), dite DVF. Elle recense les transactions des cinq dernières années, sauf en Alsace, en Moselle et à Mayotte.
+L'agent part des ventes réelles parce que l'État publie en données ouvertes la base [Demandes de valeurs foncières](https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres) que tout le monde appelle DVF. Elle recense les transactions des cinq dernières années, sauf en Alsace, en Moselle et à Mayotte.
 
 L'agent y cherche les ventes comparables et y ajoute les biens concurrents encore en vente, qu'il surveille chaque matin sur les sites des agences du secteur. La base ignore l'état du bien, l'étage et la vue, si bien que la fourchette obtenue reste un travail préparatoire. Cette fourchette ne remplace pas l'avis de valeur que vous signez et je ne laisse donc jamais un agent annoncer un prix à un vendeur.
 
@@ -155,7 +155,7 @@ L'agent contrôle que chaque mention est présente mais il ne connaît que ce qu
 
 ### Gommer un défaut sur une photo
 
-Le Code de la consommation range parmi les [pratiques commerciales trompeuses](https://www.inc-conso.fr/content/les-pratiques-commerciales-deloyales) toute présentation fausse ou de nature à induire en erreur sur les caractéristiques essentielles de ce qui est vendu, bien immobilier compris. La peine peut atteindre deux ans de prison et 300 000 € d'amende.
+Le Code de la consommation range parmi les [pratiques commerciales trompeuses](https://www.inc-conso.fr/content/les-pratiques-commerciales-deloyales) toute présentation fausse ou de nature à induire en erreur sur les caractéristiques essentielles de ce qui est vendu et un bien immobilier n'y échappe pas. La peine peut atteindre deux ans de prison et 300 000 € d'amende.
 
 L'agent corrige donc la lumière, le cadrage et les verticales parce que ces réglages rapprochent l'image de ce que l'œil voit sur place. Il refuse en revanche d'effacer une fissure ou une tache d'humidité et il laisse à sa place l'immeuble d'en face.
 

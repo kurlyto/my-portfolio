@@ -169,7 +169,7 @@ Depuis le 11 août 2026 un professionnel n'a [plus le droit d'appeler un particu
 
 ### Garder les codes d'alarme de vos clients
 
-Un électricien qui pose de la domotique ou une alarme connaît des codes, des plans et des habitudes de vie. Ces informations ne doivent pas entrer dans l'agent, qui n'en a pas besoin pour faire un devis ou une facture. France Num a conçu avec la CPME et la [CNIL](https://www.cnil.fr/fr/utiliser-lia-generative-dans-les-tpe-et-pme) quatre fiches qui aident les petites entreprises à choisir un outil d'IA et à l'utiliser avec précaution. La question de l'endroit où partent les données mérite une réponse écrite de la part de tout prestataire, moi compris. La page sur [l'agent IA d'un avocat](/metiers/avocat) contient un guide sur ce sujet.
+Un électricien qui pose de la domotique ou une alarme connaît des codes, des plans et des habitudes de vie. Ces informations ne doivent pas entrer dans l'agent, qui n'en a pas besoin pour faire un devis ou une facture. France Num a conçu avec la CPME et la [CNIL](https://www.cnil.fr/fr/utiliser-lia-generative-dans-les-tpe-et-pme) quatre fiches qui aident les petites entreprises à choisir un outil d'IA et à l'utiliser avec précaution. La question de l'endroit où partent les données mérite une réponse écrite de la part de tout prestataire et je m'inclus dedans. La page sur [l'agent IA d'un avocat](/metiers/avocat) contient un guide sur ce sujet.
 
 ### Se faire passer pour un humain
 

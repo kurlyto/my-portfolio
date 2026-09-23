@@ -35,7 +35,7 @@ Anthropic, l'entreprise qui fabrique Claude, en donne une [définition plus tech
 
 | | Un chatbot comme ChatGPT | Un agent IA |
 |---|---|---|
-| Qui démarre&nbsp;? | Vous, en posant une question | Lui, quand quelque chose arrive ou à l'heure prévue |
+| Qui démarre&nbsp;? | Vous quand vous posez une question | Lui quand quelque chose arrive ou à l'heure prévue |
 | Ce qu'il voit | Ce que vous collez dans la conversation | Vos mails, votre agenda, vos fichiers |
 | Ce qu'il produit | Un texte que vous recopiez ailleurs | Une action faite dans vos outils |
 | Quand il s'arrête | À la fin de sa réponse | Quand la mission est remplie |

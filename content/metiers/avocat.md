@@ -29,7 +29,7 @@ Rien de tout cela n'exige d'avoir prêté serment et pourtant tout finit sur le 
 
 Imaginez un assistant qui arriverait au cabinet avant tout le monde et aurait lu chaque mail avant votre premier café. Il ne plaide pas et ne signe rien, mais il prépare le terrain pour que votre première heure serve à décider plutôt qu'à trier. Si le mot « agent » vous paraît flou, une [explication simple de ce qu'est un agent IA](/blog/agent-ia-definition) vous attend sur le blog.
 
-- **Le point du matin.** À 8 h l'agent vous envoie les mails urgents et les échéances de la semaine, rangés dossier par dossier.
+- **Le point du matin.** À 8 h l'agent vous envoie les mails urgents et les échéances de la semaine rangés dossier par dossier.
 - **Les délais de procédure.** Il relève les dates dans les actes et les avis reçus puis vous alerte dix jours avant chaque échéance et encore la veille.
 - **Les résumés de pièces.** Quarante pages reçues hier deviennent une synthèse d'une page qui renvoie aux numéros de pièces pour que vous puissiez tout contrôler.
 - **Les relances d'honoraires.** Il repère les factures impayées depuis plus de 45 jours et prépare une relance courtoise que vous validez avant l'envoi.
@@ -102,9 +102,9 @@ Du plus fermé au plus ouvert, cinq montages reviennent dans la pratique et chac
 
 | Montage | Où vont les données | Ce qu'il faut accepter |
 |---|---|---|
-| Modèle ouvert sur un serveur du cabinet ou chez un hébergeur français | Nulle part ailleurs | Un modèle moins puissant et un serveur à entretenir |
+| Modèle ouvert sur votre serveur ou chez un hébergeur français | Nulle part ailleurs | Un modèle moins puissant et un serveur à entretenir |
 | Modèle ouvert en service chez un opérateur qualifié SecNumCloud | Chez un opérateur soumis au seul droit européen | Un choix de modèles plus restreint |
-| Modèle européen par API avec hébergement dans l'Union | Chez Mistral, dans l'Union par défaut | Des sous-traitants possibles hors de l'Union et des réglages à vérifier |
+| Modèle européen par API avec hébergement dans l'Union | Chez Mistral, dans l'Union par défaut | Sous-traitants possibles hors de l'Union et réglages à vérifier |
 | Modèle américain dans un cloud américain installé en Europe | En Europe, chez un opérateur rattaché à un groupe américain | Une exposition au CLOUD Act qui n'est pas levée |
 | Modèle américain par l'offre professionnelle du fournisseur | Chez le fournisseur, trente jours par défaut | Le CLOUD Act et une conservation courte mais réelle |
 

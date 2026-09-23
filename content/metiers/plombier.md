@@ -112,7 +112,7 @@ Une facture envoyée le soir même arrive quand le client a encore le dépannage
 
 ### Des relances polies qui partent à l'heure
 
-Un devis resté sans réponse reçoit un seul message courtois au bout du délai que vous choisissez, sept jours par exemple.
+Un devis resté sans réponse reçoit un seul message courtois au bout du délai que vous choisissez et sept jours font un bon repère.
 
 Pour les impayés, l'agent lit les échéances dans votre logiciel de facturation ou sur votre relevé bancaire. Une première relance aimable part à la date prévue et une seconde plus ferme suit si rien ne bouge. La dernière reste entre vos mains, tout comme la décision d'aller plus loin.
 

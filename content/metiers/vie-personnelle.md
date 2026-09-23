@@ -21,7 +21,7 @@ La différence avec une conversation sur ChatGPT tient en une phrase : ChatGPT a
 
 Prenons un dimanche soir ordinaire. La boîte mail affiche 312 messages non lus et l'un d'eux annonce que l'assurance auto augmente en janvier. Le contrôle technique tombe le mois prochain et un passeport expire avant les vacances, pendant que l'ophtalmo ne donne plus de rendez-vous avant trois mois. Quelque part dans un tiroir dort la facture d'un lave-linge qui vient de tomber en panne et personne ne sait s'il est encore sous garantie.
 
-Aucune de ces tâches ne demande plus d'un quart d'heure mais il faut y penser au bon moment et ce travail de mémoire porte un nom depuis quelques années, la charge mentale. Un oubli se paie en euros quand un abonnement repart pour un an ou en sueurs froides quand on découvre à l'aéroport une carte d'identité périmée.
+Aucune de ces tâches ne demande plus d'un quart d'heure mais il faut y penser au bon moment et ce travail de mémoire s'appelle la charge mentale depuis quelques années. Un oubli se paie en euros quand un abonnement repart pour un an ou en sueurs froides quand on découvre à l'aéroport une carte d'identité périmée.
 
 ## Les tâches confiées à l'agent
 

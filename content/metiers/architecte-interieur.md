@@ -71,7 +71,7 @@ Cette planche reste une base de travail pour vous et ne part jamais directement 
 
 ### Des images d'ambiance pour ouvrir la discussion
 
-L'agent peut aussi générer deux ou trois images d'ambiance à partir d'une photo de la pièce pour aider un client qui ne sait pas lire un plan à dire « plutôt ça » ou « surtout pas ça ». Je tiens à ce qu'elles soient toujours présentées comme des images d'ambiance et jamais comme un rendu contractuel, avec la mention « image générée par IA, non contractuelle ». Elles ignorent les cotes et la technique et inventent volontiers une fenêtre, si bien qu'elles ne remplacent ni votre plan ni votre rendu. C'est la même règle que pour [l'aménagement virtuel d'une annonce immobilière](/metiers/agent-immobilier).
+L'agent peut aussi générer deux ou trois images d'ambiance à partir d'une photo de la pièce pour aider un client qui ne sait pas lire un plan à dire « plutôt ça » ou « surtout pas ça ». Je tiens à ce qu'elles soient toujours présentées comme des images d'ambiance et jamais comme un rendu contractuel et qu'elles portent la mention « image générée par IA, non contractuelle ». Elles ignorent les cotes et la technique et inventent volontiers une fenêtre, si bien qu'elles ne remplacent ni votre plan ni votre rendu. C'est la même règle que pour [l'aménagement virtuel d'une annonce immobilière](/metiers/agent-immobilier).
 
 ### La validation qui traîne
 
@@ -94,7 +94,7 @@ Un client important peut toujours passer par vous et l'agent ne relance jamais u
 
 ### Les devis comparés ligne à ligne
 
-Trois électriciens ne chiffrent jamais la même chose de la même façon, même quand ils [dictent leur devis à un agent](/metiers/electricien). L'agent lit les devis reçus et les range dans un tableau aligné sur votre descriptif, poste par poste. Il vous signale ce qui manque chez l'un et ce qui est compté deux fois chez l'autre.
+Trois électriciens ne chiffrent jamais la même chose de la même façon, même quand ils [dictent leur devis à un agent](/metiers/electricien). L'agent lit les devis reçus et les range dans un tableau aligné poste par poste sur votre descriptif. Il vous signale ce qui manque chez l'un et ce qui est compté deux fois chez l'autre.
 
 Il vérifie aussi que chaque devis arrive avec l'attestation d'assurance décennale de l'entreprise, puisque [Service-Public](https://entreprendre.service-public.gouv.fr/vosdroits/F2034) rappelle qu'elle doit être jointe aux devis et aux factures. Le choix de l'artisan reste entre vos mains et celles de votre client.
 

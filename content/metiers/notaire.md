@@ -7,7 +7,7 @@ mot_cle: "ia notaire"
 mots_cles: ["agent IA notaire", "secret professionnel", "pièces de dossier", "relances clients", "hébergement des données"]
 lire_aussi: ["/blog/quel-agent-ia-pour-votre-metier"]
 ---
-Un agent IA pour notaire est un assistant logiciel qui trie les mails de l'étude, relance les pièces manquantes, cale les rendez-vous de signature et prépare des récapitulatifs de dossier que le notaire vérifie. Il prépare le travail et ne touche ni à la rédaction des actes ni au conseil, qui restent l'affaire du notaire.
+Un agent IA pour notaire est un assistant logiciel qui trie les mails de l'étude, relance les pièces manquantes, cale les rendez-vous de signature et prépare des récapitulatifs de dossier que le notaire vérifie. Il prépare le travail et ne touche ni à la rédaction des actes ni au conseil qui restent l'affaire du notaire.
 
 Reste la question que tout notaire pose avant les autres : que deviennent les données de ses clients ? Le notariat a lui-même tranché une partie du débat cet été et un chapitre entier de cette page y est consacré.
 
@@ -95,9 +95,9 @@ Du plus fermé au plus ouvert, cinq montages reviennent dans la pratique et chac
 
 | Montage | Où vont les données | Ce qu'il faut accepter |
 |---|---|---|
-| Modèle ouvert sur un serveur de l'étude ou chez un hébergeur français | Nulle part ailleurs | Un modèle moins puissant et un serveur à entretenir |
+| Modèle ouvert sur votre serveur ou chez un hébergeur français | Nulle part ailleurs | Un modèle moins puissant et un serveur à entretenir |
 | Modèle ouvert en service chez un opérateur qualifié SecNumCloud | Chez un opérateur soumis au seul droit européen | Un choix de modèles plus restreint |
-| Modèle européen par API avec hébergement dans l'Union | Chez Mistral, dans l'Union par défaut | Des sous-traitants possibles hors de l'Union et des réglages à vérifier |
+| Modèle européen par API avec hébergement dans l'Union | Chez Mistral, dans l'Union par défaut | Sous-traitants possibles hors de l'Union et réglages à vérifier |
 | Modèle américain dans un cloud américain installé en Europe | En Europe, chez un opérateur rattaché à un groupe américain | Une exposition au CLOUD Act qui n'est pas levée |
 | Modèle américain par l'offre professionnelle du fournisseur | Chez le fournisseur, trente jours par défaut | Le CLOUD Act et une conservation courte mais réelle |
 
