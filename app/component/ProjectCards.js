@@ -28,10 +28,10 @@ import { attributClic, nomClic } from "../lib/suivi-clics";
 // Ordre = importance editoriale (les projets phares en premier), pas
 // chronologie : c'est le haut de la liste qui est vu sur telephone, ou une
 // carte occupe tout l'ecran.
-// L'ordre compte aussi pour la mise en page desktop (3 colonnes) : les trois
-// premiers forment la ligne 1 (Agents IA en tete), et Footfight/Musicfight/
-// Moviefight occupent la ligne 2 EN ENTIER, pour qu'on lise d'un coup d'oeil
-// que c'est la meme mecanique de jeu declinee en trois themes.
+// L'ordre compte aussi pour la mise en page desktop (3 colonnes), fixe par
+// Nathan le 23/09 : ligne 1 Agents IA / MDD / Foxy, ligne 2 les jeux
+// (Football Fight, FeatuRing, AI or Not), ligne 3 notariat + FetaFrance,
+// ligne 4 Insider Bot / Photographies / Poker.
 const PROJECTS = [
   {
     name: "Agents IA sur-mesure",
@@ -90,42 +90,34 @@ const PROJECTS = [
     tech: [{ icon: NodeJsIcon, label: "Node.js" }],
   },
   {
-    name: "Footfight",
+    name: "Football Fight",
     description:
-      "Ces deux joueurs ont-ils déjà porté le même maillot ? Reliez-les de club en club et enchaînez les bonnes réponses dans un duel de culture foot, sans jamais vous tromper.",
+      "Ces deux joueurs ont-ils déjà porté le même maillot ? Reliez-les de club en club et enchaînez les bonnes réponses dans un duel de culture foot en 1 contre 1, sans jamais vous tromper.",
     descriptionEn:
-      "Have these two players ever worn the same shirt? Link them club by club and chain up correct answers in a football knowledge duel, without ever slipping.",
+      "Have these two players ever worn the same shirt? Link them club by club and chain up correct answers in a one-on-one football knowledge duel, without ever slipping.",
     years: "2026",
-    status: "wip",
-    cover: "from-lime-600 to-green-900",
+    link: "https://footballfight.app",
+    cover: "from-[#067a47] to-[#067a47]",
+    coverImage: "/images/cover-footballfight.png",
+    // Icone carree sur fond vert plein : entiere (contain), le degrade de la
+    // meme couleur comble autour dans le cadre 4/3.
+    coverImageFit: "contain",
     tech: [
       { icon: PythonIcon, label: "Python" },
       { icon: NodeJsIcon, label: "Node.js" },
     ],
   },
   {
-    name: "Musicfight",
+    name: "FeatuRing",
     description:
-      "Ces deux artistes ont-ils déjà featuré ensemble ? Reliez-les de morceau en morceau et enchaînez les bonnes réponses dans un duel de culture musicale, sans jamais vous tromper.",
+      "Footballeurs, acteurs, chanteurs : reliez ceux qui ont joué, tourné ou chanté ensemble et affrontez les meilleurs joueurs dans un duel de culture générale.",
     descriptionEn:
-      "Have these two artists ever featured together? Link them track by track and chain up correct answers in a music knowledge duel, without ever slipping.",
+      "Footballers, actors, singers: link the ones who played, starred or sang together and take on the best players in a general knowledge duel.",
     years: "2026",
-    status: "wip",
-    cover: "from-fuchsia-600 to-purple-900",
-    tech: [
-      { icon: PythonIcon, label: "Python" },
-      { icon: NodeJsIcon, label: "Node.js" },
-    ],
-  },
-  {
-    name: "Moviefight",
-    description:
-      "Ces deux acteurs ont-ils déjà tourné ensemble ? Reliez-les de film en film et enchaînez les bonnes réponses dans un duel de culture ciné, sans jamais vous tromper.",
-    descriptionEn:
-      "Have these two actors ever starred together? Link them film by film and chain up correct answers in a movie knowledge duel, without ever slipping.",
-    years: "2026",
-    status: "wip",
-    cover: "from-rose-600 to-red-900",
+    link: "https://featuring.club",
+    cover: "from-zinc-100 to-zinc-100",
+    coverImage: "/images/cover-featuring.png",
+    coverImageFit: "contain",
     tech: [
       { icon: PythonIcon, label: "Python" },
       { icon: NodeJsIcon, label: "Node.js" },
@@ -148,19 +140,16 @@ const PROJECTS = [
     ],
   },
   {
-    name: "Variante de Poker Japonais",
-    nameEn: "Japanese Poker Variant",
-    description: "Une variante du poker japonais en 1 contre 1.",
-    descriptionEn: "A one-on-one variant of Japanese poker.",
-    years: "2023",
-    link: "https://poker.nathan-knaebel.com",
-    cover: "from-emerald-800 to-emerald-950",
-    coverImage: "/images/cover-poker.png",
+    name: "Courrier de succession",
+    nameEn: "Estate Letters",
+    description: "Génération automatique de courriers de successions pour études notariales.",
+    descriptionEn: "Automatic generation of estate settlement letters for notary firms.",
+    years: "2023 - 2024",
+    cover: "from-amber-600 to-orange-900",
+    coverImage: "/images/cover-succession.png",
     tech: [
-      { icon: ReactIcon, label: "React" },
+      { icon: NextJsIcon, label: "Next.js" },
       { icon: TypeScriptIcon, label: "TypeScript" },
-      { icon: ViteIcon, label: "Vite" },
-      { icon: SocketIoIcon, label: "Socket.io" },
       { icon: TailwindIcon, label: "Tailwind CSS" },
     ],
   },
@@ -181,17 +170,18 @@ const PROJECTS = [
     ],
   },
   {
-    name: "Courrier de succession",
-    nameEn: "Estate Letters",
-    description: "Génération automatique de courriers de successions pour études notariales.",
-    descriptionEn: "Automatic generation of estate settlement letters for notary firms.",
-    years: "2023 - 2024",
-    cover: "from-amber-600 to-orange-900",
-    coverImage: "/images/cover-succession.png",
+    name: "FetaFrance",
+    description: "Quelle proportion de la France as-tu réellement visitée ?",
+    descriptionEn: "How much of France have you actually visited?",
+    years: "2026",
+    link: "https://fetafrance.nathan-knaebel.com",
+    cover: "from-[#fbfaf7] to-[#fbfaf7]",
+    coverImage: "/images/cover-fetafrance.svg",
+    coverImageFit: "contain",
     tech: [
-      { icon: NextJsIcon, label: "Next.js" },
+      { icon: ReactIcon, label: "React" },
       { icon: TypeScriptIcon, label: "TypeScript" },
-      { icon: TailwindIcon, label: "Tailwind CSS" },
+      { icon: ViteIcon, label: "Vite" },
     ],
   },
   {
@@ -217,22 +207,21 @@ const PROJECTS = [
     cover: "from-neutral-700 to-neutral-950",
   },
   {
-    name: "Fetamap",
-    description:
-      "Crée la carte de tes aventures passées en 5 minutes, et exporte-la sur ton site en un composant réutilisable ou commande une affiche pour chez toi !",
-    descriptionEn:
-      "Build the map of your past adventures in 5 minutes, then export it to your site as a reusable component or order a poster for your wall!",
-    years: "2026",
-    status: "wip",
-    cover: "from-teal-700 to-teal-950",
-  },
-  {
-    name: "Fetafrance",
-    description: "Quelle proportion de la France as-tu réellement visitée ?",
-    descriptionEn: "How much of France have you actually visited?",
-    years: "2026",
-    status: "wip",
-    cover: "from-indigo-700 to-indigo-950",
+    name: "Variante de Poker Japonais",
+    nameEn: "Japanese Poker Variant",
+    description: "Une variante du poker japonais en 1 contre 1.",
+    descriptionEn: "A one-on-one variant of Japanese poker.",
+    years: "2023",
+    link: "https://poker.nathan-knaebel.com",
+    cover: "from-emerald-800 to-emerald-950",
+    coverImage: "/images/cover-poker.png",
+    tech: [
+      { icon: ReactIcon, label: "React" },
+      { icon: TypeScriptIcon, label: "TypeScript" },
+      { icon: ViteIcon, label: "Vite" },
+      { icon: SocketIoIcon, label: "Socket.io" },
+      { icon: TailwindIcon, label: "Tailwind CSS" },
+    ],
   },
 ];
 

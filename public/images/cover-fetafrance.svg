@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect x="140" y="50" width="120" height="120" rx="24" fill="#2F6FED"/>
+  <text x="200" y="133" font-size="70" font-family="Inter, Helvetica, Arial, sans-serif" font-weight="700" text-anchor="middle" fill="#ffffff">%</text>
+  <text x="200" y="232" font-size="44" font-family="'Cormorant Garamond', Georgia, serif" font-weight="600" text-anchor="middle" fill="#1f2937">FetaFrance</text>
+</svg>
