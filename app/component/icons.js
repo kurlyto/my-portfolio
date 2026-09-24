@@ -15,7 +15,7 @@ export function LinkedInIcon(props) {
 }
 
 // Malt : le MOT "malt" plutot que son symbole seul (le noeud), que personne ne
-// reconnait isole. Le mot est plus large que le carre de l'icone : il deborde
+// reconnait isole. Le carre de l'icone est plus etroit que le mot : il deborde
 // a gauche et a droite (overflow visible) pour rester lisible dans le rond.
 export function MaltIcon(props) {
   return (
