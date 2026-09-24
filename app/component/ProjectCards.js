@@ -97,8 +97,8 @@ const PROJECTS = [
       "Have these two players ever worn the same shirt? Link them club by club and chain up correct answers to win your one-on-one football knowledge duel.",
     years: "2026",
     link: "https://footballfight.app",
-    cover: "from-[#067a47] to-[#067a47]",
-    coverImage: "/images/cover-footballfight.png",
+    cover: "from-[#02794a] to-[#02794a]",
+    coverImage: "/images/cover-footballfight-blason.png",
     // Icone carree sur fond vert plein : entiere (contain), le degrade de la
     // meme couleur comble autour dans le cadre 4/3.
     coverImageFit: "contain",

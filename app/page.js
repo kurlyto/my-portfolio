@@ -57,6 +57,7 @@ function buildJsonLd() {
         sameAs: [
           "https://github.com/kurlyto",
           "https://linkedin.com/in/nathan-knaebel",
+          "https://www.malt.fr/profile/nathanknaebel",
         ],
         knowsAbout: [
           "Agents IA autonomes",

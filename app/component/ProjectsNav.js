@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { WhatsAppIcon, LinkedInIcon, GitHubIcon } from "./icons";
+import { WhatsAppIcon, LinkedInIcon, MaltIcon, GitHubIcon } from "./icons";
 import CvModal from "./CvModal";
 import { LANG_COOKIE, LANGS, t } from "../lib/i18n-projects";
 import { nomClic } from "../lib/suivi-clics";
@@ -14,6 +14,7 @@ import { nomClic } from "../lib/suivi-clics";
 const CONTACTS = [
   { label: "WhatsApp", href: "https://wa.me/33622164758", Icon: WhatsAppIcon },
   { label: "LinkedIn", href: "https://linkedin.com/in/nathan-knaebel", Icon: LinkedInIcon },
+  { label: "Malt", href: "https://www.malt.fr/profile/nathanknaebel", Icon: MaltIcon },
   { label: "GitHub", href: "https://github.com/kurlyto", Icon: GitHubIcon },
 ];
 

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { WhatsAppIcon, LinkedInIcon, GitHubIcon } from "./icons";
+import { WhatsAppIcon, LinkedInIcon, MaltIcon, GitHubIcon } from "./icons";
 import EmailButton from "./EmailButton";
 import { t } from "../lib/i18n-projects";
 import { BLOG_OUVERT } from "../blog/blog-ouvert";
@@ -29,6 +29,11 @@ const CONTACTS = [
     label: "LinkedIn",
     href: "https://linkedin.com/in/nathan-knaebel",
     Icon: LinkedInIcon,
+  },
+  {
+    label: "Malt",
+    href: "https://www.malt.fr/profile/nathanknaebel",
+    Icon: MaltIcon,
   },
   {
     label: "GitHub",

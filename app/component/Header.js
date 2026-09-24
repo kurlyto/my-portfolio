@@ -3,13 +3,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { WhatsAppIcon, LinkedInIcon, GitHubIcon } from "./icons";
+import { WhatsAppIcon, LinkedInIcon, MaltIcon, GitHubIcon } from "./icons";
 import EmailButton from "./EmailButton";
 import { nomClic } from "../lib/suivi-clics";
 
 const CONTACTS = [
   { label: "WhatsApp", href: "https://wa.me/33622164758", Icon: WhatsAppIcon },
   { label: "LinkedIn", href: "https://linkedin.com/in/nathan-knaebel", Icon: LinkedInIcon },
+  { label: "Malt", href: "https://www.malt.fr/profile/nathanknaebel", Icon: MaltIcon },
   { label: "GitHub", href: "https://github.com/kurlyto", Icon: GitHubIcon },
 ];
 
