@@ -1,8 +1,9 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { nomClic } from "../lib/suivi-clics";
-import { RDV_URL, RDV_LABEL, CalendrierIcon } from "../lib/rendez-vous";
+import { RDV_URL, RDV_LABEL, RDV_LABELS, CalendrierIcon } from "../lib/rendez-vous";
 
 // Pages ou le bouton flottant n'a rien a faire : l'espace d'admin et les
 // pages perso (photos, voyages).
@@ -13,6 +14,17 @@ const SANS_BOUTON = [/^\/admin/, /^\/stats/, /^\/photography/, /^\/travel/];
 // contact. z-40 : les fenetres du site (formulaire, chat) passent au-dessus.
 export default function BoutonRendezVous() {
   const chemin = usePathname() || "/";
+  // Le bouton vit dans le layout, hors de la page : il suit la langue que la
+  // page pose sur <html lang> (seul /projects passe en anglais).
+  const [langue, setLangue] = useState("fr");
+  useEffect(() => {
+    const racine = document.documentElement;
+    const lire = () => setLangue(racine.lang === "en" ? "en" : "fr");
+    lire();
+    const obs = new MutationObserver(lire);
+    obs.observe(racine, { attributes: true, attributeFilter: ["lang"] });
+    return () => obs.disconnect();
+  }, [chemin]);
   if (SANS_BOUTON.some((motif) => motif.test(chemin))) return null;
   // Le bouton vit hors du conteneur de la page : sur Foxy il doit porter
   // lui-meme `theme-aios`, sinon il garde l'orange du site agents.
@@ -28,7 +40,7 @@ export default function BoutonRendezVous() {
       className={`${theme}fixed bottom-4 right-4 z-40 flex min-h-11 items-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-semibold text-accent-ink shadow-lg transition-all duration-150 ease-out hover:-translate-y-0.5 hover:bg-accent-dark hover:shadow-xl sm:bottom-6 sm:right-6`}
     >
       <CalendrierIcon className="h-4 w-4" />
-      {RDV_LABEL}
+      {RDV_LABELS[langue]}
     </a>
   );
 }

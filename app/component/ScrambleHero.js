@@ -265,7 +265,7 @@ export default function ScrambleHero({ onSubmitNeed, onPlayDemo, onFieldFocus })
               passe apres le clic. Elle repetait "1 mois d'essai gratuit", deja
               affiche en haut de l'ecran et rappele plus bas. */}
           <p className="mt-1 text-[12.5px] font-mono text-black/55">
-            <span className="font-bold text-black">Un échange de 30 minutes</span> sans
+            <span className="font-bold text-black">Un échange de 20 minutes</span> sans
             engagement.
           </p>
         </div>

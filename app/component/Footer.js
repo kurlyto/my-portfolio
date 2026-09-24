@@ -5,7 +5,7 @@ import { t } from "../lib/i18n-projects";
 import { BLOG_OUVERT } from "../blog/blog-ouvert";
 import { METIERS } from "../metiers/metiers-data";
 import { nomClic } from "../lib/suivi-clics";
-import { RDV_URL, RDV_LABEL, CalendrierIcon } from "../lib/rendez-vous";
+import { RDV_URL, RDV_LABEL, RDV_LABELS, CalendrierIcon } from "../lib/rendez-vous";
 
 // Les offres de l'agence, dans l'ordre de l'accueil.
 const PRODUITS = [
@@ -75,7 +75,7 @@ export default function Footer({
         className="mt-8 inline-flex min-h-11 items-center gap-2 rounded-full bg-accent px-6 py-3 text-base font-semibold text-accent-ink transition-all duration-150 ease-out hover:-translate-y-0.5 hover:bg-accent-dark"
       >
         <CalendrierIcon className="h-5 w-5" />
-        {RDV_LABEL}
+        {RDV_LABELS[lang] || RDV_LABEL}
       </a>
       <div className="mt-8 flex items-center justify-center gap-6">
         <EmailButton

@@ -7,6 +7,10 @@
 // flottant (composant client) le lisent tous les deux.
 export const RDV_URL = "https://cal.com/nathan-knaebel/20min";
 export const RDV_LABEL = "Réserver un appel";
+// Le portfolio (/projects) existe aussi en anglais : le libelle suit la
+// langue de la page. Le nom de clic compte reste RDV_LABEL, pour ne pas
+// couper les statistiques en deux.
+export const RDV_LABELS = { fr: RDV_LABEL, en: "Book a call" };
 
 export function CalendrierIcon(props) {
   return (
