@@ -1,7 +1,7 @@
 ---
 titre: "Les nouveautés de l'IA en octobre 2026"
 description: "Nouveaux modèles, baisses de prix, outils dont tout le monde parle : l'essentiel du mois d'octobre, avec ce que ça change pour une petite entreprise et ce que j'en fais chez moi."
-date: 2026-11-01
+date: 2026-11-03
 format: actualite
 grappe: actus
 mot_cle: "actualite ia octobre 2026"

@@ -1,23 +1,27 @@
 ---
-titre: "Combien coûte un agent IA ? Mes vrais chiffres"
-description: "Je construis des agents IA pour des entreprises. Voici ce que coûte vraiment un agent : la construction, l'abonnement, la consommation du modèle, et ce qui fait grimper la facture."
-date: 2026-10-05
+titre: "Combien coûte vraiment un agent IA : ma facture décortiquée"
+description: "J'ai mesuré ce que consomment mes agents. Le plus cher est ce qu'ils relisent à chaque message. Je montre les chiffres et ce que j'ai changé."
+date: 2026-11-07
 format: explicatif
 grappe: agents
-mot_cle: "agent ia prix"
+mot_cle: "prix agent ia"
 statut: brouillon
 ---
 **Brouillon : plan de travail. Ne pas valider avant que le texte soit écrit.**
 
+Idée reprise le 25/09 : un vrai process de Nathan.
+
+Règle (Nathan 25/09) : on montre le principe et les grandes étapes pour prouver qu'il sait de quoi il parle. La recette entière reste chez nous : pas de textes donnés à l'IA, pas de réglages exacts, pas de liste complète de sources ni de code. Rien sur sa vie perso, ses comptes, ses chiffres privés ou ses clients.
+
 ## Plan
 
-1. Les trois lignes de la facture : construire, héberger, faire tourner
-2. Ce qui coûte vraiment : ce que l'agent relit, pas ce qu'il écrit
-3. Ma grille de prix et pourquoi un mois d'essai
-4. Trois exemples de budget selon la taille de l'entreprise
-5. Comment éviter la mauvaise surprise
+1. Ce qu'on paie : les mots lus et les mots écrits par le modèle
+2. La découverte : un agent relit 128 fois ce qu'il écrit (le contexte relu à chaque tour)
+3. Trois leviers qui ont fait baisser la note : mémoire allégée, conversations coupées, bon modèle au bon endroit
+4. Abonnement ou paiement à l'usage : ce que je conseille pour une petite entreprise
+5. Le coût mensuel réel d'un agent client
 
 ## Ce qu'il me faut de Nathan
 
-- Ta grille exacte à publier (construction, mensuel, IA en plus)
-- Un exemple chiffré de consommation d'un de tes agents
+- Le coût mensuel d'un agent type, arrondi
+- Des ordres de grandeur, pas ta facture réelle
