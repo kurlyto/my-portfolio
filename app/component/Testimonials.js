@@ -28,7 +28,7 @@ export const TESTIMONIALS = [
     jobTitle: "Investisseur immobilier",
     useCase: "Veille d'annonces et estimation",
     initials: "NL",
-    photo: null,
+    photo: "/testimonials/nicolas-lailler.jpg",
   },
   {
     quote:
