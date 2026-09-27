@@ -7,7 +7,9 @@ import Reveal from "./Reveal";
 // Regle posee par Nathan : seuls les temoignages NOMMES restent (prenom +
 // initiale du nom). Pour ajouter une photo, deposer un carre de 200x200 minimum
 // dans public/testimonials/ et renseigner `photo` ; sans photo la pastille
-// affiche les initiales.
+// affiche les initiales. Pour un LOGO (ex : le camion de Yann), ajouter
+// `logo: true` : l'image est montree entiere sur fond blanc au lieu d'etre
+// rognee comme un visage.
 export const TESTIMONIALS = [
   {
     quote:
@@ -16,7 +18,8 @@ export const TESTIMONIALS = [
     jobTitle: "Gérant de foodtruck",
     useCase: "Prospection événementielle",
     initials: "YL",
-    photo: null,
+    photo: "/testimonials/autruck-logo.png",
+    logo: true,
   },
   {
     quote:
@@ -43,7 +46,7 @@ export const TESTIMONIALS = [
     jobTitle: "Groupe AIMELAVIE",
     useCase: "Recherche de dates",
     initials: "VG",
-    photo: null,
+    photo: "/testimonials/victor-gintz.jpg",
   },
 ];
 
@@ -76,7 +79,9 @@ function Identity({ item }) {
         <img
           src={item.photo}
           alt=""
-          className="mt-4 w-11 h-11 shrink-0 rounded-full object-cover border border-black/10"
+          className={`mt-4 w-11 h-11 shrink-0 rounded-full border border-black/10 ${
+            item.logo ? "object-contain bg-white p-[3px]" : "object-cover"
+          }`}
         />
       ) : (
         <div className="mt-4 w-11 h-11 shrink-0 rounded-full bg-accent flex items-center justify-center text-[13px] font-mono font-bold text-accent-ink">
