@@ -1,13 +1,13 @@
 ---
 titre: "Les nouveautés de l'IA en septembre 2026"
-description: "Chaque 1er du mois, je fais le tri dans l'actualité de l'IA : nouveaux modèles, baisses de prix, outils dont tout le monde parle. Et ce que j'en fais chez moi."
+description: "Quatre grands modèles sont sortis en trois jours ce mois-ci. Je fais le tri et je vous explique ce que j'ai changé chez moi."
 date: 2026-10-01
 format: actualite
 grappe: actus
 mot_cle: "actualite ia"
 statut: brouillon
 ---
-En septembre 2026, quatre grands modèles d'IA sont sortis en trois jours et le patron d'Anthropic a demandé à toute l'industrie de ralentir. Microsoft et Salesforce ont aussi commencé à vendre des agents qui travaillent pendant que vous dormez. Pour une petite entreprise, la nouvelle la plus utile du mois est pourtant la plus discrète : le prix de ce qu'un agent relit a fondu.
+En septembre 2026, quatre grands modèles d'IA sont sortis en trois jours et un cinquième a fait le tour des réseaux avec des vidéos entièrement écrites en code. Le patron d'Anthropic a aussi demandé à toute l'industrie de ralentir. Microsoft et Salesforce ont aussi commencé à vendre des agents qui travaillent pendant que vous dormez. Pour une petite entreprise, la nouvelle la plus utile du mois est pourtant la plus discrète : le prix de ce qu'un agent relit a fondu.
 
 Je fais ce tri tous les mois parce que je construis des agents pour des entreprises et que mon propre assistant tourne sur ces modèles du matin au soir. Je vous donne les faits avec leur source et ce que j'en ai fait chez moi.
 
@@ -19,7 +19,7 @@ Le lendemain, Meta a publié [Muse Spark 1.3](https://research.meta.ai/blog/intr
 
 OpenAI a fermé la marche le 3 septembre avec [GPT-6 Astra](https://openai.com/index/gpt-6-astra/), ouvert d'abord à quelques organisations puis aux abonnés payants de ChatGPT les jours suivants. [CNBC](https://www.cnbc.com/2026/09/03/open-ai-astra-gpt-6-cyber.html) rappelle que la sortie avait été retardée après des attaques informatiques menées en juillet par des agents d'OpenAI que personne n'avait autorisées.
 
-Mon parc d'agents tourne sur Claude et je n'ai pas changé de fournisseur ce mois-ci. Trois modèles concurrents en une semaine ne suffisent pas à justifier une migration quand tout fonctionne. J'ai en revanche basculé sur Fable 5.1 dès sa sortie, pour une raison de coût que je détaille juste en dessous.
+J'ai essayé les trois concurrents sur des tâches de mon quotidien et aucun ne m'a donné envie de quitter Claude, sur lequel tourne tout mon parc d'agents. Une migration coûte des jours de réglages et je ne la lance que pour un gain net. J'ai en revanche basculé sur Fable 5.1 dès sa sortie, pour une raison de coût que je détaille juste en dessous.
 
 ## Le prix qui compte est celui qu'on relit
 
@@ -28,6 +28,14 @@ Un agent relit tout son contexte à chaque échange, c'est-à-dire ses consignes
 J'ai voulu savoir si ces chiffres tenaient chez moi et j'ai mesuré une semaine de travail de mes agents. Ils relisent **plus de cent fois plus de texte qu'ils n'en écrivent**, si bien que la baisse du prix des relectures pèse bien plus que celle des réponses. Je retiens la leçon au-delà de ce modèle précis : quand on compare deux IA pour un agent, le prix du cache compte plus que le prix affiché en gros sur la page.
 
 La comparaison du mois l'illustre bien. GPT-6 Astra et Fable 5.1 affichent le même prix pour le texte lu et le texte écrit, alors que la relecture en cache coûte 1 dollar le million chez OpenAI et quatre fois moins chez Anthropic. Pour un agent qui travaille toute la journée, cet écart finit par peser lourd sur la facture.
+
+## Opus 5.5 fait des films
+
+Anthropic a sorti [Claude Opus 5.5](https://www.anthropic.com/claude-opus-5-5) le 22 septembre. Sur la plupart des travaux, il se hisse au niveau de Fable 5.1 pour un prix nettement plus bas de 4 dollars le million de jetons lus et 20 dollars le million écrit. L'éditeur le dit aussi 30 % plus rapide que la version précédente.
+
+Ce sont pourtant ses créations qui ont fait parler de lui. En quelques jours les réseaux se sont remplis de films d'animation, de jeux jouables dans le navigateur et de scènes en 3D qu'il a entièrement écrits en code. Certains ont même leur musique composée par le modèle. Un [recueil tenu sur GitHub](https://github.com/magiccreator-ai/awesome-claude-opus-5-5-demos) en rassemble déjà deux douzaines, du jeu de vélo sur la côte à l'explication animée du fonctionnement d'un navigateur.
+
+Mon assistant tourne sur Opus 5.5 depuis le jour de sa sortie. Je lui ai fait fabriquer une vidéo de présentation de 21 secondes pour un de mes projets, entièrement en code, avec la voix et la musique posées ensuite. **Il a fallu plusieurs allers-retours** pour obtenir le bon rythme et j'y reviens en détail dans mon prochain article.
 
 ## Des agents avec un prénom
 
