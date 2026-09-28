@@ -1,5 +1,5 @@
 ---
-titre: "Forward Deployed Engineer : le métier qui installe l'IA"
+titre: "Forward Deployed Engineer : la nouvelle mode"
 description: "Tout le monde s'arrache les forward deployed engineers qui installent l'IA directement chez le client. Je fais ce travail pour des petites entreprises et je vous explique pourquoi je pense qu'il deviendra bientôt un métier de technicien."
 date: 2026-10-11
 format: explicatif
