@@ -15,7 +15,7 @@ Quand on traîne un peu sur LinkedIn, il y a un terme qu'on observe de plus en p
 
 Un forward deployed engineer, ou FDE, est un ingénieur que l'éditeur d'un logiciel d'IA envoie chez son client pour que l'outil fonctionne pour de bon dans l'entreprise. Il travaille dans les locaux du client, branche l'IA sur ses données et ses logiciels et reste jusqu'à ce que le système tourne au quotidien. Anthropic traduit le titre par « ingénieur en déploiement avancé » dans son offre d'emploi parisienne et tout le monde garde pourtant l'anglais.
 
-Si le terme a envahi LinkedIn en un an, c'est que l'argent a suivi. OpenAI, Anthropic, Amazon et Microsoft ont mis des milliards de dollars sur la table pour recruter ces profils. Je fais le même travail à toute petite échelle chez des indépendants et des petites entreprises. À force d'installer des [agents IA](/blog/agent-ia-definition), j'en suis venu à penser que ce métier d'ingénieur va devenir un métier de technicien.
+Depuis un an, OpenAI, Anthropic, Amazon et Microsoft ont mis des milliards de dollars sur la table pour recruter ces profils. Je fais le même travail à toute petite échelle chez des indépendants et des petites entreprises. À force d'installer des [agents IA](/blog/agent-ia-definition), j'en suis venu à penser que ce métier d'ingénieur va devenir un métier de technicien.
 
 ## Un métier né chez Palantir
 
