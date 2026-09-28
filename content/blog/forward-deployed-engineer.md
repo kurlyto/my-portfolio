@@ -11,9 +11,11 @@ statut: brouillon
 mots_cles: ["forward deployed engineer", "FDE", "ingénieur en déploiement avancé", "déployer un agent IA", "technicien IA", "Palantir"]
 lire_aussi: ["/blog/agent-ia-definition", "/blog/microsoft-copilot-autopilot-agent-autonome", "/agents"]
 ---
+Quand on traîne un peu sur LinkedIn, il y a un terme qu'on observe de plus en plus ces derniers temps : le forward deployed engineer. Mais qu'est-ce que c'est ? Je vous propose de voir un peu ensemble quel est ce métier de plus en plus à la mode et qui va, je vous l'assure, exploser durant ces prochains mois et ces prochaines années.
+
 Un forward deployed engineer, ou FDE, est un ingénieur que l'éditeur d'un logiciel d'IA envoie chez son client pour que l'outil fonctionne pour de bon dans l'entreprise. Il travaille dans les locaux du client, branche l'IA sur ses données et ses logiciels et reste jusqu'à ce que le système tourne au quotidien. Anthropic traduit le titre par « ingénieur en déploiement avancé » dans son offre d'emploi parisienne et tout le monde garde pourtant l'anglais.
 
-Le mot est partout depuis un an. OpenAI, Anthropic, Amazon et Microsoft ont mis des milliards de dollars sur la table pour recruter ces profils. Je fais le même travail à toute petite échelle chez des indépendants et des petites entreprises. À force d'installer des [agents IA](/blog/agent-ia-definition), j'en suis venu à penser que ce métier d'ingénieur va devenir un métier de technicien.
+Si le terme a envahi LinkedIn en un an, c'est que l'argent a suivi. OpenAI, Anthropic, Amazon et Microsoft ont mis des milliards de dollars sur la table pour recruter ces profils. Je fais le même travail à toute petite échelle chez des indépendants et des petites entreprises. À force d'installer des [agents IA](/blog/agent-ia-definition), j'en suis venu à penser que ce métier d'ingénieur va devenir un métier de technicien.
 
 ## Un métier né chez Palantir
 
@@ -92,7 +94,7 @@ L'IA avance si vite que personne ne sait à quoi ressembleront ces agents dans s
 
 Le modèle économique de ces boîtes pose aussi question. Un service qui repose sur des humains coûte cher et Globes note que Wonderful doit lever des sommes énormes pour financer ses recrutements. Le conseil dégage autour de 30 % de marge brute quand certains logiciels dépassent 90 %. L'analyste Gil Luria ne croit d'ailleurs pas que les grands éditeurs qui copient Palantir réussiront.
 
-Personne ne sait où tout ça mène. Mais ça risque d'être passionnant à suivre.
+Personne ne sait où tout ça mène. Mais ça risque d'être passionnant à suivre et on croisera sans doute bientôt sur LinkedIn les premières offres de technicien IA.
 
 ## Pour une petite entreprise
 
