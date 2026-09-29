@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { WhatsAppIcon, LinkedInIcon, MaltIcon, GitHubIcon } from "./icons";
 import CvModal from "./CvModal";
-import { LANG_COOKIE, LANGS, t } from "../lib/i18n-projects";
+import { LANGS, rememberLang, t } from "../lib/i18n-projects";
 import { nomClic } from "../lib/suivi-clics";
 
 // Nav PROPRE a la page /projects : volontairement decouplee du Header du site
@@ -35,7 +35,7 @@ export default function ProjectsNav({ lang = "fr" }) {
   // rechargement complet ni perte de position dans la page.
   function choose(next) {
     if (next === lang) return;
-    document.cookie = `${LANG_COOKIE}=${next};path=/;max-age=31536000;samesite=lax`;
+    rememberLang(next);
     router.refresh();
   }
 

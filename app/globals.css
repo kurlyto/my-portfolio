@@ -88,6 +88,62 @@ html {
   --accent-text: #ff6b35;
 }
 
+/* Accueil perso de Nathan (racine du domaine depuis le 28/09/2026) : SON site,
+   dans sa propre direction artistique, distincte de celle des produits. Papier
+   chaud, encre, titres en serif ; l'accent EST l'encre, donc les boutons
+   partages (icones du header, bouton rendez-vous) passent au noir au lieu de
+   l'orange des agents. */
+.theme-perso {
+  --accent: #1b1814;
+  --accent-dark: #000000;
+  --accent-ink: #ffffff;
+  --accent-text: #1b1814;
+  --surface: #f5f1ea;
+  --surface-2: #ece6db;
+  --ink: #1b1814;
+  --deep: #1b1814;
+}
+/* Sur fond sombre (pied de page), l'encre disparaitrait : l'accent passe au
+   papier et ce qu'on pose dessus a l'encre. */
+.theme-perso .on-dark {
+  --accent: #f5f1ea;
+  --accent-dark: #ffffff;
+  --accent-ink: #1b1814;
+  --accent-text: #f5f1ea;
+}
+
+/* La couleur de chaque produit, portable (decision de Nathan du 28/09/2026 :
+   orange = agents, bordeaux = Foxy, bleu = MDD, vert = Football Fight). Un
+   element qui MENE vers un produit porte la classe de ce produit et prend sa
+   couleur, ou qu'il soit pose : on change d'univers en changeant de site. Les
+   composants ecrivent toujours `bg-accent` / `text-accent-ink`.
+   Contrastes du texte blanc : bleu 4,6:1, vert 5,5:1, bordeaux 7,2:1 ; l'orange
+   porte du noir (7,4:1). */
+.da-agents {
+  --accent: #ff6b35;
+  --accent-dark: #e2531f;
+  --accent-ink: #000000;
+  --accent-text: #c8410f;
+}
+.da-foxy {
+  --accent: #a82418;
+  --accent-dark: #7a1810;
+  --accent-ink: #ffffff;
+  --accent-text: #a82418;
+}
+.da-mdd {
+  --accent: #2f6fed;
+  --accent-dark: #1f56c4;
+  --accent-ink: #ffffff;
+  --accent-text: #2f6fed;
+}
+.da-footballfight {
+  --accent: #02794a;
+  --accent-dark: #015c38;
+  --accent-ink: #ffffff;
+  --accent-text: #02794a;
+}
+
 /* Site des agents : UN SEUL orange, celui du logo (demande de Nathan, 14/09).
    L'orange vif ecrit en petit sur du blanc ne se lit pas (2,84:1) ; le foncer
    en rouille pour le texte mettait DEUX oranges a l'ecran. On ne l'utilise
@@ -143,6 +199,9 @@ html {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-display: var(--font-display);
+  /* Serif de l'accueil perso : la fonte n'est chargee que par cette page
+     (PersoHomeContent), la variable n'existe pas ailleurs. */
+  --font-perso: var(--font-perso);
   --color-accent: var(--accent);
   --color-accent-dark: var(--accent-dark);
   --color-accent-ink: var(--accent-ink);
@@ -865,4 +924,208 @@ button:not(:disabled),
 }
 .article-metier .verdict p {
   margin: 0.35rem 0;
+}
+
+/* Chaine d'outils en maillons numerotes (article "Comment j'ai optimise mes
+   reunions", 29/09/2026) : un logo officiel par maillon, tous a la MEME taille,
+   relies par un chevron orange. Une ligne sur ordinateur, une colonne sur
+   telephone. Reutilisable des qu'un outil passe la main a un autre. */
+.article-metier .chaine-outils ol {
+  display: grid;
+  gap: 1.2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: maillon;
+}
+.article-metier .chaine-outils li {
+  counter-increment: maillon;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin: 0;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgb(0 0 0 / 0.1);
+  border-radius: 0.9rem;
+  background: #fff;
+  font-size: 14px;
+  line-height: 1.4;
+  color: rgb(0 0 0 / 0.6);
+}
+.article-metier .chaine-outils li img {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  border-radius: 10px;
+  object-fit: contain;
+}
+.article-metier .chaine-outils .t::before {
+  content: counter(maillon, decimal-leading-zero);
+  display: block;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 11px;
+  color: #ff6b35;
+}
+.article-metier .chaine-outils strong {
+  display: block;
+  font-size: 15px;
+  line-height: 1.3;
+}
+/* Le chevron entre deux maillons : vers le bas sur telephone, vers la droite
+   sur ordinateur. */
+.article-metier .chaine-outils li + li::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -0.95rem;
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid #ff6b35;
+  border-bottom: 2px solid #ff6b35;
+  transform: translateX(-50%) rotate(45deg);
+}
+@media (min-width: 640px) {
+  .article-metier .chaine-outils ol {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem;
+  }
+  .article-metier .chaine-outils li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .article-metier .chaine-outils li + li::before {
+    left: -1.05rem;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+}
+
+/* "Une phrase dite en reunion, une tache deja lancee" (meme article) : la
+   phrase entendue dans une bulle, puis la tache qu'elle est devenue avec son
+   etat en aplat orange (texte noir : l'orange ne s'ecrit pas en petit sur du
+   blanc). Deux colonnes sur ordinateur, empile sur telephone. Le rond "en
+   cours" pulse doucement, coupe par prefers-reduced-motion. */
+.article-metier .phrase-tache {
+  padding: 0.4rem 1rem;
+  border: 1px solid rgb(0 0 0 / 0.1);
+  border-radius: 16px;
+  background: #fafafa;
+}
+.article-metier .phrase-tache .entetes {
+  display: none;
+}
+.article-metier .phrase-tache .paire {
+  display: grid;
+  gap: 1.2rem;
+  align-items: center;
+  padding: 0.9rem 0;
+}
+.article-metier .phrase-tache .paire + .paire {
+  border-top: 1px dashed rgb(0 0 0 / 0.14);
+}
+.article-metier .phrase-tache .phrase {
+  margin: 0;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid rgb(0 0 0 / 0.1);
+  border-radius: 1rem 1rem 1rem 0.25rem;
+  background: #fff;
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1.45;
+  text-wrap: balance;
+}
+.article-metier .phrase-tache .tache {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid rgb(0 0 0 / 0.12);
+  border-radius: 0.75rem;
+  background: #fff;
+  font-size: 14.5px;
+  line-height: 1.4;
+}
+.article-metier .phrase-tache .tache::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -0.95rem;
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid #ff6b35;
+  border-bottom: 2px solid #ff6b35;
+  transform: translateX(-50%) rotate(45deg);
+}
+.article-metier .phrase-tache .tache strong {
+  display: block;
+}
+.article-metier .phrase-tache .tache em {
+  display: inline-block;
+  margin-top: 0.4rem;
+  padding: 0.1rem 0.6rem;
+  border-radius: 999px;
+  background: #ff6b35;
+  color: #000;
+  font-size: 12.5px;
+  font-style: normal;
+  font-weight: 600;
+}
+.article-metier .phrase-tache .etat {
+  flex: none;
+  position: relative;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  border-radius: 5px;
+  background: #ff6b35;
+}
+.article-metier .phrase-tache .etat.fait::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 2.5px;
+  width: 5px;
+  height: 9px;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+  transform: rotate(45deg);
+}
+.article-metier .phrase-tache .etat.cours {
+  border: 2px solid #ff6b35;
+  border-radius: 50%;
+  background: conic-gradient(#ff6b35 0 50%, #fff 0);
+  animation: tache-en-cours 2.4s ease-out infinite;
+}
+@keyframes tache-en-cours {
+  0% { box-shadow: 0 0 0 0 rgb(255 107 53 / 0.45); }
+  70%, 100% { box-shadow: 0 0 0 8px rgb(255 107 53 / 0); }
+}
+@media (min-width: 640px) {
+  .article-metier .phrase-tache .entetes,
+  .article-metier .phrase-tache .paire {
+    grid-template-columns: 1fr 1.25fr;
+    column-gap: 2.2rem;
+  }
+  .article-metier .phrase-tache .entetes {
+    display: grid;
+    padding: 0.6rem 0 0;
+    font-family: var(--font-geist-mono), monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgb(0 0 0 / 0.5);
+  }
+  .article-metier .phrase-tache .tache::before {
+    left: -1.4rem;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .article-metier .phrase-tache .etat.cours {
+    animation: none;
+  }
 }

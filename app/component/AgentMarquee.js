@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { AGENTS } from "../agents/agents-data";
 import { AGENT_PITCHES } from "./agent-pitches";
@@ -30,14 +29,14 @@ function AgentCard({ agent }) {
   const text = pitch?.pitch ?? agent.shortDescription;
 
   return (
-    <Link
-      href="/agents/exemples"
-      data-cursor-hover
-      data-clic="clic-agents-bandeau-voir-un-exemple"
+    // Plus un lien depuis le 29/09 : la carte menait a /agents/exemples, page
+    // supprimee (Nathan) puisque cette section EST desormais les exemples.
+    // Sans destination, plus d'effet de survol qui promettrait un clic.
+    <div
       // Mobile : carte verticale plus etroite que l'ecran (une carte tient
       // entierement, la suivante depasse juste assez pour signaler qu'on peut
       // faire glisser). Desktop : disposition horizontale, plus dense.
-      className="group shrink-0 w-[280px] sm:w-[420px] rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.07] to-white/[0.02] p-6 sm:p-8 flex flex-col transition-all duration-300 hover:border-accent/50 hover:from-white/[0.11] hover:-translate-y-1"
+      className="shrink-0 w-[280px] sm:w-[420px] rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.07] to-white/[0.02] p-6 sm:p-8 flex flex-col"
     >
       <div className="flex flex-col items-center text-center sm:flex-row sm:items-center sm:text-left sm:gap-5">
         <div className="shrink-0 w-24 h-24 sm:w-20 sm:h-20 rounded-2xl overflow-hidden bg-white/10 flex items-center justify-center ring-1 ring-white/10">
@@ -65,7 +64,7 @@ function AgentCard({ agent }) {
       <p className="mt-5 sm:mt-6 text-[15px] sm:text-[16px] leading-relaxed opacity-80 text-center sm:text-left">
         {text}
       </p>
-    </Link>
+    </div>
   );
 }
 
@@ -106,7 +105,6 @@ export default function AgentMarquee() {
   const trackRef = useRef(null);
   const offsetRef = useRef(0);
   const dragRef = useRef(null);
-  const movedRef = useRef(false);
   const liftRef = useRef(0);
   const velocityRef = useRef(0);
   const [dragging, setDragging] = useState(false);
@@ -187,7 +185,6 @@ export default function AgentMarquee() {
     if (!drag) return;
     const dx = e.clientX - drag.startX;
     const dy = e.clientY - drag.startY;
-    if (Math.abs(dx) > 4 || Math.abs(dy) > 4) drag.moved = true;
 
     // Vitesse instantanee du geste, pour prolonger le mouvement au relachement.
     const now = performance.now();
@@ -204,29 +201,20 @@ export default function AgentMarquee() {
     liftRef.current = clampLift(drag.startLift + dy * 0.35);
   }
 
-  // Un glissement ne doit pas ouvrir la carte : on annule le clic seulement
-  // si le pointeur a reellement bouge, pour ne pas casser le clic simple.
-  function onClickCapture(e) {
-    if (movedRef.current) {
-      e.preventDefault();
-      e.stopPropagation();
-      movedRef.current = false;
-    }
-  }
-
   function endDrag(e) {
     if (!dragRef.current) return;
-    movedRef.current = Boolean(dragRef.current.moved);
     dragRef.current = null;
     setDragging(false);
     e.currentTarget.releasePointerCapture?.(e.pointerId);
   }
 
   return (
-    <section className="bg-black text-white py-14 md:py-24 overflow-hidden">
+    // id "exemples" : cible du lien "Exemples" du menu (29/09), qui menait a
+    // une page a part, supprimee depuis.
+    <section id="exemples" className="bg-black text-white py-14 md:py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <span className="text-xs font-mono uppercase tracking-widest text-accent">
-          Problèmes
+          Exemples
         </span>
         {/* max-w-2xl (672px) retire : ce titre est plus long que l'ancien
             ("Des milliers de cas d'usage") et se repliait des le desktop alors
@@ -272,9 +260,8 @@ export default function AgentMarquee() {
           onPointerMove={onPointerMove}
           onPointerUp={endDrag}
           onPointerCancel={endDrag}
-          onClickCapture={onClickCapture}
           // overflow-x seul + padding vertical : en overflow-hidden, la bordure
-          // haute des cartes et leur translation au survol etaient rognees.
+          // haute des cartes etait rognee.
           className={`overflow-x-hidden py-3 touch-pan-y select-none ${
             dragging ? "cursor-grabbing" : "cursor-grab"
           }`}

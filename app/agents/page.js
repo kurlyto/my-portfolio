@@ -81,7 +81,7 @@ function buildJsonLd() {
           "Conception, hebergement et suivi d'agents IA autonomes qui prennent en charge des taches repetitives : mails, prospection, administratif, veille, reporting.",
         provider: { "@id": `${SITE_URL}/#person` },
         areaServed: "FR",
-        url: `${SITE_URL}/agents/exemples`,
+        url: PAGE_URL,
       },
       {
         "@type": "FAQPage",

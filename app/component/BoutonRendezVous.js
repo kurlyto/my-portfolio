@@ -15,7 +15,7 @@ const SANS_BOUTON = [/^\/admin/, /^\/stats/, /^\/photography/, /^\/travel/];
 export default function BoutonRendezVous() {
   const chemin = usePathname() || "/";
   // Le bouton vit dans le layout, hors de la page : il suit la langue que la
-  // page pose sur <html lang> (seul /projects passe en anglais).
+  // page pose sur <html lang> (l'accueil et /projects passent en anglais).
   const [langue, setLangue] = useState("fr");
   useEffect(() => {
     const racine = document.documentElement;
@@ -27,8 +27,9 @@ export default function BoutonRendezVous() {
   }, [chemin]);
   if (SANS_BOUTON.some((motif) => motif.test(chemin))) return null;
   // Le bouton vit hors du conteneur de la page : sur Foxy il doit porter
-  // lui-meme `theme-aios`, sinon il garde l'orange du site agents.
-  const theme = chemin.startsWith("/foxy") ? "theme-aios " : "";
+  // lui-meme `theme-aios`, sur l'accueil perso `theme-perso`, sinon il garde
+  // l'orange du site agents.
+  const theme = chemin.startsWith("/foxy") ? "theme-aios " : chemin === "/" ? "theme-perso " : "";
 
   return (
     <a

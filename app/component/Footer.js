@@ -11,7 +11,6 @@ import { RDV_URL, RDV_LABEL, RDV_LABELS, CalendrierIcon } from "../lib/rendez-vo
 const PRODUITS = [
   { label: "Foxy, l'assistant de votre entreprise", href: "/foxy", evenement: "clic-footer-foxy" },
   { label: "Agents IA sur mesure", href: "/agents", evenement: "clic-footer-agents" },
-  { label: "Exemples d'agents", href: "/agents/exemples", evenement: "clic-footer-exemples" },
   { label: "Réalisations", href: "/projects", evenement: "clic-footer-realisations" },
 ];
 
@@ -45,8 +44,8 @@ const CONTACTS = [
 const CONTACT_BUTTON_CLASS =
   "w-12 h-12 flex items-center justify-center rounded-full border border-white/20 opacity-80 hover:opacity-100 hover:border-accent hover:text-accent-text hover:-translate-y-0.5 transition-all duration-150 ease-out";
 
-// `lang` n'est passe que par la page /projects (seule page bilingue) : partout
-// ailleurs le pied de page reste en francais, comme le reste du site.
+// `lang` n'est passe que par les pages bilingues (l'accueil perso et /projects) :
+// partout ailleurs le pied de page reste en francais, comme le reste du site.
 //
 // `homeHref` : depuis le 16/09/2026 la racine est l'accueil de l'agence, qui
 // mene a toutes les offres : c'est le "retour a l'accueil" par defaut. Les
@@ -88,6 +87,7 @@ export default function Footer({
           iconClassName="w-5 h-5"
           dark
           zone="footer"
+          lang={lang}
         />
         {CONTACTS.map(({ label, href, Icon }) => (
           <a
@@ -105,8 +105,8 @@ export default function Footer({
         ))}
       </div>
       {/* Plan du site : les offres, une page par metier et les derniers
-          articles. En francais seulement (la page /projects en anglais garde
-          le pied de page court). */}
+          articles. En francais seulement (en anglais, l'accueil et /projects
+          gardent le pied de page court : ces pages-la ne parlent que francais). */}
       {lang === "fr" && (
         <nav
           aria-label="Plan du site"

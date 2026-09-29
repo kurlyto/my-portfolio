@@ -3,6 +3,10 @@ import Header from "../component/Header";
 import Footer from "../component/FooterAvecArticles";
 import { tousLesArticles, FORMATS, SITE_URL, dateLisible } from "./blog-data";
 
+// Lu au chargement du module : en production, au build. Dans l'apercu `next dev`,
+// un article ou un visuel ajoute ensuite n'apparait dans la liste qu'une fois CE
+// fichier recompile (29/09 : la carte neuve de l'article sur les reunions restait
+// invisible ; un simple `touch` ne suffit pas, il faut changer son contenu).
 const articles = tousLesArticles();
 
 export const metadata = {

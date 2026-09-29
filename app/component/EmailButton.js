@@ -33,16 +33,25 @@ const WEBMAILS = [
   },
   {
     label: "Application mail",
+    labelEn: "Mail app",
     href: MAILTO,
     native: true,
     Icon: MailIcon,
   },
 ];
 
+// Le bouton suit la langue de la page : l'accueil et /projects existent aussi
+// en anglais.
+const COPIE = {
+  fr: { copier: "Copier l'adresse", copie: "Copié !" },
+  en: { copier: "Copy address", copie: "Copied!" },
+};
+
 // `zone` : ou se trouve le bouton (header, footer...), pour que le suivi des
 // clics dise LEQUEL sert.
-export default function EmailButton({ className, iconClassName, dark = false, zone = "page" }) {
+export default function EmailButton({ className, iconClassName, dark = false, zone = "page", lang = "fr" }) {
   const evenement = nomClic(zone, "email");
+  const copie = COPIE[lang] || COPIE.fr;
   const [open, setOpen] = useState(false);
   const [copied, setCopied] = useState(false);
   const [isTouch, setIsTouch] = useState(false);
@@ -148,7 +157,7 @@ export default function EmailButton({ className, iconClassName, dark = false, zo
             dropUp ? "bottom-full mb-3" : "top-full mt-3"
           }`}
         >
-          {WEBMAILS.map(({ label, href, native, Icon }) => (
+          {WEBMAILS.map(({ label, labelEn, href, native, Icon }) => (
             <a
               key={label}
               href={href}
@@ -159,7 +168,7 @@ export default function EmailButton({ className, iconClassName, dark = false, zo
               className={`flex items-center gap-2.5 px-4 py-2.5 font-mono text-xs normal-case tracking-normal transition-colors ${itemTone}`}
             >
               <Icon className="w-3.5 h-3.5 shrink-0" />
-              {label}
+              {(lang === "en" && labelEn) || label}
             </a>
           ))}
           <button
@@ -175,7 +184,7 @@ export default function EmailButton({ className, iconClassName, dark = false, zo
             ) : (
               <CopyIcon className="w-3.5 h-3.5 shrink-0" />
             )}
-            {copied ? "Copié !" : "Copier l'adresse"}
+            {copied ? copie.copie : copie.copier}
           </button>
         </div>
       )}

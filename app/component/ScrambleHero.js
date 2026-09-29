@@ -191,7 +191,18 @@ export default function ScrambleHero({ onSubmitNeed, onPlayDemo, onFieldFocus })
           reduits d'un cran : avec la barre et les puces empilees, la taille
           pleine poussait le bas du hero sous la ligne de flottaison sur les
           petits modeles (320x568). Au-dela, rien ne change. */}
-      <h1 className="font-display text-[clamp(1.65rem,7.4vw,2.2rem)] tall:text-[clamp(1.9rem,8.2vw,2.6rem)] md:text-[3.4rem] font-black tracking-tight leading-[1.06] md:leading-[1.08] whitespace-pre-line text-balance">
+      {/* `tall:` est borne au telephone (max-sm / max-md). PIEGE trouve le
+          29/09 : une variante perso (@custom-variant) sort APRES les paliers
+          sm/md/xl dans la feuille de style, donc elle les ecrasait sur tout
+          ecran de plus de 720 px de haut. Au bureau, le titre restait en
+          2,6rem au lieu de 3,4rem et la phrase en 17 px au lieu de 1,35rem. */}
+      {/* Au bureau (xl), titre, phrase et champ suivent la HAUTEUR de l'ecran
+          (Nathan, 29/09 : le premier ecran remplit la fenetre, sur un grand
+          ecran le contenu paraissait petit au milieu). Sous 850 px de haut, le
+          plancher du clamp garde les tailles de base. Plafond du titre a 4rem :
+          au-dela, "Un employe IA qui gere" ne tient plus sur une ligne dans la
+          colonne de 760 px. */}
+      <h1 className="font-display text-[clamp(1.65rem,7.4vw,2.2rem)] max-md:tall:text-[clamp(1.9rem,8.2vw,2.6rem)] md:text-[3.4rem] xl:text-[clamp(3.4rem,6.4vh,4rem)] font-black tracking-tight leading-[1.06] md:leading-[1.08] whitespace-pre-line text-balance">
         {displayText}
       </h1>
       <motion.p
@@ -204,7 +215,7 @@ export default function ScrambleHero({ onSubmitNeed, onPlayDemo, onFieldFocus })
         // Au grand ecran la phrase prend toute la colonne (elargie a 760 px,
         // 14/09). `text-pretty` et non `text-balance` a ce palier : l'equilibrage
         // coupait deux lignes egales a mi-largeur, la phrase ne s'etalait pas.
-        className="font-display mt-3 tall:mt-4 sm:mt-6 text-[15px] tall:text-[17px] sm:text-xl md:text-[1.35rem] font-normal italic leading-snug sm:leading-relaxed text-black/90 max-w-xl xl:max-w-none text-balance xl:text-pretty"
+        className="font-display mt-3 max-sm:tall:mt-4 sm:mt-6 text-[15px] max-sm:tall:text-[17px] sm:text-xl md:text-[1.35rem] xl:text-[clamp(1.35rem,2.5vh,1.6rem)] font-normal italic leading-snug sm:leading-relaxed text-black/90 max-w-xl xl:max-w-none text-balance xl:text-pretty"
       >
         {/* Une seule idee sur le premier ecran mobile : l'enumeration des
             taches (mails, devis, relances...) attend le bureau, elle se lit mal
@@ -226,7 +237,7 @@ export default function ScrambleHero({ onSubmitNeed, onPlayDemo, onFieldFocus })
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.1, duration: 0.5, ease: "easeOut" }}
-        className="mt-6 sm:mt-8"
+        className="mt-6 sm:mt-8 xl:mt-[clamp(2rem,4.5vh,3.25rem)]"
       >
         {/* Sur telephone, deux boutons plutot que le champ : ouvrir un clavier
             pour decrire son besoin est la plus grosse friction du parcours
@@ -274,7 +285,7 @@ export default function ScrambleHero({ onSubmitNeed, onPlayDemo, onFieldFocus })
           onSubmit={submit}
           animate={{ boxShadow: PULSE_SHADOWS }}
           transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
-          className="hidden sm:flex items-center gap-2 max-w-xl rounded-full border-2 border-accent bg-white pl-5 pr-1.5 py-1.5 focus-within:border-accent-dark"
+          className="hidden sm:flex items-center gap-2 max-w-xl xl:max-w-[clamp(36rem,68vh,44rem)] rounded-full border-2 border-accent bg-white pl-5 pr-1.5 py-1.5 focus-within:border-accent-dark"
         >
           <input
             type="text"
@@ -284,7 +295,7 @@ export default function ScrambleHero({ onSubmitNeed, onPlayDemo, onFieldFocus })
             onKeyDown={onKeyDown}
             placeholder={placeholder}
             aria-label="Décrivez votre besoin"
-            className="flex-1 min-w-0 bg-transparent outline-none text-[15px] sm:text-base placeholder:text-black/50 py-2"
+            className="flex-1 min-w-0 bg-transparent outline-none text-[15px] sm:text-base xl:text-[clamp(1rem,1.9vh,1.2rem)] placeholder:text-black/50 py-2"
           />
           <button
             type="submit"

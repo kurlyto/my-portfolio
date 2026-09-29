@@ -1,10 +1,12 @@
 ---
-titre: "De la réunion à la tâche faite : ma chaîne avec Fathom, Notion et l'IA"
+titre: "Comment j'ai optimisé mes réunions"
 description: "J'avais trois problèmes avec mes réunions et je les ai réglés un par un avec Fathom, Notion et mon IA. Je vous montre ce workflow très simple qui me sert tous les jours."
 date: 2026-09-28
 format: explicatif
 grappe: foxy
 mot_cle: "notes de reunion ia"
+image_carte: "/images/blog/cartes/reunion-taches-ia-notion-schema.webp"
+image_partage: "/images/blog/partage-reunion-taches-ia-notion.png"
 statut: publie
 mots_cles: ["notes de réunion IA", "Fathom", "Notion", "compte rendu automatique", "assistant IA", "tâches"]
 lire_aussi: ["/blog/agent-ia-definition", "/blog/quel-outil-ia-entreprise-comparatif", "/"]
@@ -12,6 +14,8 @@ lire_aussi: ["/blog/agent-ia-definition", "/blog/quel-outil-ia-entreprise-compar
 Dans les grands groupes, j'ai assisté à beaucoup de réunions à la française où l'on se raconte ses vacances et son week-end avant de repartir sans que rien ne bouge. Ça m'a un peu saoulé. Je voulais pouvoir sortir d'un appel où des choses concrètes ont été dites et voir, cinq minutes plus tard, les sujets déjà en cours.
 
 Pour y arriver j'ai réglé trois problèmes l'un après l'autre avec Fathom, Notion et mon assistant IA.
+
+<figure class="chaine-outils"><ol><li><img src="/images/blog/logos/fathom.png" alt="Logo Fathom" width="44" height="44" loading="lazy"><span class="t"><strong>Fathom prend les notes</strong>un résumé et la liste des actions juste après l'appel</span></li><li><img src="/images/blog/logos/notion.png" alt="Logo Notion" width="44" height="44" loading="lazy"><span class="t"><strong>Les actions deviennent des tâches</strong>l'assistant les range dans ma liste Notion</span></li><li><img src="/images/blog/logos/foxy.png" alt="Logo Foxy, mon assistant IA" width="44" height="44" loading="lazy"><span class="t"><strong>L'assistant s'y met</strong>il traite seul ce qui est utile ou urgent</span></li></ol><figcaption>De l'appel à la tâche traitée : un maillon par problème, dans l'ordre des chapitres.</figcaption></figure>
 
 ## Problème 1 : pas de notes
 
@@ -36,6 +40,8 @@ Mon assistant pioche maintenant lui-même dans la liste. Il juge si une tâche e
 Prenons une démo où je présente mon logiciel à un client. Il est intéressé mais il aimerait une fonctionnalité en plus et il doit aussi confirmer une question technique avec son associé.
 
 Deux tâches apparaissent dans ma liste juste après l'appel. La première est un mail qui part à l'associé avec la question technique. La seconde lance une session d'IA qui se met directement à développer la fonctionnalité demandée par le client.
+
+<figure class="phrase-tache"><div class="entetes"><span>Dit pendant la démo</span><span>Dans ma liste cinq minutes plus tard</span></div><div class="paire"><p class="phrase">«&nbsp;Je dois vérifier ce point technique avec mon associé.&nbsp;»</p><div class="tache"><span class="etat fait" aria-hidden="true"></span><span><strong>Envoyer la question technique à l'associé</strong><em>Mail envoyé</em></span></div></div><div class="paire"><p class="phrase">«&nbsp;Il nous faudrait une fonctionnalité en plus.&nbsp;»</p><div class="tache"><span class="etat cours" aria-hidden="true"></span><span><strong>Développer la fonctionnalité demandée</strong><em>Session d'IA en cours</em></span></div></div><figcaption>Exemple reconstitué : Fathom a relevé les deux phrases, l'assistant en a fait deux tâches puis les a lancées.</figcaption></figure>
 
 Une phrase dite en réunion est donc déjà traitée pendant que je range mon casque. C'est un workflow très basique et je le trouve pourtant ultra pratique.
 

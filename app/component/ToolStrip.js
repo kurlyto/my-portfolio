@@ -65,7 +65,7 @@ const TOOLS = [
 // `idPrefix` rend uniques les <defs> des icones a degrade (Instagram). Deux
 // niveaux de duplication existent et doivent TOUS deux etre couverts :
 //   1. la piste double la liste pour boucler le defilement ;
-//   2. la home monte deux ToolStrip a la fois — celle du hero (masquee en
+//   2. la home monte deux ToolStrip a la fois : celle du hero (masquee en
 //      desktop par `hidden`) et celle en pleine largeur.
 // Un id partage se resout sur le PREMIER element du document, ici celui de la
 // piste masquee : un degrade appartenant a un SVG en display:none n'est pas
@@ -81,10 +81,15 @@ function Logo({ tool, idPrefix, copy }) {
         className="opacity-90 transition-all duration-200 group-hover:opacity-100 group-hover:-translate-y-0.5"
       >
         {/* Le nom est normalise : plusieurs outils ont un espace ("Google
-            Agenda"), interdit dans un id reference par `url(#...)`. */}
+            Agenda"), interdit dans un id reference par `url(#...)`.
+            gradientId au seul logo Instagram, le seul a degrade : les autres
+            icones recopient leurs props sur le <svg>, ou React signalait un
+            attribut inconnu (les 2 alertes rouges de l'apercu, 29/09). */}
         <Icon
           className="w-10 h-10 md:w-11 md:h-11"
-          gradientId={`${idPrefix}-${tool.name.replace(/\W/g, "")}-${copy}`}
+          {...(Icon === InstagramIcon
+            ? { gradientId: `${idPrefix}-${tool.name.replace(/\W/g, "")}-${copy}` }
+            : {})}
         />
       </div>
 

@@ -67,10 +67,16 @@ function lire(fichier) {
   };
 }
 
-function visible(article) {
-  if (montrerBrouillons) return true;
+// Publie ET date du jour ou passee : ce que voit le visiteur en ligne. L'accueil
+// perso filtre avec, meme en apercu local (sinon il y montrait les brouillons
+// programmes, que `montrerBrouillons` laisse passer hors production).
+export function estPublie(article) {
   const aujourdhui = new Date().toISOString().slice(0, 10);
   return article.statut === "publie" && article.date <= aujourdhui;
+}
+
+function visible(article) {
+  return montrerBrouillons || estPublie(article);
 }
 
 export function tousLesArticles() {
@@ -167,8 +173,9 @@ export function minutesDeLecture(markdown) {
   return Math.max(1, Math.round(mots / 230));
 }
 
-export function dateLisible(iso) {
-  return new Date(`${iso}T12:00:00Z`).toLocaleDateString("fr-FR", {
+// `format` : "en-US" pour l'accueil en anglais, qui liste les derniers articles.
+export function dateLisible(iso, format = "fr-FR") {
+  return new Date(`${iso}T12:00:00Z`).toLocaleDateString(format, {
     day: "numeric",
     month: "long",
     year: "numeric",

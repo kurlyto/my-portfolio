@@ -1,7 +1,9 @@
-// Traduction de la SEULE page /projects (nav, hero, cartes, CV, pied de page).
+// Traduction de la page /projects (nav, hero, cartes, CV, pied de page), et
+// mecanique de langue partagee avec l'accueil perso, bilingue lui aussi depuis
+// le 28/09/2026 (ses textes vivent dans app/component/accueil-perso-data.js).
 // Le reste du site (vitrine d'agents, metiers, legal) reste en francais : il
-// s'adresse a des clients francais, le portfolio est ce qu'on partage a
-// l'etranger.
+// s'adresse a des clients francais, l'accueil et le portfolio sont ce qu'on
+// partage a l'etranger.
 //
 // Pas de framework i18n : deux dictionnaires et une prop `lang` qui descend
 // depuis le composant serveur. Ajouter une 3e langue = ajouter une cle ici.
@@ -12,6 +14,12 @@ export const DEFAULT_LANG = "fr";
 // Nom du cookie qui memorise un choix EXPLICITE de l'utilisateur (le bouton
 // FR/EN). Il prime toujours sur la detection automatique.
 export const LANG_COOKIE = "pf-lang";
+
+// Memorise le choix fait sur une bascule FR/EN, pour un an et tout le site.
+// A appeler depuis un clic (navigateur seulement).
+export function rememberLang(lang) {
+  document.cookie = `${LANG_COOKIE}=${lang};path=/;max-age=31536000;samesite=lax`;
+}
 
 export const T = {
   fr: {
@@ -71,7 +79,10 @@ export function t(lang) {
 //    tout le reste -> anglais.
 // On ne geolocalise PAS par IP : un francais en voyage a l'etranger serait
 // bascule en anglais a tort, alors que sa langue systeme, elle, ne ment pas.
-export function detectLang(acceptLanguage, cookieValue) {
+//
+// `withoutHeader` : la langue servie quand l'en-tete manque, ce qui est le cas
+// des robots (Google, apercus de liens) et jamais d'un vrai navigateur.
+export function detectLang(acceptLanguage, cookieValue, withoutHeader = "en") {
   if (LANGS.includes(cookieValue)) return cookieValue;
 
   const first = String(acceptLanguage || "")
@@ -79,5 +90,6 @@ export function detectLang(acceptLanguage, cookieValue) {
     .trim()
     .toLowerCase();
 
+  if (!first) return withoutHeader;
   return first.startsWith("fr") ? "fr" : "en";
 }

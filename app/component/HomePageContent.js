@@ -62,7 +62,11 @@ function NateCard({ onStart }) {
     // Photo A COTE du nom et non au-dessus (14/09) : empilee, la carte etait
     // aussi haute que le texte d'en face, elle ne pouvait pas se centrer sur
     // lui et semblait posee trop haut.
-    <div className="mx-auto w-full max-w-[380px] rounded-3xl border-2 border-accent/35 bg-[#faf8f5] p-5 shadow-[0_20px_50px_-20px_rgba(255,107,53,0.25)]">
+    // Au bureau (xl), la carte grandit avec la hauteur de l'ecran, comme le
+    // texte d'en face (29/09) ; sous 850 px de haut, tailles d'avant. Photo
+    // plafonnee : la colonne ne fait que 416 px, plus grande elle renvoyait
+    // "L'agent qui cadre votre besoin" a la ligne.
+    <div className="mx-auto w-full max-w-[380px] xl:max-w-[clamp(380px,44vh,470px)] rounded-3xl border-2 border-accent/35 bg-[#faf8f5] p-5 xl:p-[clamp(1.25rem,2.4vh,1.5rem)] shadow-[0_20px_50px_-20px_rgba(255,107,53,0.25)]">
       <div className="flex items-center gap-4">
         {/* eslint-disable-next-line @next/next/no-img-element -- portrait local a
             taille fixe, deja compresse en webp (16 Ko). */}
@@ -71,17 +75,17 @@ function NateCard({ onStart }) {
           alt="Nate, l'agent qui cadre votre besoin"
           width={640}
           height={640}
-          className="shrink-0 w-20 h-20 xl:w-24 xl:h-24 rounded-full object-cover border-4 border-white shadow-lg"
+          className="shrink-0 w-20 h-20 xl:w-[clamp(6rem,10vh,6.5rem)] xl:h-[clamp(6rem,10vh,6.5rem)] rounded-full object-cover border-4 border-white shadow-lg"
         />
         <div className="min-w-0 text-left">
-          <p className="font-display text-2xl font-bold">Nate</p>
-          <p className="mt-0.5 text-[14px] leading-snug text-black/60">L&apos;agent qui cadre votre besoin</p>
+          <p className="font-display text-2xl xl:text-[clamp(1.5rem,3.2vh,2rem)] font-bold">Nate</p>
+          <p className="mt-0.5 text-[14px] xl:text-[clamp(14px,1.6vh,15px)] leading-snug text-black/60">L&apos;agent qui cadre votre besoin</p>
         </div>
       </div>
       {/* Deux portes cote a cote (14/09) : l'audit avec Nate pour qui veut
           ecrire, l'appel (WhatsApp au bureau) pour qui prefere parler. Meme
           largeur pour les deux, l'une sous l'autre : la carte est etroite. */}
-      <div className="mt-4 w-full flex flex-col gap-2.5">
+      <div className="mt-4 xl:mt-[clamp(1rem,2.2vh,1.5rem)] w-full flex flex-col gap-2.5">
         {/* Fleche au grand ecran seulement : a 1024 px la carte n'a que 300 px
             et le libelle passait sur deux lignes. */}
         <button
@@ -89,12 +93,12 @@ function NateCard({ onStart }) {
           onClick={onStart}
           data-cursor-hover
           data-umami-event="clic-agents-hero-audit-gratuit"
-          className="inline-flex items-center justify-center gap-2 w-full text-center whitespace-nowrap rounded-full bg-accent text-accent-ink px-4 py-3 text-[12px] font-mono font-bold uppercase tracking-wide transition-all duration-150 ease-out hover:bg-accent-dark hover:-translate-y-0.5 hover:shadow-lg"
+          className="inline-flex items-center justify-center gap-2 w-full text-center whitespace-nowrap rounded-full bg-accent text-accent-ink px-4 py-3 xl:py-[clamp(0.75rem,1.6vh,1rem)] text-[12px] xl:text-[clamp(12px,1.45vh,14px)] font-mono font-bold uppercase tracking-wide transition-all duration-150 ease-out hover:bg-accent-dark hover:-translate-y-0.5 hover:shadow-lg"
         >
           Faire un audit 100% gratuit
           <span aria-hidden className="hidden xl:inline">&rarr;</span>
         </button>
-        <CallButton evenement="clic-agents-hero-passer-un-appel" className="inline-flex items-center justify-center gap-2 w-full text-center rounded-full border-2 border-black/15 bg-white px-5 py-2.5 text-[12px] font-mono font-bold uppercase tracking-wide text-black transition-colors duration-150 ease-out hover:border-accent">
+        <CallButton evenement="clic-agents-hero-passer-un-appel" className="inline-flex items-center justify-center gap-2 w-full text-center rounded-full border-2 border-black/15 bg-white px-5 py-2.5 xl:py-[clamp(0.625rem,1.4vh,0.875rem)] text-[12px] xl:text-[clamp(12px,1.45vh,14px)] font-mono font-bold uppercase tracking-wide text-black transition-colors duration-150 ease-out hover:border-accent">
           Passer un appel
         </CallButton>
       </div>
@@ -300,93 +304,100 @@ export default function HomePageContent({ articles = [] }) {
         )}
       </AnimatePresence>
 
-      <OfferBanner
-        titre="1 mois d'essai 100% gratuit"
-        detail="testez votre agent personnel sans aucun engagement d'achat."
-      />
-      <Header compactY site="agents" />
-
-      <section
-        // Colonne gauche a largeur fixe : le hero garde exactement la meme
-        // place que le chat soit ouvert ou non, seule la colonne droite change.
-        // pt-24 -> pt-14 en desktop : le chat ouvert (colonne droite) depassait
-        // sous la ligne de flottaison sur les ecrans courts (1366x768). On
-        // remonte l'ensemble du hero pour que le panneau tienne en entier.
-        // lg:pb-10 et non pb-20 : la bande d'outils pleine largeur suit
-        // immediatement en desktop, elle apporte sa propre respiration.
-        // pt reduit encore (pt-14 -> pt-6 en desktop) : le bandeau d'offre reste
-        // en haut de page, donc c'est ici que se recupere la hauteur qui
-        // manquait pour que le hero tienne entier au chargement.
-        // Colonne gauche elargie au grand ecran (620 -> 760 px, 14/09) : la
-        // phrase d'offre sous le titre y gagne de la largeur. Pas avant xl : a
-        // 1024 px la colonne droite tomberait sous la largeur de la carte.
-        className="max-w-7xl mx-auto px-6 pt-3 pb-8 lg:pb-10 lg:pt-6 w-full grid grid-cols-1 lg:grid-cols-[minmax(0,620px)_1fr] xl:grid-cols-[minmax(0,760px)_1fr] gap-12 lg:gap-14 items-stretch lg:min-h-0 content-start lg:content-stretch"
-      >
-        <ScrambleHero
-          onSubmitNeed={openChatWithVoice}
-          onPlayDemo={playDemo}
-          onFieldFocus={playDemoFromField}
+      {/* Premier ecran au bureau : bandeau, header, hero et bande d'outils
+          remplissent toute la hauteur de la fenetre (Nathan, 29/09 : sur son
+          ecran, le hero s'arretait a 630 px et laissait voir le trait de la
+          section Metiers). Le hero prend la hauteur restante et s'y centre ;
+          si la fenetre est plus courte que le contenu, min-h le laisse grandir. */}
+      <div className="lg:min-h-[100svh] lg:flex lg:flex-col">
+        <OfferBanner
+          titre="1 mois d'essai 100% gratuit"
+          detail="testez votre agent personnel sans aucun engagement d'achat."
         />
-        {/* Colonne droite au bureau uniquement : en mobile le hero tient seul
-            dans le premier ecran et ses boutons menent deja a Nate. */}
-        {/* z-40 quand le chat est ouvert : le panneau doit passer au-dessus du
-            voile (z-30), sinon il serait assombri avec le reste. */}
-        {/* min-w-0 sur la colonne elle-meme : la piste d'outils en `w-max`
-            (ToolStrip) gonfle sinon cette piste de grille, qui ecrase alors la
-            colonne du hero jusqu'a un mot par ligne. */}
-        {/* La carte de Nate se centre en hauteur face au texte (14/09 : collee
-            en haut, elle paraissait trop haute) ; le chat et la demo restent
-            accroches en haut, ou ils collent a l'ecran pendant qu'on defile. */}
-        <div
-          className={`hidden lg:block min-w-0 ${
-            chatOpen || demoOuverte ? "relative z-40 lg:sticky lg:top-6 lg:self-start" : "lg:self-center"
-          }`}
-        >
-          <AnimatePresence mode="wait">
-            {chatOpen ? (
-              <ChatPanel
-                key="chat"
-                onClose={() => setChatOpen(false)}
-                initialMessage={voiceMessage}
-              />
-            ) : demoOuverte ? (
-              <DemoPanel
-                key="demo"
-                demo={demo}
-                demos={DEMOS}
-                onClose={() => setDemoId(null)}
-                onOpenChat={openChatFromDemo}
-              />
-            ) : (
-              <div key="nate" className="min-w-0">
-                <NateCard onStart={() => openChatWithVoice(AUDIT_MESSAGE)} />
-              </div>
-            )}
-          </AnimatePresence>
-        </div>
-      </section>
+        <Header compactY site="agents" />
 
-      {/* Bande d'outils pleine largeur, hors de la grille du hero : un
-          defilement sur toute la fenetre raconte mieux "connectable a tout"
-          qu'un defilement confine a une colonne de 620px. Elle s'efface quand
-          le chat s'ouvre, pour que le panneau reste l'unique point d'attention.
-          Reservee au desktop : en mobile la bande vit dans le hero.
-          Elle RESTE quand la demo a ete lancee par le champ : la faire
-          disparaitre remonterait la page sous les yeux de quelqu'un qui ecrit. */}
-      <AnimatePresence>
-        {!chatOpen && (!demoOuverte || demoFromField) && (
-          <motion.div
-            key="toolstrip-desktop"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
-            className="hidden lg:block pb-16"
+        <section
+          // Colonne gauche a largeur fixe : le hero garde exactement la meme
+          // place que le chat soit ouvert ou non, seule la colonne droite change.
+          // pt-24 -> pt-14 en desktop : le chat ouvert (colonne droite) depassait
+          // sous la ligne de flottaison sur les ecrans courts (1366x768). On
+          // remonte l'ensemble du hero pour que le panneau tienne en entier.
+          // lg:pb-10 et non pb-20 : la bande d'outils pleine largeur suit
+          // immediatement en desktop, elle apporte sa propre respiration.
+          // pt reduit encore (pt-14 -> pt-6 en desktop) : le bandeau d'offre reste
+          // en haut de page, donc c'est ici que se recupere la hauteur qui
+          // manquait pour que le hero tienne entier au chargement.
+          // Colonne gauche elargie au grand ecran (620 -> 760 px, 14/09) : la
+          // phrase d'offre sous le titre y gagne de la largeur. Pas avant xl : a
+          // 1024 px la colonne droite tomberait sous la largeur de la carte.
+          className="max-w-7xl mx-auto px-6 pt-3 pb-8 lg:pb-10 lg:pt-6 w-full grid grid-cols-1 lg:grid-cols-[minmax(0,620px)_1fr] xl:grid-cols-[minmax(0,760px)_1fr] gap-12 lg:gap-14 items-stretch lg:min-h-0 lg:flex-1 content-start lg:content-center"
+        >
+          <ScrambleHero
+            onSubmitNeed={openChatWithVoice}
+            onPlayDemo={playDemo}
+            onFieldFocus={playDemoFromField}
+          />
+          {/* Colonne droite au bureau uniquement : en mobile le hero tient seul
+              dans le premier ecran et ses boutons menent deja a Nate. */}
+          {/* z-40 quand le chat est ouvert : le panneau doit passer au-dessus du
+              voile (z-30), sinon il serait assombri avec le reste. */}
+          {/* min-w-0 sur la colonne elle-meme : la piste d'outils en `w-max`
+              (ToolStrip) gonfle sinon cette piste de grille, qui ecrase alors la
+              colonne du hero jusqu'a un mot par ligne. */}
+          {/* La carte de Nate se centre en hauteur face au texte (14/09 : collee
+              en haut, elle paraissait trop haute) ; le chat et la demo restent
+              accroches en haut, ou ils collent a l'ecran pendant qu'on defile. */}
+          <div
+            className={`hidden lg:block min-w-0 ${
+              chatOpen || demoOuverte ? "relative z-40 lg:sticky lg:top-6 lg:self-start" : "lg:self-center"
+            }`}
           >
-            <ToolStrip fullWidth />
-          </motion.div>
-        )}
-      </AnimatePresence>
+            <AnimatePresence mode="wait">
+              {chatOpen ? (
+                <ChatPanel
+                  key="chat"
+                  onClose={() => setChatOpen(false)}
+                  initialMessage={voiceMessage}
+                />
+              ) : demoOuverte ? (
+                <DemoPanel
+                  key="demo"
+                  demo={demo}
+                  demos={DEMOS}
+                  onClose={() => setDemoId(null)}
+                  onOpenChat={openChatFromDemo}
+                />
+              ) : (
+                <div key="nate" className="min-w-0">
+                  <NateCard onStart={() => openChatWithVoice(AUDIT_MESSAGE)} />
+                </div>
+              )}
+            </AnimatePresence>
+          </div>
+        </section>
+
+        {/* Bande d'outils pleine largeur, hors de la grille du hero : un
+            defilement sur toute la fenetre raconte mieux "connectable a tout"
+            qu'un defilement confine a une colonne de 620px. Elle s'efface quand
+            le chat s'ouvre, pour que le panneau reste l'unique point d'attention.
+            Reservee au desktop : en mobile la bande vit dans le hero.
+            Elle RESTE quand la demo a ete lancee par le champ : la faire
+            disparaitre remonterait la page sous les yeux de quelqu'un qui ecrit. */}
+        <AnimatePresence>
+          {!chatOpen && (!demoOuverte || demoFromField) && (
+            <motion.div
+              key="toolstrip-desktop"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              className="hidden lg:block pb-16"
+            >
+              <ToolStrip fullWidth />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
 
       {/* La bande d'outils, en mobile, vit ici et non plus dans le hero :
           "connectable a tout" est un argument, pas une accroche, il n'a rien a
@@ -434,13 +445,13 @@ export default function HomePageContent({ articles = [] }) {
           qui fait le travail. */}
       <MetierBadges />
       <AgentMarquee />
-      {/* Ordre du bas de page : lever l'objection ChatGPT juste apres la
-          vitrine d'agents, montrer que demarrer est simple, puis les garanties
-          (securite) avant la FAQ. */}
-      <WhyNotChatGpt />
-      {/* La preuve juste apres l'argument : de vrais clients disent ce que leur
-          agent fait pour eux, avant de montrer comment on demarre. */}
+      {/* Ordre du bas de page (Nathan, 29/09 : temoignages et face-a-face
+          inverses) : de vrais clients disent ce que leur agent fait pour eux
+          juste apres la vitrine d'agents, puis on leve l'objection ChatGPT,
+          on montre que demarrer est simple et les garanties (securite) avant
+          la FAQ. */}
       <Testimonials />
+      <WhyNotChatGpt />
       <HowItWorks onStart={() => openChatWithVoice(AUDIT_MESSAGE)} />
       <SecuritySection />
       {/* La FAQ remplace la section "Explorer" (WorkGateway) : en fin de page,

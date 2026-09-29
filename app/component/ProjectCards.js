@@ -32,7 +32,8 @@ import { attributClic, nomClic } from "../lib/suivi-clics";
 // Nathan le 23/09 : ligne 1 Agents IA / MDD / Foxy, ligne 2 les jeux
 // (Football Fight, FeatuRing, AI or Not), ligne 3 notariat + FetaFrance,
 // ligne 4 Insider Bot / Photographies / Poker.
-const PROJECTS = [
+// Exportee : l'accueil perso (ProjetsApercu) en montre une selection.
+export const PROJECTS = [
   {
     name: "Agents IA sur-mesure",
     nameEn: "Custom AI agents",

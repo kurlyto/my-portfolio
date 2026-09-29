@@ -15,6 +15,14 @@ const nextConfig = {
         destination: "/agents",
         permanent: false,
       },
+      // L'ancienne galerie d'agents, supprimee le 29/09 (Nathan) : la section
+      // Exemples de /agents la remplace. Redirection permanente pour Google
+      // (la page etait dans le sitemap) et les liens deja partages.
+      {
+        source: "/agents/exemples",
+        destination: "/agents#exemples",
+        permanent: true,
+      },
     ];
   },
 };

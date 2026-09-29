@@ -19,12 +19,12 @@ export default function sitemap() {
 
   return [
     // La racine est l'accueil de l'agence ; ses deux offres ont chacune leur
-    // site : /foxy (l'AIOS) et /agents (les agents sur mesure), avec
-    // /agents/exemples, sa galerie d'agents en place.
+    // site : /foxy (l'AIOS) et /agents (les agents sur mesure). L'ancienne
+    // galerie /agents/exemples n'existe plus (29/09) : elle redirige vers la
+    // section Exemples de /agents.
     { url: BASE_URL, changeFrequency: "monthly", priority: 1, lastModified },
     { url: `${BASE_URL}/foxy`, changeFrequency: "monthly", priority: 0.9, lastModified },
     { url: `${BASE_URL}/agents`, changeFrequency: "monthly", priority: 0.9, lastModified },
-    { url: `${BASE_URL}/agents/exemples`, changeFrequency: "monthly", priority: 0.7, lastModified },
     // Un flyer partageable par metier : pages statiques, bonnes portes
     // d'entree SEO ("agent IA plombier", etc.).
     ...METIERS.map((m) => ({
