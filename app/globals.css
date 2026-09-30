@@ -1129,3 +1129,21 @@ button:not(:disabled),
     animation: none;
   }
 }
+
+/* Onde qui part d'un bouton video (Foxy, 30/09/2026, meme code que "Voir une
+   video" sur MDD) : attire l'oeil sans faire bouger le bouton. La couleur suit
+   l'accent du site. Coupee pour qui a demande moins d'animations. */
+@keyframes cta-pulse {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 50%, transparent);
+  }
+  70%,
+  100% {
+    box-shadow: 0 0 0 14px color-mix(in srgb, var(--accent) 0%, transparent);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .cta-pulse {
+    animation: cta-pulse 2.2s ease-out infinite;
+  }
+}

@@ -19,6 +19,7 @@ import AgentStrip from "./AgentStrip";
 import { Stars } from "./Testimonials";
 import { AIOS_OFFER } from "./aios-offer";
 import OfferBanner from "./OfferBanner";
+import { FoxyVideoSection, WatchVideoButton } from "./FoxyVideo";
 import { DesktopMock, PhoneMock } from "./AiosMockup";
 import { ETAPES, TEMOIGNAGES_AIOS, QUESTIONS_AIOS } from "./aios-content";
 import { nomClicDemo } from "../lib/suivi-clics";
@@ -211,27 +212,18 @@ export default function AiosHomeContent({ articles = [] }) {
               <CtaButton onClick={openForm} evenement="clic-foxy-hero-reserver-ma-place">
                 Réserver ma place
               </CtaButton>
-              {/* Sur mobile ce bouton JOUE la premiere demonstration au lieu
-                  d'ouvrir la liste : qui clique "voir travailler" veut voir, pas
-                  choisir. Le choix n'est pas perdu pour autant, le panneau garde
-                  son retour vers la liste et son "voir un autre exemple". */}
-              <button
-                type="button"
-                onClick={() => playDemo(AIOS_DEMOS[0].id)}
-                data-cursor-hover
-                data-umami-event="clic-foxy-hero-voir-foxy-travailler"
-                className="sm:hidden inline-flex items-center justify-center gap-2 w-full rounded-full border border-ink/20 px-6 py-4 text-[13px] font-mono font-bold uppercase tracking-wide text-ink/70"
-              >
-                <PlayGlyph className="w-3 h-3 text-accent-text" />
-                Voir Foxy travailler
-              </button>
-              <p className="hidden sm:block text-[13px] font-mono leading-relaxed text-ink/55">
-                <span className="text-ink">
-                  Inscriptions jusqu&apos;au {AIOS_OFFER.dateLimiteTexte}.
-                </span>{" "}
-                {AIOS_OFFER.garantie}.
-              </p>
+              {/* Le bouton qui montre, c'est la video depuis le 30/09/2026 (memes
+                  codes que la landing MDD). Sur mobile elle remplace "Voir Foxy
+                  travailler" : un bouton qui engage, un qui montre, rien
+                  d'autre. Les demos restent au bureau (puces ci-dessous). */}
+              <WatchVideoButton onReserve={openForm} />
             </div>
+            <p className="hidden sm:block mt-4 text-[13px] font-mono leading-relaxed text-ink/55">
+              <span className="text-ink">
+                Inscriptions jusqu&apos;au {AIOS_OFFER.dateLimiteTexte}.
+              </span>{" "}
+              {AIOS_OFFER.garantie}.
+            </p>
 
             {/* La seule information chiffree du premier ecran mobile : ce qu'on
                 risque de rater. Le reste (garantie, date) attend le bureau ou
@@ -312,6 +304,9 @@ export default function AiosHomeContent({ articles = [] }) {
             </div>
           </motion.div>
         </section>
+        {/* La video juste sous le hero, comme sur MDD : elle demarre muette
+            quand on y arrive. */}
+        <FoxyVideoSection onReserve={openForm} />
       </div>
 
       {/* Ce qu'il fait : la conversation se joue a l'ecran (AiosCapacites),
