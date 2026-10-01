@@ -364,6 +364,17 @@ button:not(:disabled),
   margin: 0;
   height: auto;
 }
+.article-metier figure video {
+  margin: 0;
+  width: 100%;
+  height: auto;
+}
+/* Image tres haute (capture d'ecran de telephone, avant/apres empile) : pleine
+   largeur sur telephone, mais pas un ecran entier de haut sur ordinateur. */
+.article-metier figure.haute img {
+  max-width: 520px;
+  margin-inline: auto;
+}
 .article-metier figcaption .credit {
   display: block;
   margin-top: 0.25rem;

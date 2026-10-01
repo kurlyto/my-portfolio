@@ -1,7 +1,7 @@
 ---
 titre: "Les nouveautés de l'IA en novembre 2026"
 description: "Nouveaux modèles, prix, règles et outils dont tout le monde parle : l'essentiel de novembre, avec ce que j'en fais chez moi."
-date: 2026-12-01
+date: 2026-12-08
 format: actualite
 grappe: actus
 mot_cle: "actualite ia novembre 2026"

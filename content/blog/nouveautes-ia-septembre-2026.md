@@ -5,9 +5,11 @@ date: 2026-10-01
 format: actualite
 grappe: actus
 mot_cle: "actualite ia"
+image_carte: "/images/blog/cartes/nouveautes-ia-septembre-2026-logos.webp"
+image_partage: "/images/blog/partage-nouveautes-ia-septembre-2026.png"
 statut: brouillon
 ---
-En septembre 2026, quatre grands modèles d'IA sont sortis en trois jours et un cinquième a fait le tour des réseaux avec des vidéos entièrement écrites en code. Le patron d'Anthropic a aussi demandé à toute l'industrie de ralentir. Microsoft et Salesforce ont aussi commencé à vendre des agents qui travaillent pendant que vous dormez. Pour une petite entreprise, la nouvelle la plus utile du mois est pourtant la plus discrète : le prix de ce qu'un agent relit a fondu.
+En septembre 2026, quatre grands modèles d'IA sont sortis en trois jours et un cinquième a fait le tour des réseaux avec des vidéos entièrement écrites en code. Le patron d'Anthropic a aussi demandé à toute l'industrie de ralentir. Microsoft et Salesforce ont de leur côté commencé à vendre des agents qui travaillent pendant que vous dormez. Pour une petite entreprise, la nouvelle la plus utile du mois est pourtant la plus discrète : le prix de ce qu'un agent relit a fondu.
 
 Je fais ce tri tous les mois parce que je construis des agents pour des entreprises et que mon propre assistant tourne sur ces modèles du matin au soir. Je vous donne les faits avec leur source et ce que j'en ai fait chez moi.
 
@@ -37,9 +39,36 @@ Ce sont pourtant ses créations qui ont fait parler de lui. En quelques jours le
 
 Quelques films de la communauté m'ont bluffé. Kevin Ngo a sorti [une petite histoire dessinée à la main](https://x.com/kevin_t_ngo/status/2102437977435893771) dont chaque image et la musique sortent du code. Addy Osmani explique [le fonctionnement d'un navigateur en 40 secondes](https://x.com/addyosmani/status/2103009037164110327) avec des croquis animés, et vittorio raconte [l'histoire de l'Occident par son architecture](https://x.com/IterIntellectus/status/2103212539895017864) en deux minutes. Aucun de ces films n'a été tourné ni monté dans un logiciel de vidéo.
 
-Mon assistant tourne sur Opus 5.5 depuis le jour de sa sortie et je lui fais fabriquer de la même façon les vidéos de présentation de trois de mes projets : Mon Devis Dentaire, Foxy et Football Fight. **Il faut plusieurs allers-retours** pour obtenir le bon rythme et j'y reviens en détail dans mon prochain article.
+<figure>
+<img src="/blog/nouveautes-ia-septembre-2026/films-en-code-opus-5-5.webp" alt="Trois images tirées de films écrits en code avec Claude, sur fond de pellicule. En grand, une fille salue depuis sa fenêtre une étoile souriante au-dessus d'une ville la nuit (Kevin Ngo). À droite, un petit robot mesure une page dans une fenêtre de navigateur (Addy Osmani), puis un temple grec dessiné au trait sous le titre « Then we built perfection » (vittorio)." width="1440" height="1090" loading="lazy">
+<figcaption>Trois films écrits en code, sans caméra ni logiciel de montage : l'histoire dessinée de Kevin Ngo, le navigateur d'Addy Osmani en 40 secondes et l'Occident de vittorio en deux minutes.<span class="credit">Images : vidéos de <a href="https://x.com/kevin_t_ngo/status/2102437977435893771">@kevin_t_ngo</a> (22 septembre 2026), <a href="https://x.com/addyosmani/status/2103009037164110327">@addyosmani</a> et <a href="https://x.com/IterIntellectus/status/2103212539895017864">@IterIntellectus</a> (24 septembre 2026) sur X</span></figcaption>
+</figure>
 
-<!-- VIDÉOS DE NATHAN À INTÉGRER ICI QUAND ELLES SERONT FINIES : MDD, Foxy, Football Fight (faites avec Opus 5.5) -->
+## Mes vidéos de présentation
+
+Mon assistant tourne sur Opus 5.5 depuis sa sortie et le 26 septembre au soir, j'ai voulu savoir s'il savait en faire autant pour Mon Devis Dentaire. Je lui ai envoyé sans aucun cahier des charges une consigne en anglais de deux lignes.
+
+> « make a dynamic 40-second motion graphics video that shows what an incredible motion designer you are, like it's your showreel for a résumé. go all out. Topic : presenting Mon Devis Dentaire »
+
+Je lui demandais une vidéo animée de 40 secondes qui montre quel motion designer incroyable il est, comme la bande démo qu'on joint à un CV, en y mettant tout ce qu'il a. Dans la foulée j'ai ajouté qu'il fallait mettre en avant les fonctions les plus importantes et trouver des phrases qui tuent, avec une piste d'accroche : « Vos devis reviennent enfin signés ».
+
+L'assistant n'ouvre aucun logiciel de montage. Il écrit une page web animée que [HyperFrames](https://github.com/heygen-com/hyperframes), un outil libre, filme image par image pour en tirer un fichier vidéo. La voix off vient de Gemini chez Google et les bruitages d'une banque de sons libres de droits. La première version m'a bluffé et c'est la septième que vous voyez ici.
+
+<figure>
+<video controls preload="none" playsinline poster="/blog/nouveautes-ia-septembre-2026/mon-devis-dentaire.webp" width="1920" height="1080"><source src="/blog/nouveautes-ia-septembre-2026/mon-devis-dentaire.mp4" type="video/mp4"></video>
+<figcaption>Mon Devis Dentaire en 40 secondes, du devis envoyé depuis le logiciel du cabinet jusqu'à la signature du patient sur son téléphone.</figcaption>
+</figure>
+
+Le soir même, j'ai dicté la même envie pour Football Fight, mon jeu de culture foot où l'on relie des joueurs par les clubs qu'ils ont en commun. Cette fois je parlais en français et je donnais le fil : on comprend le jeu en 30 secondes avec sa direction artistique, puis on découvre le mode carrière, le classement et le vestiaire. Mon premier retour a ajouté l'accroche des trois premières secondes, « Est-ce que tu connais vraiment le football ? ».
+
+Il a fallu dix versions. L'image était juste presque du premier coup et je l'ai corrigée par petites touches, comme un clic de souris sur le bouton final ou du vert quand deux joueurs partagent un club. Une seule fois j'ai tout refusé, quand l'assistant a remplacé ses dessins par de vraies captures du jeu. Le vrai chantier a été le son. **La voix m'endormait** alors que je voulais une pub qui transporte. J'ai fini par choisir moi-même entre trois nouvelles voix en les écoutant.
+
+<figure>
+<video controls preload="none" playsinline poster="/blog/nouveautes-ia-septembre-2026/football-fight.webp" width="1920" height="1080"><source src="/blog/nouveautes-ia-septembre-2026/football-fight.mp4" type="video/mp4"></video>
+<figcaption>Football Fight en 22 secondes, de la première chaîne de joueurs jusqu'à la montée au classement.</figcaption>
+</figure>
+
+Celle de Foxy n'est pas encore finie. Elle arrive bientôt !
 
 
 ## Des agents avec un prénom
@@ -56,6 +85,11 @@ Mes agents ont un prénom depuis le premier jour et chacun a son périmètre, si
 
 Le 12 septembre, le patron d'Anthropic Dario Amodei a publié un long texte intitulé [« We Must Pace the Frontier »](https://darioamodei.com/post/we-must-pace-the-frontier) où il demande aux laboratoires de ralentir la course aux modèles plus puissants. Il propose des évaluateurs indépendants installés à demeure chez chaque laboratoire et un organisme commun de normes sur le modèle du gendarme de la bourse américaine. Anthropic applique déjà la première mesure de son côté et Sam Altman, le patron d'OpenAI, s'est dit d'accord dans la foulée.
 
+<figure>
+<img src="/blog/nouveautes-ia-septembre-2026/dario-amodei-techcrunch-2023.webp" alt="Dario Amodei, lunettes et chemise bleue, parle sur scène devant le décor TechCrunch Disrupt" width="1400" height="1050" loading="lazy">
+<figcaption>Dario Amodei, le patron d'Anthropic, sur scène à TechCrunch Disrupt en 2023. Le 12 septembre, il a publié « We Must Pace the Frontier », un long texte où il demande aux laboratoires de ralentir la course aux modèles plus puissants.<span class="credit">Photo : TechCrunch, <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:Dario_Amodei_at_TechCrunch_Disrupt_2023_07.jpg">Wikimedia Commons</a></span></figcaption>
+</figure>
+
 La réponse n'a pas tardé. Le 18 septembre, quatre consommateurs ont [attaqué en justice](https://news.bloomberglaw.com/litigation/openai-anthropic-google-spacexai-hit-with-antitrust-lawsuit) Anthropic, OpenAI, Google et SpaceXAI à San Francisco. Ils les accusent de s'entendre pour freiner des produits concurrents, ce que le droit américain de la concurrence interdit.
 
 Je comprends qu'on veuille ralentir, parce que cette amélioration permanente fait peur et qu'elle me fait peur à moi aussi. Chaque mois apporte un modèle qui rend le précédent dépassé. Je pense que nos souris et nos claviers vont disparaître bien plus vite qu'on ne l'imagine et qu'une bonne partie de ce qu'on apprend aujourd'hui sera obsolète dans trois ans. Pour une petite entreprise, rien ne change dans l'immédiat puisque les modèles actuels restent disponibles et que ce débat porte sur les suivants.
@@ -64,14 +98,26 @@ Je comprends qu'on veuille ralentir, parce que cette amélioration permanente fa
 
 Le 8 septembre, Mistral AI a annoncé une [levée de 3 milliards d'euros](https://www.franceinfo.fr/internet/intelligence-artificielle/la-start-up-francaise-mistral-annonce-une-nouvelle-levee-de-fonds-de-trois-milliards-d-euros-portant-sa-valorisation-a-plus-de-21-milliards-d-euros_8182583.html) qui porte sa valeur au-delà de 21 milliards. C'est la plus grosse levée jamais faite par une entreprise technologique européenne non cotée. Je la suis de près pour une raison concrète. Certains métiers comme les avocats, les notaires ou la santé me demandent un modèle hébergé en Europe et soumis au droit européen, et Mistral est aujourd'hui l'alternative la plus solide pour eux.
 
+<figure>
+<img src="/blog/nouveautes-ia-septembre-2026/arthur-mensch-mistral-downing-street-2025.webp" alt="Arthur Mensch, en costume sombre, discute avec Keir Starmer dans un salon aux murs orange de Downing Street" width="1400" height="934" loading="lazy">
+<figcaption>Arthur Mensch, cofondateur et patron de Mistral AI, reçu à Downing Street par le Premier ministre britannique Keir Starmer en janvier 2025.<span class="credit">Photo : Simon Dawson / No 10 Downing Street, <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:Prime_Minister_Keir_Starmer_meets_Arthur_Mensch_(54256710173).jpg">Wikimedia Commons</a></span></figcaption>
+</figure>
+
 ## Ce que j'ai changé chez moi
 
 Mon agent le plus gourmand est passé sur Fable 5.1 le jour où j'ai compris que le cache pesait l'essentiel de sa facture. Le changement a pris plus de temps que prévu parce que le nom du modèle était écrit à plusieurs endroits de son code et que l'agent retombait sur l'ancien selon le chemin par lequel on l'appelait.
 
 J'ai aussi mesuré le niveau de réflexion qu'on peut demander à ces modèles. Sur une vraie tâche de raisonnement, l'effort le plus bas a coûté deux fois moins cher et répondu plus de trois fois plus vite avec la même réponse juste. Sur une question courte, le réglage ne change rien au prix. Mon assistant a désormais un bouton à côté de la zone de saisie pour choisir le modèle et l'effort selon la tâche.
 
+<figure class="haute">
+<img src="/blog/nouveautes-ia-septembre-2026/menu-modele-effort-assistant.webp" alt="Capture du menu ouvert au-dessus de la zone de saisie : quatre modèles (Fable 5.1, Opus 5.5 coché, Sonnet 5.5, Haiku 4.5) et cinq efforts de Faible à Max, Faible choisi" width="1440" height="1680" loading="lazy">
+<figcaption>Capture de mon assistant sur téléphone : le bouton à côté de la zone de saisie ouvre ce menu, où je choisis le modèle et l'effort pour chaque conversation.</figcaption>
+</figure>
+
 Le reste du mois est passé sur la chaîne qui transforme mes réunions en tâches faites, que je raconte dans [un article dédié](/blog/reunion-taches-ia-notion).
 
 ## Ce que je ferais à votre place
 
-Si vous payez déjà un outil d'IA, demandez à votre fournisseur quel modèle tourne derrière et s'il a répercuté la baisse du cache de septembre. Si vous hésitez entre deux offres d'agents, comparez le coût d'une journée de travail plutôt que le prix au million affiché en tête de page. Et si vous voulez savoir ce qu'un assistant comme [Foxy](/) prendrait en charge chez vous, je vous réponds volontiers.
+Pas grand-chose ! Vous n'avez aucune raison de suivre ces sorties au jour le jour et changer d'outil à chaque nouveau modèle fait perdre plus de temps qu'il n'en fait gagner. Les baisses de prix finissent de toute façon par arriver chez ceux qui construisent leurs outils sur ces modèles.
+
+Si vous n'avez encore jamais essayé, commencez par un texte que vous repoussez. Copiez le dernier avis Google laissé sur votre commerce dans la version gratuite de ChatGPT ou de Claude et demandez-lui une réponse. Ça prend deux minutes et vous verrez tout de suite ce que ces outils savent faire sans rien brancher. Et si vous voulez savoir ce qu'un assistant comme [Foxy](/) prendrait en charge chez vous, je vous réponds volontiers.

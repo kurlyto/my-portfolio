@@ -1,7 +1,7 @@
 ---
 titre: "Mon IA remplit les formulaires dans mon propre navigateur"
 description: "Mon assistant agit dans mon propre Chrome là où je suis déjà connecté. Je montre l'extension et ce qu'elle sait faire. Je montre aussi où je l'arrête."
-date: 2026-10-21
+date: 2026-11-18
 format: tutoriel
 grappe: perso
 mot_cle: "ia remplir formulaire"

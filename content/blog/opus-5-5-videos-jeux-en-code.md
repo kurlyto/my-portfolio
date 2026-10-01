@@ -1,10 +1,12 @@
 ---
 titre: "Opus 5.5 : des vidéos et des jeux entièrement écrits en code"
 description: "Depuis le 22 septembre les réseaux débordent de vidéos et de jeux faits avec Opus 5.5. J'ai ouvert le code d'un Minecraft qu'il a écrit pour vous montrer comment c'est fabriqué et je l'ai testé sur une vraie vidéo de présentation."
-date: 2026-10-03
+date: 2026-10-05
 format: actualite
 grappe: actus
 mot_cle: "claude opus 5.5"
+image_carte: "/images/blog/cartes/opus-5-5-videos-jeux-en-code-minecraft.webp"
+image_partage: "/images/blog/partage-opus-5-5-videos-jeux-en-code.jpg"
 statut: brouillon
 mots_cles: ["Claude Opus 5.5", "motion design IA", "vidéo en code", "HyperFrames", "jeu vidéo IA", "Anthropic"]
 lire_aussi: ["/blog/nouveautes-ia-septembre-2026", "/blog/quel-outil-ia-entreprise-comparatif", "/"]
@@ -25,6 +27,11 @@ Un [recueil tenu sur GitHub](https://github.com/magiccreator-ai/awesome-claude-o
 
 Le spécialiste du marketing Charlie Hills a poussé l'exercice jusqu'à [seize animations publicitaires](https://charliehills.substack.com/p/opus-55-motion-graphics) tenues dans un seul fichier. Il prévient qu'il n'a pas obtenu ce résultat en une phrase et qu'il lui a fallu décrire chaque état de l'animation, donner une bonne référence et reprendre plusieurs fois. Je suis arrivé exactement au même constat.
 
+<figure>
+<img src="/blog/opus-5-5-videos-jeux-en-code/creations-communaute-velo-course-charlie-hills.webp" alt="Planche de quatre images : un pélican à vélo sur une route au bord de la mer, au coucher du soleil puis à la nuit tombée ; une voiture de course rouge qui dérape dans une ville en laissant de la fumée ; deux animations de texte de Charlie Hills, OPUS in motion et STRETCH" width="1440" height="1132" loading="lazy">
+<figcaption>Le jeu de vélo et le jeu de course du recueil, capturés dans leurs démos jouables, et deux des seize animations de Charlie Hills. Dans le jeu de vélo, l'heure tourne vraiment : le soleil se couche, puis les lampadaires s'allument.<span class="credit">Captures : jeux de riba2534, 29 septembre 2026. Animations : Charlie Hills, charliehills.substack.com, 25 septembre 2026.</span></figcaption>
+</figure>
+
 ## Ma vidéo de 21 secondes
 
 J'avais besoin d'une vidéo de présentation pour un de mes projets, en format horizontal pour un site et en vertical pour les réseaux. Je l'ai confiée à mon assistant en lui décrivant l'idée à voix haute, avec l'accroche, les écrans à montrer et le ton que je voulais.
@@ -32,6 +39,11 @@ J'avais besoin d'une vidéo de présentation pour un de mes projets, en format h
 Le travail s'est fait en quelques grandes étapes. Le modèle a écrit chaque scène sous forme de page animée puis mon serveur a filmé le tout, sans payer le moindre crédit pour le rendu. J'ai ensuite choisi une voix off parmi quatre propositions générées par une IA de Google et une musique parmi trois essais, avant que le tout soit assemblé.
 
 La première version durait 28 secondes et elle était trop lente, avec trop de détails à l'écran. Je lui ai demandé plus de rythme et moins de texte, et la deuxième version tombe à 21 secondes. **Le modèle exécute très bien une direction claire** alors qu'il ne sait pas deviner seul ce qui rend une vidéo accrocheuse. Le choix de la musique est d'ailleurs resté entre mes mains, parce que c'est une affaire de goût et que je n'ai pas envie de la déléguer.
+
+<figure class="haute">
+<img src="/blog/opus-5-5-videos-jeux-en-code/video-football-fight-avant-apres.webp" alt="Le même écran Tournois dans deux versions de la vidéo de présentation de Football Fight. En haut, la version 1 de 28 secondes : une fenêtre Récompenses (+2500, +3 coupons) et une étiquette Va jusqu'en finale recouvrent le tableau. En bas, la version 2 de 21 secondes : le tableau seul, avec la carte Vainqueur" width="1440" height="1888" loading="lazy">
+<figcaption>Le même moment dans les deux versions de la vidéo de Football Fight, mon jeu de culture foot. La fenêtre des récompenses et les sous-titres sont partis, et la vidéo a perdu sept secondes au passage.</figcaption>
+</figure>
 
 ## Minecraft dans le navigateur
 
@@ -60,7 +72,7 @@ Pour comprendre comment une phrase devient un jeu, j'ai ouvert le fichier du Min
 Les textures sont peintes pixel par pixel. Pour l'herbe, le code prend un vert, éclaircit ou assombrit au hasard chaque pixel d'un carré de 16 sur 16 et y jette cinquante taches. La terre, la pierre et les planches ont chacune leur petite recette du même genre et le jeu colle ensuite ces carrés sur des milliers de cubes.
 
 <figure>
-<img src="/blog/opus-5-5-videos-jeux-en-code/recette-texture-herbe.webp" alt="Schéma en trois étapes : la recette de l'herbe écrite en trois lignes, le carré de 16 pixels sur 16 qu'elle produit, puis les blocs d'herbe dans le jeu" width="1400" height="560" loading="lazy">
+<img src="/blog/opus-5-5-videos-jeux-en-code/texture-herbe-vers-jeu.webp" alt="À gauche, le carré d'herbe de 16 pixels sur 16 peint par le code, agrandi. À droite, les mêmes pixels collés sur les blocs d'herbe et de terre du jeu" width="1440" height="640" loading="lazy">
 <figcaption>La texture d'herbe du jeu refaite à partir de sa recette. Le code tient en une ligne et le petit carré obtenu habille tous les blocs d'herbe du monde.</figcaption>
 </figure>
 

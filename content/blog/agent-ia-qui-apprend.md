@@ -1,7 +1,7 @@
 ---
 titre: "Un agent IA qui apprend de mes corrections"
 description: "Quand je corrige mon assistant la correction devient une règle écrite. La nuit il relit ses journées et propose ce qu'il a appris. Je montre la boucle et ce qu'il ne retient pas."
-date: 2026-10-29
+date: 2026-11-26
 format: explicatif
 grappe: agents
 mot_cle: "agent ia qui apprend"

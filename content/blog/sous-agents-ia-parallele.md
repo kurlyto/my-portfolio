@@ -1,7 +1,7 @@
 ---
 titre: "Faire relire un travail par quatre IA en parallèle"
 description: "Pour un gros chantier je lance plusieurs IA en même temps. Chacune a son angle et je fais vérifier leurs conclusions. Je montre ce que ça trouve de plus."
-date: 2026-10-25
+date: 2026-11-22
 format: explicatif
 grappe: tutos
 mot_cle: "sous agents ia"

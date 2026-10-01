@@ -1,7 +1,7 @@
 ---
 titre: "Mes agents se surveillent entre eux"
 description: "Un agent en panne ne prévient pas. J'ai mis en place un appel du matin et un compte rendu d'équipe. Je vérifie que le rapport attendu est là plutôt que de mesurer le silence."
-date: 2026-10-09
+date: 2026-11-02
 format: explicatif
 grappe: agents
 mot_cle: "surveillance agents ia"

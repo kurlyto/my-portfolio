@@ -1,11 +1,12 @@
 ---
 titre: "Copilot Autopilot : l'agent de Microsoft qui travaille seul"
 description: "Microsoft a présenté le 25 septembre un agent qui travaille seul dans Microsoft 365 avec son propre nom et sa propre adresse mail. J'ai épluché l'annonce et je vous explique ce qu'il change pour une petite entreprise."
-date: 2026-10-02
+date: 2026-10-17
 format: actualite
 grappe: actus
 mot_cle: "microsoft copilot autopilot agent autonome entreprise"
 image_carte: "/images/blog/cartes/microsoft-copilot-autopilot-agent-autonome.webp"
+image_partage: "/images/blog/partage-microsoft-copilot-autopilot-agent-autonome.jpg"
 statut: brouillon
 mots_cles: ["Copilot Autopilot", "Microsoft 365 Copilot", "agent IA autonome", "OpenClaw", "Copilot Cowork", "agent IA entreprise"]
 lire_aussi: ["/blog/nouveautes-ia-septembre-2026", "/blog/agent-ia-definition", "/foxy"]
@@ -26,26 +27,25 @@ Microsoft le présente comme un coéquipier numérique. Il surveille des canaux 
 
 Microsoft a montré un exemple concret pendant sa présentation. Un salarié qui jouait le rôle d'un responsable régional dans une chaîne de magasins a créé un Autopilot baptisé Dot et lui a donné un seul objectif : que les magasins aient leur stock à temps pour le Black Friday. Dot a choisi lui-même les canaux Teams, les fils de mails et les données de stock à surveiller. Il envoyait un résumé chaque jour et il a signalé un problème de livraison qui menaçait 18 magasins.
 
-<figure>
-<ol class="flux">
-<li><strong>Un nom</strong>Dot, l'assistant du responsable</li>
-<li><strong>Un objectif</strong>du stock avant le Black Friday</li>
-<li><strong>Une veille</strong>Teams, mails et stocks</li>
-<li><strong>Un résumé</strong>envoyé chaque jour</li>
-<li><strong>Une alerte</strong>18 magasins menacés</li>
-</ol>
-<figcaption>La démonstration d'Autopilot présentée par Microsoft, rapportée par GeekWire.</figcaption>
-</figure>
-
 ## D'OpenClaw à Autopilot
 
 L'origine d'Autopilot montre bien où va le marché. Il est né des essais de Microsoft avec OpenClaw, l'agent personnel libre qui a fait le tour d'internet au début de l'année. En mars, Satya Nadella comparait pourtant OpenClaw à un virus tant il le jugeait risqué pour une entreprise. Microsoft a lancé en juin un agent de travail toujours allumé baptisé Scout. Nadella a ensuite expliqué aux investisseurs en juillet qu'il était « powered by OpenClaw ». Scout s'appelle désormais Autopilot.
+
+<figure>
+<img src="/blog/microsoft-copilot-autopilot-agent-autonome/satya-nadella-microsoft.webp" alt="Portrait de Satya Nadella, lunettes et pull bleu marine, qui sourit en regardant sur le côté" width="1400" height="933" loading="lazy">
+<figcaption>Satya Nadella, le patron de Microsoft, ici en 2017.<span class="credit">Photo : Brian Smale et Microsoft, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:Satya_smiling-print.jpg">Wikimedia Commons</a></span></figcaption>
+</figure>
 
 Microsoft vend donc la même idée qu'OpenClaw, enfermée dans un cadre que les services informatiques acceptent : des droits d'accès, un journal de chaque action de l'agent et des règles fixées par l'administrateur. Jacob Andreou dirige Copilot et il a lancé une pique visiblement adressée à Claude Cowork d'Anthropic. Envoyer ses fichiers les plus sensibles dans une machine virtuelle sur l'ordinateur de l'utilisateur était pour lui « hors de question ». Je trouve ce virage logique parce que la sécurité est bien le premier frein des entreprises. Un agent qui a sa propre adresse mail reçoit aussi les mails de n'importe qui, et un texte piégé glissé dans l'un d'eux peut lui donner des ordres. Le cadre de Microsoft limite les dégâts sans faire disparaître ce risque.
 
 ## Le prix
 
 Copilot se paie désormais de [deux façons](https://aka.ms/Sept25/EvolvingModel). La licence mensuelle par personne couvre l'usage courant : la conversation et Copilot dans Word, Excel, PowerPoint, Outlook et Teams. Le travail d'agent (Cowork, Code et Autopilot) passe en crédits Copilot facturés à la consommation, tout comme les modèles les plus récents d'OpenAI et d'Anthropic. Microsoft compare ce montage à une voiture hybride rechargeable où la licence joue la batterie et les crédits le réservoir d'essence.
+
+<figure>
+<img src="/blog/microsoft-copilot-autopilot-agent-autonome/prius-hybride-rechargeable-borne.webp" alt="Une Toyota Prius grise garée sur une place réservée aux voitures électriques, branchée à sa borne, devant une Prius rouge" width="1400" height="1050" loading="lazy">
+<figcaption>Une hybride rechargeable à sa borne : l'image choisie par Microsoft pour expliquer ses deux façons de payer Copilot.<span class="credit">Photo : Gogerr, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:2026_Prius_Plug-in_Hybrid_plugged_into_a_charging_station_2.jpg">Wikimedia Commons</a></span></figcaption>
+</figure>
 
 Aucun prix n'est annoncé pour une heure de travail d'Autopilot. Chez les grands clients, ces crédits restent coupés tant qu'un administrateur n'a pas fixé de budget et rien n'est facturé avant cela. C'est rassurant pour une direction financière. Pour une petite entreprise, la facture devient moins prévisible qu'un abonnement fixe et **il faudra mesurer ce que coûte une tâche** avant de laisser un agent tourner jour et nuit.
 
@@ -55,4 +55,6 @@ Microsoft annonçait en juillet plus de 30 millions de licences Copilot payées,
 
 Mes propres agents font à peu près le travail d'Autopilot depuis cet été et ils tournent sur un petit serveur. Chacun a un prénom et une mission, garde la mémoire de ce qu'il a déjà fait et travaille pendant que je dors. L'un d'eux lit l'actualité de l'IA chaque matin et me propose un sujet d'article sans que j'aie à le lui demander. La vraie différence tient à l'endroit où l'agent vit. Autopilot ne voit que ce qui passe par Microsoft 365, alors qu'un agent sur mesure se branche sur vos vrais outils, qu'il s'agisse de Gmail, de Notion ou de votre logiciel métier.
 
-Si toute votre entreprise tourne déjà sur Microsoft 365, je pense qu'Autopilot sera le chemin le plus simple le jour où il sera ouvert à tous avec un prix connu. En attendant, je vous conseille de noter les tâches que vous aimeriez confier à un collègue qui ne dort jamais, avec pour chacune son objectif et les endroits qu'il devrait surveiller. Cet exercice servira quel que soit l'outil choisi. Et si vous voulez voir dès maintenant un assistant de ce genre travailler sur vos propres outils, [Foxy](/foxy) est fait pour ça.
+Si toute votre entreprise tourne déjà sur Microsoft 365, je pense qu'Autopilot sera le chemin le plus simple le jour où il sera ouvert à tous avec un prix connu. En attendant, je vous conseille de noter les tâches que vous aimeriez confier à un collègue qui ne dort jamais, avec pour chacune son objectif et les endroits qu'il devrait surveiller. Cet exercice servira quel que soit l'outil choisi.
+
+Et si vous voulez voir dès maintenant un assistant de ce genre travailler sur vos propres outils, [Foxy](/foxy) est fait pour ça.
