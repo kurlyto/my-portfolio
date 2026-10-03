@@ -286,12 +286,15 @@ const LANGUES = [
 // 03 - Projets : les noms des projets de ProjectCards a montrer, produits
 // compris (Nathan, 29/09 : ils sont AUSSI des projets). Leur nom et leur
 // description en anglais vivent avec eux (`nameEn`, `descriptionEn`).
+// Les projets clients de l'agence suivent les produits (03/10).
 export const PROJETS_MONTRES = [
   "Agents IA sur-mesure",
   "Foxy",
   "Mon Devis Dentaire",
   "Football Fight",
   "FeatuRing",
+  "BB.Booking",
+  "Planning pour restaurants",
   "FetaFrance",
   "AI or Not",
   "Variante de Poker Japonais",

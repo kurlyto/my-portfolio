@@ -17,6 +17,7 @@ import {
   PrismaIcon,
   PostgresIcon,
   TelegramIcon,
+  ClaudeIcon,
 } from "./tech-icons";
 import { t } from "../lib/i18n-projects";
 import { attributClic, nomClic } from "../lib/suivi-clics";
@@ -31,7 +32,9 @@ import { attributClic, nomClic } from "../lib/suivi-clics";
 // L'ordre compte aussi pour la mise en page desktop (3 colonnes), fixe par
 // Nathan le 23/09 : ligne 1 Agents IA / MDD / Foxy, ligne 2 les jeux
 // (Football Fight, FeatuRing, AI or Not), ligne 3 notariat + FetaFrance,
-// ligne 4 Insider Bot / Photographies / Poker.
+// ligne 4 Insider Bot / Photographies / Poker. Ligne 5 (03/10) : les projets
+// clients de l'agence, sans lien (Nathan : "tu dis juste que j'ai travaille
+// sur ca"). Le groupe de restaurants n'est pas nomme : pas de contrat signe.
 // Exportee : l'accueil perso (ProjetsApercu) en montre une selection.
 export const PROJECTS = [
   {
@@ -222,6 +225,40 @@ export const PROJECTS = [
       { icon: ViteIcon, label: "Vite" },
       { icon: SocketIoIcon, label: "Socket.io" },
       { icon: TailwindIcon, label: "Tailwind CSS" },
+    ],
+  },
+  {
+    name: "BB.Booking",
+    description:
+      "Agent IA et application pour une agence de booking de six artistes : l'agent trie la boîte mail par artiste, suit les salles à démarcher et prépare les relances.",
+    descriptionEn:
+      "AI agent and app for a booking agency representing six artists: the agent sorts the shared inbox by artist, tracks the venues to pitch and prepares follow-ups.",
+    years: "2026",
+    cover: "from-black to-black",
+    // Le logo "bb.b" chrome du site de l'agence, recompose sur fond noir.
+    coverImage: "/images/cover-bb-booking.jpg",
+    coverImageFit: "contain",
+    tech: [
+      { icon: NodeJsIcon, label: "Node.js" },
+      { icon: ClaudeIcon, label: "Claude" },
+    ],
+  },
+  {
+    name: "Planning pour restaurants",
+    nameEn: "Restaurant Scheduling",
+    description:
+      "Planning du personnel d'un groupe de restaurants : un agent IA repère les manques et propose qui appeler selon les contrats, les disponibilités et le trajet.",
+    descriptionEn:
+      "Staff scheduling for a restaurant group: an AI agent spots understaffed shifts and suggests who to call based on contracts, availability and commute.",
+    years: "2026",
+    cover: "from-rose-700 to-rose-950",
+    // Pictogramme blanc sur fond transparent : le degrade ci-dessus passe
+    // dessous, sans cadre visible sur telephone.
+    coverImage: "/images/cover-planning-restaurants.png",
+    coverImageFit: "contain",
+    tech: [
+      { icon: NodeJsIcon, label: "Node.js" },
+      { icon: ClaudeIcon, label: "Claude" },
     ],
   },
 ];
