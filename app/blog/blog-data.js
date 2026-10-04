@@ -71,7 +71,10 @@ function lire(fichier) {
 // perso filtre avec, meme en apercu local (sinon il y montrait les brouillons
 // programmes, que `montrerBrouillons` laisse passer hors production).
 export function estPublie(article) {
-  const aujourdhui = new Date().toISOString().slice(0, 10);
+  // Le jour de PARIS, pas celui d'UTC (05/10/2026) : la page Publication de
+  // l'AIOS date l'article au jour de Paris. Un site reconstruit entre minuit et
+  // 2 h a Paris (encore la veille en UTC) cachait l'article du jour : 404.
+  const aujourdhui = new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Paris" }).format(new Date());
   return article.statut === "publie" && article.date <= aujourdhui;
 }
 
