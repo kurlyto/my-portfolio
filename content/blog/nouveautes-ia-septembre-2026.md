@@ -1,13 +1,13 @@
 ---
 titre: "Les nouveautés de l'IA en septembre 2026"
 description: "Quatre grands modèles sont sortis en trois jours ce mois-ci. Je fais le tri et je vous explique ce que j'ai changé chez moi."
-date: 2026-10-01
+date: 2026-10-05
 format: actualite
 grappe: actus
 mot_cle: "actualite ia"
 image_carte: "/images/blog/cartes/nouveautes-ia-septembre-2026-logos.webp"
 image_partage: "/images/blog/partage-nouveautes-ia-septembre-2026.png"
-statut: brouillon
+statut: publie
 ---
 En septembre 2026, quatre grands modèles d'IA sont sortis en trois jours et un cinquième a fait le tour des réseaux avec des vidéos entièrement écrites en code. Le patron d'Anthropic a aussi demandé à toute l'industrie de ralentir. Microsoft et Salesforce ont de leur côté commencé à vendre des agents qui travaillent pendant que vous dormez. Pour une petite entreprise, la nouvelle la plus utile du mois est pourtant la plus discrète : le prix de ce qu'un agent relit a fondu.
 
