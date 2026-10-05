@@ -112,7 +112,7 @@ export default function Testimonials() {
           Témoignages
         </span>
         <h2 className="font-display mt-3 text-3xl md:text-5xl font-bold tracking-tight max-w-2xl">
-          Ce qu&apos;en disent nos clients
+          Mes clients racontent :
         </h2>
 
         {/* Mobile : une rangee qu'on fait glisser au doigt, une carte a la fois
