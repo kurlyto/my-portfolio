@@ -115,7 +115,7 @@ export const PROJECTS = [
       "Staff scheduling for a restaurant group: an AI agent spots understaffed shifts and suggests who to call based on contracts, availability and commute.",
     years: "2026",
     cover: "from-rose-700 to-rose-950",
-    // Photo Unsplash de Louis Hansel (licence Unsplash), 05/10/2026.
+    // Photo Unsplash (licence Unsplash, photo-1538334421852), choisie par Nathan le 05/10/2026.
     coverImage: "/images/cover-planning-restaurants-photo.jpg",
     tech: [
       { icon: NodeJsIcon, label: "Node.js" },
@@ -147,7 +147,8 @@ export const PROJECTS = [
     descriptionEn: "Automatic generation of estate settlement letters for notary firms.",
     years: "2023 - 2024",
     cover: "from-amber-600 to-orange-900",
-    coverImage: "/images/cover-succession.png",
+    // Capture de l'appli avec un dossier fictif (« Succession EXEMPLE »), 05/10/2026.
+    coverImage: "/images/cover-succession-capture.jpg",
     tech: [
       { icon: NextJsIcon, label: "Next.js" },
       { icon: TypeScriptIcon, label: "TypeScript" },
@@ -163,7 +164,8 @@ export const PROJECTS = [
       "Integrity and solvency checks on notary clients by cross-referencing public sources such as BODACC and the French company register.",
     years: "2023 - 2024",
     cover: "from-slate-600 to-slate-900",
-    coverImage: "/images/cover-notariat.png",
+    // Capture de l'outil rempli d'un client fictif, 05/10/2026.
+    coverImage: "/images/cover-notariat-capture.jpg",
     tech: [
       { icon: NodeJsIcon, label: "Node.js" },
       { icon: ExpressIcon, label: "Express" },
