@@ -19,7 +19,7 @@ import AiosTeaser from "./AiosTeaser";
 import SecuritySection from "./SecuritySection";
 import Footer from "./Footer";
 import OfferBanner from "./OfferBanner";
-import CallButton from "./CallButton";
+import AgentVideo from "./AgentVideo";
 
 // Demande de confirmation avant d'ecraser un cadrage en cours. Le bouton vocal
 // demarre une NOUVELLE conversation : si un projet est deja en cours, l'envoyer
@@ -55,56 +55,9 @@ function ResetConfirm({ onKeep, onRestart }) {
 }
 
 // Colonne droite du hero au bureau, tant que ni le chat ni une demo ne l'occupent :
-// le visage de Nate et la porte vers lui (demande de Nathan, 14/09). Avant, un
-// carrousel de temoignages tenait cette place ; ils ont maintenant leur section.
-function NateCard({ onStart }) {
-  return (
-    // Photo A COTE du nom et non au-dessus (14/09) : empilee, la carte etait
-    // aussi haute que le texte d'en face, elle ne pouvait pas se centrer sur
-    // lui et semblait posee trop haut.
-    // Au bureau (xl), la carte grandit avec la hauteur de l'ecran, comme le
-    // texte d'en face (29/09) ; sous 850 px de haut, tailles d'avant. Photo
-    // plafonnee : la colonne ne fait que 416 px, plus grande elle renvoyait
-    // "L'agent qui cadre votre besoin" a la ligne.
-    <div className="mx-auto w-full max-w-[380px] xl:max-w-[clamp(380px,44vh,470px)] rounded-3xl border-2 border-accent/35 bg-[#faf8f5] p-5 xl:p-[clamp(1.25rem,2.4vh,1.5rem)] shadow-[0_20px_50px_-20px_rgba(255,107,53,0.25)]">
-      <div className="flex items-center gap-4">
-        {/* eslint-disable-next-line @next/next/no-img-element -- portrait local a
-            taille fixe, deja compresse en webp (16 Ko). */}
-        <img
-          src="/images/agents/nate-hero.webp"
-          alt="Nate, l'agent qui cadre votre besoin"
-          width={640}
-          height={640}
-          className="shrink-0 w-20 h-20 xl:w-[clamp(6rem,10vh,6.5rem)] xl:h-[clamp(6rem,10vh,6.5rem)] rounded-full object-cover border-4 border-white shadow-lg"
-        />
-        <div className="min-w-0 text-left">
-          <p className="font-display text-2xl xl:text-[clamp(1.5rem,3.2vh,2rem)] font-bold">Nate</p>
-          <p className="mt-0.5 text-[14px] xl:text-[clamp(14px,1.6vh,15px)] leading-snug text-black/60">L&apos;agent qui cadre votre besoin</p>
-        </div>
-      </div>
-      {/* Deux portes cote a cote (14/09) : l'audit avec Nate pour qui veut
-          ecrire, l'appel (WhatsApp au bureau) pour qui prefere parler. Meme
-          largeur pour les deux, l'une sous l'autre : la carte est etroite. */}
-      <div className="mt-4 xl:mt-[clamp(1rem,2.2vh,1.5rem)] w-full flex flex-col gap-2.5">
-        {/* Fleche au grand ecran seulement : a 1024 px la carte n'a que 300 px
-            et le libelle passait sur deux lignes. */}
-        <button
-          type="button"
-          onClick={onStart}
-          data-cursor-hover
-          data-umami-event="clic-agents-hero-audit-gratuit"
-          className="inline-flex items-center justify-center gap-2 w-full text-center whitespace-nowrap rounded-full bg-accent text-accent-ink px-4 py-3 xl:py-[clamp(0.75rem,1.6vh,1rem)] text-[12px] xl:text-[clamp(12px,1.45vh,14px)] font-mono font-bold uppercase tracking-wide transition-all duration-150 ease-out hover:bg-accent-dark hover:-translate-y-0.5 hover:shadow-lg"
-        >
-          Faire un audit 100% gratuit
-          <span aria-hidden className="hidden xl:inline">&rarr;</span>
-        </button>
-        <CallButton evenement="clic-agents-hero-passer-un-appel" className="inline-flex items-center justify-center gap-2 w-full text-center rounded-full border-2 border-black/15 bg-white px-5 py-2.5 xl:py-[clamp(0.625rem,1.4vh,0.875rem)] text-[12px] xl:text-[clamp(12px,1.45vh,14px)] font-mono font-bold uppercase tracking-wide text-black transition-colors duration-150 ease-out hover:border-accent">
-          Passer un appel
-        </CallButton>
-      </div>
-    </div>
-  );
-}
+// la video "Un agent, c'est quoi ?" (05/10/2026). Avant, la carte de Nate et son
+// audit gratuit (14/09), retiree a la demande de Nathan : l'audit n'amenait pas
+// de client. La carte reste dans l'historique git (commit d'avant le 05/10).
 
 const THREAD_STORAGE_KEY = "nate-chat-thread-id";
 
@@ -368,8 +321,8 @@ export default function HomePageContent({ articles = [] }) {
                   onOpenChat={openChatFromDemo}
                 />
               ) : (
-                <div key="nate" className="min-w-0">
-                  <NateCard onStart={() => openChatWithVoice(AUDIT_MESSAGE)} />
+                <div key="video" className="min-w-0">
+                  <AgentVideo zone="hero" />
                 </div>
               )}
             </AnimatePresence>
@@ -403,6 +356,11 @@ export default function HomePageContent({ articles = [] }) {
           "connectable a tout" est un argument, pas une accroche, il n'a rien a
           faire dans le premier ecran. Au bureau elle est plus haut, en pleine
           largeur. */}
+      {/* Telephone : la video sous le hero, qui garde seul le premier ecran. */}
+      <div className="lg:hidden px-6 pb-12">
+        <AgentVideo zone="mobile" className="mx-auto max-w-xl" />
+      </div>
+
       <div className="lg:hidden pb-16">
         <ToolStrip />
       </div>
