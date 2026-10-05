@@ -293,13 +293,13 @@ export const PROJETS_MONTRES = [
   "Mon Devis Dentaire",
   "Football Fight",
   "FeatuRing",
-  "BB.Booking",
-  "Une IA pour votre restaurant",
+  "IA pour agence de booking d'artistes",
+  "IA pour planifications de restaurants",
   "FetaFrance",
   "AI or Not",
   "Variante de Poker Japonais",
   "Insider Bot",
-  "Fichage Notariat",
+  "Vérification client pour étude notariale",
 ];
 
 // 05 - Voyages. Legendes des photos volontairement sobres : seul le lieu qui

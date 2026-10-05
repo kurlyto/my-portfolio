@@ -92,7 +92,8 @@ export const PROJECTS = [
     tech: [{ icon: NodeJsIcon, label: "Node.js" }],
   },
   {
-    name: "BB.Booking",
+    name: "IA pour agence de booking d'artistes",
+    nameEn: "AI for an artist booking agency",
     description:
       "Agent IA et application pour une agence de booking de six artistes : l'agent trie la boîte mail par artiste, suit les salles à démarcher et prépare les relances.",
     descriptionEn:
@@ -107,8 +108,8 @@ export const PROJECTS = [
     ],
   },
   {
-    name: "Une IA pour votre restaurant",
-    nameEn: "An AI for your restaurant",
+    name: "IA pour planifications de restaurants",
+    nameEn: "AI for restaurant scheduling",
     description:
       "Planning du personnel d'un groupe de restaurants : un agent IA repère les manques et propose qui appeler selon les contrats, les disponibilités et le trajet.",
     descriptionEn:
@@ -144,14 +145,15 @@ export const PROJECTS = [
     ],
   },
   {
-    name: "Courrier de succession",
-    nameEn: "Estate Letters",
+    name: "Génération intelligente de courriers de successions",
+    nameEn: "Smart estate letter generation",
     description: "Génération automatique de courriers de successions pour études notariales.",
     descriptionEn: "Automatic generation of estate settlement letters for notary firms.",
     years: "2023 - 2024",
     cover: "from-amber-600 to-orange-900",
-    // Capture de l'appli avec un dossier fictif (« Succession EXEMPLE »), 05/10/2026.
-    coverImage: "/images/cover-succession-capture.jpg",
+    // Ecran des modeles de courrier (generique) : JAMAIS un ecran qui situe l'etude
+    // (lieux, correspondants locaux), demande de Nathan du 05/10/2026.
+    coverImage: "/images/cover-succession-modeles.jpg",
     tech: [
       { icon: NextJsIcon, label: "Next.js" },
       { icon: TypeScriptIcon, label: "TypeScript" },
@@ -159,8 +161,8 @@ export const PROJECTS = [
     ],
   },
   {
-    name: "Fichage Notariat",
-    nameEn: "Notary Client Screening",
+    name: "Vérification client pour étude notariale",
+    nameEn: "Client screening for notary firms",
     description:
       "Vérification de l'intégrité et de la solvabilité des clients d'une étude notariale par croisement de sources publiques comme le BODACC et le registre des entreprises.",
     descriptionEn:
@@ -254,8 +256,8 @@ export const PROJECTS = [
     ],
   },
   {
-    name: "Photographies",
-    nameEn: "Photography",
+    name: "Mes photographies",
+    nameEn: "My photography",
     description:
       "Une sélection de mes photographies qui suit sa propre direction artistique.",
     descriptionEn: "A selection of my photographs that follows its own art direction.",
