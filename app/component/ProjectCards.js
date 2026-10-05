@@ -29,36 +29,12 @@ import { attributClic, nomClic } from "../lib/suivi-clics";
 // Ordre = importance editoriale (les projets phares en premier), pas
 // chronologie : c'est le haut de la liste qui est vu sur telephone, ou une
 // carte occupe tout l'ecran.
-// L'ordre compte aussi pour la mise en page desktop (3 colonnes), fixe par
-// Nathan le 23/09 : ligne 1 Agents IA / MDD / Foxy, ligne 2 les jeux
-// (Football Fight, FeatuRing, AI or Not), ligne 3 notariat + FetaFrance,
-// ligne 4 Insider Bot / Photographies / Poker. Ligne 5 (03/10) : les projets
-// clients de l'agence, sans lien (Nathan : "tu dis juste que j'ai travaille
-// sur ca"). Le groupe de restaurants n'est pas nomme : pas de contrat signe.
+// Ordre fixe par Nathan le 05/10/2026 (refonte : cette liste devient l'accueil) :
+// MDD, Agents IA, Foxy, les deux projets clients, Football Fight, le notariat,
+// puis les projets en construction ou secondaires. Le groupe de restaurants
+// n'est pas nomme : pas de contrat signe.
 // Exportee : l'accueil perso (ProjetsApercu) en montre une selection.
 export const PROJECTS = [
-  {
-    name: "Agents IA sur-mesure",
-    nameEn: "Custom AI agents",
-    description:
-      "Un employé qui ne dort jamais et fait ce que vous n'avez pas envie de faire. Mails, agenda, prospection, réseaux sociaux, relances clients : il s'en occupe seul pendant que vous gérez le reste. Vous lui parlez sur Telegram comme à un collègue et il se façonne autour de votre métier.",
-    descriptionEn:
-      "An employee who never sleeps and does what you would rather not. Email, calendar, prospecting, social media, client follow-ups: it handles them on its own while you get on with the rest. You talk to it on Telegram like a colleague and it adapts to your line of work.",
-    years: "2026",
-    // La racine est Foxy depuis le 09/09 : la vitrine d'agents vit sur /agents.
-    link: "/agents",
-    cover: "from-zinc-800 to-zinc-900",
-    coverImage: "/images/cover-agents.png",
-    // Logo NK sur fond transparent : comme MDD, il doit rester ENTIER. Sans ce
-    // drapeau le desktop passe en object-cover et rogne le logo dans le cadre
-    // 4/3 (meme piege que le logo Insider Bot coupe).
-    coverImageFit: "contain",
-    tech: [
-      { icon: NodeJsIcon, label: "Node.js" },
-      { icon: PythonIcon, label: "Python" },
-      { icon: TelegramIcon, label: "Telegram" },
-    ],
-  },
   {
     name: "Mon Devis Dentaire",
     description:
@@ -78,11 +54,33 @@ export const PROJECTS = [
     ],
   },
   {
+    name: "Agents IA sur-mesure",
+    nameEn: "Custom AI agents",
+    description:
+      "Un agent IA dédié à une tâche de votre entreprise : relances, mails, planning, prospection. Il travaille seul, jour et nuit, et vous rend des heures chaque semaine.",
+    descriptionEn:
+      "An AI agent dedicated to one task in your business: follow-ups, email, scheduling, prospecting. It works on its own, day and night, and gives you back hours every week.",
+    years: "2026",
+    // La racine est Foxy depuis le 09/09 : la vitrine d'agents vit sur /agents.
+    link: "/agents",
+    cover: "from-zinc-800 to-zinc-900",
+    coverImage: "/images/cover-agents.png",
+    // Logo NK sur fond transparent : comme MDD, il doit rester ENTIER. Sans ce
+    // drapeau le desktop passe en object-cover et rogne le logo dans le cadre
+    // 4/3 (meme piege que le logo Insider Bot coupe).
+    coverImageFit: "contain",
+    tech: [
+      { icon: NodeJsIcon, label: "Node.js" },
+      { icon: PythonIcon, label: "Python" },
+      { icon: TelegramIcon, label: "Telegram" },
+    ],
+  },
+  {
     name: "Foxy",
     description:
-      "Mon deuxième cerveau, qui tourne en continu sur mon serveur : mails, agenda, bourse, veille, prospection, mémoire. Je lui parle à la voix ou par écrit comme à un collègue, il agit sur mes vrais outils et apprend de mes corrections d'une session à l'autre pour ne jamais refaire deux fois la même erreur.",
+      "Imaginez quelqu'un qui vous connaît par cœur : vous, votre business, votre façon de parler, vos clients. Branché sur vos outils, il fait un tas d'actions à votre place.",
     descriptionEn:
-      "My second brain, running non-stop on my server: email, calendar, stocks, market watch, prospecting, memory. I talk to it out loud or in writing like a colleague, it acts on my real tools and learns from my corrections between sessions so it never makes the same mistake twice.",
+      "Imagine someone who knows you by heart: you, your business, the way you talk, your clients. Plugged into your tools, it takes care of a whole lot of tasks for you.",
     years: "2026",
     link: "/foxy",
     cover: "from-zinc-800 to-zinc-900",
@@ -92,6 +90,37 @@ export const PROJECTS = [
     // rogne les oreilles dans le cadre 4/3.
     coverImageFit: "contain",
     tech: [{ icon: NodeJsIcon, label: "Node.js" }],
+  },
+  {
+    name: "BB.Booking",
+    description:
+      "Agent IA et application pour une agence de booking de six artistes : l'agent trie la boîte mail par artiste, suit les salles à démarcher et prépare les relances.",
+    descriptionEn:
+      "AI agent and app for a booking agency representing six artists: the agent sorts the shared inbox by artist, tracks the venues to pitch and prepares follow-ups.",
+    years: "2026",
+    cover: "from-black to-black",
+    // Capture de l'accueil de bb-booking.fr (05/10/2026), en plein cadre.
+    coverImage: "/images/cover-bb-booking-site.jpg",
+    tech: [
+      { icon: NodeJsIcon, label: "Node.js" },
+      { icon: ClaudeIcon, label: "Claude" },
+    ],
+  },
+  {
+    name: "Planning pour restaurants",
+    nameEn: "Restaurant Scheduling",
+    description:
+      "Planning du personnel d'un groupe de restaurants : un agent IA repère les manques et propose qui appeler selon les contrats, les disponibilités et le trajet.",
+    descriptionEn:
+      "Staff scheduling for a restaurant group: an AI agent spots understaffed shifts and suggests who to call based on contracts, availability and commute.",
+    years: "2026",
+    cover: "from-rose-700 to-rose-950",
+    // Photo Unsplash de Louis Hansel (licence Unsplash), 05/10/2026.
+    coverImage: "/images/cover-planning-restaurants-photo.jpg",
+    tech: [
+      { icon: NodeJsIcon, label: "Node.js" },
+      { icon: ClaudeIcon, label: "Claude" },
+    ],
   },
   {
     name: "Football Fight",
@@ -109,38 +138,6 @@ export const PROJECTS = [
     tech: [
       { icon: PythonIcon, label: "Python" },
       { icon: NodeJsIcon, label: "Node.js" },
-    ],
-  },
-  {
-    name: "FeatuRing",
-    description:
-      "Footballeurs, acteurs, chanteurs : reliez ceux qui ont joué, tourné ou chanté ensemble et affrontez les meilleurs joueurs dans un duel de culture générale.",
-    descriptionEn:
-      "Footballers, actors, singers: link the ones who played, starred or sang together and take on the best players in a general knowledge duel.",
-    years: "2026",
-    link: "https://featuring.club",
-    cover: "from-zinc-100 to-zinc-100",
-    coverImage: "/images/cover-featuring.png",
-    coverImageFit: "contain",
-    tech: [
-      { icon: PythonIcon, label: "Python" },
-      { icon: NodeJsIcon, label: "Node.js" },
-    ],
-  },
-  {
-    name: "AI or Not",
-    description:
-      "La photo est-elle générée par IA, ou est-elle réelle ? Saurez-vous faire la différence ?",
-    descriptionEn: "Is this photo AI-generated, or is it real? Can you tell the difference?",
-    years: "2023",
-    link: "https://ai-or-not.nathan-knaebel.com",
-    cover: "from-sky-600 to-indigo-900",
-    coverImage: "/images/cover-aiornot.png",
-    tech: [
-      { icon: NextJsIcon, label: "Next.js" },
-      { icon: ReactIcon, label: "React" },
-      { icon: SupabaseIcon, label: "Supabase" },
-      { icon: TailwindIcon, label: "Tailwind CSS" },
     ],
   },
   {
@@ -174,14 +171,46 @@ export const PROJECTS = [
     ],
   },
   {
+    name: "AI or Not",
+    description:
+      "La photo est-elle générée par IA, ou est-elle réelle ? Saurez-vous faire la différence ?",
+    descriptionEn: "Is this photo AI-generated, or is it real? Can you tell the difference?",
+    years: "2023",
+    link: "https://ai-or-not.nathan-knaebel.com",
+    cover: "from-sky-600 to-indigo-900",
+    coverImage: "/images/cover-aiornot.png",
+    tech: [
+      { icon: NextJsIcon, label: "Next.js" },
+      { icon: ReactIcon, label: "React" },
+      { icon: SupabaseIcon, label: "Supabase" },
+      { icon: TailwindIcon, label: "Tailwind CSS" },
+    ],
+  },
+  {
+    name: "FeatuRing",
+    description:
+      "Footballeurs, acteurs, chanteurs : reliez ceux qui ont joué, tourné ou chanté ensemble et affrontez les meilleurs joueurs dans un duel de culture générale.",
+    descriptionEn:
+      "Footballers, actors, singers: link the ones who played, starred or sang together and take on the best players in a general knowledge duel.",
+    years: "2026",
+    link: "https://featuring.club",
+    cover: "from-zinc-100 to-zinc-100",
+    coverImage: "/images/cover-featuring.png",
+    coverImageFit: "contain",
+    tech: [
+      { icon: PythonIcon, label: "Python" },
+      { icon: NodeJsIcon, label: "Node.js" },
+    ],
+  },
+  {
     name: "FetaFrance",
     description: "Quelle proportion de la France as-tu réellement visitée ?",
     descriptionEn: "How much of France have you actually visited?",
     years: "2026",
     link: "https://fetafrance.nathan-knaebel.com",
     cover: "from-[#fbfaf7] to-[#fbfaf7]",
-    coverImage: "/images/cover-fetafrance.svg",
-    coverImageFit: "contain",
+    // Capture du site, carte cochee (05/10/2026), en plein cadre.
+    coverImage: "/images/cover-fetafrance-capture.jpg",
     tech: [
       { icon: ReactIcon, label: "React" },
       { icon: TypeScriptIcon, label: "TypeScript" },
@@ -201,16 +230,6 @@ export const PROJECTS = [
     ],
   },
   {
-    name: "Photographies",
-    nameEn: "Photography",
-    description:
-      "Une sélection de mes photographies qui suit sa propre direction artistique.",
-    descriptionEn: "A selection of my photographs that follows its own art direction.",
-    years: "2026",
-    status: "wip",
-    cover: "from-neutral-700 to-neutral-950",
-  },
-  {
     name: "Variante de Poker Japonais",
     nameEn: "Japanese Poker Variant",
     description: "Une variante du poker japonais en 1 contre 1.",
@@ -228,38 +247,14 @@ export const PROJECTS = [
     ],
   },
   {
-    name: "BB.Booking",
+    name: "Photographies",
+    nameEn: "Photography",
     description:
-      "Agent IA et application pour une agence de booking de six artistes : l'agent trie la boîte mail par artiste, suit les salles à démarcher et prépare les relances.",
-    descriptionEn:
-      "AI agent and app for a booking agency representing six artists: the agent sorts the shared inbox by artist, tracks the venues to pitch and prepares follow-ups.",
+      "Une sélection de mes photographies qui suit sa propre direction artistique.",
+    descriptionEn: "A selection of my photographs that follows its own art direction.",
     years: "2026",
-    cover: "from-black to-black",
-    // Le logo "bb.b" chrome du site de l'agence, recompose sur fond noir.
-    coverImage: "/images/cover-bb-booking.jpg",
-    coverImageFit: "contain",
-    tech: [
-      { icon: NodeJsIcon, label: "Node.js" },
-      { icon: ClaudeIcon, label: "Claude" },
-    ],
-  },
-  {
-    name: "Planning pour restaurants",
-    nameEn: "Restaurant Scheduling",
-    description:
-      "Planning du personnel d'un groupe de restaurants : un agent IA repère les manques et propose qui appeler selon les contrats, les disponibilités et le trajet.",
-    descriptionEn:
-      "Staff scheduling for a restaurant group: an AI agent spots understaffed shifts and suggests who to call based on contracts, availability and commute.",
-    years: "2026",
-    cover: "from-rose-700 to-rose-950",
-    // Pictogramme blanc sur fond transparent : le degrade ci-dessus passe
-    // dessous, sans cadre visible sur telephone.
-    coverImage: "/images/cover-planning-restaurants.png",
-    coverImageFit: "contain",
-    tech: [
-      { icon: NodeJsIcon, label: "Node.js" },
-      { icon: ClaudeIcon, label: "Claude" },
-    ],
+    status: "wip",
+    cover: "from-neutral-700 to-neutral-950",
   },
 ];
 

@@ -1,5 +1,5 @@
 import { cookies, headers } from "next/headers";
-import PersoHomeContent from "./component/PersoHomeContent";
+import PortfolioPage from "./component/PortfolioPage";
 import UnderConstruction from "./component/UnderConstruction";
 import { LANG_COOKIE, detectLang } from "./lib/i18n-projects";
 
@@ -9,13 +9,13 @@ const META = {
   fr: {
     titre: "Nathan Knaebel : ingénieur, CTO et concepteur d'IA",
     description:
-      "Ingénieur, co-fondateur et CTO de Mon Devis Dentaire, je conçois des IA pour les entreprises. Mon parcours, mes produits, mes projets, mes articles et mes voyages.",
+      "Ingénieur, co-fondateur et CTO de Mon Devis Dentaire, je conçois des IA pour les entreprises. Mes produits et mes projets : SaaS, agents IA, jeux, outils métier.",
     locale: "fr_FR",
   },
   en: {
     titre: "Nathan Knaebel: engineer, CTO and AI builder",
     description:
-      "Engineer, co-founder and CTO of Mon Devis Dentaire, I build AI for businesses. My career, my products, my projects, my articles and my travels.",
+      "Engineer, co-founder and CTO of Mon Devis Dentaire, I build AI for businesses. My products and projects: SaaS, AI agents, games, business tools.",
     locale: "en_US",
   },
 };
@@ -61,7 +61,7 @@ export async function generateMetadata() {
   };
 }
 
-// Accueil perso de Nathan depuis le 28/09/2026 (avant : l'accueil de l'agence,
+// Portfolio (PortfolioPage) depuis le 05/10/2026 ; accueil perso du 28/09 au 05/10 (avant : l'accueil de l'agence,
 // AgenceHomeContent ; Foxy vit sur /foxy, les agents sur /agents). C'est la
 // racine : le noeud WebSite n'est declare qu'ici, les autres pages renvoient a
 // la meme Person par son @id.
@@ -128,7 +128,8 @@ export default async function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(buildJsonLd(lang)) }}
       />
-      <PersoHomeContent lang={lang} />
+      {/* Retour a l'accueil perso du 28/09 : <PersoHomeContent lang={lang} /> */}
+      <PortfolioPage lang={lang} />
     </>
   );
 }

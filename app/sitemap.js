@@ -44,7 +44,7 @@ export default function sitemap() {
       priority: 0.6,
       lastModified: new Date(a.maj || a.date),
     })),
-    { url: `${BASE_URL}/projects`, changeFrequency: "monthly", priority: 0.8, lastModified },
+    // /projects : copie de la racine depuis le 05/10/2026 (canonique = racine), hors plan du site.
     { url: `${BASE_URL}/mentions-legales`, changeFrequency: "yearly", priority: 0.2, lastModified },
     { url: `${BASE_URL}/confidentialite`, changeFrequency: "yearly", priority: 0.2, lastModified },
     { url: `${BASE_URL}/conditions`, changeFrequency: "yearly", priority: 0.2, lastModified },
