@@ -294,7 +294,7 @@ export const PROJETS_MONTRES = [
   "Football Fight",
   "FeatuRing",
   "BB.Booking",
-  "Planning pour restaurants",
+  "Une IA pour votre restaurant",
   "FetaFrance",
   "AI or Not",
   "Variante de Poker Japonais",

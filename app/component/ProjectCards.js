@@ -107,14 +107,17 @@ export const PROJECTS = [
     ],
   },
   {
-    name: "Planning pour restaurants",
-    nameEn: "Restaurant Scheduling",
+    name: "Une IA pour votre restaurant",
+    nameEn: "An AI for your restaurant",
     description:
       "Planning du personnel d'un groupe de restaurants : un agent IA repère les manques et propose qui appeler selon les contrats, les disponibilités et le trajet.",
     descriptionEn:
       "Staff scheduling for a restaurant group: an AI agent spots understaffed shifts and suggests who to call based on contracts, availability and commute.",
     years: "2026",
-    cover: "from-rose-700 to-rose-950",
+    cover: "from-neutral-800 to-neutral-950",
+    // Une photo remplit aussi la carte sur telephone ("fill") : pas de cadre
+    // de degrade autour (Nathan, 05/10/2026 : "fond rouge degueulasse").
+    coverImageFit: "fill",
     // Photo Unsplash (licence Unsplash, photo-1538334421852), choisie par Nathan le 05/10/2026.
     coverImage: "/images/cover-planning-restaurants-photo.jpg",
     tech: [
@@ -279,8 +282,12 @@ function CoverPlaceholder({ project, tr }) {
         <img
           src={project.coverImage}
           alt=""
-          className={`h-full w-full object-contain p-4 ${
-            project.coverImageFit === "contain" ? "sm:object-contain" : "sm:p-0 sm:object-cover"
+          className={`h-full w-full ${
+            project.coverImageFit === "fill"
+              ? "object-cover"
+              : project.coverImageFit === "contain"
+                ? "object-contain p-4 sm:object-contain"
+                : "object-contain p-4 sm:p-0 sm:object-cover"
           }`}
         />
       ) : FirstIcon ? (
