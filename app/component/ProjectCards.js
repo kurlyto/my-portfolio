@@ -217,6 +217,7 @@ export const PROJECTS = [
     // Ecran de bienvenue du site (photo du Mont-Saint-Michel, Lynx1211, CC BY-SA 4.0),
     // choisi par Nathan le 05/10/2026 ; fond sombre pour se fondre a la photo sur telephone.
     coverImage: "/images/cover-fetafrance-capture.jpg",
+    coverImageMobile: "/images/cover-fetafrance-mobile.jpg",
     tech: [
       { icon: ReactIcon, label: "React" },
       { icon: TypeScriptIcon, label: "TypeScript" },
@@ -280,17 +281,24 @@ function CoverPlaceholder({ project, tr }) {
         // bien plus haute que large (une image 4/3 y perdait ~60% de sa largeur,
         // d'ou le logo Insider Bot coupe). Sur telephone on affiche donc toujours
         // l'image entiere, et c'est le degrade qui comble autour.
+        <picture className="contents">
+        {/* Capture faite pour le telephone (format portrait) : elle remplit la
+            carte plein ecran au lieu de flotter dans un cadre. */}
+        {project.coverImageMobile && (
+          <source media="(max-width: 639px)" srcSet={project.coverImageMobile} />
+        )}
         <img
           src={project.coverImage}
           alt=""
           className={`h-full w-full ${
-            project.coverImageFit === "fill"
+            project.coverImageFit === "fill" || project.coverImageMobile
               ? "object-cover"
               : project.coverImageFit === "contain"
                 ? "object-contain p-4 sm:object-contain"
                 : "object-contain p-4 sm:p-0 sm:object-cover"
           }`}
         />
+        </picture>
       ) : FirstIcon ? (
         <FirstIcon className="h-14 w-14 text-white/25" />
       ) : (
