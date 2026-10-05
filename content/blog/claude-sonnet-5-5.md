@@ -1,7 +1,7 @@
 ---
 titre: "Claude Sonnet 5.5 : à quoi bon quand tout le monde utilise Opus ?"
 description: "Autour de moi tout le monde travaille avec Opus. Alors je me suis demandé à quoi sert encore Sonnet et je vous montre où je le fais tourner dans mon parc d'agents."
-date: 2026-10-13
+date: 2026-10-21
 format: actualite
 grappe: actus
 mot_cle: "claude sonnet 5.5 avis test"

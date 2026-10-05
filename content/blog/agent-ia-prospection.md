@@ -1,7 +1,7 @@
 ---
 titre: "Ma prospection : trouver le point faible d'une entreprise avant de lui écrire"
 description: "Je ne prospecte pas avec un message générique. L'IA lit les avis Google d'une entreprise et repère ce qui cloche. Elle rédige ensuite un message sur mesure. Je montre les résultats."
-date: 2026-11-14
+date: 2026-11-22
 format: tutoriel
 grappe: agents
 mot_cle: "agent ia prospection"

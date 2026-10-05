@@ -1,7 +1,7 @@
 ---
 titre: "Copilot Autopilot : l'agent de Microsoft qui travaille seul"
 description: "Microsoft a présenté le 25 septembre un agent qui travaille seul dans Microsoft 365 avec son propre nom et sa propre adresse mail. J'ai épluché l'annonce et je vous explique ce qu'il change pour une petite entreprise."
-date: 2026-10-17
+date: 2026-10-25
 format: actualite
 grappe: actus
 mot_cle: "microsoft copilot autopilot agent autonome entreprise"

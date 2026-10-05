@@ -1,7 +1,7 @@
 ---
 titre: "Prompt injection : le mail qui donne des ordres à votre IA"
 description: "Mes agents lisent des mails tous les jours et l'un d'eux est déjà tombé sur une consigne qui ne lui était pas destinée. J'ai cherché les cas réels et je vous explique avec des mots simples comment un mail peut piloter votre IA."
-date: 2026-10-29
+date: 2026-11-06
 format: explicatif
 grappe: agents
 mot_cle: "prompt injection"

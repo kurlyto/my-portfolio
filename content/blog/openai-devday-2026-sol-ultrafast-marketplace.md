@@ -1,7 +1,7 @@
 ---
 titre: "OpenAI DevDay 2026 : un nouveau modele, des vitesses record et une boutique dans ChatGPT"
 description: "OpenAI a mis le paquet le 29 septembre : un nouveau modele, une vitesse de reponse multipliee par huit et une vraie boutique d'applications dans ChatGPT. Je veux tester ce que ca change concretement face a Claude, que j'utilise deja tous les jours."
-date: 2026-10-25
+date: 2026-11-02
 format: actualite
 grappe: actus
 mot_cle: "OpenAI DevDay 2026 nouveautes ChatGPT"

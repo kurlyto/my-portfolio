@@ -1,7 +1,7 @@
 ---
 titre: "OpenAI lance Dots, l'agent qui travaille tout seul pendant que je dors, mais pas en Europe"
 description: "OpenAI a lancé Dots le 29 septembre 2026, des agents permanents qui tournent sur leur propre ordinateur dans le cloud et se connectent a plus de 4000 applications. La version Pro n'est pas disponible dans l'Union europeenne, donc j'ai voulu comprendre ce que ca change pour ceux qui, comme moi, construisent deja ce type d'agent pour des TPE francaises."
-date: 2026-10-09
+date: 2026-10-17
 format: actualite
 grappe: actus
 mot_cle: "openai dots agent permanent avis"

@@ -1,7 +1,7 @@
 ---
 titre: "Combien coûte vraiment un agent IA : ma facture décortiquée"
 description: "J'ai mesuré ce que consomment mes agents. Le plus cher est ce qu'ils relisent à chaque message. Je montre les chiffres et ce que j'ai changé."
-date: 2026-12-04
+date: 2026-12-12
 format: explicatif
 grappe: agents
 mot_cle: "prix agent ia"

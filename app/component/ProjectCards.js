@@ -213,8 +213,9 @@ export const PROJECTS = [
     descriptionEn: "How much of France have you actually visited?",
     years: "2026",
     link: "https://fetafrance.nathan-knaebel.com",
-    cover: "from-[#fbfaf7] to-[#fbfaf7]",
-    // Capture du site, carte cochee (05/10/2026), en plein cadre.
+    cover: "from-neutral-900 to-black",
+    // Ecran de bienvenue du site (photo du Mont-Saint-Michel, Lynx1211, CC BY-SA 4.0),
+    // choisi par Nathan le 05/10/2026 ; fond sombre pour se fondre a la photo sur telephone.
     coverImage: "/images/cover-fetafrance-capture.jpg",
     tech: [
       { icon: ReactIcon, label: "React" },
