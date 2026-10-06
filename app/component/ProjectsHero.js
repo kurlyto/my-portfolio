@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { t } from "../lib/i18n-projects";
+import TechPopup from "./TechPopup";
 
 // Petit utilitaire d'apparition en cascade : chaque bloc monte legerement avec
 // un delai croissant, ce qui donne du rythme a l'arrivee sur la page.
@@ -67,6 +68,10 @@ export default function ProjectsHero({ lang = "fr" }) {
       >
         {tr.hero.cta} <span aria-hidden>&darr;</span>
       </motion.a>
+
+      <motion.div {...rise(0.36)}>
+        <TechPopup lang={lang} />
+      </motion.div>
     </section>
   );
 }

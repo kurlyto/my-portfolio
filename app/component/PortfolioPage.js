@@ -2,7 +2,6 @@ import Footer from "./FooterAvecArticles";
 import ProjectCards from "./ProjectCards";
 import ProjectsNav from "./ProjectsNav";
 import ProjectsHero from "./ProjectsHero";
-import TechGrid from "./TechGrid";
 
 // Le portfolio, servi a DEUX adresses depuis le 05/10/2026 : la racine
 // (decision de Nathan : "la page principale, c'est projets") et /projects,
@@ -20,8 +19,9 @@ export default function PortfolioPage({ lang }) {
 
       <ProjectsHero lang={lang} />
 
-      {/* Retour au bandeau qui defile (avant le 05/10/2026) : <TechMarquee lang={lang} /> */}
-      <TechGrid lang={lang} />
+      {/* Les outils vivent dans une pop-up ouverte depuis le haut de page
+          (TechPopup, 06/10/2026). Retour au bloc pleine page : <TechGrid lang={lang} />
+          ; au bandeau qui defile (avant le 05/10) : <TechMarquee lang={lang} /> */}
 
       {/* Section blanche PLEINE LARGEUR (plus de boite blanche flottante au
           milieu du noir) : le blanc va bord a bord, seul le contenu reste
