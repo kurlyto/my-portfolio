@@ -92,8 +92,8 @@ export const PROJECTS = [
     tech: [{ icon: NodeJsIcon, label: "Node.js" }],
   },
   {
-    name: "IA pour agence de booking d'artistes",
-    nameEn: "AI for an artist booking agency",
+    name: "CRM pour agences de booking d'artistes",
+    nameEn: "CRM for artist booking agencies",
     description:
       "Agent IA et application pour une agence de booking de six artistes : l'agent trie la boîte mail par artiste, suit les salles à démarcher et prépare les relances.",
     descriptionEn:
@@ -108,8 +108,8 @@ export const PROJECTS = [
     ],
   },
   {
-    name: "IA pour planifications de restaurants",
-    nameEn: "AI for restaurant scheduling",
+    name: "Planifications d'équipes pour restaurants",
+    nameEn: "Team scheduling for restaurants",
     description:
       "Planning du personnel d'un groupe de restaurants : un agent IA repère les manques et propose qui appeler selon les contrats, les disponibilités et le trajet.",
     descriptionEn:
