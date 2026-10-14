@@ -1,3 +1,4 @@
+import CarteContactPopup from "./CarteContactPopup";
 import Footer from "./FooterAvecArticles";
 import ProjectCards from "./ProjectCards";
 import ProjectsNav from "./ProjectsNav";
@@ -46,6 +47,9 @@ export default function PortfolioPage({ lang }) {
       <div className="snap-screen max-sm:flex max-sm:min-h-[100dvh] max-sm:flex-col max-sm:justify-end">
         <Footer showHomeLink={false} lang={lang} />
       </div>
+
+      {/* Carte de visite electronique : ne s'ouvre qu'avec ?carte (QR code) */}
+      <CarteContactPopup lang={lang} />
     </div>
   );
 }
