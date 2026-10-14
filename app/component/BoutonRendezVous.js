@@ -27,9 +27,10 @@ export default function BoutonRendezVous() {
   }, [chemin]);
   if (SANS_BOUTON.some((motif) => motif.test(chemin))) return null;
   // Le bouton vit hors du conteneur de la page : sur Foxy il doit porter
-  // lui-meme `theme-aios`, sur l'accueil perso `theme-perso`, sinon il garde
-  // l'orange du site agents.
-  const theme = chemin.startsWith("/foxy") ? "theme-aios " : chemin === "/" ? "theme-perso " : "";
+  // lui-meme `theme-aios`, sinon il garde l'orange du site agents. La racine
+  // est le portfolio depuis le 05/10/2026 : orange aussi (Nathan, 14/10/2026),
+  // plus le noir de l'ancien accueil perso (`theme-perso`).
+  const theme = chemin.startsWith("/foxy") ? "theme-aios " : "";
 
   return (
     <a
