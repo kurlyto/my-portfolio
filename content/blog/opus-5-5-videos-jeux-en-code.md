@@ -7,7 +7,7 @@ grappe: actus
 mot_cle: "claude opus 5.5"
 image_carte: "/images/blog/cartes/opus-5-5-videos-jeux-en-code-minecraft.webp"
 image_partage: "/images/blog/partage-opus-5-5-videos-jeux-en-code.jpg"
-statut: brouillon
+statut: publie
 mots_cles: ["Claude Opus 5.5", "motion design IA", "vidéo en code", "HyperFrames", "jeu vidéo IA", "Anthropic"]
 lire_aussi: ["/blog/nouveautes-ia-septembre-2026", "/blog/quel-outil-ia-entreprise-comparatif", "/"]
 ---
