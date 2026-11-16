@@ -7,7 +7,7 @@ grappe: actus
 mot_cle: "mistral large 4"
 image_carte: "/images/blog/cartes/mistral-large-4-modele-ouvert-telechargeable-capture.webp"
 image_partage: "/images/blog/partage-mistral-large-4-modele-ouvert-telechargeable.jpg"
-statut: brouillon
+statut: publie
 mots_cles: ["Mistral Large 4", "Le Chonk", "modèle open weight", "IA européenne", "Mistral AI", "IA souveraine"]
 lire_aussi: ["/blog/quel-outil-ia-entreprise-comparatif", "/metiers/kine", "/"]
 ---
