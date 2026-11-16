@@ -7,7 +7,7 @@ grappe: actus
 mot_cle: "GPT-6.1 Terra avis prix"
 image_carte: "/images/blog/cartes/gpt-6-1-terra-prix-divise-par-deux-agent-ordinateur-fenetre.webp"
 image_partage: "/images/blog/partage-gpt-6-1-terra-prix-divise-par-deux-agent-ordinateur-fenetre.png"
-statut: brouillon
+statut: publie
 mots_cles: ["GPT-6.1 Terra", "OpenAI", "ChatGPT Work", "computer use", "prix API", "agent IA"]
 lire_aussi: ["/blog/nouveautes-ia-septembre-2026", "/blog/jev-typesafe-ia-qui-decide", "/"]
 ---
