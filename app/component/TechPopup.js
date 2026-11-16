@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { CATEGORIES, Logo, TechCategories } from "./TechGrid";
+import TechGalaxy from "./TechGalaxy";
 import { t } from "../lib/i18n-projects";
 
 // Les outils deja utilises, en POP-UP depuis le 06/10/2026 (idee de Nathan : le
@@ -15,7 +16,20 @@ const APERCU_ITEMS = APERCU.map((l) => TOUS.find((i) => i.label === l)).filter(B
 
 export default function TechPopup({ lang = "fr" }) {
   const [open, setOpen] = useState(false);
+  // Galaxie sur ordinateur (16/10/2026), liste sur telephone : 120 logos en
+  // cercle sur 390 px deviennent illisibles. Le bouton du haut bascule.
+  const [vue, setVue] = useState("galaxie");
+  const [large, setLarge] = useState(false);
   const tr = t(lang);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 768px)");
+    const maj = () => setLarge(mq.matches);
+    maj();
+    mq.addEventListener("change", maj);
+    return () => mq.removeEventListener("change", maj);
+  }, []);
+  const galaxie = large && vue === "galaxie";
 
   // Meme comportement que la pop-up du CV : Echap ferme, la page derriere ne
   // defile plus tant que la fenetre est ouverte.
@@ -57,20 +71,34 @@ export default function TechPopup({ lang = "fr" }) {
 
       {open && (
         <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 p-3 text-left backdrop-blur-sm sm:p-6"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/85 p-3 text-left sm:p-6"
           onClick={() => setOpen(false)}
           role="dialog"
           aria-modal="true"
           aria-label={tr.tech.title}
+          // pas de backdrop-blur (18/10/2026) : le flou de toute la page derriere,
+          // recalcule a chaque image, faisait tomber la galaxie a ~20 images/s.
         >
           <div
-            className="flex max-h-full w-full max-w-6xl flex-col overflow-hidden rounded-2xl border border-white/10 bg-neutral-950 shadow-2xl"
+            className={`flex max-h-full w-full flex-col overflow-hidden ${galaxie ? "h-full max-w-[1800px]" : "max-w-6xl"} rounded-2xl border border-white/10 bg-neutral-950 shadow-2xl`}
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between gap-4 border-b border-white/10 px-5 py-4 sm:px-8">
               <h2 className="font-display text-xl font-bold tracking-tight text-white sm:text-3xl">
                 {tr.tech.title}
               </h2>
+              <div className="flex items-center gap-2">
+              {large && (
+                <button
+                  type="button"
+                  onClick={() => setVue(galaxie ? "liste" : "galaxie")}
+                  data-cursor-hover
+                  data-clic={galaxie ? "clic-outils-vue-liste" : "clic-outils-vue-galaxie"}
+                  className="rounded-full border border-white/20 px-3.5 py-1.5 font-mono text-[12px] font-bold uppercase tracking-[0.12em] text-white/75 transition-colors hover:border-accent hover:text-accent"
+                >
+                  {galaxie ? tr.tech.viewList : tr.tech.viewGalaxy}
+                </button>
+              )}
               <button
                 type="button"
                 onClick={() => setOpen(false)}
@@ -80,10 +108,17 @@ export default function TechPopup({ lang = "fr" }) {
               >
                 &times;
               </button>
+              </div>
             </div>
-            <div className="min-h-0 overflow-y-auto overscroll-contain px-5 pt-6 sm:px-8 sm:pt-8">
-              <TechCategories lang={lang} />
-            </div>
+            {galaxie ? (
+              <div className="min-h-0 flex-1 p-3">
+                <TechGalaxy lang={lang} total={TOUS.length} />
+              </div>
+            ) : (
+              <div className="min-h-0 overflow-y-auto overscroll-contain px-5 pt-6 sm:px-8 sm:pt-8">
+                <TechCategories lang={lang} />
+              </div>
+            )}
           </div>
         </div>
       )}

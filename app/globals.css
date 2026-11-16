@@ -375,6 +375,11 @@ button:not(:disabled),
   max-width: 520px;
   margin-inline: auto;
 }
+/* Video verticale (format telephone) : meme logique, en plus etroit. */
+.article-metier figure.haute video {
+  max-width: 360px;
+  margin-inline: auto;
+}
 .article-metier figcaption .credit {
   display: block;
   margin-top: 0.25rem;
@@ -1157,4 +1162,16 @@ button:not(:disabled),
   .cta-pulse {
     animation: cta-pulse 2.2s ease-out infinite;
   }
+}
+
+/* Noms des outils dans la bulle de la galaxie (TechGalaxy) : apparaissent apres le zoom. */
+@keyframes galaxie-nom {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.galaxie-nom {
+  animation: galaxie-nom 0.3s ease-out 0.25s both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .galaxie-nom { animation: none; }
 }

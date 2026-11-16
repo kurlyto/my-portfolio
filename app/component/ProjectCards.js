@@ -92,28 +92,31 @@ export const PROJECTS = [
     tech: [{ icon: NodeJsIcon, label: "Node.js" }],
   },
   {
-    name: "CRM pour agences de booking d'artistes",
-    nameEn: "CRM for artist booking agencies",
+    name: "Stage : logiciel de prospection pour des agences de booking d'artistes",
+    nameEn: "Stage: prospecting software for artist booking agencies",
+    // Textes de Nathan du 16/11/2026 (« c'est ce genre de precision qui est cool »).
     description:
-      "Agent IA et application pour une agence de booking de six artistes : l'agent trie la boîte mail par artiste, suit les salles à démarcher et prépare les relances.",
+      "Stage est un logiciel sur-mesure conçu pour des agences de booking d'artistes européennes qui souhaitent moderniser leurs méthodes pour obtenir des contrats de représentations musicales pour leurs artistes et booster leurs résultats grâce à l'intelligence artificielle. Stage est un système intelligent qui permet une prospection structurée, intelligente, personnalisée et visuelle pour des agences de booking d'artistes.",
     descriptionEn:
-      "AI agent and app for a booking agency representing six artists: the agent sorts the shared inbox by artist, tracks the venues to pitch and prepares follow-ups.",
+      "Stage is custom software built for European artist booking agencies that want to modernise how they land live performance contracts for their artists and boost their results with artificial intelligence. Stage makes prospecting structured, smart, personalised and visual for artist booking agencies.",
     years: "2026",
-    cover: "from-black to-black",
-    // Capture de l'accueil de bb-booking.fr (05/10/2026), en plein cadre.
-    coverImage: "/images/cover-bb-booking-site.jpg",
+    cover: "from-neutral-200 to-neutral-300",
+    // Video de presentation de Stage (v14 du 13/11), allegee pour la carte :
+    // 960 px, sans le son, 1,2 Mo. L'image fixe sert pendant le chargement.
+    coverVideo: "/videos/stage-presentation-carte.mp4",
+    coverImage: "/images/cover-stage-poster.jpg",
     tech: [
       { icon: NodeJsIcon, label: "Node.js" },
       { icon: ClaudeIcon, label: "Claude" },
     ],
   },
   {
-    name: "Planifications d'équipes pour restaurants",
-    nameEn: "Team scheduling for restaurants",
+    name: "Agent de planning prévisionnel intelligent et connecté",
+    nameEn: "Smart, connected forecast scheduling agent",
     description:
-      "Planning du personnel d'un groupe de restaurants : un agent IA repère les manques et propose qui appeler selon les contrats, les disponibilités et le trajet.",
+      "Planification d'équipes assistée par IA pour un groupe de 20 établissements. Proposition de plannings et intégration au logiciel RH. Confirmation du planning auprès des employés par WhatsApp.",
     descriptionEn:
-      "Staff scheduling for a restaurant group: an AI agent spots understaffed shifts and suggests who to call based on contracts, availability and commute.",
+      "AI-assisted team scheduling for a group of 20 venues. Schedule proposals and integration with the HR software. Schedules confirmed with employees over WhatsApp.",
     years: "2026",
     cover: "from-neutral-800 to-neutral-950",
     // Une photo remplit aussi la carte sur telephone ("fill") : pas de cadre
@@ -142,6 +145,24 @@ export const PROJECTS = [
     tech: [
       { icon: PythonIcon, label: "Python" },
       { icon: NodeJsIcon, label: "Node.js" },
+    ],
+  },
+  {
+    name: "Anonymiseur de documents pour étude notariale",
+    nameEn: "Document anonymizer for notary firms",
+    description:
+      "Anonymisation des Word et PDF d'une étude notariale sur l'ordinateur, sans IA ni internet. Le document part ensuite chez Claude et les vrais noms reviennent en un clic dans sa réponse.",
+    descriptionEn:
+      "Anonymizes a notary firm's Word and PDF files on the computer itself, with no AI and no internet. The document then goes to Claude and the real names come back into its answer in one click.",
+    years: "2026",
+    cover: "from-slate-700 to-slate-800",
+    // Faux document d'essai (aucune vraie donnee d'etude), original derriere,
+    // version anonymisee devant. Fabrique le 16/11/2026.
+    coverImage: "/images/cover-anonymiseur.jpg",
+    coverImageFit: "fill",
+    tech: [
+      { icon: TypeScriptIcon, label: "TypeScript" },
+      { icon: ClaudeIcon, label: "Claude" },
     ],
   },
   {
@@ -255,16 +276,8 @@ export const PROJECTS = [
       { icon: TailwindIcon, label: "Tailwind CSS" },
     ],
   },
-  {
-    name: "Mes photographies",
-    nameEn: "My photography",
-    description:
-      "Une sélection de mes photographies qui suit sa propre direction artistique.",
-    descriptionEn: "A selection of my photographs that follows its own art direction.",
-    years: "2026",
-    status: "wip",
-    cover: "from-neutral-700 to-neutral-950",
-  },
+  // "Mes photographies" est passee dans la grille du dessous (AutresRubriques,
+  // 28/10/2026), avec les articles et le CV.
 ];
 
 // Couverture de carte : vraie image (screenshot/logo) quand disponible,
@@ -277,7 +290,20 @@ function CoverPlaceholder({ project, tr }) {
     <div
       className={`relative flex min-h-0 flex-1 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br sm:aspect-[4/3] sm:flex-none ${project.cover}`}
     >
-      {project.coverImage ? (
+      {project.coverVideo ? (
+        // Video muette en boucle : `playsInline` evite le plein ecran force sur
+        // iPhone, et `poster` montre une image tant que la video charge.
+        <video
+          src={project.coverVideo}
+          poster={project.coverImage}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className="h-full w-full object-contain sm:object-cover"
+        />
+      ) : project.coverImage ? (
         // `object-cover` recadre pour remplir : acceptable dans le cadre 4/3 du
         // desktop, desastreux sur mobile ou la carte plein ecran rend la zone
         // bien plus haute que large (une image 4/3 y perdait ~60% de sa largeur,
@@ -408,7 +434,13 @@ function ProjectCard({ project, index, lang }) {
             description longue ne doit jamais deborder ni pousser la couverture
             hors de la carte. A partir de sm, hauteur figee a 520px, clamp-3 pour
             aligner les cartes entre elles. */}
-        <p className="mt-3 text-[15px] opacity-60 leading-relaxed line-clamp-4 sm:line-clamp-5">
+        {/* Titre sur 3 lignes (Stage) : la description perd 2 lignes pour que
+            les icones restent dans la carte. */}
+        <p
+          className={`mt-3 text-[15px] opacity-60 leading-relaxed line-clamp-4 ${
+            name.length > 50 ? "sm:line-clamp-3" : "sm:line-clamp-5"
+          }`}
+        >
           {description}
         </p>
 

@@ -1,8 +1,12 @@
+import { tousLesArticles, estPublie } from "../blog/blog-data";
+import AutresRubriques from "./AutresRubriques";
 import CarteContactPopup from "./CarteContactPopup";
 import Footer from "./FooterAvecArticles";
 import ProjectCards from "./ProjectCards";
 import ProjectsNav from "./ProjectsNav";
 import ProjectsHero from "./ProjectsHero";
+import TechStack from "./TechStack";
+import TemoignagesPortfolio from "./TemoignagesPortfolio";
 
 // Le portfolio, servi a DEUX adresses depuis le 05/10/2026 : la racine
 // (decision de Nathan : "la page principale, c'est projets") et /projects,
@@ -14,6 +18,12 @@ import ProjectsHero from "./ProjectsHero";
 // pas le Header "Votre Agent IA" / Metiers / Agents / FAQ. C'est un portfolio
 // qui se tient seul.
 export default function PortfolioPage({ lang }) {
+  const articles = tousLesArticles().filter(estPublie);
+  const couvertures = articles
+    .map((a) => a.imageCarte || a.imagePartage || a.image)
+    .filter(Boolean)
+    .slice(0, 3);
+
   return (
     <div className="min-h-screen bg-black text-white">
       <ProjectsNav lang={lang} />
@@ -40,6 +50,14 @@ export default function PortfolioPage({ lang }) {
           <ProjectCards lang={lang} />
         </div>
       </main>
+
+      {/* Toute la stack sous les cartes (demande de Nathan du 16/11/2026) :
+          langages, API, logiciels externes, connecteurs. */}
+      <TechStack lang={lang} />
+
+      <AutresRubriques lang={lang} nbArticles={articles.length} couvertures={couvertures} />
+
+      <TemoignagesPortfolio lang={lang} />
 
       {/* Pas de lien "retour a l'accueil" : la page est autonome, elle ne renvoie
           pas vers le site d'agents. Sur mobile, dernier ecran net du deck

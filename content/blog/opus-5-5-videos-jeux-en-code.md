@@ -1,7 +1,7 @@
 ---
 titre: "Opus 5.5 : des vidéos et des jeux entièrement écrits en code"
 description: "Depuis le 22 septembre les réseaux débordent de vidéos et de jeux faits avec Opus 5.5. J'ai ouvert le code d'un Minecraft qu'il a écrit pour vous montrer comment c'est fabriqué et je l'ai testé sur une vraie vidéo de présentation."
-date: 2026-10-09
+date: 2026-10-25
 format: actualite
 grappe: actus
 mot_cle: "claude opus 5.5"
@@ -22,6 +22,11 @@ Ce détour a des avantages très concrets. Les textes restent parfaitement nets 
 Le principe existait avant Opus 5.5 et des outils libres comme [HyperFrames](https://github.com/heygen-com/hyperframes), publié par HeyGen, le rendent gratuit sur n'importe quel ordinateur. La nouveauté tient à la qualité de ce que le modèle écrit. Dans [l'annonce d'Anthropic](https://www.anthropic.com/claude-opus-5-5), un testeur explique qu'Opus 5.5 a obtenu la meilleure note jamais vue pour le rendu graphique et la finition quand il lui a demandé de construire un jeu.
 
 La meilleure explication que j'aie vue en français vient du développeur Le Dev Ultime, qui dit n'avoir jamais vu ça en plus de dix ans de métier. Le 3 octobre, il a publié [une vidéo de deux minutes et demie](https://x.com/ledevultime/status/2106471672689922141) qui raconte ce mécanisme et qui a été fabriquée exactement de cette manière. Opus 5.5 a pris sa vraie voix et en a retiré les silences et les ratés avant de caler chaque phrase sur des animations qu'il a écrites dans une page web. Son avatar fronce les sourcils quand il dit qu'il est fâché et la grille du fond se change en losanges au moment précis où il le prononce. Le tout a ensuite été assemblé par FFmpeg, un logiciel de montage qui existe depuis plus de vingt ans. Seul le dessin de départ de l'avatar est l'œuvre d'un humain et ses variations d'expression sortent de Grok, l'IA d'Elon Musk, que Claude a lui-même mise au travail. Il n'a utilisé ni HyperFrames ni son concurrent Remotion, seulement l'application Claude sur son ordinateur.
+
+<figure class="haute">
+<video controls preload="none" playsinline poster="/blog/opus-5-5-videos-jeux-en-code/video-le-dev-ultime-opus-5-5.webp" width="1080" height="1920"><source src="/blog/opus-5-5-videos-jeux-en-code/video-le-dev-ultime-opus-5-5.mp4" type="video/mp4"></video>
+<figcaption>La vidéo de Le Dev Ultime, montée de bout en bout par Opus 5.5 à partir de sa voix et d'un seul dessin de son avatar.<span class="credit">Vidéo : Le Dev Ultime (@ledevultime sur X), 3 octobre 2026.</span></figcaption>
+</figure>
 
 ## Ce que la communauté en a tiré
 

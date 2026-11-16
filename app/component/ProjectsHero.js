@@ -54,7 +54,7 @@ export default function ProjectsHero({ lang = "fr" }) {
 
       <motion.p
         {...rise(0.2)}
-        className="max-w-md text-base leading-relaxed text-white/70 sm:text-lg"
+        className="max-w-xl text-base leading-relaxed text-white/70 sm:text-lg"
       >
         {tr.hero.tagline}
       </motion.p>
