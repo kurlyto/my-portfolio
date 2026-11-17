@@ -1,12 +1,12 @@
 ---
-titre: "Quel agent IA pour votre métier ?"
+titre: "Du plombier au notaire : la corvée qu'une IA peut vous enlever"
 description: "J'ai écrit une page par métier et je les ai réunies ici. Ouvrez la vôtre d'un clic et trouvez la tâche par laquelle commencer."
 date: 2026-09-22
 format: explicatif
 grappe: agents
 mot_cle: "agent ia pour mon métier"
-image_carte: "/images/blog/cartes/quel-agent-ia-pour-votre-metier-schema.webp"
-image_partage: "/images/blog/partage-quel-agent-ia-pour-votre-metier.png"
+image_carte: "/blog/quel-agent-ia-pour-votre-metier/couverture-v2.jpg"
+image_partage: "/blog/quel-agent-ia-pour-votre-metier/couverture-v2.jpg"
 statut: publie
 mots_cles: ["agent IA par métier", "artisans", "commerces", "professions réglementées", "indépendants", "automatisation"]
 lire_aussi: ["/blog/agent-ia-definition", "/blog/quel-outil-ia-entreprise-comparatif", "/agents"]

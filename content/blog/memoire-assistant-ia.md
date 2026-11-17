@@ -1,5 +1,5 @@
 ---
-titre: "La mémoire de mon assistant IA : 370 fiches, un index et un rangement le dimanche"
+titre: "La mémoire de mon assistant IA tient en 370 fiches rangées chaque dimanche"
 description: "Une IA oublie tout d'une conversation à l'autre. La mienne se souvient. Je montre comment elle range ce qu'elle apprend et retrouve la bonne fiche."
 date: 2026-12-24
 format: explicatif

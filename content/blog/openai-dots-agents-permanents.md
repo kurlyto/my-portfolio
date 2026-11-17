@@ -1,5 +1,5 @@
 ---
-titre: "OpenAI lance Dots, l'agent qui travaille tout seul pendant que je dors, mais pas en Europe"
+titre: "Dots d'OpenAI travaille pendant que vous dormez mais pas en Europe"
 description: "OpenAI propose depuis le 29 septembre un agent qui continue de travailler quand on ferme ChatGPT. Je n'ai pas pu l'essayer depuis la France alors j'ai lu toute sa documentation et je vous dis ce que j'en pense."
 date: 2026-11-30
 format: actualite

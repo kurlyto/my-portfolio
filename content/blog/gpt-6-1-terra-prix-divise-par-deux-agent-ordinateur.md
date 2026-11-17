@@ -1,12 +1,12 @@
 ---
-titre: "GPT-6.1 Terra : l'agent d'OpenAI qui clique à votre place, à moitié prix"
+titre: "J'ai testé GPT-6.1 Terra qui clique à votre place pour moitié prix"
 description: "OpenAI a sorti fin octobre un modèle qui regarde l'écran et clique à votre place pour deux fois moins cher. Je l'ai comparé à Claude sur mes propres formulaires et je vous dis s'il vaut le détour."
 date: 2026-11-14
 format: actualite
 grappe: actus
 mot_cle: "GPT-6.1 Terra avis prix"
-image_carte: "/images/blog/cartes/gpt-6-1-terra-prix-divise-par-deux-agent-ordinateur-fenetre.webp"
-image_partage: "/images/blog/partage-gpt-6-1-terra-prix-divise-par-deux-agent-ordinateur-fenetre.png"
+image_carte: "/blog/gpt-6-1-terra-prix-divise-par-deux-agent-ordinateur/couverture-v2.png"
+image_partage: "/blog/gpt-6-1-terra-prix-divise-par-deux-agent-ordinateur/couverture-v2.png"
 statut: publie
 mots_cles: ["GPT-6.1 Terra", "OpenAI", "ChatGPT Work", "computer use", "prix API", "agent IA"]
 lire_aussi: ["/blog/nouveautes-ia-septembre-2026", "/blog/jev-typesafe-ia-qui-decide", "/"]

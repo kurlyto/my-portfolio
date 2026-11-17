@@ -1,5 +1,5 @@
 ---
-titre: "OpenCode : des clés d'API volées, comment vérifier les vôtres"
+titre: "Des clés d'API volées chez OpenCode : comment vérifier les vôtres"
 description: "J'utilise des clés d'API tous les jours pour mes agents, et cette fuite m'a fait ouvrir mes consoles pour voir qui peut dépenser à ma place. Je raconte ce que j'ai vérifié, ce que j'ai changé, et la routine simple que je garde depuis."
 date: 2026-12-16
 format: actualite

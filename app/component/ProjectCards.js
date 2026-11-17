@@ -164,7 +164,7 @@ export const PROJECTS = [
     cover: "from-slate-700 to-slate-800",
     // Faux document d'essai (aucune vraie donnee d'etude), original derriere,
     // version anonymisee devant. Fabrique le 16/11/2026.
-    coverImage: "/images/cover-anonymiseur.jpg",
+    coverImage: "/images/cover-anonymiseur-v2.jpg",
     coverImageFit: "fill",
     tech: [
       { icon: TypeScriptIcon, label: "TypeScript" },
@@ -180,7 +180,7 @@ export const PROJECTS = [
     cover: "from-amber-600 to-orange-900",
     // Ecran des modeles de courrier (generique) : JAMAIS un ecran qui situe l'etude
     // (lieux, correspondants locaux), demande de Nathan du 05/10/2026.
-    coverImage: "/images/cover-succession-modeles.jpg",
+    coverImage: "/images/cover-succession-courriers-v2.jpg",
     tech: [
       { icon: NextJsIcon, label: "Next.js" },
       { icon: TypeScriptIcon, label: "TypeScript" },

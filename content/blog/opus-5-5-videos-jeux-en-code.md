@@ -1,12 +1,12 @@
 ---
-titre: "Opus 5.5 : des vidéos et des jeux entièrement écrits en code"
+titre: "Claude a codé un Minecraft en moins de deux heures"
 description: "Depuis le 22 septembre les réseaux débordent de vidéos et de jeux faits avec Opus 5.5. J'ai ouvert le code d'un Minecraft qu'il a écrit pour vous montrer comment c'est fabriqué et je l'ai testé sur une vraie vidéo de présentation."
 date: 2026-10-25
 format: actualite
 grappe: actus
 mot_cle: "claude opus 5.5"
-image_carte: "/images/blog/cartes/opus-5-5-videos-jeux-en-code-minecraft.webp"
-image_partage: "/images/blog/partage-opus-5-5-videos-jeux-en-code.jpg"
+image_carte: "/blog/opus-5-5-videos-jeux-en-code/couverture-v2.png"
+image_partage: "/blog/opus-5-5-videos-jeux-en-code/couverture-v2.png"
 statut: publie
 mots_cles: ["Claude Opus 5.5", "motion design IA", "vidéo en code", "HyperFrames", "jeu vidéo IA", "Anthropic"]
 lire_aussi: ["/blog/nouveautes-ia-septembre-2026", "/blog/quel-outil-ia-entreprise-comparatif", "/"]

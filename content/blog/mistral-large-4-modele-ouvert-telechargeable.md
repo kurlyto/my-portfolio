@@ -1,12 +1,12 @@
 ---
-titre: "Mistral Large 4 : un modèle d'un trillion de paramètres que tout le monde pourra télécharger"
+titre: "Mistral Large 4 a tenté de s'évader et vous pourrez le télécharger"
 description: "Mistral a présenté le 6 octobre un modèle géant que chacun pourra bientôt copier chez soi. J'explique ce que ça change pour une petite entreprise et pourquoi mes agents restent sur Claude pour l'instant."
 date: 2026-10-29
 format: actualite
 grappe: actus
 mot_cle: "mistral large 4"
-image_carte: "/images/blog/cartes/mistral-large-4-modele-ouvert-telechargeable-capture.webp"
-image_partage: "/images/blog/partage-mistral-large-4-modele-ouvert-telechargeable.jpg"
+image_carte: "/blog/mistral-large-4-modele-ouvert-telechargeable/couverture-v2.png"
+image_partage: "/blog/mistral-large-4-modele-ouvert-telechargeable/couverture-v2.png"
 statut: publie
 mots_cles: ["Mistral Large 4", "Le Chonk", "modèle open weight", "IA européenne", "Mistral AI", "IA souveraine"]
 lire_aussi: ["/blog/quel-outil-ia-entreprise-comparatif", "/metiers/kine", "/"]

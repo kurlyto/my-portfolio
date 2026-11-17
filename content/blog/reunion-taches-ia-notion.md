@@ -1,12 +1,12 @@
 ---
-titre: "Comment j'ai optimisé mes réunions"
+titre: "Mes réunions créent leurs propres tâches et l'IA s'y met aussitôt"
 description: "J'avais trois problèmes avec mes réunions et je les ai réglés un par un avec Fathom, Notion et mon IA. Je vous montre ce workflow très simple qui me sert tous les jours."
 date: 2026-09-28
 format: explicatif
 grappe: foxy
 mot_cle: "notes de reunion ia"
-image_carte: "/images/blog/cartes/reunion-taches-ia-notion-schema.webp"
-image_partage: "/images/blog/partage-reunion-taches-ia-notion.png"
+image_carte: "/blog/reunion-taches-ia-notion/couverture-v2.png"
+image_partage: "/blog/reunion-taches-ia-notion/couverture-v2.png"
 statut: publie
 mots_cles: ["notes de réunion IA", "Fathom", "Notion", "compte rendu automatique", "assistant IA", "tâches"]
 lire_aussi: ["/blog/agent-ia-definition", "/blog/quel-outil-ia-entreprise-comparatif", "/"]

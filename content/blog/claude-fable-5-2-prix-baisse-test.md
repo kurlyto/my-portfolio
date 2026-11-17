@@ -1,5 +1,5 @@
 ---
-titre: "Claude Fable 5.2 : 20 % moins cher, mais est-ce vraiment une économie ?"
+titre: "Claude Fable 5.2 baisse son prix de 20 % : est-ce vraiment une économie ?"
 description: "Anthropic a sorti Fable 5.2 le 9 novembre, avec un prix en baisse et un mode rapide. Je l'ai testé dans Claude Code sur mes vrais travaux pour voir si la facture baisse vraiment."
 date: 2026-11-22
 format: actualite

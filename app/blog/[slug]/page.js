@@ -30,7 +30,8 @@ export async function generateMetadata({ params }) {
   if (!a) return {};
   const url = `${SITE_URL}/blog/${slug}`;
   return {
-    title: a.titre,
+    // Le blog appartient au portfolio : signe Nathan Knaebel (17/11/2026).
+    title: { absolute: `${a.titre} | Nathan Knaebel` },
     description: a.description,
     alternates: { canonical: url },
     robots: { index: a.statut === "publie", follow: true },
@@ -38,6 +39,7 @@ export async function generateMetadata({ params }) {
       title: a.titre,
       description: a.description,
       url,
+      siteName: "Nathan Knaebel",
       type: "article",
       locale: "fr_FR",
       publishedTime: a.date,
@@ -48,14 +50,14 @@ export async function generateMetadata({ params }) {
           ? { url: `${SITE_URL}${a.imagePartage}`, width: 1200, height: 627, alt: a.titre }
           : a.image
             ? { url: `${SITE_URL}${a.image}`, alt: a.imageAlt }
-            : { url: `${SITE_URL}/images/partage-agence.png`, width: 1200, height: 627, alt: a.titre },
+            : { url: `${SITE_URL}/images/partage-accueil.png`, width: 1200, height: 627, alt: a.titre },
       ],
     },
     twitter: {
       card: "summary_large_image",
       title: a.titre,
       description: a.description,
-      images: [`${SITE_URL}${a.imagePartage || a.image || "/images/partage-agence.png"}`],
+      images: [`${SITE_URL}${a.imagePartage || a.image || "/images/partage-accueil.png"}`],
     },
   };
 }

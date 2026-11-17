@@ -9,14 +9,27 @@ import { tousLesArticles, FORMATS, SITE_URL, dateLisible } from "./blog-data";
 // invisible ; un simple `touch` ne suffit pas, il faut changer son contenu).
 const articles = tousLesArticles();
 
+// Le blog est une page du PORTFOLIO (Nathan, 17/11/2026 : « le site d'agents,
+// c'est autre chose ») : signe Nathan Knaebel, jamais « Votre Agent IA ».
+const TITRE = "Articles | Nathan Knaebel";
+const DESCRIPTION =
+  "Les articles de Nathan Knaebel, ingénieur en transformation IA : l'actualité de l'IA, des explications et ce que ses projets lui apprennent.";
+
 export const metadata = {
-  title: "Blog : agents IA et intelligence artificielle au travail",
-  description:
-    "Nathan Knaebel construit des agents IA pour des petites entreprises et raconte ici ce que ce travail lui apprend, des bases aux cas concrets.",
+  title: { absolute: TITRE },
+  description: DESCRIPTION,
   alternates: { canonical: `${SITE_URL}/blog` },
-  // Un index vide est une page maigre : on ne le montre a Google qu'a partir
-  // du premier article publie.
   robots: { index: articles.length > 0, follow: true },
+  // Un openGraph declare remplace en bloc celui du layout : tout se redonne.
+  openGraph: {
+    title: TITRE,
+    description: DESCRIPTION,
+    url: `${SITE_URL}/blog`,
+    siteName: "Nathan Knaebel",
+    locale: "fr_FR",
+    type: "website",
+    images: [{ url: "/images/partage-accueil.png", width: 1200, height: 627, alt: TITRE }],
+  },
 };
 
 // Une carte par article : le visuel en haut (l'accroche), puis format, date,
@@ -74,8 +87,8 @@ export default function BlogPage() {
         <div className="max-w-3xl">
           <h1 className="font-display text-3xl md:text-4xl font-bold">Mes articles</h1>
           <p className="mt-4 text-[17px] leading-relaxed text-black/70">
-            Je construis des agents IA pour des petites entreprises et j&apos;écris ici ce que ce
-            travail m&apos;apprend. Des explications, quelques tutoriels et mon avis sur l&apos;actualité
+            J&apos;accompagne les entreprises dans leur transition vers l&apos;IA et j&apos;écris ici ce
+            que ce travail m&apos;apprend. Des explications, quelques tutoriels et mon avis sur l&apos;actualité
             quand elle vaut qu&apos;on s&apos;y arrête.
           </p>
         </div>

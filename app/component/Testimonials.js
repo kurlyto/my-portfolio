@@ -11,6 +11,27 @@ import Reveal from "./Reveal";
 // `logo: true` : l'image est montree entiere sur fond blanc au lieu d'etre
 // rognee comme un visage.
 export const TESTIMONIALS = [
+  // Baptiste et Jerome : textes ecrits avec Nathan le 17/11/2026, a faire
+  // valider par eux avant toute mise en ligne.
+  {
+    quote:
+      "Nathan a compris le métier du booking dès notre premier rendez-vous. On échange facilement avec lui et il revient à chaque fois avec quelque chose de concret à tester.",
+    name: "Baptiste W.",
+    jobTitle: "Agence BB.Booking",
+    useCase: "Prospection de lieux pour ses artistes",
+    initials: "BW",
+    photo: "/testimonials/bb-booking-logo.png",
+    logo: true,
+  },
+  {
+    quote:
+      "Nathan est venu voir comment on travaille à l'étude avant de nous proposer quoi que ce soit. Il est sérieux et je peux l'appeler dès que j'ai une question.",
+    name: "Jérôme K.",
+    jobTitle: "Notaire",
+    useCase: "Anonymisation et courriers de succession",
+    initials: "JK",
+    photo: null,
+  },
   {
     quote:
       "Mes mails de prospection partent tout seuls chaque matin vers les organisateurs d'événements. Je ne cherche plus mes dates et elles arrivent quand même.",

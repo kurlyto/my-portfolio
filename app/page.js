@@ -7,15 +7,15 @@ const SITE_URL = "https://nathan-knaebel.com";
 
 const META = {
   fr: {
-    titre: "Nathan Knaebel : ingénieur, CTO et concepteur d'IA",
+    titre: "Nathan Knaebel : ingénieur en transformation IA",
     description:
-      "Ingénieur, co-fondateur et CTO de Mon Devis Dentaire, je conçois des IA pour les entreprises. Mes produits et mes projets : SaaS, agents IA, jeux, outils métier.",
+      "J'accompagne les entreprises dans leur transition vers l'IA. Je les conseille puis je construis sur mesure les systèmes qui les rendent plus productives.",
     locale: "fr_FR",
   },
   en: {
-    titre: "Nathan Knaebel: engineer, CTO and AI builder",
+    titre: "Nathan Knaebel: AI transformation engineer",
     description:
-      "Engineer, co-founder and CTO of Mon Devis Dentaire, I build AI for businesses. My products and projects: SaaS, AI agents, games, business tools.",
+      "I help companies move to AI. I advise them, then build the custom systems that make them more productive.",
     locale: "en_US",
   },
 };
@@ -85,8 +85,8 @@ function buildJsonLd(lang) {
         url: SITE_URL,
         image: `${SITE_URL}/images/profile-pic.png`,
         jobTitle: en
-          ? "Co-founder and CTO of Mon Devis Dentaire, AI agent builder"
-          : "Co-fondateur et CTO de Mon Devis Dentaire, concepteur d'agents IA",
+          ? "AI transformation engineer, co-founder and CTO of Mon Devis Dentaire"
+          : "Ingénieur en transformation IA, co-fondateur et CTO de Mon Devis Dentaire",
         alumniOf: { "@type": "CollegeOrUniversity", name: en ? "CESI Engineering School" : "École d'ingénieurs CESI" },
         sameAs: [
           "https://github.com/kurlyto",

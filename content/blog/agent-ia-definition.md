@@ -1,12 +1,12 @@
 ---
-titre: "C'est quoi un agent IA ? Explication simple"
+titre: "Il manque des mains à ChatGPT pour être un agent IA"
 description: "Tout le monde parle d'agents IA et personne ne dit ce que c'est vraiment. J'explique ici de quoi un agent est fait et comment il fonctionne avec des mots compréhensibles par tous."
 date: 2026-09-17
 format: explicatif
 grappe: agents
 mot_cle: "c'est quoi un agent ia"
-image_partage: "/images/blog/partage-agent-ia-definition.png"
-image_carte: "/images/blog/cartes/agent-ia-definition-schema.webp"
+image_partage: "/blog/agent-ia-definition/couverture-v2.png"
+image_carte: "/blog/agent-ia-definition/couverture-v2.png"
 statut: publie
 mots_cles: ["agent IA", "définition", "ChatGPT", "automatisation", "petite entreprise", "Anthropic"]
 ---

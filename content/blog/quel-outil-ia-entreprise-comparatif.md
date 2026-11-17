@@ -1,14 +1,14 @@
 ---
-titre: "Quel outil d'IA pour mon entreprise ? Comparatif 2026"
+titre: "Claude ou ChatGPT pour votre boîte : j'ai noté 15 outils d'IA"
 description: "Claude, ChatGPT, n8n, Limova ou un agent sur mesure ? Les outils d'IA se ressemblent tous en vitrine. J'ai relevé leurs prix publics et je les ai notés sur les mêmes critères pour vous aider à trouver le vôtre."
 date: 2026-09-20
 maj: 2026-09-23
 format: comparatif
 grappe: agents
 mot_cle: "quel outil ia pour mon entreprise"
-image_carte: "/images/blog/cartes/quel-outil-ia-entreprise-comparatif-schema.webp"
+image_carte: "/blog/quel-outil-ia-entreprise-comparatif/couverture-v2.png"
 statut: publie
-image_partage: "/images/blog/partage-quel-outil-ia-entreprise-comparatif.png"
+image_partage: "/blog/quel-outil-ia-entreprise-comparatif/couverture-v2.png"
 mots_cles: ["comparatif IA", "outil IA entreprise", "Claude", "ChatGPT Work", "Dust", "Limova", "agent IA sur mesure"]
 lire_aussi: ["/blog/agent-ia-definition", "/foxy", "/agents"]
 ---

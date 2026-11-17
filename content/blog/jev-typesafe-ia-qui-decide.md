@@ -1,13 +1,13 @@
 ---
-titre: "Jev de TypeSafe : l'IA qui décide au lieu d'écrire"
+titre: "Jev est l'IA qui n'écrit rien et ne peut pas se tromper d'un zéro"
 description: "Jev a fait parler tout le monde cette semaine : un modèle qui ne rédige rien et se contente de trancher. Je l'ai testé sur de vraies annonces immobilières et je vous donne un premier avis dessus."
 date: 2026-09-23
 format: explicatif
 grappe: agents
 mot_cle: "typesafe ai"
-image_carte: "/images/blog/cartes/jev-typesafe-ia-qui-decide-schema.webp"
+image_carte: "/blog/jev-typesafe-ia-qui-decide/couverture-v2.jpg"
 statut: publie
-image_partage: "/images/blog/partage-jev-typesafe-ia-qui-decide.png"
+image_partage: "/blog/jev-typesafe-ia-qui-decide/couverture-v2.jpg"
 mots_cles: ["TypeSafe", "Jev", "modèle de décision", "probabilité calibrée", "extraction de données", "agent IA"]
 lire_aussi: ["/blog/agent-ia-definition", "/blog/quel-outil-ia-entreprise-comparatif", "/agents"]
 ---
