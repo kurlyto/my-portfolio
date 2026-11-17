@@ -73,7 +73,7 @@ Tout ce rangement resterait vide si personne n'écrivait. Après chaque travail,
 
 Mes remarques sur l'écriture ont ainsi rempli tout un guide rangé par type de texte. Cet article est d'ailleurs passé dans un détecteur de tics d'IA né de ces corrections, qui chasse entre autres le fameux tiret long du 26 août.
 
-Le moment d'écrire a son importance. L'assistant note avant de me rendre la main, même quand une tâche tourne encore en fond. En août, il avait mis une vingtaine de manipulations à comprendre comment un de mes agents récupérait mes favoris sur X. Il n'avait rien noté et la fois suivante aurait coûté exactement le même chemin.
+Le moment d'écrire a son importance. L'assistant note avant de me rendre la main, même quand une tâche tourne encore en fond. En août, il avait mis une vingtaine de manipulations à comprendre comment un de mes agents récupérait mes favoris sur X. Il n'avait rien noté, donc la fois suivante lui aurait coûté le même chemin.
 
 ## Les ratés
 
