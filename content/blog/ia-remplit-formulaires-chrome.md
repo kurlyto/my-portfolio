@@ -8,6 +8,8 @@ mot_cle: "ia remplir formulaire"
 statut: brouillon
 mots_cles: ["IA remplir formulaire", "extension Chrome IA", "agent navigateur", "Jev", "TypeSafe", "sécurité navigateur"]
 lire_aussi: ["/blog/jev-typesafe-ia-qui-decide", "/blog/prompt-injection-mail", "/agents"]
+image_carte: "/blog/ia-remplit-formulaires-chrome/couverture-v2.png"
+image_partage: "/blog/ia-remplit-formulaires-chrome/couverture-v2.png"
 ---
 Un soir je dois créer un compte sur un logiciel en ligne pour l'essayer. Le formulaire compte une vingtaine de champs avec une liste de pays interminable, une case pour les conditions et un code de vérification envoyé par mail. Je tape une phrase dans le chat de mon assistant et je retourne à ce que je faisais. Quand je reviens sur l'onglet, tout est rempli et un seul bouton m'attend, encadré en rouge.
 

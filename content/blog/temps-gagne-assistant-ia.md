@@ -6,6 +6,7 @@ format: explicatif
 grappe: agents
 mot_cle: "temps gagné assistant ia"
 image_carte: "/images/blog/temps-gagne/ecran-temps-gagne.webp"
+image_partage: "/images/blog/temps-gagne/partage-temps-gagne.png"
 statut: brouillon
 mots_cles: ["temps gagné IA", "assistant IA", "productivité IA", "mesurer le temps gagné", "Foxy"]
 lire_aussi: ["/blog/reunion-taches-ia-notion", "/blog/agent-ia-definition", "/"]

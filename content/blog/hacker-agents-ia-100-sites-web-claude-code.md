@@ -39,9 +39,9 @@ Le choc n'est pas dans la ruse mais dans l'addition. Fagerland estime le coût �
 
 Les cibles n'étaient même pas choisies à la main. Le groupe avait monté une petite chaîne pour ça. Elle ramassait des boutiques sur internet et les classait par trafic. Un outil vérifiait même qu'on pouvait vraiment y passer commande avant d'envoyer l'adresse à l'agent. C'est de l'abattage. Vous n'êtes plus visé parce que vous valez le coup, vous êtes visé parce que votre adresse est tombée dans la liste et que le robot a cinq dollars à dépenser pour voir si ça s'ouvre.
 
-Faut-il paniquer pour autant ? Non. Le taux de réussite tournait autour de 10 %, et les sites qui ont cédé étaient surtout de grosses boutiques à vieux logiciels mal tenus, avec un panneau d'administration traînant sur internet ou une rallonge jamais mise à jour. L'agent est rapide et patient, mais il entre par les mêmes portes mal fermées qu'avant. Désormais il les essaie sur tout le monde.
+Pas de quoi paniquer pour autant, car le taux de réussite tournait autour de 10 %, et les sites qui ont cédé étaient surtout de grosses boutiques à vieux logiciels mal tenus, avec un panneau d'administration traînant sur internet ou une rallonge jamais mise à jour. L'agent est rapide et patient, mais il entre par les mêmes portes mal fermées qu'avant. Désormais il les essaie sur tout le monde.
 
-## Ce que j'ai regardé chez moi
+## J'ai vérifié mes propres sites
 
 En lisant l'article, j'ai fait le tour de ma propre maison, parce que je prêche la sécurité à mes clients et que ça m'aurait agacé d'être le cordonnier mal chaussé. Mon site et mes agents tournent sur un serveur que je loue en France, et la première chose qu'un robot comme ceux-là cherche, c'est une porte ouverte.
 
@@ -68,7 +68,7 @@ Si vous avez une boutique ou un site vitrine, voilà les gestes qui protègent l
 
 **Ne changez rien dans la panique.** Si votre site est à jour et hébergé sérieusement, vous n'avez rien de spécial à faire ce mois-ci. Un bon conseil, parfois, c'est de ne rien toucher.
 
-## Ce que ça dit des agents que je construis
+## Et les agents que je construis ?
 
 Cette histoire ne me détourne pas des agents IA, elle me conforte dans la façon de les poser. Un agent est un ouvrier très rapide et très obéissant, et un ouvrier obéissant fait de gros dégâts si on lui donne trop de clés. Le même outil qui force des boutiques dans cette affaire prépare mes journées dans la mienne. La différence tient à deux règles simples.
 
@@ -87,7 +87,7 @@ Le robot qui a cambriolé cent boutiques et celui qui trie mon agenda sont le m�
 
 ### Mon petit site est-il vraiment une cible ?
 
-Oui. Mais pas parce qu'on vous en veut. Les attaques décrites par Reuters ratissent des milliers d'adresses au hasard et tentent leur chance sur chacune pour quelques dollars. Vous n'êtes pas choisi : vous tombez juste dans le lot. Un site à jour et bien hébergé résiste très bien à ce ratissage.
+Oui, même si personne ne vous en veut. Les attaques décrites par Reuters ratissent des milliers d'adresses au hasard et tentent leur chance sur chacune pour quelques dollars. Vous n'êtes pas choisi : vous tombez juste dans le lot. Un site à jour et bien hébergé résiste très bien à ce ratissage.
 
 ### Faut-il payer un expert en sécurité ?
 
@@ -95,4 +95,4 @@ Une petite entreprise en a rarement besoin. Les trois quarts du travail tiennent
 
 ### Est-ce que l'IA rend le piratage impossible à arrêter ?
 
-Non. L'IA rend l'attaque moins chère et plus fréquente sans la rendre plus maligne. Les agents de cette affaire sont entrés par de vieilles failles connues. Les vieilles défenses marchent encore : mises à jour, accès fermés, sauvegardes. Elles doivent juste être vraiment appliquées.
+Non, l'IA rend l'attaque moins chère et plus fréquente sans la rendre plus maligne. Les agents de cette affaire sont entrés par de vieilles failles connues. Les vieilles défenses marchent encore : mises à jour, accès fermés, sauvegardes. Elles doivent juste être vraiment appliquées.
