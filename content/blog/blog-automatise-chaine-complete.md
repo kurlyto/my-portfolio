@@ -1,7 +1,7 @@
 ---
 titre: "La chaîne qui emmène mes articles de l'idée à Google"
 description: "Ce blog sort d'une chaîne que j'ai construite. Je la montre maillon par maillon de l'idée jusqu'à la demande d'indexation à Google."
-date: 2027-01-13
+date: 2026-12-16
 format: tutoriel
 grappe: tutos
 mot_cle: "automatiser un blog ia"

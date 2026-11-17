@@ -1,7 +1,7 @@
 ---
 titre: "Un pirate a fait pirater plus de 100 sites d'entreprises par des agents IA : comment protéger le vôtre"
 description: "Un pirate a lancé des agents IA contre plus de cent boutiques en ligne pour environ 50 dollars chacune. J'ai lu l'enquête et j'ai vérifié tout de suite si mon propre site tenait. Je vous dis ce que j'en pense et comment vous protéger."
-date: 2026-12-08
+date: 2026-11-26
 format: actualite
 grappe: actus
 mot_cle: "agents IA piratage sites web entreprises comment protéger son site"

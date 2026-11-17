@@ -1,7 +1,7 @@
 ---
 titre: "Failles EMBRACE : le navigateur caché dans vos assistants de code peut lire vos fichiers"
 description: "Des chercheurs ont montré que le petit navigateur caché dans Cursor, Copilot, Codex, VS Code et Claude Desktop pouvait lire tout votre disque. J'ai refait leur essai dans un Chrome normal et je vous explique pourquoi lui refuse."
-date: 2026-11-06
+date: 2027-02-02
 format: actualite
 grappe: actus
 mot_cle: "faille navigateur intégré assistant de code Claude Desktop"

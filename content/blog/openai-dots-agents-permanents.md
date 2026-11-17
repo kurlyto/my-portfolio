@@ -1,7 +1,7 @@
 ---
 titre: "Dots d'OpenAI travaille pendant que vous dormez mais pas en Europe"
 description: "OpenAI propose depuis le 29 septembre un agent qui continue de travailler quand on ferme ChatGPT. Je n'ai pas pu l'essayer depuis la France alors j'ai lu toute sa documentation et je vous dis ce que j'en pense."
-date: 2026-11-30
+date: 2027-01-13
 format: actualite
 grappe: actus
 mot_cle: "openai dots agent permanent avis"

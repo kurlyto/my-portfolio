@@ -1,7 +1,7 @@
 ---
 titre: "Des agents IA pirates trouvent vos clés oubliées sur GitHub : l'alerte de Microsoft"
 description: "J'ai lu l'alerte de Microsoft sur ces agents pirates qui fouillent GitHub à la recherche de clés oubliées. J'ai demandé à mon IA de fouiller mes neuf dépôts publics comme le ferait un attaquant et je vous raconte le résultat."
-date: 2026-11-18
+date: 2027-01-25
 format: actualite
 grappe: actus
 mot_cle: "clé API oubliée GitHub piratage agent IA comment vérifier"

@@ -1,7 +1,7 @@
 ---
 titre: "La mémoire de mon assistant IA tient en 370 fiches rangées chaque dimanche"
 description: "Une IA oublie tout d'une conversation à l'autre. La mienne se souvient. Je montre comment elle range ce qu'elle apprend et retrouve la bonne fiche."
-date: 2026-12-24
+date: 2026-11-30
 format: explicatif
 grappe: foxy
 mot_cle: "memoire agent ia"
