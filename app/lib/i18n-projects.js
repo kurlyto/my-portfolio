@@ -34,7 +34,7 @@ export const T = {
       cta: "Voir mes projets",
     },
     tech: { title: "Déjà utilisés dans mes projets", teaser: "Dans mes projets, j'ai utilisé :", viewList: "Voir en liste", viewGalaxy: "Voir la galaxie" },
-    cards: { discover: "Découvrir", discoverAria: (name) => `Découvrir ${name}` },
+    cards: { discover: "Découvrir", discoverAria: (name) => `Découvrir ${name}`, openSite: "Accéder au site", watchVideo: "Voir la vidéo", video: "Vidéo", closeVideo: "Fermer la vidéo" },
     status: { wip: "En construction" },
     cv: { download: "Télécharger", close: "Fermer", title: "Mon CV" },
     footer: {
@@ -56,7 +56,7 @@ export const T = {
       cta: "See my projects",
     },
     tech: { title: "Already used in my projects", teaser: "In my projects, I have used:", viewList: "List view", viewGalaxy: "Galaxy view" },
-    cards: { discover: "Explore", discoverAria: (name) => `Explore ${name}` },
+    cards: { discover: "Explore", discoverAria: (name) => `Explore ${name}`, openSite: "Visit the site", watchVideo: "Watch the video", video: "Video", closeVideo: "Close the video" },
     status: { wip: "In progress" },
     cv: { download: "Download", close: "Close", title: "My CV" },
     footer: {

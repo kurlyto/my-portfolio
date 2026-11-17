@@ -14,6 +14,7 @@ const TEXTES = {
     articles: "Articles",
     nbArticles: (n) => `${n} articles publiés`,
     photos: "Photographies",
+    lignePhotos: "Mes photos de voyage",
     bientot: "Bientôt",
     cv: "CV",
     voirCv: "Voir le CV",
@@ -22,6 +23,7 @@ const TEXTES = {
     articles: "Articles",
     nbArticles: (n) => `${n} articles in French`,
     photos: "Photography",
+    lignePhotos: "My travel photos",
     bientot: "Coming soon",
     cv: "Resume",
     voirCv: "View resume",
@@ -98,7 +100,7 @@ export default function AutresRubriques({ lang = "fr", nbArticles, couvertures =
           <span className="absolute right-6 top-6 rounded-full bg-black/40 px-3.5 py-1.5 text-[12px] font-semibold text-white backdrop-blur-md ring-1 ring-white/20">
             {tx.bientot}
           </span>
-          <Legende titre={tx.photos} />
+          <Legende titre={tx.photos} ligne={tx.lignePhotos} />
         </div>
 
         <button

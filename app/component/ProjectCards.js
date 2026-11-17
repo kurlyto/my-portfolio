@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { motion } from "framer-motion";
 import {
   NextJsIcon,
@@ -43,6 +44,8 @@ export const PROJECTS = [
       "A SaaS platform that smooths out treatment plan approvals for dental practices. AI explains every procedure to the patient in plain language, automated reminders chase pending quotes and the practice handles booking and online payment right from its own practice software.",
     years: "2025 - 2026",
     link: "https://mondevisdentaire.fr",
+    // Video de presentation (40 s, avec le son), ouverte depuis la carte.
+    video: "/videos/mdd-presentation.mp4",
     cover: "from-slate-50 to-slate-100",
     coverImage: "/images/cover-mdd.png",
     coverImageFit: "contain",
@@ -83,6 +86,7 @@ export const PROJECTS = [
       "Imagine someone who knows you by heart: you, your business, the way you talk, your clients. Plugged into your tools, it takes care of a whole lot of tasks for you.",
     years: "2026",
     link: "/foxy",
+    video: "/videos/foxy-1min.mp4",
     cover: "from-zinc-800 to-zinc-900",
     coverImage: "/images/cover-aios.png",
     // Icone renard sur fond sombre plein cadre : comme MDD et Agents IA
@@ -101,9 +105,10 @@ export const PROJECTS = [
       "Stage is custom software built for European artist booking agencies that want to modernise how they land live performance contracts for their artists and boost their results with artificial intelligence. Stage makes prospecting structured, smart, personalised and visual for artist booking agencies.",
     years: "2026",
     cover: "from-neutral-200 to-neutral-300",
-    // Video de presentation de Stage (v14 du 13/11), allegee pour la carte :
-    // 960 px, sans le son, 1,2 Mo. L'image fixe sert pendant le chargement.
-    coverVideo: "/videos/stage-presentation-carte.mp4",
+    // Video de presentation de Stage (v14 du 13/11), version allegee sans le
+    // son : la carte montre l'image fixe, le Play ouvre la video (Nathan,
+    // 17/11/2026 : image fixe + Play comme les autres projets).
+    video: "/videos/stage-presentation-carte.mp4",
     coverImage: "/images/cover-stage-poster.jpg",
     tech: [
       { icon: NodeJsIcon, label: "Node.js" },
@@ -137,6 +142,7 @@ export const PROJECTS = [
       "Have these two players ever worn the same shirt? Link them club by club and chain up correct answers to win your one-on-one football knowledge duel.",
     years: "2026",
     link: "https://footballfight.app",
+    video: "/videos/footballfight-presentation.mp4",
     cover: "from-[#02794a] to-[#02794a]",
     coverImage: "/images/cover-footballfight-blason.png",
     // Icone carree sur fond vert plein : entiere (contain), le degrade de la
@@ -337,6 +343,22 @@ function CoverPlaceholder({ project, tr }) {
           {project.name.charAt(0)}
         </span>
       )}
+      {project.video && (
+        // Play semi-transparent en bas a gauche : il invite a voir la video
+        // sans cacher le logo (au centre, il masquait celui de MDD), et
+        // devient plus net au survol de la carte.
+        <span
+          aria-hidden
+          className="pointer-events-none absolute bottom-3 left-3 flex items-center gap-2 rounded-full bg-black/30 py-1.5 pl-1.5 pr-3.5 text-[13px] font-semibold text-white/90 ring-1 ring-white/25 backdrop-blur-sm transition-all duration-200 ease-out group-hover:bg-black/55 group-hover:text-white"
+        >
+          <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/90 text-black transition-transform duration-200 group-hover:scale-110">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="ml-0.5 h-3.5 w-3.5">
+              <path d="M8 5.5v13l11-6.5z" />
+            </svg>
+          </span>
+          {tr.cards.video}
+        </span>
+      )}
       <div className="absolute right-3 top-3 flex items-center gap-1.5">
         {project.status && (
           <span className="rounded-full bg-black/30 px-2.5 py-1 text-[11px] font-mono text-white/85 backdrop-blur-sm">
@@ -348,6 +370,64 @@ function CoverPlaceholder({ project, tr }) {
         </span>
       </div>
     </div>
+  );
+}
+
+// Lecteur en grand, avec le son. Rendu dans <body> par un portail : la carte
+// est animee par une transformation CSS, et un element `fixed` place dedans
+// serait cale sur la carte au lieu de l'ecran.
+function VideoModal({ src, poster, title, closeLabel, onClose }) {
+  useEffect(() => {
+    const onKey = (e) => e.key === "Escape" && onClose();
+    document.addEventListener("keydown", onKey);
+    const overflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = overflow;
+    };
+  }, [onClose]);
+
+  return createPortal(
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.18 }}
+      role="dialog"
+      aria-modal="true"
+      aria-label={title}
+      onClick={onClose}
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/85 p-4 backdrop-blur-sm sm:p-10"
+    >
+      <motion.div
+        initial={{ scale: 0.96, y: 8 }}
+        animate={{ scale: 1, y: 0 }}
+        transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+        onClick={(e) => e.stopPropagation()}
+        className="relative w-full max-w-5xl"
+      >
+        <video
+          src={src}
+          poster={poster}
+          autoPlay
+          controls
+          playsInline
+          className="max-h-[85dvh] w-full rounded-2xl bg-black shadow-2xl"
+        />
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label={closeLabel}
+          data-cursor-hover
+          className="absolute -top-12 right-0 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/25"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="h-5 w-5" aria-hidden>
+            <path d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </button>
+      </motion.div>
+    </motion.div>,
+    document.body,
   );
 }
 
@@ -404,7 +484,96 @@ function ProjectCard({ project, index, lang }) {
   // une cible bien plus large que le seul bouton "Decouvrir". Les projets sans
   // `link` (pas encore publies) gardent une couverture inerte, sans curseur ni
   // survol, pour ne pas promettre un clic qui ne mene nulle part.
-  const cover = project.link ? (
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [videoOpen, setVideoOpen] = useState(false);
+  const coverRef = useRef(null);
+
+  // Le petit menu se ferme au clic ailleurs ou sur Echap.
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onDown = (e) => {
+      if (!coverRef.current?.contains(e.target)) setMenuOpen(false);
+    };
+    const onKey = (e) => e.key === "Escape" && setMenuOpen(false);
+    document.addEventListener("pointerdown", onDown);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("pointerdown", onDown);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [menuOpen]);
+
+  const closeVideo = useCallback(() => setVideoOpen(false), []);
+  const openVideo = () => {
+    setMenuOpen(false);
+    setVideoOpen(true);
+  };
+
+  // Projet avec video : un clic sur l'image ouvre un petit menu Site / Video
+  // (choix de Nathan, 17/11/2026). Sans site (Stage), le clic lance la video.
+  const cover = project.video ? (
+    <div ref={coverRef} className="relative flex min-h-0 flex-1 flex-col sm:flex-none">
+      <button
+        type="button"
+        onClick={() => (project.link ? setMenuOpen((o) => !o) : openVideo())}
+        aria-haspopup={project.link ? "menu" : undefined}
+        aria-expanded={project.link ? menuOpen : undefined}
+        aria-label={project.link ? name : tr.cards.watchVideo}
+        data-cursor-hover
+        className="flex min-h-0 flex-1 flex-col text-left sm:flex-none"
+      >
+        <CoverPlaceholder project={project} tr={tr} />
+      </button>
+      {menuOpen && (
+        <motion.div
+          role="menu"
+          initial={{ opacity: 0, scale: 0.94 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.14, ease: [0.16, 1, 0.3, 1] }}
+          className="absolute left-1/2 top-1/2 z-10 w-56 overflow-hidden rounded-2xl bg-white p-1.5 shadow-[0_12px_40px_-8px_rgba(0,0,0,0.35)] ring-1 ring-black/5"
+          style={{ x: "-50%", y: "-50%" }}
+        >
+          <a
+            role="menuitem"
+            href={project.link}
+            target={isExternal ? "_blank" : undefined}
+            rel={isExternal ? "noopener noreferrer" : undefined}
+            onClick={() => setMenuOpen(false)}
+            data-cursor-hover
+            {...attributClic(nomClic("projet", project.name), isExternal)}
+            className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-[15px] font-semibold text-black transition-colors hover:bg-black/[0.05]"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-[18px] w-[18px] opacity-60" aria-hidden>
+              <path d="M7 17L17 7M9 7h8v8" />
+            </svg>
+            {tr.cards.openSite}
+          </a>
+          <button
+            type="button"
+            role="menuitem"
+            onClick={openVideo}
+            data-cursor-hover
+            data-umami-event={nomClic("projet-video", project.name)}
+            className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left text-[15px] font-semibold text-black transition-colors hover:bg-black/[0.05]"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" className="h-[18px] w-[18px] opacity-60" aria-hidden>
+              <path d="M8 5.5v13l11-6.5z" />
+            </svg>
+            {tr.cards.watchVideo}
+          </button>
+        </motion.div>
+      )}
+      {videoOpen && (
+        <VideoModal
+          src={project.video}
+          poster={project.coverImage}
+          title={name}
+          closeLabel={tr.cards.closeVideo}
+          onClose={closeVideo}
+        />
+      )}
+    </div>
+  ) : project.link ? (
     <a
       href={project.link}
       target={isExternal ? "_blank" : undefined}

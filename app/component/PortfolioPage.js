@@ -5,7 +5,6 @@ import Footer from "./FooterAvecArticles";
 import ProjectCards from "./ProjectCards";
 import ProjectsNav from "./ProjectsNav";
 import ProjectsHero from "./ProjectsHero";
-import TechStack from "./TechStack";
 import TemoignagesPortfolio from "./TemoignagesPortfolio";
 
 // Le portfolio, servi a DEUX adresses depuis le 05/10/2026 : la racine
@@ -51,9 +50,8 @@ export default function PortfolioPage({ lang }) {
         </div>
       </main>
 
-      {/* Toute la stack sous les cartes (demande de Nathan du 16/11/2026) :
-          langages, API, logiciels externes, connecteurs. */}
-      <TechStack lang={lang} />
+      {/* Stack pleine page retiree le 17/11/2026 (Nathan) : elle faisait
+          doublon avec la galaxie du haut. Retour : <TechStack lang={lang} /> */}
 
       <AutresRubriques lang={lang} nbArticles={articles.length} couvertures={couvertures} />
 
