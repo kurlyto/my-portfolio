@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Header from "../component/Header";
+import ProjectsNav from "../component/ProjectsNav";
 import Footer from "../component/FooterAvecArticles";
 import { tousLesArticles, FORMATS, SITE_URL, dateLisible } from "./blog-data";
 
@@ -68,7 +68,7 @@ function CarteArticle({ a }) {
 export default function BlogPage() {
   return (
     <div className="bg-white text-black">
-      <Header />
+      <ProjectsNav lang="fr" page="blog" />
 
       <main className="max-w-6xl mx-auto px-6 pt-14 pb-24">
         <div className="max-w-3xl">

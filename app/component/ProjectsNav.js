@@ -18,7 +18,12 @@ const CONTACTS = [
   { label: "GitHub", href: "https://github.com/kurlyto", Icon: GitHubIcon },
 ];
 
-export default function ProjectsNav({ lang = "fr" }) {
+// `page` : "accueil" (le portfolio) ou "blog". Les articles se servent du MEME
+// menu depuis le 17/11/2026 (Nathan : le blog affichait le menu du site des
+// agents, sans retour possible vers le portfolio). Sur le blog, pas de bascule
+// de langue (articles en francais) et les liens visent la page d'accueil.
+export default function ProjectsNav({ lang = "fr", page = "accueil" }) {
+  const surBlog = page === "blog";
   const [cvOpen, setCvOpen] = useState(false);
   const router = useRouter();
   const tr = t(lang);
@@ -41,15 +46,21 @@ export default function ProjectsNav({ lang = "fr" }) {
 
   return (
     <>
-      <header className="sticky top-0 z-40 w-full border-b border-white/10 bg-black/80 backdrop-blur-md">
+      <header className="sticky top-0 z-40 w-full border-b border-white/10 bg-black/80 text-white backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-4">
-          <span className="font-display text-lg font-bold tracking-tight">
+          <a
+            href="/"
+            data-cursor-hover
+            data-clic="clic-projets-nav-accueil"
+            className="font-display text-lg font-bold tracking-tight"
+          >
             Nathan Knaebel
-          </span>
+          </a>
 
           <nav className="flex items-center gap-3 sm:gap-5">
             {/* Bascule de langue : deux cibles de 30 px de haut (au-dessus du
                 minimum touchable), la langue active en plein, l'autre en creux. */}
+            {!surBlog && (
             <div className="flex items-center gap-1 rounded-full border border-white/15 p-0.5">
               {LANGS.map((code) => (
                 <button
@@ -69,6 +80,7 @@ export default function ProjectsNav({ lang = "fr" }) {
                 </button>
               ))}
             </div>
+            )}
 
             <button
               type="button"
@@ -84,12 +96,24 @@ export default function ProjectsNav({ lang = "fr" }) {
                 gere le scroll-behavior: smooth global, l'ancre descend en
                 douceur. */}
             <a
-              href="#projets"
+              href={surBlog ? "/#projets" : "#projets"}
               data-cursor-hover
               data-clic="clic-projets-nav-voir-les-projets"
               className="hidden text-[12px] font-mono uppercase tracking-widest text-white/70 transition-colors duration-150 hover:text-white sm:inline"
             >
               {tr.nav.projects}
+            </a>
+
+            <a
+              href="/blog"
+              aria-current={surBlog ? "page" : undefined}
+              data-cursor-hover
+              data-clic="clic-projets-nav-articles"
+              className={`hidden text-[12px] font-mono uppercase tracking-widest transition-colors duration-150 hover:text-white sm:inline ${
+                surBlog ? "text-white" : "text-white/70"
+              }`}
+            >
+              {tr.nav.articles}
             </a>
 
             <div className="hidden items-center gap-2.5 sm:flex">

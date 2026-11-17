@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import Header from "../../component/Header";
+import ProjectsNav from "../../component/ProjectsNav";
 import Footer from "../../component/FooterAvecArticles";
 import Sommaire from "../../component/Sommaire";
 import Partager from "../../component/Partager";
@@ -84,7 +84,7 @@ export default async function ArticlePage({ params }) {
 
   return (
     <div className="bg-white text-black">
-      <Header />
+      <ProjectsNav lang="fr" page="blog" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <main className="max-w-3xl mx-auto px-6 pt-14 pb-24">

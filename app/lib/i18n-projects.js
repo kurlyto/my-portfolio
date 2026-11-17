@@ -27,7 +27,7 @@ export const T = {
       title: "Projets - Nathan Knaebel",
       description: "Ce que j'ai construit : SaaS, jeux, agents IA, outils metier, cartes.",
     },
-    nav: { cv: "Mon CV", projects: "Mes projets", switchTo: "Switch to English" },
+    nav: { cv: "Mon CV", projects: "Mes projets", articles: "Articles", switchTo: "Switch to English" },
     hero: {
       kicker: "Ingénieur · Transformation IA",
       tagline: "J'accompagne les entreprises dans leur transition vers l'IA : je les conseille, puis je construis sur mesure les systèmes qui leur permettront d'être plus productives.",
@@ -49,7 +49,7 @@ export const T = {
       title: "Projects - Nathan Knaebel",
       description: "What I have built: SaaS, games, AI agents, business tools, maps.",
     },
-    nav: { cv: "My CV", projects: "My projects", switchTo: "Passer en français" },
+    nav: { cv: "My CV", projects: "My projects", articles: "Articles", switchTo: "Passer en français" },
     hero: {
       kicker: "Engineer · AI Transformation",
       tagline: "I help companies through their transition to AI: I advise them, then build the custom systems that will make them more productive.",
