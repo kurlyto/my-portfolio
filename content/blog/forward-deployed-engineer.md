@@ -1,5 +1,5 @@
 ---
-titre: "Forward Deployed Engineer : la nouvelle mode"
+titre: "Le Forward Deployed Engineer : nouveau métier à la mode ?"
 description: "Tout le monde s'arrache les forward deployed engineers qui installent l'IA directement chez le client. Je fais ce travail pour des petites entreprises et je vous explique pourquoi je pense qu'il deviendra bientôt un métier de technicien."
 date: 2026-11-22
 format: explicatif

@@ -1,5 +1,5 @@
 ---
-titre: "J'ai mis un compteur sur le temps que me fait gagner mon assistant IA"
+titre: "Combien de temps je gagne avec mon AIOS ?"
 description: "J'ai mis un compteur sur mon assistant IA pendant neuf jours. Il a fait 113 heures de travail en une semaine et je vous montre comment il calcule et où je me suis trompé."
 date: 2026-10-30
 format: explicatif

@@ -1,7 +1,7 @@
 ---
 titre: "Meta Muse : la fuite qui révèle ses fiches sur vos proches"
 description: "Les consignes internes de Muse ont fuité début octobre et on y découvre une fiche sur chacun de vos proches. J'ai lu cette fuite et je vous explique pourquoi je ne confierais pas mon fichier clients à un agent de ce genre."
-date: 2026-12-20
+date: 2026-12-16
 format: actualite
 grappe: actus
 mot_cle: "meta muse fuite données sécurité agent ia"

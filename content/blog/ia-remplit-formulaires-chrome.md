@@ -1,5 +1,5 @@
 ---
-titre: "Mon IA remplit les formulaires dans mon propre navigateur"
+titre: "Mon IA est de plus en plus puissante"
 description: "Depuis septembre mon assistant remplit des formulaires dans mon propre Chrome et Jev lui fait gagner un temps fou. Je vous montre comment il s'y prend et j'avoue aussi que je protège encore mal mon navigateur."
 date: 2026-12-12
 format: tutoriel

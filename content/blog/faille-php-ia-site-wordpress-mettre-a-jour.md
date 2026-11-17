@@ -1,7 +1,7 @@
 ---
 titre: "Faille critique dans PHP trouvée avec l'aide de l'IA : votre site WordPress est-il à jour ?"
 description: "Deux failles énormes dans PHP ont été corrigées le 21 octobre et des modèles d'IA ont aidé à les trouver. Je vous montre comment vérifier en deux minutes si votre site WordPress a reçu le correctif."
-date: 2027-01-29
+date: 2027-01-25
 format: actualite
 grappe: actus
 mot_cle: "faille PHP octobre 2026 mettre à jour site WordPress"
